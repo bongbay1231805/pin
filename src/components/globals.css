@@ -11,6 +11,9 @@ body {
 b {
   font-weight: 600;
 }
+strong {
+  font-weight: 700;
+}
 @theme {
   --background: #fff;
   --font-montserrat: Montserrat, "Montserrat", sans-serif;
@@ -149,5 +152,29 @@ b {
   .hvr-bounce-to-right:focus::before,
   .hvr-bounce-to-right:active::before {
     transform: scaleX(1);
+  }
+}
+@layer utilities {
+  .carouselitemcenter:not(.center) svg {
+    @apply opacity-0;
+  }
+  .carouselitemcenter:not(.center) .timeline-number {
+    position: unset !important;
+    translate: none !important;
+    color: var(--color-yellow-1);
+  }
+  .carouselitemcenter:is(.center) {
+    color: #fff;
+  }
+  .carouselitemcenter:is(.center) > .relative:after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    border: 1px solid var(--color-yellow-1);
   }
 }
