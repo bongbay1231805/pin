@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className={`flex justify-between ${(hasShadow || pageCurent) ? 'h-[100px]' : 'h-[150px]'}`}>
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <Image src={(hasShadow || pageCurent) ? "/logo-c.svg" : "/logo.svg"} width={(hasShadow || pageCurent) ? 60 : 100} height={(hasShadow || pageCurent) ? 60 : 100} alt="Logo" />
+              <Image className={`${hasShadow ? "reveal-text show" : ""}`} src={(hasShadow || pageCurent) ? "/logo-c.svg" : "/logo.svg"} width={(hasShadow || pageCurent) ? 60 : 100} height={(hasShadow || pageCurent) ? 60 : 100} alt="Logo" />
             </Link>
           </div>
           {/* Desktop Navigation */}

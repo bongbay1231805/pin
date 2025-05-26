@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image'
-import heavyImage from "../../../public/fhome/banner.gif";
 import lightImage from "../../../public/fhome/herocity.jpg";
 import { useEffect, useState } from 'react';
 type HeroProps = {
@@ -9,11 +8,9 @@ type HeroProps = {
 export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    const img = new window.Image();
-    img.onload = () => {
+    setTimeout(() => {
       setIsLoaded(true);
-    };
-    img.src = heavyImage.src;
+    }, 2500);
   }, []);
   const videoId = "0EJIjmIt7Bc";
   return (
@@ -32,16 +29,13 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
           // blurDataURL={lightImage.src} // Hoặc một base64 string của ảnh mờ
           />
         )}
-        {isLoaded && (
-          <iframe
-            width="100%" height="100%"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&disablekb=1&rel=0`}
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            className='pointer-events-none'
-          ></iframe>
-        )
-        }
+        <iframe
+          width="100%" height="100%"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&disablekb=1&rel=0`}
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          className={`pointer-events-none ${isLoaded ? 1 : 0}`}
+        ></iframe>
       </div>
       <div onClick={onScrollToDigitalCity} className="font-semibold text-[18px] absolute bottom-20 left-1/2 -translate-x-1/2 flex justify-center flex-col items-center text-white uppercase gap-[15px]">
         <Image

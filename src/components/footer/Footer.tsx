@@ -11,7 +11,7 @@ export function Footer() {
       <div className={`pt-16 ${styles.bgfooter}`}>
         <div className={`mx-auto max-w-[1582px]`}>
           <div className="grid grid-cols-[340px_1fr_370px] gap-8">
-            <div className="flex items-center justify-center sm:justify-normal">
+            <div className="flex items-center justify-normal boxanimation reveal-text">
               <Link href="/" className="flex-shrink-0 flex items-center">
                 <Image src="/logo-c.svg" width={180} height={180} alt="Logo" />
               </Link>
@@ -40,13 +40,13 @@ export function Footer() {
               </ul>
             </div>
             <div className='mt-[30px] leading-[30px]'>
-              <ul className="space-y-2 text-gray-6 uppercase">
-                <li><Link href="/#" className="hover:text-yellow-1 text-gray-6 font-semibold boxanimation reveal-text">Giới thiệu</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold boxanimation reveal-text">Hệ Sinh Thái</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold boxanimation reveal-text">Đô thị số Picity</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold boxanimation reveal-text">Tin Tức</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold boxanimation reveal-text">Phát Triển Nhân Lực</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold boxanimation reveal-text">Liên Hệ</Link></li>
+              <ul className="space-y-2 text-gray-6 uppercase boxanimation reveal-text">
+                <li><Link href="/#" className="hover:text-yellow-1 text-gray-6 font-semibold">Giới thiệu</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold">Hệ Sinh Thái</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold">Đô thị số Picity</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold">Tin Tức</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold">Phát Triển Nhân Lực</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold">Liên Hệ</Link></li>
               </ul>
             </div>
           </div>
