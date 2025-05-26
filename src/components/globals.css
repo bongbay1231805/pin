@@ -1,0 +1,153 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-montserrat);
+  font-size: var(--text-size-17);
+}
+b {
+  font-weight: 600;
+}
+@theme {
+  --background: #fff;
+  --font-montserrat: Montserrat, "Montserrat", sans-serif;
+  --breakpoint-li: 500px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 991px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1730px;
+  --color-blue-1: #20446F;
+  --color-blue-2: #3B5D8D;
+  --color-blue-3: #13283E;
+  --color-blue-4: #243B5A;
+  --color-yellow-1: #C48C5E;
+  --color-yellow-2: #CFA176;
+  --color-yellow-3: #F7EFE8;
+  --color-yellow-4: #EFDBC9;
+  --color-gray-1: #243B5A;
+  --color-gray-2: #E5E5E5;
+  --color-gray-3: #F5F5F5;
+  --color-gray-4: #13273F;
+  --color-gray-5: #555;
+  --color-gray-6: #666;
+  --color-gray-7: #A4AABB;
+  --color-gray-8: #D9D9D9;
+  --color-gray-9: #CDCDCD;
+  --color-zgray-1: #A4AABB;
+  --color-white-1: #F2F2F2;
+  --text-size-17: 17px;
+  --text-size-35: 35px;
+  --text-size-30: 30px;
+  --text-size-25: 25px;
+  --text-size-20: 20px;
+  --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
+  --animate-energy-circle: energy-circle 1s ease 0.2s infinite;
+  --animate-energy-rotate: half-circle 8s linear infinite;
+  --animate-half-circle: half-circle 4s linear infinite;
+  --animate-reveal-text: reveal-text 1.5s ease-in-out forwards 0.5s;
+  --animate-fade-in-up-medium: fade-in-up-medium 1.5s ease-in-out both 0.5s;
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes reveal-text {
+    0% {
+      transform: translateX(17%);
+      clip-path: inset(0px 50% 0px 50%);
+      -webkit-clip-path: inset(0px 50% 0px 50%);
+    }
+    100% {
+      clip-path: inset(0px 0px 0px 0px);
+      -webkit-clip-path: inset(0px 0px 0px 0px);
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-up-medium {
+    0% {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes energy-circle {
+    0% {
+      opacity: 0.25;
+    }
+    25% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes half-circle {
+    from {
+      transform: rotate(0deg);
+      transform-origin: 0 50%;
+    }
+    to {
+      transform: rotate(-360deg);
+      transform-origin: 0 50%;
+    }
+  }
+}
+@layer components {
+  .reveal-text {
+    @apply opacity-0 transform translate-x-0;
+  }
+  .reveal-text.show {
+    @apply animate-reveal-text;
+  }
+  .fade-in-up-medium {
+    @apply opacity-0 transform translate-y-[200px] transform-3d relative;
+  }
+  .fade-in-up-medium.show {
+    @apply animate-fade-in-up-medium;
+  }
+  .hvr-bounce-to-right {
+    @apply inline-block align-middle relative;
+    /* Các thuộc tính từ Tailwind */
+    /* Các thuộc tính CSS thuần còn lại */
+    transform: perspective(1px) translateZ(0);
+    transition-property: color;
+    transition-duration: 0.5s;
+  }
+  .hvr-bounce-to-right::before {
+    content: "";
+    @apply absolute -z-10 inset-0;
+    /* Các thuộc tính từ Tailwind */
+    /* Các thuộc tính CSS thuần còn lại */
+    background: var(--color-yellow-1);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    /* Tailwind không có utility cho ease-out cho transform */
+  }
+  .hvr-bounce-to-right:hover::before,
+  .hvr-bounce-to-right:focus::before,
+  .hvr-bounce-to-right:active::before {
+    transform: scaleX(1);
+  }
+}

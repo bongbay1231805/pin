@@ -1,0 +1,69 @@
+'use client';
+import Link from 'next/link'
+import Image from 'next/image';
+import styles from './footer.module.css';
+export function Footer() {
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  return (
+    <footer className={`bg-gray-3 text-white pt-16 text-center sm:text-left ${styles.bgfooter}`}>
+      <div className={`mx-auto max-w-[1755px]`}>
+        <div className="grid sm:grid-cols-3  sm:gap-2 md:gap-8">
+          <div className="flex items-center justify-center sm:justify-normal">
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image src="/logo-c.svg" width={180} height={180} className='ml-[8px] mt-[14px]' alt="Logo" />
+            </Link>
+          </div>
+          <div className='mt-[58px] ml-[6px]'>
+            <h3 className="text-xl font-bold mb-[20px] text-gray-4">TẬP ĐOÀN PI GROUP</h3>
+            <ul className="space-y-2 text-gray-6">
+              <li className="flex gap-[18px] justify-center sm:justify-normal"><span className="w-[60px]">Trụ sở:</span><span>663 – 665 Điện Biên Phủ, Phường 25, <br /> Quận Bình Thạnh, Tp. Hồ Chí Minh</span></li>
+              <li className="flex gap-[18px] justify-center sm:justify-normal text-gray-6 font-bold"><span className="w-[60px]">Hotline:</span><span>0708 23 8888</span></li>
+              <li className="flex gap-[18px] justify-center sm:justify-normal"><span className="w-[60px]">Email:</span><span>info@pigroup.com.vn</span></li>
+            </ul>
+          </div>
+          <div className='ml-[30px] xl:ml-[140px] mt-[51px] leading-[30px]'>
+            <ul className="space-y-2 text-gray-6 uppercase">
+              <li><Link href="/about" className="hover:text-yellow-1 text-gray-6 font-semibold">Giới thiệu</Link></li>
+              <li><Link href="/ecosystem" className="hover:text-yellow-1  text-gray-6 font-semibold">Hệ Sinh Thái</Link></li>
+              <li><Link href="#" className="hover:text-yellow-1  text-gray-6 font-semibold">Đô thị số Picity</Link></li>
+              <li><Link href="/news" className="hover:text-yellow-1  text-gray-6 font-semibold">Tin Tức</Link></li>
+              <li><Link href="/work-culture" className="hover:text-yellow-1  text-gray-6 font-semibold">Phát Triển Nhân Lực</Link></li>
+              <li><Link href="/contact" className="hover:text-yellow-1  text-gray-6 font-semibold">Liên Hệ</Link></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className=" bg-gray-4 mt-12 py-8 text-center py-[24px_40px mt-[62px]">
+        <div className="relative container grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[1755px]">
+          <div>
+            <p className="text-yellow-2/70">©2025 Pi Group. All Rights Reserved.</p>
+            <p className='text-gray-7/70'>Design with heart by TQ DESIGN</p>
+          </div>
+          <div>
+            <Image
+              onClick={handleClick}
+              src="/to-top.svg"
+              alt="Modern city skyline"
+              width={45}
+              height={45}
+              className='absolute right-0 top-1/2 -translate-y-1/2'
+            />
+          </div>
+          <div className='flex md:justify-center items-center gap-[15px] pr-[45px] mt-[8px]'>
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image src="/fb.svg" width={41} height={41} alt="Social" />
+            </Link>
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image src="/yt.svg" width={41} height={41} alt="Social" />
+            </Link>
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image src="/tk.svg" width={41} height={41} alt="Social" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
