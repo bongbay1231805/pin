@@ -37,16 +37,14 @@ export default function Index() {
     <>
       <ClientUseRef />
       <Utilitie />
-      <div className='relative'>
-        <SmartCity />
-      </div>
-      <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px]">
+      <SmartCity />
+      <div className="boxanimation fade-in-up-medium mx-auto max-w-[83%] 2xl:max-w-[1580px]">
         <SkyPart />
       </div>
-      <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px] border-b-1 border-gray-2">
+      <div className="boxanimation fade-in-up-medium mx-auto max-w-[83%] 2xl:max-w-[1580px] border-b-1 border-gray-2">
         <Values />
       </div>
-      <div className='mb-[96px]'>
+      <div className='boxanimation fade-in-up-medium mb-[5%] 2xl:mb-[96px]'>
         <Partners />
       </div>
     </>

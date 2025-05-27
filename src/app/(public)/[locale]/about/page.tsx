@@ -45,7 +45,7 @@ export default function About() {
       <Timeline />
       <Philosophy />
       <Business />
-      <div className='mb-[96px]'>
+      <div className='boxanimation fade-in-up-medium mb-[5%] 2xl:mb-[96px]'>
         <Partners />
       </div>
     </>

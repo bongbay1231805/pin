@@ -10,9 +10,9 @@ export default function ClientUseRef() {
   return (
     <>
       <HomeHero onScrollToDigitalCity={scrollToDigitalCity} />
-      <div className="relative bg-no-repeat bg-position-[0_-75px] bg-size-[20%_60%] xl:bg-size-[15%_75%] lg:bg-size-[10%_60%] 2xl:bg-size-[contain]">
+      <div className="boxanimation fade-in-up-medium relative bg-no-repeat bg-position-[0_-75px] bg-size-[20%_60%] xl:bg-size-[15%_75%] lg:bg-size-[10%_60%] 2xl:bg-size-[contain]">
         <div className='absolute top-[-10%] 2xl:top-[-100px] left-0 -translate-x-1/2 max-w-[28%]'>
-          <svg width="544" height="518" viewBox="0 0 544 518" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='max-w-full' width="544" height="518" viewBox="0 0 544 518" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.4">
               <path className="animate-half-circle origin-[50%_50%]!"  d="M65.7464 371.636C-2.17311 259.25 40.3992 122.167 162.869 60.4141" stroke="#4C73A8" strokeWidth="0.75" strokeLinecap="round" />
               <path className="animate-half-circle origin-[50%_50%]!"  d="M67.5533 370.635C68.0948 371.562 67.7143 372.718 66.7119 373.219C65.7094 373.72 64.4581 373.368 63.9166 372.441C63.3751 371.514 63.7557 370.358 64.7581 369.857C65.7606 369.356 67.0119 369.708 67.5533 370.635Z" fill="#4C73A8" />

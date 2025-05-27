@@ -7,9 +7,9 @@ export function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   return (
-    <footer className={`bg-gray-3 text-white  text-center sm:text-left`}>
+    <footer className={`bg-gray-3 text-white text-left`}>
       <div className={`pt-16 ${styles.bgfooter}`}>
-        <div className={`mx-auto max-w-[83%] 2xl:max-w-[1580px]`}>
+        <div className={`boxanimation fade-in-up-medium mx-auto max-w-[83%] 2xl:max-w-[1580px]`}>
           <div className="grid grid-cols-[21.5%_1fr_23.5%] 2xl:grid-cols-[340px_1fr_370px] gap-8">
             <div className="flex items-center justify-normal boxanimation reveal-text">
               <Link href="/" className="flex-shrink-0 flex items-center">
@@ -51,7 +51,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className=" bg-gray-4 text-center mt-[3.5%] 2xl:mt-[65px]">
+        <div className="bg-gray-4 text-center mt-[3.5%] 2xl:mt-[65px]">
           <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[83%] 2xl:max-w-[1580px]">
             <div>
               <p className="text-yellow-2/70 pt-[24px] boxanimation reveal-text">©2025 Pi Group. All Rights Reserved.</p>
