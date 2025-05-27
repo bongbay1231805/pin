@@ -33,7 +33,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <div className='relative min-h-[100%] flex flex-col justify-center lg:block' key={index}>
               <h3 className="sm:text-size-25 md:text-size-30 lg:mt-[20px] lg:text-size-35 font-bold text-yellow-1 uppercase">{slide.title}</h3>
               <p className="sm:text-size-17 md:text-size-20 lg:text-size-25 text-gray-2 font-medium uppercase">{slide.description}</p>
-              <Link href={slide.link} className="hvr-bounce-to-right absolute [&>span]:hidden sm:[&>span]:block sm:[&>img]:hidden right-[60px]  md:top-1/2 -translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold w-[168px] h-[35px] hover:border-yellow-1">
+              <Link href={slide.link} className="absolute [&>span]:hidden sm:[&>span]:block sm:[&>img]:hidden right-[60px]  md:top-1/2 -translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold w-[168px] h-[35px] hover:border-yellow-1 hover:text-yellow-1">
                 <span className='uppercase'>Xem chi tiết</span>
                 <Image width={20} height={20}  className='w-[40px]' src="/readmore.svg" alt="readmore" />
               </Link>

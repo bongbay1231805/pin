@@ -26,13 +26,13 @@ const Navbar = () => {
     }
   }, [pageCurent]); // Re-run effect when pageCurent changes
   return (
-    <nav id="topMenu" className={`fixed  top-0 left-0 w-full z-50 transition-all duration-300 ${(hasShadow || pageCurent) ? 'bg-white' : 'bg-transparent'
+    <nav id="topMenu" className={`fixed  top-0 left-0 w-full z-50 transition-all duration-300 ${(hasShadow || pageCurent) ? 'bg-white border-b-[1px] border-white-1' : 'bg-transparent'
       }`}>
       <div className="mx-auto px-[40px] 3xl:px-0 3xl:max-w-[1755px]">
         <div className={`flex justify-between ${(hasShadow || pageCurent) ? 'h-[100px]' : 'h-[150px]'}`}>
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <Image className={`${hasShadow ? "reveal-text show" : ""}`} src={(hasShadow || pageCurent) ? "/logo-c.svg" : "/logo.svg"} width={(hasShadow || pageCurent) ? 60 : 100} height={(hasShadow || pageCurent) ? 60 : 100} alt="Logo" />
+              <Image src={(hasShadow || pageCurent) ? "/logo-c.svg" : "/logo.svg"} width={(hasShadow || pageCurent) ? 60 : 100} height={(hasShadow || pageCurent) ? 60 : 100} alt="Logo" />
             </Link>
           </div>
           {/* Desktop Navigation */}
@@ -64,7 +64,7 @@ const Navbar = () => {
             <div className="flex justify-end font-semibold items-center grow-1">
               <Link href="/vn" className={` text-yellow-2! ${isActive("/vn") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-yellow-2" : ""}`}>VN</Link>
               <span className="text-gray-300 px-[7px] inline-block">|</span>
-              <Link href="/en" className={`hover:text-yellow-2 ${isActive("/en") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>EN</Link>
+              <Link href="/en" className={`hover:text-yellow-2 ${isActive("/en") ? " text-white-1" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>EN</Link>
             </div>
           </div>
           {/* Mobile menu button */}

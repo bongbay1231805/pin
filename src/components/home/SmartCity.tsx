@@ -31,7 +31,7 @@ export function SmartCity() {
   return (
     <>
       <section className="relative">
-        <div className='absolute top-[-100px] right-0 translate-x-[50%] scale-[80%] ef:scale-[100%]'>
+        <div className='absolute top-[-100px] right-0 translate-x-[50%] overflow-x-hidden'>
           <svg width="544" height="518" viewBox="0 0 544 518" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.4">
               <path className="animate-half-circle origin-[50%_50%]!" d="M65.7464 371.636C-2.17311 259.25 40.3992 122.167 162.869 60.4141" stroke="#4C73A8" strokeWidth="0.75" strokeLinecap="round" />
@@ -100,9 +100,9 @@ export function SmartCity() {
             </g>
           </svg>
         </div>
-        <div className="mx-auto max-w-[1755px]">
-          <div className="grid px-[40px] grid-cols-[55%_45%] 2xl:px-0 2xl:grid-cols-[800px_955px]">
-            <div className="scale-[60%] ef:scale-[80%] 2xl:scale-[100%]  relative ml-0 ex:ml-[115px] mt-[23px] w-[800px] h-[800px] overflow-hidden aspect-square items-center flex justify-center">
+        <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px]">
+          <div className="grid grid-cols-[60%_40%]">
+            <div className="relative  aspect-square items-center flex justify-center">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <svg style={{ transform: `rotate(${rotation}deg)`, transition: "transform 1.5s ease" }} width="572" height="572" viewBox="0 0 572 572" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clipPath="url(#clip0_2002_1264)">
@@ -276,49 +276,49 @@ export function SmartCity() {
                   </defs>
                 </svg>
               </div>
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%]">
-                <svg viewBox="0 0 300 300">
-                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[0.1] -rotate-90 stroke-[#0067D9] [stroke-dasharray:596.6] [stroke-dashoffset:328.13] [animation-delay:1s]">
-                    <circle cx="150" cy="150" r="85" />
-                    <circle cx="235" cy="151" r="0.5" fill="#0067D9" />
-                    <circle cx="65" cy="149" r="0.5" fill="#0067D9" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full p-[10%]">
+                <svg viewBox="0 0 572 572">
+                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[1] -rotate-90 stroke-[#0067D9] [stroke-dasharray:596.6] [stroke-dashoffset:328.13] [animation-delay:1s]">
+                    <circle cx="286" cy="286" r="225" />
+                    <circle cx="114" cy="141" r="1" fill="#0067D9" />
+                    <circle cx="369" cy="495" r="1" fill="#0067D9" />
                   </g>
-                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[0.1] -rotate-90 stroke-[#00D1FE] [stroke-dasharray:628] [stroke-dashoffset:376.8] [animation-delay:0s]">
-                    <circle cx="150" cy="150" r="89" />
-                    <circle cx="239" cy="151" r="0.5" fill="#00D1FE" />
-                    <circle cx="66" cy="179" r="0.5" fill="#00D1FE" />
+                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[1] -rotate-90 stroke-[#00D1FE] [stroke-dasharray:628] [stroke-dashoffset:376.8] [animation-delay:0s]">
+                    <circle cx="286" cy="286" r="230" />
+                    <circle cx="108" cy="141" r="1" fill="#00D1FE" />
+                    <circle cx="392" cy="490" r="1" fill="#00D1FE" />
                   </g>
-                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[0.1]  -rotate-90 stroke-[#00B2EC] [stroke-dasharray:659.4] [stroke-dashoffset:461.58] [animation-delay:5s]">
-                    <circle cx="150" cy="150" r="93" />
-                    <circle cx="243" cy="151" r="0.5" fill="#00B2EC" />
-                    <circle cx="101" cy="229" r="0.5" fill="#00B2EC" />
+                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[1]  -rotate-90 stroke-[#00B2EC] [stroke-dasharray:659.4] [stroke-dashoffset:461.58] [animation-delay:5s]">
+                    <circle cx="286" cy="286" r="235" />
+                    <circle cx="81" cy="171" r="1" fill="#00B2EC" />
+                    <circle cx="443" cy="461" r="1" fill="#00B2EC" />
                   </g>
-                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[0.1]  -rotate-90 stroke-[#00396F] [stroke-dasharray:690.8] [stroke-dashoffset:552.64] [animation-delay:6s]">
-                    <circle cx="150" cy="150" r="97" />
-                    <circle cx="247" cy="151" r="0.5" fill="#00396F" />
-                    <circle cx="164" cy="246" r="0.5" fill="#00396F" />
+                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[1]  -rotate-90 stroke-[#00396F] [stroke-dasharray:690.8] [stroke-dashoffset:552.64] [animation-delay:6s]">
+                    <circle cx="286" cy="286" r="240" />
+                    <circle cx="58" cy="211" r="1" fill="#00396F" />
+                    <circle cx="487" cy="417" r="1" fill="#00396F" />
                   </g>
-                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[0.1]  -rotate-90 stroke-[#0085F0] [stroke-dasharray:722.2] [stroke-dashoffset:250] [animation-delay:3s]">
-                    <circle cx="150" cy="150" r="101" />
-                    <circle cx="251" cy="151" r="0.5" fill="#0085F0" />
-                    <circle cx="146" cy="49" r="0.5" fill="#0085F0" />
+                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[1]  -rotate-90 stroke-[#0085F0] [stroke-dasharray:722.2] [stroke-dashoffset:250] [animation-delay:3s]">
+                    <circle cx="286" cy="286" r="245" />
+                    <circle cx="326" cy="44" r="1" fill="#0085F0" />
+                    <circle cx="201" cy="516" r="1" fill="#0085F0" />
                   </g>
-                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[0.1]  -rotate-90 stroke-[#00579A] [stroke-dasharray:753] [stroke-dashoffset:500] [animation-delay:2s]">
-                    <circle cx="150" cy="150" r="105" />
-                    <circle cx="255" cy="151" r="0.5" fill="#00579A" />
-                    <circle cx="72" cy="220" r="0.5" fill="#00579A" />
+                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[1]  -rotate-90 stroke-[#00579A] [stroke-dasharray:753] [stroke-dashoffset:500] [animation-delay:2s]">
+                    <circle cx="286" cy="286" r="250" />
+                    <circle cx="127" cy="93" r="1" fill="#00579A" />
+                    <circle cx="419" cy="498" r="1" fill="#00579A" />
                   </g>
-                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[0.1]  -rotate-90 stroke-[#00D5FF] [stroke-dasharray:753] [stroke-dashoffset:500] [animation-delay:2.5s]">
-                    <circle cx="150" cy="150" r="109" />
-                    <circle cx="259" cy="151" r="0.5" fill="#00D5FF" />
-                    <circle cx="76" cy="230" r="0.5" fill="#00D5FF" />
+                  <g className="animate-half-circle origin-[50%_50%]! fill-none stroke-[1]  -rotate-90 stroke-[#00D5FF] [stroke-dasharray:753] [stroke-dashoffset:500] [animation-delay:2.5s]">
+                    <circle cx="286" cy="286" r="255" />
+                    <circle cx="109" cy="102" r="1" fill="#00D5FF" />
+                    <circle cx="426" cy="498" r="1" fill="#00D5FF" />
                   </g>
                 </svg>
               </div>
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%]">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full p-[10%]">
                 <svg
-                  width="800"
-                  height="800"
+                  width="100%"
+                  height="100%"
                   viewBox="0 0 800 800"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -486,8 +486,7 @@ export function SmartCity() {
                 </svg>
               </div>
             </div>
-            <div className='pl-[40px] 2xl:pl-[228px] pt-[228px]'>
-              <div>
+            <div className='mt-[228px]'>
                 <h2 className="text-[45px] text-yellow-1 font-bold mb-[20px] boxanimation reveal-text">ĐÔ THỊ SỐ</h2>
                 <Image
                   src="/fhome/picity.svg"
@@ -505,7 +504,6 @@ export function SmartCity() {
                 <Link href="/" className="boxanimation reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] md:w-[203px] md:h-[35px] border border-yellow-1 hover:text-white">
                   KHÁM PHÁ PICITY
                 </Link>
-              </div>
             </div>
           </div>
         </div>

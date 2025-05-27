@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className={`bg-gray-3 text-white  text-center sm:text-left`}>
       <div className={`pt-16 ${styles.bgfooter}`}>
-        <div className={`mx-auto px-[40px] 2xl:px-0 2xl:max-w-[1582px]`}>
+        <div className={`mx-auto px-[40px] 2xl:px-0 max-w-[83%] 2xl:max-w-[1580px]`}>
           <div className="grid grid-cols-[340px_1fr_370px] gap-8">
             <div className="flex items-center justify-normal boxanimation reveal-text">
               <Link href="/" className="flex-shrink-0 flex items-center">
@@ -52,7 +52,7 @@ export function Footer() {
           </div>
         </div>
         <div className=" bg-gray-4 text-center py-[24px_40px mt-[65px]">
-          <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left px-[40px] 2xl:px-0 2xl:max-w-[1582px]">
+          <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left px-[40px] 2xl:px-0 max-w-[83%] 2xl:max-w-[1580px]">
             <div>
               <p className="text-yellow-2/70 pt-[24px] boxanimation reveal-text">©2025 Pi Group. All Rights Reserved.</p>
               <p className='text-gray-7/70 boxanimation reveal-text'>Design with heart by TQ DESIGN</p>
