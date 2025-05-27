@@ -37,7 +37,7 @@ export default function Index() {
     <>
       <ClientUseRef />
       <Utilitie />
-      <div className='relative h-[950px]'>
+      <div className='relative'>
         <SmartCity />
       </div>
       <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px]">

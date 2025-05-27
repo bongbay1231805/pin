@@ -10,13 +10,13 @@ export function Footer() {
     <footer className={`bg-gray-3 text-white  text-center sm:text-left`}>
       <div className={`pt-16 ${styles.bgfooter}`}>
         <div className={`mx-auto max-w-[83%] 2xl:max-w-[1580px]`}>
-          <div className="grid grid-cols-[340px_1fr_370px] gap-8">
+          <div className="grid grid-cols-[21.5%_1fr_23.5%] 2xl:grid-cols-[340px_1fr_370px] gap-8">
             <div className="flex items-center justify-normal boxanimation reveal-text">
               <Link href="/" className="flex-shrink-0 flex items-center">
                 <Image src="/logo-c.svg" width={180} height={180} alt="Logo" />
               </Link>
             </div>
-            <div className='mt-[40px]'>
+            <div className='mt-[5%] 2xl:mt-[40px]'>
               <h3 className="text-xl font-bold mb-[20px] text-gray-4 boxanimation reveal-text">TẬP ĐOÀN PI GROUP</h3>
               <ul className=" text-gray-6">
                 <li className="flex items-center boxanimation reveal-text">
@@ -51,7 +51,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className=" bg-gray-4 text-center py-[24px_40px mt-[65px]">
+        <div className=" bg-gray-4 text-center mt-[3.5%] 2xl:mt-[65px]">
           <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[83%] 2xl:max-w-[1580px]">
             <div>
               <p className="text-yellow-2/70 pt-[24px] boxanimation reveal-text">©2025 Pi Group. All Rights Reserved.</p>
@@ -64,7 +64,7 @@ export function Footer() {
                 alt="Modern city skyline"
                 width={45}
                 height={45}
-                className='absolute right-0 top-1/2 -translate-y-1/2'
+                className='absolute right-0 top-1/2 -translate-y-1/2 z-20 hover:cursor-pointer'
               />
             </div>
             <div className='flex md:justify-center items-center gap-[15px] pr-[58px] mt-[26px]'>

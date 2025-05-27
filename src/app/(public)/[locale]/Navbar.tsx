@@ -28,15 +28,15 @@ const Navbar = () => {
   return (
     <nav id="topMenu" className={`fixed  top-0 left-0 w-full z-50 transition-all duration-300 ${(hasShadow || pageCurent) ? 'bg-white border-b-[1px] border-white-1' : 'bg-transparent'
       }`}>
-      <div className="mx-auto px-[40px] 3xl:px-0 3xl:max-w-[1755px]">
-        <div className={`flex justify-between ${(hasShadow || pageCurent) ? 'h-[100px]' : 'h-[150px]'}`}>
+      <div className="mx-auto max-[91.4%] 2xl:max-w-[1755px]">
+        <div className={`flex justify-between ${(hasShadow || pageCurent) ? 'h-[80px] 2xl:h-[100px]' : 'h-[130px] 2xl:h-[150px]'}`}>
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
               <Image src={(hasShadow || pageCurent) ? "/logo-c.svg" : "/logo.svg"} width={(hasShadow || pageCurent) ? 60 : 100} height={(hasShadow || pageCurent) ? 60 : 100} alt="Logo" />
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <div className={`hidden md:flex md:items-center ml-[50px] ef:ml-[204px] uppercase grow-1 ${(hasShadow || pageCurent) ? 'h-[100px]' : 'h-[115px]'}`}>
+          <div className={`hidden md:flex items-center ml-[11.5%] 2xl:ml-[204px] uppercase grow-1 ${(hasShadow || pageCurent) ? 'h-[80px] 2xl:h-[100px]' : 'h-[90px] 2xl:h-[115px]'}`}>
             <Link href="/about" className={`group relative grow-1 py-2 font-semibold text-center text-white-1 hover:text-yellow-2 ${isActive("/about") ? "text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Giới thiệu</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Giới thiệu</span>
