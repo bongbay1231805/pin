@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 const Utilitie = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <>
-      <div className="container mx-auto md:mt-[5px] max-w-[1755px]" ref={ref}>
+      <div className="mx-auto md:mt-[5px] px-[40px] 2xl:px-0 2xl:max-w-[1755px]" ref={ref}>
         <div className="relative">
           <div className="inset-0">
             <Image

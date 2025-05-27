@@ -22,7 +22,10 @@ strong {
   --breakpoint-md: 991px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1200px;
-  --breakpoint-2xl: 1730px;
+  --breakpoint-ef: 1400px;
+  --breakpoint-ex: 1500px;
+  --breakpoint-2xl: 1660px;
+  --breakpoint-3xl: 1800px;
   --color-blue-1: #20446F;
   --color-blue-2: #3B5D8D;
   --color-blue-3: #13283E;

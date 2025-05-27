@@ -5,8 +5,8 @@ const DigitalCity = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <>
       <div className="mx-auto max-w-[1580px]" ref={ref}>
-        <div className="relative mx-auto px-4 sm:px-6 md:px-[4%] flex items-center justify-center">
-          <div className="text-center max-w-[100%] sm:max-w-[80%] 2xl:max-w-[75%]">
+        <div className="relative mx-auto px-[63px] flex items-center justify-center">
+          <div className="text-center max-w-[1090px]">
             <p className="text-[28px] mt-[71px] text-gray-1 boxanimation reveal-text">NHÀ PHÁT TRIỂN</p>
             <h2 className="text-[45px] font-bold text-yellow-1 -mt-[3px] boxanimation reveal-text">ĐÔ THỊ SỐ TIỆN ÍCH 5★</h2>
             <p className="text-[28px] md:mb-[3.5%] text-gray-1 -mt-[8px] boxanimation reveal-text">CHUẨN QUỐC TẾ</p>

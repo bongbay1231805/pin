@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image'
 import lightImage from "../../../public/fhome/herocity.jpg";
+const heavyImage = "https://room.veritasedu.asia/banner.gif";
 import { useEffect, useState } from 'react';
 type HeroProps = {
   onScrollToDigitalCity: () => void;
@@ -15,7 +16,7 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
   const videoId = "0EJIjmIt7Bc";
   return (
     <>
-      <div style={{ position: 'relative', width: '100vw', height: '1080px', maxHeight: '100%' }}>
+      <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
         {/* Ảnh nhẹ hiển thị ban đầu */}
         {!isLoaded && (
           <Image
@@ -29,13 +30,20 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
           // blurDataURL={lightImage.src} // Hoặc một base64 string của ảnh mờ
           />
         )}
-        <iframe
-          width="100%" height="100%"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&disablekb=1&rel=0`}
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          className={`pointer-events-none ${isLoaded ? 1 : 0}`}
-        ></iframe>
+        <img
+          src={heavyImage}
+          alt="Ảnh nặng"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: isLoaded ? 1 : 0,
+            transition: 'opacity 0.3s ease-in-out',
+          }}
+        />
       </div>
       <div onClick={onScrollToDigitalCity} className="font-semibold text-[18px] absolute bottom-20 left-1/2 -translate-x-1/2 flex justify-center flex-col items-center text-white uppercase gap-[15px]">
         <Image

@@ -27,11 +27,11 @@ export function SmartCity() {
     }, intervalTime);
     // Dọn dẹp interval khi component unmount
     return () => clearInterval(interval);
-  }, []); 
+  }, []);
   return (
     <>
       <section className="relative">
-        <div className='absolute top-[-100px] right-0 translate-x-[50%]'>
+        <div className='absolute top-[-100px] right-0 translate-x-[50%] scale-[80%] ef:scale-[100%]'>
           <svg width="544" height="518" viewBox="0 0 544 518" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.4">
               <path className="animate-half-circle origin-[50%_50%]!" d="M65.7464 371.636C-2.17311 259.25 40.3992 122.167 162.869 60.4141" stroke="#4C73A8" strokeWidth="0.75" strokeLinecap="round" />
@@ -101,8 +101,8 @@ export function SmartCity() {
           </svg>
         </div>
         <div className="mx-auto max-w-[1755px]">
-          <div className="grid grid-cols-[800px_955px]">
-            <div className="relative ml-[115px] mt-[23px] w-[800px] h-[800px] overflow-hidden aspect-square items-center flex justify-center">
+          <div className="grid px-[40px] grid-cols-[55%_45%] 2xl:px-0 2xl:grid-cols-[800px_955px]">
+            <div className="scale-[60%] ef:scale-[80%] 2xl:scale-[100%]  relative ml-0 ex:ml-[115px] mt-[23px] w-[800px] h-[800px] overflow-hidden aspect-square items-center flex justify-center">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <svg style={{ transform: `rotate(${rotation}deg)`, transition: "transform 1.5s ease" }} width="572" height="572" viewBox="0 0 572 572" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clipPath="url(#clip0_2002_1264)">
@@ -486,24 +486,26 @@ export function SmartCity() {
                 </svg>
               </div>
             </div>
-            <div className='ml-[228px] mt-[228px]'>
-              <h2 className="text-[45px] text-yellow-1 font-bold mb-[20px] boxanimation reveal-text">ĐÔ THỊ SỐ</h2>
-              <Image
-                src="/fhome/picity.svg"
-                alt="Smart City Features"
-                width={366}
-                height={50}
-                className="mb-[54px] boxanimation reveal-text"
-              />
-              <p className="text-gray-5 font-normal mb-[13px] boxanimation reveal-text">
-                Picity là mô hình đô thị số tiên phong được phát triển bởi Pi Group.
-              </p>
-              <p className="text-gray-5 leading-[28px] text-justify space-x-[0.35px] mb-[43px] boxanimation reveal-text">
-                Kết hợp công nghệ 4.0 (IoT và AI) trên nền tảng độc quyền, cùng <br /> hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, <br /> Picity mang đến trải nghiệm sống chuẩn quốc tế, đáp ứng mọi <br /> nhu cầu của cư dân thời đại mới.
-              </p>
-              <Link href="/" className="boxanimation reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] md:w-[203px] md:h-[35px] border border-yellow-1 hover:text-white">
-                KHÁM PHÁ PICITY
-              </Link>
+            <div className='pl-[40px] 2xl:pl-[228px] pt-[228px]'>
+              <div>
+                <h2 className="text-[45px] text-yellow-1 font-bold mb-[20px] boxanimation reveal-text">ĐÔ THỊ SỐ</h2>
+                <Image
+                  src="/fhome/picity.svg"
+                  alt="Smart City Features"
+                  width={366}
+                  height={50}
+                  className="mb-[20px] ef:mb-[54px] boxanimation reveal-text"
+                />
+                <p className="text-gray-5 font-normal mb-[13px] boxanimation reveal-text">
+                  Picity là mô hình đô thị số tiên phong được phát triển bởi Pi Group.
+                </p>
+                <p className="text-gray-5 leading-[28px] text-justify space-x-[0.35px] mb-[43px] boxanimation reveal-text">
+                  Kết hợp công nghệ 4.0 (IoT và AI) trên nền tảng độc quyền, cùng <br /> hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, <br /> Picity mang đến trải nghiệm sống chuẩn quốc tế, đáp ứng mọi <br /> nhu cầu của cư dân thời đại mới.
+                </p>
+                <Link href="/" className="boxanimation reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] md:w-[203px] md:h-[35px] border border-yellow-1 hover:text-white">
+                  KHÁM PHÁ PICITY
+                </Link>
+              </div>
             </div>
           </div>
         </div>

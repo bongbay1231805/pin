@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav id="topMenu" className={`fixed  top-0 left-0 w-full z-50 transition-all duration-300 ${(hasShadow || pageCurent) ? 'bg-white' : 'bg-transparent'
       }`}>
-      <div className="container mx-auto max-w-[1755px]">
+      <div className="mx-auto px-[40px] 3xl:px-0 3xl:max-w-[1755px]">
         <div className={`flex justify-between ${(hasShadow || pageCurent) ? 'h-[100px]' : 'h-[150px]'}`}>
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
@@ -36,7 +36,7 @@ const Navbar = () => {
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <div className={`hidden md:flex md:items-center ml-[204px] uppercase grow-1 ${(hasShadow || pageCurent) ? 'h-[100px]' : 'h-[115px]'}`}>
+          <div className={`hidden md:flex md:items-center ml-[50px] ef:ml-[204px] uppercase grow-1 ${(hasShadow || pageCurent) ? 'h-[100px]' : 'h-[115px]'}`}>
             <Link href="/about" className={`group relative grow-1 py-2 font-semibold text-center text-white-1 hover:text-yellow-2 ${isActive("/about") ? "text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Giới thiệu</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Giới thiệu</span>

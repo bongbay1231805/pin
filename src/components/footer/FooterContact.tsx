@@ -8,7 +8,7 @@ export function FooterContact() {
   return (
     <footer className={`bg-gray-3 text-white`}>
       <div className=" bg-gray-4 py-8 text-center text-sm">
-        <div className="relative container pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[1582px]">
+        <div className="relative pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left px-[40px] 2xl:px-0 2xl:max-w-[1582px]">
           <div>
             <p className="text-yellow-2">©2025 Pi Group. All Rights Reserved.</p>
             <p className='text-gray-7'>Design with heart by TQ DESIGN</p>

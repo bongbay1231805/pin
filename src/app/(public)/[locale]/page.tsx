@@ -37,13 +37,13 @@ export default function Index() {
     <>
       <ClientUseRef />
       <Utilitie />
-      <div className='relative h-[880px]'>
+      <div className='relative h-[880px] overflow-x-hidden'>
         <SmartCity />
       </div>
-      <div className="mx-auto max-w-[1582px] ">
+      <div className="mx-auto px-[40px] 2xl:px-0 2xl:max-w-[1582px]">
         <SkyPart />
       </div>
-      <div className="mx-auto max-w-[1582px] border-b-1 border-gray-2">
+      <div className="mx-auto px-[40px] 2xl:px-0 2xl:max-w-[1582px] border-b-1 border-gray-2">
         <Values />
       </div>
       <div className='mb-[96px]'>
