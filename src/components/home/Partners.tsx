@@ -30,7 +30,7 @@ export function Partners() {
     }
   ]
   return (
-    <div className="m-auto px-[40px] 2xl:px-0 max-w-[83%] 2xl:max-w-[1580px]">
+    <div className="m-auto max-w-[83%] 2xl:max-w-[1580px]">
       <h2 className="text-[42px] text-gray-1 font-bold text-center pt-[90px] mb-[51px]">ĐỐI TÁC</h2>
       <div className={`grid gap-8 items-center ${styles.carouselonlycss}`}>
         <div className={`${styles.groupcarousel}`}>

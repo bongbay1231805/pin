@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 // import { Locale} from 'next-intl';
 // import { setRequestLocale } from 'next-intl/server';
 import ClientUseRef from '@/components/client/UseRef';
@@ -40,10 +40,10 @@ export default function Index() {
       <div className='relative h-[950px]'>
         <SmartCity />
       </div>
-      <div className="mx-auto px-[40px] 2xl:px-0 max-w-[83%] 2xl:max-w-[1580px]">
+      <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px]">
         <SkyPart />
       </div>
-      <div className="mx-auto px-[40px] 2xl:px-0 max-w-[83%] 2xl:max-w-[1580px] border-b-1 border-gray-2">
+      <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px] border-b-1 border-gray-2">
         <Values />
       </div>
       <div className='mb-[96px]'>
