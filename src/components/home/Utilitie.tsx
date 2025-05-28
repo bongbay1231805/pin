@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 const Utilitie = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <>
-      <div className="boxanimation fade-in-up-medium mx-auto mt-[5px] max-w-[83%] 2xl:max-w-[1580px]" ref={ref}>
+      <div className="boxanimation mx-auto mt-[5px] max-w-[83%] 2xl:max-w-[1580px]" ref={ref}>
         <div className="relative">
           <div className="inset-0">
             <Image
@@ -12,7 +12,7 @@ const Utilitie = forwardRef<HTMLDivElement>((props, ref) => {
               alt="Modern city skyline"
               width={1580}
               height={1110}
-              className="m-auto"
+              className="m-auto fade-in-up-medium"
             />
           </div>
         </div>

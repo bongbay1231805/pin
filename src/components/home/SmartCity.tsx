@@ -100,7 +100,7 @@ export function SmartCity() {
             </g>
           </svg>
         </div>
-        <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px]">
+        <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px] boxanimation">
           <div className="grid grid-cols-[60%_40%]">
             <div className="relative  aspect-square items-center flex justify-center">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
@@ -487,23 +487,23 @@ export function SmartCity() {
               </div>
             </div>
             <div className='mt-[36%] 2xl:mt-[228px]'>
-                <h2 className="text-[45px] text-yellow-1 font-bold mb-[20px] boxanimation reveal-text">ĐÔ THỊ SỐ</h2>
-                <Image
-                  src="/fhome/picity.svg"
-                  alt="Smart City Features"
-                  width={366}
-                  height={50}
-                  className="mb-[8.5%] 2xl:mb-[54px] boxanimation reveal-text"
-                />
-                <p className="text-gray-5 font-normal mb-[13px] boxanimation reveal-text">
-                  Picity là mô hình đô thị số tiên phong được phát triển bởi Pi Group.
-                </p>
-                <p className="text-gray-5 leading-[28px] text-justify space-x-[0.35px] mb-[7%] 2xl:mb-[43px] boxanimation reveal-text">
-                  Kết hợp công nghệ 4.0 (IoT và AI) trên nền tảng độc quyền, cùng <br /> hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, <br /> Picity mang đến trải nghiệm sống chuẩn quốc tế, đáp ứng mọi <br /> nhu cầu của cư dân thời đại mới.
-                </p>
-                <Link href="/" className="boxanimation reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] md:w-[203px] md:h-[35px] border border-yellow-1 hover:text-white">
-                  KHÁM PHÁ PICITY
-                </Link>
+              <h2 className="text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">ĐÔ THỊ SỐ</h2>
+              <Image
+                src="/fhome/picity.svg"
+                alt="Smart City Features"
+                width={366}
+                height={50}
+                className="mb-[8.5%] 2xl:mb-[54px]  reveal-text"
+              />
+              <p className="text-gray-5 font-normal mb-[13px]  reveal-text">
+                Picity là mô hình đô thị số tiên phong được phát triển bởi Pi Group.
+              </p>
+              <p className="text-gray-5 leading-[28px] text-justify space-x-[0.35px] mb-[7%] 2xl:mb-[43px]  reveal-text">
+                Kết hợp công nghệ 4.0 (IoT và AI) trên nền tảng độc quyền, cùng <br /> hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, <br /> Picity mang đến trải nghiệm sống chuẩn quốc tế, đáp ứng mọi <br /> nhu cầu của cư dân thời đại mới.
+              </p>
+              <Link href="/" className="reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] md:w-[203px] md:h-[35px] border border-yellow-1 hover:text-white">
+                KHÁM PHÁ PICITY
+              </Link>
             </div>
           </div>
         </div>

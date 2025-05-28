@@ -10,7 +10,7 @@ export default function ClientUseRef() {
   return (
     <>
       <HomeHero onScrollToDigitalCity={scrollToDigitalCity} />
-      <div className="boxanimation fade-in-up-medium relative bg-no-repeat bg-position-[0_-75px] bg-size-[20%_60%] xl:bg-size-[15%_75%] lg:bg-size-[10%_60%] 2xl:bg-size-[contain]">
+      <div className="boxanimation relative bg-no-repeat bg-position-[0_-75px] bg-size-[20%_60%] xl:bg-size-[15%_75%] lg:bg-size-[10%_60%] 2xl:bg-size-[contain]">
         <div className='absolute top-[-10%] 2xl:top-[-100px] left-0 -translate-x-1/2 max-w-[28%]'>
           <svg className='max-w-full' width="544" height="518" viewBox="0 0 544 518" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.4">

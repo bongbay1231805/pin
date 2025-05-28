@@ -54,8 +54,9 @@ strong {
   --animate-energy-circle: energy-circle 1s ease 0.2s infinite;
   --animate-energy-rotate: half-circle 8s linear infinite;
   --animate-half-circle: half-circle 4s linear infinite;
-  --animate-reveal-text: reveal-text 1.5s ease-in-out forwards 0.5s;
-  --animate-fade-in-up-medium: fade-in-up-medium 1.5s ease-in-out both 0.5s;
+  --animate-reveal-text: reveal-text 1s ease-in-out forwards;
+  --animate-fade-in-up-medium: fade-in-up-medium 1s ease-in-out both;
+  --animate-fade-in-left-short: fade-in-left-short 1s both;
   @keyframes fade-in-scale {
     0% {
       opacity: 0;
@@ -68,19 +69,21 @@ strong {
   }
   @keyframes reveal-text {
     0% {
-      clip-path: inset(50%);
-      -webkit-clip-path: inset(50%);
+      transform: translateX(17%);
+      clip-path: inset(0px 50% 0px 50%);
+      -webkit-clip-path: inset(0px 50% 0px 50%);
     }
     100% {
-      clip-path: inset(0px);
-      -webkit-clip-path: inset(0px);
+      clip-path: inset(0px 0px 0px 0px);
+      -webkit-clip-path: inset(0px 0px 0px 0px);
+      transform: translateX(0%);
       opacity: 1;
     }
   }
   @keyframes fade-in-up-medium {
     0% {
       opacity: 0;
-      transform: translateY(200px);
+      transform: translateY(50px);
     }
     50% {
       opacity: 0.3;
@@ -114,6 +117,16 @@ strong {
       transform-origin: 0 50%;
     }
   }
+  @keyframes fade-in-left-short {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0)
+    }
+  }
 }
 @layer components {
   .reveal-text {
@@ -122,11 +135,21 @@ strong {
   .reveal-text.show {
     @apply animate-reveal-text;
   }
+  .show .reveal-text {
+    @apply animate-reveal-text;
+  }
   .fade-in-up-medium {
     @apply opacity-0 transform relative;
   }
-  .fade-in-up-medium.show {
+  .fade-in-up-medium.show, .show .fade-in-up-medium {
     @apply animate-fade-in-up-medium;
+  }
+  .fade-in-left-short {
+    opacity: 0;
+    transform: translateX(-20px)
+  }
+  .fade-in-left-short.show, .show .fade-in-left-short {
+    @apply animate-fade-in-left-short;
   }
   .hvr-bounce-to-right {
     @apply inline-block align-middle relative;
@@ -156,6 +179,12 @@ strong {
   }
 }
 @layer utilities {
+  #menusub:not(.active) > img:last-child  {
+    display: none;
+  }
+  #menusub:is(.active) > img:first-child  {
+    display: none;
+  }
   .carouselitemcenter:not(.center) svg {
     @apply opacity-0;
   }

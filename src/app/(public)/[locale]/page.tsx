@@ -27,7 +27,7 @@ export default function Index() {
       },
       {
         // threshold: Array.from({ length: 11 }, (_, i) => i / 10), // 0, 0.1, 0.2,...1
-        threshold: 0, // 0, 0.1, 0.2,...1
+        threshold: 0.2, // 0, 0.1, 0.2,...1
       }
     );
     boxes.forEach(box => observer.observe(box));
@@ -38,13 +38,13 @@ export default function Index() {
       <ClientUseRef />
       <Utilitie />
       <SmartCity />
-      <div className="boxanimation fade-in-up-medium mx-auto max-w-[83%] 2xl:max-w-[1580px]">
+      <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px] boxanimation">
         <SkyPart />
       </div>
-      <div className="boxanimation fade-in-up-medium mx-auto max-w-[83%] 2xl:max-w-[1580px] border-b-1 border-gray-2">
+      <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px] boxanimation border-b-1 border-gray-2">
         <Values />
       </div>
-      <div className='boxanimation fade-in-up-medium mb-[5%] 2xl:mb-[96px]'>
+      <div className='mb-[5%] 2xl:mb-[96px]'>
         <Partners />
       </div>
     </>

@@ -37,9 +37,9 @@ export default function SkyPart() {
   ];
   const OPTIONS: EmblaOptionsType = { axis: 'y',loop: true }
   return (
-    <>
+    <div className="mx-auto max-w-[83%] 2xl:max-w-[1580px]">
       <EmblaCarousel slides={slides} options={OPTIONS} />
-    </>
+    </div>
   )
 }
 SkyPart.displayName = 'SkyPart';
