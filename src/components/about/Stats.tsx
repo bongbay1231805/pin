@@ -1,7 +1,7 @@
 'use client';
 export function Stats() {
   return (
-    <div className="mx-auto py-16 mt-[115px] max-w-[85%]  2xl:max-w-[1580px]">
+    <div className="mx-auto py-16 mt-[115px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-[20px] 2xl:text-[28px] text-gray-1 font-normal mb-[15px]">NHÀ PHÁT TRIỂN</h2>

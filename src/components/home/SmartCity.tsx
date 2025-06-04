@@ -171,9 +171,9 @@ export function SmartCity() {
             <path className="animate-half-circle origin-[50%_50%]!" d="M431.072 402.563C430.289 403.328 430.318 404.532 431.145 405.262C431.972 405.986 433.274 405.959 434.064 405.195C434.847 404.43 434.818 403.226 433.991 402.496C433.164 401.765 431.862 401.799 431.072 402.563Z" fill="#4C73A8" />
           </g>
         </svg>
-        <div className="mx-auto max-w-[85%]  2xl:max-w-[1580px] boxanimation">
-          <div className="grid grid-cols-[60%_40%] gap-[30px] 2xl:gap-0 items-center">
-            <div className="@container relative  aspect-square items-center flex justify-center">
+        <div className="mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] boxanimation">
+          <div className="grid grid-cols-1 sm:grid-cols-[60%_40%] gap-[10px] 2xl:gap-0 items-center">
+            <div className="@container order-1 sm:order-0 relative  aspect-square items-center flex justify-center">
               <svg className="absolute overflow-x-clip max-w-70 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} width="572" height="572" viewBox="0 0 572 572" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_2002_1264)">
                   <path
@@ -549,22 +549,28 @@ export function SmartCity() {
                 </svg>
               </div>
             </div>
-            <div className='2xl:mt-[228px]'>
+            <div className='my-[40px] 2xl:mt-[228px] text-center sm:text-left'>
               <h2 className="text-size-25 2xl:text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">ĐÔ THỊ SỐ</h2>
               <Image
                 src="/fhome/picity.svg"
                 alt="Smart City Features"
                 width={366}
                 height={50}
-                className="mb-[8.5%] 2xl:mb-[54px] reveal-text w-[60%] 2xl:w-auto"
+                className="mb-[25px] 2xl:mb-[54px] reveal-text w-[60%] mx-auto sm:mx-0 2xl:w-auto"
               />
               <p className="text-gray-5 font-normal mb-[13px] reveal-text text-size-14 2xl:text-size-17">
                 Picity là mô hình đô thị số tiên phong được phát triển bởi Pi Group.
               </p>
-              <p className="text-gray-5 leading-[28px] text-justify space-x-[0.35px] mb-[7%] 2xl:mb-[43px] reveal-text text-size-14 2xl:text-size-17">
+              <p className="text-gray-5 leading-[28px]  space-x-[0.35px] mb-0 sm:mb-[7%] 2xl:mb-[43px] reveal-text text-center text-size-14 sm:text-justify 2xl:text-size-17">
                 Kết hợp công nghệ 4.0 (IoT và AI) trên nền tảng độc quyền, cùng <br /> hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, <br /> Picity mang đến trải nghiệm sống chuẩn quốc tế, đáp ứng mọi <br /> nhu cầu của cư dân thời đại mới.
               </p>
-              <Link href="/" className="reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] md:w-[203px] md:h-[35px] border border-yellow-1 hover:text-white">
+              <Link href="/" className="
+              reveal-text hvr-bounce-to-right sm:flex items-center justify-center
+               text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] 
+               md:w-[203px] md:h-[35px] 
+               border border-yellow-1 hover:text-white
+               hidden
+               ">
                 KHÁM PHÁ PICITY
               </Link>
             </div>

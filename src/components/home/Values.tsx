@@ -62,22 +62,22 @@ export function Values() {
   ]
   return (
     <div className="mx-auto border-b-1 border-gray-2 boxanimation">
-      <div className="grid grid-cols-2 gap-8">
-        <div className="mt-[210px]">
-          <h2 className="text-size-25 2xl:text-[45px] text-yellow-1 font-bold  reveal-text">VĂN HÓA DOANH NGHIỆP</h2>
-          <p className="text-[20px] 2xl:text-[28px] text-blue-4 mb-[41px]  reveal-text">PHÁT TRIỂN BỀN VỮNG</p>
-          <p className="text-gray-5 mb-[39px] max-w-[558px] leading-[28px]  reveal-text">Pi Group xây dựng nền tảng vững chắc dựa trên 3 giá trị cốt lõi: &quot;Chính trực tạo niềm tin – Vượt trội dẫn lối thành công – Tận tâm kiến tạo giá trị.&ldquo; Đây là cam kết của Pi Group trong việc kiến tạo những giá trị bền vững, vì một tương lai phát triển cho cộng đồng và xã hội.</p>
-          <Link href="/" className=" reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 font-semibold w-[138] h-[35] border border-yellow-1 hover:text-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center">
+        <div className="mt-[30px] 2xl:mt-[210px] text-center sm:text-left">
+          <h2 className="text-size-25 2xl:text-[45px] text-yellow-1 font-bold reveal-text">VĂN HÓA DOANH NGHIỆP</h2>
+          <p className="text-[20px] 2xl:text-[28px] text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">PHÁT TRIỂN BỀN VỮNG</p>
+          <p className="text-gray-5 mb-[10px] md:mb-[39px] text-center sm:text-left mx-auto sm:mx-0 sm:max-w-[558px] leading-[28px]  reveal-text">Pi Group xây dựng nền tảng vững chắc dựa trên 3 giá trị cốt lõi: &quot;Chính trực tạo niềm tin – Vượt trội dẫn lối thành công – Tận tâm kiến tạo giá trị.&ldquo; Đây là cam kết của Pi Group trong việc kiến tạo những giá trị bền vững, vì một tương lai phát triển cho cộng đồng và xã hội.</p>
+          <Link href="/" className=" reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-semibold w-[138] h-[35] border border-yellow-1 hover:text-white">
             XEM THÊM
           </Link>
         </div>
-        <div className="grid md:grid-cols-1 gap-8 mt-[61px]">
+        <div className="grid md:grid-cols-1 gap-8 md:mt-[61px]">
           {values.map((value, index) => (
-            <div key={index} className="reveal-text flex gap-[45px] relative after:content-[''] after:absolute after:w-[100%] sm:after:w-[72%] after:left-[50%] sm:after:left-[47%] after:-translate-1/2 after:bottom-0 after:h-[1px] after:bg-yellow-1/20 last:after:content-none pb-[40px] pl-[101px] last:border-0 last:pb-[60px]">
+            <div key={index} className="reveal-text flex items-center gap-[45px] relative after:content-[''] after:absolute after:w-[100%] sm:after:w-[72%] after:left-[50%] sm:after:left-[47%] after:-translate-1/2 after:bottom-0 after:h-[1px] after:bg-yellow-1/20 last:after:content-none pb-[20px] md:last:pb-[60px] md:pb-[40px] md:pl-[101px] last:border-0">
               <div className={`flex items-center justify-center`}>
                 {value.icon}
               </div>
-              <h3 className="text-[20px] 2xl:text-[30px] font-bold text-yellow-1 mt-[11%] ml-[8px]">{value.title}</h3>
+              <h3 className="text-[20px] 2xl:text-[30px] font-bold text-yellow-1 md:mt-[11%] ml-[8px]">{value.title}</h3>
             </div>
           ))}
         </div>

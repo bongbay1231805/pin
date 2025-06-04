@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 const DigitalCity = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <>
-      <div className="mx-auto max-w-[85%]  2xl:max-w-[1058px]" ref={ref}>
+      <div className="mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1058px]" ref={ref}>
         <div className="relative mx-auto flex items-center justify-center">
           <div className="text-center max-w-[1090px]">
             <p className="text-[20px] 2xl:text-[28px] mt-[7%] 2xl:mt-[71px] text-gray-1 fade-in-left-short">NHÀ PHÁT TRIỂN</p>

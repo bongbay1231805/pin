@@ -41,7 +41,7 @@ export function Timeline() {
   ];
   return (
     <section className="bg-white py-16">
-      <div className="mx-auto max-w-[85%]  2xl:max-w-[1580px]">
+      <div className="mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
         <h2 className="text-[40px] text-blue-1 font-bold text-center mb-12">LỊCH SỬ HÌNH THÀNH</h2>
         <Carousel
           opts={{

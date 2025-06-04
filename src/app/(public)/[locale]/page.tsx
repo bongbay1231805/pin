@@ -38,10 +38,10 @@ export default function Index() {
       <ClientUseRef />
       <Utilitie />
       <SmartCity />
-      <div className="mx-auto max-w-[85%]  2xl:max-w-[1580px] boxanimation">
+      <div className="mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] boxanimation">
         <SkyPart />
       </div>
-      <div className="mx-auto max-w-[85%]  2xl:max-w-[1580px] boxanimation border-b-1 border-gray-2">
+      <div className="mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] boxanimation border-b-1 border-gray-2">
         <Values />
       </div>
       <div className='mb-[5%] 2xl:mb-[96px]'>

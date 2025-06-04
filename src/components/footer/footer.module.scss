@@ -4,3 +4,8 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+@media (max-width: 768px) {
+  .bgfooter {
+    background-image: url('/bg-footer-m.png');
+  }
+}

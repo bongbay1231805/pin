@@ -9,10 +9,10 @@ export function Footer() {
   return (
     <footer className={`bg-gray-3 text-white text-left`}>
       <div className={`pt-16 ${styles.bgfooter}`}>
-        <div className={`boxanimation fade-in-up-medium mx-auto max-w-[85%]  2xl:max-w-[1580px]`}>
-          <div className="grid grid-cols-[21.5%_1fr_23.5%] 2xl:grid-cols-[340px_1fr_370px] gap-8">
-            <div className="flex items-center justify-normal reveal-text">
-              <Link href="/" className="flex-shrink-0 flex items-center">
+        <div className={`boxanimation fade-in-up-medium mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]`}>
+          <div className="grid grid-cols-1 sm:grid-cols-[21.5%_1fr_23.5%] 2xl:grid-cols-[340px_1fr_370px] gap-8">
+            <div className="flex items-center justify-center sm:justify-normal reveal-text">
+              <Link href="/" className="flex-shrink-0 flex items-center ">
                 <Image src="/logo-c.svg" className='w-[120px] h-[120px] 2xl:w-auto 2xl:h-auto' width={180} height={180} alt="Logo" />
               </Link>
             </div>
@@ -52,8 +52,8 @@ export function Footer() {
           </div>
         </div>
         <div className="boxanimation  bg-gray-4 text-center mt-[3.5%] 2xl:mt-[65px]">
-          <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]  2xl:max-w-[1580px]">
-            <div>
+          <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+            <div className='text-centermd:text-left order-1 sm:order-0'>
               <p className="text-yellow-2/70 pt-[24px] text-[15px] 2xl:text-[17px] reveal-text">©2025 Pi Group. All Rights Reserved.</p>
               <p className='text-gray-7/70 text-[15px] 2xl:text-[17px] reveal-text'>Design with heart by TQ DESIGN</p>
             </div>
@@ -67,7 +67,7 @@ export function Footer() {
                 className='absolute right-0 top-1/2 -translate-y-1/2 z-20 hover:cursor-pointer'
               />
             </div>
-            <div className='flex md:justify-center items-center gap-[15px] pr-[58px] mt-[26px]'>
+            <div className='flex justify-center items-center gap-[15px] pr-[58px] mt-[26px]'>
               <Link href="/" className="flex-shrink-0 flex items-center">
                 <Image src="/fb.svg" width={41} height={41} alt="Social" />
               </Link>
