@@ -31,8 +31,8 @@ export function Partners() {
   ]
   return (
     <div className='mb-[5%] 2xl:mb-[96px]'>
-      <div className="m-auto max-w-[83%] 2xl:max-w-[1580px]">
-        <h2 className="text-[42px] text-gray-1 font-bold text-center pt-[90px] mb-[51px]">ĐỐI TÁC</h2>
+      <div className="m-auto max-w-[85%]  2xl:max-w-[1580px]">
+        <h2 className="text-[25px] 2xl:text-[42px] text-gray-1 font-bold text-center pt-[90px] mb-[51px]">ĐỐI TÁC</h2>
         <div className={`grid gap-8 items-center ${styles.carouselonlycss}`}>
           <div className={`${styles.groupcarousel}`}>
             {partners.map((partner: { img: string, width: number, height: number }, index) => (

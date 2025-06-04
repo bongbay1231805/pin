@@ -9,15 +9,15 @@ export function Footer() {
   return (
     <footer className={`bg-gray-3 text-white text-left`}>
       <div className={`pt-16 ${styles.bgfooter}`}>
-        <div className={`boxanimation fade-in-up-medium mx-auto max-w-[83%] 2xl:max-w-[1580px]`}>
+        <div className={`boxanimation fade-in-up-medium mx-auto max-w-[85%]  2xl:max-w-[1580px]`}>
           <div className="grid grid-cols-[21.5%_1fr_23.5%] 2xl:grid-cols-[340px_1fr_370px] gap-8">
             <div className="flex items-center justify-normal reveal-text">
               <Link href="/" className="flex-shrink-0 flex items-center">
-                <Image src="/logo-c.svg" width={180} height={180} alt="Logo" />
+                <Image src="/logo-c.svg" className='w-[120px] h-[120px] 2xl:w-auto 2xl:h-auto' width={180} height={180} alt="Logo" />
               </Link>
             </div>
             <div className='mt-[5%] 2xl:mt-[40px]'>
-              <h3 className="text-xl font-bold mb-[20px] text-gray-4 boxanimation reveal-text reveal-text">TẬP ĐOÀN PI GROUP</h3>
+              <h3 className="text-[20px] font-bold mb-[10px] 2xl:mb-[20px] text-gray-4 boxanimation reveal-text reveal-text">TẬP ĐOÀN PI GROUP</h3>
               <ul className=" text-gray-6">
                 <li className="flex items-center  reveal-text">
                   <svg className='mr-[5px]' width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,23 +39,23 @@ export function Footer() {
                   info@pigroup.vn</li>
               </ul>
             </div>
-            <div className='mt-[30px] leading-[30px]'>
+            <div className='2xl:mt-[30px] 2xl:leading-[30px]'>
               <ul className="space-y-2 text-gray-6 uppercase">
-                <li><Link href="/#" className="hover:text-yellow-1 text-gray-6 font-semibold reveal-text">Giới thiệu</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold reveal-text">Hệ Sinh Thái</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold reveal-text">Đô thị số Picity</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold reveal-text">Tin Tức</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold reveal-text">Phát Triển Nhân Lực</Link></li>
-                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold reveal-text">Liên Hệ</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1 text-gray-6 font-semibold text-[16px] 2xl:text-[17px] reveal-text">Giới thiệu</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold text-[16px] 2xl:text-[17px] reveal-text">Hệ Sinh Thái</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold text-[16px] 2xl:text-[17px] reveal-text">Đô thị số Picity</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold text-[16px] 2xl:text-[17px] reveal-text">Tin Tức</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold text-[16px] 2xl:text-[17px] reveal-text">Phát Triển Nhân Lực</Link></li>
+                <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold text-[16px] 2xl:text-[17px] reveal-text">Liên Hệ</Link></li>
               </ul>
             </div>
           </div>
         </div>
         <div className="boxanimation  bg-gray-4 text-center mt-[3.5%] 2xl:mt-[65px]">
-          <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[83%] 2xl:max-w-[1580px]">
+          <div className="relative  pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]  2xl:max-w-[1580px]">
             <div>
-              <p className="text-yellow-2/70 pt-[24px]  reveal-text">©2025 Pi Group. All Rights Reserved.</p>
-              <p className='text-gray-7/70  reveal-text'>Design with heart by TQ DESIGN</p>
+              <p className="text-yellow-2/70 pt-[24px] text-[15px] 2xl:text-[17px] reveal-text">©2025 Pi Group. All Rights Reserved.</p>
+              <p className='text-gray-7/70 text-[15px] 2xl:text-[17px] reveal-text'>Design with heart by TQ DESIGN</p>
             </div>
             <div>
               <Image

@@ -36,7 +36,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <NextIntlClientProvider>
         <div>
           <PublicNavigation />
-          <div>{children}</div>
+          <div className='overflow-x-hidden'>{children}</div>
         </div>
         {isContactPage ? (
           <FooterContact />

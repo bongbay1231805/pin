@@ -17,6 +17,7 @@ strong {
 @theme {
   --background: #fff;
   --font-montserrat: Montserrat, "Montserrat", sans-serif;
+  --breakpoint-sml: 320px;
   --breakpoint-li: 500px;
   --breakpoint-sm: 768px;
   --breakpoint-md: 991px;
@@ -45,6 +46,7 @@ strong {
   --color-gray-9: #CDCDCD;
   --color-zgray-1: #A4AABB;
   --color-white-1: #F2F2F2;
+  --text-size-14: 14px;
   --text-size-17: 17px;
   --text-size-35: 35px;
   --text-size-30: 30px;
@@ -126,6 +128,17 @@ strong {
       opacity: 1;
       transform: translateX(0)
     }
+  }
+}
+@container (min-width: 320px) {
+  .top--10 {
+    @apply  top-[-10%]
+  }
+  .max-w-70 {
+    @apply max-w-[70%]
+  }
+  .max-w-28 {
+    @apply max-w-[28%]
   }
 }
 @layer components {

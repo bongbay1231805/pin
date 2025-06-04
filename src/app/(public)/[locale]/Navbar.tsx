@@ -36,7 +36,7 @@ const Navbar = () => {
             </Link>
           </div>
           {/* Desktop Navigation */}
-          <div className={`hidden md:flex items-center ml-[11.5%] 2xl:ml-[204px] uppercase grow-1 ${(hasShadow || pageCurent) ? 'h-[80px] 2xl:h-[100px]' : 'h-[90px] 2xl:h-[115px]'}`}>
+          <div className={`hidden xl:flex items-center ml-[11.5%] 2xl:ml-[204px] uppercase grow-1 ${(hasShadow || pageCurent) ? 'h-[80px] 2xl:h-[100px]' : 'h-[90px] 2xl:h-[115px]'}`}>
             <Link href="/about" className={`group relative grow-1 py-2 font-semibold text-center text-white-1 hover:text-yellow-2 ${isActive("/about") ? "text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Giới thiệu</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Giới thiệu</span>
@@ -68,7 +68,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center xl:hidden">
             <button
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100"
@@ -91,7 +91,7 @@ const Navbar = () => {
       {isHomePage ? null : <SubNavbar hasShadow={hasShadow} pageCurent={pageCurent} nameCurent={nameCurent} />}
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white">
+        <div className="xl:hidden bg-white">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
               Home

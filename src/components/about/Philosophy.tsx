@@ -3,7 +3,7 @@ import Image from "next/image"
 export function Philosophy() {
   return (
     <section className="py-16">
-      <div className="max-w-[83%] 2xl:max-w-[1580px] mx-auto  bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-no-repeat bg-right">
+      <div className="max-w-[85%]  2xl:max-w-[1580px] mx-auto  bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-no-repeat bg-right">
         <div className="grid items-center grid-cols-1 md:grid-cols-2 gap-8 mb-8 uppercase text-size-35 py-[2px] text-white">
           <div>
             <h3>NGHĨ <span className="text-yellow-1">ĐỘC ĐÁO</span></h3>
@@ -16,7 +16,7 @@ export function Philosophy() {
           </div>
         </div>
       </div>
-      <div className="max-w-[83%] 2xl:max-w-[1580px] m-auto">
+      <div className="max-w-[85%]  2xl:max-w-[1580px] m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative h-[300px] bg-gray-800 group rounded-[10px] overflow-hidden">
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
