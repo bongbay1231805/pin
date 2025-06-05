@@ -1,0 +1,13 @@
+.mymasonrygrid {
+  display: -webkit-box;
+  /* Not needed if autoprefixing */
+  display: -ms-flexbox;
+  /* Not needed if autoprefixing */
+  display: flex;
+  justify-content: center;
+  /*gutter size offset*/
+  width: auto;
+}
+.mymasonrygrid_column {
+  background-clip: padding-box;
+}

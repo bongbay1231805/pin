@@ -77,30 +77,30 @@ export function SmartCity() {
     }
     return targetAngle;
   };
-  // useEffect(() => {
-  //   const childrenOrder: ChildClass[] = ['child1', 'child2', 'child3'];
-  //   let currentIndex = 0;
-  //   // Thiết lập interval để tự động thay đổi góc xoay
-  //   const intervalId = setInterval(() => {
-  //     // Xác định child tiếp theo trong chuỗi
-  //     currentIndex = (currentIndex + 1) % childrenOrder.length;
-  //     const nextChild = childrenOrder[currentIndex];
-  //     // Tính toán góc xoay mới bằng hàm getNextRotation
-  //     // Chúng ta sử dụng một functional update cho state setCurrentRotation
-  //     // để đảm bảo luôn lấy được giá trị currentRotation mới nhất
-  //     // mà không cần đưa currentRotation vào dependency array của useEffect.
-  //     setCurrentRotation(prevRotation => {
-  //       const newRotation = getNextRotation(prevRotation, targetDegrees[nextChild]);
-  //       return newRotation;
-  //     });
-  //     setActiveChild(nextChild);
-  //   }, 2500); // Thay đổi góc xoay sau mỗi 2.5 giây (2500ms)
-  //   // Hàm cleanup: quan trọng để xóa interval khi component unmount
-  //   return () => {
-  //     clearInterval(intervalId);
-  //     console.log('Auto-rotate interval cleared!');
-  //   };
-  // }, []);
+  useEffect(() => {
+    const childrenOrder: ChildClass[] = ['child1', 'child2', 'child3'];
+    let currentIndex = 0;
+    // Thiết lập interval để tự động thay đổi góc xoay
+    const intervalId = setInterval(() => {
+      // Xác định child tiếp theo trong chuỗi
+      currentIndex = (currentIndex + 1) % childrenOrder.length;
+      const nextChild = childrenOrder[currentIndex];
+      // Tính toán góc xoay mới bằng hàm getNextRotation
+      // Chúng ta sử dụng một functional update cho state setCurrentRotation
+      // để đảm bảo luôn lấy được giá trị currentRotation mới nhất
+      // mà không cần đưa currentRotation vào dependency array của useEffect.
+      setCurrentRotation(prevRotation => {
+        const newRotation = getNextRotation(prevRotation, targetDegrees[nextChild]);
+        return newRotation;
+      });
+      setActiveChild(nextChild);
+    }, 2500); // Thay đổi góc xoay sau mỗi 2.5 giây (2500ms)
+    // Hàm cleanup: quan trọng để xóa interval khi component unmount
+    return () => {
+      clearInterval(intervalId);
+      console.log('Auto-rotate interval cleared!');
+    };
+  }, []);
   return (
     <>
       <section className="@container relative boxanimation fade-in-up-medium">
