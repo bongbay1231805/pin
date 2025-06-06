@@ -67,7 +67,7 @@ export default function SubNavbar(props: PropSub) {
   return (
     (Array.isArray(navItems) && navItems.length) ? (
       <div className={`w-full ${(hasShadow || pageCurent) ? 'bg-gray-3 border-white-1 border-b-[1px]' : 'hidden'}`} >
-        <div className="container mx-auto max-w-[1755px] px-[10px]">
+        <div className="container mx-auto max-w-[91.4%]">
           <ul className="flex flex-wrap space-x-6 uppercase gap-[38px] py-[8px]">
             {navItems.map((item) => (
               <li key={item.name}>

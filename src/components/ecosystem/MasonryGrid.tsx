@@ -1,7 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import styles from './masonrygrid.module.css';
-import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import Link from 'next/link';
 const items = [
@@ -102,42 +100,40 @@ const items = [
     image: "/fecosystem/masony-12.png"
   }
 ];
-const breakpointColumnsObj = {
-  default: 4,
-  1100: 4,
-  700: 4,
-  500: 4,
-};
 export default function MasonryGrid() {
-  return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className={`${styles.mymasonrygrid} h-[calc(100vh-150px)]  m-auto max-w-[1625px] px-[10px]`}
-      columnClassName={styles.mymasonrygrid_column}
-    >
-      {items.map((item) => (
-        <div key={item.id} className={`relative group bg-gray-800 overflow-hidden`} style={{ height: item.height }}>
-          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-            <Image
-              src={item.image}
-              alt="masony"
-              fill
-              className="object-cover"
-            />
-          </div>
-          {item.title !== "" ? (
-            <div className="absolute inset-0 bg-white flex items-center justify-center duration-300">
-              <div className="p-6">
-                <h3 className="text-[26px] font-semibold text-blue-1 uppercase">{item.title}</h3>
-                <p className="text-gray-5 my-[20px]">{item.description}</p>
-                <Link href={item.link} className="flex items-center justify-center text-yellow-1 font-semibold w-[138] h-[35] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2">
-                  Xem thêm
-                </Link>
+  const rows = [];
+  for (let i = 0; i < items.length; i += 4) {
+    const rowItems = items.slice(i, i + 4);
+    // Nếu là dòng 2 (phần tử 5–8): dùng grid-cols-[repeat(3,1fr)_45%]
+    const isSpecialRow = i === 4;
+    rows.push(
+      <div
+        key={i}
+        className={`grid m-0 h-[calc((100vh-143.5px)/3)] ${isSpecialRow ? "grid-cols-[repeat(3,1fr)_45%]" : "grid-cols-[45%_repeat(3,1fr)]"}`}
+      >
+        {rowItems.map((item,index) => (
+          <div key={item.id} className="relative w-full pt-[33.33%] overflow-hidden">
+            <Image src={item.image} alt="masonry" fill className="object-cover justify-end" />
+            {item.title && (
+              <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end pl-[120px]' : 'justify-center pr-[120px]'} duration-300`}>
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-[26px] font-semibold text-blue-1 uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-5 my-[20px]">{item.description}</p>
+                  <Link
+                    href={item.link}
+                    className="flex items-center justify-center text-yellow-1 font-semibold w-[138px] h-[35px] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2"
+                  >
+                    Xem thêm
+                  </Link>
+                </div>
               </div>
-            </div>
-          ) : null}
-        </div>
-      ))}
-    </Masonry>
-  );
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  }
+  return <div className="h-[calc(100vh-143.5px)] overflow-hidden space-y-2 max-w-[91.4%] m-auto">{rows}</div>;
 }

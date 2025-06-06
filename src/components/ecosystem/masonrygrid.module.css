@@ -1,1 +1,8 @@
-.mymasonrygrid{display:flex;justify-content:center;width:auto}.mymasonrygrid_column{background-clip:padding-box}
+.mymasonrygrid {
+  display: flex;
+  justify-content: center;
+  width: auto
+}
+.mymasonrygrid_column {
+  background-clip: padding-box
+}
