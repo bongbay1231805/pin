@@ -61,8 +61,8 @@ export default function SubNavbar(props: PropSub) {
     ];
   }
   return (
-    Array.isArray(navItems) ? (
-      <div className={`w-full aaaaaaaaaaaaa1  ${(hasShadow || pageCurent) ? 'bg-gray-3 shadow-lg' : 'bg-transparent text-white'}`} >
+    Array.isArray(navItems && navItems.length) ? (
+      <div className={`w-full ${(hasShadow || pageCurent) ? 'bg-gray-3 shadow-lg' : 'bg-transparent text-white'}`} >
         <div className="container mx-auto max-w-[1755px] px-[10px]">
           <ul className="flex flex-wrap space-x-6 uppercase gap-[38px] py-[8px]">
             {navItems.map((item) => (
