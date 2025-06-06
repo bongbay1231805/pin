@@ -31,6 +31,7 @@ strong {
   --color-blue-2: #3B5D8D;
   --color-blue-3: #13283E;
   --color-blue-4: #243B5A;
+  --color-blue-5: #4C73A8;
   --color-yellow-1: #C48C5E;
   --color-yellow-2: #CFA176;
   --color-yellow-3: #F7EFE8;
@@ -142,7 +143,8 @@ strong {
   }
 }
 @media (max-width: 1200px) {
-  .ecosystem-masonry-1,.ecosystem-masonry-9 {
+  .ecosystem-masonry-1,
+  .ecosystem-masonry-9 {
     @apply order-1
   }
   .ecosystem-masonry-5,
