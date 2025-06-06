@@ -132,13 +132,26 @@ strong {
 }
 @container (min-width: 320px) {
   .top--10 {
-    @apply  top-[-10%]
+    @apply top-[-10%]
   }
   .max-w-70 {
     @apply max-w-[70%]
   }
   .max-w-28 {
     @apply max-w-[28%]
+  }
+}
+@media (max-width: 1200px) {
+  .ecosystem-masonry-1,.ecosystem-masonry-9 {
+    @apply order-1
+  }
+  .ecosystem-masonry-5,
+  .ecosystem-masonry-6,
+  .ecosystem-masonry-7 {
+    @apply col-span-1
+  }
+  .ecosystem-masonry-8 {
+    @apply col-span-3
   }
 }
 @layer components {
@@ -154,14 +167,16 @@ strong {
   .fade-in-up-medium {
     @apply opacity-0 transform relative;
   }
-  .fade-in-up-medium.show, .show .fade-in-up-medium {
+  .fade-in-up-medium.show,
+  .show .fade-in-up-medium {
     @apply animate-fade-in-up-medium;
   }
   .fade-in-left-short {
     opacity: 0;
     transform: translateX(-20px)
   }
-  .fade-in-left-short.show, .show .fade-in-left-short {
+  .fade-in-left-short.show,
+  .show .fade-in-left-short {
     @apply animate-fade-in-left-short;
   }
   .hvr-bounce-to-right {
@@ -192,10 +207,10 @@ strong {
   }
 }
 @layer utilities {
-  #menusub:not(.active) > img:last-child  {
+  #menusub:not(.active)>img:last-child {
     display: none;
   }
-  #menusub:is(.active) > img:first-child  {
+  #menusub:is(.active)>img:first-child {
     display: none;
   }
   .carouselitemcenter:not(.center) svg {
@@ -209,14 +224,14 @@ strong {
   .carouselitemcenter:is(.center) {
     color: #fff;
   }
-  .carouselitemcenter:is(.center) > .relative:after {
+  .carouselitemcenter:is(.center)>.relative:after {
     content: "";
     position: absolute;
     width: 420px;
     height: 420px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     border-radius: 100%;
     border: 1px solid var(--color-yellow-1);
   }

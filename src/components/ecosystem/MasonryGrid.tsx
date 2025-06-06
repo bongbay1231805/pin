@@ -109,18 +109,18 @@ export default function MasonryGrid() {
     rows.push(
       <div
         key={i}
-        className={`grid m-0 h-[calc((100vh-143.5px)/3)] ${isSpecialRow ? "grid-cols-[repeat(3,1fr)_45%]" : "grid-cols-[45%_repeat(3,1fr)]"}`}
+        className={`grid gap-x-[2px] m-0 xl:h-[calc((100vh-143.5px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_45%]" : "xl:grid-cols-[45%_repeat(3,1fr)]"}`}
       >
         {rowItems.map((item,index) => (
-          <div key={item.id} className="relative w-full pt-[33.33%] overflow-hidden">
+          <div key={item.id} className={`relative w-full pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${item.id} ${index === 0 ? 'col-span-3' : 'col-span-1'}`}>
             <Image src={item.image} alt="masonry" fill className="object-cover justify-end" />
             {item.title && (
-              <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end pl-[120px]' : 'justify-center pr-[120px]'} duration-300`}>
+              <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[120px]' : 'justify-center xl:pr-[120px]'} duration-300`}>
                 <div className="flex flex-col justify-center">
                   <h3 className="text-[26px] font-semibold text-blue-1 uppercase">
                     {item.title}
                   </h3>
-                  <p className="text-gray-5 my-[20px]">{item.description}</p>
+                  <p className="text-gray-5 my-[10px] tex-[16px]">{item.description}</p>
                   <Link
                     href={item.link}
                     className="flex items-center justify-center text-yellow-1 font-semibold w-[138px] h-[35px] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2"
@@ -135,5 +135,5 @@ export default function MasonryGrid() {
       </div>
     );
   }
-  return <div className="h-[calc(100vh-143.5px)] overflow-hidden space-y-2 max-w-[91.4%] m-auto">{rows}</div>;
+  return <div className="xl:h-[calc(100vh-143.5px)] overflow-hidden space-y-2 max-w-[91.4%] m-auto">{rows}</div>;
 }
