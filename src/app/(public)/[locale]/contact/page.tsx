@@ -30,7 +30,7 @@ export default function Contact() {
     }, []);
   return (
     <div className="relative pt-[100px] h-screen after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:w-full after:h-[100%]  after:bg-[linear-gradient(180deg,_#CDEBFE_0%,_#FFFFFF_100%)] after:opacity-60 after:pointer-events-none">
-      <div className="container mx-auto  max-w-[1625px] px-[10px] relative z-10">
+      <div className="container mx-auto  max-w-[95%] md:max-w-[85%]  2xl:max-w-[1058px] px-[10px] relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div>

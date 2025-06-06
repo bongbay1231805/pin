@@ -19,7 +19,7 @@ export default function SubNavbar(props: PropSub) {
         href: "/ecosystem/investment-development"
       },
       {
-        name: "Dịch vụ BẤT ĐỘNG SẢN",
+        name: "Dịch vụ bất động sản",
         href: "/ecosystem/real-estate-services"
       },
       {
@@ -66,12 +66,12 @@ export default function SubNavbar(props: PropSub) {
   }
   return (
     (Array.isArray(navItems) && navItems.length) ? (
-      <div className={`w-full ${(hasShadow || pageCurent) ? 'bg-gray-3 border-white-1 border-b-[1px]' : 'hidden'}`} >
+      <div className={`w-full hidden xl:block ${(hasShadow || pageCurent) ? 'bg-gray-3 border-white-1 border-b-[1px]' : 'xl:hidden'}`} >
         <div className="container mx-auto max-w-[91.4%]">
-          <ul className="flex flex-wrap space-x-6 uppercase gap-[38px] py-[8px]">
+          <ul className="flex flex-wrap space-x-6 justify-center gap-[38px] py-[8px]">
             {navItems.map((item) => (
               <li key={item.name}>
-                <Link href={item.href} className={`text-[16px] font-medium hover:text-yellow-1 ${nameCurent === item.href ? 'text-yellow-1' : ''}`}>
+                <Link href={item.href} className={`text-[16px] font-regular hover:text-yellow-1 ${nameCurent === item.href ? 'text-yellow-1' : ''}`}>
                   {item.name}
                 </Link>
               </li>

@@ -32,12 +32,12 @@ export default function Detail() {
   return (
     <>
       <div className="mx-auto h-[100vh] w-[100vw]  text-center pt-[175px]">
-        <div className="relative mx-auto max-w-[1625px]">
-          <h2 className='absolute top-[55%] left-0 text-left  uppercase font-bold text-white text-[55px]'>đầu tư & <br/> phát triển dự án</h2>
+        <div className="relative mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1058px]">
+          <h2 className='absolute top-[55%] z-10 left-0 text-left  uppercase font-bold text-white text-[55px]'>đầu tư & <br/> phát triển dự án</h2>
         </div>
         <Image fill src="/development.png" alt="Smart City Features" className="object-fill"></Image>
       </div>
-      <div className="mx-auto px-[10px] max-w-[1625px] pb-[115px]">
+      <div className="mx-auto px-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1058px] pb-[115px]">
         <div className='grid md:grid-cols-2 gap-12 pb-[100px]'>
           <div className='border-t-1 border-gray-8 mt-[20px]'>
             <h3 className='text-yellow-1 text-[20px] sm:text-[25px] lg:text-[30px] font-bold px-[70px] py-[25px] border-b-1 border-gray-8'>PICITY HIGH PARK</h3>

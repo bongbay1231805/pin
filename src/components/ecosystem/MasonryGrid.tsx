@@ -112,7 +112,7 @@ export default function MasonryGrid() {
         className={`grid gap-x-[2px] m-0 xl:h-[calc((100vh-143.5px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_45%]" : "xl:grid-cols-[45%_repeat(3,1fr)]"}`}
       >
         {rowItems.map((item,index) => (
-          <div key={item.id} className={`relative w-full pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${item.id} ${index === 0 ? 'col-span-3' : 'col-span-1'}`}>
+          <div key={item.id} className={`relative pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${item.id} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}>
             <Image src={item.image} alt="masonry" fill className="object-cover justify-end" />
             {item.title && (
               <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[120px]' : 'justify-center xl:pr-[120px]'} duration-300`}>
