@@ -1,15 +1,12 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { headers } from 'next/headers';
 import { Locale, NextIntlClientProvider, hasLocale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 import Document from '@/components/Document';
 import { locales } from '@/config';
-import PublicNavigation from './PublicNavigation';
 // import PublicNavigationLocaleSwitcher from './PublicNavigationLocaleSwitcher';
-import { FooterContact } from '@/components/footer/FooterContact';
-import { Footer } from '@/components/footer/Footer';
+import ClientLayoutWrapper from '@/components/ClientLayoutWrapper';
 type Props = {
   children: ReactNode;
   params: Promise<{ locale: Locale }>;
@@ -22,9 +19,6 @@ export const metadata: Metadata = {
 };
 export default async function LocaleLayout({ children, params }: Props) {
   // Ensure that the incoming locale is valid
-  const headersList = await headers();
-  const pathname = headersList.get('x-pathname');
-  const isContactPage = pathname === "/contact";
   const { locale } = await params;
   if (!hasLocale(locales, locale)) {
     notFound();
@@ -34,15 +28,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <Document locale={locale}>
       <NextIntlClientProvider>
-        <div>
-          <PublicNavigation />
-          <div className='overflow-x-hidden'>{children}</div>
-        </div>
-        {isContactPage ? (
-          <FooterContact />
-        ) : (
-          <Footer />
-        )}
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </NextIntlClientProvider>
     </Document>
   );

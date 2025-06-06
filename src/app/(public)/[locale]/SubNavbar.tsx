@@ -7,8 +7,12 @@ interface PropSub {
 }
 export default function SubNavbar(props: PropSub) {
   const { hasShadow, pageCurent, nameCurent } = props;
+  console.log(props);
   let navItems: { name: string, href: string }[] = [];
-  if (nameCurent == "/en/ecosystem") {
+  const ecosystem = ['ecosystem'];
+  const news = ['news','market-news','pi-group-news','bidding-news']; 
+  const workculture = ['work-culture'];
+  if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
         name: "Đầu tư và phát triển dự án",
@@ -24,7 +28,7 @@ export default function SubNavbar(props: PropSub) {
       }
     ];
   }
-  if (nameCurent == "/en/news" || nameCurent == "/en/news/market-news" || nameCurent == "/en/news/pi-group-news" || nameCurent == "/en/news/bidding-news") {
+  if (news.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
         name: "Tin thị trường",
@@ -40,7 +44,7 @@ export default function SubNavbar(props: PropSub) {
       }
     ];
   }
-  if (nameCurent == "/en/work-culture") {
+  if (workculture.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
         name: "Văn hóa làm việc",
@@ -61,8 +65,8 @@ export default function SubNavbar(props: PropSub) {
     ];
   }
   return (
-    Array.isArray(navItems && navItems.length) ? (
-      <div className={`w-full ${(hasShadow || pageCurent) ? 'bg-gray-3 shadow-lg' : 'bg-transparent text-white'}`} >
+    (Array.isArray(navItems) && navItems.length) ? (
+      <div className={`w-full ${(hasShadow || pageCurent) ? 'bg-gray-3 border-white-1 border-b-[1px]' : 'hidden'}`} >
         <div className="container mx-auto max-w-[1755px] px-[10px]">
           <ul className="flex flex-wrap space-x-6 uppercase gap-[38px] py-[8px]">
             {navItems.map((item) => (

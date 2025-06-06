@@ -6,10 +6,10 @@ import Image from "next/image";
 import { usePathname } from 'next/navigation';
 import SubNavbar from "./SubNavbar";
 const Navbar = () => {
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
-  const aPage = ["/ecosystem", "/ecosystem/[slug]", "/news", "/news/market-news", "/news/pi-group-news", "/news/bidding-news", "/work-culture", "/contact"];
-  const pageCurent = aPage.includes(pathname);
+  const pathname = usePathname().split("/").pop();
+  const isHomePage = (pathname === "en" || pathname === "vi");
+  const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "market-news", "pi-group-news", "bidding-news", "work-culture", "contact"];
+  const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isActive = (path: string) => {
@@ -26,7 +26,7 @@ const Navbar = () => {
     }
   }, [pageCurent]); // Re-run effect when pageCurent changes
   return (
-    <nav id="topMenu" className={`fixed  top-0 left-0 w-full z-50 transition-all duration-300 ${(hasShadow || pageCurent) ? 'bg-white border-b-[1px] border-white-1' : 'bg-transparent'
+    <nav id="topMenu" className={`${isHomePage ? 'fixed' : 'relative'} top-0 left-0 w-full z-50 transition-all duration-300 border-white-1 ${(hasShadow || pageCurent) ? 'bg-white border-b-[1px]' : 'bg-transparent'
       }`}>
       <div className="mx-auto max-w-[91.4%] 2xl:max-w-[1755px]">
         <div className={`flex justify-between ${(hasShadow || pageCurent) ? 'h-[80px] 2xl:h-[100px]' : 'h-[130px] 2xl:h-[150px]'}`}>
@@ -37,34 +37,34 @@ const Navbar = () => {
           </div>
           {/* Desktop Navigation */}
           <div className={`hidden xl:flex items-center ml-[11.5%] 2xl:ml-[204px] uppercase grow-1 ${(hasShadow || pageCurent) ? 'h-[80px] 2xl:h-[100px]' : 'h-[90px] 2xl:h-[115px]'}`}>
-            <Link href="/about" className={`group relative grow-1 py-2 font-semibold text-center text-white-1 hover:text-yellow-2 ${isActive("/about") ? "text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
+            <Link href="/about" className={`group relative grow-1 py-2 font-semibold text-center text-white-1 hover:text-yellow-2 ${isActive("about") ? "text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Giới thiệu</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Giới thiệu</span>
             </Link>
-            <Link href="/ecosystem" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("/ecosystem") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
+            <Link href="/ecosystem" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("ecosystem") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Hệ Sinh Thái</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Hệ Sinh Thái</span>
             </Link>
-            <Link href="/#" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("/do-thi-so-picity") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
+            <Link href="/#" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("do-thi-so-picity") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Đô thị số Picity</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Đô thị số Picity</span>
             </Link>
-            <Link href="/news" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("/news") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
+            <Link href="/news" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("news") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Tin Tức</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Tin Tức</span>
             </Link>
-            <Link href="/#" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("/work-culture") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
+            <Link href="/#" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("work-culture") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Phát Triển Nhân Lực</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Phát Triển Nhân Lực</span>
             </Link>
-            <Link href="/contact" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("/contact") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>
+            <Link href="/contact" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("contact") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Liên Hệ</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Liên Hệ</span>
             </Link>
             <div className="flex justify-end font-semibold items-center grow-1">
-              <Link href="/vn" className={` text-yellow-2! ${isActive("/vn") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-yellow-2" : ""}`}>VN</Link>
+              <Link href="/vn" className={` text-yellow-2! ${isActive("vn") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-yellow-2" : ""}`}>VN</Link>
               <span className="text-gray-300 px-[7px] inline-block">|</span>
-              <Link href="/en" className={`hover:text-yellow-2 ${isActive("/en") ? " text-white-1" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>EN</Link>
+              <Link href="/en" className={`hover:text-yellow-2 ${isActive("en") ? " text-white-1" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>EN</Link>
             </div>
           </div>
           {/* Mobile menu button */}
@@ -88,7 +88,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {isHomePage ? null : <SubNavbar hasShadow={hasShadow} pageCurent={pageCurent} nameCurent={nameCurent} />}
+      {isHomePage ? null : <SubNavbar hasShadow={hasShadow} pageCurent={pageCurent} nameCurent={nameCurent!} />}
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="xl:hidden bg-white">

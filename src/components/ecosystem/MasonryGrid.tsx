@@ -112,7 +112,7 @@ export default function MasonryGrid() {
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
-      className={`${styles.mymasonrygrid} pt-[110px] h-100vh  m-auto max-w-[1625px] px-[10px]`}
+      className={`${styles.mymasonrygrid} h-[calc(100vh-150px)]  m-auto max-w-[1625px] px-[10px]`}
       columnClassName={styles.mymasonrygrid_column}
     >
       {items.map((item) => (
