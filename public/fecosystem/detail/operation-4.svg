@@ -1,0 +1,27 @@
+<svg width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_1_2377" fill="white">
+<rect x="18" y="22" width="75" height="92" rx="3"/>
+</mask>
+<rect x="18" y="22" width="75" height="92" rx="3" stroke="#4C73A8" strokeWidth="8" strokeLinejoin="round" mask="url(#path-1-inside-1_1_2377)"/>
+<path d="M33 23V15C33 13.3431 34.3431 12 36 12H99C100.657 12 102 13.3431 102 15V97C102 98.6569 100.657 100 99 100H91.5" stroke="#4C73A8" strokeWidth="2.5" strokeLinejoin="round"/>
+<path d="M43 13V5C43 3.34315 44.3431 2 46 2H109C110.657 2 112 3.34315 112 5V87C112 88.6569 110.657 90 109 90H101.5" stroke="#4C73A8" strokeWidth="2.5" strokeLinejoin="round"/>
+<path d="M26 42L42.66 31L60 42" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round"/>
+<path d="M31 39V62H55V39" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M47 62V55V52C47 49.7909 45.2091 48 43 48V48C40.7909 48 39 49.7909 39 52V55V62" stroke="#4C73A8" strokeWidth="2.5"/>
+<path d="M65 37H82" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M65 44H82" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M65 51H82" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M65 58H82" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M29 80H43" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M67 87H81" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M54 80L81 80" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M29 87L56 87" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<circle cx="31" cy="97" r="4" stroke="#4C73A8" strokeWidth="2"/>
+<circle cx="78" cy="71" r="4" stroke="#4C73A8" strokeWidth="2"/>
+<circle cx="7" cy="101" r="4" stroke="#4C73A8" strokeWidth="2"/>
+<circle cx="24" cy="7" r="4" stroke="#4C73A8" strokeWidth="2"/>
+<path d="M29 71H73" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M36 97L81 97" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M2 42H11.5" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M7 30.25C9.62335 30.25 11.75 32.3766 11.75 35V78.7041C11.75 79.3517 11.669 79.9964 11.5088 80.623L11.4355 80.8906L7.08301 95.6875C7.07218 95.7243 7.03836 95.75 7 95.75C6.97107 95.75 6.94455 95.7358 6.92871 95.7129L6.91699 95.6875L2.56445 80.8906C2.35564 80.1806 2.25002 79.4442 2.25 78.7041V35C2.25 32.3766 4.37665 30.25 7 30.25Z" stroke="#4C73A8" strokeWidth="2.5"/>
+</svg>

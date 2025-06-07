@@ -1,5 +1,5 @@
 'use client';
-import Detail from "@/components/ecosystem/Detail"
+import Detail1 from "@/components/ecosystem/Detail1"
 import Head from "next/head"
 import { useEffect } from "react";
 export default function EcosystemDetail() {
@@ -32,7 +32,7 @@ export default function EcosystemDetail() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Detail />
+        <Detail1 />
       </main>
     </>
   )

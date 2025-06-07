@@ -123,7 +123,7 @@ export default function MasonryGrid() {
                   <p className="text-gray-5 my-[10px] tex-[16px]">{item.description}</p>
                   <Link
                     href={item.link}
-                    className="flex items-center justify-center text-yellow-1 font-semibold w-[138px] h-[35px] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2"
+                    className="flex items-center justify-center text-yellow-1 font-semibold w-[138px] h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300"
                   >
                     Xem thêm
                   </Link>

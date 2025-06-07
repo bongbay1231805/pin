@@ -11,7 +11,7 @@ export function Hero() {
         className="object-cover"
         priority
       />
-      <div className="absolute z-1 container m-auto md:max-w-[95%] md:max-w-[85%]  2xl:max-w-[1058px] px-[10px] left-1/2 -translate-x-1/2 bottom-[60px]">
+      <div className="absolute z-1 container m-auto md:max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] px-[10px] left-1/2 -translate-x-1/2 bottom-[60px]">
         <BreadcrumbExample />
       </div>
     </div>

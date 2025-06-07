@@ -30,7 +30,7 @@ function News() {
     }, []);
   return (
     <main>
-      <div className="min-h-screen pt-[180px] pb-[90px] container m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1058px] px-[10px]">
+      <div className="min-h-screen pt-[180px] pb-[90px] container m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] px-[10px]">
         <div className="mx-autoflex flex-col gap-12">
           {/* Top Image w/ Overlayed Card */}
           <div className="relative rounded-2xl">

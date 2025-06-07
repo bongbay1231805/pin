@@ -7,7 +7,6 @@ interface PropSub {
 }
 export default function SubNavbar(props: PropSub) {
   const { hasShadow, pageCurent, nameCurent } = props;
-  console.log(props);
   let navItems: { name: string, href: string }[] = [];
   const ecosystem = ['ecosystem'];
   const news = ['news','market-news','pi-group-news','bidding-news']; 
