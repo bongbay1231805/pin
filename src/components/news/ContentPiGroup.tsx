@@ -13,7 +13,7 @@ export function ContentPiGroup() {
       <div className="text-gray-5 text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 [&>figure]:mb-[40px]">
         <p>Thư mời hợp tác dự án PICITY SKY PARK được Tập đoàn PiGroup đơn vị phát triển dự án Picity Sky Park triển khai đến các đơn vị đại lý chiến lược chuyên phân phối dự án căn hộ trên thị trường. Sáng ngày 13/6/2023 đơn vị phát triển dự án đã có Thư mời hợp tác dự án PICITY SKY PARK đến các đơn vị chiến lược cùng phân phối sản phẩm Picity ra thị trường Dĩ An Bình Dương.</p>
         <figure>
-          <img src="/news/post-2.png" alt="post-2.png" />
+          <img src="/fnews/post-2.png" alt="post-2.png" />
           <figcaption>Hệ thống tiện ích như hồ bơi, công viên tại dự án đã được hoàn thiện. Ảnh: Pi Group</figcaption>
         </figure>
         <p>Picity High Park được quy hoạch như một thành phố đa chức năng thu nhỏ với 5 tòa căn hộ cao tầng, nhà phố thương mại, hệ thống công viên, trường học và chuỗi tiện ích. Dự án còn sở hữu hơn 25 dịch vụ và tiện ích như khu mua sắm, bể bơi, sân chơi trẻ em, khu thể thao ngoài trời... mang lại cuộc sống lành mạnh, hiện đại cho cư dân.</p>
@@ -35,7 +35,7 @@ export function ContentPiGroup() {
           <li>
             <a href="https://www.instagram.com/p?http://localhost:3000/news/market-news">
               <Image
-                src="/news/inter.svg"
+                src="/fnews/inter.svg"
                 alt="Modern cityscape with high-rise buildings"
                 width={35}
                 height={35}
@@ -46,7 +46,7 @@ export function ContentPiGroup() {
           <li>
             <a href="http://www.linkedin.com/shareArticle?url=http://localhost:3000/news/market-news">
               <Image
-                src="/news/linkin.svg"
+                src="/fnews/linkin.svg"
                 alt="Modern cityscape with high-rise buildings"
                 width={35}
                 height={35}
