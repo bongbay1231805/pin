@@ -153,7 +153,7 @@ CarouselContent.displayName = "CarouselContent"
 const CarouselItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & { index?: number } // ✅ thêm prop index
->(({ className, index, ...props  }, ref) => {
+>(({ className, index, ...props }, ref) => {
   const { orientation, selectedIndex } = useCarousel()
   const isCenter = index === selectedIndex;
   return (
@@ -226,6 +226,63 @@ const CarouselNext = React.forwardRef<
   )
 })
 CarouselNext.displayName = "CarouselNext"
+// ==
+const CarouselPreviousCenter = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentProps<typeof Button>
+>(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  return (
+    <Button
+      ref={ref}
+      variant={variant}
+      size={size}
+      className={cn(
+        "absolute h-8 w-8 rounded-full",
+        orientation === "horizontal"
+          ? "-left-12 top-1/2 -translate-y-1/2"
+          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+        className
+      )}
+      disabled={!canScrollPrev}
+      onClick={scrollPrev}
+      {...props}
+    >
+      <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 1L1 11L11 21" stroke="#C48C5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </Button>
+  )
+})
+CarouselPreviousCenter.displayName = "CarouselPreviousCenter"
+const CarouselNextCenter = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentProps<typeof Button>
+>(({ className, variant = "outline", size = "icon", ...props }, ref) => {
+  const { orientation, scrollNext, canScrollNext } = useCarousel()
+  return (
+    <Button
+      ref={ref}
+      variant={variant}
+      size={size}
+      className={cn(
+        "absolute h-8 w-8 rounded-full",
+        orientation === "horizontal"
+          ? "-right-12 top-1/2 -translate-y-1/2"
+          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+        className
+      )}
+      disabled={!canScrollNext}
+      onClick={scrollNext}
+      {...props}
+    >
+      <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L11 11L1 21" stroke="#C48C5E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </Button>
+  )
+})
+CarouselNextCenter.displayName = "CarouselNextCenter"
 export {
   type CarouselApi,
   Carousel,
@@ -233,4 +290,6 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselPreviousCenter,
+  CarouselNextCenter,
 }

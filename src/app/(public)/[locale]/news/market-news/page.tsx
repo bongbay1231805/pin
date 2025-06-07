@@ -3,9 +3,9 @@ import PaginationExample from '@/components/news/PaginationExample';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 // External image URLs (replace with suitable links)
-const mainImage = "/news/news-1.png";
-const meetingImage = "/news/news-1.png";
-const modelImage = "/news/news-1.png";
+const mainImage = "/fnews/news-1.png";
+const meetingImage = "/fnews/news-1.png";
+const modelImage = "/fnews/news-1.png";
 function News() {
   useEffect(() => {
       const boxes = document.querySelectorAll('.boxanimation');
@@ -60,7 +60,7 @@ function News() {
                   className="w-full h-[483px] object-cover rounded-2xl"
                 />
                 {/* Label */}
-                <Link href="/news/market-news">
+                <Link href="/fnews/market-news">
                   <div className="absolute bottom-0 left-0  translate-y-1/2 z-10 bg-[#EAF3FF] rounded-tr-[70px] max-w-[540px] px-5 py-[22px] text-blue-1 font-bold text-[17px]  uppercase hover:text-yellow-1">
                     KHỞI CÔNG DÒNG SẢN PHẨM CĂN PICITY CỦA NGÕ TP THỦ ĐỨC
                   </div>
@@ -74,7 +74,7 @@ function News() {
                   className="w-full h-[483px] object-cover rounded-2xl"
                 />
                 {/* Label */}
-                <Link href="/news/market-news">
+                <Link href="/fnews/market-news">
                   <div className="absolute bottom-0 left-0  translate-y-1/2 z-10 bg-[#EAF3FF] rounded-tr-[70px] max-w-[540px] px-5 py-[22px] text-blue-1 font-bold text-[17px]  uppercase hover:text-yellow-1">
                     KHỞI CÔNG DÒNG SẢN PHẨM CĂN PICITY CỦA NGÕ TP THỦ ĐỨC
                   </div>
@@ -88,7 +88,7 @@ function News() {
                   className="w-full h-[483px] object-cover rounded-2xl"
                 />
                 {/* Label */}
-                <Link href="/news/market-news">
+                <Link href="/fnews/market-news">
                   <div className="absolute bottom-0 left-0  translate-y-1/2 z-10 bg-[#EAF3FF] rounded-tr-[70px] max-w-[540px] px-5 py-[22px] text-blue-1 font-bold text-[17px]  uppercase hover:text-yellow-1">
                     KHỞI CÔNG DÒNG SẢN PHẨM CĂN PICITY CỦA NGÕ TP THỦ ĐỨC
                   </div>
@@ -104,7 +104,7 @@ function News() {
                   className="w-full h-[483px] object-cover rounded-2xl"
                 />
                 {/* Label */}
-                <Link href="/news/market-news">
+                <Link href="/fnews/market-news">
                   <div className="absolute bottom-0 left-0  translate-y-1/2 z-10 bg-[#EAF3FF] rounded-tr-[70px] max-w-[540px] px-5 py-[22px] text-blue-1 font-bold text-[17px]  uppercase hover:text-yellow-1">
                     KHỞI CÔNG DÒNG SẢN PHẨM CĂN PICITY CỦA NGÕ TP THỦ ĐỨC
                   </div>
@@ -118,7 +118,7 @@ function News() {
                   className="w-full h-[483px] object-cover rounded-2xl"
                 />
                 {/* Label */}
-                <Link href="/news/market-news">
+                <Link href="/fnews/market-news">
                   <div className="absolute bottom-0 left-0  translate-y-1/2 z-10 bg-[#EAF3FF] rounded-tr-[70px] max-w-[540px] px-5 py-[22px] text-blue-1 font-bold text-[17px]  uppercase hover:text-yellow-1">
                     KHỞI CÔNG DÒNG SẢN PHẨM CĂN PICITY CỦA NGÕ TP THỦ ĐỨC
                   </div>
@@ -132,7 +132,7 @@ function News() {
                   className="w-full h-[483px] object-cover rounded-2xl"
                 />
                 {/* Label */}
-                <Link href="/news/market-news">
+                <Link href="/fnews/market-news">
                   <div className="absolute bottom-0 left-0  translate-y-1/2 z-10 bg-[#EAF3FF] rounded-tr-[70px] max-w-[540px] px-5 py-[22px] text-blue-1 font-bold text-[17px]  uppercase hover:text-yellow-1">
                     KHỞI CÔNG DÒNG SẢN PHẨM CĂN PICITY CỦA NGÕ TP THỦ ĐỨC
                   </div>

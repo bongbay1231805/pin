@@ -237,4 +237,11 @@ strong {
     border-radius: 100%;
     border: 1px solid var(--color-yellow-1);
   }
+  .sliderstaff {
+    /* @apply w-[75%] */
+    @apply px-[30px]
+  }
+  .center .sliderstaff {
+    @apply w-full px-0
+  }
 }
