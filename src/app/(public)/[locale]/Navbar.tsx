@@ -7,7 +7,7 @@ import SubNavbar from "./SubNavbar";
 const Navbar = () => {
   const pathname = usePathname().split("/").pop();
   const isHomePage = (pathname === "en" || pathname === "vi");
-  const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "market-news", "pi-group-news", "bidding-news", "workculture", "contact"];
+  const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "market-news", "pi-group-news", "bidding-news", "workculture", "contact","digitalcity"];
   const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

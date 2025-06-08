@@ -7,10 +7,12 @@ interface PropSub {
 }
 export default function SubNavbar(props: PropSub) {
   const { hasShadow, pageCurent, nameCurent } = props;
+  console.log(props)
   let navItems: { name: string, href: string }[] = [];
   const ecosystem = ['ecosystem'];
   const news = ['news','market-news','pi-group-news','bidding-news']; 
   const workculture = ['workculture'];
+  const digitalcity = ['digitalcity'];
   if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
@@ -59,6 +61,38 @@ export default function SubNavbar(props: PropSub) {
       },
       {
         name: "Vị trí tuyển dụng",
+        href: "#workculture"
+      }
+    ];
+  }
+  if (digitalcity.includes(nameCurent.split("/").pop() || "")) {
+    navItems = [
+      {
+        name: "Picity – Đô thị số",
+        href: "/workculture"
+      },
+      {
+        name: "Công nghệ 4.0",
+        href: "#workculture"
+      },
+      {
+        name: "Độc quyền Picity App",
+        href: "#workculture"
+      },
+      {
+        name: "Tiện ích 5★",
+        href: "#workculture"
+      },
+      {
+        name: "Dịch vụ quản lý",
+        href: "#workculture"
+      },
+      {
+        name: "Giá trị vượt trội",
+        href: "#workculture"
+      },
+      {
+        name: "Dự án thành công",
         href: "#workculture"
       }
     ];

@@ -51,7 +51,6 @@ export default function Detail2() {
       image: "/fecosystem/detail/slider-center-3.png"
     }
   ];
-  const OPTIONS: EmblaOptionsType = { loop: true, align: 'center' };
   return (
     <>
       <div className="mx-auto h-[calc(100vh-100px)] w-[100vw]  text-center pt-[175px] mb-[143px]">
@@ -231,7 +230,7 @@ export default function Detail2() {
         </div>
       </div>
       <div className="mx-auto">
-        <EmblaCarouselCenter />
+        <EmblaCarouselCenter slides={slides} />
       </div>
     </>
   );

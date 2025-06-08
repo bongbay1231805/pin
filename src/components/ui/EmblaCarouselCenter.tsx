@@ -7,27 +7,11 @@ import {
   CarouselPreviousCenter,
 } from "@/components/ui/carousel"
 import Image from "next/image";
-const EmblaCarouselCenter = () => {
-  const slides = [
-    {
-      image: "/fecosystem/detail/slider-center-1.png"
-    },
-    {
-      image: "/fecosystem/detail/slider-center-2.png"
-    },
-    {
-      image: "/fecosystem/detail/slider-center-3.png"
-    },
-    {
-      image: "/fecosystem/detail/slider-center-1.png"
-    },
-    {
-      image: "/fecosystem/detail/slider-center-2.png"
-    },
-    {
-      image: "/fecosystem/detail/slider-center-3.png"
-    }
-  ];
+type EmblaCarouselCenterType = { image: string, title?: string }[];
+interface EmblaCarouselCenterProps {
+  slides: EmblaCarouselCenterType;
+}
+const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({ slides }) => {
   return (
     <section className={`relative mx-auto my-[50px] max-w-full md:max-w-[85%] 2xl:mb-[110px]  2xl:max-w-[1580px]`}>
       <Carousel
@@ -38,10 +22,13 @@ const EmblaCarouselCenter = () => {
       >
         <CarouselContent className="w-full items-center 2xl:h-[435px] -ml-0">
           {slides.map((event, index) => (
-            <CarouselItem key={index} index={index} className={`basis-3/4 sm:basis-1/3 h-full`}>
+            <CarouselItem key={index} index={index} className={`basis-3/4 sm:basis-1/3 h-full sliderswrap`}>
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center sliderstaff">
-                  <Image  src={event.image} alt="event" width={630} height={435} />
+                  <Image src={event.image} alt="event" width={630} height={435} />
+                  {event?.title ? (
+                    <h3 className="absolute bottom-[80px] text-[16px] font-bold text-center uppercase text-white" dangerouslySetInnerHTML={{ __html: event.title }}></h3>
+                  ) : null}
                 </div>
               </div>
             </CarouselItem>
