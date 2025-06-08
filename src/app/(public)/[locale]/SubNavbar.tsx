@@ -10,7 +10,7 @@ export default function SubNavbar(props: PropSub) {
   let navItems: { name: string, href: string }[] = [];
   const ecosystem = ['ecosystem'];
   const news = ['news','market-news','pi-group-news','bidding-news']; 
-  const workculture = ['work-culture'];
+  const workculture = ['workculture'];
   if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
@@ -47,19 +47,19 @@ export default function SubNavbar(props: PropSub) {
     navItems = [
       {
         name: "Văn hóa làm việc",
-        href: "/work-culture"
+        href: "/workculture"
       },
       {
         name: "Phúc lợi và Đào tạo",
-        href: "#work-culture"
+        href: "#workculture"
       },
       {
         name: "Quy trình và hình thức tuyển dụng",
-        href: "#work-culture"
+        href: "#workculture"
       },
       {
         name: "Vị trí tuyển dụng",
-        href: "#work-culture"
+        href: "#workculture"
       }
     ];
   }

@@ -7,7 +7,7 @@ import SubNavbar from "./SubNavbar";
 const Navbar = () => {
   const pathname = usePathname().split("/").pop();
   const isHomePage = (pathname === "en" || pathname === "vi");
-  const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "market-news", "pi-group-news", "bidding-news", "work-culture", "contact"];
+  const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "market-news", "pi-group-news", "bidding-news", "workculture", "contact"];
   const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,7 +70,7 @@ const Navbar = () => {
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Tin Tức</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Tin Tức</span>
             </Link>
-            <Link href="/#" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("work-culture") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
+            <Link href="/workculture" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${isActive("workculture") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Phát Triển Nhân Lực</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Phát Triển Nhân Lực</span>
             </Link>
@@ -118,6 +118,27 @@ const Navbar = () => {
             </Link>
             <Link href="/ecosystem" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
               Hệ sinh thái
+            </Link>
+            <Link href="/ecosystem/investment-development" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
+              Đầu tư và phát triển dự án
+            </Link>
+            <Link href="/ecosystem/real-estate-services" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
+              Dịch vụ bất động sản
+            </Link>
+            <Link href="/ecosystem/management-operation" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
+              Quản lý và vận hành
+            </Link>
+            <Link href="/news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
+              Tin tức
+            </Link>
+            <Link href="/news/market-news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
+              Tin thị trường
+            </Link>
+            <Link href="/news/pi-group-news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
+              Tin Pi Group
+            </Link>
+            <Link href="/news/bidding-news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
+              Tin đấu thầu
             </Link>
           </div>
         </div>
