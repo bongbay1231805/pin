@@ -67,7 +67,7 @@ export function Values() {
           <h2 className="text-size-25 2xl:text-[45px] text-yellow-1 font-bold reveal-text">VĂN HÓA DOANH NGHIỆP</h2>
           <p className="text-[20px] 2xl:text-[28px] text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">PHÁT TRIỂN BỀN VỮNG</p>
           <p className="text-gray-5 mb-[10px] md:mb-[39px] text-center sm:text-left mx-auto sm:mx-0 sm:max-w-[558px] leading-[28px]  reveal-text">Pi Group xây dựng nền tảng vững chắc dựa trên 3 giá trị cốt lõi: &quot;Chính trực tạo niềm tin – Vượt trội dẫn lối thành công – Tận tâm kiến tạo giá trị.&ldquo; Đây là cam kết của Pi Group trong việc kiến tạo những giá trị bền vững, vì một tương lai phát triển cho cộng đồng và xã hội.</p>
-          <Link href="/" className=" reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-semibold w-[138] h-[35] border border-yellow-1 hover:text-white">
+          <Link href="/" className=" reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-semibold w-[138] h-[35] border border-yellow-1 hover:text-white  focus:text-white">
             XEM THÊM
           </Link>
         </div>

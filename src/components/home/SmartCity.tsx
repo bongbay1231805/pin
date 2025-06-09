@@ -568,7 +568,7 @@ export function SmartCity() {
               reveal-text hvr-bounce-to-right sm:flex items-center justify-center
                text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] 
                md:w-[203px] md:h-[35px] 
-               border border-yellow-1 hover:text-white
+               border border-yellow-1 hover:text-white  focus:text-white
                hidden
                ">
                 KHÁM PHÁ PICITY

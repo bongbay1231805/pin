@@ -77,12 +77,12 @@ strong {
   @keyframes reveal-text {
     0% {
       transform: translateX(17%);
-      clip-path: inset(0px 50% 0px 50%);
-      -webkit-clip-path: inset(0px 50% 0px 50%);
+      clipPath: inset(0px 50% 0px 50%);
+      -webkit-clipPath: inset(0px 50% 0px 50%);
     }
     100% {
-      clip-path: inset(0px 0px 0px 0px);
-      -webkit-clip-path: inset(0px 0px 0px 0px);
+      clipPath: inset(0px 0px 0px 0px);
+      -webkit-clipPath: inset(0px 0px 0px 0px);
       transform: translateX(0%);
       opacity: 1;
     }
@@ -262,5 +262,12 @@ strong {
   .center+div .picitycenter {
     @apply rotate-y-[-30deg] translate-z-[-30px] origin-right translate-x-[-30px]
   }
-  /* .center  */
+  .list-dash li::before {
+    content: "—";
+    /* Ký tự gạch ngang và một khoảng trắng */
+    @apply text-gray-5;
+    /* Màu xanh của Tailwind (blue-500) */
+    margin-right: 0.2rem;
+    /* Khoảng cách giữa dấu và nội dung */
+  }
 }

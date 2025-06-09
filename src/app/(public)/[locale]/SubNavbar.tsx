@@ -7,11 +7,10 @@ interface PropSub {
 }
 export default function SubNavbar(props: PropSub) {
   const { hasShadow, pageCurent, nameCurent } = props;
-  console.log(props)
   let navItems: { name: string, href: string }[] = [];
   const ecosystem = ['ecosystem'];
   const news = ['news','market-news','pi-group-news','bidding-news']; 
-  const workculture = ['workculture'];
+  const humanresource = ['human-resource'];
   const digitalcity = ['digitalcity'];
   if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
@@ -45,23 +44,23 @@ export default function SubNavbar(props: PropSub) {
       }
     ];
   }
-  if (workculture.includes(nameCurent.split("/").pop() || "")) {
+  if (humanresource.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
         name: "Văn hóa làm việc",
-        href: "/workculture"
+        href: "/human-resource"
       },
       {
         name: "Phúc lợi và Đào tạo",
-        href: "#workculture"
+        href: "#humanresource"
       },
       {
         name: "Quy trình và hình thức tuyển dụng",
-        href: "#workculture"
+        href: "#humanresource"
       },
       {
         name: "Vị trí tuyển dụng",
-        href: "#workculture"
+        href: "#humanresource"
       }
     ];
   }
@@ -69,31 +68,31 @@ export default function SubNavbar(props: PropSub) {
     navItems = [
       {
         name: "Picity – Đô thị số",
-        href: "/workculture"
+        href: "/human-resource"
       },
       {
         name: "Công nghệ 4.0",
-        href: "#workculture"
+        href: "#humanresource"
       },
       {
         name: "Độc quyền Picity App",
-        href: "#workculture"
+        href: "#humanresource"
       },
       {
         name: "Tiện ích 5★",
-        href: "#workculture"
+        href: "#humanresource"
       },
       {
         name: "Dịch vụ quản lý",
-        href: "#workculture"
+        href: "#humanresource"
       },
       {
         name: "Giá trị vượt trội",
-        href: "#workculture"
+        href: "#humanresource"
       },
       {
         name: "Dự án thành công",
-        href: "#workculture"
+        href: "#humanresource"
       }
     ];
   }

@@ -72,16 +72,7 @@ export function MessageForm() {
   }
   return (
     <Form {...form}>
-      <div className="relative h-[15px] my-[40px]">
-      <Image
-        src="/fcontact/line.svg"
-        alt="Modern city skyline"
-        fill
-        className="h-[15px]"
-      />
-      </div>
-      <h2 className="md:text-size-25 text-yellow-1 font-semibold text-[28px] uppercase">GỬI TIN NHẮN CHO CHÚNG TÔI</h2>
-      <p className="mb-[20px]">Vui lòng điền thông tin, đội ngũ tư vấn sẽ nhanh chóng liên hệ và giải đáp mọi thắc mắc</p>
+      <h2 className="md:text-size-25 text-yellow-1 font-semibold text-[30px] uppercase mb-[30px]">GỬI TIN NHẮN CHO CHÚNG TÔI</h2>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <div className="grid grid-cols-1 gap-[30px]">
           <FormField
@@ -90,7 +81,7 @@ export function MessageForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 " placeholder="Họ tên (*)" {...field} />
+                  <Input className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 placeholder:text-gray-5" placeholder="Họ tên (*)" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -102,7 +93,7 @@ export function MessageForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 " placeholder="Điện thoại (*)" {...field} />
+                  <Input className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Điện thoại (*)" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -116,7 +107,7 @@ export function MessageForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input type="email" className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 " placeholder="Email" {...field} />
+                  <Input type="email" className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -128,15 +119,15 @@ export function MessageForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Textarea className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 " placeholder="Nội dung cần liên hệ/tư vấn" {...field} />
+                  <Textarea className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Nội dung cần tư vấn" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        <div className="flex">
-          <Button type="submit" className="mt-[5px] border rounded-none w-[160px] h-[35px] justify-center items-center text-[18px] font-semibold uppercase text-yellow-1 hover:text-white hover:border-blue-1 hover:bg-blue-1">Gửi ngay</Button>
+        <div className="flex justify-end">
+          <Button type="submit" className="hvr-bounce-to-right shadow-none uppercase rounded-none sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[131px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white">Gửi ngay</Button>
         </div>
       </form>
     </Form>
