@@ -18,6 +18,9 @@ strong {
   perspective: 100px;
   /* Giá trị càng nhỏ, hiệu ứng 3D càng rõ */
 }
+.cls-1 {
+  fill: #b7c6dc;
+}
 @theme {
   --background: #fff;
   --font-montserrat: Montserrat, "Montserrat", sans-serif;
