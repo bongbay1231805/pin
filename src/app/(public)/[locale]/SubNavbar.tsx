@@ -8,7 +8,7 @@ interface PropSub {
 export default function SubNavbar(props: PropSub) {
   const { hasShadow, pageCurent, nameCurent } = props;
   let navItems: { name: string, href: string }[] = [];
-  const ecosystem = ['ecosystem'];
+  const ecosystem = ['ecosystem','investment-development','real-estate-services','management-operation'];
   const news = ['news','market-news','pi-group-news','bidding-news']; 
   const humanresource = ['human-resource'];
   const digitalcity = ['digitalcity'];
@@ -67,7 +67,7 @@ export default function SubNavbar(props: PropSub) {
   if (digitalcity.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
-        name: "Picity – Đô thị số",
+        name: "Picity - Đô thị số",
         href: "/human-resource"
       },
       {
@@ -103,7 +103,7 @@ export default function SubNavbar(props: PropSub) {
           <ul className="flex flex-wrap space-x-6 justify-center gap-[38px] py-[8px]">
             {navItems.map((item) => (
               <li key={item.name}>
-                <Link href={item.href} className={`text-[16px] font-regular hover:text-yellow-1 ${nameCurent === item.href ? 'text-yellow-1' : ''}`}>
+                <Link href={item.href} className={`text-[16px] font-regular hover:text-yellow-1 ${nameCurent === item.href.split("/").pop() ? 'text-yellow-1' : ''}`}>
                   {item.name}
                 </Link>
               </li>

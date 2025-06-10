@@ -6,6 +6,7 @@ import {
   CarouselNextCenter,
   CarouselPreviousCenter,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 type EmblaCarouselCenterType = { image: string, title?: string }[];
 interface EmblaCarouselCenterProps {
@@ -15,9 +16,13 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({ slides }) => 
   return (
     <section className={`relative mx-auto my-[50px] max-w-full md:max-w-[85%] 2xl:mb-[110px]  2xl:max-w-[1580px]`}>
       <Carousel
+        plugins={
+          [Autoplay()]
+        }
         opts={{
           align: "center",
           loop: true,
+          duration: 50
         }}
       >
         <CarouselContent className="w-full items-center 2xl:h-[435px] -ml-0">
@@ -25,7 +30,7 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({ slides }) => 
             <CarouselItem key={index} index={index} className={`basis-3/4 sm:basis-1/3 h-full sliderswrap`}>
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center sliderstaff">
-                  <Image src={event.image} alt="event" width={630} height={435} />
+                  <Image className="rounded-[10px] overflow-hidden" src={event.image} alt="event" width={630} height={435} />
                   {event?.title ? (
                     <h3 className="absolute bottom-[80px] text-[16px] font-bold text-center uppercase text-white" dangerouslySetInnerHTML={{ __html: event.title }}></h3>
                   ) : null}
