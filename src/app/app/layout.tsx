@@ -9,7 +9,7 @@ type Props = {
   children: ReactNode;
 };
 export const metadata: Metadata = {
-  title: 'next-intl-mixed-routing (app)'
+  title: 'Pi Group'
 };
 export default async function LocaleLayout({children}: Props) {
   const locale = await getLocale();

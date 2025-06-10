@@ -15,7 +15,7 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 export const metadata: Metadata = {
-  title: 'next-intl-mixed-routing (public)'
+  title: 'Pi Group'
 };
 export default async function LocaleLayout({ children, params }: Props) {
   // Ensure that the incoming locale is valid

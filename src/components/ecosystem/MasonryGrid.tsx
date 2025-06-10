@@ -206,7 +206,6 @@ const MasonryGrid: React.FC = () => {
     const rowItems = items.slice(i, i + 4);
     // Nếu là dòng 2 (phần tử 5–8): dùng grid-cols-[repeat(3,1fr)_45%]
     const isSpecialRow = i === 4;
-    console.log(i)
     rows.push(
       <div
         key={i}

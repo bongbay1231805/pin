@@ -16,12 +16,12 @@ export default function Detail3() {
     <>
       <div className="relative mx-auto h-[100vh] w-[100vw]  text-center pt-[175px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[55px]'>DỊCH VỤ <br /> quản lý & vận hành</h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[55px]'>DỊCH VỤ <br /> quản lý & vận hành</h2>
         </div>
         <Image fill src="/fecosystem/detail/management-1.png" alt="Smart City Features" className="object-fill" />
       </div>
-      <div className='relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]'>
-        <div className="grid grid-cols-[60%_40%]">
+      <div className='relative mx-auto top-[50px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]'>
+        <div className="grid grid-cols-1 lg:grid-cols-[52%_48%] mb-[40px] lg:mb-[140px]">
           <div className='grid grid-rows-2 grid-cols-2 gap-[15px]'>
             <div className='relative row-span-1 row-start-1 col-span-1'>
               <Image fill src="/fecosystem/detail/management-2.png" alt="Smart City Features" className="object-fill" />
@@ -33,38 +33,38 @@ export default function Detail3() {
               <Image fill src="/fecosystem/detail/management-4.png" alt="Smart City Features" className="object-fill" />
             </div>
           </div>
-          <div className='grid content-center pl-[230px]'>
-            <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold uppercase'>TÍCH HỢP AI & IOT <br /> TỐI ƯU QUY TRÌNH</h3>
+          <div className='grid content-center lg:pl-[10%] 2xl:pl-[200px]'>
+            <h3 className='text-yellow-1 my-[20px] lg:my-0 text-[25px] xl:text-[40px] font-bold uppercase'>TÍCH HỢP AI & IOT <br /> TỐI ƯU QUY TRÌNH</h3>
             <p className='text-[14px] xl:text-[17px] text-gray-5 mb-[18px] text-justify'>Cam kết đồng hành cùng khách hàng sau giai đoạn bàn giao, Pi Group tiên phong tích hợp công nghệ AI và IoT vào dịch vụ Quản lý & vận hành, nhằm tối ưu hóa quy trình, tăng cường bảo mật và kiến tạo môi trường sống an toàn, tiện nghi, đồng thời nâng tầm giá trị bất động sản theo thời gian.</p>
           </div>
         </div>
       </div>
-      <div className='relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]'>
-        <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold uppercase text-center'>DỊCH VỤ TOÀN DIỆN <br /> GIA TĂNG GIÁ TRỊ BẤT ĐỘNG SẢN</h3>
+      <div className='relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] mb-[60px]'>
+        <h3 className='text-yellow-1 text-[25px] xl:text-[40px] font-bold uppercase my-[20px] lg:my-0 lg:text-center'>DỊCH VỤ TOÀN DIỆN <br /> GIA TĂNG GIÁ TRỊ BẤT ĐỘNG SẢN</h3>
       </div>
-      <div className='grid grid-cols-4 gap-[5px] mb-[60px]'>
-        <div className='group relative pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[5px] mb-[60px]'>
+        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-5.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
         </div>
-        <div className='group relative pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-6.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
         </div>
-        <div className='group relative pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-7.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
         </div>
-        <div className='group relative pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-8.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
         </div>
       </div>
       <div className='relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] mb-[20px]'>
-        <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold uppercase text-center'>QUẢN LÝ CHUYÊN SÂU <br /> VẬN HÀNH CHUYÊN NGHIỆP</h3>
+        <h3 className='text-yellow-1 text-[25px] xl:text-[40px] font-bold uppercase text-center'>QUẢN LÝ CHUYÊN SÂU <br /> VẬN HÀNH CHUYÊN NGHIỆP</h3>
       </div>
       <div className='relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] mb-[143px]'>
-        <div className="grid grid-cols-4 gap-[30px]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-[30px]">
           <div className="grid  text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[275px]">
             <svg className='m-auto' width="88" height="100" viewBox="0 0 88 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M43.0357 19.4678C41.2474 19.573 39.415 19.7946 37.6156 19.6617C36.1696 19.5564 34.7842 18.9971 33.3105 19.0248C29.9878 19.0801 27.3937 20.2487 23.7785 19.3515C22.8843 19.13 21.5431 18.0943 20.9084 18.7202C20.0474 19.5675 18.7503 23.4775 18.5185 24.7568C18.364 25.6208 18.3308 27.897 18.0273 28.3788C16.9234 30.1289 15.676 26.3961 14.3845 28.8385C13.6007 30.3172 14.0533 32.3885 15.0744 33.6512C16.1286 34.9527 16.4874 34.3822 17.652 34.7644C18.3805 35.0025 18.9932 37.683 19.3906 38.5747C19.6334 39.1285 19.9094 39.6989 20.2019 40.2306C20.6545 41.0779 22.8292 43.908 22.774 44.4341C22.7077 45.071 21.8357 45.5362 21.223 45.1762C20.4503 44.7221 18.9049 42.2631 18.4302 41.3936C18.0107 40.6238 16.6971 37.1015 16.5205 36.9354C16.2445 36.6695 14.8702 36.376 14.1747 35.7889C11.6137 33.629 10.7306 27.9413 14.1582 26.2355C12.5023 23.7101 12.0553 21.1736 12.6127 18.2106C12.7342 17.5516 13.2585 16.527 13.2806 16.0286C13.3027 15.5634 12.8335 14.5997 12.7452 13.985C12.2926 10.7008 13.3358 7.89848 16.2721 6.25363C16.9731 5.86042 18.6289 5.48936 19.0208 5.20137C19.1919 5.07399 19.4402 4.41495 19.6997 4.1325C22.8236 0.720956 26.0249 -0.862974 30.7164 0.471736C31.5222 0.698803 33.1946 1.71783 33.741 1.7566C34.2874 1.79537 35.1485 1.40769 35.7832 1.35785C40.2926 1.00894 43.7753 3.263 46.673 6.46409C47.7437 5.99334 50.0564 4.58663 50.0343 6.79084C50.0122 8.99505 48.5441 12.545 48.6213 14.633C48.6434 15.1646 49.3113 16.0009 49.51 16.5824C50.5035 19.5177 50.1557 22.8572 48.6158 25.5266C53.2245 28.1573 50.8346 36.9077 45.5084 36.4092C44.9178 37.4504 44.0347 41.6761 42.4396 41.1776C40.8445 40.6792 42.4175 38.6411 42.7487 37.7606C43.0799 36.88 43.687 33.9724 44.6087 33.845C45.2103 33.762 45.5525 34.2881 46.2314 34.2936C48.8476 34.2992 50.0343 28.1684 47.7769 27.5592C47.1256 27.3819 45.6133 30.0347 44.7964 28.3068C44.4928 27.6644 44.388 24.9894 44.1893 23.9815C43.8912 22.4529 43.4496 20.9798 43.0412 19.4789L43.0357 19.4678ZM47.5616 8.55199C45.3428 9.43257 44.8461 7.48312 43.5766 6.28133C41.849 4.63647 39.0121 3.34607 36.5946 3.39592C35.6728 3.41807 33.9618 4.08819 33.3215 4.02173C33.0014 3.9885 31.6878 3.11347 31.1579 2.89747C27.7966 1.54061 24.7389 1.96152 22.1337 4.53125C21.5321 5.12384 20.6987 6.68562 20.2792 6.99022C19.7548 7.37235 18.2425 7.62157 17.4367 8.04248C15.1958 9.22212 14.5169 10.867 14.7598 13.3758C14.8481 14.2674 15.4111 15.2422 15.3835 16.0452C15.3559 16.8482 14.688 18.0057 14.5776 18.9528C14.3238 21.1237 14.5832 23.987 16.399 25.4103C16.388 23.4387 18.3198 17.7177 19.8928 16.6766C21.4659 15.6354 22.1889 16.6876 23.5743 17.0808C27.206 18.1054 29.0716 17.1861 32.4826 16.9701C35.2313 16.7929 37.7702 17.7344 40.6955 17.6014C41.5841 17.5627 42.3292 17.1085 43.2068 17.3135C45.5691 17.8784 45.9665 22.4695 46.3363 24.4799C46.397 24.8177 46.1983 24.8399 46.7337 24.79C47.7989 22.4529 48.3674 20.3207 47.6996 17.7565C47.4788 16.9036 46.8055 16.1394 46.6233 15.5468C46.1983 14.1567 47.8045 8.79568 47.5561 8.54646L47.5616 8.55199Z" fill="#4C73A8" />
@@ -151,16 +151,19 @@ export default function Detail3() {
           </div>
         </div>
       </div>
-      <div className='bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-cover h-[896px] content-center'>
-        <div className='mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] grid justify-end'> 
-          <div className='grid grid-cols-3 gap-[43px] w-[850px]'>
-            <div className='relative pt-[268px] bg-blue-4/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+      <div className='relative bg-[url("/fecosystem/detail/management-13-m.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-size-[100%_100%] 2xl:bg-cover h-[590px] lg:h-[896px] content-center'>
+        <div className='mx-auto absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full lg:translate-x-0 lg:translate-y-0 justify-center  lg:static w-full  2xl:max-w-[1580px] grid lg:justify-end'> 
+          <div className='grid grid-cols-1 2xl:w-[850px]'>
+            <h4 className='text-[24px] text-blue-1 uppercase font-bold'>Tiêu chuẩn chất lượng quốc tế</h4>
+          </div>
+          <div className='grid grid-cols-3 gap-[15px] 2xl:gap-[43px] w-[100%] 2xl:w-[850px] mb-[30px]'>
+            <div className='relative pt-[124px] 2xl:pt-[268px] bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
               <Image src="/fecosystem/detail/management-14.png" alt='Image' fill />
             </div>
-            <div className='relative pt-[268px]  bg-blue-4/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+            <div className='relative pt-[124px] 2xl:pt-[268px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
               <Image src="/fecosystem/detail/management-15.png" alt='Image' fill />
             </div>
-            <div className='relative pt-[268px]  bg-blue-4/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+            <div className='relative pt-[124px] 2xl:pt-[268px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
               <Image src="/fecosystem/detail/management-16.png" alt='Image' fill />
             </div>
           </div>

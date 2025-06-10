@@ -1,1 +1,2 @@
-.ecosystem-masonry-2:hover:after,.ecosystem-masonry-3:hover:after,.ecosystem-masonry-4:hover:after,.ecosystem-masonry-5:hover:after,.ecosystem-masonry-6:hover:after,.ecosystem-masonry-7:hover:after,.ecosystem-masonry-10:hover:after,.ecosystem-masonry-11:hover:after,.ecosystem-masonry-12:hover:after{background-color:rgba(0,0,0,0)}
+@apply will-change-[width,flex-grow] transition-all duration-1000 ease-in-out
+  &:hover{.ecosystem-masonry-2:after,.ecosystem-masonry-3:after,.ecosystem-masonry-4:after,.ecosystem-masonry-5:after,.ecosystem-masonry-6:after,.ecosystem-masonry-7:after,.ecosystem-masonry-10:after,.ecosystem-masonry-11:after,.ecosystem-masonry-12:after{background-color:rgba(0,0,0,0)}}

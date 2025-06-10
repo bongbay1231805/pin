@@ -16,36 +16,51 @@ const Navbar = () => {
   };
   const [hasShadow, setHasShadow] = useState(false);
   useEffect(() => {
-      let lastScrollY = window.scrollY;
-      const handleScroll = () => {
-        const currentScrollY = window.scrollY;
-        const isScrollingUp = currentScrollY < lastScrollY;
-        if (isScrollingUp && currentScrollY > 150) {
-          setHasShadow(true);
-        } else {
-          setHasShadow(false);
-        }
-        lastScrollY = currentScrollY;
-      };
-      window.addEventListener('scroll', handleScroll);
-      const body = document.getElementById('body');
-      if(isHomePage && body) {
-        body.removeAttribute('class');
-        body.classList.add("home");
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isScrollingUp = currentScrollY < lastScrollY;
+      if (isScrollingUp && currentScrollY > 150) {
+        setHasShadow(true);
+      } else {
+        setHasShadow(false);
       }
-      if(!isHomePage && body) {
-        body.removeAttribute('class');
-        body.classList.add(pathname as string);
-      }
-      return () => window.removeEventListener('scroll', handleScroll);
+      lastScrollY = currentScrollY;
+    };
+    window.addEventListener('scroll', handleScroll);
+    const body = document.getElementById('body');
+    if (isHomePage && body) {
+      body.removeAttribute('class');
+      body.classList.add("home");
+    }
+    if (!isHomePage && body) {
+      body.removeAttribute('class');
+      body.classList.add(pathname as string);
+    }
+    return () => window.removeEventListener('scroll', handleScroll);
   });
+  useEffect(() => {
+    // Hàm xử lý sự kiện cuộn
+    const handleScroll = () => {
+      if (mobileMenuOpen) { // Chỉ đóng menu nếu nó đang mở
+        setMobileMenuOpen(false);
+      }
+    };
+    // Thêm event listener cho sự kiện cuộn
+    window.addEventListener('scroll', handleScroll);
+    // Dọn dẹp event listener khi component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [mobileMenuOpen]); // Dependency array: Chỉ chạy lại effect khi mobileMenuOpen thay đổi
+  // --- End: Phần mới cần thêm ---
   return (
     <nav id="topMenu" className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 2xl:border-white-1 ${(hasShadow) ? '2xl:bg-white 2xl:border-b-[1px] fixed' : isHomePage ? "bg-transparent" : "bg-white"}`}>
       <div className="mx-auto max-w-[91.4%] 2xl:max-w-[91.4%]">
         <div className={`flex justify-between h-[96px] 2xl:h-[106px]`}>
           <div className="flex items-center">
             <Link href="/" className={`flex-shrink-0 flex items-center text-yellow-1 ${(hasShadow) ? 'text-yellow-1' : isHomePage ? 'text-white!' : ''}`}>
-              <svg className={`${(pathname === 'investment-development' || pathname === 'real-estate-services' || pathname === 'management-operation') ? "text-white xl:text-yellow-1 " : ""}`} width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className={`${(pathname === 'investment-development' || pathname === 'real-estate-services' || pathname === 'management-operation') ? "text-yellow-1 " : ""}`} width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M36.7468 11.6881L29.9983 0C17.6246 7.14545 10.001 20.3492 10.001 34.6401C10.001 56.7306 27.9097 74.6393 50.0002 74.6393C66.9617 74.6393 81.4601 64.079 87.2748 49.1746C89.0341 44.6681 89.9995 39.7646 89.9995 34.6401C89.9995 20.3492 82.3758 7.14545 69.9976 0L63.2491 11.6881C71.1705 16.2712 76.498 24.8332 76.498 34.6401C76.498 49.2784 64.634 61.1424 50.0002 61.1424C35.3665 61.1424 23.5025 49.2784 23.5025 34.6401C23.5025 24.8332 28.83 16.2712 36.7513 11.6881" fill="currentColor" />
                 <path d="M63.1311 55.914C70.0556 51.6286 74.7335 44.0591 74.9861 35.3799L53.1934 36.4851L63.1357 55.914H63.1311Z" fill="currentColor" />
                 <path d="M74.9867 33.9001C74.7341 25.2209 70.0607 17.6514 63.1317 13.366L53.1895 32.7949L74.9822 33.9001H74.9867Z" fill="currentColor" />
@@ -72,7 +87,7 @@ const Navbar = () => {
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Giới thiệu</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Giới thiệu</span>
             </Link>
-            <Link href="/ecosystem" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${(isActive("ecosystem")||isActive("investment-development")||isActive("real-estate-services")||isActive("management-operation")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
+            <Link href="/ecosystem" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${(isActive("ecosystem") || isActive("investment-development") || isActive("real-estate-services") || isActive("management-operation")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Hệ Sinh Thái</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Hệ Sinh Thái</span>
             </Link>
@@ -80,7 +95,7 @@ const Navbar = () => {
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Đô thị số Picity</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Đô thị số Picity</span>
             </Link>
-            <Link href="/news" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${(isActive("news") || isActive("market-news") || isActive("pi-group-news")|| isActive("bidding-news")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
+            <Link href="/news" className={`group relative grow-1 py-2 font-semibold text-center hover:text-yellow-2 ${(isActive("news") || isActive("market-news") || isActive("pi-group-news") || isActive("bidding-news")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-5!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Tin Tức</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Tin Tức</span>
             </Link>
@@ -102,12 +117,12 @@ const Navbar = () => {
           <div className="flex items-center xl:hidden">
             <button
               type="button"
-              className={`inline-flex items-center ${pathname === 'ecosystem' ? "text-yellow-1" : "text-white-1"} justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100`}
+              className={`inline-flex items-center ${pathname === 'ecosystem' ? "text-yellow-1" : "text-yellow-1"} justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
               {mobileMenuOpen ? (
-                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff">
+                <svg className="block h-6 w-6 stroke-yellow-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (

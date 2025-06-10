@@ -55,14 +55,14 @@ export default function Detail2() {
     <>
       <div className="mx-auto h-[calc(100vh-100px)] w-[100vw]  text-center pt-[175px] mb-[143px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[55px]'>DỊCH VỤ <br /> BẤT ĐỘNG SẢN </h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[55px]'>DỊCH VỤ <br /> BẤT ĐỘNG SẢN </h2>
         </div>
         <Image fill src="/fecosystem/detail/operation.png" alt="Smart City Features" className="object-fill"></Image>
       </div>
       <div className="mx-auto max-w-[95%] md:max-w-[85%] 2xl:max-w-[1577px] mb-[5%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
           <div className='mt-[20px] w-[81%] order-1 sm:order-0'>
-            <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[41px]'>KẾT NỐI TRỰC TIẾP <br /> ĐỒNG HÀNH CHUYÊN NGHIỆP</h3>
+            <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold mb-[41px]'>KẾT NỐI TRỰC TIẾP <br /> ĐỒNG HÀNH CHUYÊN NGHIỆP</h3>
             <p className='text-[14px] xl:ttext-[16px] text-gray-5 mb-[18px]'>Đóng vai trò cầu nối chiến lược, Dịch vụ Bất động sản của Pi Group mang sản phẩm chất lượng đến với đúng khách hàng và nhà đầu tư mục tiêu. Trong đó, Công ty Cổ phần ECOE Việt Nam là thành viên chủ lực trong hệ sinh thái toàn diện của Pi Group. </p>
             <p className='text-[14px] xl:ttext-[16px] text-gray-5'>Bằng sự am hiểu thị trường sâu sắc, mạng lưới rộng khắp và đội ngũ chuyên gia tận tâm, ECOE Việt Nam cung cấp các giải pháp tiếp thị, phân phối và tư vấn toàn diện, đảm bảo sự thành công cho mọi giao dịch.</p>
           </div>
@@ -77,8 +77,8 @@ export default function Detail2() {
         </div>
         <div>
           <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px]'>Trao Bất động sản thực <br /> đến đúng nhu cầu từng khách hàng</h3>
-          <div className="flex overflow-x-scroll sm:overflow-x-auto sm:grid sm:grid-cols-3">
-            <div className="relative flex-shrink-0 w-full sm:w-auto flex  flex-col justify-center items-center gap-[50px]">
+          <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
+            <div className="grow-1 relative flex-shrink-0 w-full md:w-auto flex  flex-col justify-center items-center gap-[50px]">
               <svg width="113" height="112" viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 31L61.73 10L101 31" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" />
                 <path d="M37 25V69H86V25" stroke="#4C73A8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -89,7 +89,23 @@ export default function Detail2() {
               </svg>
               <h4 className='text-yellow-1 uppercase font-bold text-[18px] 2xl:text-[24px]'>Phân phối Bất động sản</h4>
             </div>
-            <div className="relative flex-shrink-0 w-full sm:w-auto flex  flex-col justify-center items-center gap-[50px]">
+            <div className="grow-1 relative flex-shrink-0 w-full md:w-auto flex 
+            flex-col justify-center items-center gap-[50px]
+            after:content-['']
+            after:bg-[url('/fecosystem/detail/operation-5.svg')]
+            after:absolute
+            after:left-0
+            after:w-[22px]
+            after:h-[100%]
+            after:bg-center
+            before:content-['']
+            before:bg-[url('/fecosystem/detail/operation-5.svg')]
+            before:absolute
+            before:right-0
+            before:w-[22px]
+            before:h-[100%]
+            before:bg-center
+            ">
               <svg width="110" height="111" viewBox="0 0 110 111" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M31.0234 15L55.5234 2L81.0234 15" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" />
                 <path d="M39.5234 11V38.5H72.0234V11" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -112,7 +128,7 @@ export default function Detail2() {
               </svg>
               <h4 className='text-yellow-1 uppercase font-bold text-[18px] 2xl:text-[24px]'>Quản lý Bất động sản</h4>
             </div>
-            <div className="relative flex-shrink-0 w-full sm:w-auto flex  flex-col justify-center items-center gap-[50px]">
+            <div className="grow-1 relative flex-shrink-0 w-full md:w-auto flex  flex-col justify-center items-center gap-[50px]">
               <svg width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="path-1-inside-1_1_2377" fill="white">
                   <rect x="18" y="22" width="75" height="92" rx="3" />
