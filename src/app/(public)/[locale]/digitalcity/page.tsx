@@ -577,9 +577,18 @@ export default function Detail1() {
       <div className="flex items-start justify-end relative mx-auto md:max-w-[83%] px-[10px] h-[801px]">
         <Image alt="benefit 7" loading="lazy" decoding="async" fill className='w-[calc(100%-68px)]!' src="/fdigitalcity/digitalcity-22.png" />
         <div className='relative z-1 flex flex-col mt-[80px] text-center'>
-          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-0  w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden  hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'><span>1</span><p>Picity Sky Park</p></div>
-          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[70px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'><span>2</span><p>Picity Sky Park</p></div>
-          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[140px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'><span>3</span><p>Picity Sky Park</p></div>
+          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-0  w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden  hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
+            <span className="duration-0">1</span>
+            <p>Picity Sky Park</p>
+            </div>
+          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[70px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
+            <span className="duration-0">2</span>
+            <p>Picity Sky Park</p>
+            </div>
+          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[140px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
+            <span className="duration-0">3</span>
+            <p>Picity Sky Park</p>
+          </div>
         </div>
       </div>
     </>

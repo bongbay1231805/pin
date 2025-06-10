@@ -1,0 +1,15 @@
+.ecosystem-masonry-2,
+.ecosystem-masonry-3,
+.ecosystem-masonry-4,
+.ecosystem-masonry-5,
+.ecosystem-masonry-6,
+.ecosystem-masonry-7,
+.ecosystem-masonry-10,
+.ecosystem-masonry-11,
+.ecosystem-masonry-12 {
+  &:hover {
+    &:after {
+      background-color: transparent;
+    }
+  }
+}

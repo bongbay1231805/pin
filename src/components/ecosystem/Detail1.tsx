@@ -59,7 +59,7 @@ export default function Detail1() {
               <p><strong>Đơn vị thi công xây dựng:</strong> Unicons (Thành viên Coteccons Group) và Tập đoàn Xây dựng Hòa Bình</p>
             </div>
             <div className='flex justify-end px-[70px] py-[25px]'>
-              <Link href="/" className="flex uppercase items-center justify-center text-yellow-1 font-semibold w-[261] h-[50] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2">
+              <Link href="/" className="hvr-bounce-to-right flex uppercase items-center justify-center text-yellow-1 font-semibold w-[261] h-[50] border border-yellow-1 hover:text-white">
                 Xem chi tiết dự án
               </Link>
             </div>
@@ -101,7 +101,7 @@ export default function Detail1() {
               <p><strong>Đơn vị thi công xây dựng:</strong> Unicons (Thành viên Coteccons Group) và Tập đoàn Xây dựng Hòa Bình</p>
             </div>
             <div className='flex justify-end px-[70px] py-[25px]'>
-              <Link href="/" className="flex uppercase items-center justify-center text-yellow-1 font-semibold w-[261] h-[50] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2">
+              <Link href="/" className="hvr-bounce-to-right flex uppercase items-center justify-center text-yellow-1 font-semibold w-[261] h-[50] border border-yellow-1 hover:text-white">
                 Xem chi tiết dự án
               </Link>
             </div>
@@ -127,7 +127,7 @@ export default function Detail1() {
               <p><strong>Đơn vị thi công xây dựng:</strong> Unicons (Thành viên Coteccons Group) và Tập đoàn Xây dựng Hòa Bình</p>
             </div>
             <div className='flex justify-end px-[70px] py-[25px]'>
-              <Link href="/" className="flex uppercase items-center justify-center text-yellow-1 font-semibold w-[261] h-[50] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2">
+              <Link href="/" className="hvr-bounce-to-right flex uppercase items-center justify-center text-yellow-1 font-semibold w-[261] h-[50] border border-yellow-1 hover:text-white">
                 Xem chi tiết dự án
               </Link>
             </div>
