@@ -1,33 +1,69 @@
 'use client';
+import React, { useState, useEffect } from 'react';
 export function Stats() {
+  const originalItems = [
+    { value: "12", unit: "NĂM", description: "HÌNH THÀNH VÀ <br />PHÁT TRIỂN" },
+    { value: "20+", unit: "HA", description: "QUỸ ĐẤT" },
+    { value: "15,000+", description: "KHÁCH HÀNG" },
+    { value: "5.000+", description: "SẢN PHẨM" },
+    { value: "1.000+", description: "NHÂN SỰ CHẤT LƯỢNG CAO" },
+    { value: "30+", description: "ĐỐI TÁC CHIẾN LƯỢC QUỐC TẾ" },
+  ];
+  // Tạo danh sách đủ dài để cuộn mượt
+  const items = [...originalItems, ...originalItems, ...originalItems];
+  const itemHeight = 90;
+  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        if (prevIndex >= originalItems.length * 2) {
+          return 0; // Reset lại để tránh tràn mảng
+        }
+        return prevIndex + 1;
+      });
+    }, 3000); // Cuộn mỗi 3 giây
+    return () => clearInterval(interval);
+  }, []);
   return (
-    <div className="mx-auto py-16 mt-[115px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+    <div className="mx-auto py-16 mt-[25px] max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-[20px] 2xl:text-[28px] text-gray-1 font-normal mb-[15px]">NHÀ PHÁT TRIỂN</h2>
-          <h3 className="text-size-25 2xl:text-[45px] text-yellow-1 mb-[15px]">ĐÔ THỊ SỐ TIỆN ÍCH 5*</h3>
-          <p className="text-[20px] 2xl:text-[28px] text-gray-1 mb-[40px]">CHUẨN QUỐC TẾ</p>
-          <p className="max-w-[508px]">Hơn một thập kỷ không ngừng hoàn thiện và tăng trưởng, Tập đoàn Pi Group khẳng định vị thế vững chắc là Nhà phát triển Bất động sản chất lượng cao, kiến tạo những cộng đồng văn minh. Mỗi dự án của Pi Group là một minh chứng cho tư duy đổi mới và cam kết mang đến giá trị vượt trội cho khách hàng, đồng hành cùng kỷ nguyên thịnh vượng của quốc gia.</p>
+          <h2 className="text-[22px] 2xl:text-[28px] text-gray-1 font-normal mb-[6px]">NHÀ PHÁT TRIỂN</h2>
+          <h3 className="text-[32px] 2xl:text-[45px] font-bold text-yellow-1 mb-[6px]">ĐÔ THỊ SỐ TIỆN ÍCH 5★</h3>
+          <p className="text-[22px] 2xl:text-[28px] text-gray-1 mb-[40px]">CHUẨN QUỐC TẾ</p>
+          <p className="text-[14px] 2xl:text-[17px] text-justify max-w-[408px] 2xl:max-w-[558px]">
+            Hơn một thập kỷ không ngừng hoàn thiện và tăng trưởng, Tập đoàn Pi Group khẳng định vị thế vững chắc là Nhà phát triển Bất động sản chất lượng cao, kiến tạo những cộng đồng văn minh. Mỗi dự án của Pi Group là một minh chứng cho tư duy đổi mới và cam kết mang đến giá trị vượt trội cho khách hàng, đồng hành cùng kỷ nguyên thịnh vượng của quốc gia.
+          </p>
         </div>
-        <div className="grid grid-cols-1 gap-8">
-          <div className="flex items-center gap-[34px]">
-            <h3 className="max-w-[230px] grow font-semibold text-blue-1 text-[60px]">12 NĂM</h3>
-            <p className="text-gray-5 text-[17px]">HÌNH THÀNH VÀ <br /> PHÁT TRIỂN</p>
-          </div>
-          <div className="flex items-center gap-[34px]">
-            <h3 className="max-w-[230px] grow font-semibold text-blue-1 text-[60px]">20+ HA</h3>
-            <p className="text-gray-5 text-[17px]">QUỸ ĐẤT</p>
-          </div>
-          <div className="flex items-center gap-[34px] text-[#D9D9D9] opacity-[60%]">
-            <h3 className="max-w-[230px] grow font-semibold text-blue-1 text-[60px]">15,000+</h3>
-            <p className="text-gray-5 text-[17px]">CƯ DÂN TIN CHỌN VÀ <br/> ĐỒNG HÀNH</p>
-          </div>
-          <div className="flex items-center gap-[34px] text-[#D9D9D9] opacity-[20%]">
-            <h3 className="max-w-[230px] grow font-semibold text-blue-1 text-[60px]">5,000+</h3>
-            <p className="text-gray-5 text-[17px]">SẢN PHẨM</p>
+        <div className="grid grid-cols-1">
+          <div className="overflow-hidden h-[360px]">
+            <div
+              className="transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateY(-${currentIndex * itemHeight}px)` }}
+            >
+              {items.map((item, index) => {
+                // Tính chỉ số tương đối so với currentIndex
+                const relativeIndex = (index - currentIndex + originalItems.length) % originalItems.length;
+                const opacityClass = relativeIndex === 0 ? 'opacity-100' : relativeIndex === 1 ? 'opacity-90' : relativeIndex === 2 ? 'opacity-50' : relativeIndex === 3 ? 'opacity-25' : 'opacity-0';
+                return (
+                  <div
+                    key={index}
+                    className={`flex items-center text-left gap-[34px] border-b-[1px] border-gray-2 h-[90px] ${opacityClass}`}
+                  >
+                    <h3 className="max-w-[268px] pl-[60px] grow font-semibold text-blue-1 text-[53px] 2xl:text-[60px]">
+                      {item.value} {item.unit && <span className="text-[30px] 2xl:text-[35px]">{item.unit}</span>}
+                    </h3>
+                    <p
+                      className="text-gray-5 font-semibold text-[15px] 2xl:text-[17px]"
+                      dangerouslySetInnerHTML={{ __html: item.description }}
+                    ></p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

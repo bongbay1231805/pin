@@ -32,7 +32,7 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
         )}
         <img
           src={heavyImage}
-          alt="Ảnh nặng"
+          alt="Modern city"
           style={{
             position: 'absolute',
             top: 0,
@@ -45,7 +45,7 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
           }}
         />
       </div>
-      <div onClick={onScrollToDigitalCity} className="font-semibold text-[18px] absolute bottom-20 left-1/2 -translate-x-1/2 flex justify-center flex-col items-center text-white uppercase gap-[15px]">
+      <div onClick={onScrollToDigitalCity} className="font-semibold text-[18px] cursor-pointer absolute bottom-12 left-1/2 -translate-x-1/2 flex justify-center flex-col items-center text-white uppercase gap-[15px]">
         <Image
           src="/scroll.svg"
           alt="Modern city skyline"

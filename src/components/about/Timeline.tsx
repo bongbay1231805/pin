@@ -1,75 +1,111 @@
 'use client';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+import React, { useEffect, useRef, useState } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 export function Timeline() {
   const timelineEvents = [
     {
-      year: "2016",
-      description1: "Hoàn tất M&A: <br/> Công ty TNHH MTV Đầu tư <br/> Phát triển <strong>Gia Cư</strong> và <br/> Công ty CP Địa ốc <strong>Phương Đông</strong>",
-      description2: "Thành lập Công ty <br/> <strong>CP ECOE Việt Nam</strong>",
+      year: '2008',
+      description1: 'Thành lập <br/> <strong>Tập đoàn Pi Group</strong>',
+      description2: '',
     },
     {
-      year: "2017",
-      description1: "Thành lập Công ty CP <br/> <strong>Đầu tư - Xây dựng Winbuild</strong>",
-      description2: "M&A thành công <br/> <strong>Công ty CP Đông Quang</strong>",
+      year: '2015',
+      description1: 'Thành lập Công ty CP <br/> Tư vấn Thiết kế Xây dựng<br/><strong>Ngôi Nhà Thông Minh</strong>',
+      description2: '',
     },
     {
-      year: "2015",
-      description1: "Thành lập Công ty CP <br/> Tư vấn Thiết kế Xây dựng",
-      description2: "<strong>Ngôi Nhà Thông Minh</strong>",
+      year: '2016',
+      description1:
+        'Hoàn tất M&A: <br/> Công ty TNHH MTV Đầu tư <br/> Phát triển <strong>Gia Cư</strong> và <br/> Công ty CP Địa ốc <strong>Phương Đông</strong>',
+      description2: 'Thành lập Công ty <br/> <strong>CP ECOE Việt Nam</strong>',
     },
     {
-      year: "2016",
-      description1: "Hoàn tất M&A: <br/> Công ty TNHH MTV Đầu tư <br/> Phát triển <strong>Gia Cư</strong> và <br/> Công ty CP Địa ốc <strong>Phương Đông</strong>",
-      description2: "Thành lập Công ty <br/> <strong>CP ECOE Việt Nam</strong>",
-    },
-    {
-      year: "2017",
-      description1: "Thành lập Công ty CP <br/> <strong>Đầu tư - Xây dựng Winbuild</strong>",
-      description2: "M&A thành công <br/> <strong>Công ty CP Đông Quang</strong>",
-    },
-    {
-      year: "2015",
-      description1: "Thành lập Công ty CP <br/> Tư vấn Thiết kế Xây dựng",
-      description2: "<strong>Ngôi Nhà Thông Minh</strong>",
+      year: '2017',
+      description1: 'Thành lập Công ty CP <br/> Đầu tư - Xây dựng <strong>Winbuild</strong>',
+      description2: 'M&A thành công <br/>Công ty CP  <strong>Đông Quang</strong>',
     }
   ];
+  const autoplay = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+  const [emblaRef, embla] = useEmblaCarousel(
+    { loop: true, align: 'center', skipSnaps: false },
+    [autoplay.current]
+  );
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  // Cập nhật selected index mỗi lần carousel thay đổi
+  useEffect(() => {
+    if (!embla) return;
+    const onSelect = () => {
+      setSelectedIndex(embla.selectedScrollSnap());
+    };
+    embla.on('select', onSelect);
+    onSelect();
+    return () => {
+      embla.off('select', onSelect);
+    };
+  }, [embla]);
+  const scrollPrev = () => embla && embla.scrollPrev();
+  const scrollNext = () => embla && embla.scrollNext();
   return (
-    <section className="bg-white py-16">
-      <div className="mx-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-        <h2 className="text-[40px] text-blue-1 font-bold text-center mb-12">LỊCH SỬ HÌNH THÀNH</h2>
-        <Carousel
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-          className="mx-auto max-w-[1156px]"
-        >
-          <CarouselContent className="w-full h-[450px]">
-            {timelineEvents.map((event, index) => (
-              <CarouselItem key={index} index={index} className={`md:basis-1/3 h-full carouselitemcenter`}>
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center">
-                    <div className="z-1 timeline-number absolute px-8 top-[40px] left-1/2 -translate-x-1/2 text-[40px] font-semibold">{event.year}</div>
-                    <p className="text-center text-[16px] w-full" dangerouslySetInnerHTML={{ __html: event.description1 }}></p>
-                    <p className="text-center text-[16px] w-full" dangerouslySetInnerHTML={{ __html: event.description2 }}></p>
+    <section className="bg-white timeline-carousel py-16">
+      <div className="mx-auto max-w-[80%] md:max-w-[80%] 2xl:max-w-[1380px]">
+        <h2 className="text-[36px] 2xl:text-[40px] text-yellow-1 font-bold text-center mb-12">
+          LỊCH SỬ HÌNH THÀNH
+        </h2>
+        <div className="carousel-bg relative ">
+          {/* Nút trái */}
+          <button
+            onClick={scrollPrev}
+            className="absolute arrow cursor-pointer z-10 left-0 top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2"
+          >
+            <ChevronLeft />
+          </button>
+          {/* Carousel */}
+          <div className="overflow-hidden max-w-[86%] ml-[7%]" ref={emblaRef}>
+            <div className="flex">
+              {timelineEvents.map((event, index) => {
+                const isActive = index === selectedIndex;
+                return (
+                  <div
+                    key={index}
+                    className="flex-none min-w-[33.333%] flex justify-center items-center p-6 cursor-pointer"
+                    onClick={() => embla && embla.scrollTo(index)}
+                  >
+                    <div
+                      className={`w-[296px] h-[296px] 2xl:w-[360px] 2xl:h-[360px] rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white ${isActive
+                        ? 'border-1 timeline-item active border-yellow-500'
+                        : 'timeline-item opacity-100'
+                        }`}
+                    >
+                      <div className="bg w-full h-full flex flex-col items-center justify-center text-center pb-[20px]">
+                        <div className="text-[26px] 2xl:text-[32px] title font-bold mb-2 text-yellow-1">{event.year}</div>
+                        <div
+                          className="text-[13px] 2xl:text-[15px]"
+                          dangerouslySetInnerHTML={{ __html: event.description1 }}
+                        />
+                        <div
+                          className="text-[13px] 2xl:text-[15px] mt-2"
+                          dangerouslySetInnerHTML={{ __html: event.description2 }}
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <svg className="absolute left-1/2 top-1/2 -translate-1/2 " width="100%" height="100%" viewBox="0 0 361 361" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle className="fill-yellow-1" cx="180.5" cy="180.5" r="180" stroke="#C48C5E" />
-                  </svg>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious variant="link" className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary underline-offset-4 hover:underline absolute h-8 w-8 rounded-full -left-12 top-1/2 -translate-y-1/2" />
-          <CarouselNext variant="link" className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary underline-offset-4 hover:underline absolute h-8 w-8 rounded-full -right-12 top-1/2 -translate-y-1/2" />
-        </Carousel>
+                );
+              })}
+            </div>
+          </div>
+          {/* Nút phải */}
+          <button
+            onClick={scrollNext}
+            className="absolute arrow cursor-pointer z-10 right-0 top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2"
+          >
+            <ChevronRight />
+          </button>
+        </div>
       </div>
     </section>
-  )
+  );
 }

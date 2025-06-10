@@ -3,25 +3,15 @@ import Image from "next/image"
 import Link from "next/link"
 export function Business() {
   return (
-    <div className="container mx-auto px-1 sm:px-6 lg:px-[16px] md:max-w-[1253px]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-b-1 border-gray-2 pb-[135px]">
+    <div className="mx-auto px-1 sm:px-6 lg:px-[16px] md:max-w-[72%] border-b-1 border-gray-2 items-center pb-[88px]">
+      <div className="grid grid-cols-1 flex items-center justify-center md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-[40px] text-yellow-1 font-bold mb-[30px]">VĂN HÓA DOANH NGHIỆP</h2>
-          <p className="text-gray-1 text-[20px] sm:text-[25px] lg:text-[30px] font-normal mb-[112px] uppercase">
+          <h2 className="text-[28px]  2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">VĂN HÓA DOANH NGHIỆP</h2>
+          <p className="text-gray-1 text-[22px] 2xl:text-[30px]  font-normal uppercase">
             Phát triển bền vững
           </p>
-          <Link href="/" className="flex items-center justify-center text-yellow-1 font-semibold w-[180px] h-[30px] md:w-[203px] md:h-[35px] border border-yellow-1 hover:text-amber-50 hover:bg-blue-2 hover:border-blue-2">
-            <Image
-              src="/fabout/book.svg"
-              alt="Smart City Features"
-              width={24}
-              height={24}
-              className="object-contain"
-            />
-            Xem hồ sơ năng lực
-          </Link>
         </div>
-        <div className="relative aspect-square items-center flex justify-center">
+        <div className="relative pl-[46px] aspect-square items-center flex justify-center">
           <Image
             src="/fabout/vhdn.svg"
             alt="Smart City Features"
@@ -30,6 +20,34 @@ export function Business() {
             className="object-contain"
           />
         </div>
+      </div>
+      <div className="relative flex items-center justify-center mt-[72px]">
+        <Link href="/" className="flex profile-btn items-center justify-center font-semibold w-[460px] h-[50px]">
+          <svg width="35" height="35" className="object-contain mr-[15px]" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.76074 45.6747V3.89313C7.76074 2.29692 9.05181 1 10.6408 1H45.9619C47.5509 1 48.8419 2.29692 48.8419 3.89313V39.9805" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M4.38086 49.0703H37.4941" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M1.00391 45.6753C1.00391 47.5516 2.5127 49.0672 4.38055 49.0672C6.24839 49.0672 7.75719 47.5516 7.75719 45.6753" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M1 45.6714V31.9463H7.76474" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M15.8906 7.39453C16.3706 7.39457 16.7758 7.46395 17.1172 7.5918L17.2598 7.65039C17.5812 7.79389 17.8239 7.98509 17.999 8.21875L18.0693 8.32129C18.2487 8.6032 18.3506 8.94916 18.3506 9.38086C18.3506 9.7594 18.2756 10.065 18.1348 10.3262L18.0703 10.4355L18.0684 10.4385C17.9123 10.6863 17.6913 10.89 17.3926 11.0469L17.2598 11.1113C17.1423 11.1638 17.0162 11.2072 16.8818 11.2441L17.4297 10.7959C17.8588 10.4442 18.0479 9.94318 18.0479 9.38086C18.0478 8.88656 17.902 8.44655 17.5811 8.10742L17.4326 7.96875L17.4297 7.96582L17.2676 7.84863C16.8752 7.59586 16.3788 7.49219 15.8291 7.49219H13.8203V11.2656H15.8291C16.1049 11.2656 16.3679 11.2381 16.6123 11.1797V11.3066C16.3929 11.3463 16.153 11.3672 15.8906 11.3672H13.8203V13.3818H13.5293V7.39453H15.8906Z" fill="#4C73A8" className="proico" stroke="#4C73A8" />
+            <path d="M20.6582 9.05664V11.042L20.7383 10.916C20.7233 11.0406 20.7148 11.1687 20.7148 11.2998V13.3857H20.4736V9.05664H20.6582ZM22.5449 9.15723C22.2809 9.17759 22.0349 9.23945 21.8105 9.34277C21.9871 9.19619 22.2244 9.08994 22.5449 9.03711V9.15723Z" fill="#4C73A8" className="proico" stroke="#4C73A8" />
+            <path d="M26.4336 8.99121C26.8419 8.99127 27.2053 9.06756 27.5205 9.21289L27.6523 9.2793L27.6543 9.28027C27.9641 9.44836 28.2081 9.66758 28.3936 9.94043L28.4697 10.0605C28.6618 10.3923 28.7637 10.7723 28.7637 11.2158C28.7636 11.6055 28.6849 11.9482 28.5361 12.25L28.4688 12.376C28.2992 12.668 28.0721 12.9054 27.7822 13.0879L27.6543 13.1631C27.3042 13.3529 26.9025 13.4511 26.4336 13.4512C26.0242 13.4512 25.6707 13.376 25.3535 13.2295L25.2197 13.1631C24.9103 12.9953 24.6674 12.7763 24.4824 12.5L24.4062 12.3779L24.4053 12.376L24.3379 12.25C24.1891 11.9482 24.1104 11.6055 24.1104 11.2158C24.1104 10.7722 24.2122 10.3923 24.4043 10.0605C24.5742 9.77073 24.8015 9.5349 25.0898 9.35547L25.2168 9.28125L25.2197 9.28027C25.5707 9.08995 25.9693 8.99121 26.4336 8.99121ZM26.4336 9.04688C25.8546 9.04688 25.3416 9.2475 24.9453 9.66113C24.5477 10.0761 24.3633 10.6104 24.3633 11.2158C24.3633 11.7454 24.504 12.2209 24.8057 12.6094L24.9453 12.7705C25.3416 13.184 25.8547 13.3848 26.4336 13.3848C26.9405 13.3847 27.3948 13.2306 27.7676 12.917L27.9229 12.7725C28.3262 12.3569 28.5107 11.8213 28.5107 11.2158C28.5107 10.6859 28.3691 10.2096 28.0635 9.82031L27.9229 9.6582C27.5241 9.24737 27.013 9.04698 26.4336 9.04688Z" fill="#4C73A8" className="proico" stroke="#4C73A8" />
+            <path d="M35.6582 9.05176V13.3818H35.417V9.05176H35.6582ZM35.5439 6.67676C35.6289 6.67681 35.6882 6.69372 35.7354 6.72266L35.7783 6.75586C35.8238 6.79842 35.8379 6.83294 35.8379 6.89453C35.8379 6.96089 35.824 7.00964 35.7939 7.05273L35.7588 7.09375C35.7117 7.14102 35.6517 7.17279 35.54 7.17285C35.4462 7.17285 35.3913 7.15269 35.3418 7.11426L35.3184 7.0918C35.271 7.04769 35.249 7.00149 35.249 6.9248C35.249 6.86722 35.2618 6.82718 35.2881 6.79199L35.3184 6.75781C35.3739 6.70617 35.4383 6.67676 35.5439 6.67676ZM31.124 8.25293C31.124 7.83936 31.2258 7.54949 31.3945 7.34277L31.4707 7.25879L31.4727 7.25684C31.6867 7.04429 32.0117 6.90723 32.5225 6.90723C32.7194 6.90725 32.8812 6.92636 33.0137 6.95801L33.0127 6.96094C32.8845 6.9292 32.7517 6.91214 32.6143 6.91211C32.2627 6.91211 31.9109 7.01105 31.6562 7.29102C31.5282 7.4319 31.4465 7.59684 31.3965 7.77148H31.3271V9.08984H31.3652V13.3779H31.124V8.25293Z" fill="#4C73A8" className="proico" stroke="#4C73A8" />
+            <path d="M38.5303 6.97607V13.3813H38.2891V6.97607H38.5303Z" fill="#4C73A8" className="proico" stroke="#4C73A8" />
+            <path d="M42.9561 8.98633C43.4014 8.98633 43.7706 9.08333 44.0977 9.26758C44.3832 9.42842 44.6114 9.64319 44.7881 9.91895L44.8604 10.041C45.0257 10.3402 45.1213 10.6956 45.1377 11.1133H45.0146L44.9609 10.7197C44.9011 10.2868 44.7309 9.90789 44.4414 9.60254L44.3096 9.47656C43.9385 9.15109 43.478 8.99121 42.9678 8.99121C42.527 8.99125 42.1313 9.10804 41.791 9.34473H41.7695L41.6289 9.4668C41.257 9.78851 41.0343 10.2107 40.9609 10.7168L40.9033 11.1133H40.8613L40.8848 11.2393L40.8779 11.2881H40.8936L40.9717 11.7051C41.0665 12.2158 41.3233 12.6392 41.7373 12.9473C42.1476 13.2526 42.6395 13.3916 43.1816 13.3916C43.6969 13.3916 44.1599 13.263 44.5596 13.0039L44.5957 13.0459C44.5359 13.089 44.4729 13.1295 44.4053 13.166L44.1963 13.2627L44.1953 13.2637C43.9012 13.3818 43.5531 13.4463 43.1475 13.4463C42.6944 13.4463 42.3094 13.3683 41.9795 13.2217L41.8418 13.1553C41.5218 12.9862 41.2733 12.7677 41.0889 12.4941L41.0137 12.373L41.0127 12.3711L40.9453 12.2451C40.7965 11.9433 40.7178 11.6006 40.7178 11.2109C40.7178 10.7665 40.8162 10.3921 41.0029 10.0586C41.1718 9.76318 41.3925 9.52665 41.6699 9.3457L41.792 9.27148C42.1253 9.08411 42.509 8.9864 42.9561 8.98633Z" fill="#4C73A8" className="proico" stroke="#4C73A8" />
+            <path d="M19.8926 20.2349H40.6795" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M12.7793 34.0562H25.5372" className="proico" stroke="#4C73A8" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M12.7793 37.6899H25.5372" className="proico" stroke="#4C73A8" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M12.7793 41.6807H25.5372" className="proico" stroke="#4C73A8" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M29.5342 34.0562H42.2921" className="proico" stroke="#4C73A8" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M29.5342 37.6899H42.2921" className="proico" stroke="#4C73A8" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M29.5342 41.6807H42.2921" className="proico" stroke="#4C73A8" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M16.9015 22.8293C18.3275 22.8293 19.4836 21.668 19.4836 20.2354C19.4836 18.8029 18.3275 17.6416 16.9015 17.6416C15.4754 17.6416 14.3193 18.8029 14.3193 20.2354C14.3193 21.668 15.4754 22.8293 16.9015 22.8293Z" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M35.6142 27.3643H14.8311" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M38.6085 29.9577C40.0346 29.9577 41.1906 28.7964 41.1906 27.3639C41.1906 25.9313 40.0346 24.77 38.6085 24.77C37.1824 24.77 36.0264 25.9313 36.0264 27.3639C36.0264 28.7964 37.1824 29.9577 38.6085 29.9577Z" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+            <path d="M46.5646 50.9999C48.5603 50.9999 50.1781 49.3748 50.1781 47.3701C50.1781 45.3654 48.5603 43.7402 46.5646 43.7402C44.569 43.7402 42.9512 45.3654 42.9512 47.3701C42.9512 49.3748 44.569 50.9999 46.5646 50.9999Z" className="proico" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
+          </svg>
+          <span>Hồ sơ năng lực Pi Group</span>
+        </Link>
       </div>
     </div>
   )

@@ -3,7 +3,6 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  color: var(--foreground);
   background-color: var(--background);
   font-family: var(--font-montserrat);
   font-size: var(--text-size-17);
@@ -180,12 +179,21 @@ strong {
   .show .fade-in-up-medium {
     @apply animate-fade-in-up-medium;
   }
+  @keyframes fade-in-left-short {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0)
+    }
+  }
   .fade-in-left-short {
     opacity: 0;
     transform: translateX(-20px)
   }
-  .fade-in-left-short.show,
-  .show .fade-in-left-short {
+  .fade-in-left-short.show, .show .fade-in-left-short {
     @apply animate-fade-in-left-short;
   }
   .hvr-bounce-to-right {
@@ -273,4 +281,99 @@ strong {
     margin-right: 0.2rem;
     /* Khoảng cách giữa dấu và nội dung */
   }
+}
+.timeline-carousel .timeline-item.active {
+  border: 1px solid #c48c5e
+}
+.timeline-carousel .timeline-item.active .bg {
+  color: #fff;
+  background: #c48c5e;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%
+}
+.timeline-carousel .timeline-item.active .bg .title {
+  color: #fff
+}
+.timeline-carousel .arrow {
+  border: 1px solid rgba(196, 140, 94, 0)
+}
+.timeline-carousel .arrow:hover {
+  border: 1px solid #c48c5e
+}
+.vision-item {
+  cursor: pointer
+}
+.vision-item .vision-content .title {
+  position: absolute;
+  position: relative;
+  padding-top: 30px;
+  transition: all 350ms linear;
+  z-index: 10
+}
+.vision-item .vision-content .content {
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  bottom: 32px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: all 350ms linear
+}
+.vision-item .vision-content .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #a87136;
+  opacity: .68;
+  z-index: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 350ms linear
+}
+.vision-item:hover .vision-content .title {
+  padding-top: 0
+}
+.vision-item:hover .vision-content .content {
+  bottom: calc(50% - 50px);
+  opacity: 1
+}
+.vision-item:hover .vision-content .bg {
+  transform: scaleX(1)
+}
+.profile-btn {
+  position: relative;
+  text-transform: uppercase;
+  color: #4c73a8;
+  border: 1px solid #4c73a8;
+  transition: all 200ms linear
+}
+.profile-btn .proico {
+  transition: all 200ms linear
+}
+.profile-btn::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #c48c5e;
+  z-index: -1;
+  transform-origin: left;
+  transition: all 200ms linear;
+  transform: scaleX(0)
+}
+.profile-btn:hover {
+  color: #fff;
+  border: 1px solid #c48c5e
+}
+.profile-btn:hover .proico {
+  stroke: #fff
+}
+.profile-btn:hover::before {
+  transform: scaleX(1)
 }

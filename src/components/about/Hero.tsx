@@ -2,7 +2,7 @@
 import Image from "next/image"
 export function Hero() {
   return (
-    <div className="relative h-[600px] w-full">
+    <div className="relative h-lvh w-full">
       <Image
         src="/fabout/cityscape.jpg"
         alt="Modern cityscape with high-rise buildings"
