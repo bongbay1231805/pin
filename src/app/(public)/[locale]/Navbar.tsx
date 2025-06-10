@@ -8,8 +8,7 @@ const Navbar = () => {
   const pathname = usePathname().split("/").pop();
   const isHomePage = (pathname === "en" || pathname === "vi");
   const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "market-news", "pi-group-news", "bidding-news", "human-resource", "contact", "digitalcity"];
-  // const pageCurent = aPage.includes(pathname!);
-  const pageCurent = false;
+  const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isActive = (path: string) => {
@@ -17,7 +16,6 @@ const Navbar = () => {
   };
   const [hasShadow, setHasShadow] = useState(false);
   useEffect(() => {
-    if (!pageCurent) {
       let lastScrollY = window.scrollY;
       const handleScroll = () => {
         const currentScrollY = window.scrollY;
@@ -31,14 +29,16 @@ const Navbar = () => {
       };
       window.addEventListener('scroll', handleScroll);
       const body = document.getElementById('body');
-      if(isHomePage) {
-        body!.classList.add("home");
-      }else {
-        body!.classList.add(pathname as string);
+      if(isHomePage && body) {
+        body.removeAttribute('class');
+        body.classList.add("home");
+      }
+      if(!isHomePage && body) {
+        body.removeAttribute('class');
+        body.classList.add(pathname as string);
       }
       return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, [pageCurent]);
+  });
   return (
     <nav id="topMenu" className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 2xl:border-white-1 ${(hasShadow) ? '2xl:bg-white 2xl:border-b-[1px] fixed' : isHomePage ? "bg-transparent" : "bg-white"}`}>
       <div className="mx-auto max-w-[91.4%] 2xl:max-w-[91.4%]">
