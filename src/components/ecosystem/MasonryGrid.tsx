@@ -109,7 +109,7 @@ export default function MasonryGrid() {
     rows.push(
       <div
         key={i}
-        className={`grid gap-x-[2px] m-0 xl:h-[calc((100vh-143.5px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_45%]" : "xl:grid-cols-[45%_repeat(3,1fr)]"}`}
+        className={`grid gap-x-[2px] m-0 xl:h-[calc((100vh-150px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_45%]" : "xl:grid-cols-[45%_repeat(3,1fr)]"}`}
       >
         {rowItems.map((item,index) => (
           <div key={item.id} className={`relative pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${item.id} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}>
@@ -135,5 +135,5 @@ export default function MasonryGrid() {
       </div>
     );
   }
-  return <div className="xl:h-[calc(100vh-143.5px)] overflow-hidden space-y-2 max-w-[91.4%] m-auto">{rows}</div>;
+  return <div className="xl:h-[calc(100vh-150px)] overflow-hidden space-y-2 max-w-[91.4%] m-auto">{rows}</div>;
 }

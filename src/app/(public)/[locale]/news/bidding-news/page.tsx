@@ -29,7 +29,7 @@ function DetailPost() {
       return () => boxes.forEach(box => observer.unobserve(box));
     }, []);
   return (
-    <main>
+    <div>
       <Hero />
       <div className="container m-auto md:max-w-[1312px]">
         <ContentBidding />
@@ -45,7 +45,7 @@ function DetailPost() {
           <PaginationExample />
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 export default DetailPost;

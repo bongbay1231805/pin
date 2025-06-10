@@ -31,9 +31,9 @@ export default function Ecosystem() {
         <meta name="description" content="Leading real estate developer with 12 years of experience" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <div>
         <MasonryGrid />
-      </main>
+      </div>
     </>
   )
 }

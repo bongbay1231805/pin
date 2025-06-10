@@ -28,7 +28,7 @@ function DetailPost() {
     return () => boxes.forEach(box => observer.unobserve(box));
   }, []);
   return (
-    <main>
+    <div>
       <Hero />
       <div className="container m-auto max-w-[1312px] px-[10px]">
         <ContentPiGroup />
@@ -40,7 +40,7 @@ function DetailPost() {
           <PaginationExample />
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 export default DetailPost;

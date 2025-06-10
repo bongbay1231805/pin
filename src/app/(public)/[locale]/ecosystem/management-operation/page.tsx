@@ -31,9 +31,9 @@ export default function EcosystemDetail() {
         <meta name="description" content="Leading real estate developer with 12 years of experience" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <div>
         <Detail3 />
-      </main>
+      </div>
     </>
   )
 }

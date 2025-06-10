@@ -224,6 +224,12 @@ strong {
   }
 }
 @layer utilities {
+  #body:is(.about) {
+    @apply mt-[0]
+  }
+  #body:is(.ecosystem) {
+    @apply mt-[150px]
+  }
   #menusub:not(.active)>img:last-child {
     display: none;
   }
