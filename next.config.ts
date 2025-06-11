@@ -7,5 +7,13 @@ const config: NextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  }
 };
 export default withNextIntl(config);

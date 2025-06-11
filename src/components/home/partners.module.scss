@@ -31,7 +31,6 @@
 .groupcarousel {
   display: flex;
   gap: 20px;
-  will-change: transform;
   animation: scrolling 8s linear infinite;
 }
 /**

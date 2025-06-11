@@ -4,6 +4,7 @@ import Link from "next/link";
 // import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation';
 import SubNavbar from "./SubNavbar";
+import { MainDrawer } from "@/components/MainDrawer";
 const Navbar = () => {
   const pathname = usePathname().split("/").pop();
   const isHomePage = (pathname === "en" || pathname === "vi");
@@ -20,7 +21,7 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const isScrollingUp = currentScrollY < lastScrollY;
-      if (isScrollingUp && currentScrollY > 150) {
+      if (isScrollingUp && currentScrollY >= 96) {
         setHasShadow(true);
       } else {
         setHasShadow(false);
@@ -55,7 +56,7 @@ const Navbar = () => {
   }, [mobileMenuOpen]); // Dependency array: Chỉ chạy lại effect khi mobileMenuOpen thay đổi
   // --- End: Phần mới cần thêm ---
   return (
-    <nav id="topMenu" className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 2xl:border-white-1 ${(hasShadow) ? '2xl:bg-white 2xl:border-b-[1px] fixed' : isHomePage ? "bg-transparent" : "bg-white"}`}>
+    <nav id="topMenu" className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 border-white-1 ${(hasShadow) ? 'bg-white border-b-[1px] fixed' : isHomePage ? "bg-transparent" : "bg-white"}`}>
       <div className="mx-auto max-w-[91.4%] 2xl:max-w-[91.4%]">
         <div className={`flex justify-between h-[96px] 2xl:h-[106px]`}>
           <div className="flex items-center">
@@ -113,65 +114,12 @@ const Navbar = () => {
               <Link href="/en" className={`hover:text-yellow-2 ${isActive("en") ? " text-white-1" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>EN</Link>
             </div>
           </div>
-          {/* Mobile menu button */}
           <div className="flex items-center xl:hidden">
-            <button
-              type="button"
-              className={`inline-flex items-center ${pathname === 'ecosystem' ? "text-yellow-1" : "text-yellow-1"} justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100`}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <span className="sr-only">Open main menu</span>
-              {mobileMenuOpen ? (
-                <svg className="block h-6 w-6 stroke-yellow-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg width="29" height="17" viewBox="0 0 29 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 7.5C0.447715 7.5 0 7.94772 0 8.5C0 9.05229 0.447715 9.5 1 9.5V7.5ZM27.25 9.5C27.8023 9.5 28.25 9.05229 28.25 8.5C28.25 7.94772 27.8023 7.5 27.25 7.5V9.5ZM1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V0ZM18.4994 2C19.0517 2 19.4994 1.55228 19.4994 1C19.4994 0.447715 19.0517 0 18.4994 0V2ZM1 15C0.447715 15 0 15.4477 0 16C0 16.5523 0.447715 17 1 17V15ZM18.4994 17C19.0517 17 19.4994 16.5523 19.4994 16C19.4994 15.4477 19.0517 15 18.4994 15V17ZM1 8.5V9.5H27.25V8.5V7.5H1V8.5ZM1 1V2H18.4994V1V0H1V1ZM1 16V17H18.4994V16V15H1V16Z" fill="currentColor" />
-                </svg>
-              )}
-            </button>
+            <MainDrawer />
           </div>
         </div>
       </div>
       {isHomePage ? null : <SubNavbar hasShadow={hasShadow} pageCurent={pageCurent} nameCurent={nameCurent!} />}
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="xl:hidden bg-white">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Home
-            </Link>
-            <Link href="/about" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Giới thiệu
-            </Link>
-            <Link href="/ecosystem" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Hệ sinh thái
-            </Link>
-            <Link href="/ecosystem/investment-development" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Đầu tư và phát triển dự án
-            </Link>
-            <Link href="/ecosystem/real-estate-services" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Dịch vụ bất động sản
-            </Link>
-            <Link href="/ecosystem/management-operation" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Quản lý và vận hành
-            </Link>
-            <Link href="/news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Tin tức
-            </Link>
-            <Link href="/news/market-news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Tin thị trường
-            </Link>
-            <Link href="/news/pi-group-news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Tin Pi Group
-            </Link>
-            <Link href="/news/bidding-news" className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md">
-              Tin đấu thầu
-            </Link>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };

@@ -7,7 +7,7 @@
 .ecosystem-masonry-10,
 .ecosystem-masonry-11,
 .ecosystem-masonry-12 {
-  @apply will-change-[width,flex-grow] transition-all duration-1000 ease-in-out
+  @apply transition-all duration-1000 ease-in-out
   &:hover {
     &:after {
       background-color: transparent;
