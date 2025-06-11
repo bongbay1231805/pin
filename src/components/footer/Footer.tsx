@@ -39,7 +39,7 @@ export function Footer() {
                   info@pigroup.vn</li>
               </ul>
             </div>
-            <div className='2xl:leading-[30px] pl-[30px]'>
+            <div className='2xl:leading-[30px] sm:pl-[30px]'>
               <ul className="space-y-2 text-gray-6 uppercase fade-in-left-short">
                 <li><Link href="/#" className="hover:text-yellow-1 text-gray-6 font-semibold text-[15px] 2xl:text-[17px]">Giới thiệu</Link></li>
                 <li><Link href="/#" className="hover:text-yellow-1  text-gray-6 font-semibold text-[15px] 2xl:text-[17px]">Hệ Sinh Thái</Link></li>

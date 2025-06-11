@@ -13,6 +13,14 @@ const config: NextConfig = {
         protocol: "https",
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: "https",
+        hostname: 'pigroup.tqdesign.vn',
+      },
+      {
+        protocol: "https",
+        hostname: 'admin.pigroup.tqdesign.vn',
+      }
     ],
   }
 };

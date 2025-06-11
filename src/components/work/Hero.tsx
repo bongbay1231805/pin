@@ -3,7 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 import ApplicationFormPopup from './ApplicationFormPopup';
+import { useScrollRefs } from '@/context/ScrollRefsContext'
 export default function Hero() {
+  const { oneRef, twoRef, threeRef, fourRef } = useScrollRefs()
   useEffect(() => {
     const boxes = document.querySelectorAll('.boxanimation');
     const observer = new IntersectionObserver(
@@ -222,13 +224,13 @@ export default function Hero() {
   }, [currentPage]); // Chỉ cuộn khi trang thay đổi
   return (
     <>
-      <div className="relative relative mx-auto h-[100vh] w-[100vw]  text-center pt-[175px]">
+      <div className="relative mx-auto h-[100vh] w-[100vw]  text-center pt-[175px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
           <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[55px]'>Phát triển nhân lực</h2>
         </div>
         <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-fill" />
       </div>
-      <div className=" mx-auto  md:max-w-[1625px]  text-center pt-[175px]">
+      <div ref={oneRef} className=" mx-auto  md:max-w-[1625px]  text-center pt-[175px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[40px]'>Văn hóa làm việc</h2>
       </div>
       <div className="grid grid-cols-4 gap-[33px]  mx-auto  max-w-[1625px] pb-[115px]">
@@ -331,7 +333,7 @@ export default function Hero() {
         </svg>
       </div>
       <div>
-        <div className="bg-yellow-3/50">
+        <div ref={twoRef} className="bg-yellow-3/50">
           <div className="mx-auto  md:max-w-[83%]  text-center pt-[68px]">
             <h2 className="uppercase font-bold text-yellow-1 text-[40px]">Chính sách phúc lợi</h2>
           </div>
@@ -394,7 +396,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <h3 className="uppercase font-semibold text-yellow-1 text-[45px] text-center py-[75px_25px]">Hình thức ứng tuyển</h3>
+        <h3 ref={threeRef} className="uppercase font-semibold text-yellow-1 text-[45px] text-center py-[75px_25px]">Hình thức ứng tuyển</h3>
         <div className="mx-auto md:max-w-[83%] grid gap-[70px] grid-cols-2">
           <div>
             <div className='relative h-[506px]'>
@@ -423,7 +425,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <h3 className="uppercase font-semibold text-yellow-1 text-[45px] text-center py-[75px_25px]">Vị trí tuyển dụng</h3>
+        <h3 ref={fourRef} className="uppercase font-semibold text-yellow-1 text-[45px] text-center py-[75px_25px]">Vị trí tuyển dụng</h3>
         <div className="overflow-x-auto md:max-w-[83%] m-auto">
           <div className="overflow-x-auto p-4">
             <table id="job-table" className="min-w-full">

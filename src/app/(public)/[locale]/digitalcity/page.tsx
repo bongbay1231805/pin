@@ -5,13 +5,15 @@ import Link from 'next/link';
 import EmblaCarouselCenterPicity from "@/components/ui/EmblaCarouselCenterPicity";
 import { EmblaOptionsType } from 'embla-carousel'
 import EmblaCarouselCenter from '@/components/ui/EmblaCarouselCenter';
+import { useScrollRefs } from '@/context/ScrollRefsContext'
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
   children: React.ReactNode;     // Nội dung sẽ được ẩn/hiện khi toggle
   initialOpen?: boolean;         // Mặc định ban đầu là ẩn hay hiện (optional)
 }
-export default function Detail1() {
+export default function Digitalcity() {
+  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs()
   useEffect(() => {
     const boxes = document.querySelectorAll('.boxanimation');
     const observer = new IntersectionObserver(
@@ -33,7 +35,6 @@ export default function Detail1() {
     boxes.forEach(box => observer.observe(box));
     return () => boxes.forEach(box => observer.unobserve(box));
   }, []);
-  const contentRef = useRef<HTMLDivElement>(null); // Ref to access the content div directly
   const slides = [
     {
       image: "/fdigitalcity/digitalcity-14.png",
@@ -95,7 +96,7 @@ export default function Detail1() {
         </div>
         <Image fill src="/fdigitalcity/digitalcity-1.png" alt="Smart City Features" className="object-fill"></Image>
       </div>
-      <div className="mx-auto px-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+      <div ref={oneRef} className="mx-auto px-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
         <div className='grid md:grid-cols-[65%_35%] gap-12'>
           <EmblaCarouselCenterPicity />
           <div className='flex items-center text-[17px]'>
@@ -103,7 +104,7 @@ export default function Detail1() {
           </div>
         </div>
       </div>
-      <div className="relative mx-auto pb-[115px]">
+      <div ref={twoRef} className="relative mx-auto pb-[115px]">
         <div className='relative z-1'>
           <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Công nghệ 4.0</h3>
           <p className='uppercase text-center text-blue-1 text-[30px]'>vận hành thông minh</p>
@@ -237,7 +238,7 @@ export default function Detail1() {
         </div>
         <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] h-[685px]" />
       </div>
-      <div className="relative grid grid-cols-[65%_35%] pb-[115px]">
+      <div ref={threeRef} className="relative grid grid-cols-[65%_35%] pb-[115px]">
         <div className='relative'>
           <svg width="1020" height="781" viewBox="0 0 1020 781" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g clipPath="url(#clip0_2089_1260)">
@@ -474,11 +475,11 @@ export default function Detail1() {
           </div>
         </div>
       </div>
-      <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Tiện ích 5★ <br /> Nghỉ dưỡng chuẩn resort</h3>
+      <h3 ref={fourRef} className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Tiện ích 5★ <br /> Nghỉ dưỡng chuẩn resort</h3>
       <div className="mx-auto px-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
         <EmblaCarouselCenter slides={slides} />
       </div>
-      <div className="relative mx-auto pb-[115px]">
+      <div ref={fiveRef} className="relative mx-auto pb-[115px]">
         <div className='relative z-1'>
           <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Dịch vụ quản lý vận hành <br /> chuẩn quốc tế</h3>
           <div className="grid grid-cols-3 gap-[5px]">
@@ -527,7 +528,7 @@ export default function Detail1() {
           </div>
         </div>
       </div>
-      <div className="mx-auto  md:max-w-[83%] px-[10px]">
+      <div ref={sixRef} className="mx-auto  md:max-w-[83%] px-[10px]">
         <div className="grid grid-cols-[70%_30%] gap-[30px] mt-[42px]">
           <div>
             <h3 className="uppercase font-semibold text-yellow-1 text-[40px]">Giá trị vượt trội <br /> Trải nghiệm đặc quyền</h3>
@@ -573,18 +574,18 @@ export default function Detail1() {
           </div>
         </div>
       </div>
-      <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Dự án thành công</h3>
+      <h3 ref={seventRef} className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Dự án thành công</h3>
       <div className="flex items-start justify-end relative mx-auto md:max-w-[83%] px-[10px] h-[801px]">
         <Image alt="benefit 7" loading="lazy" decoding="async" fill className='w-[calc(100%-68px)]!' src="/fdigitalcity/digitalcity-22.png" />
         <div className='relative z-1 flex flex-col mt-[80px] text-center'>
           <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-0  w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden  hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
             <span className="duration-0">1</span>
             <p>Picity Sky Park</p>
-            </div>
+          </div>
           <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[70px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
             <span className="duration-0">2</span>
             <p>Picity Sky Park</p>
-            </div>
+          </div>
           <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[140px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
             <span className="duration-0">3</span>
             <p>Picity Sky Park</p>

@@ -25,7 +25,7 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({ slides }) => 
           duration: 50
         }}
       >
-        <CarouselContent className="w-full items-center 2xl:h-[435px] -ml-0">
+        <CarouselContent className="w-full items-center 2xl:h-[435px] ml-0">
           {slides.map((event, index) => (
             <CarouselItem key={index} index={index} className={`basis-3/4 sm:basis-1/3 h-full sliderswrap`}>
               <div className="relative w-full h-full flex items-center justify-center">

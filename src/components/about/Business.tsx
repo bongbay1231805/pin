@@ -103,14 +103,14 @@ export function Business() {
   }, []);
   return (
     <div className="mx-auto px-1 sm:px-6 lg:px-[16px] md:max-w-[72%] border-b-1 border-gray-2 items-center pb-[88px]">
-      <div className="grid grid-cols-1 flex items-center justify-center md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 items-center justify-center md:grid-cols-2 gap-12">
         <div>
           <h2 className="text-[28px]  2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">VĂN HÓA DOANH NGHIỆP</h2>
           <p className="text-gray-1 text-[22px] 2xl:text-[30px]  font-normal uppercase">
             Phát triển bền vững
           </p>
         </div>
-        <div className="relative pl-[46px] aspect-square items-center flex justify-center">
+        <div className="relative md:pl-[46px] aspect-square items-center flex justify-center">
           <svg width="553" height="554" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} viewBox="0 0 553 554" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fill={`${activeChild === 'child1' ? '#C48C5E' : "#304E76"} `}

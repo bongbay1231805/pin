@@ -66,7 +66,7 @@ export function MainDrawer() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden text-white w-[58px] h-[34px]">
+        <Button variant="ghost" size="icon" className="md:hidden w-[58px] h-[34px]">
           <svg width="29" height="17" viewBox="0 0 29 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 7.5C0.447715 7.5 0 7.94772 0 8.5C0 9.05229 0.447715 9.5 1 9.5V7.5ZM27.25 9.5C27.8023 9.5 28.25 9.05229 28.25 8.5C28.25 7.94772 27.8023 7.5 27.25 7.5V9.5ZM1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V0ZM18.4994 2C19.0517 2 19.4994 1.55228 19.4994 1C19.4994 0.447715 19.0517 0 18.4994 0V2ZM1 15C0.447715 15 0 15.4477 0 16C0 16.5523 0.447715 17 1 17V15ZM18.4994 17C19.0517 17 19.4994 16.5523 19.4994 16C19.4994 15.4477 19.0517 15 18.4994 15V17ZM1 8.5V9.5H27.25V8.5V7.5H1V8.5ZM1 1V2H18.4994V1V0H1V1ZM1 16V17H18.4994V16V15H1V16Z" fill="currentColor" />
           </svg>
@@ -117,9 +117,9 @@ export function MainDrawer() {
                         : "hover:bg-gray-100"
                     )}
                   >
-                    <div className="group flex flex-col text-[17px] font-semibold">
-                      <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">{item.label}</span>
-                      <span className="absolute inset-0 flex items-center justify-start transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">{item.label}</span>
+                    <div className="group relative flex flex-col text-[17px] font-semibold">
+                      <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0 group-visited:-translate-y-full group-visited:opacity-0 group-active:-translate-y-full group-active:opacity-0">{item.label}</span>
+                      <span className="absolute inset-0 flex items-center justify-start transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-visited:translate-y-0 group-visited:opacity-100 group-active:translate-y-0 group-active:opacity-100 text-yellow-2">{item.label}</span>
                     </div>
                   </Link>
                 );

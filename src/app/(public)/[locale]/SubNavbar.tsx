@@ -1,15 +1,39 @@
 'use client';
 import Link from "next/link"
+import { useScrollRefs } from '@/context/ScrollRefsContext'
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
   nameCurent: string;
 }
 export default function SubNavbar(props: PropSub) {
-  const { hasShadow, pageCurent, nameCurent } = props;
-  let navItems: { name: string, href: string }[] = [];
-  const ecosystem = ['ecosystem','investment-development','real-estate-services','management-operation'];
-  const news = ['news','market-news','pi-group-news','bidding-news']; 
+  const { nameCurent } = props;
+  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs();
+  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (!ref.current) return;
+    const targetPosition = ref.current.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 500; // 500ms
+    let startTime: number | null = null;
+    const animation = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, run);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    };
+    const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+    requestAnimationFrame(animation);
+  };
+  let navItems: { name: string, href: string, hrefb?: React.RefObject<HTMLDivElement | null> | undefined }[] = [];
+  const ecosystem = ['ecosystem', 'investment-development', 'real-estate-services', 'management-operation'];
+  const news = ['news', 'market-news', 'pi-group-news', 'bidding-news'];
   const humanresource = ['human-resource'];
   const digitalcity = ['digitalcity'];
   if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
@@ -48,19 +72,23 @@ export default function SubNavbar(props: PropSub) {
     navItems = [
       {
         name: "Văn hóa làm việc",
-        href: "/human-resource"
+        href: "#human-resource",
+        hrefb: oneRef
       },
       {
         name: "Phúc lợi và Đào tạo",
-        href: "#humanresource"
+        href: "#human-resource",
+        hrefb: twoRef
       },
       {
         name: "Quy trình và hình thức tuyển dụng",
-        href: "#humanresource"
+        href: "#human-resource",
+        hrefb: threeRef
       },
       {
         name: "Vị trí tuyển dụng",
-        href: "#humanresource"
+        href: "#human-resource",
+        hrefb: fourRef
       }
     ];
   }
@@ -68,31 +96,38 @@ export default function SubNavbar(props: PropSub) {
     navItems = [
       {
         name: "Picity - Đô thị số",
-        href: "/human-resource"
+        href: "#digitalcity",
+        hrefb: oneRef
       },
       {
         name: "Công nghệ 4.0",
-        href: "#humanresource"
+        href: "#digitalcity",
+        hrefb: twoRef
       },
       {
         name: "Độc quyền Picity App",
-        href: "#humanresource"
+        href: "#digitalcity",
+        hrefb: threeRef
       },
       {
         name: "Tiện ích 5★",
-        href: "#humanresource"
+        href: "#digitalcity",
+        hrefb: fourRef
       },
       {
         name: "Dịch vụ quản lý",
-        href: "#humanresource"
+        href: "#digitalcity",
+        hrefb: fiveRef
       },
       {
         name: "Giá trị vượt trội",
-        href: "#humanresource"
+        href: "#digitalcity",
+        hrefb: sixRef
       },
       {
         name: "Dự án thành công",
-        href: "#humanresource"
+        href: "#digitalcity",
+        hrefb: seventRef
       }
     ];
   }
@@ -102,11 +137,17 @@ export default function SubNavbar(props: PropSub) {
         <div className="container mx-auto max-w-[91.4%]">
           <ul className="flex flex-wrap space-x-6 justify-center gap-[38px] py-[8px]">
             {navItems.map((item) => (
-              <li key={item.name}>
-                <Link href={item.href} className={`text-[16px] font-regular hover:text-yellow-1 ${nameCurent === item.href.split("/").pop() ? 'text-yellow-1' : ''}`}>
+              item.hrefb ? (
+                <button onClick={() => scrollTo(item.hrefb!)} key={item.name} className={`text-[16px] font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1}`}>
                   {item.name}
-                </Link>
-              </li>
+                </button>
+              ) : (
+                <li key={item.name}>
+                  <Link href={item.href} className={`text-[16px] font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1}`}>
+                    {item.name}
+                  </Link>
+                </li>
+              )
             ))}
           </ul>
         </div>

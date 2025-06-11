@@ -104,7 +104,7 @@ const EmblaCarouselCenterPicity = () => {
           loop: true
         }}
       >
-        <CarouselContent className="w-full items-center -ml-0">
+        <CarouselContent className="w-full items-center ml-0">
           {slides.map((event, index) => (
             <CarouselItem key={index} index={index} className={`basis-3/4 sm:basis-1/3 h-full [perspective:1200px] picitycenterwrap`}>
               <div className="relative flex flex-wrap items-center justify-center picitycenter transform rotate-y-[30deg] translate-z-[-30px]">
