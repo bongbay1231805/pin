@@ -112,6 +112,7 @@ export function MainDrawer() {
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setOpen(false)} // 👈 đóng Drawer khi click
                     className={cn(
                       "flex items-center gap-4 p-3 rounded-xl transition-colors relative uppercase",
                       isActive
