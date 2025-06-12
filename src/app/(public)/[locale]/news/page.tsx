@@ -31,11 +31,11 @@ function News() {
   }, []);
   return (
     <div>
-      <div className="min-h-screen pt-[212px] 2xl:pt-[226px] pb-[90px] container m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] px-[10px]">
+      <div className="min-h-screen pt-[50px] 2xl:pt-[226px] pb-[90px] container m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
         <div className="mx-autoflex flex-col gap-12">
           {/* Top Image w/ Overlayed Card */}
           <Link href="/news/market-news" className="relative news-top-item">
-            <div className='img-container flex justify-center items-center w-[1178px] rounded-[10px] max-w-[75%] max-h-[60vh] rounded-2xl'>
+            <div className='img-container flex justify-center items-center ef:w-[1178px] rounded-[10px] ef:max-h-[60vh]'>
               <img
                 src={mainImage}
                 alt="PiGroup building"
@@ -43,7 +43,7 @@ function News() {
               />
             </div>            
             {/* Overlay Card (bottom right) */}
-            <div className="absolute bottom-0 right-0 translate-y-1/4 z-10 8 max-w-[calc(52%_-_15px)] bg-[#142F4F] rounded-tr-[40px] text-white pl-10 pr-11 py-6 shadow-xl">
+            <div className="absolute bottom-0 right-0 translate-y-1/4 z-10 sm:max-w-[calc(52%_-_15px)] bg-[#142F4F] rounded-tr-[40px] text-white pl-10 pr-11 py-6 shadow-xl">
               <div className="font-bold title text-[18px] 2xl:text-[21px] mb-2">
                 PI GROUP HỢP TÁC VỚI NHỮNG "ÔNG LỚN" NGÀNH XÂY DỰNG VÀ NGÂN HÀNG UY TÍN
               </div>
