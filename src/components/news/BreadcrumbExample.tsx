@@ -10,7 +10,7 @@ import {
 export default function BreadcrumbExample() {
   return (
     <Breadcrumb className="text-white">
-      <BreadcrumbList>
+      <BreadcrumbList className="text-[18px] 2xl:text-[22px] font-bold">
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Tin tức</BreadcrumbLink>
         </BreadcrumbItem>
@@ -20,7 +20,7 @@ export default function BreadcrumbExample() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Pi Group đảm bảo tiến độ dự án Picity High Park</BreadcrumbPage>
+          <BreadcrumbPage className="font-bold">Pi Group đảm bảo tiến độ dự án Picity High Park</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

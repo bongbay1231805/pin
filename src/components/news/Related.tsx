@@ -29,11 +29,11 @@ const services = [
 ];
 export default function Related() {
   return (
-    <div className="grid md:grid-cols-2 gap-x-[295px] gap-y-[33px]">
+    <div className="grid md:grid-cols-2 gap-x-[168px] 2xl:gap-x-[268px] gap-y-[33px]">
       {services.map((item, index) => (
         <div
           key={index}
-          className="overflow-hidden pb-[33px] gap-y-[33px] gap-x-[46px] flex items-center border-b-1 border-b-gray-8"
+          className="overflow-hidden pb-[33px] gap-y-[33px] gap-x-[40px] 2xl:gap-x-[46px] flex items-center border-b-1 border-b-gray-8"
         >
           <Image
             src={item.img}
@@ -42,7 +42,7 @@ export default function Related() {
             height={150}
             className="min-h-[150px] rounded-xl"
           />
-          <h3 className="text-lg font-semibold">{item.title}</h3>
+          <h3 className="text-lg font-semibold text-gray-5">{item.title}</h3>
         </div>
       ))}
     </div>

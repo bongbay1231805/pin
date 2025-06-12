@@ -130,7 +130,7 @@ export function RegistrationForm() {
             <FormItem>
               <FormControl>
                 <div className="flex items-center space-x-2">
-                  <Button type="button" className="border rounded-none border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
+                  <Button type="button" className="border rounded-none text-[#8a8a8a] border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
                     Profile công ty (file pdf, .pptx, .doc, .zip)
                   </Button>
                   <Input
@@ -153,7 +153,7 @@ export function RegistrationForm() {
           )}
         />
         <div className="flex justify-center">
-          <Button type="submit" className="mt-[5px] border rounded-none w-[160px] h-[50px] justify-center items-center text-[18px] font-semibold uppercase text-yellow-1 hover:text-white hover:border-blue-1 hover:bg-blue-1">Đăng ký</Button>
+          <Button type="submit" className="mt-[5px] border hvr-bounce-to-right rounded-none w-[160px] h-[50px] justify-center items-center text-[18px] font-semibold uppercase text-yellow-1 hover:text-white hover:border-yellow-1 hover:bg-yellow-1">Đăng ký</Button>
         </div>
       </form>
     </Form>
