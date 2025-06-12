@@ -53,7 +53,7 @@ function News() {
             </div>
           </Link>
           {/* Bottom 2 cards section (responsive grid) */}
-          <div className="grid mt-[120px] 2xl:mt-[130px] grid-cols-2 gap-y-[50px] gap-x-[40px]">
+          <div className="grid mt-[120px] 2xl:mt-[130px] grid-cols-1 gap-y-[10px] gap-x-[10px] sm:grid-cols-2 sm:gap-y-[50px] sm:gap-x-[40px]">
               {/* Card 1 */}
               <Link href="/news/market-news" className="news-item relative rounded-2xl flex flex-col">
                 <div className='img-container rounded-[10px] overflow-hidden w-full'>
