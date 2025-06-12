@@ -75,7 +75,7 @@ export default function Digitalcity() {
   ];
   return (
     <>
-      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[175px]">
+      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[106px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
           <svg className='relative z-1' width="537" height="74" viewBox="0 0 537 74" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M121.342 0H136.08V73.3565C127.939 73.3565 121.342 66.7889 121.342 58.6852V0Z" fill="white" />
@@ -85,8 +85,8 @@ export default function Digitalcity() {
             <path d="M279.541 58.6852C279.541 66.7889 286.139 73.3565 294.279 73.3565V0H279.541V58.6852Z" fill="white" />
             <path d="M331.147 14.6824H358.656V73.3565H373.406V14.6824H400.892C409.033 14.6824 415.642 8.11485 415.642 0H316.42C316.42 8.10372 323.018 14.6824 331.17 14.6824H331.147Z" fill="white" />
           </svg>
-          <h2 className='absolute top-[calc(100%+30px)] z-10 left-0 text-left  uppercase font-bold text-white text-[40px] flex items-center gap-[30px]'>
-            <div className='leading-[42.5px]'>Đô thị số tiện ích <br /> chuẩn quốc tế</div>
+          <h2 className='absolute top-[calc(100%+56px)] z-10 left-0 text-left  uppercase font-bold text-white text-[40px] flex items-center gap-[12px]'>
+            <div className='leading-[48px]'>Đô thị số tiện ích <br /> chuẩn quốc tế</div>
             <svg width="166" height="85" viewBox="0 0 166 85" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M165.104 32.9294C139.871 32.6853 113.694 42.6735 86.6809 61.7188L90.7179 49.1952L76.6878 39.094H93.8473L99.2977 22.7288L104.649 39.094H115.044C120.323 36.649 126.342 34.2265 133.413 32.1249H109.593L99.1983 0L88.9026 32.1249H55.3965L82.3459 51.8211L72.2534 83.6432C104.852 53.4752 135.838 36.3055 165.109 32.9339L165.104 32.9294Z" fill="white" />
               <path d="M98.8457 66.4113L123.271 84.0873L114.054 55.3972C109.11 58.3937 104.03 62.1449 98.8457 66.4068V66.4113Z" fill="white" />
@@ -94,20 +94,66 @@ export default function Digitalcity() {
             </svg>
           </h2>
         </div>
-        <Image fill src="/fdigitalcity/digitalcity-1.png" alt="Smart City Features" className="object-fill"></Image>
+        <Image fill src="/fdigitalcity/digitalcity-1.png" alt="Smart City Features" className=""></Image>
       </div>
-      <div ref={oneRef} className="mx-auto px-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-        <div className='grid md:grid-cols-[65%_35%] gap-12'>
-          <EmblaCarouselCenterPicity />
-          <div className='flex items-center text-[17px]'>
-            Picity là mô hình đô thị số tiên phong trên thị trường do Pi Group phát triển. Kết hợp công nghệ 4.0 (IoT & AI) trên nền tảng độc quyền cùng hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, Picity kiến tạo môi trường sống chuẩn quốc tế, đáp ứng mọi nhu cầu của cư dân thời đại mới.
+      <div className="relative">
+        <svg className='absolute top-[30px] left-0 -translate-x-1/2 max-w-[28%] h-auto' width="528.46" height="523.07" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528.46 523.07">
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="197.13" cy="257.42" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="202.49" cy="360.51" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="223.34" cy="202.17" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="258.28" cy="166.55" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="200.32" cy="206.37" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="171.64" cy="226.48" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="183.96" cy="267.14" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="139.68" cy="239.82" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M184.48,269.26l-1-.04c.06-1.32.16-2.7.31-4.2,2.5-25.35,16.15-48.04,37.43-62.24,1.08-.73,2.25-1.47,3.56-2.25l.51.86c-1.3.78-2.45,1.51-3.52,2.23-21.03,14.03-34.52,36.45-36.99,61.5-.15,1.48-.25,2.84-.31,4.14Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M199.71,207.83c-.23.25-.58.3-.79.11s-.18-.54.04-.78c0,0,1.45-1.57,2.48-2.61,17.81-18.03,41.57-27.96,66.91-27.96,22.84,0,44.87,8.29,62.02,23.33,1.18,1.05,2.65,2.44,2.65,2.44.24.23.29.58.09.78s-.55.17-.79-.06c0,0-1.45-1.37-2.62-2.41-16.97-14.89-38.76-23.08-61.36-23.08-25.07,0-48.58,9.82-66.19,27.66-1.02,1.03-2.45,2.58-2.45,2.58Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M171.19,228.46l-.91-.42c.66-1.41,1.27-2.64,1.86-3.76,16.67-32.16,48.05-53.78,83.94-57.81,1.33-.16,2.69-.3,4.16-.4l.07,1c-1.45.1-2.8.23-4.11.4-35.56,4-66.65,25.42-83.17,57.28-.58,1.11-1.19,2.32-1.84,3.72Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M166.65,355.81c-.95-1.13-1.82-2.2-2.65-3.26-18.51-23.55-28.3-51.87-28.3-81.9,0-9.62,1.04-19.24,3.08-28.57.32-1.46.64-2.8.97-4.1l.97.25c-.33,1.28-.65,2.61-.97,4.06-2.03,9.26-3.06,18.8-3.06,28.35,0,29.8,9.71,57.9,28.08,81.28.83,1.06,1.69,2.12,2.63,3.24l-.77.64Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M268.35,417.18c-29.69,0-58.18-8.98-82.4-25.96-23.68-16.61-41.63-39.61-51.89-66.52-.49-1.31-.97-2.62-1.43-3.95l.94-.33c.46,1.32.94,2.62,1.43,3.92,10.2,26.72,28.01,49.56,51.53,66.06,24.05,16.87,52.35,25.78,81.83,25.78,33.44,0,65.95-11.8,91.54-33.23,1.08-.9,2.13-1.8,3.18-2.73l.66.75c-1.05.93-2.12,1.85-3.2,2.75-25.77,21.58-58.5,33.47-92.18,33.47Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M268.43,442.31c-93.09,0-168.82-75.73-168.82-168.82,0-57.78,29.07-110.94,77.76-142.19,1.17-.75,2.37-1.49,3.57-2.23l.52.85c-1.2.73-2.38,1.47-3.55,2.21-48.4,31.07-77.3,83.91-77.3,141.35,0,92.54,75.28,167.82,167.82,167.82,9.17,0,18.34-.74,27.24-2.2,1.5-.24,2.84-.48,4.11-.73l.19.98c-1.29.25-2.64.49-4.15.73-8.96,1.47-18.17,2.22-27.4,2.22Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M55.39,399.16c-.73-1.19-1.45-2.4-2.15-3.61-23.83-40.93-35.37-87.7-33.39-135.25,1.81-43.58,15.04-85.97,38.25-122.6,22.52-35.54,53.92-65.02,90.82-85.26,1.23-.68,2.48-1.34,3.72-1.99l.46.89c-1.24.65-2.47,1.31-3.7,1.98-36.75,20.16-68.03,49.52-90.46,84.92-23.11,36.48-36.29,78.7-38.09,122.11-1.98,47.36,9.52,93.94,33.25,134.71.7,1.21,1.41,2.4,2.13,3.59l-.85.52Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="165.79" cy="353.8" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="133.81" cy="322.55" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M340.8,258.31h0c-.03-.25-.23-.45-.49-.45-.28,0-.5.23-.5.5,0,.05.01.09.03.14h0c.94,4.74,1.42,9.58,1.42,14.39,0,40.08-32.61,72.7-72.7,72.7s-72.69-32.61-72.69-72.7c0-4.66.44-9.32,1.32-13.85l-.98-.19c-.89,4.59-1.34,9.32-1.34,14.04,0,40.64,33.06,73.7,73.69,73.7s73.7-33.06,73.7-73.7c0-4.88-.49-9.79-1.44-14.58Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="131.13" cy="232.21" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="363.38" cy="380.61" r=".5" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M393.8,203.37h0c-.63-1.14-1.32-2.33-2.11-3.63-12.54-20.93-30.33-38.45-51.44-50.68-21.75-12.6-46.62-19.26-71.9-19.26-31.14,0-60.77,9.8-85.69,28.33-24.43,18.18-42.18,43.05-51.32,71.93-.42,1.33-.83,2.68-1.21,4.04l.96.27c.38-1.34.79-2.68,1.21-4,9.08-28.68,26.7-53.38,50.96-71.43,24.74-18.4,54.16-28.13,85.09-28.13,25.11,0,49.8,6.61,71.4,19.12,20.96,12.14,38.62,29.54,51.08,50.33.78,1.3,1.46,2.48,2.09,3.61h0c.09.15.24.26.43.26.28,0,.5-.23.5-.5,0-.09-.03-.17-.07-.24Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="179.37" cy="130.51" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="299.81" cy="438.88" r=".5" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="95.46" cy="227.68" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="105.54" cy="347.3" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M447.95,287.69c0-.28-.23-.5-.5-.5-.26,0-.46.19-.49.44h0c-.13,1.39-.28,2.77-.44,4.16-5.27,44.8-27.1,85.68-61.48,115.13-34.56,29.6-78.63,44.87-124.13,42.97-66.05-2.76-125.05-41.43-153.97-100.92-.61-1.26-1.21-2.52-1.79-3.79l-.91.42c.58,1.27,1.18,2.55,1.8,3.81,29.08,59.82,88.41,98.71,154.83,101.48,2.54.11,5.07.16,7.6.16,43.03,0,84.4-15.25,117.23-43.36,34.57-29.61,56.53-70.73,61.83-115.78.16-1.39.31-2.79.44-4.18h0s0-.02,0-.03Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M377.06,243.61c-.36-1.45-.72-2.78-1.09-4.06-.07-.19-.25-.32-.47-.32-.28,0-.5.23-.5.5,0,.03.01.05.02.08h0c.37,1.28.73,2.59,1.08,4.03,2.53,10.21,3.6,20.77,3.16,31.41-2.48,59.58-51.74,106.37-110.84,106.37-1.55,0-3.11-.03-4.67-.1-21.39-.88-41.89-7.85-59.3-20.15-1.15-.8-2.28-1.63-3.37-2.48l-.61.79c1.1.85,2.25,1.7,3.41,2.5,17.56,12.41,38.25,19.44,59.83,20.33,1.59.07,3.18.1,4.77.1,28.15,0,54.88-10.4,75.71-29.58,22.01-20.25,34.82-47.87,36.07-77.75.44-10.73-.63-21.39-3.18-31.69Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="206.19" cy="466.24" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="214.15" cy="480.97" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M395.17,148.01h0s-.03-.04-.04-.05c0,0-.01-.01-.02-.02-.98-.97-1.96-1.93-2.96-2.87-31.51-29.95-72.82-47.44-116.31-49.26-41.06-1.71-80.28,10.17-113.4,34.36-32.15,23.47-55.88,57.34-66.84,95.37-.38,1.34-.76,2.7-1.11,4.06l.97.25c.35-1.36.73-2.7,1.11-4.04,10.89-37.81,34.5-71.49,66.47-94.83,32.94-24.05,71.94-35.87,112.77-34.16,43.25,1.8,84.33,19.2,115.67,48.98.99.93,1.96,1.89,2.94,2.85.01.01.02.02.03.03.01.01.03.02.04.04h0c.08.05.18.1.29.1.28,0,.5-.23.5-.5,0-.11-.04-.21-.11-.29Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M294.2,54.81c0-.23-.16-.41-.36-.48h0s-.09-.02-.13-.03c0,0,0,0,0,0,0,0,0,0,0,0-1.34-.16-2.68-.31-4.03-.44-4.15-.4-8.27-.69-12.24-.85-58.12-2.41-113.73,17.94-156.54,57.33-42.82,39.39-67.73,93.1-70.16,151.23-2.07,49.71,13.1,99.04,42.72,138.9,29.19,39.28,71.15,67.87,118.14,80.51,1.34.36,2.7.71,4.06,1.04l.24-.97c-1.36-.33-2.7-.68-4.04-1.04-46.77-12.58-88.53-41.04-117.59-80.14-29.49-39.67-44.59-88.77-42.53-138.26,2.41-57.87,27.21-111.33,69.83-150.54,42.62-39.21,97.97-59.49,155.83-57.07,3.95.16,8.05.45,12.18.85,1.38.13,2.75.28,4.11.44,0,0,0,0,.01,0,0,0,0,0,0,0,0,0,0,0,.01,0h0c.27-.01.48-.23.48-.5Z" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M458.94,348.18c0-.28-.23-.5-.5-.5-.22,0-.4.14-.47.33-.52,1.29-1.06,2.57-1.61,3.85-16.25,37.61-43.16,69.21-77.82,91.38-35.45,22.67-76.48,33.73-118.7,31.97-17.54-.73-34.87-3.68-51.51-8.77-1.34-.41-2.66-.83-3.99-1.27l-.31.95c1.33.44,2.67.86,4.01,1.27,16.73,5.11,34.14,8.07,51.77,8.81,2.92.12,5.83.18,8.74.18,39.32,0,77.37-11.09,110.54-32.31,34.83-22.28,61.87-54.03,78.2-91.82.56-1.28,1.1-2.58,1.62-3.87.03-.06.05-.13.05-.21Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="218.25" cy="37.92" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M443.78,109.25c-43.11-46.86-101.89-74.12-165.51-76.77-19.45-.81-38.88.74-57.74,4.59-1.38.27-2.76.56-4.13.87l.22.98c1.36-.31,2.72-.6,4.1-.87,18.78-3.84,38.13-5.38,57.5-4.57,63.35,2.64,121.88,29.79,164.81,76.45,42.93,46.66,65.12,107.25,62.48,170.6-2.34,56.3-24.68,110.03-62.91,151.3-.91,1-1.85,1.99-2.79,2.98-.01,0-.02.02-.03.03-.01.01-.03.03-.04.04h0c-.06.09-.1.18-.1.29,0,.28.23.5.5.5.11,0,.22-.05.3-.11h0s.02-.02.04-.03c0,0,.01-.02.02-.02.95-.99,1.9-2,2.82-3,38.39-41.45,60.82-95.41,63.17-151.94,2.65-63.62-19.63-124.46-62.74-171.32Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="54.71" cy="397.12" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="150.99" cy="51.82" r="2.1" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="74.46" cy="97.94" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M459.76,94.55c-47.04-51.13-111.17-80.87-180.58-83.76-77.16-3.21-151.29,27.75-203.33,84.95-.94,1.03-1.87,2.08-2.8,3.14l.75.66c.93-1.05,1.86-2.1,2.8-3.12C128.43,39.43,202.24,8.58,279.14,11.78c69.14,2.88,133.03,32.51,179.88,83.44,46.86,50.93,71.08,117.06,68.2,186.21-2.01,48.27-17.35,94.81-44.36,134.58-26.27,38.68-62.5,69.59-104.79,89.4-1.26.59-2.52,1.17-3.79,1.73-.19.07-.32.25-.32.47,0,.28.23.5.5.5.08,0,.15-.02.21-.05,1.28-.57,2.55-1.15,3.82-1.75,42.45-19.88,78.82-50.91,105.19-89.74,27.11-39.93,42.51-86.64,44.53-135.1,2.89-69.42-21.43-135.8-68.46-186.93Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="2.1" cy="225.84" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M289.44.82s0,0,0,0c-1.36-.1-2.73-.2-4.1-.28-1.89-.12-3.8-.22-5.71-.3-65.91-2.74-130.4,18.59-181.59,60.08C47.29,101.43,13.14,159.31,1.85,223.3c-.24,1.37-.47,2.76-.69,4.15l.99.16c.22-1.39.45-2.76.69-4.13,11.24-63.75,45.27-121.42,95.83-162.38C149.67,19.76,213.91-1.51,279.58,1.23c1.91.08,3.8.18,5.69.3,1.37.08,2.74.18,4.09.28h0s.05,0,.07,0c.28,0,.5-.23.5-.5s-.23-.5-.5-.5Z" />
+          <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="183.67" cy="507.87" r="2.1" />
+          <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M456.42,439.01c.06-.08.11-.18.11-.3,0-.28-.23-.5-.5-.5-.15,0-.28.07-.37.17-.92,1.04-1.85,2.06-2.79,3.08-50.2,54.17-121.25,83.47-194.97,80.4-24.48-1.02-48.52-5.54-71.46-13.43-1.25-.43-2.49-.87-3.74-1.32l-.2-.07-.16.45h0s0-.49,0-.49h-.34s-.25.63-.25.63l.24.24.38.19c1.25.45,2.5.89,3.75,1.32,23.03,7.93,47.17,12.47,71.74,13.49,3.53.15,7.05.22,10.57.22,70.19,0,137.18-29.15,185.18-80.94.93-1.01,1.86-2.02,2.77-3.05.01,0,.02-.02.03-.03,0-.01.02-.02.03-.03h0Z" />
+        </svg>
+        <div ref={oneRef} className="mx-auto 2xl:max-w-[1660px] mt-[80px] mb-[25px]">
+          <div className='grid md:grid-cols-[70%_30%] gap-[10px]'>
+            <EmblaCarouselCenterPicity />
+            <div className='flex items-center text-gray-1 text-[17px] px-[50px]'>
+              Picity là mô hình đô thị số tiên phong trên thị trường do Pi Group phát triển. Kết hợp công nghệ 4.0 (IoT & AI) trên nền tảng độc quyền cùng hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, Picity kiến tạo môi trường sống chuẩn quốc tế, đáp ứng mọi nhu cầu của cư dân thời đại mới.
+            </div>
           </div>
         </div>
       </div>
-      <div ref={twoRef} className="relative mx-auto pb-[115px]">
+      <div ref={twoRef} className="relative mx-auto pt-[75px] pb-[115px] h-[685px] mb-[162px]">
         <div className='relative z-1'>
-          <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Công nghệ 4.0</h3>
-          <p className='uppercase text-center text-blue-1 text-[30px]'>vận hành thông minh</p>
+          <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold uppercase text-center'>Công nghệ 4.0</h3>
+          <p className='uppercase text-center text-blue-1 text-[30px] mb-[40px]'>vận hành thông minh</p>
           <div className="grid grid-cols-5 gap-[50px]">
             <div className="grid items-center bg-blue-1 rounded-[20px] h-[310px] content-evenly hover:bg-yellow-1  duration-500">
               <svg className='m-auto' width="102" height="92" viewBox="0 0 102 92" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,9 +282,9 @@ export default function Digitalcity() {
             </div>
           </div>
         </div>
-        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] h-[685px]" />
+        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]" />
       </div>
-      <div ref={threeRef} className="relative grid grid-cols-[65%_35%] pb-[115px]">
+      <div ref={threeRef} className="relative grid grid-cols-[65%_35%] pb-[168px]">
         <div className='relative'>
           <svg width="1020" height="781" viewBox="0 0 1020 781" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g clipPath="url(#clip0_2089_1260)">
@@ -476,12 +522,12 @@ export default function Digitalcity() {
         </div>
       </div>
       <h3 ref={fourRef} className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Tiện ích 5★ <br /> Nghỉ dưỡng chuẩn resort</h3>
-      <div className="mx-auto px-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+      <div className="mx-auto mb-[140px]">
         <EmblaCarouselCenter slides={slides} />
       </div>
       <div ref={fiveRef} className="relative mx-auto pb-[115px]">
         <div className='relative z-1'>
-          <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Dịch vụ quản lý vận hành <br /> chuẩn quốc tế</h3>
+          <h3 className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[38px] uppercase text-center'>Dịch vụ quản lý vận hành <br /> chuẩn quốc tế</h3>
           <div className="grid grid-cols-3 gap-[5px]">
             <div
               className="group relative overflow-hidden  grid items-center bg-blue-1 content-evenly duration-500 
@@ -528,43 +574,139 @@ export default function Digitalcity() {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto  md:max-w-[83%] px-[10px]">
-        <div className="grid grid-cols-[70%_30%] gap-[30px] mt-[42px]">
+      <div ref={sixRef} className="mx-auto  md:max-w-[83%] mb-[150px]">
+        <div className="grid grid-cols-[63%_37%] gap-[30px] mt-[30px]">
           <div>
-            <h3 className="uppercase font-semibold text-yellow-1 text-[40px]">Giá trị vượt trội <br /> Trải nghiệm đặc quyền</h3>
-            <div className='grid grid-cols-2'>
-              <div className="grid grid-cols-1 gap-[42px]">
-                <div className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
-                    <Image alt="benefit 1" loading="lazy" width="41" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-1.svg" /></div>
-                  <h3 className="blue-1 font-semibold text-[20px]">Thưởng tháng 13 và thưởng <br /> theo hiệu suất làm việc</h3>
+            <h3 className="uppercase font-bold text-yellow-1 text-[40px] mb-[50px]">Giá trị vượt trội <br /> Trải nghiệm đặc quyền</h3>
+            <div className='grid grid-cols-2 gap-[42px]'>
+              <div className="grid grid-cols-1]">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[137px] gap-[55px] w-[80%]">
+                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white">
+                    <svg width="69" height="84" viewBox="0 0 69 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M34.2364 43.1939C32.3371 43.1939 30.6895 41.5463 30.6895 39.647C30.6895 37.7478 32.3371 36.1001 34.2364 36.1001C36.1356 36.1001 37.7833 37.7478 37.7833 39.647C37.7833 41.5463 36.1356 43.1939 34.2364 43.1939ZM34.2364 39.2697C33.9848 39.2697 33.859 39.3955 33.859 39.647C33.859 39.8986 33.9848 40.0244 34.2364 40.0244C34.4879 40.0244 34.6137 39.8986 34.6137 39.647C34.6137 39.3955 34.4879 39.2697 34.2364 39.2697Z" fill="#4C73A8" />
+                      <path d="M13 15.3369C17 16.1702 26.8 16.6369 34 11.8369C37 14.0036 45.2 17.8369 54 15.8369V35.8369C54.1667 38.5036 53 45.3369 47 51.3369L40 58.8369" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" />
+                      <circle cx="37" cy="61.3369" r="3" stroke="#4C73A8" strokeWidth="2" />
+                      <path d="M34.2375 45.0933C33.3445 45.0933 32.5898 44.3387 32.5898 43.4457V41.4206C32.5898 40.5276 33.3445 39.7729 34.2375 39.7729C35.1305 39.7729 35.8852 40.5276 35.8852 41.4206V43.4457C35.8852 44.4644 35.1305 45.0933 34.2375 45.0933Z" fill="#4C73A8" />
+                      <path d="M41.4687 32.0379H27.0168C26.1238 32.0379 25.3691 31.2833 25.3691 30.3903V28.3652C25.3691 23.548 29.306 19.4854 34.249 19.4854C36.274 19.4854 38.3116 20.24 39.9593 21.5104C41.9843 23.1581 43.1289 25.6988 43.1289 28.2269V30.3777C43.1289 31.2707 42.3617 32.0254 41.4812 32.0254L41.4687 32.0379ZM28.5262 28.8684H39.9342V28.491C39.9342 26.8433 39.1795 25.1956 37.9092 24.1769C36.8904 23.2838 35.6326 22.9065 34.2365 22.9065C31.0669 22.7807 28.5262 25.3214 28.5262 28.491V28.8684Z" fill="#4C73A8" />
+                      <path d="M34.237 49.7846C27.5205 49.7846 22.1875 44.3259 22.1875 37.7352V30.3772C22.1875 29.4842 22.9422 28.7295 23.8352 28.7295H44.8903C45.7834 28.7295 46.538 29.4842 46.538 30.3772V37.6094C46.538 42.3009 43.9973 46.3635 39.8215 48.5143C37.9223 49.269 36.1488 49.7846 34.237 49.7846ZM25.3571 32.0374V37.7477C25.3571 42.6908 29.4197 46.6276 34.237 46.6276C35.6331 46.6276 36.9035 46.3761 38.1738 45.7346C41.2176 44.2127 43.1169 41.1689 43.1169 37.7477V32.0374H25.3571Z" fill="#4C73A8" />
+                      <path d="M41.4694 70.3369H27.0176C26.6403 70.3369 26.1246 70.2111 25.873 69.8338C24.6027 68.5635 23.3323 67.2931 22.2003 66.1611C13.3204 57.1554 8.88049 52.7155 6.60392 45.8732C4.45312 39.2825 4.45312 30.6541 4.45312 13.6616V7.57395C4.45312 7.07084 4.70468 6.68093 5.08201 6.3036C5.45934 6.05205 5.97503 5.92627 6.35237 5.92627C16.2385 7.69973 25.2441 5.92627 33.3694 0.605882C33.9983 0.228549 34.7655 0.228549 35.2686 0.731659C41.482 5.92627 50.2361 7.57395 62.1473 5.92627C62.6504 5.80049 63.0403 6.05205 63.4176 6.3036C63.7949 6.55516 63.9207 7.05827 63.9207 7.44818V15.6866C63.9207 31.5346 64.0465 39.5214 61.8957 45.7348C59.7449 52.074 55.6823 56.2624 47.5696 64.6266C46.0477 66.1485 44.4 67.922 42.6266 69.8212C42.375 70.1986 41.9977 70.3243 41.482 70.3243L41.4694 70.3369ZM27.7723 67.1673H40.828C42.4757 65.5196 43.9976 63.872 45.3937 62.4758C53.2548 54.3632 57.1916 50.4263 58.9651 44.716C60.8643 39.0057 60.8643 31.1447 60.8643 15.674V9.20906C55.5439 9.83795 50.5883 9.71217 46.4125 8.95751C41.721 8.06449 37.6584 6.29102 34.2372 3.7629C27.898 7.69973 21.0432 9.72475 13.8235 9.72475C11.7985 9.72475 9.76093 9.59897 7.73592 9.34742V13.6616C7.73592 30.4026 7.73592 38.7668 9.76093 44.9802C11.786 51.0678 16.1001 55.382 24.6027 63.9977C25.4957 64.8908 26.6277 66.0228 27.7723 67.1673Z" fill="#4C73A8" />
+                      <path d="M66.574 70.3369H1.64768C0.754665 70.3369 0 69.5822 0 68.6892C0 67.7962 0.754665 67.0415 1.64768 67.0415H66.574C67.467 67.0415 68.2217 67.7962 68.2217 68.6892C68.2217 69.5822 67.467 70.3369 66.574 70.3369Z" fill="#4C73A8" />
+                      <path d="M58.7123 63.998H47.5559C46.6629 63.998 45.9082 63.2433 45.9082 62.3503C45.9082 61.4573 46.6629 60.7026 47.5559 60.7026H58.7123C59.6054 60.7026 60.36 61.4573 60.36 62.3503C60.2343 63.2433 59.467 63.998 58.7123 63.998Z" fill="#4C73A8" />
+                      <path d="M20.6655 63.998H9.50901C8.61599 63.998 7.86133 63.2433 7.86133 62.3503C7.86133 61.4573 8.61599 60.7026 9.50901 60.7026H20.6655C21.5585 60.7026 22.3132 61.4573 22.3132 62.3503C22.1874 63.2433 21.4201 63.998 20.6655 63.998Z" fill="#4C73A8" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="blue-1 font-bold text-[25px] uppercase text-yellow-1">An toàn</h3>
+                    <p className="text-gray-5 text-[17px]">Công nghệ 4.0 <br /> đảm bảo an ninh</p>
+                  </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
-                    <Image alt="benefit 1" loading="lazy" width="37" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-3.svg" /></div>
-                  <h3>Đánh giá và xét tăng lương định <br /> kỳ hàng năm</h3>
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[137px] gap-[55px] w-[80%]">
+                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white">
+                    <svg width="78" height="71" viewBox="0 0 78 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M71.5384 69.5895V40.6271H74.5938C75.2029 40.6271 75.8169 40.1454 76.0624 39.5457C76.0624 38.9459 75.8169 38.2234 75.3305 37.8645L55.402 24.401C54.9156 24.0421 54.1789 24.0421 53.6925 24.401L40.857 33.1752V18.1485H43.9124C44.7671 18.1485 45.5038 17.426 45.5038 16.5854C45.5038 16.1037 45.2583 15.6221 44.7719 15.2631L24.8386 1.80433C24.3475 1.44543 23.6155 1.44543 23.1244 1.80433L3.32342 15.3859C2.83701 15.7448 2.59145 16.4674 2.71423 17.0671C2.95979 17.6668 3.4462 18.1485 4.18289 18.1485H7.23828V60.2203H2.59145C1.73669 60.2203 1 60.9428 1 61.7834V67.795C1 68.6356 1.73197 69.3581 2.59145 69.3581M39.6339 37.7417L54.5472 27.4044L60.6627 31.6121H54.5472M17.8684 9.01543L23.9839 4.80777M9.07057 15.027L13.4718 12.1416M68.3602 49.5761V69.1693H62.2447V59.4317C62.2447 55.7057 59.1893 52.7023 55.3972 52.7023C51.6052 52.7023 48.5498 55.7057 48.5498 59.4317V69.1693M68.2705 43.6353H10.2889V18.1533H37.7969V35.22L33.8867 37.8645C33.4003 38.2234 33.1548 38.9459 33.2776 39.5457C33.2776 39.6275 33.3185 39.7078 33.4003 39.7865C33.6459 40.2682 34.1323 40.6271 34.7462 40.6271H68.3649L74.4143 40.7971M10.2889 60.1023V46.6387" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round" />
+                      <path d="M31.684 27.1631H28.6286V24.1597H31.684V27.1631ZM25.5685 27.1631H22.5131V24.1597H25.5685V27.1631ZM16.4023 24.1597H19.4577V27.1631H16.4023V24.1597ZM16.4023 30.1713H19.4577V33.1747H16.4023V30.1713ZM22.5131 30.1713H25.5685V33.1747H22.5131V30.1713ZM31.684 33.1747H28.6286V30.1713H31.684V33.1747Z" stroke="#4C73A8" strokeMiterlimit="10" />
+                      <path d="M33.1559 49.6421H14.8141C13.9593 49.6421 13.2227 50.3646 13.2227 51.2052V57.2168C13.2227 58.0574 13.9546 58.7799 14.8141 58.7799H33.1512C34.0059 58.7799 34.7379 58.0574 34.7379 57.2168V51.2052C34.7379 50.3646 34.0059 49.6421 33.1512 49.6421H33.1559ZM31.6872 55.6537H16.4055V52.6503H31.6872V55.6537Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M52.3457 14.3041C52.3457 16.3489 54.0552 18.0301 56.1331 18.0301H59.3112C59.6796 19.7112 61.2663 21.0335 63.0986 21.0335H70.8008C72.8787 21.0335 74.5929 19.3523 74.5929 17.3075C74.5929 15.2627 72.7606 13.5816 70.6827 13.5816H69.828C69.4597 11.9004 67.8729 10.5781 66.0359 10.5781H56.1331C54.0552 10.5781 52.3457 12.2593 52.3457 14.3041Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M47.5 11C49.4083 11 51 9.40937 51 7.5C51 5.59062 49.4083 4 47.5 4C45.5917 4 44 5.59062 44 7.5C44 9.40937 45.5119 11 47.5 11Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="blue-1 font-bold text-[25px] uppercase text-yellow-1">Tiện nghi</h3>
+                    <p className="text-gray-5 text-[17px]">Nền tảng độc quyền, <br /> tích hợp mọi nhu cầu</p>
+                  </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
-                    <Image alt="benefit 1" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-5.svg" /></div>
-                  <h3>Khám sức khỏe định kỳ tại bệnh <br /> viện/phòng khám quốc tế</h3>
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[137px] gap-[55px] w-[80%]">
+                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white">
+                    <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M25.9708 48.5827C39.0175 48.5827 49.594 38.0064 49.594 24.9598C49.594 11.9132 39.0175 1.33691 25.9708 1.33691C12.9241 1.33691 2.34766 11.9132 2.34766 24.9598C2.34766 38.0064 12.9241 48.5827 25.9708 48.5827Z" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M25.9697 44.5953C36.8142 44.5953 45.6054 35.8041 45.6054 24.9597C45.6054 14.1153 36.8142 5.32422 25.9697 5.32422C15.1252 5.32422 6.33398 14.1153 6.33398 24.9597C6.33398 35.8041 15.1252 44.5953 25.9697 44.5953Z" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="47.5" cy="62.8369" r="2.5" stroke="#4C73A8" strokeWidth="2" />
+                      <circle cx="10.5" cy="55.8369" r="2.5" stroke="#4C73A8" strokeWidth="2" />
+                      <path d="M12.5215 24.9015C12.5215 24.9015 23.1022 10.8606 38.7732 24.9015C38.7732 24.9015 25.4504 38.7479 12.5215 24.9015Z" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M25.6487 27.4026C27.1914 27.4026 28.442 26.1577 28.442 24.622C28.442 23.0862 27.1914 21.8413 25.6487 21.8413C24.1061 21.8413 22.8555 23.0862 22.8555 24.622C22.8555 26.1577 24.1061 27.4026 25.6487 27.4026Z" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M43.0684 42.6523L57.9323 57.9566" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M49 2.1709H62.075C65.1699 2.1709 67.7046 4.70165 67.7046 7.80037V50.2474" stroke="#4C73A8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M49.3081 71.3371H7.62953C4.53464 71.3371 2 68.8063 2 65.7076V53.7764" stroke="#4C73A8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M10.7891 62.8384H44.572" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M13.3887 55.9087L43.7067 55.9087" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M62.1671 11.9297H52.8516" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M62.1671 17.4707H52.8516" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M62.1671 23.0073H52.8516" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M62.1671 28.5479H52.8516" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M62.1671 34.0845H52.8516" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M62.1671 39.6255H52.8516" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M62.1671 45.1616H52.8516" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M57.2766 57.3045L57.2739 57.3072C56.5164 58.0647 56.5164 59.2928 57.2739 60.0502L66.9373 69.7136C67.6948 70.471 68.9229 70.471 69.6803 69.7136L69.6831 69.7108C70.4405 68.9534 70.4405 67.7253 69.6831 66.9678L60.0196 57.3045C59.2622 56.547 58.0341 56.547 57.2766 57.3045Z" stroke="#4C73A8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="blue-1 font-bold text-[25px] uppercase text-yellow-1">Minh bạch</h3>
+                    <p className="text-gray-5 text-[17px]">Quy trình quản lý & <br /> đấu thầu công khai, chặt chẽ</p>
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 gap-[42px]">
-                <div className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
-                    <Image alt="benefit 1" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-2.svg" /></div>
-                  <h3>Thưởng các dịp Lễ, Tết, sinh <br /> nhật, và sáng kiến cải tiến</h3>
+              <div className="grid grid-cols-1">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[137px] gap-[55px] w-[80%]">
+                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white">
+                    <svg width="92" height="77" viewBox="0 0 92 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M64.9488 65.5116H27.1913C26.3001 65.5116 25.4952 64.9765 25.1505 64.1556L8.65385 24.8176C8.45883 24.3505 8.97357 23.9083 9.40668 24.1714L28.8943 36.0331L45.4657 11.9491C45.6743 11.6453 46.1233 11.6475 46.3274 11.9537L62.4544 36.0331L81.4908 24.4004C81.9216 24.1374 82.4386 24.5796 82.2436 25.0467L70.391 53.4957" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M67.5 63.3369C69.433 63.3369 71 61.7699 71 59.8369C71 57.9039 69.433 56.3369 67.5 56.3369C65.567 56.3369 64 57.9039 64 59.8369C64 61.7699 65.567 63.3369 67.5 63.3369Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M87.4975 23.083C89.4324 23.083 91.001 21.5145 91.001 19.5796C91.001 17.6447 89.4324 16.0762 87.4975 16.0762C85.5627 16.0762 83.9941 17.6447 83.9941 19.5796C83.9941 21.5145 85.5627 23.083 87.4975 23.083Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M46.228 8.34373C48.1629 8.34373 49.7314 6.7752 49.7314 4.84032C49.7314 2.90544 48.1629 1.33691 46.228 1.33691C44.2931 1.33691 42.7246 2.90544 42.7246 4.84032C42.7246 6.7752 44.2931 8.34373 46.228 8.34373Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M4.50341 21.4956C6.43829 21.4956 8.00682 19.9271 8.00682 17.9922C8.00682 16.0573 6.43829 14.4888 4.50341 14.4888C2.56853 14.4888 1 16.0573 1 17.9922C1 19.9271 2.56853 21.4956 4.50341 21.4956Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M23.3379 75.1489H69.3697" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M53.497 59.7294H32.0208C31.1523 59.7294 30.3632 59.2214 30.0049 58.43L21.379 39.3733C21.1931 38.9651 21.6171 38.5456 22.0253 38.7338L23.7917 39.5479" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M39.2109 30.2505L45.8005 20.899C46.0114 20.5997 46.4604 20.6065 46.6622 20.9126L52.8164 30.2505" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M68.4633 39.5482L70.139 38.7749C70.5563 38.5822 70.9826 39.0266 70.7739 39.4348L65.7422 49.2987" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="blue-1 font-bold text-[25px] uppercase text-yellow-1">Đẳng cấp</h3>
+                    <p className="text-gray-5 text-[17px]">Tiện ích chuẩn resort 5★</p>
+                  </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
-                    <Image alt="benefit 1" loading="lazy" width="38" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-4.svg" /></div>
-                  <h3>Gói bảo hiểm sức khỏe cao <br /> cấp PTI</h3>
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[137px] gap-[55px] w-[80%]">
+                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white">
+                    <svg width="83" height="77" viewBox="0 0 83 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.9" d="M39.2178 11.4571C42.0531 11.4571 44.3516 9.15858 44.3516 6.32326C44.3516 3.48794 42.0531 1.18945 39.2178 1.18945C36.3825 1.18945 34.084 3.48794 34.084 6.32326C34.084 9.15858 36.3825 11.4571 39.2178 11.4571Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M71.1514 50.2651C73.9814 50.2651 76.2755 47.9623 76.2755 45.1216C76.2755 42.2809 73.9814 39.978 71.1514 39.978C68.3215 39.978 66.0273 42.2809 66.0273 45.1216C66.0273 47.9623 68.3215 50.2651 71.1514 50.2651Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M10.6866 50.2651C13.5165 50.2651 15.8107 47.9623 15.8107 45.1216C15.8107 42.2809 13.5165 39.978 10.6866 39.978C7.85663 39.978 5.5625 42.2809 5.5625 45.1216C5.5625 47.9623 7.85663 50.2651 10.6866 50.2651Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M11.5371 31.9428C14.2659 25.5577 19.0662 20.274 25.0866 16.9414" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M54.0018 71.9434C49.8022 74.0796 45.0492 75.2854 40.0172 75.2854C34.9852 75.2854 30.516 74.1508 26.4062 72.1285" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M55.8848 17.478C61.9714 21.1287 66.7102 26.8207 69.1552 33.6093" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M11.8534 69.5937C11.8534 69.5937 8.98592 69.6401 11.8041 69.6401H1.04933C1.01973 69.6401 1 69.6169 1 69.5937V62.206C1 58.1368 4.54217 54.8091 8.87368 54.8091H11.3798C15.7114 54.8091 19.2535 58.1368 19.2535 62.206" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M73.4589 69.5937C73.4589 69.5937 70.5914 69.6401 73.4096 69.6401H62.6548C62.6252 69.6401 62.6055 69.6169 62.6055 69.5937V62.206C62.6055 58.1368 66.1476 54.8091 70.4791 54.8091H72.9853C77.3168 54.8091 80.859 58.1368 80.859 62.206" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M30.0918 47.964L38.0777 54.2386L55.7608 42.2598" stroke="#4C73A8" strokeWidth="3" strokeLinecap="round" />
+                      <path d="M41.5156 29.664C41.5156 29.664 38.648 29.7104 41.4662 29.7104H30.7114C30.6818 29.7104 30.6621 29.6872 30.6621 29.664V22.2763C30.6621 18.2071 34.2043 14.8794 38.5358 14.8794H41.0419C45.3735 14.8794 48.9156 18.2071 48.9156 22.2763" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M18.1118 70.7807C19.3719 70.7807 20.3935 69.7591 20.3935 68.499C20.3935 67.2388 19.3719 66.2173 18.1118 66.2173C16.8516 66.2173 15.8301 67.2388 15.8301 68.499C15.8301 69.7591 16.8516 70.7807 18.1118 70.7807Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M79.7192 70.7807C80.9793 70.7807 82.0009 69.7591 82.0009 68.499C82.0009 67.2388 80.9793 66.2173 79.7192 66.2173C78.459 66.2173 77.4375 67.2388 77.4375 68.499C77.4375 69.7591 78.459 70.7807 79.7192 70.7807Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M47.7739 30.851C49.034 30.851 50.0556 29.8294 50.0556 28.5693C50.0556 27.3091 49.034 26.2876 47.7739 26.2876C46.5137 26.2876 45.4922 27.3091 45.4922 28.5693C45.4922 29.8294 46.5137 30.851 47.7739 30.851Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M27.2387 47.9638C28.4989 47.9638 29.5204 46.9422 29.5204 45.6821C29.5204 44.4219 28.4989 43.4004 27.2387 43.4004C25.9786 43.4004 24.957 44.4219 24.957 45.6821C24.957 46.9422 25.9786 47.9638 27.2387 47.9638Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="blue-1 font-bold text-[25px] uppercase text-yellow-1">Kết nối</h3>
+                    <p className="text-gray-5 text-[17px]">Cộng đồng văn minh, hiện đại</p>
+                  </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
-                    <Image alt="benefit 1" loading="lazy" width="38" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-6.svg" /></div>
-                  <h3>Du lịch nghỉ dưỡng hằng năm <br /> cùng công ty</h3>
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[137px] gap-[55px] w-[80%]">
+                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white">
+                    <svg width="73" height="70" viewBox="0 0 73 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M71.1069 33.2367L36.889 67.3368L3 33.2367L19.78 15.6367H54.327L62.7926 24.5137" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M3 33.2368H71.1069" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M66.5002 1.33691L55.6426 10.6869" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M26.6895 1.33691L30.6377 10.6869" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M47.417 1.33691L43.4688 10.6869" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M7.27734 1.33691L18.135 10.6869" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
+                      <path d="M36.7231 15.6367L25.043 33.2367L36.8877 67.1223" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M37.0532 15.6367L48.7334 33.2367L36.8887 67.1223" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                      <path d="M69 30.3369C70.6569 30.3369 72 28.9938 72 27.3369C72 25.6801 70.6569 24.3369 69 24.3369C67.3431 24.3369 66 25.6801 66 27.3369C66 28.9938 67.3431 30.3369 69 30.3369Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="blue-1 font-bold text-[25px] uppercase text-yellow-1">Bền vững</h3>
+                    <p className="text-gray-5 text-[17px]">Gia tăng lợi ích và giá trị đầu tư</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -574,19 +716,19 @@ export default function Digitalcity() {
           </div>
         </div>
       </div>
-      <h3 ref={seventRef} className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[10px] uppercase text-center'>Dự án thành công</h3>
-      <div className="flex items-start justify-end relative mx-auto md:max-w-[83%] px-[10px] h-[801px]">
+      <h3 ref={seventRef} className='text-yellow-1 text-[20px] xl:text-[40px] font-bold mb-[30px] uppercase text-center'>Dự án thành công</h3>
+      <div className="flex items-start justify-end relative mx-auto md:max-w-[83%] px-[10px] h-[801px] mb-[150px]">
         <Image alt="benefit 7" loading="lazy" decoding="async" fill className='w-[calc(100%-68px)]!' src="/fdigitalcity/digitalcity-22.png" />
-        <div className='relative z-1 flex flex-col mt-[80px] text-center'>
-          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-0  w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden  hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
+        <div className='relative z-1 flex flex-col mt-[66px] text-center text-[30px] font-bold'>
+          <div className='overflow-hidden absolute flex items-center justify-center hover:rounded-tl-[10px] hover:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px] top-0  w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden  hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
             <span className="duration-0">1</span>
             <p>Picity Sky Park</p>
           </div>
-          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[70px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
+          <div className='overflow-hidden absolute flex items-center justify-center hover:rounded-tl-[10px] hover:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px] top-[82px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
             <span className="duration-0">2</span>
             <p>Picity Sky Park</p>
           </div>
-          <div className='absolute flex items-center justify-center rounded-tr-[10px] rounded-br-[10px] top-[140px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
+          <div className='overflow-hidden absolute flex items-center justify-center hover:rounded-tl-[10px] hover:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px] top-[164px] w-[58px] h-[62px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block tex-[30px] font-bold bg-blue-1 text-white'>
             <span className="duration-0">3</span>
             <p>Picity Sky Park</p>
           </div>

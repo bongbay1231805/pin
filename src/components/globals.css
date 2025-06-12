@@ -308,7 +308,7 @@ strong {
     @apply origin-left translate-x-[30px]
   }
   .center .picitycenter {
-    @apply rotate-y-0 scale-y-90 origin-center translate-x-0
+    @apply rotate-y-0 scale-y-85 origin-center translate-x-0
   }
   .center .picitycenter h3 {
     @apply opacity-100
