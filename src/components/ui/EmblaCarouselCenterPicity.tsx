@@ -94,7 +94,7 @@ const EmblaCarouselCenterPicity = () => {
     }
   ];
   return (
-    <section className={`relative mx-auto my-[50px] max-w-full md:max-w-[85%] 2xl:mb-[110px]  2xl:max-w-[1580px]`}>
+    <section className={`relative mx-auto my-[50px] max-w-full md:max-w-[85%] 2xl:mb-[110px]  2xl:max-w-[1645px]`}>
       <Carousel
         plugins={
           [Autoplay()]

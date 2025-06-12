@@ -1,12 +1,14 @@
 'use client'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, Home, Search, Bell, User, Settings, Mail, Calendar, BarChart } from "lucide-react";
+import { Search, Bell, Calendar } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { cn } from "@/app/lib/utils";
+import { useState } from "react";
 export function MainDrawer() {
   const pathname = usePathname().split("/").pop();
+  const [open, setOpen] = useState(false);
   const navItems = [
     {
       icon: Search,
@@ -64,9 +66,9 @@ export function MainDrawer() {
     }
   ];
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden w-[58px] h-[34px]">
+        <Button variant="ghost" size="icon" className="md:hidden pointer-events-auto w-[58px] h-[34px]">
           <svg width="29" height="17" viewBox="0 0 29 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 7.5C0.447715 7.5 0 7.94772 0 8.5C0 9.05229 0.447715 9.5 1 9.5V7.5ZM27.25 9.5C27.8023 9.5 28.25 9.05229 28.25 8.5C28.25 7.94772 27.8023 7.5 27.25 7.5V9.5ZM1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V0ZM18.4994 2C19.0517 2 19.4994 1.55228 19.4994 1C19.4994 0.447715 19.0517 0 18.4994 0V2ZM1 15C0.447715 15 0 15.4477 0 16C0 16.5523 0.447715 17 1 17V15ZM18.4994 17C19.0517 17 19.4994 16.5523 19.4994 16C19.4994 15.4477 19.0517 15 18.4994 15V17ZM1 8.5V9.5H27.25V8.5V7.5H1V8.5ZM1 1V2H18.4994V1V0H1V1ZM1 16V17H18.4994V16V15H1V16Z" fill="currentColor" />
           </svg>
@@ -76,7 +78,7 @@ export function MainDrawer() {
         <SheetHeader>
           <SheetTitle className="sr-only">Main Navigation</SheetTitle> {/* Ẩn tiêu đề này với screen reader vẫn dùng được */}
         </SheetHeader>
-        <div className="flex flex-col h-[90%] w-full">
+        <div className="flex flex-col h-[90%] w-full pointer-events-auto">
           <div className="p-6">
             <div className="flex items-center gap-4">
               <div className="relative  overflow-hidden">

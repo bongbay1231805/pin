@@ -75,7 +75,7 @@ export default function Digitalcity() {
   ];
   return (
     <>
-      <div className="relative mx-auto h-[100vh] w-[100vw]  text-center pt-[175px]">
+      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[175px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
           <svg className='relative z-1' width="537" height="74" viewBox="0 0 537 74" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M121.342 0H136.08V73.3565C127.939 73.3565 121.342 66.7889 121.342 58.6852V0Z" fill="white" />

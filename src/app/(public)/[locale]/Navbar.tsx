@@ -56,7 +56,7 @@ const Navbar = () => {
   }, [mobileMenuOpen]); // Dependency array: Chỉ chạy lại effect khi mobileMenuOpen thay đổi
   // --- End: Phần mới cần thêm ---
   return (
-    <nav id="topMenu" className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 border-white-1 ${(hasShadow) ? 'bg-white border-b-[1px] fixed' : isHomePage ? "bg-transparent" : "bg-white"}`}>
+    <nav id="topMenu" className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 border-white-1 ${(hasShadow) ? 'bg-white border-b-[1px] fixed text-yellow-1' : isHomePage ? "bg-transparent text-white" : "bg-white text-yellow-1"}`}>
       <div className="mx-auto max-w-[91.4%] 2xl:max-w-[91.4%]">
         <div className={`flex justify-between h-[96px] 2xl:h-[106px]`}>
           <div className="flex items-center">

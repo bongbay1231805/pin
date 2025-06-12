@@ -53,8 +53,16 @@ const SheetContent = React.forwardRef<
       ref={ref}
       className={cn(sheetVariants({ side }), className)}
       {...props}
+      onOpenAutoFocus={(event) => {
+        event.preventDefault();
+        document.body.style.pointerEvents = '';
+      }}
+      onCloseAutoFocus={(event) => {
+        event.preventDefault();
+        document.body.style.pointerEvents = '';
+      }}
     >
-      <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[40px] top-[45px] focus:outline-none disabled:pointer-events-none">
+      <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[40px] top-[45px] focus:outline-none">
         <div className="flex gap-[15px] justify-end font-semibold items-center grow-1">
           <Link href="/vn" className="text-yellow-2">VN</Link>
           <span className="text-gray-300 inline-block">|</span>

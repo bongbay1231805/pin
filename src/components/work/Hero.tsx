@@ -224,13 +224,13 @@ export default function Hero() {
   }, [currentPage]); // Chỉ cuộn khi trang thay đổi
   return (
     <>
-      <div className="relative mx-auto h-[100vh] w-[100vw]  text-center pt-[175px]">
+      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[175px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
           <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[55px]'>Phát triển nhân lực</h2>
         </div>
         <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-fill" />
       </div>
-      <div ref={oneRef} className=" mx-auto  md:max-w-[1625px]  text-center pt-[175px]">
+      <div ref={oneRef} className=" mx-auto  md:max-w-[1625px]  text-center pt-[20%] md:pt-[175px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[40px]'>Văn hóa làm việc</h2>
       </div>
       <div className="grid grid-cols-4 gap-[33px]  mx-auto  max-w-[1625px] pb-[115px]">

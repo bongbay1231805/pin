@@ -289,6 +289,12 @@ strong {
     border-radius: 100%;
     border: 1px solid var(--color-yellow-1);
   }
+  .sliderswrap {
+    @apply basis-3/5 sm:basis-[31%]
+  }
+  .center.sliderswrap {
+    @apply basis-3/5 sm:basis-[38%]
+  }
   .sliderstaff {
     @apply px-[30px]
   }

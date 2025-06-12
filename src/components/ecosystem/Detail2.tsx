@@ -53,7 +53,7 @@ export default function Detail2() {
   ];
   return (
     <>
-      <div className="mx-auto h-[calc(100vh-100px)] w-[100vw]  text-center pt-[175px] mb-[143px]">
+      <div className="relative mx-auto h-[500px] md:h-[calc(100vh-100px)] w-[100vw]  text-center pt-[20%] md:pt-[175px] mb-[45px] md:mb-[245px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
           <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[55px]'>DỊCH VỤ <br /> BẤT ĐỘNG SẢN </h2>
         </div>
@@ -61,12 +61,12 @@ export default function Detail2() {
       </div>
       <div className="mx-auto max-w-[95%] md:max-w-[85%] 2xl:max-w-[1577px] mb-[5%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
-          <div className='mt-[20px] w-[81%] order-1 sm:order-0'>
-            <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold mb-[41px]'>KẾT NỐI TRỰC TIẾP <br /> ĐỒNG HÀNH CHUYÊN NGHIỆP</h3>
-            <p className='text-[14px] xl:ttext-[16px] text-gray-5 mb-[18px]'>Đóng vai trò cầu nối chiến lược, Dịch vụ Bất động sản của Pi Group mang sản phẩm chất lượng đến với đúng khách hàng và nhà đầu tư mục tiêu. Trong đó, Công ty Cổ phần ECOE Việt Nam là thành viên chủ lực trong hệ sinh thái toàn diện của Pi Group. </p>
+          <div className='mt-[40px] sm:mt-[-25px] w-[81%] order-1 sm:order-0'>
+            <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold mb-[35px]'>KẾT NỐI TRỰC TIẾP <br /> ĐỒNG HÀNH CHUYÊN NGHIỆP</h3>
+            <p className='text-[14px] xl:text-[16px] text-gray-5 mb-[18px]'>Đóng vai trò cầu nối chiến lược, Dịch vụ Bất động sản của Pi Group mang sản phẩm chất lượng đến với đúng khách hàng và nhà đầu tư mục tiêu. Trong đó, Công ty Cổ phần ECOE Việt Nam là thành viên chủ lực trong hệ sinh thái toàn diện của Pi Group. </p>
             <p className='text-[14px] xl:ttext-[16px] text-gray-5'>Bằng sự am hiểu thị trường sâu sắc, mạng lưới rộng khắp và đội ngũ chuyên gia tận tâm, ECOE Việt Nam cung cấp các giải pháp tiếp thị, phân phối và tư vấn toàn diện, đảm bảo sự thành công cho mọi giao dịch.</p>
           </div>
-          <div className='relative pt-[80%] sm:pt-[100%] 2xl:pt-[677px]'>
+          <div className='relative pt-[60%] sm:pt-[100%] 2xl:pt-[677px]'>
             <Image
               src="/fecosystem/detail/operation-1.png"
               alt="Modern city skyline"
@@ -165,7 +165,7 @@ export default function Detail2() {
         <div className='flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center h-[100vh]'>
           <div className="mx-auto w-[90%]  2xl:w-[1580px]">
             <div className="grid items-start">
-              <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold uppercase mb-[30px]'>Định vị tổ ấm <br /> Kiến tạo tương lai</h3>
+              <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold uppercase mb-[60px]'>Định vị tổ ấm <br /> Kiến tạo tương lai</h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[35px] sm:w-fit">
                 <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 2xl:w-[307px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center">
                   <svg className='w-[80%]  2xl:w-[auto] 2xl:h-[auto]' width="99" height="91" viewBox="0 0 99 91" fill="none" xmlns="http://www.w3.org/2000/svg">
