@@ -35,7 +35,7 @@ export default function Detail1() {
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[175px]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[40px]'>đầu tư & <br /> phát triển dự án</h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[55px]'>đầu tư & <br /> phát triển dự án</h2>
         </div>
         <Image fill src="/fecosystem/detail/development.png" alt="Smart City Features" className="object-fill"></Image>
       </div>
