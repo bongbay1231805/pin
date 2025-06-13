@@ -62,7 +62,7 @@ const SheetContent = React.forwardRef<
         document.body.style.pointerEvents = '';
       }}
     >
-      <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[40px] top-[45px] focus:outline-none">
+      <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[40px] top-[35px] focus:outline-none">
         <div className="flex gap-[15px] justify-end font-semibold items-center grow-1">
           <Link href="/vn" className="text-yellow-2">VN</Link>
           <span className="text-gray-300 inline-block">|</span>

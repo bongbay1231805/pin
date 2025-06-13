@@ -79,7 +79,7 @@ export function MainDrawer() {
           <SheetTitle className="sr-only">Main Navigation</SheetTitle> {/* Ẩn tiêu đề này với screen reader vẫn dùng được */}
         </SheetHeader>
         <div className="flex flex-col h-[90%] w-full pointer-events-auto">
-          <div className="p-6">
+          <div className="py-[8px] px-[18px]">
             <div className="flex items-center gap-4">
               <div className="relative  overflow-hidden">
                 <svg className={`text-yellow-1`} width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
