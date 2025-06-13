@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import styles from "./contact.module.css";
 // Định nghĩa schema validation với Zod
 const registerFormSchema = z.object({
   yourName: z.string().min(2, {
@@ -72,7 +73,7 @@ export function MessageForm() {
   }
   return (
     <Form {...form}>
-      <h2 className="md:text-size-25 text-yellow-1 font-semibold text-[30px] uppercase mb-[30px]">GỬI TIN NHẮN CHO CHÚNG TÔI</h2>
+      <h2 className="text-yellow-1 font-bold text-[23px] 2xl:text-[26px] uppercase mb-[30px]">GỬI TIN NHẮN CHO CHÚNG TÔI</h2>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <div className="grid grid-cols-1 gap-[30px]">
           <FormField
@@ -81,19 +82,21 @@ export function MessageForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 placeholder:text-gray-5" placeholder="Họ tên (*)" {...field} />
+                  <Input className="px-0 py-0 h-7 2xl:h-9 text-[13px] 2xl:text-[17px] border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 placeholder:text-gray-5" placeholder="Họ tên (*)" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+        </div>
+        <div className="grid grid-cols-1 gap-[30px]">
           <FormField
             control={form.control}
             name="phone"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Điện thoại (*)" {...field} />
+                  <Input className="px-0 py-0 h-7 2xl:h-9 text-[13px] 2xl:text-[17px] border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Điện thoại (*)" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -107,27 +110,29 @@ export function MessageForm() {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input type="email" className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Email" {...field} />
+                  <Input type="email" className="px-0 py-0 h-7 2xl:h-9 text-[13px] 2xl:text-[17px] border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9 placeholder:text-gray-5" placeholder="Email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+          </div>
+          <div className="grid grid-cols-1 mt-[20px] gap-[30px]">
           <FormField
             control={form.control}
             name="taxCode"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Textarea className="px-0 py-0 border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Nội dung cần tư vấn" {...field} />
+                  <Textarea className="px-0 py-0 text-[13px] 2xl:text-[17px] min-h-[56px] border-0 border-b-1 border-b-gray-9 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-b-gray-9  placeholder:text-gray-5" placeholder="Nội dung cần tư vấn" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-        </div>
+          </div>
         <div className="flex justify-end">
-          <Button type="submit" className="hvr-bounce-to-right shadow-none uppercase rounded-none sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[131px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white">Gửi ngay</Button>
+          <Button type="submit" className="hvr-bounce-to-right shadow-none uppercase rounded-none sm:flex items-center cursor-pointer justify-center text-yellow-1 text-[13px] font-semibold w-[112px] h-[30px] border border-yellow-1 hover:text-white  focus:text-white">Gửi ngay</Button>
         </div>
       </form>
     </Form>

@@ -10,7 +10,7 @@ export function ContentBidding() {
         </div>
         <h1 className="uppercase text-[32px] 2xl:text-[39px] text-blue-1 font-bold">Pi Group đảm bảo tiến độ dự án Picity High Park</h1>
       </div>
-      <div className="text-gray-5 text-[14px] 2xl:text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 [&>figure]:mb-[40px]">
+      <div className="text-gray-5 text-[13px] 2xl:text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 [&>figure]:mb-[40px]">
         <p>Chủ đầu tư dự kiến bàn giao phân khu mới với 516 căn hộ và 29 shophouse vào quý IV năm nay.</p>
         <p>Picity High Park là dự án đầu tay của Pi Group, được định hướng quy hoạch thành khu đô thị kiểu mẫu góp phần thay đổi diện mạo khu vực Tây Bắc Sài Gòn.</p>
         <p>Đảm bảo đúng tiến độ</p>
@@ -36,14 +36,14 @@ export function ContentBidding() {
         </figure>
         {/* <strong className="block mt-[40px] mb-[45px] w-full text-right">Ngọc Diễm</strong> */}
         <ul className="flex gap-[10px] mt-[86px] mb-[45px] items-center justify-end">
-          <p className="text-[17px] text-gray-5 mr-0.5 ">Chia sẻ</p>
+          <p className="text-[13px] 2xl:text-[17px] font-semibold text-gray-6 mr-0.5 ">Chia sẻ</p>
           <li>
             <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/news/market-news">
               <Image
                 src="/fnews/fb.svg"
                 alt="Modern cityscape with high-rise buildings"
-                width={35}
-                height={35}
+                width={32}
+                height={32}
                 priority
               />
             </a>
@@ -53,8 +53,8 @@ export function ContentBidding() {
               <Image
                 src="/fnews/inter.svg"
                 alt="Modern cityscape with high-rise buildings"
-                width={35}
-                height={35}
+                width={32}
+                height={32}
                 priority
               />
             </a>
@@ -64,8 +64,8 @@ export function ContentBidding() {
               <Image
                 src="/fnews/linkin.svg"
                 alt="Modern cityscape with high-rise buildings"
-                width={35}
-                height={35}
+                width={32}
+                height={32}
                 priority
               />
             </a>

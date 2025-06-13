@@ -26,20 +26,20 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
   return (
-    <section className={`bg-blue-1 rounded-[20px] ${styles.embla}`}>
+    <section className={`bg-blue-1 rounded-[16px] ${styles.embla}`}>
       <div className={`${styles.embla__viewport}`} ref={emblaRef}>
-        <div className={`pl-[100px] sm:pl-[189px] h-[160px] ${styles.embla__container}`}>
+        <div className={`pl-[172px] h-[100px] 2xl:h-[150px] ${styles.embla__container}`}>
           {slides.map((slide, index) => (
-            <div className='relative min-h-[100%] flex flex-col justify-evenly' key={index}>
-              <h3 className="text-size-25 2xl:text-size-35 font-bold text-yellow-1 uppercase reveal-text">{slide.title}</h3>
+            <div className='relative min-h-[100%] flex flex-col' key={index}>
+              <h3 className="text-size-25 2xl:text-size-35 mt-[17px] mb-[1px] 2xl:mt-[30px] font-bold text-yellow-1 uppercase reveal-text">{slide.title}</h3>
               <p className="text-[18px] 2xl:text-size-25 text-gray-2 font-medium uppercase reveal-text">{slide.description}</p>
               <Link href={slide.link} className="
               md:absolute  
-              text-size-14 2xl:text-size-17
+              text-[13px] 2xl:text-[17px]
               right-[60px]  top-1/2 md:-translate-y-1/2 
               flex items-center border-text-white border-[1px] 
-              justify-center text-white font-semibold md:w-[168px] w-[149px] h-[33px] 
-              md:h-[35px] hover:border-yellow-1 
+              justify-center text-white font-semibold w-[138px] h-[30px] 
+              hover:border-yellow-1 
               hover:text-yellow-1 reveal-text">
                 <span className='uppercase'>Xem chi tiết</span>
               </Link>
@@ -47,7 +47,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           ))}
         </div>
       </div>
-      <div className={`left-[40px] sm:left-[86px] mt-[3px] ${styles.embla__controls}`}>
+      <div className={`left-[75px] mt-[1px] ${styles.embla__controls}`}>
         <div className={`${styles.embla__buttons}`}>
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

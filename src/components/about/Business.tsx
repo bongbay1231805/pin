@@ -3,7 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react";
 type ChildClass = 'child1' | 'child2' | 'child3';
+import { useScrollRefs } from '@/context/ScrollRefsContext'
 export function Business() {
+  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs()
   // `currentRotation` sẽ lưu trữ tổng số độ xoay hiện tại của phần tử
   const [currentRotation, setCurrentRotation] = useState<number>(0);
   // `activeChild` để theo dõi child nào đang được active
@@ -102,18 +104,18 @@ export function Business() {
     };
   }, []);
   return (
-    <div className="mx-auto px-1 sm:px-6 lg:px-[16px] md:max-w-[72%] border-b-1 border-gray-2 items-center pb-[88px]">
-      <div className="grid grid-cols-1 items-center justify-center md:grid-cols-2 gap-12">
+    <div ref={sixRef} className="mx-auto px-1 sm:px-6 lg:px-[16px] md:max-w-[85%] border-b-1 border-gray-2 items-center pt-[16px] pb-[88px]">
+      <div className="grid grid-cols-1 items-center justify-center px-[6.5%] md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-[28px]  2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">VĂN HÓA DOANH NGHIỆP</h2>
-          <p className="text-gray-1 text-[22px] 2xl:text-[30px]  font-normal uppercase">
+          <h2 className="text-[32px] 2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">VĂN HÓA DOANH NGHIỆP</h2>
+          <p className="text-gray-1 text-[24px] 2xl:text-[32px]  font-normal uppercase">
             Phát triển bền vững
           </p>
         </div>
-        <div className="relative md:pl-[46px] aspect-square items-center flex justify-center">
-          <svg width="553" height="554" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} viewBox="0 0 553 554" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="relative md:pl-[26px] aspect-square items-center flex justify-center">
+          <svg width="436" height="436" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} viewBox="0 0 553 554" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              fill={`${activeChild === 'child1' ? '#C48C5E' : "#304E76"} `}
+              fill={`${activeChild === 'child1' ? '#C48C5E' :  activeChild ==='child2' ? "#20446F" : "#3F69A2"} `}
               onClick={() => handleChildClick('child1')}
               d="M481.594 165.512C480.261 164.598 479.442 163.283 479.138 161.873C478.605 159.454 479.576 156.786 481.956 155.376L514 136.439C500.919 114.033 484.583 93.3233 465.2 75.0332L465.258 74.957C454.938 65.2594 443.761 56.2858 431.766 48.0933C431.271 47.7504 430.757 47.4265 430.262 47.0836C428.529 45.9214 426.797 44.7782 425.045 43.6542C423.922 42.9302 422.779 42.2062 421.637 41.5013C420.571 40.8344 419.504 40.1867 418.419 39.5389C417.6 39.0435 416.801 38.5291 415.982 38.0528C415.087 37.5193 414.192 37.043 413.278 36.5286C413.031 36.3762 412.783 36.2428 412.536 36.0904C412.174 35.8808 411.812 35.6903 411.469 35.4998C401.645 29.9556 391.649 25.0401 381.481 20.8105V20.9058C254.618 -31.6403 105.572 17.3621 36 139.887L67.3589 157.415C67.3589 157.415 67.378 157.396 67.378 157.377C67.8921 157.739 68.5204 157.968 69.2249 157.968C70.9765 157.968 72.4045 156.539 72.4045 154.786C72.4045 154.729 72.4045 154.691 72.4045 154.633C72.4045 154.595 72.4426 154.576 72.4617 154.519C73.0709 150.061 74.2895 145.869 75.9841 142.707C79.8111 135.505 87.1987 131.428 94.8147 131.447C98.1657 131.39 101.574 132.171 104.735 133.847C106.639 134.857 108.314 136.134 109.742 137.601C116.254 144.059 118.082 154.252 113.531 162.75C111.57 166.446 108.409 169.761 104.278 173.057C104.278 173.057 104.278 173.057 104.278 173.076C103.268 173.609 102.583 174.638 102.583 175.858C102.583 176.963 103.154 177.915 104.011 178.487L136.36 196.891C180.228 119.634 278.38 92.5803 355.587 136.477C356.996 137.277 358.367 138.096 359.757 138.934C360.176 139.182 360.594 139.43 360.994 139.696C361.775 140.173 362.518 140.668 363.279 141.163C364.288 141.811 365.297 142.459 366.268 143.126C366.306 143.145 366.345 143.183 366.383 143.202C386.603 156.996 402.749 174.753 414.44 194.776L446.77 176.105C448.997 174.791 451.549 175.134 453.377 176.486C454.671 177.439 455.623 178.906 455.795 180.716C456.271 185.689 457.68 190.547 459.679 193.938C464.801 202.683 476.053 205.598 484.774 200.473C493.513 195.348 496.426 184.088 491.304 175.362C489.305 171.971 485.764 168.37 481.651 165.531L481.594 165.512Z" />
             <path
@@ -191,9 +193,9 @@ export function Business() {
           </svg>
         </div>
       </div>
-      <div className="relative flex items-center justify-center mt-[72px]">
-        <Link href="/" className="flex profile-btn items-center justify-center font-semibold w-[460px] h-[50px]">
-          <svg width="35" height="35" className="object-contain mr-[15px]" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div ref={seventRef} className="relative flex items-center justify-center mt-[46px]">
+        <Link href="/" className="flex profile-btn items-center justify-center font-semibold w-[496px] h-[54px]">
+          <svg width="40" height="40" className="object-contain mr-[15px]" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.76074 45.6747V3.89313C7.76074 2.29692 9.05181 1 10.6408 1H45.9619C47.5509 1 48.8419 2.29692 48.8419 3.89313V39.9805" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
             <path d="M4.38086 49.0703H37.4941" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
             <path d="M1.00391 45.6753C1.00391 47.5516 2.5127 49.0672 4.38055 49.0672C6.24839 49.0672 7.75719 47.5516 7.75719 45.6753" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />

@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 type ChildClass = 'child1' | 'child2' | 'child3';
 export function SmartCity() {
   // `currentRotation` sẽ lưu trữ tổng số độ xoay hiện tại của phần tử
-  const [currentRotation, setCurrentRotation] = useState<number>(120);
+  const [currentRotation, setCurrentRotation] = useState<number>(0);
   // `activeChild` để theo dõi child nào đang được active
-  const [activeChild, setActiveChild] = useState<ChildClass | null>('child2');
+  const [activeChild, setActiveChild] = useState<ChildClass | null>('child1');
   // Định nghĩa các góc "mục tiêu" tương ứng với mỗi child nếu chúng bắt đầu từ 0deg
   const targetDegrees: { [key in ChildClass]: number } = {
     child1: 0,
@@ -77,30 +77,30 @@ export function SmartCity() {
     }
     return targetAngle;
   };
-  // useEffect(() => {
-  //   const childrenOrder: ChildClass[] = ['child1', 'child2', 'child3'];
-  //   let currentIndex = 0;
-  //   // Thiết lập interval để tự động thay đổi góc xoay
-  //   const intervalId = setInterval(() => {
-  //     // Xác định child tiếp theo trong chuỗi
-  //     currentIndex = (currentIndex + 1) % childrenOrder.length;
-  //     const nextChild = childrenOrder[currentIndex];
-  //     // Tính toán góc xoay mới bằng hàm getNextRotation
-  //     // Chúng ta sử dụng một functional update cho state setCurrentRotation
-  //     // để đảm bảo luôn lấy được giá trị currentRotation mới nhất
-  //     // mà không cần đưa currentRotation vào dependency array của useEffect.
-  //     setCurrentRotation(prevRotation => {
-  //       const newRotation = getNextRotation(prevRotation, targetDegrees[nextChild]);
-  //       return newRotation;
-  //     });
-  //     setActiveChild(nextChild);
-  //   }, 3500); // Thay đổi góc xoay sau mỗi 3.5 giây (3500ms)
-  //   // Hàm cleanup: quan trọng để xóa interval khi component unmount
-  //   return () => {
-  //     clearInterval(intervalId);
-  //     console.log('Auto-rotate interval cleared!');
-  //   };
-  // }, []);
+  useEffect(() => {
+    const childrenOrder: ChildClass[] = ['child1', 'child2', 'child3'];
+    let currentIndex = 0;
+    // Thiết lập interval để tự động thay đổi góc xoay
+    const intervalId = setInterval(() => {
+      // Xác định child tiếp theo trong chuỗi
+      currentIndex = (currentIndex + 1) % childrenOrder.length;
+      const nextChild = childrenOrder[currentIndex];
+      // Tính toán góc xoay mới bằng hàm getNextRotation
+      // Chúng ta sử dụng một functional update cho state setCurrentRotation
+      // để đảm bảo luôn lấy được giá trị currentRotation mới nhất
+      // mà không cần đưa currentRotation vào dependency array của useEffect.
+      setCurrentRotation(prevRotation => {
+        const newRotation = getNextRotation(prevRotation, targetDegrees[nextChild]);
+        return newRotation;
+      });
+      setActiveChild(nextChild);
+    }, 3500); // Thay đổi góc xoay sau mỗi 3.5 giây (3500ms)
+    // Hàm cleanup: quan trọng để xóa interval khi component unmount
+    return () => {
+      clearInterval(intervalId);
+      console.log('Auto-rotate interval cleared!');
+    };
+  }, []);
   return (
     <>
       <section className="@container relative boxanimation fade-in-up-medium">
@@ -154,7 +154,7 @@ export function SmartCity() {
               <svg className="absolute overflow-x-clip max-w-70 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} width="572" height="572" viewBox="0 0 572 572" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_2002_1264)">
                   <path
-                    fill={`${activeChild === 'child1' ? '#C48C5E' :  activeChild ==='child2' ? "#3B5E8D" : "#304E76"} `}
+                    fill={`${activeChild === 'child1' ? '#C48C5E' : "#304E76"} `}
                     onClick={() => handleChildClick('child1')}
                     d="M499.256 173.664C498.89 178.39 496.732 182.699 493.178 185.912L493.177 185.913L492.826 186.218C489.172 189.312 484.599 190.872 479.849 190.623L416.274 187.218L416.272 187.218L415.833 187.184C411.309 186.787 406.929 184.695 403.848 181.353L403.849 181.353L403.196 180.672L403.192 180.667C384.811 160.297 361.244 145 334.975 136.392L333.217 135.829C258.739 112.459 179.39 147.293 144.968 214.945C144.676 215.518 144.403 216.103 144.126 216.696C143.85 217.288 143.569 217.89 143.263 218.492L143.04 218.93L142.818 218.493L114.321 162.411C107.375 148.746 90.7697 143.174 77.0686 149.716L76.4177 150.037L23.2469 177.054L22.5627 177.401L22.9276 176.684C25.6749 170.003 28.7005 163.465 31.945 157.088C95.6913 31.8012 238.833 -27.687 372.765 15.1642L374.34 15.6731C422.057 31.2161 464.825 59.0512 497.962 96.3445C501.097 99.8602 502.818 104.47 502.671 109.159L502.651 109.613L499.286 173.207L499.256 173.664Z"
                     stroke="#E5AE80" strokeWidth="0.5" strokeMiterlimit="10" />
@@ -526,7 +526,7 @@ export function SmartCity() {
                 </svg>
               </div>
             </div>
-            <div className='mt-[40px] 2xl:mt-68px] pl-[46px] pr-[46px] text-center sm:text-left fade-in-left-short'>
+            <div className='mt-[40px] 2xl:mt-68px] pl-[46px] pr-[46px] text-center sm:text-left pr-[106px] pl-[96px] fade-in-left-short'>
               <h2 className="text-[34px] 2xl:text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">ĐÔ THỊ SỐ</h2>
               <Image
                 src="/fhome/picity.svg"

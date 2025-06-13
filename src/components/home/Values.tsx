@@ -66,8 +66,8 @@ export function Values() {
         <div className="mt-[30px] 2xl:mt-[80px] text-center sm:text-left">
           <h2 className="text-[37px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">VĂN HÓA DOANH NGHIỆP</h2>
           <p className="text-[23px] 2xl:text-[28px] text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">PHÁT TRIỂN BỀN VỮNG</p>
-          <p className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-justify sm:text-justify mx-auto sm:mx-0 sm:max-w-[468px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px] reveal-text">Pi Group xây dựng nền tảng vững chắc dựa trên 3 giá trị cốt lõi: &quot;Chính trực tạo niềm tin – Vượt trội dẫn lối thành công – Tận tâm kiến tạo giá trị.&ldquo; Đây là cam kết của Pi Group trong việc kiến tạo những giá trị bền vững, vì một tương lai phát triển cho cộng đồng và xã hội.</p>
-          <Link href="/" className="text-[13px] 2xl:text-[16px] reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-semibold w-[122] h-[30] 2xl:w-[132] 2xl:h-[32] border border-yellow-1 hover:text-white">
+          <p className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-justify sm:text-justify mx-auto sm:mx-0 sm:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px] reveal-text">Pi Group xây dựng nền tảng vững chắc dựa trên 3 giá trị cốt lõi: &quot;Chính trực tạo niềm tin – Vượt trội dẫn lối thành công – Tận tâm kiến tạo giá trị.&ldquo; Đây là cam kết của Pi Group trong việc kiến tạo những giá trị bền vững, vì một tương lai phát triển cho cộng đồng và xã hội.</p>
+          <Link href="/" className="text-[13px] 2xl:text-[16px] reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-[600] w-[110] h-[28] 2xl:w-[132] 2xl:h-[32] border border-yellow-1 hover:text-white">
             XEM THÊM
           </Link>
         </div>

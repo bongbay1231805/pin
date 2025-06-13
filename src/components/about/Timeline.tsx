@@ -3,7 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useScrollRefs } from '@/context/ScrollRefsContext'
 export function Timeline() {
+  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs()
   const timelineEvents = [
     {
       year: '2008',
@@ -19,14 +21,15 @@ export function Timeline() {
       year: '2016',
       description1:
         'Hoàn tất M&A: <br/> Công ty TNHH MTV Đầu tư <br/> Phát triển <strong>Gia Cư</strong> và <br/> Công ty CP Địa ốc <strong>Phương Đông</strong>',
-      description2: 'Thành lập Công ty <br/> <strong>CP ECOE Việt Nam</strong>',
+      description2: '<span></span>Thành lập Công ty <br/> <strong>CP ECOE Việt Nam</strong>',
     },
     {
       year: '2017',
-      description1: 'Thành lập Công ty CP <br/> Đầu tư - Xây dựng <strong>Winbuild</strong>',
-      description2: 'M&A thành công <br/>Công ty CP  <strong>Đông Quang</strong>',
-    }
+      description1:'Thành lập Công ty CP <br/> Đầu tư - Xây dựng <strong>Winbuild</strong>',
+      description2: '<span></span>M&A thành công <br/>Công ty CP  <strong>Đông Quang</strong>',
+    }    
   ];
+
   const autoplay = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
@@ -34,27 +37,35 @@ export function Timeline() {
     { loop: true, align: 'center', skipSnaps: false },
     [autoplay.current]
   );
+
   const [selectedIndex, setSelectedIndex] = useState(0);
+
   // Cập nhật selected index mỗi lần carousel thay đổi
   useEffect(() => {
     if (!embla) return;
+
     const onSelect = () => {
       setSelectedIndex(embla.selectedScrollSnap());
     };
+
     embla.on('select', onSelect);
     onSelect();
+
     return () => {
       embla.off('select', onSelect);
     };
   }, [embla]);
+
   const scrollPrev = () => embla && embla.scrollPrev();
   const scrollNext = () => embla && embla.scrollNext();
+
   return (
-    <section className="bg-white timeline-carousel py-16">
+    <section ref={threeRef} className="bg-white timeline-carousel py-16">
       <div className="mx-auto max-w-[80%] md:max-w-[80%] 2xl:max-w-[1380px]">
         <h2 className="text-[36px] 2xl:text-[40px] text-yellow-1 font-bold text-center mb-12">
           LỊCH SỬ HÌNH THÀNH
         </h2>
+
         <div className="carousel-bg relative ">
           {/* Nút trái */}
           <button
@@ -63,40 +74,43 @@ export function Timeline() {
           >
             <ChevronLeft />
           </button>
+
           {/* Carousel */}
           <div className="overflow-hidden max-w-[86%] ml-[7%]" ref={emblaRef}>
             <div className="flex">
               {timelineEvents.map((event, index) => {
                 const isActive = index === selectedIndex;
                 return (
-                  <div
+                <div
                     key={index}
                     className="flex-none min-w-[33.333%] flex justify-center items-center p-6 cursor-pointer"
                     onClick={() => embla && embla.scrollTo(index)}
                   >
                     <div
-                      className={`w-[296px] h-[296px] 2xl:w-[360px] 2xl:h-[360px] rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white ${isActive
-                        ? 'border-1 timeline-item active border-yellow-500'
-                        : 'timeline-item opacity-100'
-                        }`}
+                      className={`w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white ${
+                        isActive
+                          ? 'border-1 active border-yellow-500'
+                          : 'opacity-100'
+                      }`}
                     >
                       <div className="bg w-full h-full flex flex-col items-center justify-center text-center pb-[20px]">
                         <div className="text-[26px] 2xl:text-[32px] title font-bold mb-2 text-yellow-1">{event.year}</div>
                         <div
-                          className="text-[13px] 2xl:text-[15px]"
-                          dangerouslySetInnerHTML={{ __html: event.description1 }}
+                            className="text-[13px] 2xl:text-[15px]"
+                            dangerouslySetInnerHTML={{ __html: event.description1 }}
                         />
                         <div
-                          className="text-[13px] 2xl:text-[15px] mt-2"
-                          dangerouslySetInnerHTML={{ __html: event.description2 }}
+                            className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
+                            dangerouslySetInnerHTML={{ __html: event.description2 }}
                         />
                       </div>
                     </div>
-                  </div>
+                </div>
                 );
               })}
             </div>
-          </div>
+        </div>
+
           {/* Nút phải */}
           <button
             onClick={scrollNext}

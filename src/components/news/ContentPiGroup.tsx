@@ -10,7 +10,7 @@ export function ContentPiGroup() {
         </div>
         <h1 className="uppercase text-[32px] 2xl:text-[39px] text-blue-1 font-bold">THƯ MỜI HỢP TÁC DỰ ÁN PICITY SKY PARK</h1>
       </div>
-      <div className="text-gray-5 text-[14px] 2xl:text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 [&>figure]:mb-[40px]">
+      <div className="text-gray-5 text-[13px] 2xl:text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 [&>figure]:mb-[40px]">
         <p>Thư mời hợp tác dự án PICITY SKY PARK được Tập đoàn PiGroup đơn vị phát triển dự án Picity Sky Park triển khai đến các đơn vị đại lý chiến lược chuyên phân phối dự án căn hộ trên thị trường. Sáng ngày 13/6/2023 đơn vị phát triển dự án đã có Thư mời hợp tác dự án PICITY SKY PARK đến các đơn vị chiến lược cùng phân phối sản phẩm Picity ra thị trường Dĩ An Bình Dương.</p>
         <figure>
           <img src="/fnews/post-2.png" alt="post-2.png" />
@@ -20,14 +20,14 @@ export function ContentPiGroup() {
         <p>Đường phố nội khu tại Picity High Park có diện tích rộng với hệ thống cây xanh, bóng mát và hoa cỏ bao phủ quanh năm. Ngoài ra, các căn hộ được thiết kế thông minh với tầm nhìn từ phòng ngủ và phòng khách thoáng rộng để đón gió và ánh nắng tự nhiên.</p>
         {/* <strong className="block mt-[40px] mb-[45px] w-full text-right">Ngọc Diễm</strong> */}
         <ul className="flex gap-[10px] mt-[86px] mb-[45px] items-center justify-end">
-          <p className="text-[14px] 2xl:text-[17px] font-semibold text-gray-5 mr-0.5 ">Chia sẻ</p>
+          <p className="text-[13px] 2xl:text-[17px] font-semibold text-gray-6 mr-0.5 ">Chia sẻ</p>
           <li>
             <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/news/market-news">
               <Image
                 src="/fnews/fb.svg"
                 alt="Modern cityscape with high-rise buildings"
-                width={35}
-                height={35}
+                width={32}
+                height={32}
                 priority
               />
             </a>
@@ -37,8 +37,8 @@ export function ContentPiGroup() {
               <Image
                 src="/fnews/inter.svg"
                 alt="Modern cityscape with high-rise buildings"
-                width={35}
-                height={35}
+                width={32}
+                height={32}
                 priority
               />
             </a>
@@ -48,8 +48,8 @@ export function ContentPiGroup() {
               <Image
                 src="/fnews/linkin.svg"
                 alt="Modern cityscape with high-rise buildings"
-                width={35}
-                height={35}
+                width={32}
+                height={32}
                 priority
               />
             </a>
