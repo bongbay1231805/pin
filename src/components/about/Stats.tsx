@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { useScrollRefs } from '@/context/ScrollRefsContext'
 export function Stats() {
-  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs()
+  const { oneRef, twoRef} = useScrollRefs()
   const originalItems = [
     { value: "12", unit: "NĂM", description: "HÌNH THÀNH VÀ <br />PHÁT TRIỂN" },
     { value: "20+", unit: "HA", description: "QUỸ ĐẤT" },
     { value: "15,000+", description: "KHÁCH HÀNG" },
     { value: "5.000+", description: "SẢN PHẨM" },
-    { value: "1.000+", description: "NHÂN SỰ CHẤT LƯỢNG CAO" },
-    { value: "30+", description: "ĐỐI TÁC CHIẾN LƯỢC QUỐC TẾ" },
+    { value: "1.000+", description: "NHÂN SỰ <br/> CHẤT LƯỢNG CAO" },
+    { value: "30+", description: "ĐỐI TÁC <br/> CHIẾN LƯỢC QUỐC TẾ" },
   ];
   // Tạo danh sách đủ dài để cuộn mượt
   const items = [...originalItems, ...originalItems, ...originalItems];
