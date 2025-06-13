@@ -32,7 +32,7 @@ export default function Hero() {
       id: 'job-1',
       position: 'Nhân viên Kinh doanh Bất động sản',
       quantity: 10,
-      deadline: '30/06/2025',
+      deadline: '30.06.2025',
       details: {
         description: [
           'Tìm kiếm và phát triển nguồn khách hàng tiềm năng.',
@@ -40,7 +40,7 @@ export default function Hero() {
           'Hỗ trợ khách hàng hoàn tất thủ tục giao dịch.',
         ],
         requirements: [
-          'Tốt nghiệp Cao đẳng/Đại học chuyên ngành liên quan.',
+          'Tốt nghiệp Cao đẳng.Đại học chuyên ngành liên quan.',
           'Có kinh nghiệm trong lĩnh vực kinh doanh bất động sản là một lợi thế.',
           'Kỹ năng giao tiếp, đàm phán tốt.',
         ],
@@ -64,10 +64,10 @@ export default function Hero() {
       id: 'job-2',
       position: 'Chuyên viên Marketing',
       quantity: 3,
-      deadline: '15/07/2025',
+      deadline: '15.07.2025',
       details: {
         description: [
-          'Lập kế hoạch và triển khai các chiến dịch marketing online/offline.',
+          'Lập kế hoạch và triển khai các chiến dịch marketing online.offline.',
           'Quản lý nội dung trên các kênh truyền thông số.',
         ],
         requirements: [
@@ -92,7 +92,7 @@ export default function Hero() {
       id: 'job-3',
       position: 'Kế toán tổng hợp',
       quantity: 1,
-      deadline: '15/07/2025',
+      deadline: '15.07.2025',
       details: {
         description: [
           'Ghi nhận, xử lý và tổng hợp các số liệu kế toán.',
@@ -122,7 +122,7 @@ export default function Hero() {
       id: 'job-4',
       position: 'Trưởng phòng Dự án Bất động sản',
       quantity: 2,
-      deadline: '31/07/2025',
+      deadline: '31.07.2025',
       details: {
         description: [
           'Lập kế hoạch, quản lý và điều hành các dự án bất động sản.',
@@ -152,7 +152,7 @@ export default function Hero() {
       id: 'job-5',
       position: 'Thiết kế đồ họa',
       quantity: 2,
-      deadline: '20/07/2025',
+      deadline: '20.07.2025',
       details: {
         description: [
           'Thiết kế các ấn phẩm truyền thông (banner, poster, brochure, video).',
@@ -224,18 +224,18 @@ export default function Hero() {
   }, [currentPage]); // Chỉ cuộn khi trang thay đổi
   return (
     <>
-      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[175px]">
+      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[25%]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[55px]'>Phát triển nhân lực</h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[30px]'>Phát triển nhân lực</h2>
         </div>
         <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-fill" />
       </div>
-      <div ref={oneRef} className=" mx-auto  md:max-w-[1625px]  text-center pt-[20%] md:pt-[175px]">
-        <h2 className='uppercase font-bold text-yellow-1 text-[40px]'>Văn hóa làm việc</h2>
+      <div ref={oneRef} className=" mx-auto  md:max-w-[1145px]  text-center pt-[10%] md:pt-[110px]">
+        <h2 className='uppercase font-bold text-yellow-1 text-[30px] mb-[50px]'>Văn hóa làm việc</h2>
       </div>
-      <div className="grid grid-cols-4 gap-[33px]  mx-auto  max-w-[1625px] pb-[115px]">
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white p-[45px] gap-[45px] rounded-2xl flex flex-col items-center justify-center'>
-          <svg width="113" height="113" viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="grid grid-cols-4 gap-[20px]  mx-auto  max-w-[1145px] pb-[45px]">
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[218px] items-center justify-center'>
+          <svg className='w-[88px] h-[88px]' width="113" height="113" viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M37.2159 57.3584C40.2239 57.3584 42.6623 54.9199 42.6623 51.912C42.6623 48.904 40.2239 46.4656 37.2159 46.4656C34.208 46.4656 31.7695 48.904 31.7695 51.912C31.7695 54.9199 34.208 57.3584 37.2159 57.3584Z" stroke="currentColor" strokeWidth="2.5" strokeMiterlimit="10" />
             <path d="M98.0334 21.5016C98.0334 24.5094 95.5949 26.948 92.587 26.948C89.5792 26.948 87.1406 24.5094 87.1406 21.5016C87.1406 18.4937 89.5792 16.0552 92.587 16.0552" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M74.8771 9.9719L62.6034 2.15307C61.9205 1.71797 61.0664 2.2623 61.0664 3.1325V18.7711C61.0664 19.6413 61.9205 20.1856 62.6034 19.7505L74.8771 11.9308C75.56 11.4957 75.56 10.407 74.8771 9.9719Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -248,10 +248,10 @@ export default function Hero() {
             <path d="M31.1074 79.178C40.3101 76.0263 50.4987 74.313 57.6133 81.759L57.9492 82.1204L57.9512 82.1223C58.095 82.2791 58.3324 82.6045 58.6318 83.0403C58.9255 83.4678 59.2554 83.9664 59.585 84.4563C59.9111 84.9411 60.2364 85.417 60.5098 85.7815C60.6458 85.9629 60.7773 86.1267 60.8936 86.2532C60.9514 86.3161 61.0129 86.3784 61.0762 86.4309C61.1296 86.4752 61.2267 86.5493 61.3525 86.5872L61.4023 86.6018L61.4541 86.6067C63.7213 86.7968 66.0917 86.7105 68.4189 86.6262C70.4662 86.552 72.4805 86.4788 74.4072 86.5852L75.2266 86.6428C77.0964 86.802 78.4464 87.5414 79.3301 88.5491C80.2182 89.5619 80.6618 90.8752 80.6611 92.219C80.6597 94.8969 78.8999 97.6342 75.4775 98.2297L59.5332 98.2659H59.1475L59.042 98.6243C58.0243 102.074 53.4732 102.867 51.4443 99.9739L51.2559 99.6819V99.6809C50.5593 98.5107 50.4512 97.4106 50.6973 96.4719C50.9458 95.5239 51.5665 94.7008 52.3896 94.1213C53.9953 92.991 56.2506 92.8524 57.8281 94.387L57.9785 94.5413C58.0712 94.6406 58.1616 94.7823 58.2627 94.9719C58.3124 95.0651 58.361 95.1631 58.4131 95.2678C58.464 95.3702 58.5191 95.4799 58.5762 95.5872C58.7846 95.9785 59.124 96.5403 59.7744 96.6604L59.8193 96.6692H75.3037L75.373 96.6487C77.7802 95.9441 79.0781 93.9999 79.0234 92.1067C78.9961 91.1615 78.6293 90.2406 77.9072 89.5276C77.2297 88.8588 76.2644 88.3968 75.0342 88.2454L74.7852 88.219C72.3818 88.0105 69.8447 88.1057 67.3389 88.1975C64.8779 88.2877 62.4457 88.3721 60.1328 88.1819C59.5658 87.6697 59.1694 87.0406 58.7666 86.3215C58.3464 85.5714 57.9076 84.7053 57.2578 83.9182H57.2588C53.7129 79.6157 49.2578 78.114 44.5811 78.0969C40.221 78.081 35.6555 79.3537 31.4229 80.8235L30.5811 81.1204H30.5801C30.0046 81.3265 29.2347 81.7238 28.5498 82.0647C28.1986 82.2395 27.8641 82.4029 27.5674 82.5325C27.3393 82.6321 27.1506 82.7035 27.0049 82.7463L26.874 82.7795H26.8721C26.1157 82.934 25.2014 82.9094 24.2119 82.8577C23.2512 82.8075 22.2117 82.7314 21.3057 82.8206L21.0225 82.8489L20.9014 83.1067C19.6549 85.7763 17.128 86.3718 15.1504 85.6262C14.1568 85.2516 13.3159 84.5419 12.8447 83.593C12.3774 82.6519 12.2549 81.4374 12.7627 80.0071L12.7617 80.0061C13.2341 78.6857 14.4319 77.8571 15.8232 77.6135C17.1318 77.3845 18.5438 77.688 19.5615 78.5295L19.7598 78.7053C20.0659 78.9976 20.2416 79.3378 20.4365 79.7502C20.6236 80.146 20.8393 80.6376 21.2334 81.0618L21.3906 81.2307L21.6221 81.2209C22.2721 81.1921 23.004 81.2438 23.7822 81.2825C24.4456 81.3154 25.141 81.3385 25.7803 81.2737L26.0508 81.2405L26.0566 81.2395C26.3821 81.1879 26.7881 81.049 27.2051 80.8831C27.6309 80.7136 28.105 80.5005 28.5781 80.2834C29.423 79.8958 30.2473 79.5025 30.8584 79.2678L31.1064 79.178H31.1074ZM56.7148 95.5901C56.1991 95.0609 55.4518 94.7785 54.542 94.9104L54.3574 94.9417L54.3564 94.9426C53.1299 95.1933 52.4127 96.2382 52.2793 97.2659C52.1533 98.2375 52.5404 99.3201 53.6152 99.7756L53.8398 99.8586H53.8418C54.9455 100.203 55.8596 100.081 56.5137 99.5959C57.1555 99.1201 57.4517 98.3647 57.4736 97.635C57.4955 96.9064 57.2474 96.1367 56.7148 95.5901ZM18.0039 79.4719C17.4655 79.1686 16.8017 79.0643 16.0479 79.218L15.7188 79.3C14.2594 79.7284 13.8866 81.3184 14.2305 82.4915C14.4098 83.1029 14.7937 83.6819 15.3945 84.0315C15.929 84.3424 16.5895 84.445 17.3389 84.2805L17.665 84.1936C19.1479 83.7302 19.5557 82.175 19.1943 80.9905C19.0085 80.3817 18.612 79.8145 18.0039 79.4719Z" fill="currentColor" stroke="currentColor" />
             <path d="M3.7207 76.4875C4.39668 76.4891 5.07432 76.5011 5.62402 76.5227C6.19249 76.545 6.56986 76.5756 6.69238 76.6028V76.6038C7.27845 76.7411 7.76745 77.3325 8.13281 78.2463C8.44229 79.0206 8.61552 79.9125 8.69141 80.6233L8.71777 80.9153C9.13089 86.4494 9.15738 95.8562 8.7959 101.874L8.71777 103.031V103.031C8.6557 103.888 8.49076 104.902 8.13379 105.763C7.79739 106.574 7.32055 107.181 6.66504 107.452L6.53125 107.502C6.34478 107.561 5.94019 107.621 5.37988 107.662C4.83124 107.702 4.17805 107.721 3.53125 107.711C2.88311 107.701 2.25275 107.664 1.74609 107.594C1.49231 107.559 1.27966 107.517 1.11621 107.47C1.03493 107.447 0.971613 107.424 0.924805 107.404C0.901729 107.393 0.884151 107.384 0.87207 107.377L0.855469 107.366C0.55416 107.121 0.459807 106.718 0.556641 106.349C0.655718 105.971 0.902653 105.777 1.1582 105.777H6.65332L6.72754 105.366C6.90882 104.369 7.11577 103.314 7.21289 102.252L7.24707 101.796V101.795C7.55357 96.4535 7.62483 88.6152 7.31445 82.9836L7.24707 81.8879C7.20972 81.3062 7.10125 80.7339 6.99707 80.1956C6.89083 79.6466 6.78896 79.1345 6.74512 78.6262L6.71191 78.2336L6.32129 78.175L5.99707 78.137C5.22118 78.0697 4.324 78.1435 3.50684 78.2024C2.65046 78.2641 1.88214 78.3097 1.28125 78.2258L1.03418 78.1809L1.00293 78.1741C0.740767 78.1035 0.526558 77.8192 0.501953 77.3831C0.479052 76.9764 0.631048 76.721 0.791992 76.6262L0.861328 76.595L0.864258 76.594C0.866491 76.5934 0.890094 76.5875 0.946289 76.5793C1.00157 76.5713 1.0741 76.5628 1.16309 76.5549C1.34101 76.5393 1.57101 76.5263 1.83887 76.5159C2.37409 76.4951 3.04451 76.486 3.7207 76.4875Z" fill="currentColor" stroke="currentColor" />
           </svg>
-          <p className='text-[20px] font-semibold uppercase text-center'>Tôn trọng <br /> sự khác biệt</p>
+          <p className='text-[17px] font-semibold uppercase text-center'>Tôn trọng <br /> sự khác biệt</p>
         </div>
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white p-[45px] gap-[45px] rounded-2xl flex flex-col items-center justify-center'>
-          <svg width="122" height="110" viewBox="0 0 122 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[218px] items-center justify-center'>
+          <svg className='w-[88px] h-[88px]' width="122" height="110" viewBox="0 0 122 110" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 55.5376L7.54841 52.0056C9.83223 50.7698 12.6925 51.4864 14.1042 53.6509L32.0939 81.0879C33.5573 83.3182 32.966 86.2871 30.7635 87.8082L23.6386 92.7076" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" />
             <g clipPath="url(#clip0_37_1220)">
               <path d="M42.5268 101.369C40.4862 101.369 38.8242 99.7167 38.8242 97.6881C38.8242 95.6595 40.4862 94.0073 42.5268 94.0073C44.5674 94.0073 46.2294 95.6595 46.2294 97.6881C46.2294 99.7167 44.5674 101.369 42.5268 101.369ZM42.5268 96.055C41.622 96.055 40.8841 96.7886 40.8841 97.6881C40.8841 98.5876 41.622 99.3212 42.5268 99.3212C43.4316 99.3212 44.1695 98.5876 44.1695 97.6881C44.1695 96.7886 43.4316 96.055 42.5268 96.055Z" fill="currentColor" />
@@ -278,10 +278,10 @@ export default function Hero() {
               </clipPath>
             </defs>
           </svg>
-          <p className='text-[20px] font-semibold uppercase text-center'>Khách hàng là trái tim <br /> của doanh nghiệp</p>
+          <p className='text-[17px] font-semibold uppercase text-center'>Khách hàng là trái tim <br /> của doanh nghiệp</p>
         </div>
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white p-[45px] gap-[45px] rounded-2xl flex flex-col items-center justify-center'>
-          <svg width="97" height="122" viewBox="0 0 97 122" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[218px] items-center justify-center'>
+          <svg className='w-[88px] h-[88px]' width="97" height="122" viewBox="0 0 97 122" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M59.1994 19.432C57.4083 19.5332 55.5704 19.7591 53.7715 19.6267C52.3231 19.5177 50.9369 18.9647 49.4651 18.9881C46.1399 19.0426 43.5467 20.2107 39.9255 19.3152C39.03 19.0971 37.6828 18.0614 37.052 18.6844C36.1876 19.5332 34.8871 23.4269 34.6613 24.7041C34.5055 25.5607 34.4744 27.8424 34.1707 28.3174C33.0648 30.0618 31.8189 26.3394 30.5262 28.7769C29.7396 30.2487 30.1991 32.3201 31.2114 33.5817C32.2238 34.8433 32.621 34.3137 33.7969 34.6953C34.5211 34.9367 35.1441 37.6078 35.5334 38.4955C35.7749 39.0484 36.0552 39.6169 36.3433 40.1465C36.795 40.9875 38.9755 43.8143 38.921 44.3439C38.8587 44.9747 37.9787 45.4419 37.3713 45.0837C36.5925 44.632 35.0506 42.179 34.5756 41.3068C34.1551 40.5436 32.839 37.0237 32.6599 36.8524C32.3796 36.5876 31.009 36.2995 30.3159 35.7077C27.7538 33.5505 26.8661 27.8735 30.3003 26.1759C28.6416 23.6605 28.1899 21.1219 28.7506 18.1626C28.8752 17.5007 29.397 16.4806 29.4203 15.9822C29.4437 15.5149 28.9687 14.5571 28.883 13.9419C28.4313 10.6634 29.4749 7.8677 32.4107 6.23235C33.1116 5.84298 34.7703 5.46918 35.1597 5.18105C35.331 5.05645 35.5802 4.39452 35.8372 4.11417C38.9521 0.726656 42.1605 -0.861974 46.8563 0.469672C47.6662 0.695506 49.3405 1.71566 49.8856 1.74681C50.4307 1.77795 51.2951 1.39637 51.9337 1.34965C56.4504 0.999215 59.9392 3.24977 62.8361 6.44261C63.9029 5.96758 66.2236 4.56584 66.2002 6.76968C66.1769 8.97351 64.705 12.5168 64.7829 14.596C64.8063 15.1256 65.476 15.9588 65.6707 16.5429C66.6675 19.4709 66.317 22.8039 64.7751 25.475C69.3853 28.0994 66.9945 36.8368 61.6602 36.3306C61.0683 37.3664 60.1806 41.5871 58.5919 41.0887C57.0033 40.5904 58.5686 38.5578 58.9034 37.6779C59.2383 36.7979 59.8379 33.8932 60.7646 33.7686C61.3643 33.6907 61.7147 34.2125 62.3922 34.2125C65.0088 34.2125 66.2002 28.0994 63.9341 27.4919C63.2877 27.3128 61.7692 29.9606 60.9515 28.2395C60.6478 27.601 60.5388 24.9299 60.3441 23.9253C60.0404 22.399 59.6043 20.9272 59.1916 19.432H59.1994ZM63.7316 8.53742C61.5044 9.41739 61.0138 7.47054 59.7367 6.27128C58.0079 4.62814 55.1655 3.34322 52.7436 3.38995C51.8169 3.41331 50.1037 4.08302 49.4651 4.01294C49.1458 3.98179 47.8298 3.10181 47.3002 2.89155C43.9361 1.53655 40.8756 1.95706 38.2668 4.52691C37.6672 5.11875 36.8339 6.67623 36.4134 6.97994C35.8917 7.36152 34.3731 7.61072 33.5632 8.03124C31.3205 9.20713 30.6352 10.8503 30.8844 13.35C30.97 14.2378 31.5307 15.2112 31.5074 16.0133C31.484 16.8154 30.8065 17.968 30.6975 18.918C30.4405 21.0829 30.6975 23.9409 32.5197 25.3582C32.5119 23.3958 34.4432 17.6798 36.0163 16.6441C37.5893 15.6084 38.3136 16.6597 39.7075 17.049C43.3442 18.077 45.2132 17.1581 48.6319 16.94C51.3808 16.7609 53.9273 17.7032 56.8553 17.5708C57.7431 17.5319 58.4907 17.0802 59.3707 17.2827C61.7303 17.8511 62.1352 22.4301 62.5012 24.4315C62.5635 24.7664 62.361 24.7897 62.8984 24.743C63.9652 22.4146 64.5337 20.2808 63.864 17.7265C63.646 16.8777 62.9685 16.1146 62.7893 15.5227C62.361 14.1366 63.973 8.78661 63.7238 8.53742H63.7316Z" fill="currentColor" />
             <path d="M67.9728 91.5199C68.6192 91.5199 69.1409 90.9826 69.1409 90.3129V75.0496C69.1409 74.3876 68.6192 73.8425 67.9728 73.8425C67.3264 73.8425 66.8047 74.3799 66.8047 75.0496V90.3129C66.8047 90.9748 67.3264 91.5199 67.9728 91.5199Z" fill="currentColor" />
             <path d="M55.9477 52.0612L56.0878 52.0457C56.0878 52.0457 58.7667 51.6251 59.0626 51.5784C59.2962 51.1735 56.7653 47.5757 58.5331 47.0306C58.681 46.9839 58.8212 46.9683 58.9536 46.9605C60.7603 46.867 60.7369 50.5349 61.8583 51.6719C62.2165 52.0379 63.0731 52.4662 63.7195 52.9879C70.0584 57.0919 77.9626 60.1134 80.9141 67.4491C83.3904 73.6479 81.7317 83.0395 82.3625 89.7678C82.4014 91.5745 80.4935 92.2909 79.8628 90.3986C79.3799 84.597 80.3066 78.188 79.8005 72.472C78.8971 62.3951 68.1271 58.8674 60.8459 54.047L60.807 54.0237C60.6512 53.9146 60.4955 53.8134 60.3397 53.7044H60.3164L60.293 53.6966L56.851 54.2184C56.851 54.2184 56.8276 54.2184 56.8121 54.2184C56.5317 54.2573 56.2825 54.2495 56.0878 54.2184C56.0645 54.2184 56.0489 54.2184 56.0333 54.2106C55.8776 54.2106 55.7296 54.1638 55.5894 54.0938C55.2779 53.938 55.0521 53.6343 55.0054 53.2683C54.9275 52.6687 55.348 52.1235 55.9477 52.0457V52.0612Z" fill="currentColor" />
@@ -291,10 +291,10 @@ export default function Hero() {
             <path d="M85.0054 92.0258L87.4717 99.6347H95.4573C95.9799 99.6347 96.1999 100.306 95.7782 100.618L89.3237 105.323L91.79 112.932C91.955 113.437 91.3774 113.851 90.9557 113.538L84.5012 108.833L78.0467 113.538C77.6249 113.851 77.0473 113.428 77.2123 112.932L79.6786 105.323L73.2241 100.618C72.8024 100.306 73.0133 99.6347 73.545 99.6347H81.5306L83.9969 92.0258C84.1619 91.5204 84.8679 91.5204 85.0329 92.0258H85.0054Z" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" />
             <path d="M13.0054 92.0258L15.4717 99.6347H23.4573C23.9799 99.6347 24.1999 100.306 23.7782 100.618L17.3237 105.323L19.79 112.932C19.955 113.437 19.3774 113.851 18.9557 113.538L12.5012 108.833L6.04667 113.538C5.62492 113.851 5.04732 113.428 5.21235 112.932L7.67863 105.323L1.22413 100.618C0.802387 100.306 1.01326 99.6347 1.54502 99.6347H9.53063L11.9969 92.0258C12.1619 91.5204 12.8679 91.5204 13.0329 92.0258H13.0054Z" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" />
           </svg>
-          <p className='text-[20px] font-semibold uppercase text-center'>Mỗi nhân viên là <br /> một ông chủ</p>
+          <p className='text-[17px] font-semibold uppercase text-center'>Mỗi nhân viên là <br /> một ông chủ</p>
         </div>
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white p-[45px] gap-[45px] rounded-2xl flex flex-col items-center justify-center'>
-          <svg width="91" height="102" viewBox="0 0 91 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[218px] items-center justify-center'>
+          <svg className='w-[88px] h-[88px]' width="91" height="102" viewBox="0 0 91 102" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M48.9086 36.1997H61.2918C61.3838 36.1997 62.0867 37.1034 62.0867 37.2205V42.793H68.3368C68.454 42.793 69.3576 43.4959 69.3576 43.5879V51.202C73.1981 47.9054 75.7835 43.1863 76.8545 38.2497C74.3444 41.0192 69.6672 39.8311 69.3493 35.9906C68.3285 35.9906 65.7263 36.2499 65.7263 34.7271V20.7456H55.9536V24.2682C58.7984 25.5149 59.8276 29.3303 57.0748 31.2966C53.1507 34.0996 48.8082 28.9705 51.7618 25.5316C52.406 24.7786 53.3431 24.8037 53.6862 24.0423L53.728 7.94391C54.0125 6.98169 55.4767 7.21597 55.8365 8.01922C56.1963 8.82246 55.8281 10.2867 55.9536 11.1987H60.7228V5.86049C59.2503 4.99031 57.3342 4.32094 55.6692 3.86912C54.6735 3.60137 50.2306 2.90689 49.9294 2.55548C49.5696 2.12875 49.6449 1.2502 50.0465 0.865314C50.6741 0.246145 53.8703 1.04939 54.8576 1.2753C75.3986 5.95253 87.0371 27.5983 76.068 46.667C72.1606 53.4695 64.7725 56.7411 65.5004 65.8612C65.6176 67.3339 67.0232 70.1703 64.5215 70.0364C63.5676 69.7771 63.007 65.6604 62.9819 64.7317C62.9485 63.4431 63.3668 62.2383 63.4505 60.9748H57.5434V69.5009C57.5434 69.7938 56.9577 70.8062 56.5059 70.756C55.8532 70.8732 55.1671 70.3711 55.05 69.7185C55.2508 66.7147 54.7655 63.3511 55.0333 60.3975C55.1169 59.4687 55.2676 58.8328 56.28 58.6906C58.6729 58.3643 61.7436 58.9835 64.2119 58.6739L67.0818 54.0468V45.2948H60.6057C60.3798 45.2948 59.5849 44.4999 59.5849 44.274V38.4756H49.2433C48.5488 39.2621 49.0425 40.6511 48.9003 41.6551H56.0624C56.213 41.6551 56.7987 42.383 56.8489 42.6843C57.1752 44.3828 56.623 46.9766 56.8489 48.7755C61.434 50.8004 60.0117 57.2431 54.7153 56.4147C51.0506 55.8374 50.7577 49.6457 54.5898 48.9262V43.9226H49.2517L48.9086 44.2657V72.9064L49.2517 73.2494H61.9779C63.5007 73.2494 65.902 75.542 66.4543 76.9561C66.973 78.2697 67.383 82.8298 65.057 81.7755C63.9107 81.2568 64.6972 79.8846 64.58 78.8387C64.329 76.6632 62.3795 75.6592 60.4049 75.5085C52.3726 74.9145 43.5621 75.9269 35.4461 75.5755C33.9819 75.9018 32.5762 77.0648 32.3419 78.6044C32.1913 79.575 32.936 81.4743 31.7144 81.8508C29.3884 82.562 29.9573 78.094 30.543 76.8055C31.8399 73.9188 34.1157 73.3582 36.994 73.2578C37.2701 73.2494 37.8391 73.4251 37.7889 73.0319C33.3376 72.7641 29.7733 68.9654 28.9282 64.7317C20.5026 63.7025 15.0138 54.5991 18.6953 46.7758C8.57123 43.2532 7.7429 28.5103 18.2351 25.0631C18.1849 23.7913 17.6411 22.6031 17.5574 21.3313C17.0805 14.328 22.2848 8.33717 29.3633 8.22839C31.4885 2.19569 37.8558 -1.05076 44.0307 0.957352C46.9675 1.91957 49.1094 4.51339 49.1429 7.68453C49.1429 8.01085 48.9086 8.27023 48.9086 8.3539V36.1997ZM46.6328 73.2494V6.31232C46.6328 6.10314 45.6622 4.63889 45.3945 4.37114C43.5788 2.56384 39.8555 2.48017 37.5462 3.13281C34.1074 4.1034 32.0323 7.31638 30.7104 10.3955C29.539 10.7051 28.3592 10.5377 27.0791 10.8557C22.5609 11.9601 19.5488 16.5119 19.8165 21.0887C20.034 24.8204 22.3266 28.2259 26.4599 27.5146C27.5476 27.3306 29.3382 25.5651 30.0996 27.1716C30.8024 28.6526 28.1501 29.4726 27.0791 29.6148C27.7652 30.8782 27.9492 35.1538 25.8408 34.8443C24.2176 34.61 25.2802 32.8361 25.2802 31.9911C25.2802 29.983 22.9458 29.757 21.5485 28.8869C19.5906 27.6653 20.0173 26.4269 17.457 27.8326C11.073 31.3468 11.7005 41.061 18.2853 43.9644C20.4357 44.9183 19.7914 44.3828 21.3895 43.8055C22.176 43.521 23.9916 43.27 24.4769 42.8014C25.2718 42.0233 24.0753 39.7976 26.4683 40.3247C27.4389 40.6594 27.1293 43.2532 26.6524 44.0063C26.7862 44.7426 29.221 45.3032 27.7652 46.7758C26.5771 47.9807 25.1714 44.9769 22.8537 45.7299C19.7998 46.7256 19.4986 51.7375 20.1344 54.3899C21.0799 58.3475 24.8534 62.1128 29.0453 62.3219C30.3255 62.3805 30.4175 61.7362 31.3965 61.3179C33.8982 60.2469 34.4337 60.8242 35.329 57.7451C35.6218 56.7327 35.4294 54.415 36.9187 54.6493C39.1861 55.0174 37.0358 59.6528 36.6258 60.9665C38.0315 60.9497 41.4285 65.0245 39.1945 65.7023C37.7972 66.129 37.5797 64.2045 36.5087 63.4682C35.1532 62.5311 32.7854 62.9746 31.5052 63.9201C31.204 67.1498 34.2747 69.9444 37.245 70.6891C38.0566 70.8899 39.1025 70.5719 39.822 71.2915C40.391 72.1199 39.8471 72.6219 39.3451 73.2411H46.6161L46.6328 73.2494ZM62.9987 6.88129V14.9472C62.9987 16.3529 59.8527 15.9429 60.7228 13.7005H55.9536V18.4698H67.4332C67.5252 18.4698 68.2281 19.3734 68.2281 19.4906V33.472C70.0855 33.9406 70.0102 32.5349 71.2486 31.8321C72.7881 30.9535 74.4615 31.0539 75.9425 32.0078L77.5489 33.9239C78.1932 29.8742 77.6744 25.5902 76.1935 21.7581C75.3066 21.3732 72.4199 22.1178 72.01 21.1389C71.5079 19.1475 73.6415 19.3149 75.0472 19.3818C72.7714 13.9013 68.0022 9.84325 62.9987 6.88129ZM55.8951 26.9373C54.7404 25.8412 52.2722 27.2553 53.4352 29.0542C54.707 31.0205 57.5434 28.502 55.8951 26.9373ZM73.3822 33.539C70.9222 33.6645 70.8637 38.0572 74.2105 37.2875C76.1851 36.8356 75.6831 33.4218 73.3822 33.539ZM55.4433 51.0096C53.4854 51.3694 53.7197 54.5405 56.0624 54.1556C57.9199 53.8544 57.5266 50.6247 55.4433 51.0096Z" fill="currentColor" />
             <path d="M65.6551 84.2353C68.0481 86.4526 66.8265 90.7282 63.555 91.18L33.576 91.1967C28.8151 90.6612 28.8403 84.0428 33.3668 83.2647C42.947 83.8755 53.6819 82.3861 63.1283 83.2312C63.9985 83.3065 65.0025 83.6245 65.6551 84.2269V84.2353ZM33.6178 85.5656C31.6181 86.2434 31.8942 88.6782 34.0194 88.9292H62.894C65.1364 88.6949 65.2033 85.7748 62.894 85.5071L33.6178 85.5573V85.5656Z" fill="currentColor" />
             <path d="M41.7947 93.0712C43.2255 92.9457 43.008 95.2132 43.3594 96.2005C44.9407 100.702 51.6929 100.811 53.4751 96.326C53.8683 95.347 53.7428 92.6946 55.2907 93.113C57.1064 93.5983 55.7928 96.8615 55.1736 98.0245C52.5213 102.995 45.585 103.321 42.2382 98.9114C41.3764 97.7735 39.4938 93.2803 41.8031 93.0712H41.7947Z" fill="currentColor" />
@@ -308,12 +308,12 @@ export default function Hero() {
             <path d="M42.9458 34.3254C40.7788 35.4466 41.0549 32.7356 40.2433 31.5726C38.6284 29.2884 35.5494 32.4512 34.7043 30.7443C33.9345 29.188 36.0514 28.937 36.9969 28.4851C36.4196 26.7699 37.4654 23.1385 39.4819 25.2972C39.8835 25.8913 39.2643 26.3599 39.1723 26.8284C38.9213 28.2006 40.3855 28.5521 41.1804 29.2716C42.4856 30.4514 43.7156 32.5767 42.9375 34.3338L42.9458 34.3254Z" fill="currentColor" />
             <path d="M39.0601 46.9599C40.0307 47.8886 41.93 51.8547 39.6709 52.0639C38.1732 52.1977 38.5832 49.2943 37.0772 48.3823C35.2531 47.2695 33.312 49.7796 32.308 48.3823C31.3039 46.985 33.4877 46.1901 34.6005 45.9726C33.881 44.7677 34.6005 41.3288 36.4162 42.2241C37.5959 42.8098 36.6337 43.772 36.6253 44.5C36.6086 45.9391 38.2736 46.2152 39.0601 46.9683V46.9599Z" fill="currentColor" />
           </svg>
-          <p className='text-[20px] font-semibold uppercase text-center'>Sáng tạo, đổi mới <br /> để luôn dẫn đầu</p>
+          <p className='text-[17px] font-semibold uppercase text-center'>Sáng tạo, đổi mới <br /> để luôn dẫn đầu</p>
         </div>
       </div>
-      <div className="bg-blue-3 rounded-[10px] flex pl-[100px] pr-[10px]  mx-auto  max-w-[1625px] h-[222px] items-end justify-between">
-        <p className='h-full text-size-35 text-yellow-1 grid items-center'>Nếu bạn không tự khởi nghiệp, hãy đồng hành <br /> với ông chủ đang đi đến thành công</p>
-        <svg width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="bg-blue-3 rounded-[10px] flex pl-[100px] pr-[10px]  mx-auto  max-w-[1145px] h-[160px] items-end justify-between">
+        <p className='h-full text-[25px] text-yellow-1 grid items-center'>Nếu bạn không tự khởi nghiệp, hãy đồng hành <br /> với ông chủ đang đi đến thành công</p>
+        <svg className='h-[150px]' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M45.1741 60.1561L31.3036 65.0217C28.828 65.8918 26.7555 67.6409 25.48 69.9405L19.8778 80.0535C17.9558 83.5162 13.5848 84.7415 10.1526 82.7748C6.74699 80.8259 5.56455 76.4798 7.51314 73.0659L16.5298 57.2483C17.5882 55.3926 19.2357 53.941 21.2108 53.1285L45.7188 43.0467C50.1164 41.2354 55.1119 41.6083 59.195 44.0411C65.0408 47.526 67.8485 54.4914 66.0594 61.0706L59.7885 84.12L83.6233 102.868C86.6923 105.283 88.2644 109.14 87.7552 113.016L84.1458 140.5" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M32.7719 75.25L31.0624 91.5426C30.5089 96.8077 33.6842 101.749 38.6929 103.422L62.4259 111.351C66.9342 112.856 69.9766 117.087 69.9766 121.85V140.509" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -333,115 +333,119 @@ export default function Hero() {
         </svg>
       </div>
       <div>
-        <div ref={twoRef} className="bg-yellow-3/50">
-          <div className="mx-auto  md:max-w-[83%]  text-center pt-[68px]">
-            <h2 className="uppercase font-bold text-yellow-1 text-[40px]">Chính sách phúc lợi</h2>
+        <div ref={twoRef}>
+          <div className="mx-auto  max-w-[1145px]  text-center pt-[100px]">
+            <h2 className="uppercase font-bold text-yellow-1 text-[30px]">Chính sách phúc lợi</h2>
           </div>
-          <div className="mx-auto  md:max-w-[83%] ">
-            <div className="grid grid-cols-3 gap-[30px] mt-[42px]">
-              <div className="relative">
+          <div className="mx-auto  max-w-[1145px] ">
+            <div className="grid grid-cols-[380px_1fr_1fr] gap-[50px] mt-[42px]">
+              <div className="relative mr-[20px]">
                 <Image alt="benefit 7" loading="lazy" decoding="async" fill src="/fwork/benefit-7.png" />
               </div>
-              <div className="grid grid-cols-1 gap-[42px] px-[42px]">
+              <div className="grid grid-cols-1 gap-[20px]">
                 <div className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
+                  <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
                     <Image alt="benefit 1" loading="lazy" width="41" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-1.svg" /></div>
-                  <h3 className="text-blue-1 font-semibold text-[20px]">Thưởng tháng 13 và thưởng <br /> theo hiệu suất làm việc</h3>
+                  <h3 className="text-blue-1 font-semibold text-[16px]">Thưởng tháng 13 và thưởng <br /> theo hiệu suất làm việc</h3>
                 </div>
                 <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
+                  <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
                     <Image alt="benefit 1" loading="lazy" width="37" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-3.svg" /></div>
-                  <h3 className="text-blue-1 font-semibold text-[20px]">Đánh giá và xét tăng lương định <br /> kỳ hàng năm</h3>
+                  <h3 className="text-blue-1 font-semibold text-[16px]">Đánh giá và xét tăng lương định <br /> kỳ hàng năm</h3>
                 </div>
                 <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
+                  <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
                     <Image alt="benefit 1" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-5.svg" /></div>
-                  <h3 className="text-blue-1 font-semibold text-[20px]">Khám sức khỏe định kỳ tại bệnh <br /> viện/phòng khám quốc tế</h3>
+                  <h3 className="text-blue-1 font-semibold text-[16px]">Khám sức khỏe định kỳ tại bệnh <br /> viện/phòng khám quốc tế</h3>
                 </div>
               </div>
-              <div className="grid grid-cols-1 gap-[42px] px-[42px]">
+              <div className="grid grid-cols-1 gap-[20px]">
                 <div className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
+                  <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
                     <Image alt="benefit 1" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-2.svg" /></div>
-                  <h3 className="text-blue-1 font-semibold text-[20px]">Thưởng các dịp Lễ, Tết, sinh <br /> nhật, và sáng kiến cải tiến</h3>
+                  <h3 className="text-blue-1 font-semibold text-[16px]">Thưởng các dịp Lễ, Tết, sinh <br /> nhật, và sáng kiến cải tiến</h3>
                 </div>
                 <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
+                  <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
                     <Image alt="benefit 1" loading="lazy" width="38" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-4.svg" /></div>
-                  <h3 className="text-blue-1 font-semibold text-[20px]">Gói bảo hiểm sức khỏe cao <br /> cấp PTI</h3>
+                  <h3 className="text-blue-1 font-semibold text-[16px]">Gói bảo hiểm sức khỏe cao <br /> cấp PTI</h3>
                 </div>
                 <div className="border-b-[1px] border-gray-8 flex items-center pb-[24px] gap-[24px]">
-                  <div className="relative w-[75px] h-[75px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
+                  <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
                     <Image alt="benefit 1" loading="lazy" width="38" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-6.svg" /></div>
-                  <h3 className="text-blue-1 font-semibold text-[20px]">Du lịch nghỉ dưỡng hằng năm <br /> cùng công ty</h3>
+                  <h3 className="text-blue-1 font-semibold text-[16px]">Du lịch nghỉ dưỡng hằng năm <br /> cùng công ty</h3>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mx-auto  md:max-w-[83%]">
-            <h3 className="uppercase font-semibold text-yellow-1 text-size-35 text-center py-[75px_25px]">Cơ hội Đào tạo</h3>
-            <div className="grid grid-cols-2 grid-rows-2 gap-[30px] h-[713px]">
+          <div className="mx-auto  max-w-[1145px]">
+            <h3 className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[100px_25px]">Cơ hội Đào tạo</h3>
+            <div className="grid grid-cols-[677px_1fr] grid-rows-2 gap-[20px] h-[510px]">
               <div className="relative row-span-2">
                 <Image alt="benefit 8" loading="lazy" decoding="async" fill src="/fwork/benefit-8.png" />
-                <div className="absolute uppercase bottom-[20px] w-full text-center text-[22px] text-white font-bold">Đào tạo hội nhập</div>
+                <div className="absolute uppercase bottom-[20px] w-full text-center text-[17px] text-white font-bold">Đào tạo hội nhập</div>
               </div>
               <div className="relative">
                 <Image alt="benefit 9" loading="lazy" decoding="async" fill src="/fwork/benefit-9.png" />
-                <div className="absolute uppercase bottom-[20px] w-full text-center text-[22px] text-white font-bold">Đào tạo kỹ năng</div>
+                <div className="absolute uppercase bottom-[20px] w-full text-center text-[17px] text-white font-bold">Đào tạo kỹ năng</div>
               </div>
               <div className="relative">
                 <Image alt="benefit 10" loading="lazy" decoding="async" fill src="/fwork/benefit-10.png" />
-                <div className="absolute uppercase bottom-[20px] w-full text-center text-[22px] text-white font-bold">Đào tạo phát triển đội ngũ kế thừa</div>
+                <div className="absolute uppercase bottom-[20px] w-full text-center text-[17px] text-white font-bold">Đào tạo phát triển đội ngũ kế thừa</div>
               </div>
             </div>
           </div>
         </div>
-        <h3 ref={threeRef} className="uppercase font-semibold text-yellow-1 text-[45px] text-center py-[75px_25px]">Hình thức ứng tuyển</h3>
-        <div className="mx-auto md:max-w-[83%] grid gap-[70px] grid-cols-2">
-          <div>
-            <div className='relative h-[506px]'>
+        <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[100px_25px]">Hình thức ứng tuyển</h3>
+        <div className="mx-auto max-w-[1145px] grid gap-[50px] grid-cols-2 text-gray-5">
+          <div className='grid gap-[25px]'>
+            <div className='relative h-[360px]'>
               <Image alt="benefit 14" loading="lazy" decoding="async" fill src="/fwork/benefit-14.png" />
             </div>
-            <div className="grid text-[17px]">
-              <h4 className="uppercase font-bold text-blue-1 text-[35px]">Ứng tuyển trực tuyến</h4>
-              <p><strong>Bước 1:</strong> Truy cập các kênh tuyển dụng trực tuyến của Pi Group.</p>
-              <p><strong>Bước 2:</strong>: Chọn vị trí phù hợp và nhấn “Ứng tuyển”.</p>
-              <p><strong>Bước 3:</strong>: Điền thông tin và đính kèm hồ sơ.</p>
-              <p><strong>Bước 4:</strong>: Nhấn “Gửi CV” để hoàn thành quy trình ứng tuyển.</p>
+            <div className="grid text-[13px]">
+              <h4 className="uppercase font-bold text-blue-1 text-[25px] mb-[22px]">Ứng tuyển trực tuyến</h4>
+              <div className='leading-[27px]'>
+                <p><span className='font-bold'>Bước 1:</span> Truy cập các kênh tuyển dụng trực tuyến của Pi Group.</p>
+                <p><span className='font-bold'>Bước 2:</span>: Chọn vị trí phù hợp và nhấn “Ứng tuyển”.</p>
+                <p><span className='font-bold'>Bước 3:</span>: Điền thông tin và đính kèm hồ sơ.</p>
+                <p><span className='font-bold'>Bước 4:</span>: Nhấn “Gửi CV” để hoàn thành quy trình ứng tuyển.</p>
+              </div>
             </div>
           </div>
-          <div>
-            <div className='relative h-[506px]'>
+          <div className='grid gap-[25px]'>
+            <div className='relative h-[360px]'>
               <Image alt="benefit 15" loading="lazy" decoding="async" fill src="/fwork/benefit-15.png" />
             </div>
             <div>
-              <div className="grid text-[17px]">
-                <h4 className="uppercase font-bold text-blue-1 text-[35px]">Ứng tuyển trực tiếp</h4>
-                <p><strong>Bước 1:</strong>Chuẩn bị đầy đủ hồ sơ và giấy tờ liên quan.</p>
-                <p><strong>Bước 1:</strong>Nộp Hồ sơ tại Trụ sở Tập đoàn Pi Group.</p>
-                <p><strong>Bước 1:</strong>Điền đầy đủ thông tin theo hướng dẫn.</p>
-                <p><strong>Bước 1:</strong>Chờ phản hồi thông báo lịch phỏng vấn.</p>
+              <div className="grid text-[13px]">
+                <h4 className="uppercase font-bold text-blue-1 text-[25px] mb-[22px]">Ứng tuyển trực tiếp</h4>
+                <div className='leading-[27px]'>
+                  <p><span className='font-bold'>Bước 1:</span> Chuẩn bị đầy đủ hồ sơ và giấy tờ liên quan.</p>
+                  <p><span className='font-bold'>Bước 2:</span> Nộp Hồ sơ tại Trụ sở Tập đoàn Pi Group.</p>
+                  <p><span className='font-bold'>Bước 3:</span> Điền đầy đủ thông tin theo hướng dẫn.</p>
+                  <p><span className='font-bold'>Bước 4:</span> Chờ phản hồi thông báo lịch phỏng vấn.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <h3 ref={fourRef} className="uppercase font-semibold text-yellow-1 text-[45px] text-center py-[75px_25px]">Vị trí tuyển dụng</h3>
-        <div className="overflow-x-auto md:max-w-[83%] m-auto">
-          <div className="overflow-x-auto p-4">
+        <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[120px_25px]">Vị trí tuyển dụng</h3>
+        <div className="overflow-x-auto max-w-[1145px] m-auto">
+          <div className="overflow-x-auto">
             <table id="job-table" className="min-w-full">
               <thead className="bg-gray-100 border-b border-gray-200">
-                <tr className='bg-blue-1 text-[22px] font-semibold text-white'>
+                <tr className='bg-blue-1 text-[15px] font-semibold text-white'>
                   <th className='rounded-tl-[10px] rounded-bl-[10px]'></th>
-                  <th className="px-6 py-3 text-left uppercase">Vị trí tuyển dụng</th>
-                  <th className="px-6 py-3 text-center uppercase">Số lượng</th>
-                  <th className="px-6 py-3 text-center uppercase">Thời hạn</th>
-                  <th className="px-6 py-3 text-center uppercase rounded-tr-[10px] rounded-br-[10px]">ỨNG TUYỂN ngay</th>
+                  <th className="py-[10px] text-left uppercase pl-[23px]">Vị trí tuyển dụng</th>
+                  <th className="py-[10px] text-center uppercase">Số lượng</th>
+                  <th className="py-[10px] text-center uppercase">Thời hạn</th>
+                  <th className="py-[10px] text-center uppercase rounded-tr-[10px] rounded-br-[10px]">ỨNG TUYỂN ngay</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {currentJobs.map((job) => (
                   <React.Fragment key={job.id}>
-                    <tr className="hover:bg-gray-50 text-[18px] font-semibold uppercase">
+                    <tr className="hover:bg-gray-50 text-[14px] font-semibold uppercase">
                       <td className="px-6 py-4 whitespace-nowrap text-center">
                         <button
                           className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-blue-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
@@ -537,12 +541,12 @@ export default function Hero() {
               </tbody>
             </table>
             {/* Pagination Controls */}
-            <div className="flex justify-center items-center space-x-2 mt-4 p-4">
+            <div className="flex justify-center items-center space-x-2 mt-[25px] mb-[75px]">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
                 <button
                   key={pageNumber}
                   onClick={() => paginate(pageNumber)}
-                  className={`w-[31px] h-[31px] text-center rounded-full ${currentPage === pageNumber
+                  className={`w-[25px] h-[25px] text-center rounded-full ${currentPage === pageNumber
                     ? 'bg-yellow-1 text-white'
                     : 'text-yellow-1 bg-white border border-yellow-1 hover:bg-yellow-1 hover:text-white'
                     }`}
