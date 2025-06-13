@@ -71,7 +71,7 @@ export default function SubNavbar(props: PropSub) {
       },
       {
         name: "Hồ sơ năng lực",
-        href: "#human-resource",
+        href: "#about",
         hrefb: seventRef
       }
     ];

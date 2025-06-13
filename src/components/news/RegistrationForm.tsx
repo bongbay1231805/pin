@@ -153,7 +153,7 @@ export function RegistrationForm() {
           )}
         />
         <div className="flex justify-center">
-          <Button type="submit" className="mt-[5px] border hvr-bounce-to-right rounded-none w-[160px] h-[50px] justify-center items-center text-[18px] font-semibold uppercase text-yellow-1 hover:text-white hover:border-yellow-1 hover:bg-yellow-1">Đăng ký</Button>
+          <Button type="submit" className="mt-[5px] cursor-pointer border hvr-bounce-to-right rounded-none w-[132] h-[38] justify-center items-center text-[15px] font-semibold uppercase text-yellow-1 hover:text-white hover:border-yellow-1 hover:bg-yellow-1">Đăng ký</Button>
         </div>
       </form>
     </Form>

@@ -42,7 +42,7 @@ export default function Related() {
             height={150}
             className="min-h-[150px] rounded-xl"
           />
-          <h3 className="text-lg font-semibold text-gray-5">{item.title}</h3>
+          <h3 className="text-[14px] 2xl:text-[17px] font-semibold text-gray-5">{item.title}</h3>
         </div>
       ))}
     </div>

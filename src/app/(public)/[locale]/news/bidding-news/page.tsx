@@ -31,7 +31,7 @@ function DetailPost() {
   return (
     <div>
       <Hero />
-      <div className="container m-auto max-w-[95%] md:max-w-[85%] 2xl:max-w-[1312px]">
+      <div className="container m-auto max-w-[95%] md:max-w-[76%] 2xl:max-w-[1312px]">
         <ContentBidding />
       </div>
       <div className="container m-auto max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] rounded-[10px] bg-[#EAF3FF]/50 mt-[80px] px-[90px] pt-[70px] pb-[70px]">
@@ -39,7 +39,7 @@ function DetailPost() {
         <RegistrationForm />
       </div>
       <div className="container m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] px-[10px]">
-        <h2 className='text-yellow-1 uppercase text-center text-size-30 md:text-size-35 lg:text-[38px] 2xl:text-[45px] font-bold mb-[45px] mt-[90px]'>Tin liên quan</h2>
+        <h2 className='text-yellow-1 uppercase text-center text-[35px] 2xl:text-[45px] font-bold mb-[45px] mt-[90px]'>Tin liên quan</h2>
         <Related />
          <div className='mt-[38px] mb-[72px]'>
           <PaginationExample />
