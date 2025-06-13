@@ -32,7 +32,7 @@ export default function Detail3() {
             </div>
           </div>
           <div className='grid content-center lg:pl-[20%] ef:pl-[200px]'>
-            <h3 className='text-yellow-1 my-[30px] lg:my-0 text-[25px] xl:text-[40px] font-bold uppercase xl:[&>br]:hidden'>TÍCH HỢP AI & IOT <br /> TỐI ƯU QUY TRÌNH</h3>
+            <h3 className='text-yellow-1 my-[30px] lg:my-0 text-[25px] xl:text-[40px] font-bold uppercase [&>br]:hidden xl:[&>br]:inline-block'>TÍCH HỢP AI & IOT <br /> TỐI ƯU QUY TRÌNH</h3>
             <p className='text-[14px] xl:text-[17px] text-gray-5 mb-[18px] text-justify'>Cam kết đồng hành cùng khách hàng sau giai đoạn bàn giao, Pi Group tiên phong tích hợp công nghệ AI và IoT vào dịch vụ Quản lý & vận hành, nhằm tối ưu hóa quy trình, tăng cường bảo mật và kiến tạo môi trường sống an toàn, tiện nghi, đồng thời nâng tầm giá trị bất động sản theo thời gian.</p>
           </div>
         </div>

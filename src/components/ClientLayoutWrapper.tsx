@@ -6,9 +6,9 @@ import { Footer } from '@/components/footer/Footer';
 import { ScrollRefsProvider } from '@/context/ScrollRefsContext';
 import { useEffect } from 'react';
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isContactPage = pathname === '/en/contact' || pathname === '/vi/lien-he';
-  const shouldHideOverflow = pathname === '/en' || pathname === '/vi';
+  const pathname = usePathname().split("/").pop();
+  const isContactPage = pathname === 'contact';
+  const shouldHideOverflow = pathname === 'en' || pathname === 'vi' || pathname === 'digitalcity';
   useEffect(() => {
     const interval = setInterval(() => {
       document.querySelectorAll('canvas').forEach((el) => {

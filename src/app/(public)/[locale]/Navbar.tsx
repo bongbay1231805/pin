@@ -109,7 +109,7 @@ const Navbar = () => {
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Liên Hệ</span>
             </Link>
             <div className="flex justify-end font-semibold items-center grow-1">
-              <Link href="/vn" className={` text-yellow-2! ${isActive("vn") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-yellow-2" : ""}`}>VN</Link>
+              <Link href="/vi" className={` text-yellow-2! ${isActive("vi") ? " text-yellow-2" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-yellow-2" : ""}`}>VN</Link>
               <span className="text-gray-300 px-[7px] inline-block">|</span>
               <Link href="/en" className={`hover:text-yellow-2 ${isActive("en") ? " text-white-1" : "text-white-1"} ${(hasShadow || pageCurent) ? "text-gray-5!" : ""}`}>EN</Link>
             </div>
