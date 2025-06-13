@@ -1,4 +1,3 @@
- 
 .news-top-item {
    img {
      width: 100%;
@@ -50,4 +49,10 @@
  }
  figure>img {
    margin-block: 20px;
+ }
+ .eco-item{
+  transition: all 500ms ease-in-out !important;
+  img{
+   transition: all 500ms ease-in-out !important;
+  }
  }

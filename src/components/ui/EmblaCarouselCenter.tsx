@@ -32,7 +32,7 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({ slides }) => 
                 <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center sliderstaff">
                   <Image className="rounded-[10px] overflow-hidden" src={event.image} alt="event" width={630} height={435} />
                   {event?.title ? (
-                    <h3 className="absolute bottom-[80px] text-[16px] font-bold text-center uppercase text-white" dangerouslySetInnerHTML={{ __html: event.title }}></h3>
+                    <h3 className="absolute bottom-[20px] text-[13px] font-bold text-center uppercase text-white" dangerouslySetInnerHTML={{ __html: event.title }}></h3>
                   ) : null}
                 </div>
               </div>

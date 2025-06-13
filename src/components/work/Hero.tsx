@@ -226,7 +226,7 @@ export default function Hero() {
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[25%]">
         <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] md:text-[30px]'>Phát triển nhân lực</h2>
+          <h2 className='absolute z-10 left-0 text-left  uppercase font-bold text-white md:text-[30px] leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]'>Phát triển nhân lực</h2>
         </div>
         <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-fill" />
       </div>

@@ -290,19 +290,19 @@ strong {
     border: 1px solid var(--color-yellow-1);
   }
   .sliderswrap {
-    @apply basis-3/5 sm:basis-[31%]
+    @apply basis-3/5 sm:basis-[33%]
   }
   .center.sliderswrap {
-    @apply basis-3/5 sm:basis-[38%]
+    @apply basis-3/5 sm:basis-[37%]
   }
   .sliderstaff {
-    @apply px-[30px]
+    @apply px-[15px]
   }
   .center .sliderstaff {
     @apply w-full px-0
   }
   .center .sliderstaff h3 {
-    @apply bottom-[60px] text-[20px]
+    @apply bottom-[20px] text-[16px]
   }
   .picitycenter {
     @apply origin-left translate-x-[30px]

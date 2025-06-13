@@ -175,10 +175,10 @@ export default function SubNavbar(props: PropSub) {
     (Array.isArray(navItems) && navItems.length) ? (
       <div className={`w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px]`} >
         <div className="mx-auto max-w-[91.4%]">
-          <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[20px] ef:gap-[38px] py-[8px] text-gray-5">
+          <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[8px] text-gray-5">
             {navItems.map((item) => (
               item.hrefb ? (
-                <button onClick={() => scrollTo(item.hrefb!)} key={item.name} className={`text-[13px] 2xl:text-[17px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1`}>
+                <button onClick={() => scrollTo(item.hrefb!)} key={item.name} className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1`}>
                   {item.name}
                 </button>
               ) : (
