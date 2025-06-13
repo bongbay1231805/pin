@@ -35,7 +35,47 @@ export default function SubNavbar(props: PropSub) {
   const ecosystem = ['ecosystem', 'investment-development', 'real-estate-services', 'management-operation'];
   const news = ['news', 'market-news', 'pi-group-news', 'bidding-news'];
   const humanresource = ['human-resource'];
+  const about = ['about'];
   const digitalcity = ['digitalcity'];
+  if (about.includes(nameCurent.split("/").pop() || "")) {
+    navItems = [
+      {
+        name: "Định vị thương hiệu",
+        href: "#about",
+        hrefb: oneRef
+      },
+      {
+        name: "Con số ấn tượng",
+        href: "#about",
+        hrefb: twoRef
+      },
+      {
+        name: "Lịch sử hình thành",
+        href: "#about",
+        hrefb: threeRef
+      },
+      {
+        name: "Triết lý kinh doanh",
+        href: "#about",
+        hrefb: fourRef
+      },
+      {
+        name: "Tầm nhìn - Sứ mệnh",
+        href: "#about",
+        hrefb: fiveRef
+      },
+      {
+        name: "Văn hóa doanh nghiệp",
+        href: "#about",
+        hrefb: sixRef
+      },
+      {
+        name: "Hồ sơ năng lực",
+        href: "#human-resource",
+        hrefb: seventRef
+      }
+    ];
+  }
   if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
@@ -138,12 +178,12 @@ export default function SubNavbar(props: PropSub) {
           <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[20px] ef:gap-[38px] py-[8px] text-gray-5">
             {navItems.map((item) => (
               item.hrefb ? (
-                <button onClick={() => scrollTo(item.hrefb!)} key={item.name} className={`text-[16px] font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1`}>
+                <button onClick={() => scrollTo(item.hrefb!)} key={item.name} className={`text-[13px] 2xl:text-[17px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1`}>
                   {item.name}
                 </button>
               ) : (
                 <li key={item.name}>
-                  <Link href={item.href} className={`text-[16px] font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1`}>
+                  <Link href={item.href} className={`text-[13px] 2xl:text-[17px]  font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1`}>
                     {item.name}
                   </Link>
                 </li>

@@ -104,7 +104,7 @@ export function SmartCity() {
   return (
     <>
       <section className="@container relative boxanimation fade-in-up-medium">
-        <svg className='absolute top-[-10%] 2xl:top-[-100px] right-0 translate-x-[50%] overflow-x-hidden max-w-[28%] h-auto' width="528.46" height="523.07" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528.46 523.07">
+        <svg className='absolute top-[-10%] 2xl:top-[-100px] right-0 translate-x-[50%] overflow-x-hidden max-w-[25%] h-auto' width="528.46" height="523.07" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528.46 523.07">
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="197.13" cy="257.42" r="2.1" />
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="202.49" cy="360.51" r="2.1" />
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="223.34" cy="202.17" r="2.1" />
@@ -148,7 +148,7 @@ export function SmartCity() {
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="183.67" cy="507.87" r="2.1" />
           <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M456.42,439.01c.06-.08.11-.18.11-.3,0-.28-.23-.5-.5-.5-.15,0-.28.07-.37.17-.92,1.04-1.85,2.06-2.79,3.08-50.2,54.17-121.25,83.47-194.97,80.4-24.48-1.02-48.52-5.54-71.46-13.43-1.25-.43-2.49-.87-3.74-1.32l-.2-.07-.16.45h0s0-.49,0-.49h-.34s-.25.63-.25.63l.24.24.38.19c1.25.45,2.5.89,3.75,1.32,23.03,7.93,47.17,12.47,71.74,13.49,3.53.15,7.05.22,10.57.22,70.19,0,137.18-29.15,185.18-80.94.93-1.01,1.86-2.02,2.77-3.05.01,0,.02-.02.03-.03,0-.01.02-.02.03-.03h0Z" />
         </svg>
-        <div className="mx-auto 2xl:mt-[20px] 2xl:mb-[20px] mt-[10px] mb-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] boxanimation fade-in-up-medium">
+        <div className="mx-auto mb-[42px] mt-[15px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] boxanimation fade-in-up-medium">
           <div className="grid grid-cols-1 sm:grid-cols-[50%_50%] items-center">
             <div className="@container order-1 sm:order-0 relative  aspect-square items-center flex justify-center">
               <svg className="absolute overflow-x-clip max-w-70 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} width="572" height="572" viewBox="0 0 572 572" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -526,25 +526,24 @@ export function SmartCity() {
                 </svg>
               </div>
             </div>
-            <div className='my-[40px] 2xl:mt-68px] pl-[46px] pr-[46px] text-center sm:text-left fade-in-left-short'>
-              <h2 className="text-size-25 2xl:text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">ĐÔ THỊ SỐ</h2>
+            <div className='mt-[40px] 2xl:mt-68px] pl-[46px] pr-[46px] text-center sm:text-left pr-[106px] pl-[96px] fade-in-left-short'>
+              <h2 className="text-[34px] 2xl:text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">ĐÔ THỊ SỐ</h2>
               <Image
                 src="/fhome/picity.svg"
                 alt="Smart City Features"
                 width={366}
                 height={50}
-                className="mb-[25px] 2xl:mb-[54px] reveal-text w-[55%] mx-auto sm:mx-0 2xl:w-auto"
+                className="mb-[25px] 2xl:mb-[54px] reveal-text w-[55%] mx-auto sm:mx-0 2xl:w-auto md:w-[280px]"
               />
-              <p className="text-gray-5 font-normal mb-[13px] reveal-text text-size-14 2xl:text-size-17">
+              <p className="text-gray-5 font-normal mb-[13px] reveal-text text-justify text-[13px] 2xl:text-[17px]">
                 Picity là mô hình đô thị số tiên phong được phát triển bởi Pi Group.
               </p>
-              <p className="text-gray-5 leading-[22px] 2xl:leading-[28px]  space-x-[0.35px] mb-0 sm:mb-[7%] 2xl:mb-[43px] reveal-text text-center text-size-14 sm:text-justify 2xl:text-size-17">
+              <p className="text-gray-5 leading-[22px] 2xl:leading-[28px] space-x-[0.35px] mb-0 sm:mb-[7%] 2xl:mb-[43px] reveal-text text-justify text-[13px] 2xl:text-[17px]">
                 Kết hợp công nghệ 4.0 (IoT và AI) trên nền tảng độc quyền, cùng hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, Picity mang đến trải nghiệm sống chuẩn quốc tế, đáp ứng mọi nhu cầu của cư dân thời đại mới.
               </p>
               <Link href="/" className="
               reveal-text hvr-bounce-to-right sm:flex items-center justify-center
-               text-yellow-1 text-[16px] font-semibold w-[180px] h-[30px] 
-               md:w-[203px] md:h-[35px] 
+               text-yellow-1 text-[13px] font-semibold w-[172px] h-[30px]       
                border border-yellow-1 hover:text-white
                hidden
                ">
