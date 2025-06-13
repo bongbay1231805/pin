@@ -7,9 +7,9 @@ const items = [
     id: 1,
     height: 320,
     title: "Đầu tư và phát triển dự án",
-    description: "Sở hữu quỹ đất ngày càng mở rộng và sự am hiểu thị trường, Pi Group đầu tư phát triển đa dạng phân khúc, hướng đến xây dựng cộng đồng văn minh, nâng tầm giá trị sống của người Việt theo tiêu chuẩn quốc tế.",
+    description: "Sở hữu quỹ đất ngày càng mở rộng và tầm nhìn chiến lược, Pi Group khẳng định vị thế là nhà phát triển bất động sản cao cấp, kiến tạo cộng đồng văn minh, nâng tầm giá trị sống của người Việt theo tiêu chuẩn quốc tế.",
     link: "#",
-    image: "/fecosystem/masony-1.png"
+    image: "/fecosystem/eco_01.jpg"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const items = [
     title: "PICITY HIGH PARK",
     description: "",
     link: "",
-    image: "/fecosystem/masony-2.png"
+    image: "/fecosystem/eco_01.jpg"
   },
   {
     id: 3,
@@ -25,15 +25,15 @@ const items = [
     title: "PICITY SKY PARK",
     description: "",
     link: "",
-    image: "/fecosystem/masony-3.png"
+    image: "/fecosystem/eco_02.jpg"
   },
   {
     id: 4,
     height: 320,
-    title: "PICITY SKY PARK",
+    title: "PRIME MASTER",
     description: "",
     link: "",
-    image: "/fecosystem/masony-4.png"
+    image: "/fecosystem/eco_03.jpg"
   },
   {
     id: 5,
@@ -41,39 +41,39 @@ const items = [
     title: "PHÂN PHỐI BẤT ĐỘNG SẢN",
     description: "",
     link: "",
-    image: "/fecosystem/masony-5.png"
+    image: "/fecosystem/eco_04.jpg"
   },
   {
     id: 6,
     height: 320,
-    title: "PHÂN PHỐI BẤT ĐỘNG SẢN",
+    title: "QUẢN LÝ BẤT ĐỘNG SẢN",
     description: "",
     link: "",
-    image: "/fecosystem/masony-6.png"
+    image: "/fecosystem/eco_05.jpg"
   },
   {
     id: 7,
     height: 320,
-    title: "PHÂN PHỐI BẤT ĐỘNG SẢN",
+    title: "TƯ VẤN HỖ TRỢ PHÁP LÝ",
     description: "",
     link: "",
-    image: "/fecosystem/masony-7.png"
+    image: "/fecosystem/eco_06.jpg"
   },
   {
     id: 8,
     height: 320,
     title: "Dịch vụ bất động sản",
-    description: "Dịch vụ tư vấn đầu tư chiến lược, giới thiệu sản phẩm chất lượng giúp nhà đầu tư tối ưu hóa lợi nhuận và đạt được mục tiêu tài chính bền vững.",
+    description: "Với sứ mệnh mang bất động sản thực đến đúng nhu cầu từng khách hàng, Pi Group cam kết đồng hành và đảm bảo thành công cho mọi giao dịch với dịch vụ uy tín, chuyên nghiệp.",
     link: "#",
-    image: "/fecosystem/masony-8.png"
+    image: "/fecosystem/eco_04.jpg"
   },
   {
     id: 9,
     height: 320,
     title: "Quản lý và vận hành",
-    description: "Cung cấp giải pháp quản lý vận hành tòa nhà chung cư bằng việc ứng dụng công nghệ 4.0 nhằm tối ưu hóa mọi quy trình, hỗ trợ khách hàng quản lý và vận hành bất động sản một cách đơn giản, tiện lợi và hiệu quả.",
+    description: "Cung cấp giải pháp toàn diện; quản lý và vận hành bất động sản với tiêu chí tận tâm, chất lượng, hiệu quả bằng việc ứng dụng công nghệ 4.0 hiện đại.",
     link: "#",
-    image: "/fecosystem/masony-9.png"
+    image: "/fecosystem/eco_07.jpg"
   },
   {
     id: 10,
@@ -81,23 +81,23 @@ const items = [
     title: "TƯ VẤN KHAI THÁC BẤT ĐỘNG SẢN",
     description: "",
     link: "",
-    image: "/fecosystem/masony-10.png"
+    image: "/fecosystem/eco_07.jpg"
   },
   {
     id: 11,
     height: 320,
-    title: "TƯ VẤN KHAI THÁC BẤT ĐỘNG SẢN",
+    title: "AN NINH - BẢO TRÌ KỸ THUẬT",
     description: "",
     link: "",
-    image: "/fecosystem/masony-11.png"
+    image: "/fecosystem/eco_08.jpg"
   },
   {
     id: 12,
     height: 320,
-    title: "TƯ VẤN KHAI THÁC BẤT ĐỘNG SẢN",
+    title: "CHĂM SÓC CẢNH QUAN",
     description: "",
     link: "",
-    image: "/fecosystem/masony-12.png"
+    image: "/fecosystem/eco_09.jpg"
   }
 ];
 // Định nghĩa kiểu cho một phần tử ref
@@ -210,28 +210,28 @@ const MasonryGrid: React.FC = () => {
       <div
         key={i}
         ref={(i === 0) ? grid1Ref : (i === 4) ? grid2Ref : (i === 8) ? grid3Ref : null}
-        className={`grid transition-all duration-1000 ease-in-out gap-x-[2px] m-0 xl:h-[calc((100vh-150px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_45%]" : "xl:grid-cols-[45%_repeat(3,1fr)]"}`}
+        className={`grid transition-all duration-[500ms] ease-in-out gap-x-[2px] m-0 xl:h-[calc((100vh-138px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_42%]" : "xl:grid-cols-[42%_repeat(3,1fr)]"}`}
       >
         {rowItems.map((item, index) => (
-          <div key={item.id} ref={(i === 0 && index == 0) ? m1Ref : (i === 0 && index == 1) ? m2Ref : (i === 0 && index == 2) ? m3Ref : (i === 0 && index == 3) ? m4Ref : (i === 4 && index == 0) ? m5Ref : (i === 4 && index == 1) ? m6Ref : (i === 4 && index == 2) ? m7Ref : (i === 4 && index == 3) ? m8Ref : (i === 8 && index == 0) ? m9Ref : (i === 8 && index == 1) ? m10Ref : (i === 8 && index == 2) ? m11Ref : (i === 8 && index == 3) ? m12Ref : null} className={`group transition-all duration-1000 ease-in-out  relative pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${item.id} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}>
+          <div key={item.id} ref={(i === 0 && index == 0) ? m1Ref : (i === 0 && index == 1) ? m2Ref : (i === 0 && index == 2) ? m3Ref : (i === 0 && index == 3) ? m4Ref : (i === 4 && index == 0) ? m5Ref : (i === 4 && index == 1) ? m6Ref : (i === 4 && index == 2) ? m7Ref : (i === 4 && index == 3) ? m8Ref : (i === 8 && index == 0) ? m9Ref : (i === 8 && index == 1) ? m10Ref : (i === 8 && index == 2) ? m11Ref : (i === 8 && index == 3) ? m12Ref : null} className={`group eco-item transition-all duration-[500ms] ease-in-out relative pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${item.id} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}>
             <Image src={item.image} alt="masonry" fill className="object-cover justify-end" />
             {item.title && !item.link && (
-              <h3 className="z-10 left-2 text-white absolute text-[26px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-1000">
+              <h3 className="z-10 left-[25px] bottom-[8px] text-white absolute text-[18px] 2xl:text-[26px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-500">
                 {item.title}
               </h3>
             )}
             {item.title && item.link && (
-              <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[120px]' : 'justify-center xl:pr-[120px]'} duration-300`}>
+              <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[100px]' : 'justify-center xl:pr-[100px]'} duration-300`}>
                 <div className="flex flex-col justify-center">
-                  <h3 className="text-[26px] font-semibold text-blue-1 uppercase">
+                  <h3 className="text-[19px] 2xl:text-[25px] font-semibold text-blue-1 uppercase">
                     {item.title}
                   </h3>
-                  <p className="text-gray-5 my-[10px] tex-[16px]">{item.description}</p>
+                  <p className="text-gray-6 text-justify mt-[10px] mb-[12px] text-[13px] 2xl:text-[17px]">{item.description}</p>
                   <Link
                     href={item.link}
-                    className="flex items-center justify-center text-yellow-1 font-semibold w-[138px] h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300"
+                    className="flex items-center justify-center text-yellow-1 font-semibold w-[116px] h-[28px] text-[12px] 2xl:text-[16px] 2xl:w-[138px] 2xl:h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300"
                   >
-                    Xem thêm
+                    XEM THÊM
                   </Link>
                 </div>
               </div>
@@ -241,6 +241,6 @@ const MasonryGrid: React.FC = () => {
       </div>
     );
   }
-  return <div className="xl:h-[calc(100vh-150px)] overflow-hidden space-y-2 max-w-[91.4%] m-auto">{rows}</div>;
+  return <div className="xl:h-[calc(100vh-138px)] mt-[-12px] overflow-hidden max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] m-auto">{rows}</div>;
 }
 export default MasonryGrid;

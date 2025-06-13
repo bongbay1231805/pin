@@ -45,12 +45,12 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
           }}
         />
       </div>
-      <div onClick={onScrollToDigitalCity} className="font-semibold text-[18px] cursor-pointer absolute bottom-12 left-1/2 -translate-x-1/2 flex justify-center flex-col items-center text-white uppercase gap-[15px]">
+      <div onClick={onScrollToDigitalCity} className="font-[600] text-[13px] 2xl:text-[17px] cursor-pointer absolute bottom-[30px] left-1/2 -translate-x-1/2 flex justify-center flex-col items-center text-white uppercase gap-[15px]">
         <Image
           src="/scroll.svg"
           alt="Modern city skyline"
-          width={21}
-          height={35}
+          width={16}
+          height={30}
         />
         <span>cuộn xuống</span>
       </div>
