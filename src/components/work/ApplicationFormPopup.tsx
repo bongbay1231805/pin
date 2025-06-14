@@ -63,7 +63,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
     }, 1500);
   };
   return (
-    <div className={`fixed -z-10 opacity-0 overflow-hidden ${isOpen ? "inset-0 opacity-100 bg-blue-1/50  flex justify-center items-center z-50" : "" }`}>
+    <div className={`fixed -z-10 opacity-0 overflow-hidden hidden ${isOpen ? "inset-0 opacity-100 bg-blue-1/50  flex justify-center items-center z-50" : "" }`}>
       <div
         style={{
           '--tw-translate-y': isOpen ? '0px' : '100%',

@@ -1,32 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 import ApplicationFormPopup from './ApplicationFormPopup';
 import { useScrollRefs } from '@/context/ScrollRefsContext'
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 export default function Hero() {
   const { oneRef, twoRef, threeRef, fourRef } = useScrollRefs()
-  useEffect(() => {
-    const boxes = document.querySelectorAll('.boxanimation');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          const el = entry.target;
-          if (entry.isIntersecting) {
-            el.classList.add('show');
-          } else {
-            el.classList.remove('show');
-          }
-        });
-      },
-      {
-        // threshold: Array.from({ length: 11 }, (_, i) => i / 10), // 0, 0.1, 0.2,...1
-        threshold: 0, // 0, 0.1, 0.2,...1
-      }
-    );
-    boxes.forEach(box => observer.observe(box));
-    return () => boxes.forEach(box => observer.unobserve(box));
-  }, []);
+  useScrollReveal(); // dùng mặc định `.boxanimation`
   const [allJobData, setAllJobData] = useState([
     {
       id: 'job-1',
@@ -182,7 +162,7 @@ export default function Hero() {
   ]);
   // Hàm xử lý việc toggle trạng thái mở/đóng của hàng
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const itemsPerPage = 3;
   // Tính toán tổng số trang
   const totalPages = Math.ceil(allJobData.length / itemsPerPage);
   // Lấy dữ liệu cho trang hiện tại
@@ -214,14 +194,6 @@ export default function Hero() {
   };
   // useEffect để cuộn lên đầu bảng khi chuyển trang
   // Hoặc dùng để fetch dữ liệu từ API nếu cần
-  useEffect(() => {
-    const tableElement = document.getElementById('job-table');
-    if (tableElement) {
-      tableElement.scrollIntoView({ behavior: 'smooth' });
-    }
-    // Dependency array rỗng [] nếu chỉ muốn chạy 1 lần sau khi component mount
-    // Dependency array [currentPage, itemsPerPage] nếu muốn chạy khi các giá trị này thay đổi (ví dụ: khi fetch data mới)
-  }, [currentPage]); // Chỉ cuộn khi trang thay đổi
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[25%]">

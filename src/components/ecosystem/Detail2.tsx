@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import EmblaCarouselCenter from "@/components/ui/EmblaCarouselCenter";
 import { EmblaOptionsType } from 'embla-carousel'
 import Image from 'next/image';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
@@ -51,6 +52,7 @@ export default function Detail2() {
       image: "/fecosystem/detail/slider-center-3.png"
     }
   ];
+   useScrollReveal(); // dùng mặc định `.boxanimation`
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[calc(100vh-100px)] w-[100vw]  text-center pt-[20%] md:pt-[175px] mb-[45px] md:mb-[245px]">

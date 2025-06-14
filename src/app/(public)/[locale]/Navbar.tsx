@@ -39,7 +39,7 @@ const Navbar = () => {
       body.classList.add(pathname as string);
     }
     return () => window.removeEventListener('scroll', handleScroll);
-  });
+  },[]);
   useEffect(() => {
     // Hàm xử lý sự kiện cuộn
     const handleScroll = () => {

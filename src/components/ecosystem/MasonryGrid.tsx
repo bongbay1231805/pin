@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 const items = [
   {
     id: 1,
@@ -108,6 +109,7 @@ interface GridConfig {
   expandableElements: ElementRef[];
 }
 const MasonryGrid: React.FC = () => {
+   useScrollReveal(); // dùng mặc định `.boxanimation`
   const rows = [];
   // Refs cho từng grid container
   const grid1Ref = useRef<HTMLDivElement>(null);

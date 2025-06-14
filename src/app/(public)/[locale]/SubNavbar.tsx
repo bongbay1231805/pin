@@ -112,22 +112,22 @@ export default function SubNavbar(props: PropSub) {
     navItems = [
       {
         name: "Văn hóa làm việc",
-        href: "#human-resource",
+        href: "",
         hrefb: oneRef
       },
       {
         name: "Phúc lợi và Đào tạo",
-        href: "#human-resource",
+        href: "",
         hrefb: twoRef
       },
       {
         name: "Quy trình và hình thức tuyển dụng",
-        href: "#human-resource",
+        href: "",
         hrefb: threeRef
       },
       {
         name: "Vị trí tuyển dụng",
-        href: "#human-resource",
+        href: "",
         hrefb: fourRef
       }
     ];
@@ -136,37 +136,37 @@ export default function SubNavbar(props: PropSub) {
     navItems = [
       {
         name: "Picity - Đô thị số",
-        href: "#digitalcity",
+        href: "",
         hrefb: oneRef
       },
       {
         name: "Công nghệ 4.0",
-        href: "#digitalcity",
+        href: "",
         hrefb: twoRef
       },
       {
         name: "Độc quyền Picity App",
-        href: "#digitalcity",
+        href: "",
         hrefb: threeRef
       },
       {
         name: "Tiện ích 5★",
-        href: "#digitalcity",
+        href: "",
         hrefb: fourRef
       },
       {
         name: "Dịch vụ quản lý",
-        href: "#digitalcity",
+        href: "",
         hrefb: fiveRef
       },
       {
         name: "Giá trị vượt trội",
-        href: "#digitalcity",
+        href: "",
         hrefb: sixRef
       },
       {
         name: "Dự án thành công",
-        href: "#digitalcity",
+        href: "",
         hrefb: seventRef
       }
     ];
@@ -183,7 +183,7 @@ export default function SubNavbar(props: PropSub) {
                 </button>
               ) : (
                 <li key={item.name}>
-                  <Link href={item.href} className={`text-[13px] 2xl:text-[17px]  font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1`}>
+                  <Link href={item.href} className={`text-[13px] 2xl:text-[17px]  font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1`}>
                     {item.name}
                   </Link>
                 </li>
