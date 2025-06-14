@@ -1,10 +1,14 @@
-'use client';
 import Detail1 from "@/components/ecosystem/Detail1"
-export default function EcosystemDetail() {
+export default async function EcosystemDetail() {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/investment-development', {
+    cache: 'no-store',
+  });
+  const {data} = await res.json();
+  const { custom_fields } = data;
   return (
     <>
       <div>
-        <Detail1 />
+        <Detail1 custom_fields={custom_fields} />
       </div>
     </>
   )

@@ -119,8 +119,6 @@ const MasonryGrid = ({ custom_fields }: any) => {
     }
   }
   const customfields = convertJsonStringToArrayOrObject(custom_fields);
-  // const {field_1, field_2, field_3, field_4} = custom_fields || {};
-  console.log("customfields", customfields);
   useScrollReveal(); // dùng mặc định `.boxanimation`
   const rows = [];
   // Refs cho từng grid container
