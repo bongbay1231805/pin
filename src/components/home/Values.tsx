@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
-export function Values() {
+export function Values({ custom_fields }: any) {
+  const {field_11,field_12,field_13,field_14,field_15,field_16,field_17,field_18} = custom_fields || {};
   const values = [
     {
       icon: <svg width="177" height="177" viewBox="0 0 177 177" fill="none" xmlns="http://www.w3.org/2000/svg" className='group w-[138px] h-[138px] 2xl:w-auto 2xl:h-auto'>
@@ -13,7 +14,7 @@ export function Values() {
         <path className="group-hover:stroke-[#c48c5e] transform transition-transform duration-[5s]" d="M98.334 113.272L109.957 123.23L139.201 97.3511" stroke="#4C73A8" strokeWidth="4" strokeMiterlimit="10" strokeLinecap="round"></path>
         <path className='group-hover:last:rotate-[360deg] origin-[50%_50%] transform-orin transform transition-transform duration-500 ease-in-out' d="M174.953 86.9324C174.953 135.507 135.575 174.886 86.9998 174.886" stroke="#C48C5E" strokeWidth="3" strokeMiterlimit="10"></path>
       </svg>,
-      title: "SỐNG CHÍNH TRỰC",
+      title: `${field_16}`,
       description: "Cam kết với các giá trị cốt lõi"
     },
     {
@@ -33,7 +34,7 @@ export function Values() {
         <circle cx="88.5" cy="87.5674" r="87" stroke="#C48C5E" strokeOpacity="0.1"></circle>
         <path className='group-hover:last:rotate-[360deg] origin-[50%_50%] transform-orin transform transition-transform duration-500 ease-in-out' d="M89.9534 174.953C41.3786 174.953 2 135.575 2 86.9998" stroke="#C48C5E" strokeWidth="3" strokeMiterlimit="10"></path>
       </svg>,
-      title: "NGHĨ VƯỢT TRỘI",
+      title: `${field_17}`,
       description: "Luôn đổi mới và sáng tạo"
     },
     {
@@ -56,7 +57,7 @@ export function Values() {
         <path className='group-hover:last:rotate-[360deg] origin-[50%_50%] transform-orin transform transition-transform duration-500 ease-in-out' d="M92.4902 0C113.721 1.15971 134.616 9.84694 150.834 26.0645L148.713 28.1855C114.951 -5.57597 60.2109 -5.57597 26.4492 28.1855L24.3281 26.0645C40.5457 9.84694 61.4416 1.15971 82.6719 0H92.4902Z" fill="#C48C5E"></path>
       </svg>
       ,
-      title: "LÀM TẬN TÂM",
+      title: `${field_18}`,
       description: "Tận tâm với khách hàng và đối tác"
     }
   ]
@@ -64,11 +65,11 @@ export function Values() {
     <div className="mx-auto border-b-[0] border-gray-2 boxanimation">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center">
         <div className="mt-[30px] 2xl:mt-[80px] text-center sm:text-left">
-          <h2 className="text-[37px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">VĂN HÓA DOANH NGHIỆP</h2>
-          <p className="text-[23px] 2xl:text-[28px] text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">PHÁT TRIỂN BỀN VỮNG</p>
-          <p className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-justify sm:text-justify mx-auto sm:mx-0 sm:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px] reveal-text">Pi Group xây dựng nền tảng vững chắc dựa trên 3 giá trị cốt lõi: &quot;Chính trực tạo niềm tin – Vượt trội dẫn lối thành công – Tận tâm kiến tạo giá trị.&ldquo; Đây là cam kết của Pi Group trong việc kiến tạo những giá trị bền vững, vì một tương lai phát triển cho cộng đồng và xã hội.</p>
-          <Link href="/" className="text-[13px] 2xl:text-[16px] reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-[600] w-[110] h-[28] 2xl:w-[132] 2xl:h-[32] border border-yellow-1 hover:text-white">
-            XEM THÊM
+          <h2 className="text-[37px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">{field_11}</h2>
+          <p className="text-[23px] 2xl:text-[28px] text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">{field_12}</p>
+          <div className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-justify sm:text-justify mx-auto sm:mx-0 sm:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px] reveal-text" dangerouslySetInnerHTML={{ __html: field_13 }}></div>
+          <Link href={field_15} className="text-[13px] 2xl:text-[16px] reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-[600] w-[110] h-[28] 2xl:w-[132] 2xl:h-[32] border border-yellow-1 hover:text-white">
+            {field_14}
           </Link>
         </div>
         <div className="grid md:grid-cols-1 gap-8 md:mt-[61px]">

@@ -31,9 +31,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className={`pl-[172px] h-[100px] 2xl:h-[150px] ${styles.embla__container}`}>
           {slides.map((slide, index) => (
             <div className='relative min-h-[100%] flex flex-col' key={index}>
-              <h3 className="text-size-25 2xl:text-size-35 mt-[17px] mb-[1px] 2xl:mt-[30px] font-bold text-yellow-1 uppercase reveal-text">{slide.title}</h3>
-              <p className="text-[18px] 2xl:text-size-25 text-gray-2 font-medium uppercase reveal-text">{slide.description}</p>
-              <Link href={slide.link} className="
+              <h3 className="text-size-25 2xl:text-size-35 mt-[17px] mb-[1px] 2xl:mt-[30px] font-bold text-yellow-1 uppercase reveal-text">{slide[0].value}</h3>
+              <p className="text-[18px] 2xl:text-size-25 text-gray-2 font-medium uppercase reveal-text">{slide[1].value}</p>
+              <Link href={slide[3].value} className="
               md:absolute  
               text-[13px] 2xl:text-[17px]
               right-[60px]  top-1/2 md:-translate-y-1/2 
@@ -41,7 +41,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               justify-center text-white font-semibold w-[138px] h-[30px] 
               hover:border-yellow-1 
               hover:text-yellow-1 reveal-text">
-                <span className='uppercase'>Xem chi tiết</span>
+                <span className='uppercase'>{slide[2].value}</span>
               </Link>
             </div>
           ))}

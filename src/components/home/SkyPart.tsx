@@ -2,43 +2,22 @@
 // import { useState } from "react"
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import { EmblaOptionsType } from 'embla-carousel'
-export default function SkyPart() {
-  const slides = [
-    {
-      title: "Picity SKY PARK",
-      description: "Đô thị số đại lộ Phạm Văn Đồng",
-      link: "#"
-    },
-    {
-      title: "Phát triển",
-      description: "Đô thị số đại lộ Phạm Văn Đồng",
-      link: "#"
-    },
-    {
-      title: "Picity SKY PARK",
-      description: "Đô thị số đại lộ Phạm Văn Đồng",
-      link: "#"
-    },
-    {
-      title: "Picity SKY PARK",
-      description: "Đô thị số đại lộ Phạm Văn Đồng",
-      link: "#"
-    },
-    {
-      title: "Picity SKY PARK",
-      description: "Đô thị số đại lộ Phạm Văn Đồng",
-      link: "#"
-    },
-    {
-      title: "Picity SKY PARK",
-      description: "Đô thị số đại lộ Phạm Văn Đồng",
-      link: "#"
+export default function SkyPart({ custom_fields }: any) {
+  function convertJsonStringToArrayOrObject(jsonString: string): any | null {
+    try {
+      const parsedData = JSON.parse(jsonString);
+      return parsedData;
+    } catch (error) {
+      console.error("Error parsing JSON string:", error);
+      return null; // Return null or throw the error, depending on your error handling preference
     }
-  ];
-  const OPTIONS: EmblaOptionsType = { axis: 'y',loop: true }
+  }
+  const { slider } = custom_fields;
+  const sliders = convertJsonStringToArrayOrObject(slider); 
+  const OPTIONS: EmblaOptionsType = { axis: 'y', loop: true }
   return (
     <div className="mx-auto">
-      <EmblaCarousel slides={slides} options={OPTIONS} />
+      <EmblaCarousel slides={sliders} options={OPTIONS} />
     </div>
   )
 }

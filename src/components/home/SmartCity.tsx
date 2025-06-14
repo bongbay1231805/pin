@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 type ChildClass = 'child1' | 'child2' | 'child3';
-export function SmartCity() {
+export function SmartCity({custom_fields}:any) {
   // `currentRotation` sẽ lưu trữ tổng số độ xoay hiện tại của phần tử
   const [currentRotation, setCurrentRotation] = useState<number>(0);
   // `activeChild` để theo dõi child nào đang được active
@@ -101,6 +101,7 @@ export function SmartCity() {
       console.log('Auto-rotate interval cleared!');
     };
   }, []);
+  const {field_6,field_7,field_8,field_9,field_10} = custom_fields || {};
   return (
     <>
       <section className="@container relative boxanimation fade-in-up-medium">
@@ -526,8 +527,8 @@ export function SmartCity() {
                 </svg>
               </div>
             </div>
-            <div className='mt-[40px] 2xl:mt-68px] pl-[46px] pr-[46px] text-center sm:text-left pr-[106px] pl-[96px] fade-in-left-short'>
-              <h2 className="text-[34px] 2xl:text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">ĐÔ THỊ SỐ</h2>
+            <div className='mt-[40px] 2xl:mt-68px] pl-[46px] pr-[46px] text-center sm:text-left fade-in-left-short'>
+              <h2 className="text-[34px] 2xl:text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">{field_6}</h2>
               <Image
                 src="/fhome/picity.svg"
                 alt="Smart City Features"
@@ -535,19 +536,14 @@ export function SmartCity() {
                 height={50}
                 className="mb-[25px] 2xl:mb-[54px] reveal-text w-[55%] mx-auto sm:mx-0 2xl:w-auto md:w-[280px]"
               />
-              <p className="text-gray-5 font-normal mb-[13px] reveal-text text-justify text-[13px] 2xl:text-[17px]">
-                Picity là mô hình đô thị số tiên phong được phát triển bởi Pi Group.
-              </p>
-              <p className="text-gray-5 leading-[22px] 2xl:leading-[28px] space-x-[0.35px] mb-0 sm:mb-[7%] 2xl:mb-[43px] reveal-text text-justify text-[13px] 2xl:text-[17px]">
-                Kết hợp công nghệ 4.0 (IoT và AI) trên nền tảng độc quyền, cùng hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, Picity mang đến trải nghiệm sống chuẩn quốc tế, đáp ứng mọi nhu cầu của cư dân thời đại mới.
-              </p>
-              <Link href="/" className="
+              <div className="text-gray-5 leading-[22px] font-normal mb-[13px] [&>p]:mb-[15px] [&>p]::last:mb-[30px] reveal-text text-justify text-[13px] 2xl:text-[17px]" dangerouslySetInnerHTML={{ __html: field_8 }}></div>
+              <Link href={`/${field_10}`} className="
               reveal-text hvr-bounce-to-right sm:flex items-center justify-center
                text-yellow-1 text-[13px] font-semibold w-[172px] h-[30px]       
                border border-yellow-1 hover:text-white
                hidden
                ">
-                KHÁM PHÁ PICITY
+                {field_9}
               </Link>
             </div>
           </div>
