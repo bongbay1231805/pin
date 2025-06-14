@@ -13,12 +13,12 @@ export default function Detail3() {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   return (
     <>
-      <div className="relative mx-auto h-[500px] xl:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[175px]">
-        <div className="relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white text-[20px] xl:text-[55px]'>DỊCH VỤ <br /> quản lý & vận hành</h2>
+      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
+        <div className="relative mx-auto top-[30%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]'>DỊCH VỤ <br /> quản lý & vận hành</h2>
         </div>
         <Image fill src="/fecosystem/detail/management-1-e.png" alt="Smart City Features" className="object-fill" />
-        <h3 className='absolute w-full z-10 left-1/2 bottom-[85px] -translate-x-1/2 text-center  uppercase font-bold text-white text-[20px] xl:text-[55px]'>DỊCH VỤ QUẢN LÝ VÀ VẬN HÀNH</h3>
+        <h3 className='absolute w-full z-10 left-1/2 bottom-[85px] -translate-x-1/2 text-center  uppercase font-bold text-white text-[38px] 2xl:text-[46px]'>DỊCH VỤ QUẢN LÝ VÀ VẬN HÀNH</h3>
       </div>
       <div className='relative mx-auto mt-[40px] xl:mt-0 xl:top-[100px] max-w-[95%] 2xl:max-w-[1580px]'>
         <div className="grid grid-cols-1 lg:grid-cols-[54%_45%] mb-[40px] lg:mb-[245px]">
@@ -42,7 +42,7 @@ export default function Detail3() {
       <div className='relative mx-auto top-[25%] max-w-[95%] 2xl:max-w-[1580px] mb-[47px]'>
         <h3 className='text-yellow-1 text-[25px] xl:text-[40px] font-bold uppercase my-[20px] lg:my-0 lg:text-center'>DỊCH VỤ TOÀN DIỆN <br /> GIA TĂNG GIÁ TRỊ BẤT ĐỘNG SẢN</h3>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[5px] mb-[40px] 2xl:mb-[144px]'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[5px] mb-[40px]'>
         <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-5.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
           <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>

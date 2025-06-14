@@ -61,7 +61,7 @@ export default function Detail1({ custom_fields }: any) {
   console.log(customfields);
   return (
     <>
-      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[175px]">
+      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
           <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: custom_fields.field_investment_development_1 }}></h2>
         </div>
@@ -80,7 +80,18 @@ export default function Detail1({ custom_fields }: any) {
                   {
                     customfields[0][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
-                        <img width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />
+                        {(() => {
+                          switch (index) {
+                            case 0:
+                              return <img width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                            case 1:
+                              return <img width={11} height={11} src="/fecosystem/detail/area.svg" alt="area" />;
+                            case 2:
+                              return <img  width={11} height={11} src="/fecosystem/detail/roun-down.svg" alt="roun-down" />;
+                            default:
+                              return <img  width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                          }
+                        })()}
                         <span className='font-bold'>{item[0].value}</span> {item[1].value}
                       </p>
                     ))
@@ -90,7 +101,7 @@ export default function Detail1({ custom_fields }: any) {
                   {
                     customfields[0][3]?.value?.map((item: any, index: number) => (
                       <p key={index} className='flex items-start gap-[8px]'>
-                        <img className='mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
+                        <img className='ml-[2px] mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
                         <span><strong>{item[0].value}</strong> {item[1].value}</span>
                       </p>
                     ))
@@ -138,7 +149,18 @@ export default function Detail1({ custom_fields }: any) {
                   {
                     customfields[1][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
-                        <img width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />
+                        {(() => {
+                          switch (index) {
+                            case 0:
+                              return <img width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                            case 1:
+                              return <img width={11} height={11} src="/fecosystem/detail/area.svg" alt="area" />;
+                            case 2:
+                              return <img  width={11} height={11} src="/fecosystem/detail/roun-down.svg" alt="roun-down" />;
+                            default:
+                              return <img  width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                          }
+                        })()}
                         <span className='font-bold'>{item[0].value}</span> {item[1].value}
                       </p>
                     ))
@@ -148,7 +170,7 @@ export default function Detail1({ custom_fields }: any) {
                   {
                     customfields[1][3]?.value?.map((item: any, index: number) => (
                       <p key={index} className='flex items-start gap-[8px]'>
-                        <img className='mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
+                        <img className='ml-[2px] mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
                         <span><strong>{item[0].value}</strong> {item[1].value}</span>
                       </p>
                     ))
@@ -179,7 +201,18 @@ export default function Detail1({ custom_fields }: any) {
                   {
                     customfields[2][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
-                        <img width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />
+                        {(() => {
+                          switch (index) {
+                            case 0:
+                              return <img width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                            case 1:
+                              return <img width={11} height={11} src="/fecosystem/detail/area.svg" alt="area" />;
+                            case 2:
+                              return <img  width={11} height={11} src="/fecosystem/detail/roun-down.svg" alt="roun-down" />;
+                            default:
+                              return <img  width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                          }
+                        })()}
                         <span className='font-bold'>{item[0].value}</span> {item[1].value}
                       </p>
                     ))
@@ -189,7 +222,7 @@ export default function Detail1({ custom_fields }: any) {
                   {
                     customfields[2][3]?.value?.map((item: any, index: number) => (
                       <p key={index} className='flex items-start gap-[8px]'>
-                        <img className='mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
+                        <img className='ml-[2px] mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
                         <span><strong>{item[0].value}</strong> {item[1].value}</span>
                       </p>
                     ))

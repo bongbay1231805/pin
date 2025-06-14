@@ -63,7 +63,7 @@ const items = [
   {
     id: 8,
     height: 320,
-    title: "Dịch vụ bất động sản",
+    title: "Dịch vụ Bất động sản",
     description: "Với sứ mệnh mang bất động sản thực đến đúng nhu cầu từng khách hàng, Pi Group cam kết đồng hành và đảm bảo thành công cho mọi giao dịch với dịch vụ uy tín, chuyên nghiệp.",
     link: "#",
     image: "/fecosystem/eco_04.jpg"
@@ -167,29 +167,39 @@ const MasonryGrid = ({ custom_fields }: any) => {
       // Lấy các phần tử DOM thực tế từ refs và đảm bảo chúng không phải null
       const currentFixedElements: HTMLDivElement[] = fixedElements.map(ref => ref.current).filter((el): el is HTMLDivElement => el !== null);
       const currentExpandableElements: HTMLDivElement[] = expandableElements.map(ref => ref.current).filter((el): el is HTMLDivElement => el !== null);
+      let lastHoveredSection: HTMLDivElement | null = null;
       const handleMouseEnter = (hoveredSection: HTMLDivElement) => {
+        if (hoveredSection === lastHoveredSection) return;
+        lastHoveredSection = hoveredSection;
         const containerWidth = container.offsetWidth;
-        // Tính tổng chiều rộng của các phần tử cố định trong hàng này
         const fixedWidthSum = currentFixedElements.reduce((sum, el) => sum + el.offsetWidth, 0);
-        // Chiều rộng khả dụng cho các phần tử co giãn
         const availableWidth = containerWidth - fixedWidthSum;
-        // Tỷ lệ mở rộng cho phần tử đang hover (ví dụ: 60% của không gian khả dụng còn lại)
         const expandedRatio = 0.6;
         const expandedWidth = availableWidth * expandedRatio;
-        // Chiều rộng cho các phần tử co giãn còn lại (chia đều không gian còn lại)
-        const remainingExpandableCount = currentExpandableElements.length - 1;
-        const collapsedWidth = remainingExpandableCount > 0
-          ? (availableWidth - expandedWidth) / remainingExpandableCount
-          : 0; // Tránh chia cho 0 nếu chỉ còn 1 phần tử co giãn
-        currentExpandableElements.forEach(s => {
-          s.classList.remove('flex-grow'); // Loại bỏ flex-grow để kiểm soát width bằng style
-          s.style.width = `${s === hoveredSection ? expandedWidth : collapsedWidth}px`;
+        const collapsedWidth = (availableWidth - expandedWidth) / (currentExpandableElements.length - 1);
+        currentExpandableElements.forEach((section) => {
+          const isHovered = section === hoveredSection;
+          const currentWidth = section.getBoundingClientRect().width;
+          section.style.width = `${currentWidth}px`;
+          requestAnimationFrame(() => {
+            section.style.transition = 'width 0.5s ease-in-out';
+            section.style.width = `${isHovered ? expandedWidth : collapsedWidth}px`;
+          });
         });
       };
       const handleMouseLeave = () => {
-        currentExpandableElements.forEach(s => {
-          s.style.width = ''; // Xóa style.width để reset
-          s.classList.add('flex-grow'); // Thêm lại flex-grow để chia đều
+        lastHoveredSection = null;
+        const containerWidth = container.offsetWidth;
+        const fixedWidthSum = currentFixedElements.reduce((sum, el) => sum + el.offsetWidth, 0);
+        const availableWidth = containerWidth - fixedWidthSum;
+        const equalWidth = availableWidth / currentExpandableElements.length;
+        currentExpandableElements.forEach((section) => {
+          const currentWidth = section.getBoundingClientRect().width;
+          section.style.width = `${currentWidth}px`;
+          requestAnimationFrame(() => {
+            section.style.transition = 'width 0.5s ease-in-out';
+            section.style.width = `${equalWidth}px`;
+          });
         });
       };
       // Gắn sự kiện cho từng phần tử co giãn trong hàng này
@@ -223,14 +233,14 @@ const MasonryGrid = ({ custom_fields }: any) => {
       <div
         key={i}
         ref={(i === 0) ? grid1Ref : (i === 4) ? grid2Ref : (i === 8) ? grid3Ref : null}
-        className={`grid transition-all duration-[500ms] ease-in-out gap-x-[2px] m-0 xl:h-[calc((100vh-138px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_42%]" : "xl:grid-cols-[42%_repeat(3,1fr)]"}`}
+        className={`grid transition-all gap-x-[2px] m-0 xl:h-[calc((100vh-106px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_42%]" : "xl:grid-cols-[42%_repeat(3,1fr)]"}`}
       >
         {rowItems.map((item: any, index: number) => {
           j++;
           console.log(item[4].value);
           return (
             <div key={item[0].field_item_id + index} ref={(i === 0 && index == 0) ? m1Ref : (i === 0 && index == 1) ? m2Ref : (i === 0 && index == 2) ? m3Ref : (i === 0 && index == 3) ? m4Ref : (i === 4 && index == 0) ? m5Ref : (i === 4 && index == 1) ? m6Ref : (i === 4 && index == 2) ? m7Ref : (i === 4 && index == 3) ? m8Ref : (i === 8 && index == 0) ? m9Ref : (i === 8 && index == 1) ? m10Ref : (i === 8 && index == 2) ? m11Ref : (i === 8 && index == 3) ? m12Ref : null} className={`group eco-item transition-all duration-[500ms] ease-in-out relative pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${j} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}>
-              {item[4].value !=="" ? (
+              {item[4].value !== "" ? (
                 <Image src={`https://admin.pigroup.tqdesign.vn/storage/${item[4].value}`} alt="masonry" fill className="object-cover justify-end" />
               ) : (
                 null
@@ -241,20 +251,21 @@ const MasonryGrid = ({ custom_fields }: any) => {
                 </h3>
               )}
               {item[0].value && item[3].value !== "" && (
-                <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[100px]' : 'justify-center xl:pr-[100px]'} duration-300`}>
-                  <div className="flex flex-col justify-center">
-                    <h3 className="text-[19px] 2xl:text-[25px] font-semibold text-blue-1 uppercase">
-                      {item[0].value}
-                    </h3>
-                    <p className="text-gray-6 text-justify mt-[10px] mb-[12px] text-[13px] 2xl:text-[17px]">{item[1].value}</p>
-                    <Link
-                      href={item[3].value}
-                      className="flex items-center justify-center text-yellow-1 font-semibold w-[116px] h-[28px] text-[12px] 2xl:text-[16px] 2xl:w-[138px] 2xl:h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300"
-                    >
-                      {item[2].value}
-                    </Link>
+                <Link
+                  href={item[3].value}
+                >
+                  <div className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[100px]' : 'justify-center xl:pr-[100px]'} duration-300`}>
+                    <div className="flex flex-col justify-center">
+                      <h3 className="text-[19px] 2xl:text-[25px] font-semibold text-blue-1 uppercase">
+                        {item[0].value}
+                      </h3>
+                      <p className="text-gray-6 text-justify mt-[10px] mb-[12px] text-[13px] 2xl:text-[17px]">{item[1].value}</p>
+                      <div className="flex items-center justify-center text-yellow-1 font-semibold w-[116px] h-[28px] text-[12px] 2xl:text-[16px] 2xl:w-[138px] 2xl:h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300">
+                        {item[2].value}
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               )}
             </div>
           )
@@ -263,6 +274,6 @@ const MasonryGrid = ({ custom_fields }: any) => {
       </div>
     );
   }
-  return <div className="xl:h-[calc(100vh-138px)] mt-[-12px] overflow-hidden max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] m-auto">{rows}</div>;
+  return <div className="xl:h-[calc(100vh-106px)] overflow-hidden max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] m-auto">{rows}</div>;
 }
 export default MasonryGrid;

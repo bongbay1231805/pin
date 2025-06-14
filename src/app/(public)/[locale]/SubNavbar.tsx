@@ -79,22 +79,6 @@ export default function SubNavbar(props: PropSub) {
       }
     ];
   }
-  if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
-    navItems = [
-      {
-        name: "Đầu tư và phát triển dự án",
-        href: "/ecosystem/investment-development"
-      },
-      {
-        name: "Dịch vụ bất động sản",
-        href: "/ecosystem/real-estate-services"
-      },
-      {
-        name: "Quản lý và vận hành",
-        href: "/ecosystem/management-operation"
-      }
-    ];
-  }
   if (news.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
@@ -176,8 +160,8 @@ export default function SubNavbar(props: PropSub) {
   }
   return (
     (Array.isArray(navItems) && navItems.length) ? (
-      <div className={`w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px]`} >
-        <div className="mx-auto max-w-[91.4%]">
+      <div className={`w-full hidden xl:block`} >
+        <div className="mx-auto max-w-[91.4%] bg-gray-3 border-white-1 border-b-[1px]">
           <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[8px] text-gray-5">
             {navItems.map((item) => (
               item.hrefb ? (

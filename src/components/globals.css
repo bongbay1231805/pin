@@ -259,7 +259,7 @@ strong {
     @apply mt-[0]
   }
   #body:is(.ecosystem) {
-    @apply mt-[150px]
+    @apply mt-[106px]
   }
   #menusub:not(.active)>img:last-child {
     display: none;
@@ -334,7 +334,7 @@ strong {
 .ecosystem-masonry-10,
 .ecosystem-masonry-11,
 .ecosystem-masonry-12 {
-  @apply after:content-[''] after:inset-0 after:bg-[#20446F] after:mix-blend-color after:z-9 after:absolute after:duration-1000 transition-all duration-300 ease-in-out transform translate-z-0
+  @apply after:content-[''] after:inset-0 after:bg-[#20446F] after:mix-blend-color after:z-9 after:absolute after:duration-1000
 }
 .ecosystem-masonry-2:hover:after, .ecosystem-masonry-3:hover:after, .ecosystem-masonry-4:hover:after, .ecosystem-masonry-5:hover:after, .ecosystem-masonry-6:hover:after, .ecosystem-masonry-7:hover:after, .ecosystem-masonry-10:hover:after, .ecosystem-masonry-11:hover:after, .ecosystem-masonry-12:hover:after {
   background-color: rgba(0, 0, 0, 0)

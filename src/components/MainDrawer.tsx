@@ -30,7 +30,7 @@ export function MainDrawer() {
     },
     {
       icon: Calendar,
-      label: "Dịch vụ bất động sản",
+      label: "Dịch vụ Bất động sản",
       description: "Manage your schedule",
       href: "/ecosystem/real-estate-services",
     },

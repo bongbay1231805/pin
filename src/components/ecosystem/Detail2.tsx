@@ -55,9 +55,9 @@ export default function Detail2() {
    useScrollReveal(); // dùng mặc định `.boxanimation`
   return (
     <>
-      <div className="relative mx-auto h-[500px] md:h-[calc(100vh-100px)] w-[100vw]  text-center pt-[20%] md:pt-[175px] mb-[45px] md:mb-[245px]">
+      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[52px] 2xl:leading-[65px] text-[42px] 2xl:text-[55px]'>DỊCH VỤ <br /> BẤT ĐỘNG SẢN </h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]'>DỊCH VỤ <br /> BẤT ĐỘNG SẢN </h2>
         </div>
         <Image fill src="/fecosystem/detail/operation.png" alt="Smart City Features" className="object-fill"></Image>
       </div>

@@ -155,7 +155,7 @@ export function SmartCity({custom_fields}:any) {
               <svg className="absolute overflow-x-clip max-w-70 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} width="572" height="572" viewBox="0 0 572 572" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_2002_1264)">
                   <path
-                    fill={`${activeChild === 'child1' ? '#C48C5E' : "#304E76"} `}
+                    fill={`${activeChild === 'child1' ? '#C48C5E' :  activeChild ==='child2' ? "#3B5E8D" : "#304E76"} `}
                     onClick={() => handleChildClick('child1')}
                     d="M499.256 173.664C498.89 178.39 496.732 182.699 493.178 185.912L493.177 185.913L492.826 186.218C489.172 189.312 484.599 190.872 479.849 190.623L416.274 187.218L416.272 187.218L415.833 187.184C411.309 186.787 406.929 184.695 403.848 181.353L403.849 181.353L403.196 180.672L403.192 180.667C384.811 160.297 361.244 145 334.975 136.392L333.217 135.829C258.739 112.459 179.39 147.293 144.968 214.945C144.676 215.518 144.403 216.103 144.126 216.696C143.85 217.288 143.569 217.89 143.263 218.492L143.04 218.93L142.818 218.493L114.321 162.411C107.375 148.746 90.7697 143.174 77.0686 149.716L76.4177 150.037L23.2469 177.054L22.5627 177.401L22.9276 176.684C25.6749 170.003 28.7005 163.465 31.945 157.088C95.6913 31.8012 238.833 -27.687 372.765 15.1642L374.34 15.6731C422.057 31.2161 464.825 59.0512 497.962 96.3445C501.097 99.8602 502.818 104.47 502.671 109.159L502.651 109.613L499.286 173.207L499.256 173.664Z"
                     stroke="#E5AE80" strokeWidth="0.5" strokeMiterlimit="10" />
@@ -537,7 +537,7 @@ export function SmartCity({custom_fields}:any) {
                 className="mb-[25px] 2xl:mb-[54px] reveal-text w-[55%] mx-auto sm:mx-0 2xl:w-auto md:w-[280px]"
               />
               <div className="text-gray-5 leading-[22px] font-normal mb-[13px] [&>p]:mb-[15px] [&>p]::last:mb-[30px] reveal-text text-justify text-[13px] 2xl:text-[17px]" dangerouslySetInnerHTML={{ __html: field_8 }}></div>
-              <Link href={`${field_10}`} className="reveal-text hvr-bounce-to-right sm:flex items-center justify-centertext-yellow-1 text-[13px] font-semibold w-[172px] h-[30px] border border-yellow-1 hover:text-white hidden">
+              <Link href={`${field_10}`} className="reveal-text hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[13px] font-semibold w-[172px] h-[30px] border border-yellow-1 hover:text-white active:text-white hidden">
                 {field_9}
               </Link>
             </div>
