@@ -1,7 +1,5 @@
-'use client'; 
 // import { Locale } from 'next-intl';
 // import { setRequestLocale } from 'next-intl/server';
-import { useEffect } from 'react';
 import { Hero } from "@/components/about/Hero"
 import { Stats } from "@/components/about/Stats"
 import { Timeline } from "@/components/about/Timeline"
@@ -12,39 +10,19 @@ import { Business } from "@/components/about/Business"
 // type Props = {
 //   params: Promise<{ locale: Locale }>;
 // };
-export default function About() {
-  useEffect(() => {
-    const boxes = document.querySelectorAll('.boxanimation');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          const el = entry.target;
-          if (entry.isIntersecting) {
-            el.classList.add('show');
-          } else {
-            el.classList.remove('show');
-          }
-        });
-      },
-      {
-        // threshold: Array.from({ length: 11 }, (_, i) => i / 10), // 0, 0.1, 0.2,...1
-        threshold: 0, // 0, 0.1, 0.2,...1
-      }
-    );
-    boxes.forEach(box => observer.observe(box));
-    return () => boxes.forEach(box => observer.unobserve(box));
-  }, []);
-  // const { locale } = use(params);
-  // Enable static rendering
-  // setRequestLocale(locale);
-  // const t = useTranslations('About');
+export default async function About() {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/about', {
+    cache: 'no-store',
+  });
+  const {data} = await res.json();
+  const { custom_fields } = data;
   return (
     <>
       <Hero />
-      <Stats />
-      <Timeline />
-      <Philosophy />
-      <Business />
+      <Stats custom_fields={custom_fields} />
+      <Timeline custom_fields={custom_fields} />
+      <Philosophy custom_fields={custom_fields} />
+      <Business custom_fields={custom_fields} />
       <div className='boxanimation fade-in-up-medium mb-[5%] 2xl:mb-[96px]'>
         <Partners />
       </div>

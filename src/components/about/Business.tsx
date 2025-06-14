@@ -4,8 +4,9 @@ import Link from "next/link"
 import { useEffect, useState } from "react";
 type ChildClass = 'child1' | 'child2' | 'child3';
 import { useScrollRefs } from '@/context/ScrollRefsContext'
-export function Business() {
-  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs()
+export function Business({ custom_fields }: any) {
+  const { sixRef, seventRef } = useScrollRefs();
+  const {field_24_about,field_25_about,link_ho_so_nang_luc,field_29_about} = custom_fields;
   // `currentRotation` sẽ lưu trữ tổng số độ xoay hiện tại của phần tử
   const [currentRotation, setCurrentRotation] = useState<number>(0);
   // `activeChild` để theo dõi child nào đang được active
@@ -107,10 +108,8 @@ export function Business() {
     <div ref={sixRef} className="mx-auto px-1 sm:px-6 lg:px-[16px] md:max-w-[85%] border-b-1 border-gray-2 items-center pt-[16px] pb-[88px]">
       <div className="grid grid-cols-1 items-center justify-center px-[6.5%] md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-[32px] 2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">VĂN HÓA DOANH NGHIỆP</h2>
-          <p className="text-gray-1 text-[24px] 2xl:text-[32px]  font-normal uppercase">
-            Phát triển bền vững
-          </p>
+          <h2 className="text-[32px] 2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">{field_24_about}</h2>
+          <p className="text-gray-1 text-[24px] 2xl:text-[32px]  font-normal uppercase">{field_25_about}</p>
         </div>
         <div className="relative md:pl-[26px] aspect-square items-center flex justify-center">
           <svg width="436" height="436" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} viewBox="0 0 553 554" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,7 +193,7 @@ export function Business() {
         </div>
       </div>
       <div ref={seventRef} className="relative flex items-center justify-center mt-[46px]">
-        <Link href="/" className="flex profile-btn items-center justify-center font-semibold w-[496px] h-[54px]">
+        <Link href={link_ho_so_nang_luc} className="flex profile-btn items-center justify-center font-semibold w-[496px] h-[54px]">
           <svg width="40" height="40" className="object-contain mr-[15px]" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.76074 45.6747V3.89313C7.76074 2.29692 9.05181 1 10.6408 1H45.9619C47.5509 1 48.8419 2.29692 48.8419 3.89313V39.9805" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
             <path d="M4.38086 49.0703H37.4941" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
@@ -218,7 +217,7 @@ export function Business() {
             <path d="M38.6085 29.9577C40.0346 29.9577 41.1906 28.7964 41.1906 27.3639C41.1906 25.9313 40.0346 24.77 38.6085 24.77C37.1824 24.77 36.0264 25.9313 36.0264 27.3639C36.0264 28.7964 37.1824 29.9577 38.6085 29.9577Z" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
             <path d="M46.5646 50.9999C48.5603 50.9999 50.1781 49.3748 50.1781 47.3701C50.1781 45.3654 48.5603 43.7402 46.5646 43.7402C44.569 43.7402 42.9512 45.3654 42.9512 47.3701C42.9512 49.3748 44.569 50.9999 46.5646 50.9999Z" className="proico" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
           </svg>
-          <span>Hồ sơ năng lực Pi Group</span>
+          <span>{field_29_about}</span>
         </Link>
       </div>
     </div>

@@ -1,19 +1,20 @@
 'use client';
 import Image from "next/image"
 import { useScrollRefs } from '@/context/ScrollRefsContext'
-export function Philosophy() {
-  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs()
+export function Philosophy({ custom_fields }: any) {
+  const { fourRef, fiveRef } = useScrollRefs();
+  const {field_13_about,field_14_about,field_15_about,field_16_about,field_17_about,field_18_about,field_19_about,field_20_about,field_21_about,field_22_about,field_22_about_174915960724,field_23_about} = custom_fields;
   return (
     <section ref={fourRef} className="py-16">
       <div className="max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] mx-auto bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-contain bg-no-repeat bg-right">
         <div className="grid items-center grid-cols-1 md:grid-cols-[70%_30%] mb-8 uppercase text-[27px] 2xl:text-[35px] py-[2px] text-white">
           <div className="py-[22px] pl-[76px] leading-[52px] 2xl:leading-[62px] font-[500]">
-            <h3>NGHĨ <span className="text-yellow-1">ĐỘC ĐÁO</span></h3>
-            <h3>LÀM <span className="text-yellow-1">KHÁC BIỆT</span></h3>
-            <h3>KHÔNG NGẠI <span className="text-yellow-1">ĐI NGƯỢC XU HƯỚNG</span></h3>
+            <h3>{field_13_about} <span className="text-yellow-1">{field_14_about}</span></h3>
+            <h3>{field_15_about} <span className="text-yellow-1">{field_16_about}</span></h3>
+            <h3>{field_17_about} <span className="text-yellow-1">{field_18_about}</span></h3>
           </div>
           <div className="font-bold text-end leading-[38px] 2xl:leading-[42px] pt-[10px] pr-[106px]">
-            <p>Triết lý<br />kinh doanh</p>
+            <p>{field_19_about}<br />{field_20_about}</p>
           </div>
         </div>
       </div>
@@ -30,8 +31,8 @@ export function Philosophy() {
             </div>
             <div className="absolute vision-content inset-0 flex items-center justify-center">
               <div className="text-center p-6">
-                <h3 className="text-[30px] title font-bold mb-4 text-white">TẦM NHÌN</h3>
-                <div className="text-[14px] content text-white">Trở thành Nhà phát triển đô thị số tiện ích 5★ chuẩn quốc tế.</div>
+                <h3 className="text-[30px] title font-bold mb-4 text-white">{field_21_about}</h3>
+                <div className="text-[14px] content text-white" dangerouslySetInnerHTML={{ __html: field_22_about }}></div>
                 <div className="bg"></div>
               </div>
             </div>
@@ -47,8 +48,8 @@ export function Philosophy() {
             </div>
             <div className="absolute vision-content inset-0 flex items-center justify-center">
               <div className="text-center p-6">
-                <h3 className="text-[30px] title font-bold mb-4 text-white">SỨ MỆNH</h3>
-                <div className="text-[14px] content text-white">Kiến tạo cộng đồng văn minh, nâng tầm giá trị sống.</div>
+                <h3 className="text-[30px] title font-bold mb-4 text-white">{field_22_about_174915960724}</h3>
+                <div className="text-[14px] content text-white" dangerouslySetInnerHTML={{ __html: field_23_about }}></div>
                 <div className="bg"></div>
               </div>
             </div>
