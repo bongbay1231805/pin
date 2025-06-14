@@ -537,12 +537,7 @@ export function SmartCity({custom_fields}:any) {
                 className="mb-[25px] 2xl:mb-[54px] reveal-text w-[55%] mx-auto sm:mx-0 2xl:w-auto md:w-[280px]"
               />
               <div className="text-gray-5 leading-[22px] font-normal mb-[13px] [&>p]:mb-[15px] [&>p]::last:mb-[30px] reveal-text text-justify text-[13px] 2xl:text-[17px]" dangerouslySetInnerHTML={{ __html: field_8 }}></div>
-              <Link href={`/${field_10}`} className="
-              reveal-text hvr-bounce-to-right sm:flex items-center justify-center
-               text-yellow-1 text-[13px] font-semibold w-[172px] h-[30px]       
-               border border-yellow-1 hover:text-white
-               hidden
-               ">
+              <Link href={`${field_10}`} className="reveal-text hvr-bounce-to-right sm:flex items-center justify-centertext-yellow-1 text-[13px] font-semibold w-[172px] h-[30px] border border-yellow-1 hover:text-white hidden">
                 {field_9}
               </Link>
             </div>
