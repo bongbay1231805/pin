@@ -36,9 +36,6 @@ function DetailPost() {
       <div className="container m-auto max-w-[85%] px-[10px]">
         <h2 className='text-yellow-1 uppercase text-center text-[35px] 2xl:text-[45px] font-bold mb-[45px] mt-[90px]'>Tin liên quan</h2>
         <Related />
-        <div className='mt-[38px] mb-[72px]'>
-          <PaginationExample />
-        </div>
       </div>
     </div>
   );
