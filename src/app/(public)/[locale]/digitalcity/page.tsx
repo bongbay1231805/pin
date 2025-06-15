@@ -43,43 +43,77 @@ export default function Digitalcity() {
     return () => boxes.forEach(box => observer.unobserve(box));
   }, []);
   const slides = [
-    {
-      image: "/fdigitalcity/digitalcity-14.png",
-      title: "Hồ bơi muối khoáng <br/> sàn kính Acrylic vô cực"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-15.png",
-      title: "Technogym & Yoga Wellness"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-16.png",
-      title: "Sky Lounge view panorama"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-14.png",
-      title: "Hồ bơi muối khoáng <br/> sàn kính Acrylic vô cực"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-15.png",
-      title: "Technogym & Yoga Wellness"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-16.png",
-      title: "Sky Lounge view panorama"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-14.png",
-      title: "Hồ bơi muối khoáng <br/> sàn kính Acrylic vô cực"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-15.png",
-      title: "Technogym & Yoga Wellness"
-    },
-    {
-      image: "/fdigitalcity/digitalcity-16.png",
-      title: "Sky Lounge view panorama"
-    }
+    [
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      },
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      }
+    ],
+    [
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      },
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      }
+    ],
+    [
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      },
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      }
+    ],
+    [
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      },
+      {
+        value: "/fdigitalcity/digitalcity-14.png",
+      }
+    ]
   ];
+  // const slides = [
+  //   {
+  //     image: "/fdigitalcity/digitalcity-14.png",
+  //     title: "Hồ bơi muối khoáng <br/> sàn kính Acrylic vô cực"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-15.png",
+  //     title: "Technogym & Yoga Wellness"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-16.png",
+  //     title: "Sky Lounge view panorama"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-14.png",
+  //     title: "Hồ bơi muối khoáng <br/> sàn kính Acrylic vô cực"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-15.png",
+  //     title: "Technogym & Yoga Wellness"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-16.png",
+  //     title: "Sky Lounge view panorama"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-14.png",
+  //     title: "Hồ bơi muối khoáng <br/> sàn kính Acrylic vô cực"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-15.png",
+  //     title: "Technogym & Yoga Wellness"
+  //   },
+  //   {
+  //     image: "/fdigitalcity/digitalcity-16.png",
+  //     title: "Sky Lounge view panorama"
+  //   }
+  // ];
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[106px]">
