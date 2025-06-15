@@ -18,7 +18,6 @@ export default function Part({ custom_fields }: any) {
   }
   const { digitalcity_3, digitalcity_4, digitalcity_5, digitalcity_6, digitalcity_7, digitalcity_8, digitalcity_9, digitalcity_10, digitalcity_11, digitalcity_12, digitalcity_13, digitalcity_14, digitalcity_15, digitalcity_16, digitalcity_17, digitalcity_18, digitalcity_connect,digitalcity_slider_uni } = custom_fields;
   const digitalcityslideruni = convertJsonStringToArrayOrObject(digitalcity_slider_uni);
-  console.log(digitalcityslideruni);
   const slides = [
     [
       {
@@ -114,7 +113,7 @@ export default function Part({ custom_fields }: any) {
         <div className='relative z-1 '>
           <h3 className='text-yellow-1 text-[20px] xl:text-[30px] font-bold uppercase text-center'>{digitalcity_4}</h3>
           <p className='uppercase text-center text-blue-1 text-[20px] xl:text-[25px] mb-[35px]'>{digitalcity_5}</p>
-          <HorizontalScroll />
+          <HorizontalScroll custom_fields={custom_fields} />
         </div>
         <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill max-w-[85%] mx-auto" />
       </div>
