@@ -84,27 +84,27 @@ const Navbar = () => {
           </div>
           {/* Desktop Navigation */}
           <div className={`hidden xl:flex text-[13px] 2xl:text-[17px] font-[600] items-center ml-[11.5%] 2xl:ml-[204px] uppercase grow-1 ${(hasShadow) ? 'h-[70px]' : isHomePage ? 'h-[106px]' : 'h-[70px]'}`}>
-            <Link href="/about" className={`group relative grow-1 py-2 text-center text-white-1 hover:text-yellow-2 ${isActive("about") ? "text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
+            <Link href="/about" className={`group relative grow-1 text-center text-white-1 hover:text-yellow-2 ${isActive("about") ? "text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Giới thiệu</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Giới thiệu</span>
             </Link>
-            <Link href="/ecosystem" className={`group relative grow-1 py-2 text-center hover:text-yellow-2 ${(isActive("ecosystem") || isActive("investment-development") || isActive("real-estate-services") || isActive("management-operation")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
+            <Link href="/ecosystem" className={`group relative grow-1 text-center hover:text-yellow-2 ${(isActive("ecosystem") || isActive("investment-development") || isActive("real-estate-services") || isActive("management-operation")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Hệ Sinh Thái</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Hệ Sinh Thái</span>
             </Link>
-            <Link href="/digitalcity" className={`group relative grow-1 py-2 text-center hover:text-yellow-2 ${isActive("digitalcity") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
+            <Link href="/digitalcity" className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive("digitalcity") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Đô thị số Picity</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Đô thị số Picity</span>
             </Link>
-            <Link href="/news" className={`group relative grow-1 py-2 text-center hover:text-yellow-2 ${(isActive("news") || isActive("market-news") || isActive("pi-group-news") || isActive("bidding-news")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
+            <Link href="/news" className={`group relative grow-1 text-center hover:text-yellow-2 ${(isActive("news") || isActive("market-news") || isActive("pi-group-news") || isActive("bidding-news")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Tin Tức</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Tin Tức</span>
             </Link>
-            <Link href="/human-resource" className={`group relative grow-1 py-2 text-center hover:text-yellow-2 ${isActive("human-resource") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
+            <Link href="/human-resource" className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive("human-resource") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Phát Triển Nhân Lực</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Phát Triển Nhân Lực</span>
             </Link>
-            <Link href="/contact" className={`group relative grow-1 py-2 text-center hover:text-yellow-2 ${isActive("contact") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
+            <Link href="/contact" className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive("contact") ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Liên Hệ</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Liên Hệ</span>
             </Link>
