@@ -505,7 +505,7 @@ export default function Digitalcity() {
             <h3 className="uppercase font-bold text-yellow-1 text-[30px] mb-[20px]">Giá trị vượt trội <br /> Trải nghiệm đặc quyền</h3>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-[16px]'>
               <div className="grid grid-cols-1]">
-                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[55px] md:w-[80%] w-full">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
                   <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white">
                     <svg width="69" height="84" viewBox="0 0 69 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M34.2364 43.1939C32.3371 43.1939 30.6895 41.5463 30.6895 39.647C30.6895 37.7478 32.3371 36.1001 34.2364 36.1001C36.1356 36.1001 37.7833 37.7478 37.7833 39.647C37.7833 41.5463 36.1356 43.1939 34.2364 43.1939ZM34.2364 39.2697C33.9848 39.2697 33.859 39.3955 33.859 39.647C33.859 39.8986 33.9848 40.0244 34.2364 40.0244C34.4879 40.0244 34.6137 39.8986 34.6137 39.647C34.6137 39.3955 34.4879 39.2697 34.2364 39.2697Z" fill="#4C73A8" />
@@ -525,7 +525,7 @@ export default function Digitalcity() {
                     <p className="text-gray-5 text-[13px]">Công nghệ 4.0 <br /> đảm bảo an ninh</p>
                   </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[55px] md:w-[80%] w-full">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
                   <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white">
                     <svg width="78" height="71" viewBox="0 0 78 71" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M71.5384 69.5895V40.6271H74.5938C75.2029 40.6271 75.8169 40.1454 76.0624 39.5457C76.0624 38.9459 75.8169 38.2234 75.3305 37.8645L55.402 24.401C54.9156 24.0421 54.1789 24.0421 53.6925 24.401L40.857 33.1752V18.1485H43.9124C44.7671 18.1485 45.5038 17.426 45.5038 16.5854C45.5038 16.1037 45.2583 15.6221 44.7719 15.2631L24.8386 1.80433C24.3475 1.44543 23.6155 1.44543 23.1244 1.80433L3.32342 15.3859C2.83701 15.7448 2.59145 16.4674 2.71423 17.0671C2.95979 17.6668 3.4462 18.1485 4.18289 18.1485H7.23828V60.2203H2.59145C1.73669 60.2203 1 60.9428 1 61.7834V67.795C1 68.6356 1.73197 69.3581 2.59145 69.3581M39.6339 37.7417L54.5472 27.4044L60.6627 31.6121H54.5472M17.8684 9.01543L23.9839 4.80777M9.07057 15.027L13.4718 12.1416M68.3602 49.5761V69.1693H62.2447V59.4317C62.2447 55.7057 59.1893 52.7023 55.3972 52.7023C51.6052 52.7023 48.5498 55.7057 48.5498 59.4317V69.1693M68.2705 43.6353H10.2889V18.1533H37.7969V35.22L33.8867 37.8645C33.4003 38.2234 33.1548 38.9459 33.2776 39.5457C33.2776 39.6275 33.3185 39.7078 33.4003 39.7865C33.6459 40.2682 34.1323 40.6271 34.7462 40.6271H68.3649L74.4143 40.7971M10.2889 60.1023V46.6387" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinejoin="round" />
@@ -540,7 +540,7 @@ export default function Digitalcity() {
                     <p className="text-gray-5 text-[13px]">Nền tảng độc quyền, <br /> tích hợp mọi nhu cầu</p>
                   </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[55px] md:w-[80%] w-full">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
                   <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white">
                     <svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M25.9708 48.5827C39.0175 48.5827 49.594 38.0064 49.594 24.9598C49.594 11.9132 39.0175 1.33691 25.9708 1.33691C12.9241 1.33691 2.34766 11.9132 2.34766 24.9598C2.34766 38.0064 12.9241 48.5827 25.9708 48.5827Z" stroke="#4C73A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -571,7 +571,7 @@ export default function Digitalcity() {
                 </div>
               </div>
               <div className="grid grid-cols-1">
-                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[55px] md:w-[80%] w-full">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
                   <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white">
                     <svg width="92" height="77" viewBox="0 0 92 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M64.9488 65.5116H27.1913C26.3001 65.5116 25.4952 64.9765 25.1505 64.1556L8.65385 24.8176C8.45883 24.3505 8.97357 23.9083 9.40668 24.1714L28.8943 36.0331L45.4657 11.9491C45.6743 11.6453 46.1233 11.6475 46.3274 11.9537L62.4544 36.0331L81.4908 24.4004C81.9216 24.1374 82.4386 24.5796 82.2436 25.0467L70.391 53.4957" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
@@ -590,7 +590,7 @@ export default function Digitalcity() {
                     <p className="text-gray-5 text-[13px]">Tiện ích chuẩn resort 5★</p>
                   </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[55px] md:w-[80%] w-full">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
                   <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white">
                     <svg width="83" height="77" viewBox="0 0 83 77" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path opacity="0.9" d="M39.2178 11.4571C42.0531 11.4571 44.3516 9.15858 44.3516 6.32326C44.3516 3.48794 42.0531 1.18945 39.2178 1.18945C36.3825 1.18945 34.084 3.48794 34.084 6.32326C34.084 9.15858 36.3825 11.4571 39.2178 11.4571Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
@@ -614,7 +614,7 @@ export default function Digitalcity() {
                     <p className="text-gray-5 text-[13px]">Cộng đồng văn minh, hiện đại</p>
                   </div>
                 </div>
-                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[55px] md:w-[80%] w-full">
+                <div className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
                   <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white">
                     <svg width="73" height="70" viewBox="0 0 73 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M71.1069 33.2367L36.889 67.3368L3 33.2367L19.78 15.6367H54.327L62.7926 24.5137" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
