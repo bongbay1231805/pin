@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-type EmblaCarouselCenterType = { image: string, title?: string }[];
+type EmblaCarouselCenterType = any[];
 interface EmblaCarouselCenterProps {
   slides: EmblaCarouselCenterType;
 }
