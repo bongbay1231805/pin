@@ -14,59 +14,59 @@ export default function Detail3() {
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
-        <div className="relative mx-auto top-[30%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+        <div className="relative mx-auto top-[30%] max-w-[1250px]  ">
           <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]'>DỊCH VỤ <br /> quản lý & vận hành</h2>
         </div>
         <Image fill src="/fecosystem/detail/management-1-e.png" alt="Smart City Features" className="object-fill" />
         <h3 className='absolute w-full z-10 left-1/2 bottom-[85px] -translate-x-1/2 text-center  uppercase font-bold text-white text-[38px] 2xl:text-[46px]'>DỊCH VỤ QUẢN LÝ VÀ VẬN HÀNH</h3>
       </div>
-      <div className='relative mx-auto mt-[40px] xl:mt-0 xl:top-[100px] max-w-[95%] 2xl:max-w-[1580px]'>
-        <div className="grid grid-cols-1 lg:grid-cols-[54%_45%] mb-[40px] lg:mb-[245px]">
-          <div className='grid grid-rows-[55%_45%] grid-cols-[50%_50%] xl:grid-cols-[47%_56%]'>
-            <div className='relative mr-[18px] mb-[18px] row-span-1 row-start-1 col-span-1'>
+      <div className='mx-auto mt-[25px] max-w-[1250px]  mb-[115px]'>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+          <div className='grid'>
+            <div className='relative mr-[18px] mb-[18px] row-span-1 row-start-1 col-span-1 w-[280px] h-[265px]'>
               <Image fill src="/fecosystem/detail/management-2.png" alt="Smart City Features" className="object-fill" />
             </div>
-            <div className='relative mr-[18px] row-span-1 row-start-2 col-span-1'>
+            <div className='relative mr-[18px] row-span-1 row-start-2 col-span-1 w-[280px] h-[220px]'>
               <Image fill src="/fecosystem/detail/management-3.png" alt="Smart City Features" className="object-fill" />
             </div>
-            <div className='relative row-span-2 row-start-1 col-span-2 pt-[400px] ef:pt-[697px] mt-[40px]'>
-              <Image fill src="/fecosystem/detail/management-4.png" alt="Smart City Features" className="object-fill" />
+            <div className='relative row-span-2 row-start-1 col-span-2 h-[500px] w-[350px] mt-[10px] pt-[20px] pb-[5px]'>
+              <Image src="/fecosystem/detail/management-4.png" alt="Smart City Features" width={350} height={500} className="w-full h-full object-cover rounded-[10px]" />
             </div>
           </div>
-          <div className='grid content-center lg:pl-[20%] ef:pl-[200px]'>
-            <h3 className='text-yellow-1 my-[30px] lg:my-0 text-[25px] xl:text-[40px] font-bold uppercase [&>br]:hidden xl:[&>br]:inline-block'>TÍCH HỢP AI & IOT <br /> TỐI ƯU QUY TRÌNH</h3>
-            <p className='text-[14px] xl:text-[17px] text-gray-5 mb-[18px] text-justify'>Cam kết đồng hành cùng khách hàng sau giai đoạn bàn giao, Pi Group tiên phong tích hợp công nghệ AI và IoT vào dịch vụ Quản lý & vận hành, nhằm tối ưu hóa quy trình, tăng cường bảo mật và kiến tạo môi trường sống an toàn, tiện nghi, đồng thời nâng tầm giá trị bất động sản theo thời gian.</p>
+          <div className='grid content-center pl-[140px] pr-[160px'>
+            <h3 className='text-yellow-1 text-[30px] font-bold uppercase [&>br]:hidden xl:[&>br]:inline-block mb-[40px]'>TÍCH HỢP AI & IOT <br /> TỐI ƯU QUY TRÌNH</h3>
+            <p className='text-[13px] text-gray-5 mb-[18px] text-justify'>Cam kết đồng hành cùng khách hàng sau giai đoạn bàn giao, Pi Group tiên phong tích hợp công nghệ AI và IoT vào dịch vụ Quản lý & vận hành, nhằm tối ưu hóa quy trình, tăng cường bảo mật và kiến tạo môi trường sống an toàn, tiện nghi, đồng thời nâng tầm giá trị bất động sản theo thời gian.</p>
           </div>
         </div>
       </div>
-      <div className='relative mx-auto top-[25%] max-w-[95%] 2xl:max-w-[1580px] mb-[47px]'>
-        <h3 className='text-yellow-1 text-[25px] xl:text-[40px] font-bold uppercase my-[20px] lg:my-0 lg:text-center'>DỊCH VỤ TOÀN DIỆN <br /> GIA TĂNG GIÁ TRỊ BẤT ĐỘNG SẢN</h3>
+      <div className='relative mx-auto max-w-[95%]  mb-[47px]'>
+        <h3 className='text-yellow-1 text-[25px] xl:text-[30px] font-bold uppercase my-[20px] lg:my-0 lg:text-center'>DỊCH VỤ TOÀN DIỆN <br /> GIA TĂNG GIÁ TRỊ BẤT ĐỘNG SẢN</h3>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[5px] mb-[40px]'>
-        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[110px]'>
+        <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-5.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
         </div>
-        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-6.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>Tư vấn khai thác <br /> Bất động sản</h4>
         </div>
-        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-7.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>BẢO VỆ & CHĂM SÓC <br /> CẢNH QUAN</h4>
         </div>
-        <div className='group relative pt-[413px] xl:pt-[520px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src="/fecosystem/detail/management-8.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[20px] xl:text-[24px] text-center text-white'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>HỖ TRỢ <br /> BẢO TRÌ KỸ THUẬT</h4>
         </div>
       </div>
-      <div className='relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] mb-[40px]'>
-        <h3 className='text-yellow-1 text-[25px] xl:text-[40px] font-bold uppercase text-center'>QUẢN LÝ CHUYÊN SÂU <br /> VẬN HÀNH CHUYÊN NGHIỆP</h3>
+      <div className='relative mx-auto top-[25%] max-w-[1250px]   mb-[40px]'>
+        <h3 className='text-yellow-1 text-[25px] xl:text-[30px] font-bold uppercase text-center'>QUẢN LÝ CHUYÊN SÂU <br /> VẬN HÀNH CHUYÊN NGHIỆP</h3>
       </div>
-      <div className='relative mx-auto top-[25%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] mb-[143px]'>
+      <div className='relative mx-auto top-[25%] max-w-[1250px]   mb-[117px]'>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-[30px]">
-          <div className="grid  text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[200px] xl:h-[275px]">
-            <svg className='m-auto' width="88" height="100" viewBox="0 0 88 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="grid  text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[190px]">
+            <svg className='m-auto h-[70px]' width="88" height="100" viewBox="0 0 88 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M43.0357 19.4678C41.2474 19.573 39.415 19.7946 37.6156 19.6617C36.1696 19.5564 34.7842 18.9971 33.3105 19.0248C29.9878 19.0801 27.3937 20.2487 23.7785 19.3515C22.8843 19.13 21.5431 18.0943 20.9084 18.7202C20.0474 19.5675 18.7503 23.4775 18.5185 24.7568C18.364 25.6208 18.3308 27.897 18.0273 28.3788C16.9234 30.1289 15.676 26.3961 14.3845 28.8385C13.6007 30.3172 14.0533 32.3885 15.0744 33.6512C16.1286 34.9527 16.4874 34.3822 17.652 34.7644C18.3805 35.0025 18.9932 37.683 19.3906 38.5747C19.6334 39.1285 19.9094 39.6989 20.2019 40.2306C20.6545 41.0779 22.8292 43.908 22.774 44.4341C22.7077 45.071 21.8357 45.5362 21.223 45.1762C20.4503 44.7221 18.9049 42.2631 18.4302 41.3936C18.0107 40.6238 16.6971 37.1015 16.5205 36.9354C16.2445 36.6695 14.8702 36.376 14.1747 35.7889C11.6137 33.629 10.7306 27.9413 14.1582 26.2355C12.5023 23.7101 12.0553 21.1736 12.6127 18.2106C12.7342 17.5516 13.2585 16.527 13.2806 16.0286C13.3027 15.5634 12.8335 14.5997 12.7452 13.985C12.2926 10.7008 13.3358 7.89848 16.2721 6.25363C16.9731 5.86042 18.6289 5.48936 19.0208 5.20137C19.1919 5.07399 19.4402 4.41495 19.6997 4.1325C22.8236 0.720956 26.0249 -0.862974 30.7164 0.471736C31.5222 0.698803 33.1946 1.71783 33.741 1.7566C34.2874 1.79537 35.1485 1.40769 35.7832 1.35785C40.2926 1.00894 43.7753 3.263 46.673 6.46409C47.7437 5.99334 50.0564 4.58663 50.0343 6.79084C50.0122 8.99505 48.5441 12.545 48.6213 14.633C48.6434 15.1646 49.3113 16.0009 49.51 16.5824C50.5035 19.5177 50.1557 22.8572 48.6158 25.5266C53.2245 28.1573 50.8346 36.9077 45.5084 36.4092C44.9178 37.4504 44.0347 41.6761 42.4396 41.1776C40.8445 40.6792 42.4175 38.6411 42.7487 37.7606C43.0799 36.88 43.687 33.9724 44.6087 33.845C45.2103 33.762 45.5525 34.2881 46.2314 34.2936C48.8476 34.2992 50.0343 28.1684 47.7769 27.5592C47.1256 27.3819 45.6133 30.0347 44.7964 28.3068C44.4928 27.6644 44.388 24.9894 44.1893 23.9815C43.8912 22.4529 43.4496 20.9798 43.0412 19.4789L43.0357 19.4678ZM47.5616 8.55199C45.3428 9.43257 44.8461 7.48312 43.5766 6.28133C41.849 4.63647 39.0121 3.34607 36.5946 3.39592C35.6728 3.41807 33.9618 4.08819 33.3215 4.02173C33.0014 3.9885 31.6878 3.11347 31.1579 2.89747C27.7966 1.54061 24.7389 1.96152 22.1337 4.53125C21.5321 5.12384 20.6987 6.68562 20.2792 6.99022C19.7548 7.37235 18.2425 7.62157 17.4367 8.04248C15.1958 9.22212 14.5169 10.867 14.7598 13.3758C14.8481 14.2674 15.4111 15.2422 15.3835 16.0452C15.3559 16.8482 14.688 18.0057 14.5776 18.9528C14.3238 21.1237 14.5832 23.987 16.399 25.4103C16.388 23.4387 18.3198 17.7177 19.8928 16.6766C21.4659 15.6354 22.1889 16.6876 23.5743 17.0808C27.206 18.1054 29.0716 17.1861 32.4826 16.9701C35.2313 16.7929 37.7702 17.7344 40.6955 17.6014C41.5841 17.5627 42.3292 17.1085 43.2068 17.3135C45.5691 17.8784 45.9665 22.4695 46.3363 24.4799C46.397 24.8177 46.1983 24.8399 46.7337 24.79C47.7989 22.4529 48.3674 20.3207 47.6996 17.7565C47.4788 16.9036 46.8055 16.1394 46.6233 15.5468C46.1983 14.1567 47.8045 8.79568 47.5561 8.54646L47.5616 8.55199Z" fill="#4C73A8" />
               <path d="M14.3697 91.7857C13.7239 91.7857 13.2051 91.2429 13.2051 90.5728V75.2153C13.2051 74.5452 13.7294 74.0024 14.3697 74.0024C15.0099 74.0024 15.5343 74.5452 15.5343 75.2153V90.5728C15.5343 91.2429 15.0099 91.7857 14.3697 91.7857Z" fill="#4C73A8" />
               <path d="M26.3725 52.1653L26.2345 52.1486C26.2345 52.1486 23.5576 51.7277 23.265 51.6834C23.0332 51.2792 25.5611 47.6682 23.7949 47.131C23.6459 47.0867 23.5079 47.0646 23.3754 47.0646C21.5706 46.976 21.5927 50.6478 20.4777 51.7887C20.119 52.1542 19.2635 52.5862 18.6177 53.1068C12.2925 57.2217 4.39972 60.2455 1.44684 67.6003C-1.03137 73.8141 0.629965 83.2236 0.000753127 89.9636C-0.0434021 91.7746 1.86631 92.489 2.49552 90.5949C2.97571 84.7798 2.05397 78.361 2.55624 72.629C3.4559 62.5273 14.2132 58.9994 21.4823 54.1646L21.5209 54.1369C21.681 54.0316 21.8355 53.9264 21.9901 53.8212H22.0177L22.0397 53.8101L25.4728 54.3307C25.4728 54.3307 25.4949 54.3307 25.5059 54.3307C25.7874 54.3695 26.0303 54.3639 26.229 54.3362C26.251 54.3362 26.2676 54.3362 26.2842 54.3307C26.4387 54.3252 26.5932 54.2809 26.7257 54.2144C27.0348 54.0538 27.2611 53.7547 27.3053 53.3837C27.3825 52.7855 26.963 52.2373 26.367 52.1597L26.3725 52.1653Z" fill="#4C73A8" />
@@ -81,10 +81,10 @@ export default function Detail3() {
               <path d="M64.5098 57.9624V67.5767" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
               <path d="M62.8317 72.1904L57.4668 78.6148" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
             </svg>
-            <h4 className='text-[20px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
           </div>
-          <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8  h-[200px]xl:h-[275px]">
-            <svg className='m-auto' width="94" height="91" viewBox="0 0 94 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8  h-[190px]">
+            <svg className='m-auto h-[70px]' width="94" height="91" viewBox="0 0 94 91" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M92.5 42.501C93.05 42.501 93.5 42.9458 93.5 43.501C93.5 44.0562 93.05 44.501 92.5 44.501C91.95 44.501 91.5 44.0562 91.5 43.501C91.5 42.9458 91.95 42.501 92.5 42.501Z" fill="#4C73A8" stroke="#4C73A8" />
               <path d="M82.5 23.501C83.05 23.501 83.5 23.9458 83.5 24.501C83.5 25.0562 83.05 25.501 82.5 25.501C81.95 25.501 81.5 25.0562 81.5 24.501C81.5 23.9458 81.95 23.501 82.5 23.501Z" fill="#4C73A8" stroke="#4C73A8" />
               <path d="M56.5 4.50098C57.05 4.50098 57.5 4.94577 57.5 5.50098C57.5 6.05618 57.05 6.50098 56.5 6.50098C55.95 6.50098 55.5 6.05618 55.5 5.50098C55.5 4.94577 55.95 4.50098 56.5 4.50098Z" fill="#4C73A8" stroke="#4C73A8" />
@@ -108,10 +108,10 @@ export default function Detail3() {
               <path d="M26.0908 62.7373C33.8013 60.0967 42.2895 58.6807 48.2129 64.8799L48.4932 65.1807L48.4951 65.1826C48.6111 65.309 48.8061 65.5773 49.0576 65.9434C49.3034 66.3011 49.5798 66.7177 49.8564 67.1289C50.1297 67.5351 50.4033 67.9359 50.6338 68.2432C50.7483 68.3958 50.8599 68.5357 50.96 68.6445C51.0096 68.6985 51.0644 68.7528 51.1211 68.7998C51.1681 68.8388 51.2594 68.9097 51.3809 68.9463L51.4307 68.9609L51.4824 68.9658C53.3877 69.1256 55.3792 69.053 57.3281 68.9824C59.0441 68.9202 60.7276 68.8594 62.3369 68.9482L63.0215 68.9961C64.5691 69.1278 65.6799 69.7393 66.4053 70.5664C67.135 71.3987 67.5006 72.4797 67.5 73.5879C67.4986 75.7943 66.0512 78.048 63.2314 78.542L49.8789 78.5723H49.4961L49.3906 78.9307C48.556 81.7597 44.8283 82.4029 43.1689 80.0371L43.0146 79.7988V79.7979L42.9131 79.6182C42.4318 78.7229 42.3678 77.8873 42.5557 77.1709C42.7585 76.3977 43.2653 75.7231 43.9414 75.2471C45.2626 74.3171 47.1074 74.2093 48.3955 75.4629L48.5186 75.5879C48.5889 75.6634 48.6603 75.7754 48.7441 75.9326C48.7851 76.0094 48.8255 76.0899 48.8691 76.1777C48.9117 76.2633 48.9584 76.3563 49.0068 76.4473C49.1807 76.7737 49.4807 77.2803 50.0674 77.3887L50.1123 77.3965H63.1045L63.1738 77.377C65.2229 76.7772 66.3379 75.1173 66.291 73.4912C66.2676 72.6794 65.9518 71.8873 65.3311 71.2744C64.7488 70.6996 63.9226 70.3065 62.877 70.1777L62.665 70.1553C60.6457 69.9801 58.5152 70.0598 56.417 70.1367C54.3638 70.212 52.34 70.282 50.416 70.126C49.9624 69.7097 49.6405 69.1989 49.3086 68.6064C49.0025 68.06 48.679 67.4297 48.2344 66.834L48.0361 66.5811C45.0471 62.9544 41.2902 61.6892 37.3525 61.6748C33.9302 61.6624 30.3611 62.5937 27.0156 63.7197L25.5967 64.2119H25.5957C25.1077 64.3867 24.4567 64.7226 23.8857 65.0068C23.5913 65.1534 23.3122 65.2897 23.0654 65.3975C22.8753 65.4805 22.7217 65.539 22.6055 65.5732L22.501 65.5996H22.499C21.8769 65.7267 21.1211 65.7074 20.291 65.6641C19.4897 65.6222 18.6105 65.5573 17.8438 65.6328L17.5605 65.6602L17.4404 65.9189C16.4157 68.1135 14.3446 68.5994 12.7236 67.9883C11.9083 67.6809 11.2207 67.099 10.8359 66.3242C10.4552 65.5573 10.352 64.5631 10.7705 63.3838C11.1541 62.3102 12.1291 61.6309 13.2734 61.4307C14.3497 61.2424 15.5069 61.4929 16.3389 62.1807L16.501 62.3242C16.7455 62.5577 16.8877 62.8298 17.0508 63.1748C17.2061 63.5033 17.3918 63.9285 17.7324 64.2949L17.8896 64.4639L18.1211 64.4541C18.6606 64.4302 19.2681 64.4734 19.9229 64.5059C20.4786 64.5334 21.0672 64.5532 21.6104 64.498L21.8398 64.4697L21.8447 64.4688C22.1269 64.424 22.4742 64.3043 22.8242 64.165C23.1831 64.0222 23.5829 63.8431 23.9795 63.6611C24.5884 63.3817 25.1794 63.1014 25.6553 62.9043L26.0898 62.7383L26.0908 62.7373ZM47.5762 76.3545C47.1249 75.8918 46.4727 75.6477 45.6865 75.7617L45.5273 75.7891H45.5264C44.4581 76.0074 43.837 76.9169 43.7217 77.8047C43.6125 78.6456 43.9485 79.5945 44.8896 79.9932L45.0859 80.0654H45.0869C46.0291 80.3595 46.8241 80.2587 47.3984 79.833C47.9605 79.4163 48.2165 78.7572 48.2354 78.127C48.2542 77.4979 48.04 76.8304 47.5762 76.3545ZM15.126 62.8369C14.6555 62.5719 14.079 62.4831 13.4307 62.6152L13.1484 62.6855C11.866 63.0619 11.5516 64.4531 11.8467 65.46C12.0016 65.9883 12.3347 66.4926 12.8594 66.7979C13.327 67.0698 13.9011 67.1571 14.5459 67.0156L14.8262 66.9414C16.1242 66.5358 16.4725 65.177 16.1611 64.1562C16.0004 63.6293 15.6562 63.1357 15.126 62.8369Z" fill="#4C73A8" stroke="#4C73A8" />
               <path d="M3.11719 60.4883C3.68279 60.4896 4.24968 60.4996 4.70898 60.5176C5.19077 60.5365 5.49926 60.5632 5.59082 60.584V60.583C6.04003 60.6894 6.43477 61.1512 6.73828 61.9102C6.99411 62.55 7.1381 63.2897 7.20117 63.8799L7.22363 64.123C7.56945 68.7557 7.59066 76.6326 7.28809 81.6709L7.22363 82.6396V82.6406C7.17194 83.3536 7.03364 84.1937 6.73926 84.9033C6.44378 85.6155 6.0245 86.1203 5.45117 86.3135C5.30709 86.3599 4.97535 86.4107 4.50195 86.4453C4.04487 86.4787 3.49972 86.4945 2.95996 86.4863C2.41865 86.4782 1.8938 86.4458 1.47363 86.3877C1.26315 86.3586 1.08901 86.3247 0.957031 86.2871C0.816129 86.247 0.768034 86.2149 0.767578 86.2148H0.766602C0.544213 86.0326 0.470377 85.7308 0.544922 85.4463C0.621858 85.153 0.804725 85.0273 0.970703 85.0273H5.6416L5.7168 84.6162C5.86834 83.7822 6.04222 82.895 6.12402 82L6.15234 81.6162V81.6152C6.40928 77.1374 6.46927 70.5668 6.20898 65.8447L6.15234 64.9258C6.12063 64.433 6.02951 63.9492 5.94238 63.499C5.87542 63.153 5.81077 62.8274 5.76758 62.5088L5.73242 62.1924L5.69824 61.7998L5.30859 61.7402L5.03223 61.708C4.37292 61.6508 3.61371 61.7146 2.93262 61.7637C2.10955 61.823 1.39879 61.8615 0.884766 61.7471L0.856445 61.7402C0.685142 61.6909 0.521382 61.496 0.501953 61.1533C0.483556 60.8272 0.60549 60.6519 0.704102 60.5928L0.745117 60.5752L0.748047 60.5742C0.752992 60.5731 0.770253 60.5695 0.804688 60.5645C0.848933 60.558 0.907866 60.5514 0.981445 60.5449C1.12871 60.532 1.32011 60.5204 1.54395 60.5117C1.99092 60.4944 2.55134 60.487 3.11719 60.4883Z" fill="#4C73A8" stroke="#4C73A8" />
             </svg>
-            <h4 className='text-[20px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
           </div>
-          <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[200px] xl:h-[275px]">
-            <svg className='m-auto' width="84" height="97" viewBox="0 0 84 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[190px]">
+            <svg className='m-auto h-[70px]' width="84" height="97" viewBox="0 0 84 97" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M43.3577 92.5574H4.05425C2.36813 92.5574 1 91.1877 1 89.4997V9.48687C1 7.79886 2.36813 6.4292 4.05425 6.4292H51.1326C52.1235 6.4292 53.0701 6.83146 53.7604 7.5422L66.0316 20.1974C66.6947 20.881 67.0669 21.7965 67.0669 22.7516V48.632" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M9.13477 6.55267V4.05767C9.13477 2.36966 10.5029 1 12.189 1H72.1425C73.8286 1 75.1967 2.36966 75.1967 4.05767V41.6939" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M53.3828 7.29248V21.1051H66.6943" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
@@ -133,10 +133,10 @@ export default function Detail3() {
               <path d="M67.3109 80.9583C69.3531 80.9583 71.0086 79.3009 71.0086 77.2565C71.0086 75.212 69.3531 73.5547 67.3109 73.5547C65.2688 73.5547 63.6133 75.212 63.6133 77.2565C63.6133 79.3009 65.2688 80.9583 67.3109 80.9583Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M67.3105 87.3876V82.2051" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
             </svg>
-            <h4 className='text-[20px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
           </div>
-          <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[200px] xl:h-[275px]">
-            <svg className='m-auto' width="113" height="100" viewBox="0 0 113 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[190px]">
+            <svg className='m-auto h-[70px]' width="113" height="100" viewBox="0 0 113 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 95H53" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M63 95H109" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M58 99C60.2091 99 62 97.2091 62 95C62 92.7909 60.2091 91 58 91C55.7909 91 54 92.7909 54 95C54 97.2091 55.7909 99 58 99Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
@@ -147,24 +147,26 @@ export default function Detail3() {
               <path d="M40.8595 30.8593L25.7324 15.7822" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M74.4277 30.8593L89.5548 15.7822" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
             </svg>
-            <h4 className='text-[20px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
           </div>
         </div>
       </div>
-      <div className='relative bg-[url("/fecosystem/detail/management-13-m.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-size-[100%_100%] 2xl:bg-cover h-[590px] lg:h-[868px] content-center'>
-        <div className='mx-auto absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full lg:translate-x-0 lg:-translate-y-[100px] justify-center  lg:static w-full  2xl:max-w-[1580px] grid lg:justify-end'> 
-          <div className='grid grid-cols-1 lg:w-[85%] 2xl:w-[905px] mb-[45px]'>
-            <h4 className='text-[24px] text-blue-1 uppercase font-bold'>Tiêu chuẩn chất lượng quốc tế</h4>
-          </div>
-          <div className='grid grid-cols-3 gap-[15px] 2xl:gap-[50px] lg:w-[85%] 2xl:w-[895px] mb-[30px]'>
-            <div className='relative pt-[124px] 2xl:pt-[268px] bg-[#ECF5FA]/30 border-[35px] border-[#ECF5FA]/30 rounded-[5px]'>
-              <Image src="/fecosystem/detail/management-14.png" alt='Image' fill />
+      <div className='relative bg-[url("/fecosystem/detail/management-13-m.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-size-[100%_100%] 2xl:bg-cover h-[620px] content-center'>
+        <div className='mx-auto max-w-[1250px] grid'>
+          <div className='w-[650px]'>
+            <div className='grid grid-cols-1 2xl:w-[905px] mb-[45px]'>
+              <h4 className='text-[24px] text-blue-1 uppercase font-bold'>Tiêu chuẩn chất lượng quốc tế</h4>
             </div>
-            <div className='relative pt-[124px] 2xl:pt-[268px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-              <Image src="/fecosystem/detail/management-15.png" alt='Image' fill />
-            </div>
-            <div className='relative pt-[124px] 2xl:pt-[268px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-              <Image src="/fecosystem/detail/management-16.png" alt='Image' fill />
+            <div className='grid grid-cols-3 gap-[15px] 2xl:gap-[50px]  mb-[30px]'>
+              <div className='relative pt-[200px] bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+                <Image src="/fecosystem/detail/management-14.png" alt='Image' fill />
+              </div>
+              <div className='relative pt-[200px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+                <Image src="/fecosystem/detail/management-15.png" alt='Image' fill />
+              </div>
+              <div className='relative pt-[200px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+                <Image src="/fecosystem/detail/management-16.png" alt='Image' fill />
+              </div>
             </div>
           </div>
         </div>
