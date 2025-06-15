@@ -647,11 +647,7 @@ export default function Digitalcity() {
             src={image.src}
             alt={image.alt}
             fill
-            className={`
-              w-[calc(100%-45px)]!
-              transition-opacity duration-500 ease-in-out
-              ${hoveredBox === image.id ? 'opacity-100' : 'opacity-0 absolute'}
-            `}
+            className={`w-[calc(100%-45px)]! transition-opacity duration-500 ease-in-out ${hoveredBox === image.id ? 'opacity-100' : 'opacity-0 absolute'}`}
           />
         ))}
         <div className='relative z-10 flex flex-col mt-[66px] text-center text-[12px] md:text-[30px] font-bold'>
