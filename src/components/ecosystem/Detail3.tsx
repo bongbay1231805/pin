@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,13 +9,14 @@ interface ToggleSectionProps {
   children: React.ReactNode;     // Nội dung sẽ được ẩn/hiện khi toggle
   initialOpen?: boolean;         // Mặc định ban đầu là ẩn hay hiện (optional)
 }
-export default function Detail3() {
+export default function Detail3({custom_fields}:any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
+  const {management_operation_title_banner,management_operation_title, management_operation_des,management_operation_1,management_operation_2,management_operation_3,management_operation_4,management_operation_5,management_operation_6,management_operation_7,management_operation_8,management_operation_9,management_operation_10,management_operation_11,management_operation_12,management_operation_13,management_operation_14,management_operation_15,management_operation_16,management_operation_17,management_operation_18,management_operation_14_add} = custom_fields;
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[1250px]  ">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]'>DỊCH VỤ <br /> quản lý & vận hành</h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{__html:management_operation_title_banner}}></h2>
         </div>
         <Image fill src="/fecosystem/detail/management-1.png" alt="Smart City Features" className="object-fill" />
       </div>
@@ -33,34 +34,34 @@ export default function Detail3() {
             </div>
           </div>
           <div className='grid content-center pl-[140px] pr-[160px'>
-            <h3 className='text-yellow-1 text-[30px] font-bold uppercase [&>br]:hidden xl:[&>br]:inline-block mb-[40px]'>TÍCH HỢP AI & IOT <br /> TỐI ƯU QUY TRÌNH</h3>
-            <p className='text-[13px] text-gray-5 mb-[18px] text-justify'>Cam kết đồng hành cùng khách hàng sau giai đoạn bàn giao, Pi Group tiên phong tích hợp công nghệ AI và IoT vào dịch vụ Quản lý & vận hành, nhằm tối ưu hóa quy trình, tăng cường bảo mật và kiến tạo môi trường sống an toàn, tiện nghi, đồng thời nâng tầm giá trị bất động sản theo thời gian.</p>
+            <h3 className='text-yellow-1 text-[30px] font-bold uppercase [&>br]:hidden xl:[&>br]:inline-block mb-[40px]' dangerouslySetInnerHTML={{__html:management_operation_title}}></h3>
+            <p className='text-[13px] text-gray-5 mb-[18px] text-justify'>{management_operation_des}</p>
           </div>
         </div>
       </div>
       <div className='relative mx-auto max-w-[95%]  mb-[47px]'>
-        <h3 className='text-yellow-1 text-[25px] xl:text-[30px] font-bold uppercase my-[20px] lg:my-0 lg:text-center'>DỊCH VỤ TOÀN DIỆN <br /> GIA TĂNG GIÁ TRỊ BẤT ĐỘNG SẢN</h3>
+        <h3 className='text-yellow-1 text-[25px] xl:text-[30px] font-bold uppercase my-[20px] lg:my-0 lg:text-center' dangerouslySetInnerHTML={{__html:management_operation_1}}></h3>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[110px]'>
         <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image fill src="/fecosystem/detail/management-5.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>QUẢN LÝ & VẬN HÀNH <br /> BẤT ĐỘNG SẢN</h4>
+          <Image fill src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_3}`} alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{__html:management_operation_2}}></h4>
         </div>
         <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image fill src="/fecosystem/detail/management-6.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>Tư vấn khai thác <br /> Bất động sản</h4>
+          <Image fill src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_5}`} alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{__html:management_operation_6}}></h4>
         </div>
         <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image fill src="/fecosystem/detail/management-7.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>BẢO VỆ & CHĂM SÓC <br /> CẢNH QUAN</h4>
+          <Image fill src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_7}`} alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{__html:management_operation_8}}></h4>
         </div>
         <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image fill src="/fecosystem/detail/management-8.png" alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
-          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase'>HỖ TRỢ <br /> BẢO TRÌ KỸ THUẬT</h4>
+          <Image fill src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_9}`} alt="Smart City Features" className="object-fill group-hover:scale-[120%] duration-1000" />
+          <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{__html:management_operation_10}}></h4>
         </div>
       </div>
       <div className='relative mx-auto top-[25%] max-w-[1250px]   mb-[40px]'>
-        <h3 className='text-yellow-1 text-[25px] xl:text-[30px] font-bold uppercase text-center'>QUẢN LÝ CHUYÊN SÂU <br /> VẬN HÀNH CHUYÊN NGHIỆP</h3>
+        <h3 className='text-yellow-1 text-[25px] xl:text-[30px] font-bold uppercase text-center' dangerouslySetInnerHTML={{__html:management_operation_11}}></h3>
       </div>
       <div className='relative mx-auto top-[25%] max-w-[1250px]   mb-[117px]'>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-[30px]">
@@ -80,7 +81,7 @@ export default function Detail3() {
               <path d="M64.5098 57.9624V67.5767" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
               <path d="M62.8317 72.1904L57.4668 78.6148" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" />
             </svg>
-            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>{management_operation_12}</h4>
           </div>
           <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8  h-[190px]">
             <svg className='m-auto h-[70px]' width="94" height="91" viewBox="0 0 94 91" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +108,7 @@ export default function Detail3() {
               <path d="M26.0908 62.7373C33.8013 60.0967 42.2895 58.6807 48.2129 64.8799L48.4932 65.1807L48.4951 65.1826C48.6111 65.309 48.8061 65.5773 49.0576 65.9434C49.3034 66.3011 49.5798 66.7177 49.8564 67.1289C50.1297 67.5351 50.4033 67.9359 50.6338 68.2432C50.7483 68.3958 50.8599 68.5357 50.96 68.6445C51.0096 68.6985 51.0644 68.7528 51.1211 68.7998C51.1681 68.8388 51.2594 68.9097 51.3809 68.9463L51.4307 68.9609L51.4824 68.9658C53.3877 69.1256 55.3792 69.053 57.3281 68.9824C59.0441 68.9202 60.7276 68.8594 62.3369 68.9482L63.0215 68.9961C64.5691 69.1278 65.6799 69.7393 66.4053 70.5664C67.135 71.3987 67.5006 72.4797 67.5 73.5879C67.4986 75.7943 66.0512 78.048 63.2314 78.542L49.8789 78.5723H49.4961L49.3906 78.9307C48.556 81.7597 44.8283 82.4029 43.1689 80.0371L43.0146 79.7988V79.7979L42.9131 79.6182C42.4318 78.7229 42.3678 77.8873 42.5557 77.1709C42.7585 76.3977 43.2653 75.7231 43.9414 75.2471C45.2626 74.3171 47.1074 74.2093 48.3955 75.4629L48.5186 75.5879C48.5889 75.6634 48.6603 75.7754 48.7441 75.9326C48.7851 76.0094 48.8255 76.0899 48.8691 76.1777C48.9117 76.2633 48.9584 76.3563 49.0068 76.4473C49.1807 76.7737 49.4807 77.2803 50.0674 77.3887L50.1123 77.3965H63.1045L63.1738 77.377C65.2229 76.7772 66.3379 75.1173 66.291 73.4912C66.2676 72.6794 65.9518 71.8873 65.3311 71.2744C64.7488 70.6996 63.9226 70.3065 62.877 70.1777L62.665 70.1553C60.6457 69.9801 58.5152 70.0598 56.417 70.1367C54.3638 70.212 52.34 70.282 50.416 70.126C49.9624 69.7097 49.6405 69.1989 49.3086 68.6064C49.0025 68.06 48.679 67.4297 48.2344 66.834L48.0361 66.5811C45.0471 62.9544 41.2902 61.6892 37.3525 61.6748C33.9302 61.6624 30.3611 62.5937 27.0156 63.7197L25.5967 64.2119H25.5957C25.1077 64.3867 24.4567 64.7226 23.8857 65.0068C23.5913 65.1534 23.3122 65.2897 23.0654 65.3975C22.8753 65.4805 22.7217 65.539 22.6055 65.5732L22.501 65.5996H22.499C21.8769 65.7267 21.1211 65.7074 20.291 65.6641C19.4897 65.6222 18.6105 65.5573 17.8438 65.6328L17.5605 65.6602L17.4404 65.9189C16.4157 68.1135 14.3446 68.5994 12.7236 67.9883C11.9083 67.6809 11.2207 67.099 10.8359 66.3242C10.4552 65.5573 10.352 64.5631 10.7705 63.3838C11.1541 62.3102 12.1291 61.6309 13.2734 61.4307C14.3497 61.2424 15.5069 61.4929 16.3389 62.1807L16.501 62.3242C16.7455 62.5577 16.8877 62.8298 17.0508 63.1748C17.2061 63.5033 17.3918 63.9285 17.7324 64.2949L17.8896 64.4639L18.1211 64.4541C18.6606 64.4302 19.2681 64.4734 19.9229 64.5059C20.4786 64.5334 21.0672 64.5532 21.6104 64.498L21.8398 64.4697L21.8447 64.4688C22.1269 64.424 22.4742 64.3043 22.8242 64.165C23.1831 64.0222 23.5829 63.8431 23.9795 63.6611C24.5884 63.3817 25.1794 63.1014 25.6553 62.9043L26.0898 62.7383L26.0908 62.7373ZM47.5762 76.3545C47.1249 75.8918 46.4727 75.6477 45.6865 75.7617L45.5273 75.7891H45.5264C44.4581 76.0074 43.837 76.9169 43.7217 77.8047C43.6125 78.6456 43.9485 79.5945 44.8896 79.9932L45.0859 80.0654H45.0869C46.0291 80.3595 46.8241 80.2587 47.3984 79.833C47.9605 79.4163 48.2165 78.7572 48.2354 78.127C48.2542 77.4979 48.04 76.8304 47.5762 76.3545ZM15.126 62.8369C14.6555 62.5719 14.079 62.4831 13.4307 62.6152L13.1484 62.6855C11.866 63.0619 11.5516 64.4531 11.8467 65.46C12.0016 65.9883 12.3347 66.4926 12.8594 66.7979C13.327 67.0698 13.9011 67.1571 14.5459 67.0156L14.8262 66.9414C16.1242 66.5358 16.4725 65.177 16.1611 64.1562C16.0004 63.6293 15.6562 63.1357 15.126 62.8369Z" fill="#4C73A8" stroke="#4C73A8" />
               <path d="M3.11719 60.4883C3.68279 60.4896 4.24968 60.4996 4.70898 60.5176C5.19077 60.5365 5.49926 60.5632 5.59082 60.584V60.583C6.04003 60.6894 6.43477 61.1512 6.73828 61.9102C6.99411 62.55 7.1381 63.2897 7.20117 63.8799L7.22363 64.123C7.56945 68.7557 7.59066 76.6326 7.28809 81.6709L7.22363 82.6396V82.6406C7.17194 83.3536 7.03364 84.1937 6.73926 84.9033C6.44378 85.6155 6.0245 86.1203 5.45117 86.3135C5.30709 86.3599 4.97535 86.4107 4.50195 86.4453C4.04487 86.4787 3.49972 86.4945 2.95996 86.4863C2.41865 86.4782 1.8938 86.4458 1.47363 86.3877C1.26315 86.3586 1.08901 86.3247 0.957031 86.2871C0.816129 86.247 0.768034 86.2149 0.767578 86.2148H0.766602C0.544213 86.0326 0.470377 85.7308 0.544922 85.4463C0.621858 85.153 0.804725 85.0273 0.970703 85.0273H5.6416L5.7168 84.6162C5.86834 83.7822 6.04222 82.895 6.12402 82L6.15234 81.6162V81.6152C6.40928 77.1374 6.46927 70.5668 6.20898 65.8447L6.15234 64.9258C6.12063 64.433 6.02951 63.9492 5.94238 63.499C5.87542 63.153 5.81077 62.8274 5.76758 62.5088L5.73242 62.1924L5.69824 61.7998L5.30859 61.7402L5.03223 61.708C4.37292 61.6508 3.61371 61.7146 2.93262 61.7637C2.10955 61.823 1.39879 61.8615 0.884766 61.7471L0.856445 61.7402C0.685142 61.6909 0.521382 61.496 0.501953 61.1533C0.483556 60.8272 0.60549 60.6519 0.704102 60.5928L0.745117 60.5752L0.748047 60.5742C0.752992 60.5731 0.770253 60.5695 0.804688 60.5645C0.848933 60.558 0.907866 60.5514 0.981445 60.5449C1.12871 60.532 1.32011 60.5204 1.54395 60.5117C1.99092 60.4944 2.55134 60.487 3.11719 60.4883Z" fill="#4C73A8" stroke="#4C73A8" />
             </svg>
-            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>{management_operation_13}</h4>
           </div>
           <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[190px]">
             <svg className='m-auto h-[70px]' width="84" height="97" viewBox="0 0 84 97" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +133,7 @@ export default function Detail3() {
               <path d="M67.3109 80.9583C69.3531 80.9583 71.0086 79.3009 71.0086 77.2565C71.0086 75.212 69.3531 73.5547 67.3109 73.5547C65.2688 73.5547 63.6133 75.212 63.6133 77.2565C63.6133 79.3009 65.2688 80.9583 67.3109 80.9583Z" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M67.3105 87.3876V82.2051" stroke="#4C73A8" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
             </svg>
-            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>{management_operation_14}</h4>
           </div>
           <div className="grid text-center content-center justify-center gap-[44px] border-1 rounded-[10px] border-gray-8 h-[190px]">
             <svg className='m-auto h-[70px]' width="113" height="100" viewBox="0 0 113 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +147,7 @@ export default function Detail3() {
               <path d="M40.8595 30.8593L25.7324 15.7822" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
               <path d="M74.4277 30.8593L89.5548 15.7822" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
             </svg>
-            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>Tiết kiệm thời gian</h4>
+            <h4 className='text-[14px] font-bold uppercase text-yellow-1'>{management_operation_14_add}</h4>
           </div>
         </div>
       </div>
@@ -154,17 +155,17 @@ export default function Detail3() {
         <div className='ml-[48%] max-w-[1250px] grid'>
           <div className='w-[650px]'>
             <div className='grid grid-cols-1 2xl:w-[905px] mb-[45px]'>
-              <h4 className='text-[24px] text-blue-1 uppercase font-bold'>Tiêu chuẩn chất lượng quốc tế</h4>
+              <h4 className='text-[24px] text-blue-1 uppercase font-bold'>{management_operation_15}</h4>
             </div>
             <div className='grid grid-cols-3 gap-[15px] 2xl:gap-[50px]  mb-[30px]'>
               <div className='relative pt-[200px] bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-                <Image src="/fecosystem/detail/management-14.png" alt='Image' fill />
+                <Image src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`} alt='Image' fill />
               </div>
               <div className='relative pt-[200px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-                <Image src="/fecosystem/detail/management-15.png" alt='Image' fill />
+                <Image src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`} alt='Image' fill />
               </div>
               <div className='relative pt-[200px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-                <Image src="/fecosystem/detail/management-16.png" alt='Image' fill />
+                <Image src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`} alt='Image' fill />
               </div>
             </div>
           </div>
