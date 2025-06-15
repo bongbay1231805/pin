@@ -178,7 +178,7 @@ export default function SubNavbar(props: PropSub) {
     (Array.isArray(navItems) && navItems.length) ? (
       <div className={`w-full hidden xl:block`} >
         <div className="mx-auto bg-gray-3 border-white-1 border-b-[1px]">
-          <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[8px] text-gray-5">
+          <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
             {navItems.map((item) => (
               item.hrefb ? (
                 <li key={item.name}>

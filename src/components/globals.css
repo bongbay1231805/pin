@@ -259,7 +259,7 @@ strong {
     @apply mt-[0]
   }
   #body:is(.ecosystem) {
-    @apply mt-[106px]
+    @apply mt-[70px]
   }
   #menusub:not(.active)>img:last-child {
     display: none;
