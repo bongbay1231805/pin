@@ -200,7 +200,7 @@ export default function Hero() {
         <div className="relative mx-auto top-[25%] max-w-[85%]">
           <h2 className='absolute z-10 left-0 text-left  uppercase font-bold text-white md:text-[30px] leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]'>Phát triển nhân lực</h2>
         </div>
-        <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-fill" />
+        <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-cover" />
       </div>
       <div ref={oneRef} className=" mx-auto max-w-[85%]  text-center pt-[10%] md:pt-[110px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[30px] mb-[50px]'>Văn hóa làm việc</h2>
@@ -431,9 +431,24 @@ export default function Hero() {
                           )}
                         </button>
                       </td>
-                      <td className="px-6 py-4 text-blue-1">{job.position}</td>
-                      <td className="px-6 py-4 text-center text-blue-1">{job.quantity}</td>
-                      <td className="px-6 py-4 text-center text-yellow-1">{job.deadline}</td>
+                      <td className="px-6 py-4 text-blue-1"
+                        onClick={() => handleToggleDetails(job.id)}
+                        aria-expanded={job.isOpen ? "true" : "false"}
+                      >
+                        {job.position}
+                      </td>
+                      <td className="px-6 py-4 text-center text-blue-1"
+                        onClick={() => handleToggleDetails(job.id)}
+                        aria-expanded={job.isOpen ? "true" : "false"}
+                      >
+                        {job.quantity}
+                      </td>
+                      <td className="px-6 py-4 text-center text-yellow-1"
+                        onClick={() => handleToggleDetails(job.id)}
+                        aria-expanded={job.isOpen ? "true" : "false"}
+                      >
+                        {job.deadline}
+                      </td>
                       <td className="px-6 py-4 flex justify-center">
                         <button
                           onClick={() => handleOpenPopup(job.position)} // Use button for click event
