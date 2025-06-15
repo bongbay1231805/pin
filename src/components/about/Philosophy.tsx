@@ -6,7 +6,7 @@ export function Philosophy({ custom_fields }: any) {
   const {field_13_about,field_14_about,field_15_about,field_16_about,field_17_about,field_18_about,field_19_about,field_20_about,field_21_about,field_22_about,field_22_about_174915960724,field_23_about} = custom_fields;
   return (
     <section ref={fourRef} className="py-16">
-      <div className="max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] mx-auto bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-contain bg-no-repeat bg-right">
+      <div className="max-w-[85%] mx-auto bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-contain bg-no-repeat bg-right">
         <div className="grid items-center grid-cols-1 md:grid-cols-[70%_30%] mb-8 uppercase text-[27px] 2xl:text-[35px] py-[2px] text-white">
           <div className="py-[22px] pl-[76px] leading-[52px] 2xl:leading-[62px] font-[500]">
             <h3>{field_13_about} <span className="text-yellow-1">{field_14_about}</span></h3>
@@ -18,7 +18,7 @@ export function Philosophy({ custom_fields }: any) {
           </div>
         </div>
       </div>
-      <div ref={fiveRef} className="max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] m-auto">
+      <div ref={fiveRef} className="max-w-[85%] m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative vision-item vision-item h-[320px] 2xl:h-[380px] bg-gray-800 group rounded-[10px] overflow-hidden">
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

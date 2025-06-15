@@ -32,7 +32,7 @@ export function Partners({ custom_fields }: any) {
   ]
   return (
     <div className='mb-[5%] 2xl:mb-[96px]'>
-      <div className="m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+      <div className="m-auto max-w-[85%]">
         <h2 className="text-[33px] 2xl:text-[42px] text-gray-1 font-bold text-center pt-[82px] mb-[51px]">{field_19}</h2>
         <div className={`grid gap-8 items-center ${styles.carouselonlycss}`}>
           <div className={`${styles.groupcarousel}`}>

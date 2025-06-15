@@ -274,6 +274,6 @@ const MasonryGrid = ({ custom_fields }: any) => {
       </div>
     );
   }
-  return <div className="xl:h-[calc(100vh-106px)] grid gap-y-[2px] overflow-hidden max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] m-auto">{rows}</div>;
+  return <div className="xl:h-[calc(100vh-106px)] grid gap-y-[2px] overflow-hidden max-w-[85%] m-auto">{rows}</div>;
 }
 export default MasonryGrid;

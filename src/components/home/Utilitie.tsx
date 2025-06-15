@@ -6,7 +6,7 @@ const Utilitie = forwardRef<HTMLDivElement>((props, ref) => {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   return (
     <>
-      <div className="boxanimation mx-auto mt-[5px] max-w-[82%] md:max-w-[85%] 2xl:max-w-[1580px]" ref={ref}>
+      <div className="boxanimation mx-auto mt-[5px] max-w-[85%]" ref={ref}>
         <div className="relative">
           <div className="inset-0">
             <Image

@@ -62,12 +62,12 @@ export default function Detail1({ custom_fields }: any) {
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
-        <div className="relative mx-auto top-[30%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+        <div className="relative mx-auto top-[30%] max-w-[85%]">
           <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: custom_fields.field_investment_development_1 }}></h2>
         </div>
         <Image fill src="/fecosystem/detail/development.png" alt="Smart City Features" className="object-fill" />
       </div>
-      <div className="mx-auto px-[10px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] mb-[55px] xl:mb-[87px]">
+      <div className="mx-auto px-[10px] max-w-[85%] mb-[55px] xl:mb-[87px]">
         <div className='grid grid-cols-[46%_1fr] gap-12 mb-[50px] mt-[100px]'>
           <div className='border-t-1 border-gray-8 mt-[15px] order-1  md:order-0 text-[13px] 2xl:text-[17px]'>
             <h3 className='text-yellow-1 text-[20px] 2xl:text-[26px] font-bold px-[50px] py-[12px] border-b-1 border-gray-8'>{customfields[0][0].value}</h3>

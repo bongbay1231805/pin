@@ -30,7 +30,7 @@ export default function Contact() {
   }, []);
   return (
     <div className="relative h-[calc(100vh)] after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:w-full after:h-[100%] after:bg-[linear-gradient(180deg,_#CDEBFE_0%,_#FFFFFF_100%)] after:opacity-60 after:pointer-events-none">
-      <div className="mx-auto max-w-[95%] md:max-w-[85%] 2xl:max-w-[1580px] px-[10px] relative z-10 h-full">
+      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 h-full">
         <div className="grid h-full items-end">
           <div>
             <h2 className="text-[22px] 2xl:text-[28px] mt-[126px] 2xl:mt-[156px] font-bold mb-4 text-blue-1 uppercase">TẬP ĐOÀN pi group</h2>

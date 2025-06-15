@@ -10,7 +10,7 @@ export function FooterContact() {
     <footer className={`bg-gray-3 text-white text-left`}>
       <div>
         <div className="bg-gray-4 text-center boxanimation">
-          <div className="relative pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+          <div className="relative pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]">
             <div className='text-center md:text-left order-1 sm:order-0 '>
               <p className="text-yellow-2/70 pt-[24px] text-[14px] 2xl:text-[16px] reveal-text fade-in-up-medium">© 2025 Pi Group. All Rights Reserved.</p>
               <p className='text-gray-7/70 text-[14px] 2xl:text-[16px] reveal-text fade-in-up-medium'>Design with heart by TQ DESIGN</p>

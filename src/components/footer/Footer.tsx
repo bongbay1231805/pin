@@ -9,8 +9,8 @@ export function Footer() {
   return (
     <footer className={`bg-gray-3 text-white text-left`}>
       <div className={`pt-[76px] 2xl:pt-[82px] ${styles.bgfooter}`}>
-        <div className={`mx-auto max-w-[85%]  2xl:max-w-[1580px]`}>
-          <div className="grid grid-cols-1 grid-cols-[20%_1fr_26%] 2xl:grid-cols-[340px_1fr_370px] gap-8 boxanimation">
+        <div className={`mx-auto max-w-[85%]`}>
+          <div className="grid grid-cols-[20%_1fr_26%] 2xl:grid-cols-[340px_1fr_370px] gap-8 boxanimation">
             <div className="flex justify-center sm:justify-normal reveal-tex fade-in-left-short">
               <Link href="/" className="flex-shrink-0 flex">
                 <Image src="/logo-c.svg" className='w-[142px] h-[142px] 2xl:w-[166px] 2xl:h-[166px]' width={180} height={180} alt="Logo" />
@@ -40,7 +40,7 @@ export function Footer() {
               </ul>
             </div>
             <div className='2xl:leading-[30px] sm:pl-[30px]'>
-              <ul className="space-y-3 text-gray-6 uppercase fade-in-left-short text-gray-6 font-[600] text-[13px] 2xl:text-[17px]">
+              <ul className="space-y-3 text-gray-6 uppercase fade-in-left-short font-[600] text-[13px] 2xl:text-[17px]">
                 <li><Link href="/#" className="hover:text-yellow-1">Giới thiệu</Link></li>
                 <li><Link href="/#" className="hover:text-yellow-1">Hệ Sinh Thái</Link></li>
                 <li><Link href="/#" className="hover:text-yellow-1">Đô thị số Picity</Link></li>
@@ -52,7 +52,7 @@ export function Footer() {
           </div>
         </div>
         <div className="bg-gray-4 text-center mt-[3.5%] 2xl:mt-[65px] boxanimation">
-          <div className="relative pb-[22px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px]">
+          <div className="relative pb-[22px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]">
             <div className='text-center md:text-left order-1 sm:order-0 '>
               <p className="text-yellow-2/70 pt-[22px] text-[13px] 2xl:text-[16px] reveal-text fade-in-up-medium">© 2025 Pi Group. All Rights Reserved.</p>
               <p className='text-gray-7/60 text-[13px] 2xl:text-[16px] reveal-text fade-in-up-medium'>Design with heart by TQ DESIGN</p>

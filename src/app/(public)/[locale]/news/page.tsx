@@ -31,7 +31,7 @@ function News() {
   }, []);
   return (
     <div>
-      <div className="min-h-screen pt-[206px] 2xl:pt-[226px] pb-[90px] container m-auto max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] px-[10px]">
+      <div className="min-h-screen pt-[206px] 2xl:pt-[226px] pb-[90px] container m-auto max-w-[85%] px-[10px]">
         <div className="mx-autoflex flex-col gap-12">
           {/* Top Image w/ Overlayed Card */}
           <Link href="/news/market-news" className="relative news-top-item">

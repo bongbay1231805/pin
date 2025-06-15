@@ -149,7 +149,7 @@ export function SmartCity({custom_fields}:any) {
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="183.67" cy="507.87" r="2.1" />
           <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M456.42,439.01c.06-.08.11-.18.11-.3,0-.28-.23-.5-.5-.5-.15,0-.28.07-.37.17-.92,1.04-1.85,2.06-2.79,3.08-50.2,54.17-121.25,83.47-194.97,80.4-24.48-1.02-48.52-5.54-71.46-13.43-1.25-.43-2.49-.87-3.74-1.32l-.2-.07-.16.45h0s0-.49,0-.49h-.34s-.25.63-.25.63l.24.24.38.19c1.25.45,2.5.89,3.75,1.32,23.03,7.93,47.17,12.47,71.74,13.49,3.53.15,7.05.22,10.57.22,70.19,0,137.18-29.15,185.18-80.94.93-1.01,1.86-2.02,2.77-3.05.01,0,.02-.02.03-.03,0-.01.02-.02.03-.03h0Z" />
         </svg>
-        <div className="mx-auto mb-[42px] mt-[15px] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1580px] boxanimation fade-in-up-medium">
+        <div className="mx-auto mb-[42px] mt-[15px] max-w-[85%] boxanimation fade-in-up-medium">
           <div className="grid grid-cols-1 sm:grid-cols-[50%_50%] items-center">
             <div className="@container order-1 sm:order-0 relative  aspect-square items-center flex justify-center">
               <svg className="absolute overflow-x-clip max-w-70 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} width="572" height="572" viewBox="0 0 572 572" fill="none" xmlns="http://www.w3.org/2000/svg">
