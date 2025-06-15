@@ -17,8 +17,7 @@ export default function Detail3() {
         <div className="relative mx-auto top-[30%] max-w-[1250px]  ">
           <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]'>DỊCH VỤ <br /> quản lý & vận hành</h2>
         </div>
-        <Image fill src="/fecosystem/detail/management-1-e.png" alt="Smart City Features" className="object-fill" />
-        <h3 className='absolute w-full z-10 left-1/2 bottom-[85px] -translate-x-1/2 text-center  uppercase font-bold text-white text-[38px] 2xl:text-[46px]'>DỊCH VỤ QUẢN LÝ VÀ VẬN HÀNH</h3>
+        <Image fill src="/fecosystem/detail/management-1.png" alt="Smart City Features" className="object-fill" />
       </div>
       <div className='mx-auto mt-[25px] max-w-[1250px]  mb-[115px]'>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
