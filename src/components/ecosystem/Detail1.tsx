@@ -111,7 +111,7 @@ export default function Detail1({ custom_fields }: any) {
             </div>
             {/* Nút SVG được đặt bên ngoài div có maxHeight để không bị cắt */}
             <div className="relative px-[50px] h-[24px]"> {/* Container cho nút SVG */}
-              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_HIGH_PARK)} className={`absolute rounded-full left-[20px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_HIGH_PARK)} className={`absolute rounded-full left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="10" r="9.5" stroke="#4C73A8" />
                 <path d="M6 9L9.93461 13.0643L13.9989 9.12974" stroke={`${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? '#fff' : '#4C73A8'}`} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -179,7 +179,7 @@ export default function Detail1({ custom_fields }: any) {
               </div>
             </div>
             <div className="relative px-[50px] h-[24px]">
-              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_SKY_PARK)} className={`absolute rounded-full left-[20px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_SKY_PARK)} className={`absolute rounded-full left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="10" r="9.5" stroke="#4C73A8" />
                 <path d="M6 9L9.93461 13.0643L13.9989 9.12974" stroke={`${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? '#fff' : '#4C73A8'}`} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -231,7 +231,7 @@ export default function Detail1({ custom_fields }: any) {
               </div>
             </div>
             <div className="relative px-[50px] h-[24px]">
-              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PRIME_MASTER)} className={`absolute rounded-full left-[20px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PRIME_MASTER)} className={`absolute rounded-full left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="10" r="9.5" stroke="#4C73A8" />
                 <path d="M6 9L9.93461 13.0643L13.9989 9.12974" stroke={`${openStates[PROJECT_KEYS.PRIME_MASTER] ? '#fff' : '#4C73A8'}`} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -253,7 +253,7 @@ export default function Detail1({ custom_fields }: any) {
         </div>
       </div>
       <div className='pb-[120px]'>
-        <PaginationExample />
+        {/* <PaginationExample /> */}
       </div>
     </>
   );

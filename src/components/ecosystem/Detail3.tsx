@@ -151,7 +151,7 @@ export default function Detail3() {
         </div>
       </div>
       <div className='relative bg-[url("/fecosystem/detail/management-13-m.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-size-[100%_100%] 2xl:bg-cover h-[620px] content-center'>
-        <div className='mx-auto max-w-[1250px] grid'>
+        <div className='ml-[48%] max-w-[1250px] grid'>
           <div className='w-[650px]'>
             <div className='grid grid-cols-1 2xl:w-[905px] mb-[45px]'>
               <h4 className='text-[24px] text-blue-1 uppercase font-bold'>Tiêu chuẩn chất lượng quốc tế</h4>
