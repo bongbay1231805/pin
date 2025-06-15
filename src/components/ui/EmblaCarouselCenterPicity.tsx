@@ -93,12 +93,12 @@ const EmblaCarouselCenterPicity = () => {
       title: "Gia tăng giá trị <br/> đầu tư"
     }
   ];
+  // plugins={
+  //         [Autoplay()]
+  //       }
   return (
     <section className={`relative mx-auto my-[50px] max-w-full order-1 xl:order-0 2xl:max-w-[1645px]`}>
       <Carousel
-        plugins={
-          [Autoplay()]
-        }
         opts={{
           align: "center",
           loop: true
@@ -108,7 +108,7 @@ const EmblaCarouselCenterPicity = () => {
           {slides.map((event, index) => (
             <CarouselItem key={index} index={index} className={`sm:basis-1/3 h-full [perspective:1200px] picitycenterwrap`}>
               <div className="relative flex flex-wrap items-center justify-center picitycenter transform rotate-y-[30deg] translate-z-[-30px]">
-                <Image className="rounded-[10px]" src={event.image} alt="event" width={400} height={464} />
+                <Image className="rounded-[10px]" src={event.image} alt="event" width={400} height={400} />
                 <h3 className="absolute bottom-[20px] font-bold text-[20px] text-center text-white uppercase opacity-0" dangerouslySetInnerHTML={{ __html: event.title }}></h3>
               </div>
             </CarouselItem>

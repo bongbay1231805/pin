@@ -202,10 +202,10 @@ export default function Hero() {
         </div>
         <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-fill" />
       </div>
-      <div ref={oneRef} className=" mx-auto  md:max-w-[1145px]  text-center pt-[10%] md:pt-[110px]">
+      <div ref={oneRef} className=" mx-auto max-w-[85%]  text-center pt-[10%] md:pt-[110px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[30px] mb-[50px]'>Văn hóa làm việc</h2>
       </div>
-      <div className="grid grid-cols-4 gap-[20px]  mx-auto  max-w-[1145px] pb-[45px]">
+      <div className="grid grid-cols-4 gap-[20px]  mx-auto  max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[218px] items-center justify-center'>
           <svg className='w-[88px] h-[88px]' width="113" height="113" viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M37.2159 57.3584C40.2239 57.3584 42.6623 54.9199 42.6623 51.912C42.6623 48.904 40.2239 46.4656 37.2159 46.4656C34.208 46.4656 31.7695 48.904 31.7695 51.912C31.7695 54.9199 34.208 57.3584 37.2159 57.3584Z" stroke="currentColor" strokeWidth="2.5" strokeMiterlimit="10" />
@@ -283,7 +283,7 @@ export default function Hero() {
           <p className='text-[17px] font-semibold uppercase text-center'>Sáng tạo, đổi mới <br /> để luôn dẫn đầu</p>
         </div>
       </div>
-      <div className="bg-blue-3 rounded-[10px] flex pl-[100px] pr-[10px]  mx-auto  max-w-[1145px] h-[160px] items-end justify-between">
+      <div className="bg-blue-3 rounded-[10px] flex pl-[100px] pr-[10px]  mx-auto  max-w-[85%] h-[160px] items-end justify-between">
         <p className='h-full text-[25px] text-yellow-1 grid items-center'>Nếu bạn không tự khởi nghiệp, hãy đồng hành <br /> với ông chủ đang đi đến thành công</p>
         <svg className='h-[150px]' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -306,10 +306,10 @@ export default function Hero() {
       </div>
       <div>
         <div ref={twoRef}>
-          <div className="mx-auto  max-w-[1145px]  text-center pt-[100px]">
+          <div className="mx-auto  max-w-[85%]  text-center pt-[100px]">
             <h2 className="uppercase font-bold text-yellow-1 text-[30px]">Chính sách phúc lợi</h2>
           </div>
-          <div className="mx-auto  max-w-[1145px] ">
+          <div className="mx-auto  max-w-[85%] ">
             <div className="grid grid-cols-[380px_1fr_1fr] gap-[50px] mt-[42px]">
               <div className="relative mr-[20px]">
                 <Image alt="benefit 7" loading="lazy" decoding="async" fill src="/fwork/benefit-7.png" />
@@ -350,7 +350,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="mx-auto  max-w-[1145px]">
+          <div className="mx-auto  max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[100px_25px]">Cơ hội Đào tạo</h3>
             <div className="grid grid-cols-[677px_1fr] grid-rows-2 gap-[20px] h-[510px]">
               <div className="relative row-span-2">
@@ -369,7 +369,7 @@ export default function Hero() {
           </div>
         </div>
         <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[100px_25px]">Hình thức ứng tuyển</h3>
-        <div className="mx-auto max-w-[1145px] grid gap-[50px] grid-cols-2 text-gray-5">
+        <div className="mx-auto max-w-[85%] grid gap-[50px] grid-cols-2 text-gray-5">
           <div className='grid gap-[25px]'>
             <div className='relative h-[360px]'>
               <Image alt="benefit 14" loading="lazy" decoding="async" fill src="/fwork/benefit-14.png" />
@@ -402,7 +402,7 @@ export default function Hero() {
           </div>
         </div>
         <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[120px_25px]">Vị trí tuyển dụng</h3>
-        <div className="overflow-x-auto max-w-[1145px] m-auto">
+        <div className="overflow-x-auto max-w-[85%] m-auto">
           <div className="overflow-x-auto">
             <table id="job-table" className="min-w-full">
               <thead className="bg-gray-100 border-b border-gray-200">
