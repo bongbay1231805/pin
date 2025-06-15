@@ -1,7 +1,9 @@
 'use client';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 export default function Success({ custom_fields }: any) {
+  useScrollReveal(); // dùng mặc định `.boxanimation`
   const images = [
     { id: 1, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 1' },
     { id: 2, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 2' },
