@@ -6,6 +6,7 @@ import EmblaCarouselCenterPicity from "@/components/ui/EmblaCarouselCenterPicity
 import { EmblaOptionsType } from 'embla-carousel'
 import EmblaCarouselCenter from '@/components/ui/EmblaCarouselCenter';
 import { useScrollRefs } from '@/context/ScrollRefsContext'
+import HorizontalScroll from '@/components/ui/HorizontalScroll';
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
@@ -13,7 +14,13 @@ interface ToggleSectionProps {
   initialOpen?: boolean;         // Mặc định ban đầu là ẩn hay hiện (optional)
 }
 export default function Digitalcity() {
-  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs()
+  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs();
+  const [hoveredBox, setHoveredBox] = useState<number>(1);
+  const images = [
+    { id: 1, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 1' },
+    { id: 2, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 2' },
+    { id: 3, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 3' },
+  ];
   useEffect(() => {
     const boxes = document.querySelectorAll('.boxanimation');
     const observer = new IntersectionObserver(
@@ -76,7 +83,7 @@ export default function Digitalcity() {
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[106px]">
-        <div className="relative mx-auto top-[30%] max-w-[95%] md:max-w-[85%]  2xl:max-w-[1145px]">
+        <div className="relative mx-auto top-[30%] max-w-[85%]">
           <svg className='relative z-1 w-[384px]' width="537" height="74" viewBox="0 0 537 74" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M121.342 0H136.08V73.3565C127.939 73.3565 121.342 66.7889 121.342 58.6852V0Z" fill="white" />
             <path d="M14.7496 14.6824H84.4833V36.6894H0V73.3565H14.7273V51.3495H99.2218V0H0C0 8.10372 6.59764 14.6824 14.7496 14.6824Z" fill="white" />
@@ -141,8 +148,8 @@ export default function Digitalcity() {
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="183.67" cy="507.87" r="2.1" />
           <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M456.42,439.01c.06-.08.11-.18.11-.3,0-.28-.23-.5-.5-.5-.15,0-.28.07-.37.17-.92,1.04-1.85,2.06-2.79,3.08-50.2,54.17-121.25,83.47-194.97,80.4-24.48-1.02-48.52-5.54-71.46-13.43-1.25-.43-2.49-.87-3.74-1.32l-.2-.07-.16.45h0s0-.49,0-.49h-.34s-.25.63-.25.63l.24.24.38.19c1.25.45,2.5.89,3.75,1.32,23.03,7.93,47.17,12.47,71.74,13.49,3.53.15,7.05.22,10.57.22,70.19,0,137.18-29.15,185.18-80.94.93-1.01,1.86-2.02,2.77-3.05.01,0,.02-.02.03-.03,0-.01.02-.02.03-.03h0Z" />
         </svg>
-        <div ref={oneRef} className="mx-auto max-w-[1145px] mt-[80px] mb-[25px]">
-          <div className='grid xl:grid-cols-[70%_30%] gap-[10px]'>
+        <div ref={oneRef} className="mx-auto max-w-[calc(85%+60px)] mt-[80px] mb-[25px] pr-[60px]">
+          <div className='grid xl:grid-cols-[67.5%_32.5%] gap-[10px]'>
             <EmblaCarouselCenterPicity />
             <div className='flex items-center text-gray-1 text-[13px] pl-[40px]'>
               Picity là mô hình đô thị số tiên phong trên thị trường do Pi Group phát triển. Kết hợp công nghệ 4.0 (IoT & AI) trên nền tảng độc quyền cùng hệ tiện ích cao cấp và dịch vụ quản lý vận hành chuyên nghiệp, Picity kiến tạo môi trường sống chuẩn quốc tế, đáp ứng mọi nhu cầu của cư dân thời đại mới.
@@ -150,118 +157,13 @@ export default function Digitalcity() {
           </div>
         </div>
       </div>
-      <div ref={twoRef} className="relative mx-auto pt-[60px] pb-[115px] h-[490px] mb-[162px]">
+      <div ref={twoRef} className="relative mx-auto pt-[60px] pb-[115px] h-[490px]">
         <div className='relative z-1 '>
           <h3 className='text-yellow-1 text-[20px] xl:text-[30px] font-bold uppercase text-center'>Công nghệ 4.0</h3>
           <p className='uppercase text-center text-blue-1 text-[20px] xl:text-[25px] mb-[35px]'>vận hành thông minh</p>
-          <div className="flex  xl:grid ml-[50px] xl:ml-0 xl:grid-cols-5 gap-[40px] h-[222px]">
-            <div className="grid items-center bg-blue-1 rounded-[20px] w-full h-full  content-evenly hover:bg-yellow-1  duration-500">
-              <svg className='m-auto h-[75px]' width="102" height="92" viewBox="0 0 102 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 46.6079H4.67931C6.96146 46.6079 8.81854 48.4566 8.81854 50.7361V86.7014C8.81854 88.9774 6.96495 90.8295 4.67931 90.8295H1V46.6114V46.6079Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M8.81798 81.4473L8.81798 55.9867C13.4102 55.9867 17.1348 59.7048 17.1348 64.2812L17.1348 73.1527C17.1348 77.7326 13.4067 81.4473 8.81798 81.4473Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M17.1348 72.5759H37.4198C38.5626 72.5759 39.4894 71.6516 39.4894 70.5118V48.0361" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M32.4392 45.8818V63.4822C32.4392 64.622 31.5125 65.5463 30.3696 65.5463H24.1016" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M91.0912 36.3052C91.9727 39.1094 92.0146 42.209 91.025 45.2148C88.8405 51.8484 82.3459 55.8619 75.6562 55.1878" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M98.6314 35.6343C99.8788 39.613 99.9415 44.0053 98.5339 48.2656C95.4364 57.6686 86.2242 63.364 76.7402 62.4049" stroke="white" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M74.598 42.56L9.55155 21.2449C8.99408 21.0607 8.68747 20.4596 8.87214 19.9036L14.8022 1.9036C14.9869 1.34762 15.5897 1.04183 16.1471 1.226L94.1862 26.8013C95.0189 27.0758 95.1827 28.1773 94.4649 28.6812L74.598 42.56Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M18.4199 24.1499L74.6019 42.5615L70.4753 55.0864C69.9511 56.6776 68.2316 57.5443 66.6361 57.0214L16.2335 40.5038C14.6381 39.981 13.7691 38.2661 14.2933 36.6748L18.4199 24.1499Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M63.164 59.7656C63.927 59.7656 64.5527 60.388 64.5527 61.147C64.5527 61.906 63.927 62.5283 63.164 62.5283C62.401 62.5283 61.7754 61.906 61.7754 61.147C61.7754 60.388 62.401 59.7656 63.164 59.7656Z" fill="white" />
-                <path d="M7.30272 39.4565C8.06571 39.4565 8.69137 40.0789 8.69137 40.8379C8.69137 41.5969 8.06571 42.2192 7.30272 42.2192C6.53972 42.2192 5.91406 41.5969 5.91406 40.8379C5.91406 40.0789 6.53972 39.4565 7.30272 39.4565Z" fill="white" />
-                <path d="M4.3867 4.46436C5.1497 4.46436 5.77536 5.08672 5.77536 5.8457C5.77536 6.60468 5.1497 7.22705 4.3867 7.22705C3.6237 7.22705 2.99805 6.60468 2.99805 5.8457C2.99805 5.08672 3.6237 4.46436 4.3867 4.46436Z" fill="white" />
-                <path d="M80.8563 13.9513C77.6212 13.9513 75.0117 11.3556 75.0117 8.13753C75.0117 4.91945 77.6212 2.32373 80.8563 2.32373C84.0914 2.32373 86.7008 4.91945 86.7008 8.13753C86.7008 11.3556 83.9235 13.9513 80.8563 13.9513ZM80.8563 4.46406C78.7046 4.46406 77.0108 6.149 77.0108 8.28932C77.0108 10.4297 78.7046 12.1146 80.8563 12.1146C83.0079 12.1146 84.7018 10.4297 84.7018 8.28932C84.7018 6.149 82.8553 4.46406 80.8563 4.46406Z" fill="white" />
-                <path d="M54.8455 68.5206C52.6939 68.5206 51 66.8357 51 64.6954C51 62.5551 52.6939 60.8701 54.8455 60.8701C56.9972 60.8701 58.691 62.5551 58.691 64.6954C58.691 66.8357 56.9972 68.5206 54.8455 68.5206ZM54.8455 62.8587C53.7773 62.8587 52.8465 63.7846 52.8465 64.8472C52.8465 65.9098 53.7773 66.8357 54.8455 66.8357C55.9137 66.8357 56.8446 65.9098 56.8446 64.8472C56.8446 63.7846 55.9137 62.8587 54.8455 62.8587Z" fill="white" />
-                <path d="M23.087 20.9704C24.0973 20.9704 24.9162 20.1536 24.9162 19.1461C24.9162 18.1386 24.0973 17.3218 23.087 17.3218C22.0768 17.3218 21.2578 18.1386 21.2578 19.1461C21.2578 20.1536 22.0768 20.9704 23.087 20.9704Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M28.4112 22.7146C29.4215 22.7146 30.2404 21.8978 30.2404 20.8902C30.2404 19.8827 29.4215 19.0659 28.4112 19.0659C27.401 19.0659 26.582 19.8827 26.582 20.8902C26.582 21.8978 27.401 22.7146 28.4112 22.7146Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M33.7374 24.4626C34.7476 24.4626 35.5666 23.6458 35.5666 22.6383C35.5666 21.6307 34.7476 20.814 33.7374 20.814C32.7272 20.814 31.9082 21.6307 31.9082 22.6383C31.9082 23.6458 32.7272 24.4626 33.7374 24.4626Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M23.8468 67.2038C24.857 67.2038 25.676 66.387 25.676 65.3795C25.676 64.372 24.857 63.5552 23.8468 63.5552C22.8365 63.5552 22.0176 64.372 22.0176 65.3795C22.0176 66.387 22.8365 67.2038 23.8468 67.2038Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M64.4164 21.0357L45.0326 14.6834C44.3598 14.4629 43.6353 14.8281 43.4142 15.499C43.1931 16.17 43.5593 16.8926 44.232 17.1131L63.6159 23.4654C64.2886 23.6859 65.0132 23.3207 65.2342 22.6498C65.4553 21.9788 65.0891 21.2562 64.4164 21.0357Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-              </svg>
-              <h4 className='uppercase text-white  text-[14px] text-center font-bold'>
-                Camera AI & Face ID <br /> giám sát an ninh
-              </h4>
-            </div>
-            <div className="grid items-center bg-blue-1 rounded-[20px] w-full h-full  content-evenly hover:bg-yellow-1  duration-500">
-              <svg className='m-auto h-[75px]' width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M89.3828 87.4976C90.1458 87.4976 90.7714 88.1199 90.7714 88.8789C90.7714 89.6379 90.1458 90.2603 89.3828 90.2603C88.6198 90.2603 87.9941 89.6379 87.9941 88.8789C87.9941 88.1199 88.6198 87.4976 89.3828 87.4976Z" fill="white" />
-                <path d="M102.164 35.7656C102.927 35.7656 103.553 36.388 103.553 37.147C103.553 37.906 102.927 38.5283 102.164 38.5283C101.401 38.5283 100.775 37.906 100.775 37.147C100.775 36.388 101.401 35.7656 102.164 35.7656Z" fill="white" />
-                <path d="M76.7773 0.977051C77.5403 0.977051 78.166 1.59942 78.166 2.3584C78.166 3.11738 77.5403 3.73974 76.7773 3.73974C76.0143 3.73974 75.3887 3.11738 75.3887 2.3584C75.3887 1.59942 76.0143 0.977051 76.7773 0.977051Z" fill="white" />
-                <path d="M6.30272 65.4565C7.06571 65.4565 7.69137 66.0789 7.69137 66.8379C7.69137 67.5969 7.06571 68.2192 6.30272 68.2192C5.53972 68.2192 4.91406 67.5969 4.91406 66.8379C4.91406 66.0789 5.53972 65.4565 6.30272 65.4565Z" fill="white" />
-                <path d="M13.3867 20.4644C14.1497 20.4644 14.7754 21.0867 14.7754 21.8457C14.7754 22.6047 14.1497 23.227 13.3867 23.227C12.6237 23.227 11.998 22.6047 11.998 21.8457C11.998 21.0867 12.6237 20.4644 13.3867 20.4644Z" fill="white" />
-                <path d="M99.8563 29.9513C96.6212 29.9513 94.0117 27.3556 94.0117 24.1375C94.0117 20.9194 96.6212 18.3237 99.8563 18.3237C103.091 18.3237 105.701 20.9194 105.701 24.1375C105.701 27.3556 102.924 29.9513 99.8563 29.9513ZM99.8563 20.4641C97.7046 20.4641 96.0108 22.149 96.0108 24.2893C96.0108 26.4297 97.7046 28.1146 99.8563 28.1146C102.008 28.1146 103.702 26.4297 103.702 24.2893C103.702 22.149 101.855 20.4641 99.8563 20.4641Z" fill="white" />
-                <path d="M3.8455 83.5206C1.69385 83.5206 0 81.8357 0 79.6954C0 77.5551 1.69385 75.8701 3.8455 75.8701C5.99716 75.8701 7.69101 77.5551 7.69101 79.6954C7.69101 81.8357 5.99716 83.5206 3.8455 83.5206ZM3.8455 77.8587C2.77731 77.8587 1.84645 78.7846 1.84645 79.8472C1.84645 80.9098 2.77731 81.8357 3.8455 81.8357C4.9137 81.8357 5.84456 80.9098 5.84456 79.8472C5.84456 78.7846 4.9137 77.8587 3.8455 77.8587Z" fill="white" />
-                <path d="M54.2743 60.3613C58.2186 61.9375 61 65.6401 61 69.9524C61 75.7071 56.0814 80.3613 50 80.3613C43.9186 80.3613 39 75.7071 39 69.9524C39 65.9673 41.3729 62.5026 44.8457 60.7479" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M50 72.3613V57.3613" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M49.5525 41.3613C59.2114 41.3613 67.0449 49.3724 67.0449 59.2502V94.468C67.0449 96.0547 65.7824 97.3613 64.2157 97.3613H34.8741C33.3226 97.3613 32.0449 96.0702 32.0449 94.468V59.2502C32.0449 49.3724 39.8785 41.3613 49.5373 41.3613H49.5525Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M38.9143 34.57C38.4796 34.9107 38.4035 35.5393 38.7443 35.9739C39.085 36.4086 39.7136 36.4847 40.1482 36.1439L38.9143 34.57ZM58.8518 36.1439C59.2864 36.4847 59.915 36.4086 60.2557 35.9739C60.5965 35.5393 60.5204 34.9107 60.0857 34.57L58.8518 36.1439ZM34.3859 29.3889C33.95 29.7281 33.8716 30.3564 34.2108 30.7922C34.5499 31.2281 35.1782 31.3066 35.6141 30.9674L34.3859 29.3889ZM63.4144 30.9888C63.8621 31.3122 64.4872 31.2114 64.8106 30.7638C65.134 30.3161 65.0333 29.691 64.5856 29.3676L63.4144 30.9888ZM39.5312 35.3569L40.1482 36.1439C45.6395 31.8387 53.3605 31.8387 58.8518 36.1439L59.4688 35.3569L60.0857 34.57C53.8699 29.6967 45.1301 29.6967 38.9143 34.57L39.5312 35.3569ZM35 30.1782L35.6141 30.9674C41.4703 26.4109 47.136 25.5267 51.9575 26.201C56.8156 26.8804 60.8729 29.1527 63.4144 30.9888L64 30.1782L64.5856 29.3676C61.8885 27.4191 57.5264 24.9603 52.2345 24.2203C46.9061 23.4751 40.6911 24.4831 34.3859 29.3889L35 30.1782Z" fill="white" />
-                <path d="M88.0449 34.3613V82.7453C88.0449 85.8465 85.3581 88.3613 82.0449 88.3613" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M11 33V81.864C11 85.2523 13.8525 88 17.37 88H32" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M2.04492 39.013L44.4503 8.39098C46.3186 7.04462 48.8463 7.01331 50.746 8.32836L67.9844 20.2265V13.9174C67.9844 12.2109 69.366 10.8332 71.0773 10.8332H79.0372C80.7484 10.8332 82.13 12.2109 82.13 13.9174V29.6198L97.0449 41.3613" stroke="white" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M78.5 94C80.9853 94 83 91.9853 83 89.5C83 87.0147 80.9853 85 78.5 85C76.0147 85 74 87.0147 74 89.5C74 91.9853 76.0147 94 78.5 94Z" stroke="white" strokeWidth="3" strokeMiterlimit="10" />
-              </svg>
-              <h4 className='uppercase text-white  text-[14px] text-center font-bold'>
-                Smarthome điều khiển <br /> thiết bị từ xa
-              </h4>
-            </div>
-            <div className="grid items-center bg-blue-1 rounded-[20px] w-full h-full  content-evenly hover:bg-yellow-1  duration-500">
-              <svg className='m-auto h-[75px]' width="114" height="102" viewBox="0 0 114 102" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M94.5 70.5229L57.4862 6.00165C56.7906 4.79502 55.0502 4.79502 54.3545 6.00165L4.81904 91.8724C4.12343 93.079 4.99294 94.5869 6.38415 94.5869H80.4441" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                <path fillRule="evenodd" clipRule="evenodd" d="M97.5 92.0229C99.7091 92.0229 101.5 93.8138 101.5 96.0229C101.5 98.2321 99.7091 100.023 97.5 100.023C95.2909 100.023 93.5 98.2321 93.5 96.0229C93.5 93.8138 95.2909 92.0229 97.5 92.0229Z" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M87.4135 86.5931C86.9788 86.9339 86.9027 87.5625 87.2435 87.9971C87.5842 88.4317 88.2128 88.5078 88.6474 88.1671L87.4135 86.5931ZM107.351 88.1671C107.786 88.5078 108.414 88.4317 108.755 87.9971C109.096 87.5625 109.02 86.9339 108.585 86.5931L107.351 88.1671ZM82.8859 81.4119C82.45 81.751 82.3716 82.3793 82.7108 82.8152C83.0499 83.2511 83.6782 83.3295 84.1141 82.9904L82.8859 81.4119ZM111.914 83.0117C112.362 83.3351 112.987 83.2344 113.311 82.7867C113.634 82.339 113.533 81.7139 113.086 81.3905L111.914 83.0117ZM88.0304 87.3801L88.6474 88.1671C94.1387 83.8619 101.86 83.8619 107.351 88.1671L107.968 87.3801L108.585 86.5931C102.369 81.7199 93.6293 81.7199 87.4135 86.5931L88.0304 87.3801ZM83.5 82.2011L84.1141 82.9904C89.9703 78.4339 95.636 77.5496 100.458 78.2239C105.316 78.9033 109.373 81.1757 111.914 83.0117L112.5 82.2011L113.086 81.3905C110.388 79.4421 106.026 76.9833 100.735 76.2432C95.4061 75.498 89.1911 76.5061 82.8859 81.4119L83.5 82.2011Z" fill="white" />
-                <path d="M86.933 71.9898L57.1009 20.276C56.5763 19.3663 55.2625 19.3663 54.7379 20.276L17.3623 85.0681C16.8377 85.9779 17.4938 87.1158 18.5431 87.1158H79.6803" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M38.0008 61.6673C38.0008 61.6673 35.0781 78.4138 51.153 78.4138L61.0171 78.4869C61.0171 78.4869 78.115 79.4376 68.8354 53.0381L63.7937 60.7166C63.7937 60.7166 65.4012 41.8494 54.5872 37.6079C54.5872 37.6079 59.4096 49.3085 51.0799 52.5262C51.0799 52.5262 43.0425 56.0364 46.842 65.3969C46.842 65.3969 39.9006 66.64 38.0008 61.6673Z" stroke="white" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
-                <path d="M56.7791 73.3674C57.9494 73.3674 58.8981 72.418 58.8981 71.2467C58.8981 70.0755 57.9494 69.126 56.7791 69.126C55.6088 69.126 54.6602 70.0755 54.6602 71.2467C54.6602 72.418 55.6088 73.3674 56.7791 73.3674Z" stroke="white" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round" />
-                <path d="M56.7793 54.4033V68.2978" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M67.2773 0C68.0403 0 68.666 0.622365 68.666 1.38135C68.666 2.14033 68.0403 2.76269 67.2773 2.76269C66.5143 2.76269 65.8887 2.14033 65.8887 1.38135C65.8887 0.622365 66.5143 0 67.2773 0Z" fill="white" />
-                <path d="M6.80272 54.4795C7.56571 54.4795 8.19137 55.1019 8.19137 55.8608C8.19137 56.6198 7.56571 57.2422 6.80272 57.2422C6.03972 57.2422 5.41406 56.6198 5.41406 55.8608C5.41406 55.1019 6.03972 54.4795 6.80272 54.4795Z" fill="white" />
-                <path d="M3.8867 9.4873C4.6497 9.4873 5.27536 10.1097 5.27536 10.8687C5.27536 11.6276 4.6497 12.25 3.8867 12.25C3.1237 12.25 2.49805 11.6276 2.49805 10.8687C2.49805 10.1097 3.1237 9.4873 3.8867 9.4873Z" fill="white" />
-                <path d="M80.3563 18.9743C77.1212 18.9743 74.5117 16.3786 74.5117 13.1605C74.5117 9.9424 77.1212 7.34668 80.3563 7.34668C83.5914 7.34668 86.2008 9.9424 86.2008 13.1605C86.2008 16.3786 83.4235 18.9743 80.3563 18.9743ZM80.3563 9.48701C78.2046 9.48701 76.5108 11.1719 76.5108 13.3123C76.5108 15.4526 78.2046 17.1375 80.3563 17.1375C82.5079 17.1375 84.2018 15.4526 84.2018 13.3123C84.2018 11.1719 82.3553 9.48701 80.3563 9.48701Z" fill="white" />
-                <path d="M4.3455 72.5436C2.19385 72.5436 0.5 70.8587 0.5 68.7183C0.5 66.578 2.19385 64.8931 4.3455 64.8931C6.49716 64.8931 8.19101 66.578 8.19101 68.7183C8.19101 70.8587 6.49716 72.5436 4.3455 72.5436ZM4.3455 66.8816C3.27731 66.8816 2.34645 67.8076 2.34645 68.8701C2.34645 69.9327 3.27731 70.8587 4.3455 70.8587C5.4137 70.8587 6.34456 69.9327 6.34456 68.8701C6.34456 67.8076 5.4137 66.8816 4.3455 66.8816Z" fill="white" />
-              </svg>
-              <h4 className='uppercase text-white  text-[14px] text-center font-bold'>
-                Cảnh báo cháy <br /> thông minh
-              </h4>
-            </div>
-            <div className="grid items-center bg-blue-1 rounded-[20px] w-full h-full  content-evenly hover:bg-yellow-1  duration-500">
-              <svg className='m-auto h-[75px]' width="86" height="97" viewBox="0 0 86 97" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M41.5852 47.4304C37.3838 47.0569 34.3235 44.8677 34.1678 40.8732H39.7905C39.915 42.139 40.5375 42.9171 41.5852 43.2491V38.3624C38.2759 37.5013 34.1367 36.5675 34.1367 31.7119C34.1367 27.8523 37.3838 25.5594 41.5852 25.2792V22.7788H43.5667V25.2792C47.7993 25.6216 50.5172 27.7797 50.7973 31.7119H45.1435C45.019 30.5706 44.4277 29.8547 43.5667 29.5435V34.3368C46.876 35.2602 51.1086 36.1629 51.1086 40.9562C51.1086 44.297 48.4528 47.2332 43.5667 47.4511V49.9516H41.5852V47.42V47.4304ZM41.5852 33.7039V29.4086C40.4441 29.5953 39.7283 30.2697 39.7283 31.4836C39.7283 32.5627 40.4648 33.2163 41.5852 33.7143V33.7039ZM43.5667 38.9642V43.3529C44.8012 43.135 45.5792 42.305 45.5792 41.1534C45.5792 40.0017 44.7804 39.4207 43.5667 38.9538V38.9642Z" fill="white" />
-                <path d="M28.51 86H17.9142C14.6574 86 12 83.5679 12 80.5872V6.41276C12 3.42177 14.6461 1 17.9142 1H64.0858C67.3426 1 70 3.43212 70 6.41276V56.5869" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M38.1889 78.2127H23.7898C21.3623 78.2127 19.3809 76.231 19.3809 73.8032V13.409C19.3809 10.9812 21.3623 8.99951 23.7898 8.99951H58.2003C60.6278 8.99951 62.6092 10.9812 62.6092 13.409V56.819" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M66.7773 0.977051C67.5403 0.977051 68.166 1.59942 68.166 2.3584C68.166 3.11738 67.5403 3.73974 66.7773 3.73974C66.0143 3.73974 65.3887 3.11738 65.3887 2.3584C65.3887 1.59942 66.0143 0.977051 66.7773 0.977051Z" fill="white" />
-                <path d="M6.30272 55.4565C7.06571 55.4565 7.69137 56.0789 7.69137 56.8379C7.69137 57.5969 7.06571 58.2192 6.30272 58.2192C5.53972 58.2192 4.91406 57.5969 4.91406 56.8379C4.91406 56.0789 5.53972 55.4565 6.30272 55.4565Z" fill="white" />
-                <path d="M3.3867 10.4644C4.1497 10.4644 4.77536 11.0867 4.77536 11.8457C4.77536 12.6047 4.1497 13.227 3.3867 13.227C2.6237 13.227 1.99805 12.6047 1.99805 11.8457C1.99805 11.0867 2.6237 10.4644 3.3867 10.4644Z" fill="white" />
-                <path d="M79.8563 19.9513C76.6212 19.9513 74.0117 17.3556 74.0117 14.1375C74.0117 10.9194 76.6212 8.32373 79.8563 8.32373C83.0914 8.32373 85.7008 10.9194 85.7008 14.1375C85.7008 17.3556 82.9235 19.9513 79.8563 19.9513ZM79.8563 10.4641C77.7046 10.4641 76.0108 12.149 76.0108 14.2893C76.0108 16.4297 77.7046 18.1146 79.8563 18.1146C82.0079 18.1146 83.7018 16.4297 83.7018 14.2893C83.7018 12.149 81.8553 10.4641 79.8563 10.4641Z" fill="white" />
-                <path d="M3.8455 73.5206C1.69385 73.5206 0 71.8357 0 69.6954C0 67.5551 1.69385 65.8701 3.8455 65.8701C5.99716 65.8701 7.69101 67.5551 7.69101 69.6954C7.69101 71.8357 5.99716 73.5206 3.8455 73.5206ZM3.8455 67.8587C2.77731 67.8587 1.84645 68.7846 1.84645 69.8472C1.84645 70.9098 2.77731 71.8357 3.8455 71.8357C4.9137 71.8357 5.84456 70.9098 5.84456 69.8472C5.84456 68.7846 4.9137 67.8587 3.8455 67.8587Z" fill="white" />
-                <path d="M51.372 83.7461C51.1753 83.331 51.0223 83.0033 50.8693 82.6683C48.0131 76.6168 45.1496 70.5725 42.3007 64.521C41.3607 62.5257 42.7305 60.1808 44.9383 60.0133C46.4975 59.8895 47.7435 60.6323 48.3847 62.0669C49.1279 63.7345 49.8711 65.4094 50.6143 67.0771C50.6653 67.1863 50.7163 67.2955 50.7891 67.4485C51.4668 66.6329 52.261 66.0721 53.3175 65.9629C54.374 65.8537 55.2702 66.1886 56.0644 66.9169C56.7711 65.7517 57.7839 65.0963 59.161 65.1036C60.509 65.1036 61.5072 65.7444 62.2431 66.8659C62.3014 66.7858 62.3816 66.6911 62.4617 66.5892C64.1303 64.4191 67.3362 64.805 68.4437 67.3174C69.8135 70.405 71.1688 73.5073 72.5313 76.6022C73.0996 77.8912 73.668 79.1801 74.2363 80.4691C76.138 84.7947 74.382 89.6374 70.1487 91.7346C67.9191 92.8415 65.7041 93.9703 63.4599 95.0335C60.5381 96.4244 57.6382 96.3443 54.8767 94.5965C51.4886 92.4556 48.1297 90.2709 44.7707 88.0935C43.2843 87.1323 42.6504 85.3918 43.1969 83.7752C43.8891 81.7143 46.483 80.4326 48.7271 81.9109C49.5359 82.4425 50.3155 83.0251 51.1097 83.5786C51.1753 83.6223 51.2409 83.6587 51.3866 83.7461H51.372Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-              </svg>
-              <h4 className='uppercase text-white  text-[14px] text-center font-bold'>
-                Nhận thông báo từ BQL <br /> thanh toán phí Online
-              </h4>
-            </div>
-            <div className="grid items-center bg-blue-1 rounded-[20px] w-full h-full  content-evenly hover:bg-yellow-1  duration-500">
-              <svg className='m-auto h-[75px]' width="136" height="98" viewBox="0 0 136 98" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M109.352 1.26172H23.1261C18.0859 1.26172 14 5.35366 14 10.4013V66.4109C14 71.4586 18.0859 75.5505 23.1261 75.5505H109.352C114.392 75.5505 118.478 71.4586 118.478 66.4109V10.4013C118.478 5.35366 114.392 1.26172 109.352 1.26172Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M38 59L109 59" stroke="white" strokeWidth="3" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M6.30272 65.4565C7.06571 65.4565 7.69137 66.0789 7.69137 66.8379C7.69137 67.5969 7.06571 68.2192 6.30272 68.2192C5.53972 68.2192 4.91406 67.5969 4.91406 66.8379C4.91406 66.0789 5.53972 65.4565 6.30272 65.4565Z" fill="white" />
-                <path d="M3.38865 20.4644C4.15165 20.4644 4.77731 21.0867 4.77731 21.8457C4.77731 22.6047 4.15165 23.227 3.38865 23.227C2.62566 23.227 2 22.6047 2 21.8457C2 21.0867 2.62566 20.4644 3.38865 20.4644Z" fill="white" />
-                <path d="M129.856 29.9513C126.621 29.9513 124.012 27.3556 124.012 24.1375C124.012 20.9194 126.621 18.3237 129.856 18.3237C133.091 18.3237 135.701 20.9194 135.701 24.1375C135.701 27.3556 132.924 29.9513 129.856 29.9513ZM129.856 20.4641C127.705 20.4641 126.011 22.149 126.011 24.2893C126.011 26.4297 127.705 28.1146 129.856 28.1146C132.008 28.1146 133.702 26.4297 133.702 24.2893C133.702 22.149 131.855 20.4641 129.856 20.4641Z" fill="white" />
-                <path d="M3.8455 83.5206C1.69385 83.5206 0 81.8357 0 79.6954C0 77.5551 1.69385 75.8701 3.8455 75.8701C5.99716 75.8701 7.69101 77.5551 7.69101 79.6954C7.69101 81.8357 5.99716 83.5206 3.8455 83.5206ZM3.8455 77.8587C2.77731 77.8587 1.84645 78.7846 1.84645 79.8472C1.84645 80.9098 2.77731 81.8357 3.8455 81.8357C4.9137 81.8357 5.84456 80.9098 5.84456 79.8472C5.84456 78.7846 4.9137 77.8587 3.8455 77.8587Z" fill="white" />
-                <path d="M47.1719 7.27783H53.4092C54.9764 7.27783 56.3502 8.31369 56.789 9.82039L63.5174 33.054C63.7368 33.8963 64.4943 34.4874 65.3614 34.4874H91.7368C92.5726 34.4874 93.3092 33.9433 93.5547 33.1481L99.7502 16.0251C100.09 15.0834 99.395 14.0842 98.392 14.0842H71.7189" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M24.707 19.3105H47.1697" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M30.7148 29.2505H53.1775" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M35.418 40.7603H57.8807" stroke="white" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />
-                <path d="M87.3947 50.177C90.5683 50.177 93.141 47.6005 93.141 44.4222C93.141 41.244 90.5683 38.6675 87.3947 38.6675C84.2211 38.6675 81.6484 41.244 81.6484 44.4222C81.6484 47.6005 84.2211 50.177 87.3947 50.177Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M69.633 50.177C72.8066 50.177 75.3793 47.6005 75.3793 44.4222C75.3793 41.244 72.8066 38.6675 69.633 38.6675C66.4594 38.6675 63.8867 41.244 63.8867 44.4222C63.8867 47.6005 66.4594 50.177 69.633 50.177Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M30.7463 64.5095C33.9198 64.5095 36.4925 61.933 36.4925 58.7548C36.4925 55.5765 33.9198 53 30.7463 53C27.5727 53 25 55.5765 25 58.7548C25 61.933 27.5727 64.5095 30.7463 64.5095Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M91.5744 96.7385C88.3983 96.7385 85.8281 94.1646 85.8281 90.9838C85.8281 87.803 88.3983 85.229 91.5744 85.229C94.7505 85.229 97.3207 87.803 97.3207 90.9838C97.3207 94.1646 94.7505 96.7385 91.5744 96.7385Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
-                <path d="M47.1706 75.812V83.6594H30.9766V90.9837H85.5661" stroke="white" strokeWidth="3" strokeMiterlimit="10" />
-              </svg>
-              <h4 className='uppercase text-white  text-[14px] text-center font-bold'>
-                Gian hàng <br /> mua sắm trực tuyến
-              </h4>
-            </div>
-          </div>
+          <HorizontalScroll />
         </div>
-        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill max-w-[1145px] mx-auto" />
+        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill max-w-[85%] mx-auto" />
       </div>
       <div ref={threeRef} className="relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px]">
         <svg className='absolute top-[-20%] 2xl:top-[-190px] right-0 translate-x-[50%] overflow-x-hidden max-w-[28%] h-auto' width="528.46" height="523.07" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528.46 523.07">
@@ -544,8 +446,8 @@ export default function Digitalcity() {
           </div>
         </div>
       </div>
-      <h3 ref={fourRef} className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mb-[10px] uppercase text-center'>Tiện ích 5★ <br /> Nghỉ dưỡng chuẩn resort</h3>
-      <div className="mx-auto mb-[112px]">
+      <h3 ref={fourRef} className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mt-[-60px] mb-[30px] uppercase text-center'>Tiện ích 5★ <br /> Nghỉ dưỡng chuẩn resort</h3>
+      <div className="mx-auto mb-[30px]">
         <EmblaCarouselCenter slides={slides} />
       </div>
       <div ref={fiveRef} className="relative mx-auto pb-[115px]">
@@ -597,8 +499,8 @@ export default function Digitalcity() {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto  max-w-[1145px] mb-[110px]">
-        <div className="grid grid-cols-[60%_40%] mt-[30px]">
+      <div ref={sixRef} className="mx-auto  max-w-[85%] mb-[50px]">
+        <div className="grid grid-cols-[67%_33%] mt-[30px]">
           <div>
             <h3 className="uppercase font-bold text-yellow-1 text-[30px] mb-[20px]">Giá trị vượt trội <br /> Trải nghiệm đặc quyền</h3>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-[16px]'>
@@ -734,25 +636,52 @@ export default function Digitalcity() {
               </div>
             </div>
           </div>
-          <Image className="pl-[30px] w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src="/fdigitalcity/digitalcity-21.png" />
+          <Image className="pl-[55px] w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src="/fdigitalcity/digitalcity-21.png" />
         </div>
       </div>
       <h3 ref={seventRef} className='text-yellow-1 text-[25px] xl:text-[30px] font-bold mb-[30px] uppercase text-center'>Dự án thành công</h3>
-      <div className="flex items-start justify-end relative mx-auto max-w-[1145px] h-[570px] mb-[65px]">
-        <Image alt="benefit 7" loading="lazy" decoding="async" fill className='w-[calc(100%-45px)]!' src="/fdigitalcity/digitalcity-22.png" />
-        <div className='relative z-1 flex flex-col mt-[66px] text-center text-[12px] md:text-[30px] font-bold'>
-          <div className='overflow-hidden absolute flex items-center justify-center hover:rounded-tl-[10px] hover:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px] top-[-15px]  w-[45px] h-[45px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden  hover:[&>span]:hidden hover:[&>p]:block text-[20px] font-bold bg-blue-1 text-white'>
-            <span className="duration-0">1</span>
-            <p>Picity Sky Park</p>
-          </div>
-          <div className='overflow-hidden absolute flex items-center justify-center hover:rounded-tl-[10px] hover:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px] top-[40px] w-[45px] h-[45px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block text-[20px] font-bold bg-blue-1 text-white'>
-            <span className="duration-0">2</span>
-            <p>Picity Sky Park</p>
-          </div>
-          <div className='overflow-hidden absolute flex items-center justify-center hover:rounded-tl-[10px] hover:rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px] top-[95px] w-[45px] h-[45px] hover:w-[395px] right-0 duration-1000 hover:bg-yellow-1 [&>p]:hidden hover:[&>span]:hidden hover:[&>p]:block text-[20px] font-bold bg-blue-1 text-white'>
-            <span className="duration-0">3</span>
-            <p>Picity Sky Park</p>
-          </div>
+      <div className="flex items-start justify-end relative mx-auto max-w-[85%] h-[570px] mb-[65px]">
+        {images.map((image) => (
+          <Image
+            key={image.id}
+            src={image.src}
+            alt={image.alt}
+            fill
+            className={`w-[calc(100%-45px)]! transition-opacity duration-500 ease-in-out ${hoveredBox === image.id ? 'opacity-100' : 'opacity-0 absolute'}`}
+          />
+        ))}
+        <div className='relative z-10 flex flex-col mt-[66px] text-center text-[12px] md:text-[30px] font-bold'>
+          {images.map((image) => (
+            <div
+              key={image.id + "box"}
+              // Khi chuột vào, set active cho box đó
+              onMouseEnter={() => setHoveredBox(image.id)}
+              // Xóa bỏ onMouseLeave hoặc để trống để giữ trạng thái
+              // onMouseLeave={() => { /* Do nothing */ }}
+              // Nếu bạn muốn có một số hành vi khi chuột rời khỏi toàn bộ khu vực hộp,
+              // bạn có thể đặt onMouseLeave trên div cha của các box.
+              // Nhưng để giữ trạng thái khi rời box con, chúng ta bỏ qua onMouseLeave ở đây.
+              // Tailwind classes cho vị trí và style
+              className={`
+                ${image.id === 1 ? "top-[-15px]" : ""}
+                ${image.id === 2 ? "top-[40px]" : ""}
+                ${image.id === 3 ? "top-[95px]" : ""}
+                flex justify-end overflow-hidden absolute items-center rounded-tl-[10px] rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px]
+                h-[45px] w-[395px] right-0 cursor-pointer
+                text-[20px] font-bold text-white
+                transition-colors duration-300 ease-in-out
+                // Trạng thái active cho box
+                ${hoveredBox === image.id ? 'bg-yellow-1 [&>p]:opacity-100 [&>div]:bg-yellow-1' : 'hover:bg-yellow-1 hover:[&>p]:opacity-100 hover:[&>div]:bg-yellow-1' }
+              `}
+            >
+              <p className="grow text-center opacity-0 transition-opacity duration-300 ease-in-out">
+                {image.alt}
+              </p>
+              <div className="w-[45px] flex items-center justify-center h-full bg-blue-1 transition-colors duration-300 ease-in-out">
+                <span>{image.id}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>
