@@ -16,7 +16,10 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
   const videoId = "0EJIjmIt7Bc";
   return (
     <>
-      <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>
+      <div
+        className="relative w-screen h-[50vh] md:h-screen"
+        style={{ width: '100vw' }}
+      >
         {/* Ảnh nhẹ hiển thị ban đầu */}
         {!isLoaded && (
           <Image

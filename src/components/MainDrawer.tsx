@@ -22,24 +22,24 @@ export function MainDrawer() {
       description: "See your alerts",
       href: "/ecosystem"
     },
-    {
-      icon: Calendar,
-      label: "Đầu tư và phát triển dự án",
-      description: "Manage your schedule",
-      href: "/ecosystem/investment-development",
-    },
-    {
-      icon: Calendar,
-      label: "Dịch vụ Bất động sản",
-      description: "Manage your schedule",
-      href: "/ecosystem/real-estate-services",
-    },
-    {
-      icon: Calendar,
-      label: "Quản lý và vận hành",
-      description: "Manage your schedule",
-      href: "/ecosystem/management-operation",
-    },
+    // {
+    //   icon: Calendar,
+    //   label: "Đầu tư và phát triển dự áns",
+    //   description: "Manage your schedule",
+    //   href: "/ecosystem/investment-development",
+    // },
+    // {
+    //   icon: Calendar,
+    //   label: "Dịch vụ Bất động sản",
+    //   description: "Manage your schedule",
+    //   href: "/ecosystem/real-estate-services",
+    // },
+    // {
+    //   icon: Calendar,
+    //   label: "Quản lý và vận hành",
+    //   description: "Manage your schedule",
+    //   href: "/ecosystem/management-operation",
+    // },
     {
       icon: Calendar,
       label: "Đô thị số Picity",
@@ -82,7 +82,7 @@ export function MainDrawer() {
           <div className="py-[8px] px-[18px]">
             <div className="flex items-center gap-4">
               <div className="relative  overflow-hidden">
-                <svg className={`text-yellow-1`} width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className={`text-yellow-1`} width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M36.7468 11.6881L29.9983 0C17.6246 7.14545 10.001 20.3492 10.001 34.6401C10.001 56.7306 27.9097 74.6393 50.0002 74.6393C66.9617 74.6393 81.4601 64.079 87.2748 49.1746C89.0341 44.6681 89.9995 39.7646 89.9995 34.6401C89.9995 20.3492 82.3758 7.14545 69.9976 0L63.2491 11.6881C71.1705 16.2712 76.498 24.8332 76.498 34.6401C76.498 49.2784 64.634 61.1424 50.0002 61.1424C35.3665 61.1424 23.5025 49.2784 23.5025 34.6401C23.5025 24.8332 28.83 16.2712 36.7513 11.6881" fill="currentColor" />
                   <path d="M63.1311 55.914C70.0556 51.6286 74.7335 44.0591 74.9861 35.3799L53.1934 36.4851L63.1357 55.914H63.1311Z" fill="currentColor" />
                   <path d="M74.9867 33.9001C74.7341 25.2209 70.0607 17.6514 63.1317 13.366L53.1895 32.7949L74.9822 33.9001H74.9867Z" fill="currentColor" />

@@ -62,11 +62,11 @@ const SheetContent = React.forwardRef<
         document.body.style.pointerEvents = '';
       }}
     >
-      <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[40px] top-[35px] focus:outline-none">
+      <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[25px] top-[35px] focus:outline-none">
         <div className="flex gap-[15px] justify-end font-semibold items-center grow-1">
           <Link href="/vn" className="text-yellow-2">VN</Link>
           <span className="text-gray-300 inline-block">|</span>
-          <Link href="/en" className=" text-black">EN</Link>
+          <Link href="/en" className=" text-[#20446F]">EN</Link>
         </div>
         <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 7L19 21" stroke="#C48C5E" strokeWidth="2" strokeLinecap="round" />

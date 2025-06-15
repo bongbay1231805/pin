@@ -182,9 +182,13 @@ export default function Hero() {
   };
   const handleToggleDetails = (id: string) => {
     setAllJobData(prevData =>
-      prevData.map(job =>
-        job.id === id ? { ...job, isOpen: !job.isOpen } : job
-      )
+      prevData.map(job => {
+        // Chỉ mở job có id trùng, các job khác (trên trang hiện tại) sẽ đóng lại
+        if (currentJobs.some(j => j.id === job.id)) {
+          return job.id === id ? { ...job, isOpen: !job.isOpen } : { ...job, isOpen: false };
+        }
+        return job;
+      })
     );
   };
   const paginate = (pageNumber: number) => {

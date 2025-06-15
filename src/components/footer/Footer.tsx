@@ -8,15 +8,17 @@ export function Footer() {
   };
   return (
     <footer className={`bg-gray-3 text-white text-left`}>
-      <div className={`pt-[76px] 2xl:pt-[82px] ${styles.bgfooter}`}>
+      <div className={`pt-[60px] 2xl:pt-[82px] ${styles.bgfooter}`}>
         <div className={`mx-auto max-w-[85%]`}>
-          <div className="grid grid-cols-[20%_1fr_26%] 2xl:grid-cols-[340px_1fr_370px] gap-8 boxanimation">
-            <div className="flex justify-center sm:justify-normal reveal-tex fade-in-left-short">
+          <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_26%] 2xl:grid-cols-[340px_1fr_370px] gap-8 boxanimation">
+            {/* logo */}
+            <div className="flex justify-center sm:justify-normal reveal-tex fade-in-left-short mb-6 md:mb-0">
               <Link href="/" className="flex-shrink-0 flex">
-                <Image src="/logo-c.svg" className='w-[142px] h-[142px] 2xl:w-[166px] 2xl:h-[166px]' width={180} height={180} alt="Logo" />
+                <Image src="/logo-c.svg" className='w-[100px] xl:w-[142px] xl:h-[142px] 2xl:w-[166px] 2xl:h-[166px]' width={180} height={180} alt="Logo" />
               </Link>
             </div>
-            <div className='mt-[0] fade-in-left-short'>
+            {/* contact */}
+            <div className='mt-0 fade-in-left-short mb-4 md:mb-0'>
               <h3 className="text-[16px] 2xl:text-[20px] font-bold mb-[10px] 2xl:mb-[20px] text-gray-4">TẬP ĐOÀN PI GROUP</h3>
               <ul className="text-[13px] 2xl:text-[17px] text-gray-6">
                 <li className="flex items-center">
@@ -39,6 +41,7 @@ export function Footer() {
                   info@pigroup.vn</li>
               </ul>
             </div>
+            {/* menu */}
             <div className='2xl:leading-[30px] sm:pl-[30px]'>
               <ul className="space-y-3 text-gray-6 uppercase fade-in-left-short font-[600] text-[13px] 2xl:text-[17px]">
                 <li><Link href="/#" className="hover:text-yellow-1">Giới thiệu</Link></li>
@@ -64,10 +67,10 @@ export function Footer() {
                 alt="Modern city skyline"
                 width={35}
                 height={35}
-                className='absolute right-0 top-1/2 -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium'
+                className='absolute right-0 top-[-30px] -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium'
               />
             </div>
-            <div className='flex justify-center items-center gap-[15px] pr-[58px] mt-[23px] fade-in-up-medium'>
+            <div className='flex justify-center items-center gap-[15px] mt-[23px] fade-in-up-medium'>
               <Link href="/" className="flex-shrink-0 flex items-center">
                 <Image src="/fb.svg" width={32} height={32} alt="Social" />
               </Link>
