@@ -26,13 +26,13 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({ slides }) => 
         }}
       >
         <CarouselContent className="w-full items-center 2xl:h-[435px] ml-0">
-          {slides.map((event, index) => (
+          {slides.map((event:any, index) => (
             <CarouselItem key={index} index={index} className={`h-full sliderswrap`}>
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center sliderstaff">
-                  <Image className="rounded-[10px] overflow-hidden" src={event.image} alt="event" width={630} height={435} />
-                  {event?.title ? (
-                    <h3 className="absolute bottom-[20px] text-[13px] font-bold text-center uppercase text-white" dangerouslySetInnerHTML={{ __html: event.title }}></h3>
+                  <Image className="rounded-[10px] overflow-hidden" src={`https://admin.pigroup.tqdesign.vn/storage/${event[0].value}`} alt="event" width={630} height={435} />
+                  {!!event[1] && event[1].value ? (
+                    <h3 className="absolute bottom-[20px] text-[13px] font-bold text-center uppercase text-white" dangerouslySetInnerHTML={{ __html: event[1].value }}></h3>
                   ) : null}
                 </div>
               </div>
