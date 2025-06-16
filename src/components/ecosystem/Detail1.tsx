@@ -58,7 +58,7 @@ export default function Detail1({ custom_fields }: any) {
       [projectKey]: !prevStates[projectKey],
     }));
   };
-  // console.log(customfields);
+  console.log(customfields);
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
