@@ -7,20 +7,22 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-export default function BreadcrumbExample() {
+export default function BreadcrumbExample({ post }: any) {
   return (
     <Breadcrumb className="text-white">
       <BreadcrumbList className="text-[18px] 2xl:text-[22px] font-bold">
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Tin tức</BreadcrumbLink>
+          <BreadcrumbLink href="/news">Tin tức</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/projects">Tin Pi Group</BreadcrumbLink>
-        </BreadcrumbItem>
+        {post.hasOwnProperty('categories') && Array.isArray(post.categories) && post.categories.length ? (
+          <BreadcrumbItem>
+            <BreadcrumbLink href={`/categories/${post.categories[0].slug}`}>{post.categories[0].name}</BreadcrumbLink>
+          </BreadcrumbItem>
+        ) : null}
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage className="font-bold">Pi Group đảm bảo tiến độ dự án Picity High Park</BreadcrumbPage>
+          <BreadcrumbPage className="font-bold">{post.name}</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
