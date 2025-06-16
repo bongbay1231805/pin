@@ -16,7 +16,6 @@ export default function NewsClient({ initialPage, initialData }: Props) {
   const [paginationLinks, setPaginationLinks] = useState<PaginationLink[]>(initialData.links);
   const [posts, setPosts] = useState(initialData.data);
   useEffect(() => {
-    if (currentPage === initialPage) return;
     const fetchData = async () => {
       const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts?page=${currentPage}`, {
         cache: 'no-store',

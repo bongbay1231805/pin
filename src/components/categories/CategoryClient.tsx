@@ -17,7 +17,6 @@ export default function CategoryClient({ initialPage, initialData, apiPath }: Pr
   const [paginationLinks, setPaginationLinks] = useState<PaginationLink[]>(initialData.links);
   const [posts, setPosts] = useState(initialData.data);
   useEffect(() => {
-    if (currentPage === initialPage) return;
     const fetchData = async () => {
       const res = await fetch(`${apiPath}?page=${currentPage}`, {
         cache: 'no-store',

@@ -1,14 +1,15 @@
 'use client';
 import Image from "next/image"
 export function ContentBidding({post}:any) {
+  const specificDateString = new Date(post.created_at);
   return (
     <>
       <div className="flex items-center gap-[40px] border-b-[2px] border-[#D9D9D9] pt-[70px]">
         <div className="grid grid-cols-1 text-center w-[90px] h-[90px] bg-blue-1 items-top justify-center p-x-[15px] rounded-tr-[16px]">
-          <span className="text-white font-semibold text-[15px] mt-[20px] leading-none">04.2025</span>
-          <span className="text-white font-bold text-size-35 mb-[10px] leading-none">20</span>
+          <span className="text-white font-semibold text-[15px] mt-[20px] leading-none">{specificDateString.getDay()}.{specificDateString.getFullYear()}</span>
+          <span className="text-white font-bold text-size-35 mb-[10px] leading-none">{specificDateString.getDate()}</span>
         </div>
-        <h1 className="uppercase text-[32px] 2xl:text-[39px] text-blue-1 font-bold">Pi Group đảm bảo tiến độ dự án Picity High Park</h1>
+        <h1 className="uppercase text-[32px] 2xl:text-[39px] text-blue-1 font-bold">{post.name}</h1>
       </div>
       <div className="text-gray-5 text-[13px] 2xl:text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 [&>figure]:mb-[40px]" dangerouslySetInnerHTML={{ __html: post.content }}></div>
       <div>
