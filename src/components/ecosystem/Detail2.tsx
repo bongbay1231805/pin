@@ -93,7 +93,7 @@ export default function Detail2({custom_fields}:any) {
           </div>
         </div>
         <div>
-          <h3 className='text-yellow-1 text-[22px] xl:text-[25px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px]' dangerouslySetInnerHTML={{ __html: real_estate_services_4 }} style={{ marginTop: '10%' }}></h3>
+          <h3 className='text-yellow-1 text-[22px] xl:text-[25px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px]' dangerouslySetInnerHTML={{ __html: real_estate_services_4 }} style={{ marginTop: '20%' }}></h3>
           <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
             <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[50px]">
               <svg width="90" height="112" viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg">
