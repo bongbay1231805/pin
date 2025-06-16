@@ -78,7 +78,7 @@ export default function Detail2({custom_fields}:any) {
       <div className="mx-auto max-w-[85%] mb-[5%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
           <div className='mt-[200px] w-[81%] order-1 sm:order-0'>
-            <h3 className='text-yellow-1 text-[24px] xl:text-[28px] font-bold mb-[35px]' dangerouslySetInnerHTML={{ __html: real_estate_services_1 }}></h3>
+            <h3 className='text-yellow-1 text-[24px] xl:text-[25px] font-bold mb-[35px]' dangerouslySetInnerHTML={{ __html: real_estate_services_1 }}></h3>
             <div className='text-[14px] text-gray-5 mb-[18px]'>{real_estate_services_2} </div>
             <p className='text-[14px] text-gray-5'>{real_estate_services_3}</p>
           </div>
@@ -93,7 +93,7 @@ export default function Detail2({custom_fields}:any) {
           </div>
         </div>
         <div>
-          <h3 className='text-yellow-1 text-[24px] xl:text-[28px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px]' dangerouslySetInnerHTML={{ __html: real_estate_services_4 }} style={{ marginTop: '10%' }}></h3>
+          <h3 className='text-yellow-1 text-[24px] xl:text-[25px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px]' dangerouslySetInnerHTML={{ __html: real_estate_services_4 }} style={{ marginTop: '10%' }}></h3>
           <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
             <div className="grow-1 relative flex-shrink-0 w-full md:w-auto flex  flex-col justify-center items-center gap-[50px]">
               <svg width="113" height="112" viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg">

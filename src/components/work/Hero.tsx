@@ -209,7 +209,7 @@ export default function Hero() {
       <div ref={oneRef} className=" mx-auto max-w-[85%]  text-center pt-[10%] md:pt-[110px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[30px] mb-[50px]'>Văn hóa làm việc</h2>
       </div>
-      <div className="grid grid-cols-4 gap-[20px]  mx-auto  max-w-[85%] pb-[45px]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px]  mx-auto  max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[218px] items-center justify-center'>
           <svg className='w-[88px] h-[88px]' width="113" height="113" viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M37.2159 57.3584C40.2239 57.3584 42.6623 54.9199 42.6623 51.912C42.6623 48.904 40.2239 46.4656 37.2159 46.4656C34.208 46.4656 31.7695 48.904 31.7695 51.912C31.7695 54.9199 34.208 57.3584 37.2159 57.3584Z" stroke="currentColor" strokeWidth="2.5" strokeMiterlimit="10" />
@@ -287,9 +287,9 @@ export default function Hero() {
           <p className='text-[17px] font-semibold uppercase text-center'>Sáng tạo, đổi mới <br /> để luôn dẫn đầu</p>
         </div>
       </div>
-      <div className="bg-blue-3 rounded-[10px] flex pl-[100px] pr-[10px]  mx-auto  max-w-[85%] h-[160px] items-end justify-between">
-        <p className='h-full text-[25px] text-yellow-1 grid items-center'>Nếu bạn không tự khởi nghiệp, hãy đồng hành <br /> với ông chủ đang đi đến thành công</p>
-        <svg className='h-[150px]' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="relative sm:static bg-blue-3 rounded-[10px] md:flex px-4 sm:p-2 md:pl-[100px] md:pr-[10px] mx-auto max-w-[85%] md:items-center justify-between">
+        <p className='absolute sm:static h-full text-[18px] z-1 md:text-[25px] text-yellow-1 top-6'>Nếu bạn không tự khởi nghiệp, hãy đồng hành <br /> với ông chủ đang đi đến thành công</p>
+        <svg className='h-[170px] w-[35%] sm:w-auto ml-[68%] sm:ml-0' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M45.1741 60.1561L31.3036 65.0217C28.828 65.8918 26.7555 67.6409 25.48 69.9405L19.8778 80.0535C17.9558 83.5162 13.5848 84.7415 10.1526 82.7748C6.74699 80.8259 5.56455 76.4798 7.51314 73.0659L16.5298 57.2483C17.5882 55.3926 19.2357 53.941 21.2108 53.1285L45.7188 43.0467C50.1164 41.2354 55.1119 41.6083 59.195 44.0411C65.0408 47.526 67.8485 54.4914 66.0594 61.0706L59.7885 84.12L83.6233 102.868C86.6923 105.283 88.2644 109.14 87.7552 113.016L84.1458 140.5" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M32.7719 75.25L31.0624 91.5426C30.5089 96.8077 33.6842 101.749 38.6929 103.422L62.4259 111.351C66.9342 112.856 69.9766 117.087 69.9766 121.85V140.509" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
