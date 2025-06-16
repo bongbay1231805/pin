@@ -34,7 +34,7 @@ function News() {
       <div className="min-h-screen pt-[206px] 2xl:pt-[226px] pb-[90px] container m-auto max-w-[85%] px-[10px]">
         <div className="mx-autoflex flex-col gap-12">
           {/* Top Image w/ Overlayed Card */}
-          <Link href="/news/market-news" className="relative news-top-item">
+          <Link href="/categories/tin-thi-truong" className="relative news-top-item">
             <div className='img-container flex justify-center items-center ef:w-[1178px] max-w-[75%] rounded-[10px] ef:max-h-[58vh]'>
               <img
                 src={mainImage}
@@ -55,7 +55,7 @@ function News() {
           {/* Bottom 2 cards section (responsive grid) */}
           <div className="grid mt-[120px] 2xl:mt-[130px] grid-cols-1 gap-y-[10px] gap-x-[10px] sm:grid-cols-2 sm:gap-y-[50px] sm:gap-x-[40px]">
               {/* Card 1 */}
-              <Link href="/news/market-news" className="news-item relative rounded-2xl flex flex-col">
+              <Link href="/categories/tin-thi-truong" className="news-item relative rounded-2xl flex flex-col">
                 <div className='img-container rounded-[10px] overflow-hidden w-full'>
                   <img
                     src={"/fnews/news_01.png"}
@@ -71,7 +71,7 @@ function News() {
                 </div>
               </Link>
               {/* Card 2 */}
-              <Link href="/news/market-news" className="news-item relative rounded-2xl flex flex-col">
+              <Link href="/categories/tin-thi-truong" className="news-item relative rounded-2xl flex flex-col">
                 <div className='img-container rounded-[10px] overflow-hidden w-full'>
                   <img
                     src={"/fnews/news_02.png"}
@@ -87,7 +87,7 @@ function News() {
                 </div>
               </Link> 
               {/* Card 1 */}
-              <Link href="/news/market-news" className="news-item relative rounded-2xl flex flex-col">
+              <Link href="/categories/tin-thi-truong" className="news-item relative rounded-2xl flex flex-col">
                 <div className='img-container rounded-[10px] overflow-hidden w-full'>
                   <img
                     src={"/fnews/news_03.jpg"}
@@ -103,7 +103,7 @@ function News() {
                 </div>
               </Link>
               {/* Card 2 */}
-              <Link href="/news/market-news" className="news-item relative rounded-2xl flex flex-col">
+              <Link href="/categories/tin-thi-truong" className="news-item relative rounded-2xl flex flex-col">
                 <div className='img-container rounded-[10px] overflow-hidden w-full'>
                   <img
                     src={"/fnews/news_04.jpg"}
@@ -119,7 +119,7 @@ function News() {
                 </div>
               </Link> 
               {/* Card 1 */}
-              <Link href="/news/market-news" className="news-item relative rounded-2xl flex flex-col">
+              <Link href="/categories/tin-thi-truong" className="news-item relative rounded-2xl flex flex-col">
                 <div className='img-container rounded-[10px] overflow-hidden w-full'>
                   <img
                     src={"/fnews/news_05.jpg"}
@@ -135,7 +135,7 @@ function News() {
                 </div>
               </Link>
               {/* Card 2 */}
-              <Link href="/news/market-news" className="news-item relative rounded-2xl flex flex-col">
+              <Link href="/categories/tin-thi-truong" className="news-item relative rounded-2xl flex flex-col">
                 <div className='img-container rounded-[10px] overflow-hidden w-full'>
                   <img
                     src={"/fnews/news_06.png"}

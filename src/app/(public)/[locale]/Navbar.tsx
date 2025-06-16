@@ -8,7 +8,7 @@ import { MainDrawer } from "@/components/MainDrawer";
 const Navbar = () => {
   const pathname = usePathname().split("/").pop();
   const isHomePage = (pathname === "en" || pathname === "vi");
-  const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "market-news", "pi-group-news", "bidding-news", "human-resource", "contact", "digitalcity"];
+  const aPage = ["ecosystem", "investment-development", "real-estate-services", "management-operation", "news", "tin-thi-truong", "tin-pi-group", "tin-dau-thau", "human-resource", "contact", "digitalcity"];
   const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -96,7 +96,7 @@ const Navbar = () => {
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Đô thị số Picity</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Đô thị số Picity</span>
             </Link>
-            <Link href="/news" className={`group relative grow-1 text-center hover:text-yellow-2 ${(isActive("news") || isActive("market-news") || isActive("pi-group-news") || isActive("bidding-news")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
+            <Link href="/news" className={`group relative grow-1 text-center hover:text-yellow-2 ${(isActive("news") || isActive("tin-thi-truong") || isActive("tin-pi-group") || isActive("tin-dau-thau")) ? " text-yellow-2!" : "text-white-1"} ${(hasShadow || pageCurent || !isHomePage) ? "text-gray-6!" : ""}`}>
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">Tin Tức</span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">Tin Tức</span>
             </Link>

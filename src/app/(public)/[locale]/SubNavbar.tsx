@@ -36,7 +36,7 @@ export default function SubNavbar(props: PropSub) {
   };
   let navItems: { name: string, href: string, hrefb?: React.RefObject<HTMLDivElement | null> | undefined }[] = [];
   const ecosystem = ['investment-development', 'real-estate-services', 'management-operation'];
-  const news = ['news', 'market-news', 'pi-group-news', 'bidding-news'];
+  const news = ['news', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau'];
   const humanresource = ['human-resource'];
   const about = ['about'];
   const digitalcity = ['digitalcity'];
@@ -83,15 +83,15 @@ export default function SubNavbar(props: PropSub) {
     navItems = [
       {
         name: "Tin thị trường",
-        href: "/news/market-news"
+        href: "/categories/tin-thi-truong"
       },
       {
         name: "Tin Pi Group",
-        href: "/news/pi-group-news"
+        href: "/categories/tin-pi-group"
       },
       {
         name: "Tin đấu thầu",
-        href: "/news/bidding-news"
+        href: "/categories/tin-dau-thau"
       }
     ];
   }

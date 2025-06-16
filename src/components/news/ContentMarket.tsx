@@ -32,7 +32,7 @@ export function ContentMarket() {
         <ul className="flex gap-[10px] items-center justify-end">
           <p className="text-[17px] text-gray-5 mr-0.5 ">Chia sẻ</p>
           <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/news/market-news">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/categories/tin-thi-truong">
               <Image
                 src="/fnews/fb.svg"
                 alt="Modern cityscape with high-rise buildings"
@@ -43,7 +43,7 @@ export function ContentMarket() {
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/p?http://localhost:3000/news/market-news">
+            <a href="https://www.instagram.com/p?http://localhost:3000/categories/tin-thi-truong">
               <Image
                 src="/fnews/inter.svg"
                 alt="Modern cityscape with high-rise buildings"
@@ -54,7 +54,7 @@ export function ContentMarket() {
             </a>
           </li>
           <li>
-            <a href="http://www.linkedin.com/shareArticle?url=http://localhost:3000/news/market-news">
+            <a href="http://www.linkedin.com/shareArticle?url=http://localhost:3000/categories/tin-thi-truong">
               <Image
                 src="/fnews/linkin.svg"
                 alt="Modern cityscape with high-rise buildings"
