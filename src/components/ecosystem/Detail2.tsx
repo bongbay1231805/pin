@@ -69,11 +69,11 @@ export default function Detail2({custom_fields}:any) {
    useScrollReveal(); // dùng mặc định `.boxanimation`
   return (
     <>
-      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
+      <div className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[70px] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[85%]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[22px] sm:text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: real_estate_services_title}}></h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[30px] xl:leading-[56px] text-[22px] xl:text-[46px]' dangerouslySetInnerHTML={{ __html: real_estate_services_title}}></h2>
         </div>
-        <Image fill src="/fecosystem/detail/operation.png" alt="Smart City Features" className="object-fill"></Image>
+        <Image fill src="/fecosystem/detail/operation.png" alt="Smart City Features" className="object-cover"></Image>
       </div>
       <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
