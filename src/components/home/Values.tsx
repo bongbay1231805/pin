@@ -65,7 +65,7 @@ export function Values({ custom_fields }: any) {
     <div className="mx-auto border-b-[0] border-gray-2 boxanimation">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center">
         <div className="mt-[30px] 2xl:mt-[80px] text-center sm:text-left">
-          <h2 className="text-[28px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">{field_11}</h2>
+          <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">{field_11}</h2>
           <p className="text-[20px] 2xl:text-[28px] text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">{field_12}</p>
           <div className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-center sm:text-justify mx-auto sm:mx-0 sm:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px]" dangerouslySetInnerHTML={{ __html: field_13 }}></div>
           <Link href={field_15} className="text-[13px] 2xl:text-[16px] reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-[600] w-[110] h-[28] 2xl:w-[132] 2xl:h-[32] border border-yellow-1 hover:text-white">
