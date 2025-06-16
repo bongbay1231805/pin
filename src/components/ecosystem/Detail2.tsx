@@ -71,11 +71,11 @@ export default function Detail2({custom_fields}:any) {
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[85%]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: real_estate_services_title}}></h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[22px] sm:text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: real_estate_services_title}}></h2>
         </div>
         <Image fill src="/fecosystem/detail/operation.png" alt="Smart City Features" className="object-fill"></Image>
       </div>
-      <div className="mx-auto max-w-[85%] mb-[5%] 2xl:mb-[203px]">
+      <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
           <div className='mt-[100px] sm:w-[81%] order-1 sm:order-0'>
             <h3 className='text-yellow-1 text-[22px] xl:text-[25px] font-bold mb-[35px]' dangerouslySetInnerHTML={{ __html: real_estate_services_1 }}></h3>
@@ -93,7 +93,7 @@ export default function Detail2({custom_fields}:any) {
           </div>
         </div>
         <div>
-          <h3 className='text-yellow-1 text-[22px] xl:text-[25px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px]' dangerouslySetInnerHTML={{ __html: real_estate_services_4 }} style={{ marginTop: '20%' }}></h3>
+          <h3 className='text-yellow-1 text-[22px] xl:text-[25px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px] mt-[20%] sm:mt-[10%]' dangerouslySetInnerHTML={{ __html: real_estate_services_4 }}></h3>
           <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
             <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[50px]">
               <svg width="90" height="112" viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,9 +178,9 @@ export default function Detail2({custom_fields}:any) {
           </div>
         </div>
       </div>
-      <div className='2xl:mb-[120px]'>
-        <div className='flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center h-[100vh]'>
-          <div className="max-w-[85%]" style={{ marginLeft: '10%' }}>
+      <div className='2xl:mb-[120px] relative'>
+        <div className='flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center sm:h-[100vh] h-[60vh]'>
+          <div className="max-w-[85%]" style={{ marginLeft: '8%' }}>
             <div className="grid items-start">
               <h3 className='text-yellow-1 text-[22px] xl:text-[40px] font-bold uppercase mb-[60px] mt-8' dangerouslySetInnerHTML={{ __html: real_estate_services_8 }}></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
@@ -245,7 +245,7 @@ export default function Detail2({custom_fields}:any) {
                   <h4 className='text-white uppercase text-[12px] 2xl:text-[20px] font-semibold'>{real_estate_services_11}</h4>
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto]">
-                  <svg width="70" height="105" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="100" height="105" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M44.6035 56.1301L50.4985 58.5647L56.8832 53.296L61.5474 57.293L66.4593 51.0552" stroke="white" strokeWidth="3" strokeMiterlimit="10" />
                     <path d="M69.8534 47.6338L64.4121 49.1606L68.3957 53.3258L69.8534 47.6338Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
                     <path d="M42.9727 58.999C44.6295 58.999 45.9727 57.6559 45.9727 55.999C45.9727 54.3422 44.6295 52.999 42.9727 52.999C41.3158 52.999 39.9727 54.3422 39.9727 55.999C39.9727 57.6559 41.3158 58.999 42.9727 58.999Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
