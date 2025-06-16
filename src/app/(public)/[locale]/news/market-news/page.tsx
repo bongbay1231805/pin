@@ -153,9 +153,6 @@ function News() {
           </div>
         </div>
       </div>
-      <div className='pb-[90px]'>
-        <PaginationExample />
-      </div>
     </div>
   );
 }

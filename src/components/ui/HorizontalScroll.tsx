@@ -1,6 +1,10 @@
 'use client'
+import convertJsonStringToArrayOrObject from '@/hooks/useConvertJsonToArray';
 import React, { useRef } from 'react'
-const HorizontalScroll: React.FC = () => {
+type HorizontalScrollProps = {
+  custom_fields: any;
+};
+const HorizontalScroll: React.FC<HorizontalScrollProps> = ({ custom_fields }: any) => {
   const scrollRef = useRef<HTMLDivElement>(null)
   let isDown = false
   let startX = 0
@@ -27,6 +31,9 @@ const HorizontalScroll: React.FC = () => {
     const walk = (x - startX) * 1.5 // tốc độ kéo
     scrollRef.current.scrollLeft = scrollLeft - walk
   }
+  const { digitalcity_slider_horizoltal } = custom_fields;
+  const digitalcitysliderhorizoltal = convertJsonStringToArrayOrObject(digitalcity_slider_horizoltal);
+  const digitalcitysliderhorizoltals = [...digitalcitysliderhorizoltal,...digitalcitysliderhorizoltal];
   return (
     <div
       ref={scrollRef}
@@ -37,22 +44,14 @@ const HorizontalScroll: React.FC = () => {
       onMouseMove={onMouseMove}
     >
       <div className="flex gap-[40px] h-[222px] px-6">
-        {[
-          'Camera AI & Face ID giám sát an ninh',
-          'Smarthome điều khiển thiết bị từ xa',
-          'Cảnh báo cháy thông minh',
-          'Gian hàng mua sắm trực tuyến',
-          'Camera AI & Face ID giám sát an ninh',
-          'Smarthome điều khiển thiết bị từ xa',
-          'Cảnh báo cháy thông minh',
-          'Gian hàng mua sắm trực tuyến'
-        ].map((text, i) => (
+        {digitalcitysliderhorizoltals.map((text:any, i:number) => (
           <div
             key={i}
             className="grid items-center bg-blue-1 rounded-[20px] min-w-[250px] w-[250px] h-full content-evenly hover:bg-yellow-1 duration-500"
           >
+            <div className='grid justify-center items-center' dangerouslySetInnerHTML={{__html: text[0].value}}></div>
             <h4 className="uppercase text-white text-[14px] text-center font-bold">
-              {text}
+              {text[1].value}
             </h4>
           </div>
         ))}
