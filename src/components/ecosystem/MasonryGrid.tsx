@@ -160,13 +160,16 @@ const MasonryGrid = ({ custom_fields }: any) => {
     },
   ];
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    // Chặn logic nếu là mobile
+    const isDesktop = window.innerWidth >= 1280;
+    if (!isDesktop) return;
     gridConfigs.forEach(config => {
       const { containerRef, fixedElements, expandableElements } = config;
       const container = containerRef.current;
       if (!container) return;
-      // Lấy các phần tử DOM thực tế từ refs và đảm bảo chúng không phải null
-      const currentFixedElements: HTMLDivElement[] = fixedElements.map(ref => ref.current).filter((el): el is HTMLDivElement => el !== null);
-      const currentExpandableElements: HTMLDivElement[] = expandableElements.map(ref => ref.current).filter((el): el is HTMLDivElement => el !== null);
+      const currentFixedElements = fixedElements.map(ref => ref.current).filter((el): el is HTMLDivElement => el !== null);
+      const currentExpandableElements = expandableElements.map(ref => ref.current).filter((el): el is HTMLDivElement => el !== null);
       let lastHoveredSection: HTMLDivElement | null = null;
       const handleMouseEnter = (hoveredSection: HTMLDivElement) => {
         if (hoveredSection === lastHoveredSection) return;
@@ -176,15 +179,15 @@ const MasonryGrid = ({ custom_fields }: any) => {
         const availableWidth = containerWidth - fixedWidthSum;
         const expandedRatio = 0.6;
         const expandedWidth = availableWidth * expandedRatio;
-        const collapsedWidth = (availableWidth - expandedWidth) / (currentExpandableElements.length - 1);
-        currentExpandableElements.forEach((section) => {
-          const isHovered = section === hoveredSection;
-          const currentWidth = section.getBoundingClientRect().width;
-          section.style.width = `${currentWidth}px`;
-          requestAnimationFrame(() => {
-            section.style.transition = 'width 0.5s ease-in-out';
-            section.style.width = `${isHovered ? expandedWidth : collapsedWidth}px`;
-          });
+        const remainingCount = currentExpandableElements.length - 1;
+        const collapsedWidth = remainingCount > 0 ? (availableWidth - expandedWidth) / remainingCount : 0;
+        currentExpandableElements.forEach((s) => {
+          const computedWidth = window.getComputedStyle(s).width;
+          s.style.transition = 'none';
+          s.style.width = computedWidth;
+          s.offsetHeight;
+          s.style.transition = 'width 0.5s ease-in-out';
+          s.style.width = `${s === hoveredSection ? expandedWidth : collapsedWidth}px`;
         });
       };
       const handleMouseLeave = () => {
@@ -192,38 +195,32 @@ const MasonryGrid = ({ custom_fields }: any) => {
         const containerWidth = container.offsetWidth;
         const fixedWidthSum = currentFixedElements.reduce((sum, el) => sum + el.offsetWidth, 0);
         const availableWidth = containerWidth - fixedWidthSum;
-        const equalWidth = availableWidth / currentExpandableElements.length;
-        currentExpandableElements.forEach((section) => {
-          const currentWidth = section.getBoundingClientRect().width;
-          section.style.width = `${currentWidth}px`;
-          requestAnimationFrame(() => {
-            section.style.transition = 'width 0.5s ease-in-out';
-            section.style.width = `${equalWidth}px`;
-          });
+        const equalWidth = currentExpandableElements.length > 0 ? availableWidth / currentExpandableElements.length : 0;
+        currentExpandableElements.forEach((s) => {
+          const computedWidth = window.getComputedStyle(s).width;
+          s.style.transition = 'none';
+          s.style.width = computedWidth;
+          s.offsetHeight;
+          s.style.transition = 'width 0.5s ease-in-out';
+          s.style.width = `${equalWidth}px`;
+          setTimeout(() => {
+            s.style.transition = '';
+            s.style.width = '';
+          }, 500);
         });
       };
-      // Gắn sự kiện cho từng phần tử co giãn trong hàng này
       currentExpandableElements.forEach(section => {
-        // Lưu tham chiếu đến hàm handler đã được bound để có thể gỡ bỏ chính xác
-        // TypeScript yêu cầu một cách rõ ràng hơn để gắn hàm vào thuộc tính
-        // Đây là một cách an toàn để xử lý sự kiện trong useEffect của React
         section.addEventListener('mouseenter', handleMouseEnter.bind(null, section));
         section.addEventListener('mouseleave', handleMouseLeave);
       });
-      // Cleanup function cho useEffect: gỡ bỏ event listeners khi component unmount
       return () => {
         currentExpandableElements.forEach(section => {
-          // Để gỡ bỏ event listener, cần tham chiếu chính xác đến hàm đã gắn.
-          // Nếu dùng .bind() mà không lưu tham chiếu, việc gỡ bỏ sẽ khó khăn.
-          // Cách tốt nhất là lưu tham chiếu hoặc sử dụng các hàm callback ổn định.
-          // Với `handleMouseEnter.bind(null, section)`, bạn sẽ cần lưu tham chiếu bound đó.
-          // Hoặc, bạn có thể định nghĩa hàm callback trong scope và truyền nó trực tiếp.
-          section.removeEventListener('mouseenter', handleMouseEnter.bind(null, section)); // Sẽ không gỡ bỏ đúng nếu không phải cùng instance
-          section.removeEventListener('mouseleave', handleMouseLeave); // Cái này có thể gỡ bỏ được
+          section.removeEventListener('mouseenter', handleMouseEnter.bind(null, section));
+          section.removeEventListener('mouseleave', handleMouseLeave);
         });
       };
     });
-  }, []); // Chạy một lần khi component mount
+  }, []);
   let j = 0;
   for (let i = 0; i < customfields.length; i += 4) {
     const rowItems = customfields.slice(i, i + 4);

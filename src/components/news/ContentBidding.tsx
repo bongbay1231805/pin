@@ -17,7 +17,7 @@ export function ContentBidding({post}:any) {
         <ul className="flex gap-[10px] mt-[86px] mb-[45px] items-center justify-end">
           <p className="text-[13px] 2xl:text-[17px] font-semibold text-gray-6 mr-0.5 ">Chia sẻ</p>
           <li>
-            <a href={`https://www.facebook.com/sharer/sharer.php/?u=https://pigroup.tqdesign.vn/posts/$(${post.slug})`}>
+            <a href={`https://www.facebook.com/sharer/sharer.php/?u=https://pigroup.tqdesign.vn/posts/${post.slug}`}>
               <Image
                 src="/fnews/fb.svg"
                 alt="Modern cityscape with high-rise buildings"
@@ -28,7 +28,7 @@ export function ContentBidding({post}:any) {
             </a>
           </li>
           <li>
-            <a href={`https://www.instagram.com/p?https://pigroup.tqdesign.vn/posts/$(${post.slug})`}>
+            <a href={`https://www.instagram.com/p?https://pigroup.tqdesign.vn/posts/${post.slug}`}>
               <Image
                 src="/fnews/inter.svg"
                 alt="Modern cityscape with high-rise buildings"
@@ -39,7 +39,7 @@ export function ContentBidding({post}:any) {
             </a>
           </li>
           <li>
-            <a href={`http://www.linkedin.com/shareArticle?url=https://pigroup.tqdesign.vn/posts/$(${post.slug})`}>
+            <a href={`http://www.linkedin.com/shareArticle?url=https://pigroup.tqdesign.vn/posts/${post.slug}`}>
               <Image
                 src="/fnews/linkin.svg"
                 alt="Modern cityscape with high-rise buildings"
