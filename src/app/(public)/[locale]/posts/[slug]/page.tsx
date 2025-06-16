@@ -5,7 +5,6 @@ import { RegistrationForm } from '@/components/news/RegistrationForm';
 type Params = {
   params: {
     slug: string;
-    locale?: string;
   };
 };
 async function getPostBySlug(slug: string) {
