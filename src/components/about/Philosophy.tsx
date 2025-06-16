@@ -7,13 +7,13 @@ export function Philosophy({ custom_fields }: any) {
   return (
     <section ref={fourRef} className="py-16">
       <div className="max-w-[85%] mx-auto bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-contain bg-no-repeat bg-right">
-        <div className="grid items-center grid-cols-1 md:grid-cols-[70%_30%] mb-8 uppercase text-[27px] 2xl:text-[35px] py-[2px] text-white">
-          <div className="py-[22px] pl-[76px] leading-[52px] 2xl:leading-[62px] font-[500]">
+        <div className="grid items-center grid-cols-1 md:grid-cols-[70%_30%] mb-8 uppercase text-[20px] 2xl:text-[35px] py-[2px] text-white">
+          <div className="py-[22px] pl-[30px] sm:pl-[76px] leading-[30px]  sm:leading-[52px] 2xl:leading-[62px] font-[500]">
             <h3>{field_13_about} <span className="text-yellow-1">{field_14_about}</span></h3>
             <h3>{field_15_about} <span className="text-yellow-1">{field_16_about}</span></h3>
             <h3>{field_17_about} <span className="text-yellow-1">{field_18_about}</span></h3>
           </div>
-          <div className="font-bold text-end leading-[38px] 2xl:leading-[42px] pt-[10px] pr-[106px]">
+          <div className="pb-[22px] font-bold text-end leading-[30px] text-[23px] 2xl:text-[35px] 2xl:leading-[42px] pt-[10px] pr-[30px] sm:pr-[106px]">
             <p>{field_19_about}<br />{field_20_about}</p>
           </div>
         </div>

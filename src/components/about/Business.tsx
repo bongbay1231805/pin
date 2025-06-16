@@ -192,7 +192,7 @@ export function Business({ custom_fields }: any) {
           </svg>
         </div>
       </div>
-      <div ref={seventRef} className="relative flex items-center justify-center mt-[46px]">
+      <div ref={seventRef} className="relative flex items-center justify-center px-[30px] mt-[46px]">
         <Link href={link_ho_so_nang_luc} className="flex profile-btn items-center justify-center font-semibold w-[496px] h-[54px]">
           <svg width="40" height="40" className="object-contain mr-[15px]" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.76074 45.6747V3.89313C7.76074 2.29692 9.05181 1 10.6408 1H45.9619C47.5509 1 48.8419 2.29692 48.8419 3.89313V39.9805" className="proico" stroke="#4C73A8" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" />

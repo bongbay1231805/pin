@@ -24,7 +24,7 @@ export default async function About() {
       <Philosophy custom_fields={custom_fields} />
       <Business custom_fields={custom_fields} />
       <div className='boxanimation fade-in-up-medium mb-[5%] 2xl:mb-[96px]'>
-        <Partners />
+        <Partners custom_fields={custom_fields} />
       </div>
     </>
   );
