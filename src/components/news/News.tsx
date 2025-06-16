@@ -7,11 +7,11 @@ const mainImage = "/fnews/news-1.png";
 export default function News({ posts }: any) {
   useScrollReveal();
   return (
-    <div className="min-h-screen pt-[206px] 2xl:pt-[226px] pb-[90px] container m-auto max-w-[85%] px-[10px]">
+    <div className="min-h-screen pt-[70px] sm:pt-[206px] 2xl:pt-[226px] pb-[90px] m-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
       <div className="mx-auto flex flex-col gap-12">
         {/* Top Image w/ Overlayed Card */}
         <Link href={`https://pigroup.tqdesign.vn/posts/${posts[0].slug}`} className="relative news-top-item">
-          <div className='img-container flex justify-center items-center ef:w-[1178px] max-w-[75%] rounded-[10px] ef:max-h-[58vh]'>
+          <div className='img-container flex justify-center items-center ef:w-[1178px] w-full max-w-[100%] sm:max-w-[75%] rounded-[10px] h-[262px] sm:h-auto ef:max-h-[58vh]'>
             {
               posts[0].is_featured ? (
                 <Image
@@ -32,17 +32,17 @@ export default function News({ posts }: any) {
               )
             }
           </div>
-          <div className="absolute bottom-0 right-0 translate-y-1/4 z-10 sm:max-w-[calc(50%_-_15px)] bg-[#142F4F] rounded-tr-[40px] text-white pl-10 pr-10 py-6 shadow-xl">
+          <div className="absolute bottom-0 right-0 translate-y-1/4 z-10 sm:max-w-[calc(50%_-_15px)] bg-[#142F4F] rounded-tr-[40px] text-white p-[20px] sm:pl-10 sm:pr-10 sm:py-6 shadow-xl">
             <div className="font-bold title text-[17px] 2xl:text-[21px] mb-2">
               {posts[0].name}
             </div>
-            <div className="text-[13px] 2xl:text-[17px] text-white/85">
+            <div className="text-[13px] 2xl:text-[17px] text-white/85 line-clamp-2">
               {posts[0].description}
             </div>
           </div>
         </Link>
         {/* Bottom 2 cards section (responsive grid) */}
-        <div className="grid mt-[120px] 2xl:mt-[130px] grid-cols-1 gap-y-[10px] gap-x-[10px] sm:grid-cols-2 sm:gap-y-[50px] sm:gap-x-[40px]">
+        <div className="grid mt-[50px] sm:mt-[120px] 2xl:mt-[130px] grid-cols-1 gap-y-[90px] gap-x-[10px] sm:grid-cols-2 sm:gap-y-[50px] sm:gap-x-[40px]">
           {/* Card 1 */}
           {
             posts.map((post: any, index: number) =>
@@ -67,8 +67,10 @@ export default function News({ posts }: any) {
                   </div>
                   {/* Label */}
                   <div >
-                    <div className="title absolute bottom-[56px] left-0 translate-y-2/5 leading-[21px] 2xl:leading-[26px] z-10 bg-[#EAF3FF] rounded-tr-[60px] w-[68%] px-6 py-[18px] text-blue-1 font-bold text-[14px] 2xl:text-[17px] uppercase">
-                      {post.name}
+                    <div className={`title absolute ${index % 2 === 0 ? 'bottom-0' : 'bottom-[-30px] sm:bottom-[56px]' }  left-0 translate-y-2/5 leading-[21px] 2xl:leading-[26px] z-10 bg-[#EAF3FF] rounded-tr-[60px] w-[90%] sm:w-[68%] px-6 py-[18px] text-blue-1 font-bold text-[14px] 2xl:text-[17px] uppercase`}>
+                      <span  className="line-clamp-2 sm:line-clamp-none">
+                        {post.name}
+                      </span>
                     </div>
                   </div>
                 </Link>

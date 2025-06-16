@@ -32,9 +32,11 @@ export default function NewsClient({ initialPage, initialData }: Props) {
       {/* Hiển thị danh sách bài viết */}
       <News posts={posts} />
       {/* Phân trang */}
-      <div className="pb-[90px]">
-        <PaginationExample links={paginationLinks} onPageChange={setCurrentPage} />
-      </div>
+      {paginationLinks.length > 3 && (
+        <div className="pb-[90px]">
+          <PaginationExample links={paginationLinks} onPageChange={setCurrentPage} />
+        </div>
+      )}
     </div>
   );
 }
