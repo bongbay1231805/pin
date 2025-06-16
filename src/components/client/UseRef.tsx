@@ -62,7 +62,7 @@ export default function ClientUseRef({custom_fields}:any) {
             <div className="relative mx-auto flex items-center justify-center">
               <div className="text-center max-w-[836px] 2xl:max-w-[1088px]">
                 <p className="text-[22px] 2xl:text-[28px] mt-[7%] 2xl:mt-[71px] text-gray-1 fade-in-left-short">{field_1}</p>
-                <h2 className="text-size-25 2xl:text-[45px] font-bold text-yellow-1 mt-[0] mb-[2px] fade-in-left-short">{field_2}</h2>
+                <h2 className="text-size-25 xl:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 mt-[0] mb-[2px] fade-in-left-short">{field_2}</h2>
                 <p className="text-[22px] 2xl:text-[28px] mb-[37px] text-gray-1 -mt-[8px] fade-in-left-short">{field_3}</p>
                 <div className="text-[13px] 2xl:text-[17px] mb-[35px] md:mb-[42px] text-gray-5 leading-[22px] 2xl:leading-[28px] fade-in-left-short" dangerouslySetInnerHTML={{ __html: field_4 }}></div>
               </div>
