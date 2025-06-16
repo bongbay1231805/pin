@@ -71,11 +71,11 @@ export default function Detail2({custom_fields}:any) {
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[85%]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: real_estate_services_title}}></h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[22px] sm:text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: real_estate_services_title}}></h2>
         </div>
         <Image fill src="/fecosystem/detail/operation.png" alt="Smart City Features" className="object-fill"></Image>
       </div>
-      <div className="mx-auto max-w-[85%] mb-[5%] 2xl:mb-[203px]">
+      <div className="mx-auto max-w-[85%] mb-[20%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
           <div className='mt-[100px] sm:w-[81%] order-1 sm:order-0'>
             <h3 className='text-yellow-1 text-[22px] xl:text-[25px] font-bold mb-[35px]' dangerouslySetInnerHTML={{ __html: real_estate_services_1 }}></h3>
@@ -178,9 +178,9 @@ export default function Detail2({custom_fields}:any) {
           </div>
         </div>
       </div>
-      <div className='2xl:mb-[120px]'>
-        <div className='flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center h-[100vh]'>
-          <div className="max-w-[85%]" style={{ marginLeft: '10%' }}>
+      <div className='2xl:mb-[120px] relative'>
+        <div className='flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center h-[60vh]'>
+          <div className="max-w-[85%]" style={{ marginLeft: '8%' }}>
             <div className="grid items-start">
               <h3 className='text-yellow-1 text-[22px] xl:text-[40px] font-bold uppercase mb-[60px] mt-8' dangerouslySetInnerHTML={{ __html: real_estate_services_8 }}></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
