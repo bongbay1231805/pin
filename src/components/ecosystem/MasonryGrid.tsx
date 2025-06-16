@@ -230,7 +230,7 @@ const MasonryGrid = ({ custom_fields }: any) => {
       <div
         key={i}
         ref={(i === 0) ? grid1Ref : (i === 4) ? grid2Ref : (i === 8) ? grid3Ref : null}
-        className={`grid transition-all gap-x-[2px] m-0 xl:h-[calc((100vh-106px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_42%]" : "xl:grid-cols-[42%_repeat(3,1fr)]"}`}
+        className={`grid transition-all gap-x-[2px] mb-6 xl:h-[calc((100vh-106px)/3)] grid-cols-3 ${isSpecialRow ? "xl:grid-cols-[repeat(3,1fr)_42%]" : "xl:grid-cols-[42%_repeat(3,1fr)]"}`}
       >
         {rowItems.map((item: any, index: number) => {
           j++;

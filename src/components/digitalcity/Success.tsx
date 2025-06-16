@@ -22,7 +22,7 @@ export default function Success({ custom_fields }: any) {
   const {digitalcity_success} = custom_fields;
   const digitalcitysuccess = convertJsonStringToArrayOrObject(digitalcity_success);
   return (
-    <div className="flex items-start justify-end relative mx-auto max-w-[85%] h-[570px] mb-[65px]">
+    <div className="flex items-start justify-end relative mx-auto max-w-[85%] h-[200px] md:h-[570px] mb-[65px]">
       {digitalcitysuccess.map((digitalcsuccess:any,index:number) => (
         <Image
           key={index+1}
@@ -48,9 +48,9 @@ export default function Success({ custom_fields }: any) {
                 ${index + 1 === 1 ? "top-[-15px]" : ""}
                 ${index + 1 === 2 ? "top-[40px]" : ""}
                 ${index + 1 === 3 ? "top-[95px]" : ""}
-                flex justify-end overflow-hidden absolute items-center rounded-tl-[10px] rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px]
-                h-[45px] w-[395px] right-0 cursor-pointer
-                text-[20px] font-bold text-white
+                flex justify-start overflow-hidden absolute items-center rounded-tl-[10px] rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px]
+                h-[45px] w-[180px] sm:w-[395px] right-0 cursor-pointer
+                md:text-[20px] font-bold text-white
                 transition-colors duration-300 ease-in-out
                 // Trạng thái active cho box
                 ${hoveredBox === index + 1 ? 'bg-yellow-1 [&>p]:opacity-100 [&>div]:bg-yellow-1' : 'hover:bg-yellow-1 hover:[&>p]:opacity-100 hover:[&>div]:bg-yellow-1'}

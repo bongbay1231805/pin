@@ -102,20 +102,20 @@ export default function Part({ custom_fields }: any) {
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="183.67" cy="507.87" r="2.1" />
           <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M456.42,439.01c.06-.08.11-.18.11-.3,0-.28-.23-.5-.5-.5-.15,0-.28.07-.37.17-.92,1.04-1.85,2.06-2.79,3.08-50.2,54.17-121.25,83.47-194.97,80.4-24.48-1.02-48.52-5.54-71.46-13.43-1.25-.43-2.49-.87-3.74-1.32l-.2-.07-.16.45h0s0-.49,0-.49h-.34s-.25.63-.25.63l.24.24.38.19c1.25.45,2.5.89,3.75,1.32,23.03,7.93,47.17,12.47,71.74,13.49,3.53.15,7.05.22,10.57.22,70.19,0,137.18-29.15,185.18-80.94.93-1.01,1.86-2.02,2.77-3.05.01,0,.02-.02.03-.03,0-.01.02-.02.03-.03h0Z" />
         </svg>
-        <div ref={oneRef} className="mx-auto max-w-[calc(85%+60px)] mt-[80px] mb-[25px] pr-[60px]">
-          <div className='grid xl:grid-cols-[67.5%_32.5%] gap-[10px]'>
+        <div ref={oneRef} className="mx-auto max-w-[calc(85%+60px)] mt-[45px] md:mt-[80px] mb-[25px] pr-[60px]">
+          <div className='grid xl:grid-cols-[67.5%_32.5%] md:gap-[10px]'>
             <EmblaCarouselCenterPicity />
             <div className='flex items-center text-gray-1 text-[13px] pl-[40px]'>{digitalcity_3}</div>
           </div>
         </div>
       </div>
-      <div ref={twoRef} className="relative mx-auto pt-[60px] pb-[115px] h-[490px]">
+      <div ref={twoRef} className="relative mx-auto pt-[65px] pb-[115px] h-[490px]">
         <div className='relative z-1 '>
           <h3 className='text-yellow-1 text-[20px] xl:text-[30px] font-bold uppercase text-center'>{digitalcity_4}</h3>
           <p className='uppercase text-center text-blue-1 text-[20px] xl:text-[25px] mb-[35px]'>{digitalcity_5}</p>
           <HorizontalScroll custom_fields={custom_fields} />
         </div>
-        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill max-w-[85%] mx-auto" />
+        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill md:max-w-[85%] mx-auto" />
       </div>
       <div ref={threeRef} className="relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px]">
         <svg className='absolute top-[-20%] 2xl:top-[-190px] right-0 translate-x-[50%] overflow-x-hidden max-w-[28%] h-auto' width="528.46" height="523.07" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528.46 523.07">
@@ -163,7 +163,7 @@ export default function Part({ custom_fields }: any) {
           <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M456.42,439.01c.06-.08.11-.18.11-.3,0-.28-.23-.5-.5-.5-.15,0-.28.07-.37.17-.92,1.04-1.85,2.06-2.79,3.08-50.2,54.17-121.25,83.47-194.97,80.4-24.48-1.02-48.52-5.54-71.46-13.43-1.25-.43-2.49-.87-3.74-1.32l-.2-.07-.16.45h0s0-.49,0-.49h-.34s-.25.63-.25.63l.24.24.38.19c1.25.45,2.5.89,3.75,1.32,23.03,7.93,47.17,12.47,71.74,13.49,3.53.15,7.05.22,10.57.22,70.19,0,137.18-29.15,185.18-80.94.93-1.01,1.86-2.02,2.77-3.05.01,0,.02-.02.03-.03,0-.01.02-.02.03-.03h0Z" />
         </svg>
         <div className='relative order-1 xl:order-0'>
-          <svg className="w-full" width="1020" height="781" viewBox="0 0 1020 781" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+          <svg className="w-full ml-[-4rem] mt-[-12rem] sm:mt-0 sm:ml-0" width="1020" height="781" viewBox="0 0 1020 781" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g clipPath="url(#clip0_2089_1260)">
               <g opacity="0.4">
                 <g opacity="0.5">
@@ -323,10 +323,10 @@ export default function Part({ custom_fields }: any) {
             </defs>
           </svg>
         </div>
-        <div className='grid content-center justify-center  xl:justify-auto'>
-          <h2 className='text-[40px] text-yellow-1 uppercase font-bold'>{digitalcity_6}</h2>
-          <p className='font-bold text-[20px] xl:text-[30px] text-blue-1 uppercase mb-[60px]' dangerouslySetInnerHTML={{ __html: digitalcity_7 }}></p>
-          <div className='flex gap-[30px] mb-[30px] xl:mb-0'>
+        <div className='grid content-center justify-center  xl:justify-auto ml-[70px] mt-[80px]'>
+          <h2 className='text-[30px] md:text-[40px] text-yellow-1 uppercase font-bold'>{digitalcity_6}</h2>
+          <p className='font-bold text-[20px] xl:text-[30px] text-blue-1 uppercase mb-4 md:mb-[60px]' dangerouslySetInnerHTML={{ __html: digitalcity_7 }}></p>
+          <div className='flex gap-[30px] mb-[30px] xl:mb-0 w-[80%] xl:w-[auto]'>
             <svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M192.593 0.771973H7.40741C3.31641 0.771973 0 4.07387 0 8.14697V52.397C0 56.4701 3.31641 59.772 7.40741 59.772H192.593C196.684 59.772 200 56.4701 200 52.397V8.14697C200 4.07387 196.684 0.771973 192.593 0.771973Z" fill="black" />
               <path d="M192.593 1.95197C194.243 1.95197 195.825 2.60466 196.992 3.76645C198.159 4.92823 198.815 6.50396 198.815 8.14697V52.397C198.815 54.04 198.159 55.6157 196.992 56.7775C195.825 57.9393 194.243 58.592 192.593 58.592H7.40741C5.75717 58.592 4.17452 57.9393 3.00763 56.7775C1.84074 55.6157 1.18519 54.04 1.18519 52.397V8.14697C1.18519 6.50396 1.84074 4.92823 3.00763 3.76645C4.17452 2.60466 5.75717 1.95197 7.40741 1.95197H192.593ZM192.593 0.771973H7.40741C5.44284 0.771973 3.55874 1.54898 2.16958 2.93206C0.780421 4.31514 0 6.191 0 8.14697V52.397C0 54.3529 0.780421 56.2288 2.16958 57.6119C3.55874 58.995 5.44284 59.772 7.40741 59.772H192.593C194.557 59.772 196.441 58.995 197.83 57.6119C199.22 56.2288 200 54.3529 200 52.397V8.14697C200 6.191 199.22 4.31514 197.83 2.93206C196.441 1.54898 194.557 0.771973 192.593 0.771973Z" fill="#A6A6A6" />
@@ -398,14 +398,14 @@ export default function Part({ custom_fields }: any) {
           </div>
         </div>
       </div>
-      <h3 ref={fourRef} className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mt-[-60px] mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_8 }}></h3>
-      <div className="mx-auto mb-[30px]">
+      <h3 ref={fourRef} className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mt-[-8rem] md:mt-[-60px] mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_8 }}></h3>
+      <div className="mx-auto mb-[100px] md:mb-[30px]">
         <EmblaCarouselCenter slides={digitalcityslideruni} />
       </div>
-      <div ref={fiveRef} className="relative mx-auto pb-[115px]">
+      <div ref={fiveRef} className="relative mx-auto pb-[80px]">
         <div className='relative z-1'>
           <h3 className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_9 }}></h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px] px-6 md:px-0">
             <div
               className="group relative overflow-hidden  grid items-center bg-blue-1 content-evenly duration-500 
               before:content-[''] before:absolute before:left-0 before:top-0 
@@ -445,17 +445,17 @@ export default function Part({ custom_fields }: any) {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto  max-w-[85%] mb-[50px]">
-        <div className="grid grid-cols-[67%_33%] mt-[30px]">
+      <div ref={sixRef} className="mx-auto  max-w-[85%] mb-[90px] sm:mb-[50px]">
+        <div className="md:grid grid-cols-[67%_33%] mt-[30px]">
           <div>
-            <h3 className="uppercase font-bold text-yellow-1 text-[30px] mb-[20px]" dangerouslySetInnerHTML={{ __html: digitalcity_16 }}></h3>
+            <h3 className="uppercase font-bold text-yellow-1 text-[20px] md:text-[30px] mb-[20px]" dangerouslySetInnerHTML={{ __html: digitalcity_16 }}></h3>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-[16px]'>
               <div className="grid grid-cols-1]">
                 {
                   firstConnect.map((digitalcity: any, index: number) => {
                     return (
                       <div key={index + "first"} className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
-                        <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white"  dangerouslySetInnerHTML={{ __html: digitalcity[0].value }}></div>
+                        <div className="relative w-[68px] h-[52px] flex items-center justify-center bg-white"  dangerouslySetInnerHTML={{ __html: digitalcity[0].value }}></div>
                         <div>
                           <h3 className="blue-1 font-bold text-[18px] uppercase text-yellow-1">{digitalcity[1].value}</h3>
                           <p className="text-gray-5 text-[13px]" dangerouslySetInnerHTML={{ __html: digitalcity[2].value }}></p>
@@ -470,7 +470,7 @@ export default function Part({ custom_fields }: any) {
                   secondConnect.map((digitalcity: any, index: number) => {
                     return (
                       <div key={index + "second"} className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
-                        <div className="relative w-[52px] h-[52px] flex items-center justify-center bg-white"  dangerouslySetInnerHTML={{ __html: digitalcity[0].value }}></div>
+                        <div className="relative w-[68px] h-[52px] flex items-center justify-center bg-white"  dangerouslySetInnerHTML={{ __html: digitalcity[0].value }}></div>
                         <div>
                           <h3 className="blue-1 font-bold text-[18px] uppercase text-yellow-1">{digitalcity[1].value}</h3>
                           <p className="text-gray-5 text-[13px]" dangerouslySetInnerHTML={{ __html: digitalcity[2].value }}></p>
@@ -482,7 +482,7 @@ export default function Part({ custom_fields }: any) {
               </div>
             </div>
           </div>
-          <Image className="pl-[55px] w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_17}`} />
+          <Image className="md:pl-[55px] pt-8 md:pt-0 w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_17}`} />
         </div>
       </div>
       <h3 ref={seventRef} className='text-yellow-1 text-[25px] xl:text-[30px] font-bold mb-[30px] uppercase text-center'>{digitalcity_18}</h3>
