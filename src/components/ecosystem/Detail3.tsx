@@ -16,9 +16,9 @@ export default function Detail3({custom_fields}:any) {
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[1250px]  ">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{__html:management_operation_title_banner}}></h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[22px] xl:text-[46px]' dangerouslySetInnerHTML={{__html:management_operation_title_banner}}></h2>
         </div>
-        <Image fill src="/fecosystem/detail/management-1.png" alt="Smart City Features" className="object-fill" />
+        <Image fill src="/fecosystem/detail/management-1.png" alt="Smart City Features" className="object-cover" />
       </div>
       <div className='mx-auto mt-[25px] max-w-[1250px]  mb-[115px]'>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">

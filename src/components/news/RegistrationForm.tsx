@@ -61,7 +61,7 @@ export function RegistrationForm() {
     },
   });
   function onSubmit(values: RegisterFormValues) {
-    console.log(values);
+    // console.log(values);
     // Xử lý dữ liệu đăng ký ở đây (gửi API, v.v.)
   }
   const fileInputRef = React.useRef<HTMLInputElement>(null);

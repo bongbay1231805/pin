@@ -20,6 +20,9 @@ strong {
 .cls-1 {
   fill: #b7c6dc;
 }
+.hide-info.opacity-0 {
+  @apply hidden;
+}
 @theme {
   --background: #fff;
   --font-montserrat: Montserrat, "Montserrat", sans-serif;

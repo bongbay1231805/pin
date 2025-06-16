@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import PaginationExample from './PaginationExample';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 // Define keys for each project section to manage their states
 const PROJECT_KEYS = {
   PICITY_HIGH_PARK: 'picityHighPark',
@@ -10,6 +11,7 @@ const PROJECT_KEYS = {
   PRIME_MASTER: 'primeMaster',
 };
 export default function Detail1({ custom_fields }: any) {
+  useScrollReveal(); // dùng mặc định `.boxanimation`
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
     try {
       const parsedData = JSON.parse(jsonString);
@@ -58,25 +60,25 @@ export default function Detail1({ custom_fields }: any) {
       [projectKey]: !prevStates[projectKey],
     }));
   };
-  console.log(customfields);
+  // console.log(customfields);
   return (
     <>
-      <div className="relative mx-auto h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[150px]">
+      <div className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[70px] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[85%]">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[38px] 2xl:text-[46px]' dangerouslySetInnerHTML={{ __html: custom_fields.field_investment_development_1 }}></h2>
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[30px] xl:leading-[56px] text-[22px] xl:text-[46px]' dangerouslySetInnerHTML={{ __html: custom_fields.field_investment_development_1 }}></h2>
         </div>
-        <Image fill src="/fecosystem/detail/development.png" alt="Smart City Features" className="object-fill" />
+        <Image fill src="/fecosystem/detail/development.png" alt="Smart City Features" className="object-cover" />
       </div>
-      <div className="mx-auto px-[10px] max-w-[85%] mb-[55px] xl:mb-[87px]">
-        <div className='grid grid-cols-[46%_1fr] gap-12 mb-[50px] mt-[100px]'>
-          <div className='border-t-1 border-gray-8 mt-[15px] order-1  md:order-0 text-[13px] 2xl:text-[17px]'>
-            <h3 className='text-yellow-1 text-[20px] 2xl:text-[26px] font-bold px-[50px] py-[12px] border-b-1 border-gray-8'>{customfields[0][0].value}</h3>
-            <p className='text-gray-6 text-justify px-[50px] py-[16px] border-b-1 border-gray-8'>{customfields[0][1].value}</p>
+      <div className="mx-auto px-[30px] sm:px-[0] max-full sm:max-w-[85%] mb-[55px] xl:mb-[87px]">
+        <div className='grid grid-cols-1 sm:grid-cols-[46%_1fr] gap-[25px] sm:gap-[50px] mb-[50px] mt-[60px] sm:mt-[100px]'>
+          <div className='border-t-1 border-gray-8 sm:mt-[15px] order-1  md:order-0 text-[14px] 2xl:text-[17px]'>
+            <h3 className='text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8'>{customfields[0][0].value}</h3>
+            <p className='text-gray-6 text-justify sm:px-[50px] py-[20px] sm:py-[16px] border-b-1 border-gray-8'>{customfields[0][1].value}</p>
             {/* Div cha cho phần toggle, không có padding top/bottom */}
-            <div style={{ maxHeight: contentMaxHeights[PROJECT_KEYS.PICITY_HIGH_PARK] }} className={`relative text-gray-6 leading-[24px] px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
+            <div className={`relative text-gray-6 leading-[24px] sm:px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
               {/* Div con để lấy scrollHeight và áp dụng padding */}
-              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PICITY_HIGH_PARK] = el }} className="pt-[12px] pb-[18px]">
-                <div className='grid gap-[1px]'>
+              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PICITY_HIGH_PARK] = el }} className="sm:pt-[12px] sm:pb-[18px]">
+                <div className='grid py-[31px] sm:py-[0] gap-[11px]'>
                   {
                     customfields[0][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
@@ -97,7 +99,7 @@ export default function Detail1({ custom_fields }: any) {
                     ))
                   }
                 </div>
-                <div className={`hide-info transition-opacity duration-500 ease-in-out ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
+                <div className={`hide-info transition-opacity duration-500 ease-in-out pb-[31px] ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
                   {
                     customfields[0][3]?.value?.map((item: any, index: number) => (
                       <p key={index} className='flex items-start gap-[8px]'>
@@ -110,42 +112,42 @@ export default function Detail1({ custom_fields }: any) {
               </div>
             </div>
             {/* Nút SVG được đặt bên ngoài div có maxHeight để không bị cắt */}
-            <div className="relative px-[50px] h-[24px]"> {/* Container cho nút SVG */}
-              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_HIGH_PARK)} className={`absolute rounded-full left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative px-0 sm:px-[50px] h-[20px] sm:h-[24px]"> {/* Container cho nút SVG */}
+              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_HIGH_PARK)} className={`absolute rounded-full left-[-2px] sm:left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="10" r="9.5" stroke="#4C73A8" />
                 <path d="M6 9L9.93461 13.0643L13.9989 9.12974" stroke={`${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? '#fff' : '#4C73A8'}`} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <div className='flex justify-end pr-[36px] pt-[20px]'>
+            <div className='flex justify-end sm:pr-[36px] sm:pt-[20px]'>
               <Link href={customfields[0][5].value} className="hvr-bounce-to-right flex text-[12px] 2xl:text-[16px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white">
                 {customfields[0][4].value}
               </Link>
             </div>
           </div>
-          <div className='relative h-[388px]'>
+          <div className='relative h-[265px] sm:h-[388px]'>
             <Image
-              src="/fecosystem/detail/detail-1.png"
+              src={`https://admin.pigroup.tqdesign.vn/storage/${customfields[0][6].value}`}
               alt="Modern city skyline"
               fill
-              className="rounded-[10px] overflow-hidden"
+              className="object-cover rounded-[10px] overflow-hidden"
             />
           </div>
         </div>
-        <div className='grid grid-cols-[1fr_46%] gap-12 mb-[50px] mt-[100px]'>
-          <div className='relative h-[388px]'>
+        <div className='grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]'>
+          <div className='relative h-[265px] sm:h-[388px]'>
             <Image
-              src="/fecosystem/detail/detail-2.png"
+              src={`https://admin.pigroup.tqdesign.vn/storage/${customfields[1][6].value}`}
               alt="Modern city skyline"
               fill
-              className="rounded-[10px] overflow-hidden"
+              className="rounded-[10px] object-cover overflow-hidden"
             />
           </div>
-          <div className='border-t-1 border-gray-8 mt-[15px] order-1  md:order-0 text-[13px] 2xl:text-[17px]'>
-            <h3 className='text-yellow-1 text-[20px] 2xl:text-[26px] font-bold px-[50px] py-[12px] border-b-1 border-gray-8'>{customfields[1][0].value}</h3>
-            <p className='text-gray-6 text-justify px-[50px] py-[16px] border-b-1 border-gray-8'>{customfields[1][1].value}</p>
-            <div style={{ maxHeight: contentMaxHeights[PROJECT_KEYS.PICITY_SKY_PARK] }} className={`relative text-gray-6 leading-[24px] px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
-              <div ref={(el: HTMLDivElement | null) => {contentRefs.current[PROJECT_KEYS.PICITY_SKY_PARK] = el}} className="pt-[12px] pb-[18px]">
-                <div className='grid gap-[1px]'>
+          <div className='border-t-1 border-gray-8 sm:mt-[15px] order-1  md:order-0 text-[13px] 2xl:text-[17px]'>
+            <h3 className='text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8'>{customfields[1][0].value}</h3>
+            <p className='text-gray-6 text-justify sm:px-[50px] py-[20px] sm:py-[16px] border-b-1 border-gray-8'>{customfields[1][1].value}</p>
+            <div className={`relative text-gray-6 leading-[24px]  sm:px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
+              <div ref={(el: HTMLDivElement | null) => {contentRefs.current[PROJECT_KEYS.PICITY_SKY_PARK] = el}} className="sm:pt-[12px] sm:pb-[18px]">
+                <div className='grid py-[31px] sm:py-[0] gap-[11px]'>
                   {
                     customfields[1][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
@@ -166,7 +168,7 @@ export default function Detail1({ custom_fields }: any) {
                     ))
                   }
                 </div>
-                <div className={`hide-info transition-opacity duration-500 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
+                <div className={`hide-info transition-opacity duration-500 ease-in-out pb-[31px] ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
                   {
                     customfields[1][3]?.value?.map((item: any, index: number) => (
                       <p key={index} className='flex items-start gap-[8px]'>
@@ -178,26 +180,26 @@ export default function Detail1({ custom_fields }: any) {
                 </div>
               </div>
             </div>
-            <div className="relative px-[50px] h-[24px]">
-              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_SKY_PARK)} className={`absolute rounded-full left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative px-0 sm:px-[50px] h-[20px] sm:h-[24px]">
+              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_SKY_PARK)} className={`absolute rounded-full left-[-2px] sm:left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="10" r="9.5" stroke="#4C73A8" />
                 <path d="M6 9L9.93461 13.0643L13.9989 9.12974" stroke={`${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? '#fff' : '#4C73A8'}`} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <div className='flex justify-end pr-[36px] pt-[20px]'>
+            <div className='flex justify-end sm:pr-[36px] sm:pt-[20px]'>
               <Link href={customfields[1][5].value} className="hvr-bounce-to-right flex text-[12px] 2xl:text-[16px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white">
                 {customfields[1][4].value}
               </Link>
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-[46%_1fr] gap-12 mb-[50px] mt-[100px]'>
+        <div className='grid grid-cols-1 sm:grid-cols-[46%_1fr] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]'>
           <div className='border-t-1 border-gray-8 mt-[15px] order-1  md:order-0 text-[13px] 2xl:text-[17px]'>
-            <h3 className='text-yellow-1 text-[20px] 2xl:text-[26px] font-bold px-[50px] py-[12px] border-b-1 border-gray-8'>{customfields[2][0].value}</h3>
-            <p className='text-gray-6 text-justify px-[50px] py-[16px] border-b-1 border-gray-8'>{customfields[2][1].value}</p>
-            <div style={{ maxHeight: contentMaxHeights[PROJECT_KEYS.PRIME_MASTER] }} className={`relative text-gray-6 leading-[24px] px-[50px] border-gray-8 border-b-1 verflow-hidden transition-all duration-500 ease-in-out`}>
-              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PRIME_MASTER] = el }} className="pt-[12px] pb-[18px]">
-                <div className='grid gap-[1px]'>
+            <h3 className='text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8'>{customfields[2][0].value}</h3>
+            <p className='text-gray-6 text-justify sm:px-[50px] py-[20px] sm:py-[16px] border-b-1 border-gray-8'>{customfields[2][1].value}</p>
+            <div className={`relative text-gray-6 leading-[24px]  sm:px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
+              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PRIME_MASTER] = el }} className="sm:pt-[12px] sm:pb-[18px]">
+                <div className='grid py-[31px] sm:py-[0] gap-[11px]'>
                   {
                     customfields[2][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
@@ -218,7 +220,7 @@ export default function Detail1({ custom_fields }: any) {
                     ))
                   }
                 </div>
-                <div className={`hide-info transition-opacity duration-500 ease-in-out ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
+                <div className={`hide-info transition-opacity duration-500 ease-in-out pb-[31px] ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
                   {
                     customfields[2][3]?.value?.map((item: any, index: number) => (
                       <p key={index} className='flex items-start gap-[8px]'>
@@ -230,29 +232,29 @@ export default function Detail1({ custom_fields }: any) {
                 </div>
               </div>
             </div>
-            <div className="relative px-[50px] h-[24px]">
-              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PRIME_MASTER)} className={`absolute rounded-full left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="relative px-0 sm:px-[50px] h-[20px] sm:h-[24px]">
+              <svg onClick={() => toggleVisibility(PROJECT_KEYS.PRIME_MASTER)} className={`absolute rounded-full left-[-2px] sm:left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'rotate-180 bg-blue-5' : 'bg-white'}`} width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="10" r="9.5" stroke="#4C73A8" />
                 <path d="M6 9L9.93461 13.0643L13.9989 9.12974" stroke={`${openStates[PROJECT_KEYS.PRIME_MASTER] ? '#fff' : '#4C73A8'}`} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <div className='flex justify-end pr-[36px] pt-[20px]'>
+            <div className='flex justify-end sm:pr-[36px] sm:pt-[20px]'>
               <Link href={customfields[2][5].value} className="hvr-bounce-to-right flex text-[12px] 2xl:text-[16px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white">
                 {customfields[2][4].value}
               </Link>
             </div>
           </div>
-          <div className='relative h-[388px]'>
+          <div className='relative h-[265px] sm:h-[388px]'>
             <Image
-              src="/fecosystem/detail/detail-3.png"
+              src={`https://admin.pigroup.tqdesign.vn/storage/${customfields[2][6].value}`}
               alt="Modern city skyline"
               fill
-              className="rounded-[10px] overflow-hidden"
+              className="rounded-[10px] object-cover overflow-hidden"
             />
           </div>
         </div>
       </div>
-      <div className='pb-[120px]'>
+      <div className='pb-[120px] hidden'>
         {/* <PaginationExample /> */}
       </div>
     </>

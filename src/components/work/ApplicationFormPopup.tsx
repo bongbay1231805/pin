@@ -1,12 +1,45 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as z from "zod";
 interface ApplicationFormPopupProps {
   isOpen: boolean; // Trạng thái đóng/mở popup
   onClose: () => void; // Hàm để đóng popup, không trả về giá trị nào
   selectedPosition: string; // Vị trí ứng tuyển đã chọn
   allJobData: any;
 }
+const registerFormSchema = z.object({
+  fullName: z.string().min(2, {
+    message: "Tên công ty phải có ít nhất 2 ký tự.",
+  }),
+  phone: z
+    .string()
+    .min(10, { message: "Số điện thoại phải có ít nhất 10 số." })
+    .regex(/^(\+?84|0)(3|5|7|8|9)\d{8}$/, {
+      message: "Số điện thoại không hợp lệ.",
+    }),
+  email: z.string().email({
+    message: "Địa chỉ email không hợp lệ.",
+  }),
+  position: z.string().optional(),
+  cvFileName: z.string().optional(),
+  cvFileSize: z.string().optional(),
+  cvFileType: z.string().optional(),
+});
+type RegisterFormValues = z.infer<typeof registerFormSchema>;
 const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onClose, selectedPosition, allJobData }) => {
-  const [fullName, setFullName] = useState('');
+  const form = useForm<RegisterFormValues>({
+    resolver: zodResolver(registerFormSchema),
+    defaultValues: {
+      fullName: "",
+      phone: "",
+      email: "",
+      position: "",
+      cvFileName: "",
+      cvFileType: ""
+    },
+  });
+  const [yourName, setFullName] = useState('');
   const [position, setPosition] = useState(selectedPosition || '');
   const [cvFile, setCvFile] = useState<File | null>(null); // Kiểu File hoặc null
   const [phone, setPhone] = useState('');
@@ -36,10 +69,9 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
     }
     setCvFile(file);
   };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setSubmissionStatus('');
-    if (!fullName || !position || !cvFile) {
+    if (!yourName || !position || !cvFile) {
       setSubmissionStatus('Vui lòng điền đầy đủ thông tin và đính kèm CV.');
       return;
     }
@@ -47,23 +79,40 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
       setSubmissionStatus('Vui lòng sửa lỗi file CV.');
       return;
     }
-    console.log('Hồ sơ ứng tuyển:', {
-      fullName,
-      position,
-      phone,
-      email,
-      cvFileName: cvFile.name,
-      cvFileSize: (cvFile.size / 1024 / 1024).toFixed(2) + ' MB',
-      cvFileType: cvFile.type,
-    });
+    // console.log('Hồ sơ ứng tuyển:', {
+    //   yourName,
+    //   position,
+    //   phone,
+    //   email,
+    //   cvFileName: cvFile.name,
+    //   cvFileSize: (cvFile.size / 1024 / 1024).toFixed(2) + ' MB',
+    //   cvFileType: cvFile.type,
+    // });
+    const formData = new FormData();
     setSubmissionStatus('Hồ sơ đang được gửi...');
-    setTimeout(() => {
-      setSubmissionStatus('Hồ sơ của bạn đã được gửi thành công!');
-      // onClose(); // Có thể đóng popup sau khi gửi thành công
-    }, 1500);
+    formData.append("yourName", yourName);
+    formData.append("phone", phone);
+    formData.append("email", email);
+    formData.append("position", position);
+    formData.append("taxCode", "Hồ sơ ứng tuyển");
+    formData.append("cvFileName", cvFile.name);
+    formData.append("cvFileType", cvFile.type);
+    const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', {
+      method: 'POST',
+      body: formData,
+    });
+    if (response.ok) {
+      const data = await response.json();
+      console.log("API response:", data);
+      alert("Gửi thông tin thành công!");
+      form.reset();
+    } else {
+      console.error("API error:", response.status, response.statusText);
+      alert("Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại.");
+    }
   };
   return (
-    <div className={`fixed -z-10 opacity-0 overflow-hidden ${isOpen ? "inset-0 opacity-100 bg-blue-1/50  flex justify-center items-center z-50" : "" }`}>
+    <div className={`fixed -z-10 opacity-0 overflow-hidden ${isOpen ? "inset-0 opacity-100 bg-blue-1/50  flex justify-center items-center z-50" : ""}`}>
       <div
         style={{
           '--tw-translate-y': isOpen ? '0px' : '100%',
@@ -90,7 +139,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
             <input
               type="text"
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              value={fullName}
+              value={yourName}
               placeholder='Họ & tên'
               onChange={(e) => setFullName(e.target.value)}
               required
@@ -124,7 +173,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               required
             >
               {/* Thêm một option mặc định nếu bạn muốn */}
-              {/* <option value="" disabled>-- Chọn vị trí --</option> */}
+              <option value="" disabled>-- Chọn vị trí --</option>
               {availablePositions.map((pos, index) => (
                 <option key={index} value={pos as string}>{pos as string}</option>
               ))}
@@ -168,8 +217,8 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
           <div className="flex justify-start space-x-3">
             <button
               type="submit"
-              className="hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
-              disabled={!!fileError || !fullName || !position || !cvFile}
+              className="hover:cursor-pointer hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
+              disabled={!!fileError || !yourName || !position || !cvFile}
             >
               Nộp hồ sơ
             </button>
