@@ -1,168 +1,174 @@
+'use client'
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
+import Image from "next/image";
 import ApplicationFormPopup from './ApplicationFormPopup';
 import { useScrollRefs } from '@/context/ScrollRefsContext'
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-export default function Hero() {
+import { transformJobPosts } from '@/hooks/useparseJobPosts';
+export default function Hero({data}:any) {
+  // console.log(data);
   const { oneRef, twoRef, threeRef, fourRef } = useScrollRefs()
   useScrollReveal(); // dùng mặc định `.boxanimation`
-  const [allJobData, setAllJobData] = useState([
-    {
-      id: 'job-1',
-      position: 'Nhân viên Kinh doanh Bất động sản',
-      quantity: 10,
-      deadline: '30.06.2025',
-      details: {
-        description: [
-          'Tìm kiếm và phát triển nguồn khách hàng tiềm năng.',
-          'Tư vấn và giới thiệu các dự án bất động sản của công ty.',
-          'Hỗ trợ khách hàng hoàn tất thủ tục giao dịch.',
-        ],
-        requirements: [
-          'Tốt nghiệp Cao đẳng.Đại học chuyên ngành liên quan.',
-          'Có kinh nghiệm trong lĩnh vực kinh doanh bất động sản là một lợi thế.',
-          'Kỹ năng giao tiếp, đàm phán tốt.',
-        ],
-        interest: [
-          'Môi trường làm việc năng động, chuyên nghiệp.',
-          'Cơ hội thăng tiến rõ ràng.',
-          'Chế độ phúc lợi hấp dẫn.',
-        ],
-        arequirements: [
-          'Tích cực tham gia các khóa đào tạo.',
-          'Luôn cập nhật kiến thức thị trường.',
-        ],
-        contact: [
-          'Phòng Nhân sự Pi Group, SĐT: 0123.456.789',
-          'Email: tuyendung@pigroup.com',
-        ],
-      },
-      isOpen: false,
-    },
-    {
-      id: 'job-2',
-      position: 'Chuyên viên Marketing',
-      quantity: 3,
-      deadline: '15.07.2025',
-      details: {
-        description: [
-          'Lập kế hoạch và triển khai các chiến dịch marketing online.offline.',
-          'Quản lý nội dung trên các kênh truyền thông số.',
-        ],
-        requirements: [
-          'Có kinh nghiệm 2 năm trong lĩnh vực Marketing.',
-          'Sáng tạo, năng động, bắt kịp xu hướng thị trường.',
-        ],
-        interest: [
-          'Làm việc trong đội ngũ trẻ, nhiệt huyết.',
-          'Thỏa sức sáng tạo với các dự án lớn.',
-        ],
-        arequirements: [
-          'Đam mê công nghệ và các xu hướng mới.',
-        ],
-        contact: [
-          'Phòng Marketing Pi Group, SĐT: 0987.654.321',
-          'Email: marketing@pigroup.com',
-        ],
-      },
-      isOpen: false,
-    },
-    {
-      id: 'job-3',
-      position: 'Kế toán tổng hợp',
-      quantity: 1,
-      deadline: '15.07.2025',
-      details: {
-        description: [
-          'Ghi nhận, xử lý và tổng hợp các số liệu kế toán.',
-          'Lập các báo cáo tài chính theo quy định.',
-          'Kiểm soát và đối chiếu các khoản thu chi.',
-        ],
-        requirements: [
-          'Tốt nghiệp chuyên ngành Kế toán, Tài chính.',
-          'Có kinh nghiệm 3 năm trở lên ở vị trí tương đương.',
-          'Thành thạo phần mềm kế toán.',
-        ],
-        interest: [
-          'Mức lương cạnh tranh.',
-          'Môi trường làm việc ổn định, lâu dài.',
-        ],
-        arequirements: [
-          'Cẩn thận, tỉ mỉ, trung thực.',
-        ],
-        contact: [
-          'Phòng Kế toán Pi Group, SĐT: 0912.345.678',
-          'Email: ketoan@pigroup.com',
-        ],
-      },
-      isOpen: false,
-    },
-    {
-      id: 'job-4',
-      position: 'Trưởng phòng Dự án Bất động sản',
-      quantity: 2,
-      deadline: '31.07.2025',
-      details: {
-        description: [
-          'Lập kế hoạch, quản lý và điều hành các dự án bất động sản.',
-          'Giám sát tiến độ, chất lượng và ngân sách dự án.',
-          'Đánh giá hiệu quả dự án và báo cáo lãnh đạo.',
-        ],
-        requirements: [
-          'Tốt nghiệp Đại học chuyên ngành Xây dựng, Bất động sản, Quản lý dự án.',
-          'Có kinh nghiệm 5 năm trở lên ở vị trí quản lý dự án.',
-          'Kỹ năng lãnh đạo và giải quyết vấn đề xuất sắc.',
-        ],
-        interest: [
-          'Cơ hội phát triển sự nghiệp lên vị trí cao hơn.',
-          'Tham gia vào các dự án quy mô lớn.',
-        ],
-        arequirements: [
-          'Có khả năng làm việc dưới áp lực cao.',
-        ],
-        contact: [
-          'Phòng Dự án Pi Group, SĐT: 0909.112.334',
-          'Email: duan@pigroup.com',
-        ],
-      },
-      isOpen: false,
-    },
-    {
-      id: 'job-5',
-      position: 'Thiết kế đồ họa',
-      quantity: 2,
-      deadline: '20.07.2025',
-      details: {
-        description: [
-          'Thiết kế các ấn phẩm truyền thông (banner, poster, brochure, video).',
-          'Sáng tạo ý tưởng và hình ảnh cho các chiến dịch marketing.',
-          'Đảm bảo chất lượng thiết kế theo yêu cầu.',
-        ],
-        requirements: [
-          'Tốt nghiệp chuyên ngành Thiết kế đồ họa.',
-          'Thành thạo Photoshop, Illustrator, CorelDraw.',
-          'Có tư duy thẩm mỹ tốt và sáng tạo.',
-        ],
-        interest: [
-          'Môi trường làm việc sáng tạo, năng động.',
-          'Cơ hội phát triển kỹ năng với các công cụ hiện đại.',
-        ],
-        arequirements: [
-          'Có portfolio ấn tượng.',
-        ],
-        contact: [
-          'Phòng Marketing Pi Group, SĐT: 0987.654.321',
-          'Email: marketing@pigroup.com',
-        ],
-      },
-      isOpen: false,
-    },
-    // Thêm nhiều dữ liệu khác để thấy rõ hiệu quả phân trang
-  ]);
+  const datas = transformJobPosts(data.data);
+  const [allJobData, setAllJobData] = useState(datas);
+  // const [allJobData, setAllJobData] = useState([
+  //   {
+  //     id: 'job-1',
+  //     position: 'Nhân viên Kinh doanh Bất động sản',
+  //     quantity: 10,
+  //     deadline: '30.06.2025',
+  //     details: {
+  //       description: [
+  //         'Tìm kiếm và phát triển nguồn khách hàng tiềm năng.',
+  //         'Tư vấn và giới thiệu các dự án bất động sản của công ty.',
+  //         'Hỗ trợ khách hàng hoàn tất thủ tục giao dịch.',
+  //       ],
+  //       requirements: [
+  //         'Tốt nghiệp Cao đẳng.Đại học chuyên ngành liên quan.',
+  //         'Có kinh nghiệm trong lĩnh vực kinh doanh bất động sản là một lợi thế.',
+  //         'Kỹ năng giao tiếp, đàm phán tốt.',
+  //       ],
+  //       interest: [
+  //         'Môi trường làm việc năng động, chuyên nghiệp.',
+  //         'Cơ hội thăng tiến rõ ràng.',
+  //         'Chế độ phúc lợi hấp dẫn.',
+  //       ],
+  //       arequirements: [
+  //         'Tích cực tham gia các khóa đào tạo.',
+  //         'Luôn cập nhật kiến thức thị trường.',
+  //       ],
+  //       contact: [
+  //         'Phòng Nhân sự Pi Group, SĐT: 0123.456.789',
+  //         'Email: tuyendung@pigroup.com',
+  //       ],
+  //     },
+  //     isOpen: false,
+  //   },
+  //   {
+  //     id: 'job-2',
+  //     position: 'Chuyên viên Marketing',
+  //     quantity: 3,
+  //     deadline: '15.07.2025',
+  //     details: {
+  //       description: [
+  //         'Lập kế hoạch và triển khai các chiến dịch marketing online.offline.',
+  //         'Quản lý nội dung trên các kênh truyền thông số.',
+  //       ],
+  //       requirements: [
+  //         'Có kinh nghiệm 2 năm trong lĩnh vực Marketing.',
+  //         'Sáng tạo, năng động, bắt kịp xu hướng thị trường.',
+  //       ],
+  //       interest: [
+  //         'Làm việc trong đội ngũ trẻ, nhiệt huyết.',
+  //         'Thỏa sức sáng tạo với các dự án lớn.',
+  //       ],
+  //       arequirements: [
+  //         'Đam mê công nghệ và các xu hướng mới.',
+  //       ],
+  //       contact: [
+  //         'Phòng Marketing Pi Group, SĐT: 0987.654.321',
+  //         'Email: marketing@pigroup.com',
+  //       ],
+  //     },
+  //     isOpen: false,
+  //   },
+  //   {
+  //     id: 'job-3',
+  //     position: 'Kế toán tổng hợp',
+  //     quantity: 1,
+  //     deadline: '15.07.2025',
+  //     details: {
+  //       description: [
+  //         'Ghi nhận, xử lý và tổng hợp các số liệu kế toán.',
+  //         'Lập các báo cáo tài chính theo quy định.',
+  //         'Kiểm soát và đối chiếu các khoản thu chi.',
+  //       ],
+  //       requirements: [
+  //         'Tốt nghiệp chuyên ngành Kế toán, Tài chính.',
+  //         'Có kinh nghiệm 3 năm trở lên ở vị trí tương đương.',
+  //         'Thành thạo phần mềm kế toán.',
+  //       ],
+  //       interest: [
+  //         'Mức lương cạnh tranh.',
+  //         'Môi trường làm việc ổn định, lâu dài.',
+  //       ],
+  //       arequirements: [
+  //         'Cẩn thận, tỉ mỉ, trung thực.',
+  //       ],
+  //       contact: [
+  //         'Phòng Kế toán Pi Group, SĐT: 0912.345.678',
+  //         'Email: ketoan@pigroup.com',
+  //       ],
+  //     },
+  //     isOpen: false,
+  //   },
+  //   {
+  //     id: 'job-4',
+  //     position: 'Trưởng phòng Dự án Bất động sản',
+  //     quantity: 2,
+  //     deadline: '31.07.2025',
+  //     details: {
+  //       description: [
+  //         'Lập kế hoạch, quản lý và điều hành các dự án bất động sản.',
+  //         'Giám sát tiến độ, chất lượng và ngân sách dự án.',
+  //         'Đánh giá hiệu quả dự án và báo cáo lãnh đạo.',
+  //       ],
+  //       requirements: [
+  //         'Tốt nghiệp Đại học chuyên ngành Xây dựng, Bất động sản, Quản lý dự án.',
+  //         'Có kinh nghiệm 5 năm trở lên ở vị trí quản lý dự án.',
+  //         'Kỹ năng lãnh đạo và giải quyết vấn đề xuất sắc.',
+  //       ],
+  //       interest: [
+  //         'Cơ hội phát triển sự nghiệp lên vị trí cao hơn.',
+  //         'Tham gia vào các dự án quy mô lớn.',
+  //       ],
+  //       arequirements: [
+  //         'Có khả năng làm việc dưới áp lực cao.',
+  //       ],
+  //       contact: [
+  //         'Phòng Dự án Pi Group, SĐT: 0909.112.334',
+  //         'Email: duan@pigroup.com',
+  //       ],
+  //     },
+  //     isOpen: false,
+  //   },
+  //   {
+  //     id: 'job-5',
+  //     position: 'Thiết kế đồ họa',
+  //     quantity: 2,
+  //     deadline: '20.07.2025',
+  //     details: {
+  //       description: [
+  //         'Thiết kế các ấn phẩm truyền thông (banner, poster, brochure, video).',
+  //         'Sáng tạo ý tưởng và hình ảnh cho các chiến dịch marketing.',
+  //         'Đảm bảo chất lượng thiết kế theo yêu cầu.',
+  //       ],
+  //       requirements: [
+  //         'Tốt nghiệp chuyên ngành Thiết kế đồ họa.',
+  //         'Thành thạo Photoshop, Illustrator, CorelDraw.',
+  //         'Có tư duy thẩm mỹ tốt và sáng tạo.',
+  //       ],
+  //       interest: [
+  //         'Môi trường làm việc sáng tạo, năng động.',
+  //         'Cơ hội phát triển kỹ năng với các công cụ hiện đại.',
+  //       ],
+  //       arequirements: [
+  //         'Có portfolio ấn tượng.',
+  //       ],
+  //       contact: [
+  //         'Phòng Marketing Pi Group, SĐT: 0987.654.321',
+  //         'Email: marketing@pigroup.com',
+  //       ],
+  //     },
+  //     isOpen: false,
+  //   },
+  //   // Thêm nhiều dữ liệu khác để thấy rõ hiệu quả phân trang
+  // ]);
+  console.log(allJobData);
   // Hàm xử lý việc toggle trạng thái mở/đóng của hàng
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
+  const itemsPerPage = 10;
   // Tính toán tổng số trang
   const totalPages = Math.ceil(allJobData.length / itemsPerPage);
   // Lấy dữ liệu cho trang hiện tại
@@ -359,14 +365,14 @@ export default function Hero() {
             <div className="grid grid-cols-[677px_1fr] grid-rows-2 gap-[20px] h-[510px]">
               <div className="relative row-span-2">
                 <Image alt="benefit 8" loading="lazy" decoding="async" fill src="/fwork/benefit-8.png" />
-                <div className="absolute uppercase bottom-[20px] w-full text-center text-[17px] text-white font-bold">Đào tạo hội nhập</div>
+                <div className="absolute uppercase bottom-[20px] w-full text-center text-[17px] text-white font-bold object-cover">Đào tạo hội nhập</div>
               </div>
               <div className="relative">
-                <Image alt="benefit 9" loading="lazy" decoding="async" fill src="/fwork/benefit-9.png" />
+                <Image alt="benefit 9" loading="lazy" decoding="async" fill src="/fwork/benefit-9.png" className='object-cover'/>
                 <div className="absolute uppercase bottom-[20px] w-full text-center text-[17px] text-white font-bold">Đào tạo kỹ năng</div>
               </div>
               <div className="relative">
-                <Image alt="benefit 10" loading="lazy" decoding="async" fill src="/fwork/benefit-10.png" />
+                <Image alt="benefit 10" loading="lazy" decoding="async" fill src="/fwork/benefit-10.png" className='object-cover'/>
                 <div className="absolute uppercase bottom-[20px] w-full text-center text-[17px] text-white font-bold">Đào tạo phát triển đội ngũ kế thừa</div>
               </div>
             </div>
@@ -466,57 +472,7 @@ export default function Hero() {
                     <tr className={job.isOpen ? '' : 'hidden'}>
                       <td></td>
                       <td colSpan={4} className="px-6 text-sm text-gray-700 py-[50px]">
-                        {job.details.description && job.details.description.length > 0 && (
-                          <>
-                            <h5 className="font-bold mb-2 text-[17px]  uppercase text-blue-1">Mô tả công việc:</h5>
-                            <ul className="list-dash list-inside mb-3 text-[17px]">
-                              {job.details.description.map((item, index) => (
-                                <li key={`desc-${job.id}-${index}`}>{item}</li>
-                              ))}
-                            </ul>
-                          </>
-                        )}
-                        {job.details.requirements && job.details.requirements.length > 0 && (
-                          <>
-                            <h5 className="font-bold mb-2 text-[17px]  uppercase text-blue-1">Yêu cầu:</h5>
-                            <ul className="list-dash list-inside mb-3 text-[17px]">
-                              {job.details.requirements.map((item, index) => (
-                                <li key={`req-${job.id}-${index}`}>{item}</li>
-                              ))}
-                            </ul>
-                          </>
-                        )}
-                        {/* Thêm các phần mới từ dữ liệu của bạn */}
-                        {job.details.interest && job.details.interest.length > 0 && (
-                          <>
-                            <h5 className="font-bold mb-2 text-[17px]  uppercase text-blue-1">Quyền lợi:</h5>
-                            <ul className="list-dash list-inside mb-3 text-[17px]">
-                              {job.details.interest.map((item, index) => (
-                                <li key={`interest-${job.id}-${index}`}>{item}</li>
-                              ))}
-                            </ul>
-                          </>
-                        )}
-                        {job.details.arequirements && job.details.arequirements.length > 0 && (
-                          <>
-                            <h5 className="font-bold mb-2 text-[17px]  uppercase text-blue-1">Yêu cầu bổ sung:</h5>
-                            <ul className="list-dash list-inside mb-3 text-[17px]">
-                              {job.details.arequirements.map((item, index) => (
-                                <li key={`areq-${job.id}-${index}`}>{item}</li>
-                              ))}
-                            </ul>
-                          </>
-                        )}
-                        {job.details.contact && job.details.contact.length > 0 && (
-                          <>
-                            <h5 className="font-bold mb-2 text-[17px]  uppercase text-blue-1">Liên hệ:</h5>
-                            <ul className="list-dash list-inside">
-                              {job.details.contact.map((item, index) => (
-                                <li key={`contact-${job.id}-${index}`}>{item}</li>
-                              ))}
-                            </ul>
-                          </>
-                        )}
+                        <div dangerouslySetInnerHTML={{ __html: job.details.rawHtml || "" }}></div>
                         <div className='flex justify-center pt-[50px]'>
                           <button
                             onClick={() => handleOpenPopup(job.position)} // Use button for click event

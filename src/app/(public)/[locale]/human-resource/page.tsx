@@ -1,12 +1,13 @@
-'use client';
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "@/components/work/Hero";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
-export default function Contact() {
-  useScrollReveal(); // dùng mặc định `.boxanimation`
+export default async function Contact() {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/categories/human/posts', {
+    cache: 'no-store',
+  });
+  const {data} = await res.json();
   return (
     <>
-      <Hero />
+      <Hero data={data}/>
     </>
   );
 }
