@@ -238,7 +238,7 @@ const MasonryGrid = ({ custom_fields }: any) => {
         {rowItems.map((item: any, index: number) => {
           j++;
           return (
-            <div key={item[0].field_item_id + index} ref={(i === 0 && index == 0) ? m1Ref : (i === 0 && index == 1) ? m2Ref : (i === 0 && index == 2) ? m3Ref : (i === 0 && index == 3) ? m4Ref : (i === 4 && index == 0) ? m5Ref : (i === 4 && index == 1) ? m6Ref : (i === 4 && index == 2) ? m7Ref : (i === 4 && index == 3) ? m8Ref : (i === 8 && index == 0) ? m9Ref : (i === 8 && index == 1) ? m10Ref : (i === 8 && index == 2) ? m11Ref : (i === 8 && index == 3) ? m12Ref : null} className={`group eco-item transition-all duration-[500ms] ease-in-out relative pt-[300px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${j} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}>
+            <div key={item[0].field_item_id + index} ref={(i === 0 && index == 0) ? m1Ref : (i === 0 && index == 1) ? m2Ref : (i === 0 && index == 2) ? m3Ref : (i === 0 && index == 3) ? m4Ref : (i === 4 && index == 0) ? m5Ref : (i === 4 && index == 1) ? m6Ref : (i === 4 && index == 2) ? m7Ref : (i === 4 && index == 3) ? m8Ref : (i === 8 && index == 0) ? m9Ref : (i === 8 && index == 1) ? m10Ref : (i === 8 && index == 2) ? m11Ref : (i === 8 && index == 3) ? m12Ref : null} className={`group eco-item transition-all duration-[500ms] ease-in-out relative pt-[200px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${j} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}>
               {item[4].value !== "" ? (
                 <Image src={`https://admin.pigroup.tqdesign.vn/storage/${item[4].value}`} alt="masonry" fill className="object-cover justify-end" />
               ) : (

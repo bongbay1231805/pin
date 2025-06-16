@@ -77,26 +77,26 @@ export default function Detail2({custom_fields}:any) {
       </div>
       <div className="mx-auto max-w-[85%] mb-[5%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
-          <div className='mt-[200px] w-[81%] order-1 sm:order-0'>
+          <div className='mt-[100px] sm:w-[81%] order-1 sm:order-0'>
             <h3 className='text-yellow-1 text-[24px] xl:text-[25px] font-bold mb-[35px]' dangerouslySetInnerHTML={{ __html: real_estate_services_1 }}></h3>
             <div className='text-[14px] text-gray-5 mb-[18px]'>{real_estate_services_2} </div>
             <p className='text-[14px] text-gray-5'>{real_estate_services_3}</p>
           </div>
-          <div className='relative pt-[60%] sm:pt-[100%] 2xl:pt-[677px]'>
+          <div className='relative pt-[85%] sm:pt-[100%] 2xl:pt-[677px]'>
             <Image
               src="/fecosystem/detail/operation-1.png"
               alt="Modern city skyline"
               fill
               className="rounded-[10px] overflow-hidden absolute"
-              style={{ top: '80px', left: '0', objectFit: 'contain', width: '100%', height: '100%' }}
+              style={{ top: '50px', left: '0', objectFit: 'contain', width: '100%', height: '100%' }}
             />
           </div>
         </div>
         <div>
           <h3 className='text-yellow-1 text-[24px] xl:text-[25px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px]' dangerouslySetInnerHTML={{ __html: real_estate_services_4 }} style={{ marginTop: '10%' }}></h3>
           <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
-            <div className="grow-1 relative flex-shrink-0 w-full md:w-auto flex  flex-col justify-center items-center gap-[50px]">
-              <svg width="113" height="112" viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[50px]">
+              <svg width="90" height="112" viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M24 31L61.73 10L101 31" stroke="#4C73A8" strokeWidth="2.5" strokeLinecap="round" />
                 <path d="M37 25V69H86V25" stroke="#4C73A8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M70 69V56.5V52C70 47.5817 66.4183 44 62 44V44C57.5817 44 54 47.5817 54 52V56.5V69" stroke="#4C73A8" strokeWidth="2.5" />
@@ -106,7 +106,7 @@ export default function Detail2({custom_fields}:any) {
               </svg>
               <h4 className='text-yellow-1 uppercase font-bold text-[18px] 2xl:text-[24px]'>{real_estate_services_5}</h4>
             </div>
-            <div className="grow-1 relative flex-shrink-0 w-full md:w-auto flex 
+            <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex 
             flex-col justify-center items-center gap-[50px]
             after:content-['']
             after:bg-[url('/fecosystem/detail/operation-5.svg')]
@@ -145,7 +145,7 @@ export default function Detail2({custom_fields}:any) {
               </svg>
               <h4 className='text-yellow-1 uppercase font-bold text-[18px] 2xl:text-[24px]'>{real_estate_services_6}</h4>
             </div>
-            <div className="grow-1 relative flex-shrink-0 w-full md:w-auto flex  flex-col justify-center items-center gap-[50px]">
+            <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[50px]">
               <svg width="80" height="80" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="path-1-inside-1_1_2377" fill="white">
                   <rect x="18" y="22" width="75" height="92" rx="3" />
@@ -184,7 +184,7 @@ export default function Detail2({custom_fields}:any) {
             <div className="grid items-start">
               <h3 className='text-yellow-1 text-[24px] xl:text-[40px] font-bold uppercase mb-[60px] mt-8' dangerouslySetInnerHTML={{ __html: real_estate_services_8 }}></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
-                <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center">
+                <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center">
                   <svg className='w-[80%]  2xl:w-[auto] 2xl:h-[auto]' width="99" height="91" viewBox="0 0 99 91" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M78.385 63.5135C85.0513 63.5135 90.4555 58.1556 90.4555 51.5463C90.4555 44.937 85.0513 39.5791 78.385 39.5791C71.7186 39.5791 66.3145 44.937 66.3145 51.5463C66.3145 58.1556 71.7186 63.5135 78.385 63.5135Z" stroke="white" strokeWidth="2" strokeMiterlimit="10" />
                     <path d="M73 52.3063L75.8441 55L83 48" stroke="white" strokeWidth="4" strokeMiterlimit="10" strokeLinecap="round" />
@@ -199,7 +199,7 @@ export default function Detail2({custom_fields}:any) {
                   </svg>
                   <h4 className='text-white uppercase text-[12px] 2xl:text-[20px] font-semibold'>{real_estate_services_9}</h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center">
+                <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center">
                   <svg className='w-[80%]  2xl:w-[auto] 2xl:h-[auto]' width="97" height="87" viewBox="0 0 97 87" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M38.3285 53.3725L38.9533 56.9711C39.0493 57.5252 39.431 57.9874 39.9556 58.1863L40.8128 58.5094C40.8128 58.5094 43.1585 65.5697 49.1293 66.4255C49.1293 66.4255 54.0339 66.6395 57.2326 58.2954L57.8425 57.9895C58.2668 57.7777 58.5718 57.384 58.6784 56.9219L59.478 53.3939C59.5399 53.1243 59.429 52.8462 59.1987 52.6943L58.9193 52.5081C58.5312 52.2492 58.2988 51.8128 58.2988 51.3442V49.7396C58.2988 49.7396 61.9239 42.8932 56.3796 41.8235C56.3796 41.8235 54.6737 36.6887 48.0631 37.7584C48.0631 37.7584 38.2539 39.47 38.2539 46.9583L38.8936 50.3815L39.1453 51.0533C39.3734 51.6609 39.1517 52.3477 38.6143 52.7071C38.3968 52.8526 38.2838 53.1136 38.3285 53.3746V53.3725Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M77.0652 81.8276L73.3803 74.7181C72.1755 72.3925 70.2307 70.5375 67.8552 69.4464L58.9395 65.3535" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -222,7 +222,7 @@ export default function Detail2({custom_fields}:any) {
                   </svg>
                   <h4 className='text-white uppercase text-[12px] 2xl:text-[20px] font-semibold'>{real_estate_services_10}</h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center">
+                <div className="flex flex-col items-center bg-[#20446F] bg-opacity-80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center">
                   <svg className='w-[80%]  2xl:w-[auto] 2xl:h-[auto]' width="70" height="90" viewBox="0 0 70 90" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M61.7627 70.1167C63.4407 69.4312 65.1151 69.2005 66.9395 70.0806V70.0815C67.3266 70.2701 68.1986 70.8454 68.832 71.4976C69.1513 71.8263 69.3694 72.1328 69.458 72.3833C69.5343 72.599 69.5028 72.717 69.4023 72.8237L43.4102 88.4272C42.1958 88.7878 41.2625 88.7342 40.0723 88.4614L39.5361 88.3296H39.5352C36.1375 87.4518 32.7306 86.2961 29.3018 85.1255C25.879 83.957 22.4333 82.7729 18.9873 81.8501L18.9258 81.8335H18.8623L13.25 81.7876L12.874 81.7847L12.7666 82.144C12.6514 82.5302 12.4087 82.9354 12.083 83.2612C11.7971 83.5471 11.4689 83.7518 11.1387 83.8423L10.998 83.8735C9.92584 84.058 9.1832 83.7818 8.70703 83.3394C8.2182 82.8849 7.9559 82.2044 7.95508 81.4985C7.9543 80.793 8.21487 80.1091 8.70801 79.647C9.15914 79.2243 9.84948 78.945 10.835 79.0532L11.0361 79.0806C11.4086 79.1391 11.7436 79.3698 12.0791 79.7329C12.4248 80.1071 12.6959 80.5313 13.0127 80.9565L13.1611 81.1548L13.4082 81.1577L19.2559 81.2173L40.3408 87.8813L40.3779 87.8931L40.417 87.8989C41.5089 88.0651 42.7214 88.0779 43.8262 87.5601L43.8506 87.5483L43.874 87.5347L68.1191 72.7622L68.5967 72.4712L68.2549 72.0298C67.4202 70.9486 66.4578 70.3818 65.416 70.2046C64.3916 70.0304 63.345 70.2415 62.3457 70.6089C61.346 70.9764 60.3505 71.5165 59.4209 72.0405C58.4761 72.5731 57.6111 73.0822 56.8213 73.4312L56.4287 73.605L56.541 74.019C56.8942 75.3202 56.162 76.3467 55.0967 76.7749C54.0927 77.1783 52.9088 77.0024 52.2041 76.0366L52.0693 75.8335L51.9316 75.5786C51.6449 74.9894 51.6006 74.4421 51.7051 73.9712C51.8259 73.427 52.154 72.9478 52.6143 72.603C53.5343 71.914 54.9396 71.7897 56.0996 72.77L56.3496 72.9819L56.6436 72.8364C57.5136 72.4053 58.3817 71.8897 59.2256 71.4077C60.0785 70.9206 60.9159 70.4627 61.7627 70.1167ZM10.1377 79.7056L9.91895 79.7427H9.91797C8.82341 79.9828 8.46216 81.0523 8.63379 81.8745C8.7226 82.2996 8.95667 82.7173 9.35156 82.9937C9.70495 83.2408 10.1497 83.3485 10.6514 83.2856L10.8701 83.2485L10.8711 83.2476C11.9653 83.0073 12.3258 81.9388 12.1543 81.1167C12.0655 80.6915 11.8316 80.2739 11.4365 79.9976C11.0832 79.7504 10.6392 79.6428 10.1377 79.7056ZM54.4219 72.7056C53.944 72.6637 53.4699 72.8303 53.1016 73.0991C52.7325 73.3685 52.4232 73.7746 52.3291 74.2661C52.2434 74.7141 52.3467 75.1818 52.6611 75.6069L52.8086 75.7866C53.4999 76.5433 54.52 76.4618 55.1777 75.9907C55.5124 75.751 55.7826 75.3963 55.8936 74.9604C55.9921 74.5728 55.9575 74.1494 55.7695 73.728L55.6797 73.5474C55.3887 73.0209 54.9221 72.7496 54.4219 72.7056Z" fill="#888888" stroke="white" />
                     <path d="M19.3857 68.3677C25.0998 66.3805 31.311 65.3451 35.6406 69.9468L35.8457 70.1694L35.8467 70.1724C35.9257 70.2598 36.0666 70.4531 36.2539 70.73C36.4357 70.9986 36.6389 71.311 36.8447 71.6216C37.0472 71.9272 37.2519 72.2312 37.4248 72.4653C37.5105 72.5814 37.5955 72.6904 37.6738 72.7769C37.7127 72.8197 37.7575 72.8652 37.8057 72.9058C37.8438 72.9379 37.9277 73.0059 38.0439 73.0415L38.0947 73.0562L38.1484 73.061C39.5699 73.1821 41.0536 73.1268 42.4961 73.0737C43.7694 73.0269 45.0108 72.9819 46.1953 73.0483L46.6992 73.0835C47.8133 73.1799 48.6039 73.6257 49.1182 74.2212C49.6372 74.8224 49.8998 75.6065 49.8994 76.4155C49.8986 78.0247 48.864 79.6564 46.8555 80.02L36.9707 80.0435H36.5889L36.4844 80.4038C35.892 82.4426 33.2686 82.883 32.1055 81.1987L31.9971 81.0298V81.0288C31.5873 80.3299 31.5298 79.685 31.6699 79.1421C31.8124 78.5906 32.1691 78.1069 32.6484 77.7642C33.5568 77.1148 34.7953 77.029 35.6904 77.8306L35.8652 78.0034C35.9062 78.0481 35.954 78.1203 36.0146 78.2358C36.044 78.2919 36.073 78.3512 36.1055 78.4175C36.1368 78.4816 36.1722 78.5534 36.209 78.6235C36.3356 78.8648 36.5825 79.3026 37.0859 79.397L37.1309 79.4058H46.792L46.8613 79.3853C48.4349 78.9175 49.2988 77.6194 49.2627 76.3403C49.2445 75.7015 48.9998 75.0747 48.5156 74.5894C48.0914 74.1642 47.5051 73.8685 46.7783 73.7495L46.458 73.7095C44.9515 73.5768 43.3636 73.638 41.8105 73.6958C40.3035 73.7519 38.8276 73.8028 37.4248 73.6909C37.122 73.3982 36.8996 73.0386 36.6631 72.6099C36.4071 72.1459 36.1248 71.5796 35.708 71.0669H35.707C33.464 68.3037 30.6398 67.3386 27.6885 67.3276C25.1301 67.3182 22.4677 68.0244 19.9834 68.8735L18.9297 69.2446C18.5584 69.3796 18.0656 69.6378 17.6475 69.8491C17.4294 69.9594 17.2254 70.0606 17.0459 70.1401C16.9525 70.1815 16.8735 70.2133 16.8086 70.2368L16.6553 70.2837H16.6533C16.2118 70.3753 15.6688 70.3623 15.0518 70.3296C14.464 70.2984 13.7991 70.2481 13.2178 70.3062L12.9326 70.3345L12.8125 70.5952C12.0821 72.1834 10.6229 72.5233 9.48438 72.0874C8.90887 71.8671 8.42464 71.4508 8.1543 70.8979C7.88746 70.3522 7.81142 69.6365 8.1123 68.7759L8.11133 68.7749C8.37858 68.0172 9.05797 67.533 9.86719 67.3892C10.6303 67.2535 11.4467 67.4346 12.0303 67.9243L12.1436 68.0269C12.3066 68.1849 12.4037 68.371 12.5244 68.6304C12.6372 68.8727 12.7829 69.2117 13.0508 69.5044L13.209 69.6763L13.4424 69.6665C13.8338 69.6489 14.2745 69.6809 14.7646 69.7056C15.117 69.7233 15.4947 69.7367 15.8564 69.7134L16.2119 69.6763L16.2178 69.6753C16.4428 69.639 16.7115 69.5441 16.9717 69.439C17.2411 69.3301 17.5398 69.1942 17.834 69.0571C18.2897 68.8448 18.7236 68.6366 19.0703 68.4907L19.3857 68.3677ZM33.9688 77.9146L33.7188 77.9517H33.7178C32.8576 78.1302 32.3694 78.8702 32.2793 79.5747C32.194 80.2425 32.4563 81.02 33.2188 81.3481L33.3779 81.4077H33.3789C34.1068 81.6384 34.7445 81.565 35.2129 81.2124C35.6672 80.8702 35.8671 80.3356 35.8818 79.8354C35.8966 79.3359 35.7308 78.8005 35.3604 78.4146C35.0204 78.0603 34.5387 77.8646 33.9688 77.9146ZM11.2832 68.2192C10.903 68.0017 10.4418 67.9326 9.93359 68.0376L9.71289 68.0933C9.20486 68.2446 8.87344 68.6143 8.70898 69.0347C8.5483 69.4456 8.54029 69.9138 8.66113 70.3325C8.7825 70.753 9.04601 71.1619 9.46875 71.4116C9.84798 71.6356 10.3088 71.704 10.8154 71.5913L11.0352 71.5317C12.0874 71.1978 12.3502 70.0897 12.1084 69.2847C11.982 68.8641 11.7096 68.4632 11.2832 68.2192Z" fill="#888888" stroke="white" />
