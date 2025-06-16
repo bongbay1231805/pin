@@ -17,7 +17,6 @@ export function Timeline({ custom_fields }: any) {
     }
   }
   const sliderabout = convertJsonStringToArrayOrObject(slider_about);
-  // console.log(sliderabout);
   const timelineEvents = [
     {
       year: '2008',

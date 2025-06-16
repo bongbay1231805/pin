@@ -29,7 +29,6 @@ const services = [
   }
 ];
 export default function Related({ post }: any) {
-  console.log(post);
   if (!Object.keys(post).length) {
     return <div className="text-center mt-20">Không tìm thấy bài viết liên quan</div>;
   }

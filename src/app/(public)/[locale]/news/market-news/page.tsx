@@ -32,7 +32,7 @@ function News() {
   return (
     <div>
       <div className="min-h-screen pt-[206px] 2xl:pt-[226px] pb-[90px] container m-auto max-w-[85%] px-[10px]">
-        <div className="mx-autoflex flex-col gap-12">
+        <div className="mx-auto flex flex-col gap-12">
           {/* Top Image w/ Overlayed Card */}
           <Link href="/categories/tin-thi-truong" className="relative news-top-item">
             <div className='img-container flex justify-center items-center ef:w-[1178px] max-w-[75%] rounded-[10px] ef:max-h-[58vh]'>

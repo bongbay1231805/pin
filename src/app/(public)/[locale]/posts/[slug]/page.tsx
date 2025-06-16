@@ -29,7 +29,6 @@ async function DetailPost({ params }: PageProps) {
     cache: 'no-store',
   });
   const {data} = await related.json();
-  console.log(post);
   return (
     <div>
       <Hero post={post}/>
