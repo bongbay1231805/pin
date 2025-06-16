@@ -43,7 +43,7 @@ export function Footer() {
             </div>
             {/* menu */}
             <div className='2xl:leading-[30px] sm:pl-[30px]'>
-              <ul className="space-y-3 text-gray-6 uppercase fade-in-left-short font-[600] text-[13px] 2xl:text-[17px]">
+              <ul className="space-y-3 text-gray-6 fade-in-left-short uppercase font-[600] text-[13px] 2xl:text-[17px]">
                 <li><Link href="https://pigroup.tqdesign.vn/vi/about" className="hover:text-yellow-1">Giới thiệu</Link></li>
                 <li><Link href="https://pigroup.tqdesign.vn/vi/ecosystem" className="hover:text-yellow-1">Hệ Sinh Thái</Link></li>
                 <li><Link href="https://pigroup.tqdesign.vn/vi/digitalcity" className="hover:text-yellow-1">Đô thị số Picity</Link></li>
