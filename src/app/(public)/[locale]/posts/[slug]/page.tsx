@@ -19,7 +19,7 @@ async function getPostBySlug(slug: string) {
   return json.data;
 }
 async function DetailPost({ params }: Params) {
-  const {slug} = await params;
+  const { slug } = params;
   const post = await getPostBySlug(slug);
   if (!post) {
     return <div className="text-center mt-20">Không tìm thấy bài viết</div>;
