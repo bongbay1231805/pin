@@ -2,7 +2,7 @@ import { ContentBidding } from '@/components/news/ContentBidding';
 import { Hero } from '@/components/news/Hero';
 import Related from '@/components/news/Related';
 import { RegistrationForm } from '@/components/news/RegistrationForm';
-type Params = {
+type PageProps = {
   params: {
     slug: string;
   };
@@ -18,12 +18,16 @@ async function getPostBySlug(slug: string) {
   const json = await res.json();
   return json.data;
 }
-async function DetailPost({ params }: Params) {
+async function DetailPost({ params }: PageProps) {
   const { slug } = params;
-  const post = await getPostBySlug(slug);
-  if (!post) {
+  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) {
     return <div className="text-center mt-20">Không tìm thấy bài viết</div>;
   }
+  const json = await res.json();
+  const post = json.data;
   return (
     <div>
       <Hero post={post}/>
