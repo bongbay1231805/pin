@@ -29,7 +29,7 @@ export default function Success({ custom_fields }: any) {
           src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcsuccess[1].value}`}
           alt={digitalcsuccess[0].value}
           fill
-          className={`w-[calc(100%-45px)]! transition-opacity duration-500 ease-in-out ${(hoveredBox === index+1)? 'opacity-100' : 'opacity-0 absolute'}`}
+          className={`w-[calc(100%-45px)]! rounded-[20px] transition-opacity duration-500 ease-in-out ${(hoveredBox === index+1)? 'opacity-100' : 'opacity-0 absolute'}`}
         />
       ))}
       <div className='relative z-10 flex flex-col mt-[66px] text-center text-[12px] md:text-[30px] font-bold'>
@@ -45,11 +45,11 @@ export default function Success({ custom_fields }: any) {
             // Nhưng để giữ trạng thái khi rời box con, chúng ta bỏ qua onMouseLeave ở đây.
             // Tailwind classes cho vị trí và style
             className={`
-                ${index + 1 === 1 ? "top-[-15px]" : ""}
-                ${index + 1 === 2 ? "top-[40px]" : ""}
-                ${index + 1 === 3 ? "top-[95px]" : ""}
+                ${index + 1 === 1 ? "top-[-45px] md:top-[-15px]" : ""}
+                ${index + 1 === 2 ? "top-[-3px] md:top-[40px]" : ""}
+                ${index + 1 === 3 ? "top-[40px] md:top-[95px]" : ""}
                 flex justify-start overflow-hidden absolute items-center rounded-tl-[10px] rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px]
-                h-[45px] w-[180px] sm:w-[395px] right-0 cursor-pointer
+                h-[35px] md:h-[45px] w-[180px] sm:w-[395px] right-0 cursor-pointer
                 md:text-[20px] font-bold text-white
                 transition-colors duration-300 ease-in-out
                 // Trạng thái active cho box

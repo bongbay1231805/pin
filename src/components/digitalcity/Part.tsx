@@ -102,7 +102,7 @@ export default function Part({ custom_fields }: any) {
           <circle className="cls-1 animate-half-circle origin-[50%_50%]!" cx="183.67" cy="507.87" r="2.1" />
           <path className="cls-1 animate-half-circle origin-[50%_50%]!" d="M456.42,439.01c.06-.08.11-.18.11-.3,0-.28-.23-.5-.5-.5-.15,0-.28.07-.37.17-.92,1.04-1.85,2.06-2.79,3.08-50.2,54.17-121.25,83.47-194.97,80.4-24.48-1.02-48.52-5.54-71.46-13.43-1.25-.43-2.49-.87-3.74-1.32l-.2-.07-.16.45h0s0-.49,0-.49h-.34s-.25.63-.25.63l.24.24.38.19c1.25.45,2.5.89,3.75,1.32,23.03,7.93,47.17,12.47,71.74,13.49,3.53.15,7.05.22,10.57.22,70.19,0,137.18-29.15,185.18-80.94.93-1.01,1.86-2.02,2.77-3.05.01,0,.02-.02.03-.03,0-.01.02-.02.03-.03h0Z" />
         </svg>
-        <div ref={oneRef} className="mx-auto max-w-[calc(85%+60px)] mt-[45px] md:mt-[80px] mb-[25px] pr-[60px]">
+        <div ref={oneRef} className="mx-auto max-w-[calc(85%+60px)] mt-[45px] md:mt-[80px] mb-[25px] px-[30px] md:pr-[60px]">
           <div className='grid xl:grid-cols-[67.5%_32.5%] md:gap-[10px]'>
             <EmblaCarouselCenterPicity />
             <div className='flex items-center text-gray-1 text-[13px] pl-[40px]'>{digitalcity_3}</div>
@@ -115,7 +115,7 @@ export default function Part({ custom_fields }: any) {
           <p className='uppercase text-center text-blue-1 text-[20px] xl:text-[25px] mb-[35px]'>{digitalcity_5}</p>
           <HorizontalScroll custom_fields={custom_fields} />
         </div>
-        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill md:max-w-[85%] mx-auto" />
+        <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill md:max-w-[85%] mx-auto sm:rounded-[20px]" />
       </div>
       <div ref={threeRef} className="relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px]">
         <svg className='absolute top-[-20%] 2xl:top-[-190px] right-0 translate-x-[50%] overflow-x-hidden max-w-[28%] h-auto' width="528.46" height="523.07" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 528.46 523.07">
@@ -403,7 +403,7 @@ export default function Part({ custom_fields }: any) {
         <EmblaCarouselCenter slides={digitalcityslideruni} />
       </div>
       <div ref={fiveRef} className="relative mx-auto pb-[80px]">
-        <div className='relative z-1'>
+        <div className='relative z-1 sm:mt-[80px]'>
           <h3 className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_9 }}></h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px] px-6 md:px-0">
             <div
