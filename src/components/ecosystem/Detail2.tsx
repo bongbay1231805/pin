@@ -75,7 +75,7 @@ export default function Detail2({custom_fields}:any) {
         </div>
         <Image fill src="/fecosystem/detail/operation.png" alt="Smart City Features" className="object-fill"></Image>
       </div>
-      <div className="mx-auto max-w-[85%] mb-[20%] 2xl:mb-[203px]">
+      <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
         <div className='grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]'>
           <div className='mt-[100px] sm:w-[81%] order-1 sm:order-0'>
             <h3 className='text-yellow-1 text-[22px] xl:text-[25px] font-bold mb-[35px]' dangerouslySetInnerHTML={{ __html: real_estate_services_1 }}></h3>
@@ -179,7 +179,7 @@ export default function Detail2({custom_fields}:any) {
         </div>
       </div>
       <div className='2xl:mb-[120px] relative'>
-        <div className='flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center h-[60vh]'>
+        <div className='flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center sm:h-[100vh] h-[60vh]'>
           <div className="max-w-[85%]" style={{ marginLeft: '8%' }}>
             <div className="grid items-start">
               <h3 className='text-yellow-1 text-[22px] xl:text-[40px] font-bold uppercase mb-[60px] mt-8' dangerouslySetInnerHTML={{ __html: real_estate_services_8 }}></h3>
