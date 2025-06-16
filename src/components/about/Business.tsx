@@ -108,8 +108,8 @@ export function Business({ custom_fields }: any) {
     <div ref={sixRef} className="mx-auto px-1 sm:px-6 lg:px-[16px] md:max-w-[85%] border-b-1 border-gray-2 items-center pt-[16px] pb-[88px]">
       <div className="grid grid-cols-1 items-center justify-center px-[6.5%] md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-[32px] 2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">{field_24_about}</h2>
-          <p className="text-gray-1 text-[24px] 2xl:text-[32px]  font-normal uppercase">{field_25_about}</p>
+          <h2 className="text-[22px] 2xl:text-[36px] text-yellow-1 font-bold mb-[2px]">{field_24_about}</h2>
+          <p className="text-gray-1 text-[18px] 2xl:text-[32px]  font-normal uppercase">{field_25_about}</p>
         </div>
         <div className="relative md:pl-[26px] aspect-square items-center flex justify-center">
           <svg width="436" height="436" style={{ transform: `rotate(${currentRotation}deg)`, transition: "transform 1.5s ease" }} viewBox="0 0 553 554" fill="none" xmlns="http://www.w3.org/2000/svg">

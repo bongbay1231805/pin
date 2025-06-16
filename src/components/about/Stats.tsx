@@ -62,12 +62,12 @@ export function Stats({custom_fields}:any) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-[22px] 2xl:text-[28px] text-gray-1 font-normal mb-[6px]">{field_1_about}</h2>
-          <h3 className="text-[32px] 2xl:text-[45px] font-bold text-yellow-1 mb-[6px]">{field_2_about}</h3>
+          <h3 className="text-[22px] 2xl:text-[45px] font-bold text-yellow-1 mb-[6px]">{field_2_about}</h3>
           <p className="text-[22px] 2xl:text-[28px] text-gray-1 mb-[40px]">{field_2_about_sub}</p>
           <div className="text-[13px] 2xl:text-[17px] text-gray-5 text-justify max-w-[408px] 2xl:max-w-[558px]" dangerouslySetInnerHTML={{ __html: field_3_about }}></div>
         </div>
         <div ref={twoRef} className="grid grid-cols-1">
-          <div className="overflow-hidden h-[328] pl-[90]">
+          <div className="overflow-hidden h-[328] pl-[10px] lg:pl-[90px]">
             <div
               className="transition-transform duration-500 ease-in-out"
               style={{ transform: `translateY(-${currentIndex * itemHeight}px)` }}
@@ -81,7 +81,7 @@ export function Stats({custom_fields}:any) {
                     key={index}
                     className={`flex items-center text-left gap-[30px] border-b-[1px] border-gray-2 h-[82px] ${opacityClass}`}
                   >
-                    <h3 className="max-w-[258px] pl-[60px] grow font-semibold text-blue-1 text-[48px] 2xl:text-[60px]">
+                    <h3 className="max-w-[258px] pl-[10px] lg:pl-[60px] grow font-semibold text-blue-1 text-[30px] 2xl:text-[60px]">
                       {item[0].value} {item[1].value !=='' && <span className="text-[26px] 2xl:text-[35px]">{item[1].value}</span>}
                     </h3>
                     <div
