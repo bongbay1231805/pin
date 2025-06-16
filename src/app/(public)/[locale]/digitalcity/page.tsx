@@ -17,7 +17,7 @@ export default async function Digitalcity() {
   const {digitalcity_1,digitalcity_2} = custom_fields;
   return (
     <>
-      <div className="relative mx-auto h-[320px] md:h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[106px]">
+      <div className="relative mx-auto h-[320px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[106px]">
         <div className="relative mx-auto md:top-[30%] max-w-[85%]">
           <svg className='relative z-1 w-[200px] md:w-[384px]' width="537" height="74" viewBox="0 0 537 74" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M121.342 0H136.08V73.3565C127.939 73.3565 121.342 66.7889 121.342 58.6852V0Z" fill="white" />
