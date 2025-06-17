@@ -4,9 +4,9 @@ import Related from '@/components/news/Related';
 import { RegistrationForm } from '@/components/news/RegistrationForm';
 import { Metadata } from 'next';
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
     cache: 'no-store',
@@ -27,9 +27,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 }
-type PageProps = {
-  params: Promise<{ slug: string }>;
-};
 async function getPostBySlug(slug: string) {
   const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
     cache: 'no-store',
@@ -41,7 +38,7 @@ async function getPostBySlug(slug: string) {
   const json = await res.json();
   return json.data;
 }
-async function DetailPost({ params }: PageProps) {
+async function DetailPost({ params }: Props) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
