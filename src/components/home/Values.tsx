@@ -65,7 +65,7 @@ export function Values({ custom_fields }: any) {
     <div className="mx-auto border-b-[0] border-gray-2 boxanimation">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center">
         <div className="mt-[30px] 2xl:mt-[80px] text-center sm:text-left">
-          <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">{field_11}</h2>
+          <h2 className="text-[20px] li:text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">{field_11}</h2>
           <p className="text-[20px] 2xl:text-[28px] text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">{field_12}</p>
           <div className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-center sm:text-justify mx-auto sm:mx-0 sm:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px]" dangerouslySetInnerHTML={{ __html: field_13 }}></div>
           <Link href={field_15} className="text-[13px] 2xl:text-[16px] reveal-text hvr-bounce-to-right hidden md:flex items-center justify-center text-yellow-1 font-[600] w-[110] h-[28] 2xl:w-[132] 2xl:h-[32] border border-yellow-1 hover:text-white">
@@ -74,11 +74,11 @@ export function Values({ custom_fields }: any) {
         </div>
         <div className="grid md:grid-cols-1 gap-8 md:mt-[61px]">
           {values.map((value, index) => (
-            <div key={index} className="reveal-text flex items-center gap-[35px] relative after:content-[''] after:absolute after:w-[100%] sm:after:w-[72%] after:left-[50%] sm:after:left-[47%] after:-translate-1/2 after:bottom-0 after:h-[1px] after:bg-yellow-1/20 last:after:content-none pb-[20px] md:last:pb-[60px] md:pb-[40px] md:pl-[101px] last:border-0">
+            <div key={index} className="reveal-text flex items-center gap-[20px] sm:gap-[35px] relative after:content-[''] after:absolute after:w-[100%] sm:after:w-[72%] after:left-[50%] sm:after:left-[47%] after:-translate-1/2 after:bottom-0 after:h-[1px] after:bg-yellow-1/20 last:after:content-none pb-[20px] md:last:pb-[60px] md:pb-[40px] md:pl-[101px] last:border-0">
               <div className={`flex items-center justify-center w-[30%]`}>
                 {value.icon}
               </div>
-              <h3 className="text-[22px] 2xl:text-[30px] font-bold text-yellow-1 md:mt-[3%] ml-[8px]">{value.title}</h3>
+              <h3 className="text-[20px] li:text-[22px] 2xl:text-[30px] font-bold text-yellow-1 md:mt-[3%] ml-[8px]">{value.title}</h3>
             </div>
           ))}
         </div>

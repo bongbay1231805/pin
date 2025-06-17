@@ -17,8 +17,8 @@ type PropType = {
 }
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
-  // const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  // const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const {
     prevBtnDisabled,
     nextBtnDisabled,
@@ -30,17 +30,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <div className={`${styles.embla__viewport}`} ref={emblaRef}>
         <div className={`pl-[90px] pr-[20px] h-[150px] 2xl:h-[150px] ${styles.embla__container}`}>
           {slides.map((slide, index) => (
-            <div className='relative min-h-[100%] flex flex-col' key={index}>
-              <h3 className="text-size-17 2xl:text-size-35 mt-[17px] mb-[1px] 2xl:mt-[30px] font-bold text-yellow-1 uppercase reveal-text">{slide[0].value}</h3>
+            <div className='relative min-h-[100%] flex flex-col justify-center' key={index}>
+              <h3 className="text-size-17 2xl:text-size-35 font-bold text-yellow-1 uppercase reveal-text">{slide[0].value}</h3>
               <p className="text-[18px] 2xl:text-size-25 text-gray-2 font-medium uppercase reveal-text">{slide[1].value}</p>
-              <Link href={slide[3].value} className="
-              md:absolute  
-              text-[13px] 2xl:text-[17px]
-              right-[60px]  top-1/2 md:-translate-y-1/2 
-              flex items-center border-text-white border-[1px] 
-              justify-center text-white font-semibold w-[138px] h-[30px] 
-              hover:border-yellow-1 
-              hover:text-yellow-1 reveal-text">
+              <Link href={slide[3].value} className="md:absolute text-[13px] 2xl:text-[17px] right-[60px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold w-[138px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text">
                 <span className='uppercase'>{slide[2].value}</span>
               </Link>
             </div>

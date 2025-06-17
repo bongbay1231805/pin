@@ -15,7 +15,8 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 export const metadata: Metadata = {
-  title: 'Pi Group'
+  title: 'Pi Group',
+  description: 'Pi Group',
 };
 export default async function LocaleLayout({ children, params }: Props) {
   // Ensure that the incoming locale is valid

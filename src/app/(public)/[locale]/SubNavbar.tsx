@@ -35,7 +35,7 @@ export default function SubNavbar(props: PropSub) {
     requestAnimationFrame(animation);
   };
   let navItems: { name: string, href: string, hrefb?: React.RefObject<HTMLDivElement | null> | undefined }[] = [];
-  const ecosystem = ['investment-development', 'real-estate-services', 'management-operation'];
+  const ecosystem = ['ecosystem','investment-development', 'real-estate-services', 'management-operation'];
   const news = ['news', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau'];
   const humanresource = ['human-resource'];
   const about = ['about'];
@@ -124,7 +124,7 @@ export default function SubNavbar(props: PropSub) {
         hrefb: twoRef
       },
       {
-        name: "Quy trình và hình thức tuyển dụng",
+        name: "Hình thức tuyển dụng",
         href: "",
         hrefb: threeRef
       },
