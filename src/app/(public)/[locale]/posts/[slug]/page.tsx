@@ -2,6 +2,31 @@ import { ContentBidding } from '@/components/news/ContentBidding';
 import { Hero } from '@/components/news/Hero';
 import Related from '@/components/news/Related';
 import { RegistrationForm } from '@/components/news/RegistrationForm';
+import { Metadata } from 'next';
+type Props = {
+  params: { slug: string };
+};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
+    cache: 'no-store',
+  });
+  const {data:post} = await res.json();
+  // console.log(post);
+  return {
+    title: post.name,
+    description: post.description,
+    openGraph: {
+      title: post.name,
+      description: post.description,
+      images: [
+        {
+          url: `/storage/${post.image}` || '/logo.png',
+        },
+      ],
+    },
+  };
+}
 type PageProps = {
   params: Promise<{ slug: string }>;
 };

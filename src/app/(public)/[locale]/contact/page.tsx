@@ -1,6 +1,11 @@
 import React from "react";
 import { MessageForm } from "@/components/contact/MessageForm";
 import Image from "next/image";
+import { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Liên hệ',
+  description: 'Liên hệ',
+};
 export default async function Contact() {
   const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/contact', {
     cache: 'no-store',

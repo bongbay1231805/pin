@@ -2,6 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import Success from '@/components/digitalcity/Success';
 import Part from '@/components/digitalcity/Part';
+import { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Đô thị số Picity',
+  description: 'Đô thị số Picity',
+};
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
