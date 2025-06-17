@@ -23,6 +23,9 @@ strong {
 .hide-info.opacity-0 {
   @apply hidden;
 }
+figure.image >img {
+  @apply m-auto rounded-[10px];
+}
 @theme {
   --background: #fff;
   --font-montserrat: Montserrat, "Montserrat", sans-serif;

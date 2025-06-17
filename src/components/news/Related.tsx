@@ -37,7 +37,7 @@ export default function Related({ post }: any) {
       {post.map((item: any, index: number) => (
         <Link key={index} href={`https://pigroup.tqdesign.vn/posts/${item.slug}`}>
           <div
-            className="overflow-hidden pb-[33px] gap-y-[33px] gap-x-[40px] 2xl:gap-x-[46px] flex items-center border-b-1 border-b-gray-8"
+            className="grid grid-cols-[45%_1fr] overflow-hidden  pb-[33px] gap-y-[33px] gap-x-[20px] sm:gap-x-[40px] 2xl:gap-x-[46px] sm:flex items-center border-b-1 border-b-gray-8"
           >{
               item.is_featured ? (
                 <Image
@@ -45,7 +45,7 @@ export default function Related({ post }: any) {
                   alt={item.name}
                   width={250}
                   height={150}
-                  className="min-h-[150px] rounded-xl"
+                  className="min-h-[150px] max-x-[250px] rounded-xl"
                 />
               ) : (
                 <Image

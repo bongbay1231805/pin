@@ -335,7 +335,7 @@ export default function Hero({data}:any) {
             </table>
             {/* Pagination Controls */}
             <div className="flex justify-center items-center space-x-2 mt-[25px] mb-[75px]">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+              {totalPages > 1 && Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
                 <button
                   key={pageNumber}
                   onClick={() => paginate(pageNumber)}

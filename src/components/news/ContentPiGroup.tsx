@@ -4,7 +4,7 @@ export function ContentPiGroup() {
   return (
     <>
       <div className="flex items-center gap-[40px] border-b-[2px] border-[#D9D9D9] pt-[70px]">
-        <div className="grid grid-cols-1 text-center w-[90px] h-[90px] bg-blue-1 items-top justify-center p-x-[15px] rounded-tr-[16px]">
+        <div className="grid grid-cols-1 text-center min-w-[90px] w-[90px] h-[90px] bg-blue-1 items-top justify-center p-x-[15px] rounded-tr-[16px]">
           <span className="text-white font-semibold text-[15px] mt-[20px] leading-none">04.2025</span>
           <span className="text-white font-bold text-size-35 mb-[10px] leading-none">20</span>
         </div>
