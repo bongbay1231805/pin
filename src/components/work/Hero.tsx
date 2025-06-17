@@ -217,11 +217,11 @@ export default function Hero({ data }: any) {
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px]">
                 <div className="relative row-start-1 col-span-1 sm:col-span-2">
-                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src="/fwork/benefit-9.png" className='object-cover' />
+                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src="/fwork/benefit-9.png" className='object-cover rounded-[10px]' />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">Đào tạo kỹ năng</div>
                 </div>
                 <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2">
-                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src="/fwork/benefit-10.png" className='object-cover' />
+                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src="/fwork/benefit-10.png" className='object-cover rounded-[10px]' />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">Đào tạo phát triển đội ngũ kế thừa</div>
                 </div>
               </div>
