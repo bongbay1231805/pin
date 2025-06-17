@@ -231,7 +231,7 @@ export default function Hero({ data }: any) {
         <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[100px_25px]">Hình thức ứng tuyển</h3>
         <div className="mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
           <div className='grid gap-[25px]'>
-            <div className='relative h-[360px]'>
+            <div className='relative  h-[220px] sm:h-[360px]'>
               <Image alt="benefit 14" loading="lazy" decoding="async" fill src="/fwork/benefit-14.png" />
             </div>
             <div className="grid text-[13px]">
@@ -245,7 +245,7 @@ export default function Hero({ data }: any) {
             </div>
           </div>
           <div className='grid gap-[25px]'>
-            <div className='relative h-[360px]'>
+            <div className='relative  h-[220px] sm:h-[360px]'>
               <Image alt="benefit 15" loading="lazy" decoding="async" fill src="/fwork/benefit-15.png" />
             </div>
             <div>
