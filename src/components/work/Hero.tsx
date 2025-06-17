@@ -124,7 +124,7 @@ export default function Hero({ data, dataPage }: any) {
                 {
                   firstConnect.map((firstC: any, index: number) => (
                     <div key={index} className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
-                      <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: firstC[0].value }}></div>
+                      <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: firstC[0].value }}></div>
                       <h3 className="text-blue-1 font-semibold text-[16px]" dangerouslySetInnerHTML={{ __html: firstC[1].value }}></h3>
                     </div>
                   ))
@@ -134,7 +134,7 @@ export default function Hero({ data, dataPage }: any) {
                 {
                   secondConnect.map((secondC: any, index: number) => (
                     <div key={index} className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
-                      <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: secondC[0].value }}></div>
+                      <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: secondC[0].value }}></div>
                       <h3 className="text-blue-1 font-semibold text-[16px]" dangerouslySetInnerHTML={{ __html: secondC[1].value }}></h3>
                     </div>
                   ))
