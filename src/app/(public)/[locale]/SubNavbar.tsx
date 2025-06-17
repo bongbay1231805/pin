@@ -102,7 +102,7 @@ export default function SubNavbar(props: PropSub) {
         href: "/ecosystem/investment-development"
       },
       {
-        name: "Dịch vụ bất động sản",
+        name: "Dịch vụ Bất động sản",
         href: "/ecosystem/real-estate-services"
       },
       {
