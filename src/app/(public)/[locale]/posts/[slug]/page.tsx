@@ -32,7 +32,7 @@ async function DetailPost({ params }: PageProps) {
   return (
     <div>
       <Hero post={post}/>
-      <div className="m-auto w-full px-[30px] sm:px-0 2xl:max-w-[1312px]">
+      <div className="m-auto w-full sm:max-w-[85%] px-[30px] sm:px-0">
         <ContentBidding post={post}/>
       </div>
       <div className="hidden md:block  m-auto w-full px-[30px] rounded-[10px] bg-[#EAF3FF]/50 mt-[80px] sm:px-[90px] pt-[70px] pb-[70px]">
