@@ -58,8 +58,8 @@ export default function Hero({ data }: any) {
         </div>
         <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-cover" />
       </div>
-      <div ref={oneRef} className=" mx-auto max-w-[85%]  text-center pt-[10%] md:pt-[110px]">
-        <h2 className='uppercase font-bold text-yellow-1 text-[22px] mb-[50px]'>Văn hóa làm việc</h2>
+      <div ref={oneRef} className=" mx-auto max-w-[85%]  text-center pt-[50px] md:pt-[110px]">
+        <h2 className='uppercase font-bold text-yellow-1 text-[22px] mb-[25px] sm:mb-[50px]'>Văn hóa làm việc</h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px]  mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
@@ -164,11 +164,11 @@ export default function Hero({ data }: any) {
       </div>
       <div>
         <div ref={twoRef}>
-          <div className="mx-auto px-[30px] sm:px-0 xl:max-w-[85%]  text-center pt-[100px]">
+          <div className="mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%]  text-center pt-[50px] sm:pt-[100px]">
             <h2 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px]">Chính sách phúc lợi</h2>
           </div>
-          <div className="mx-auto px-[30px] sm:px-0 xl:max-w-[85%] ">
-            <div className="grid grid-cols-1 sm:grid-cols-[380px_1fr_1fr] gap-[50px] mt-[42px]">
+          <div className="mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%]">
+            <div className="grid grid-cols-1 sm:grid-cols-[380px_1fr_1fr] sm:gap-[50px] mt-[42px]">
               <div className="relative mr-[20px]">
                 <Image alt="benefit 7" loading="lazy" decoding="async" fill src="/fwork/benefit-7.png" />
               </div>
@@ -190,7 +190,7 @@ export default function Hero({ data }: any) {
                 </div>
               </div>
               <div className="grid grid-cols-1 gap-[20px]">
-                <div className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
+                <div className="sm:border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
                   <div className="relative w-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]">
                     <Image alt="benefit 1" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" src="/fwork/benefit-2.svg" /></div>
                   <h3 className="text-blue-1 font-semibold text-[16px]">Thưởng các dịp Lễ, Tết, sinh <br /> nhật, và sáng kiến cải tiến</h3>
@@ -208,8 +208,8 @@ export default function Hero({ data }: any) {
               </div>
             </div>
           </div>
-          <div className="mx-auto  max-w-[85%]">
-            <h3 className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[25px_25px] sm:py-[100px_25px]">Cơ hội Đào tạo</h3>
+          <div className="mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%]">
+            <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px] text-center py-[50px_25px] sm:py-[100px_25px]">Cơ hội Đào tạo</h3>
             <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3  sm:grid-rows-2 gap-[10px] sm:gap-[20px] h-[510px]">
               <div className="relative row-span-2">
                 <Image alt="benefit 8" loading="lazy" decoding="async" fill src="/fwork/benefit-8.png" />
@@ -228,15 +228,15 @@ export default function Hero({ data }: any) {
             </div>
           </div>
         </div>
-        <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[100px_25px]">Hình thức ứng tuyển</h3>
+        <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-center text-[22px] sm:text-[30px] py-[50px_25px] sm:py-[100px_25px]">Hình thức ứng tuyển</h3>
         <div className="mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
           <div className='grid gap-[25px]'>
             <div className='relative  h-[220px] sm:h-[360px]'>
               <Image alt="benefit 14" loading="lazy" decoding="async" fill src="/fwork/benefit-14.png" />
             </div>
             <div className="grid text-[13px]">
-              <h4 className="uppercase font-bold text-blue-1 text-[25px] mb-[22px]">Ứng tuyển trực tuyến</h4>
-              <div className='leading-[27px]'>
+              <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px]">Ứng tuyển trực tuyến</h4>
+              <div className='mb-[30px] sm:mb-0'>
                 <p><span className='font-bold'>Bước 1:</span> Truy cập các kênh tuyển dụng trực tuyến của Pi Group.</p>
                 <p><span className='font-bold'>Bước 2:</span>: Chọn vị trí phù hợp và nhấn “Ứng tuyển”.</p>
                 <p><span className='font-bold'>Bước 3:</span>: Điền thông tin và đính kèm hồ sơ.</p>
@@ -250,8 +250,8 @@ export default function Hero({ data }: any) {
             </div>
             <div>
               <div className="grid text-[13px]">
-                <h4 className="uppercase font-bold text-blue-1 text-[25px] mb-[22px]">Ứng tuyển trực tiếp</h4>
-                <div className='leading-[27px]'>
+                <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px]">Ứng tuyển trực tiếp</h4>
+                <div className='mb-[30px] sm:mb-0'>
                   <p><span className='font-bold'>Bước 1:</span> Chuẩn bị đầy đủ hồ sơ và giấy tờ liên quan.</p>
                   <p><span className='font-bold'>Bước 2:</span> Nộp Hồ sơ tại Trụ sở Tập đoàn Pi Group.</p>
                   <p><span className='font-bold'>Bước 3:</span> Điền đầy đủ thông tin theo hướng dẫn.</p>
@@ -261,24 +261,24 @@ export default function Hero({ data }: any) {
             </div>
           </div>
         </div>
-        <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[30px] text-center py-[120px_25px]">Vị trí tuyển dụng</h3>
+        <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px] text-center py-[25px_25px] sm:py-[120px_25px]">Vị trí tuyển dụng</h3>
         <div className="overflow-x-auto max-w-[85%] m-auto">
           <div className="overflow-x-auto">
             <table id="job-table" className="min-w-full">
               <thead className="bg-gray-100 border-b border-gray-200">
                 <tr className='bg-blue-1 text-[15px] font-semibold text-white'>
                   <th className='rounded-tl-[10px] rounded-bl-[10px]'></th>
-                  <th className="min-w-[350px] py-[10px] text-left uppercase pl-[23px]">Vị trí tuyển dụng</th>
-                  <th className="min-w-[150px] py-[10px] text-center uppercase">Số lượng</th>
-                  <th className="min-w-[150px] py-[10px] text-center uppercase">Thời hạn</th>
-                  <th className="min-w-[150px] py-[10px] text-center uppercase rounded-tr-[10px] rounded-br-[10px]">ỨNG TUYỂN ngay</th>
+                  <th className="min-w-[300px] py-[10px] sm:py-[18px] text-left uppercase pl-[12px] sm:pl-[18px]">Vị trí tuyển dụng</th>
+                  <th className="min-w-[100px] py-[10px] sm:py-[18px] text-center uppercase">Số lượng</th>
+                  <th className="min-w-[100px] py-[10px] sm:py-[18px] text-center uppercase">Thời hạn</th>
+                  <th className="min-w-[150px] py-[10px] sm:py-[18px] text-center uppercase rounded-tr-[10px] rounded-br-[10px]">ỨNG TUYỂN ngay</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {currentJobs.map((job) => (
                   <React.Fragment key={job.id}>
                     <tr className="hover:bg-gray-50 text-[14px] font-semibold uppercase">
-                      <td className="px-6 py-4 whitespace-nowrap text-center">
+                      <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] whitespace-nowrap text-center">
                         <button
                           className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-blue-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
                           onClick={() => handleToggleDetails(job.id)}
@@ -291,25 +291,25 @@ export default function Hero({ data }: any) {
                           )}
                         </button>
                       </td>
-                      <td className="px-6 py-4 text-blue-1"
+                      <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] text-blue-1"
                         onClick={() => handleToggleDetails(job.id)}
                         aria-expanded={job.isOpen ? "true" : "false"}
                       >
                         {job.position}
                       </td>
-                      <td className="px-6 py-4 text-center text-blue-1"
+                      <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] text-center text-blue-1"
                         onClick={() => handleToggleDetails(job.id)}
                         aria-expanded={job.isOpen ? "true" : "false"}
                       >
                         {job.quantity}
                       </td>
-                      <td className="px-6 py-4 text-center text-yellow-1"
+                      <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] text-center text-yellow-1"
                         onClick={() => handleToggleDetails(job.id)}
                         aria-expanded={job.isOpen ? "true" : "false"}
                       >
                         {job.deadline}
                       </td>
-                      <td className="px-6 py-4 flex justify-center">
+                      <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] flex justify-center">
                         <button
                           onClick={() => handleOpenPopup(job.position)} // Use button for click event
                           className="hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
