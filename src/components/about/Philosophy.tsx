@@ -8,10 +8,10 @@ export function Philosophy({ custom_fields }: any) {
     <section ref={fourRef} className="py-16">
       <div className="max-w-[85%] mx-auto bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-contain bg-no-repeat bg-right">
         <div className="grid items-center grid-cols-1 md:grid-cols-[30%_70%] mb-8 uppercase text-[16px] li:text-[20px] 2xl:text-[35px] py-[2px] text-white">
-          <div className="py-[22px] font-bold leading-[30px] text-[23px] 2xl:text-[35px] 2xl:leading-[42px] pl-[30px] sm:pl-[106px]">
+          <div className="py-[22px] font-bold leading-[30px] text-[23px] 2xl:text-[35px] 2xl:leading-[42px] px-[30px] sm:px-[106px]">
             <p>{field_19_about}<br />{field_20_about}</p>
           </div>
-          <div className="text-end py-[22px] pr-[30px] sm:pr-[106px] leading-[30px] sm:leading-[52px] 2xl:leading-[62px] font-[500]">
+          <div className="text-end py-[22px] px-[30px] sm:pr-[106px] leading-[30px] sm:leading-[52px] 2xl:leading-[62px] font-[500]">
             <h3>{field_13_about} <span className="text-yellow-1">{field_14_about}</span></h3>
             <h3>{field_15_about} <span className="text-yellow-1">{field_16_about}</span></h3>
             <h3>{field_17_about} <span className="text-yellow-1">{field_18_about}</span></h3>
