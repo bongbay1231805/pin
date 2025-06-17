@@ -12,7 +12,7 @@ export default async function Contact() {
     <div className="relative h-[calc(100vh)] after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:w-full after:h-[100%] after:bg-[linear-gradient(180deg,_#CDEBFE_0%,_#FFFFFF_100%)] after:opacity-60 after:pointer-events-none">
       <div className="mx-auto max-w-[85%] px-[10px] relative z-10 h-full">
         <div className="grid h-full items-end">
-          <div className="max-w-[65%] sm:max-w-[100%]">
+          <div className="max-w-[300px] sm:max-w-[100%]">
             <h2 className="text-[22px] 2xl:text-[28px] mt-[126px] 2xl:mt-[156px] font-bold mb-4 text-blue-1 uppercase">{field_contact_1}</h2>
             <div className="space-y-6">
               <div className="grid grid-cols-1 gap-y-1">
@@ -40,9 +40,9 @@ export default async function Contact() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-[470px_1fr] sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] gap-8 max-w-[70%] sm:max-w-[100%]">
-            <div className="max-w-[70%] sm:max-w-[100%]">
-              <div className="bg-[#F0F7FF]/70 rounded-tl-[10px] rounded-tr-[60px] p-[50px]">
+          <div className="grid grid-cols-[320px_1fr] sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] gap-8 max-w-[70%] sm:max-w-[100%]">
+            <div className=" sm:max-w-[100%]">
+              <div className="bg-[#F0F7FF]/70 rounded-tl-[10px] rounded-tr-[60px] p-[25px] sm:p-[50px]">
                 <MessageForm custom_fields={custom_fields} />
               </div>
             </div>
