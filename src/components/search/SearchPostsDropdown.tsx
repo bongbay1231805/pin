@@ -53,6 +53,40 @@ interface SearchPostsDropdownProps {
 }
 // Cố định currentPage như bạn yêu cầu
 const currentPage = 1;
+const customStyles = {
+  control: (provided: any, state: any) => ({
+    ...provided, // Keep the default styles
+    backgroundColor: '#fff', // Custom background for the control (input area)
+    borderColor: state.isFocused ? '#555' : '#555', // Custom border color on focus
+    boxShadow: state.isFocused ? '0 0 0 1px #cfa176' : 'none',
+    '&:hover': {
+      borderColor: '#cfa176', // Custom border color on hover
+    },
+  }),
+  option: (provided: any, state: any) => ({
+    ...provided, // Keep the default styles
+    backgroundColor: state.isFocused
+      ? '#cfa176' // Background when option is hovered/focused
+      : state.isSelected
+        ? '#cfa176'  // Background when option is selected
+        : 'white',    // Default background
+    color: state.isSelected ? 'white' : '#555', // Text color
+    cursor: 'pointer',
+  }),
+  singleValue: (provided: any) => ({
+    ...provided,
+    color: '#cfa176', // Color of the selected value displayed in the control
+  }),
+  menu: (provided: any) => ({
+    ...provided,
+    backgroundColor: 'white', // Background of the dropdown menu itself
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', // Optional shadow
+  }),
+  placeholder: (provided: any) => ({
+    ...provided,
+    color: '#888', // Color of the placeholder text
+  }),
+};
 const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ categorySlug }) => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -104,6 +138,7 @@ const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ categorySlug 
         isClearable={true}
         isSearchable={true}
         noOptionsMessage={() => "Không tìm thấy bài viết"}
+        styles={customStyles}
         components={{ Option: CustomSelectOption }} // <-- Gán CustomSelectOption ở đây
       />
     </div>
