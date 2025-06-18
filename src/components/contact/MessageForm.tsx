@@ -30,7 +30,7 @@ const registerFormSchema = z.object({
   email: z.string().email({
     message: "Địa chỉ email không hợp lệ.",
   }),
-  taxCode: z.string().optional()
+  content: z.string().optional()
 });
 type RegisterFormValues = z.infer<typeof registerFormSchema>;
 export function MessageForm({custom_fields}:any) {
@@ -41,7 +41,7 @@ export function MessageForm({custom_fields}:any) {
       yourName: "",
       phone: "",
       email: "",
-      taxCode: ""
+      content: ""
     },
   });
   const {field_contact_8,field_contact_9,field_contact_10,field_contact_11,field_contact_12,field_contact_send} = custom_fields;
@@ -115,7 +115,7 @@ export function MessageForm({custom_fields}:any) {
         <div className="grid grid-cols-1 mt-[20px] gap-[30px]">
           <FormField
             control={form.control}
-            name="taxCode"
+            name="content"
             render={({ field }) => (
               <FormItem>
                 <FormControl>

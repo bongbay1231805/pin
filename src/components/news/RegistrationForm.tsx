@@ -28,7 +28,8 @@ const registerFormSchema = z.object({
   email: z.string().email({
     message: "Địa chỉ email không hợp lệ.",
   }),
-  taxCode: z.string().optional(),
+  content: z.string().optional(),
+  taxcode: z.string().optional(),
   companyProfile: z
     .any()
     .refine((files) => files?.length > 0, "Vui lòng tải lên profile công ty.")
@@ -50,19 +51,47 @@ const registerFormSchema = z.object({
 });
 type RegisterFormValues = z.infer<typeof registerFormSchema>;
 export function RegistrationForm() {
+  const [cvFile, setCvFile] = React.useState<File | null>(null); // Kiểu File hoặc null
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
       companyName: "",
       phone: "",
       email: "",
-      taxCode: "",
+      content: "",
+      taxcode: "",
       companyProfile: undefined,
     },
   });
-  function onSubmit(values: RegisterFormValues) {
-    // console.log(values);
-    // Xử lý dữ liệu đăng ký ở đây (gửi API, v.v.)
+  async function onSubmit(values: RegisterFormValues) {
+    const val = {
+      yourName: values.companyName,
+      phone: values.phone,
+      email: values.email,
+      content: values.content,
+      taxcode: values.taxcode,
+      cvfilename: values.companyProfile[0].name,
+      cvfiletype: values.companyProfile[0].type
+    }
+    try {
+      const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(val),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log("API response:", data);
+        alert("Gửi thông tin thành công!"); // Hiển thị thông báo thành công
+        form.reset(); // Reset form sau khi gửi thành công
+      } else {
+        console.error("API error:", response.status, response.statusText);
+        alert("Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại.");
+      }
+    } catch (error) {
+      console.error("Fetch error:", error);
+      alert("Không thể kết nối đến server. Vui lòng kiểm tra kết nối mạng.");
+    }
   }
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   function handleButtonClick() {
@@ -112,7 +141,7 @@ export function RegistrationForm() {
           />
           <FormField
             control={form.control}
-            name="taxCode"
+            name="taxcode"
             render={({ field }) => (
               <FormItem>
                 <FormControl>

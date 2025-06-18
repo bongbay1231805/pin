@@ -80,24 +80,15 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
       setSubmissionStatus('Vui lòng sửa lỗi file CV.');
       return;
     }
-    // console.log('Hồ sơ ứng tuyển:', {
-    //   yourName,
-    //   position,
-    //   phone,
-    //   email,
-    //   cvFileName: cvFile.name,
-    //   cvFileSize: (cvFile.size / 1024 / 1024).toFixed(2) + ' MB',
-    //   cvFileType: cvFile.type,
-    // });
     const formData = new FormData();
     setSubmissionStatus('Hồ sơ đang được gửi...');
     formData.append("yourName", yourName);
     formData.append("phone", phone);
     formData.append("email", email);
     formData.append("position", position);
-    formData.append("taxCode", "Hồ sơ ứng tuyển");
-    formData.append("cvFileName", cvFile.name);
-    formData.append("cvFileType", cvFile.type);
+    formData.append("taxcode", "Hồ sơ ứng tuyển");
+    formData.append("cvfilename", cvFile.name);
+    formData.append("cvfiletype", cvFile.type);
     const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', {
       method: 'POST',
       body: formData,

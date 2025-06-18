@@ -98,7 +98,7 @@ export default function SubNavbar(props: PropSub) {
   if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
     navItems = [
       {
-        name: "Đầu tư và phát triển dự án",
+        name: "Đầu tư & phát triển dự án",
         href: "/ecosystem/investment-development"
       },
       {
@@ -106,7 +106,7 @@ export default function SubNavbar(props: PropSub) {
         href: "/ecosystem/real-estate-services"
       },
       {
-        name: "Quản lý và vận hành",
+        name: "Quản lý & vận hành",
         href: "/ecosystem/management-operation"
       }
     ];
@@ -119,7 +119,7 @@ export default function SubNavbar(props: PropSub) {
         hrefb: oneRef
       },
       {
-        name: "Phúc lợi và Đào tạo",
+        name: "Phúc lợi & Đào tạo",
         href: "",
         hrefb: twoRef
       },

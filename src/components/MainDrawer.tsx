@@ -22,24 +22,6 @@ export function MainDrawer() {
       description: "See your alerts",
       href: "/ecosystem"
     },
-    // {
-    //   icon: Calendar,
-    //   label: "Đầu tư và phát triển dự áns",
-    //   description: "Manage your schedule",
-    //   href: "/ecosystem/investment-development",
-    // },
-    // {
-    //   icon: Calendar,
-    //   label: "Dịch vụ Bất động sản",
-    //   description: "Manage your schedule",
-    //   href: "/ecosystem/real-estate-services",
-    // },
-    // {
-    //   icon: Calendar,
-    //   label: "Quản lý và vận hành",
-    //   description: "Manage your schedule",
-    //   href: "/ecosystem/management-operation",
-    // },
     {
       icon: Calendar,
       label: "Đô thị số Picity",
