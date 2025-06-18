@@ -112,15 +112,15 @@ export default function Hero({ data, dataPage }: any) {
       </div>
       <div>
         <div ref={twoRef}>
-          <div className="mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%]  text-center pt-[50px] sm:pt-[100px]">
+          <div className="mx-auto w-full px-[30px] xl:max-w-[85%]  text-center pt-[50px] sm:pt-[100px]">
             <h2 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px]">{human_resource_12}</h2>
           </div>
-          <div className="mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%]">
-            <div className="grid grid-cols-1 sm:grid-cols-[380px_1fr_1fr] sm:gap-[50px] mt-[42px]">
-              <div className="relative mr-[20px]">
-                <Image alt="benefit 7" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_13}`} />
+          <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
+            <div className="grid grid-cols-1 md:grid-cols-[380px_1fr_1fr] md:gap-[50px] mt-[30px] md:mt-[42px]">
+              <div className="order-1 md:order-0 relative md:mr-[20px] min-h-[320px] rounded-[10px] overflow-hidden">
+                <Image alt="benefit 7" loading="lazy" decoding="async" className='object-cover' fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_13}`} />
               </div>
-              <div className="grid grid-cols-1 gap-[20px]">
+              <div className="grid grid-cols-1 md:gap-[20px] [&>div]:last:border-b-[0] md:[&>div]:last:border-b-[1px]">
                 {
                   firstConnect.map((firstC: any, index: number) => (
                     <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"}  border-gray-8 flex items-center py-[24px] gap-[24px]`}>
@@ -130,7 +130,7 @@ export default function Hero({ data, dataPage }: any) {
                   ))
                 }
               </div>
-              <div className="grid grid-cols-1 gap-[20px]">
+              <div className="grid grid-cols-1 md:gap-[20px]">
                 {
                   secondConnect.map((secondC: any, index: number) => (
                     <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"} border-gray-8 flex items-center py-[24px] gap-[24px]`}>
@@ -142,7 +142,7 @@ export default function Hero({ data, dataPage }: any) {
               </div>
             </div>
           </div>
-          <div className="mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%]">
+          <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px] text-center py-[50px_25px] sm:py-[100px_25px]">{human_resource_14}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3  sm:grid-rows-2 gap-[10px] sm:gap-[20px] h-[510px]">
               <div className="relative row-span-2">
@@ -163,7 +163,7 @@ export default function Hero({ data, dataPage }: any) {
           </div>
         </div>
         <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-center text-[22px] sm:text-[30px] py-[50px_25px] sm:py-[100px_25px]">{human_resource_21}</h3>
-        <div className="mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
+        <div className="mx-auto w-full px-[30px] sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
           {humanresourcestep.map((humanre: any, index: number) => (
             <div key={index} className='grid gap-[25px]'>
               <div className='relative  h-[220px] sm:h-[360px]'>
@@ -182,7 +182,7 @@ export default function Hero({ data, dataPage }: any) {
           ))}
         </div>
         <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px] text-center py-[25px_25px] sm:py-[120px_25px]">{human_resource_22}</h3>
-        <div className="overflow-x-auto max-w-[85%] m-auto">
+        <div className="overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto">
           <div className="overflow-x-auto">
             <table id="job-table" className="min-w-full">
               <thead className="bg-gray-100 border-b border-gray-200">
