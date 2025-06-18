@@ -85,10 +85,9 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
     formData.append("yourName", yourName);
     formData.append("phone", phone);
     formData.append("email", email);
-    formData.append("position", position);
+    formData.append("subject", position);
     formData.append("taxcode", "Hồ sơ ứng tuyển");
     formData.append("cvfilename", cvFile.name);
-    formData.append("cvfiletype", cvFile.type);
     const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', {
       method: 'POST',
       body: formData,

@@ -46,11 +46,17 @@ export function MessageForm({custom_fields}:any) {
   });
   const {field_contact_8,field_contact_9,field_contact_10,field_contact_11,field_contact_12,field_contact_send} = custom_fields;
   async function onSubmit(values: RegisterFormValues) {
+    const val = {
+      yourName: values.yourName,
+      phone: values.phone,
+      email: values.email,
+      content: values.content
+    }
     try {
       const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify(val),
       });
       if (response.ok) {
         const data = await response.json();

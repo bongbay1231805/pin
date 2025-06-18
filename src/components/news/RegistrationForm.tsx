@@ -60,7 +60,7 @@ export function RegistrationForm() {
       email: "",
       content: "",
       taxcode: "",
-      companyProfile: undefined,
+      companyProfile: undefined
     },
   });
   async function onSubmit(values: RegisterFormValues) {
@@ -68,11 +68,11 @@ export function RegistrationForm() {
       yourName: values.companyName,
       phone: values.phone,
       email: values.email,
-      content: values.content,
-      taxcode: values.taxcode,
-      cvfilename: values.companyProfile[0].name,
-      cvfiletype: values.companyProfile[0].type
+      subject: "Mã số thuể " + values.taxcode,
+      content: "Đăng ký dự thầu",
+      address: values.companyProfile[0].name,
     }
+    console.log(val);
     try {
       const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', {
         method: 'POST',
