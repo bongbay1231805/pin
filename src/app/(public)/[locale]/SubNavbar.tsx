@@ -1,6 +1,7 @@
 'use client';
 import Link from "next/link"
 import { useScrollRefs } from '@/context/ScrollRefsContext'
+import CategoryAndPostSearch from "@/components/search/CategoryAndPostSearch";
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
@@ -176,8 +177,13 @@ export default function SubNavbar(props: PropSub) {
   }
   return (
     (Array.isArray(navItems) && navItems.length) ? (
-      <div className={`w-full hidden xl:block`} >
-        <div className="mx-auto bg-gray-3 border-white-1 border-b-[1px]">
+      <div className={`w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px]`} >
+        <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
+          {
+              ['tin-thi-truong','tin-pi-group','tin-dau-thau','news'].includes(nameCurent) ? (
+                <CategoryAndPostSearch />
+              ) : null
+            }
           <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
             {navItems.map((item) => (
               item.hrefb ? (
