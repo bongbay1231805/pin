@@ -93,7 +93,6 @@ const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ categorySlug 
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   useEffect(() => {
-    // ... (Logic fetchPosts như cũ)
     const fetchPosts = async () => {
       setLoading(true);
       setError(null);
@@ -122,7 +121,7 @@ const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ categorySlug 
   const options: SelectOption[] = posts.map(p => ({
     value: p.slug,
     label: p.name,
-    image: p.image, // Thêm thuộc tính image từ dữ liệu bài viết
+    image: p.image
   }));
   const handleChange = (selectedOption: SelectOption | null) => {
     if (selectedOption) {
