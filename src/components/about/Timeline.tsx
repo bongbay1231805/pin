@@ -62,8 +62,8 @@ export function Timeline({ custom_fields }: any) {
   const scrollPrev = () => embla && embla.scrollPrev();
   const scrollNext = () => embla && embla.scrollNext();
   return (
-    <section ref={threeRef} className="bg-white timeline-carousel lg:py-16">
-      <div className="mx-auto max-w-[80%] md:max-w-[80%] 2xl:max-w-[1380px]">
+    <section ref={threeRef} className="mx-auto w-full px-[30px] md:px-0 md:max-w-[85%] 2xl:max-w-[1380px] bg-white timeline-carousel lg:py-16">
+      <div className="">
         <h2 className="text-[22px] 2xl:text-[30px] text-yellow-1 font-bold text-center mb-12">{field_12_about}</h2>
         <div className="carousel-bg relative ">
           {/* Nút trái */}

@@ -5,8 +5,8 @@ export function Philosophy({ custom_fields }: any) {
   const { fourRef, fiveRef } = useScrollRefs();
   const {field_13_about,field_14_about,field_15_about,field_16_about,field_17_about,field_18_about,field_19_about,field_20_about,field_21_about,field_22_about,field_22_about_174915960724,field_23_about} = custom_fields;
   return (
-    <section ref={fourRef} className="py-16">
-      <div className="max-w-[85%] mx-auto bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-contain bg-no-repeat bg-right">
+    <section ref={fourRef} className="w-full px-[30px] md:px-0 md:max-w-[85%] mx-auto py-[30px] md:py-[50px]">
+      <div className="bg-blue-3 rounded-[10px] bg-[url('/fabout/target.png')] bg-contain bg-no-repeat bg-right">
         <div className="grid items-center grid-cols-1 md:grid-cols-[30%_70%] mb-8 uppercase text-[16px] li:text-[20px] 2xl:text-[35px] py-[2px] text-white">
           <div className="py-[22px] font-bold leading-[30px] text-[23px] 2xl:text-[35px] 2xl:leading-[42px] px-[30px] sm:px-[106px]">
             <p>{field_19_about}<br />{field_20_about}</p>
@@ -18,7 +18,7 @@ export function Philosophy({ custom_fields }: any) {
           </div>
         </div>
       </div>
-      <div ref={fiveRef} className="max-w-[85%] m-auto">
+      <div ref={fiveRef} className="m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative vision-item vision-item h-[320px] 2xl:h-[380px] bg-gray-800 group rounded-[10px] overflow-hidden">
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

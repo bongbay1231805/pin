@@ -77,8 +77,8 @@ export default function Detail1({ custom_fields }: any) {
             {/* Div cha cho phần toggle, không có padding top/bottom */}
             <div className={`relative text-gray-6 leading-[24px] sm:px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
               {/* Div con để lấy scrollHeight và áp dụng padding */}
-              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PICITY_HIGH_PARK] = el }} className="sm:pt-[12px] sm:pb-[18px]">
-                <div className='grid py-[31px] sm:py-[0] gap-[11px]'>
+              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PICITY_HIGH_PARK] = el }} className="py-[12px] sm:py-[18px] gap-[11px] grid">
+                <div className='grid gap-[11px]'>
                   {
                     customfields[0][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
@@ -99,10 +99,10 @@ export default function Detail1({ custom_fields }: any) {
                     ))
                   }
                 </div>
-                <div className={`hide-info transition-opacity duration-500 ease-in-out pb-[31px] ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
+                <div className={`hide-info transition-opacity grid gap-[11px] duration-500 ease-in-out ${openStates[PROJECT_KEYS.PICITY_HIGH_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
                   {
                     customfields[0][3]?.value?.map((item: any, index: number) => (
-                      <p key={index} className='flex items-start gap-[8px]'>
+                      <p key={index} className='flex items-start gap-x-[11px]'>
                         <img className='ml-[2px] mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
                         <span><strong>{item[0].value}</strong> {item[1].value}</span>
                       </p>
@@ -146,21 +146,21 @@ export default function Detail1({ custom_fields }: any) {
             <h3 className='text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8'>{customfields[1][0].value}</h3>
             <p className='text-gray-6 text-justify sm:px-[50px] py-[20px] sm:py-[16px] border-b-1 border-gray-8'>{customfields[1][1].value}</p>
             <div className={`relative text-gray-6 leading-[24px]  sm:px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
-              <div ref={(el: HTMLDivElement | null) => {contentRefs.current[PROJECT_KEYS.PICITY_SKY_PARK] = el}} className="sm:pt-[12px] sm:pb-[18px]">
-                <div className='grid py-[31px] sm:py-[0] gap-[11px]'>
+              <div ref={(el: HTMLDivElement | null) => {contentRefs.current[PROJECT_KEYS.PICITY_SKY_PARK] = el}} className="py-[12px] sm:py-[18px] gap-[11px] grid">
+                <div className='grid gap-[11px]'>
                   {
                     customfields[1][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
                         {(() => {
                           switch (index) {
                             case 0:
-                              return <img width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                              return <img className='min-w-[11px]' width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
                             case 1:
-                              return <img width={11} height={11} src="/fecosystem/detail/area.svg" alt="area" />;
+                              return <img className='min-w-[11px]' width={11} height={11} src="/fecosystem/detail/area.svg" alt="area" />;
                             case 2:
-                              return <img  width={11} height={11} src="/fecosystem/detail/roun-down.svg" alt="roun-down" />;
+                              return <img  className='min-w-[11px]' width={11} height={11} src="/fecosystem/detail/roun-down.svg" alt="roun-down" />;
                             default:
-                              return <img  width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
+                              return <img  className='min-w-[11px]' width={11} height={11} src="/fecosystem/detail/map.svg" alt="map" />;
                           }
                         })()}
                         <span className='font-bold'>{item[0].value}</span> {item[1].value}
@@ -168,10 +168,10 @@ export default function Detail1({ custom_fields }: any) {
                     ))
                   }
                 </div>
-                <div className={`hide-info transition-opacity duration-500 ease-in-out pb-[31px] ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
+                <div className={`hide-info transition-opacity grid gap-[11px] duration-500 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
                   {
                     customfields[1][3]?.value?.map((item: any, index: number) => (
-                      <p key={index} className='flex items-start gap-[8px]'>
+                      <p key={index} className='flex items-start gap-x-[11px]'>
                         <img className='ml-[2px] mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
                         <span><strong>{item[0].value}</strong> {item[1].value}</span>
                       </p>
@@ -198,8 +198,8 @@ export default function Detail1({ custom_fields }: any) {
             <h3 className='text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8'>{customfields[2][0].value}</h3>
             <p className='text-gray-6 text-justify sm:px-[50px] py-[20px] sm:py-[16px] border-b-1 border-gray-8'>{customfields[2][1].value}</p>
             <div className={`relative text-gray-6 leading-[24px]  sm:px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}>
-              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PRIME_MASTER] = el }} className="sm:pt-[12px] sm:pb-[18px]">
-                <div className='grid py-[31px] sm:py-[0] gap-[11px]'>
+              <div ref={(el: HTMLDivElement | null) => { contentRefs.current[PROJECT_KEYS.PRIME_MASTER] = el }} className="py-[12px] sm:py-[18px] gap-[11px] grid">
+                <div className='grid gap-[11px]'>
                   {
                     customfields[2][2].value.map((item: any, index: number) => (
                       <p key={index} className='flex items-center gap-[8px]'>
@@ -220,10 +220,10 @@ export default function Detail1({ custom_fields }: any) {
                     ))
                   }
                 </div>
-                <div className={`hide-info transition-opacity duration-500 ease-in-out pb-[31px] ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
+                <div className={`hide-info transition-opacity grid gap-[11px] duration-500 ease-in-out ${openStates[PROJECT_KEYS.PRIME_MASTER] ? 'opacity-100 delay-200' : 'opacity-0'}`}>
                   {
                     customfields[2][3]?.value?.map((item: any, index: number) => (
-                      <p key={index} className='flex items-start gap-[8px]'>
+                      <p key={index} className='flex items-start gap-x-[11px]'>
                         <img className='ml-[2px] mt-[8px]' width={8} height={8} src="/fecosystem/detail/circle.svg" />
                         <span><strong>{item[0].value}</strong> {item[1].value}</span>
                       </p>

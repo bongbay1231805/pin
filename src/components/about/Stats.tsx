@@ -81,7 +81,7 @@ export function Stats({custom_fields}:any) {
                     key={index}
                     className={`flex items-center text-left gap-[30px] border-b-[1px] border-gray-2 h-[82px] ${opacityClass}`}
                   >
-                    <h3 className="max-w-[258px] pl-[10px] lg:pl-[60px] grow font-semibold text-blue-1 text-[30px] 2xl:text-[60px]">
+                    <h3 className="max-w-[258px] lg:pl-[60px] grow font-semibold text-blue-1 text-[30px] 2xl:text-[60px]">
                       {item[0].value} {item[1].value !=='' && <span className="text-[26px] 2xl:text-[35px]">{item[1].value}</span>}
                     </h3>
                     <div
