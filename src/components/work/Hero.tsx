@@ -69,28 +69,28 @@ export default function Hero({ data, dataPage }: any) {
       <div ref={oneRef} className=" mx-auto max-w-[85%]  text-center pt-[50px] md:pt-[110px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[22px] mb-[25px] sm:mb-[50px]'>{human_resource_2}</h2>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px]  mx-auto w-full px-[30px] sm:px-0 xl:max-w-[85%] pb-[45px]">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px]  mx-auto w-full px-[30px]  xl:max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
-          <div dangerouslySetInnerHTML={{ __html: human_resource_3 }}></div>
-          <div className='text-[14px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
+          <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_3 }}></div>
+          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
-          <div dangerouslySetInnerHTML={{ __html: human_resource_5 }}></div>
-          <div className='text-[14px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_6 }}></div>
+          <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_5 }}></div>
+          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_6 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
-          <div dangerouslySetInnerHTML={{ __html: human_resource_7 }}></div>
-          <div className='text-[14px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_8 }}></div>
+          <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_7 }}></div>
+          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_8 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
-          <div dangerouslySetInnerHTML={{ __html: human_resource_9 }}></div>
-          <div className='text-[14px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
+          <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_9 }}></div>
+          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
         </div>
       </div>
-      <div className='px-[30px] sm:px-0'>
-        <div className="relative sm:static bg-blue-3 rounded-[10px] md:flex sm:p-2 md:pl-[100px] md:pr-[10px] mx-auto w-full px-[30px] pt-[30px] sm:px-0 sm:max-w-[85%] md:items-center justify-between">
-          <p className='sm:static sm:h-full text-[18px] z-1 md:text-[25px] text-yellow-1 top-6' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
-          <svg className='h-[170px] w-[35%] sm:w-auto ml-[68%] sm:ml-0' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className='mx-auto w-full px-[30px]  xl:max-w-[85%]'>
+        <div className="h-[180px] relative bg-blue-3 rounded-[10px] flex pl-[30px] sm:pl-[50px] lg:pl-[100px] md:pr-[10px] items-center justify-between">
+          <p className='text-[18px] [&>br]:hidden sm:[&>br]:inline-block z-1 md:text-[25px] text-yellow-1' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
+          <svg className='absolute right-0 bottom-0 h-[170px] w-[170px] sm:ml-0' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M45.1741 60.1561L31.3036 65.0217C28.828 65.8918 26.7555 67.6409 25.48 69.9405L19.8778 80.0535C17.9558 83.5162 13.5848 84.7415 10.1526 82.7748C6.74699 80.8259 5.56455 76.4798 7.51314 73.0659L16.5298 57.2483C17.5882 55.3926 19.2357 53.941 21.2108 53.1285L45.7188 43.0467C50.1164 41.2354 55.1119 41.6083 59.195 44.0411C65.0408 47.526 67.8485 54.4914 66.0594 61.0706L59.7885 84.12L83.6233 102.868C86.6923 105.283 88.2644 109.14 87.7552 113.016L84.1458 140.5" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M32.7719 75.25L31.0624 91.5426C30.5089 96.8077 33.6842 101.749 38.6929 103.422L62.4259 111.351C66.9342 112.856 69.9766 117.087 69.9766 121.85V140.509" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -123,7 +123,7 @@ export default function Hero({ data, dataPage }: any) {
               <div className="grid grid-cols-1 gap-[20px]">
                 {
                   firstConnect.map((firstC: any, index: number) => (
-                    <div key={index} className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
+                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"}  border-gray-8 flex items-center py-[24px] gap-[24px]`}>
                       <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: firstC[0].value }}></div>
                       <h3 className="text-blue-1 font-semibold text-[16px]" dangerouslySetInnerHTML={{ __html: firstC[1].value }}></h3>
                     </div>
@@ -133,7 +133,7 @@ export default function Hero({ data, dataPage }: any) {
               <div className="grid grid-cols-1 gap-[20px]">
                 {
                   secondConnect.map((secondC: any, index: number) => (
-                    <div key={index} className="border-y-[1px] border-gray-8 flex items-center py-[24px] gap-[24px]">
+                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"} border-gray-8 flex items-center py-[24px] gap-[24px]`}>
                       <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: secondC[0].value }}></div>
                       <h3 className="text-blue-1 font-semibold text-[16px]" dangerouslySetInnerHTML={{ __html: secondC[1].value }}></h3>
                     </div>
