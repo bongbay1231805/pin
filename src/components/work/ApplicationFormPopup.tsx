@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/form"; // Đảm bảo bạn có các component này
 import { Input } from "@/components/ui/input"; // Đảm bảo bạn có component Input
 import { Button } from "@/components/ui/button"; // Đảm bảo bạn có component Button
+import Image from 'next/image';
 // import { cn } from "@/lib/utils"; // Nếu bạn cần utility class cho styling
 interface ApplicationFormPopupProps {
   isOpen: boolean; // Trạng thái đóng/mở popup
@@ -122,8 +123,9 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
           transform: `translateY(var(--tw-translate-y))`,
           transition: 'transform 0.3s ease-out' // Rút ngắn thời gian transition cho mượt hơn
         }}
-        className={`bg-white p-6 rounded-lg shadow-xl w-full max-w-md mx-4`}
+        className={`bg-white relative p-6 rounded-lg  w-full mx-[30px]`}
       >
+        <Image className='absolute right-[70px] top-[-30px]' src="/pin.svg" width={44} height={68} alt='Pin'/>
         <div className='flex justify-end'>
           <button
             onClick={onClose}
@@ -135,8 +137,8 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
           </button>
         </div>
         <div className="mb-4">
-          <h3 className="text-[28px] uppercase">Nộp Hồ Sơ Ứng Tuyển</h3>
-          <h2 className='uppercase text-[45px] text-yellow-1 font-bold'>ứng tuyển</h2>
+          <h3 className="text-[25px] uppercase text-blue-1">Nộp Hồ Sơ</h3>
+          <h2 className='uppercase text-[40px] text-yellow-1 font-bold'>ứng tuyển</h2>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -145,9 +147,8 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               name="fullName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Họ & Tên (*)</FormLabel>
                   <FormControl>
-                    <Input placeholder="Họ & tên" {...field} />
+                    <Input className='border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Họ & tên" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -158,9 +159,8 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Số điện thoại (*)</FormLabel>
                   <FormControl>
-                    <Input placeholder="Số điện thoại" {...field} />
+                    <Input className='border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Số điện thoại" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -171,9 +171,8 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email (*)</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="Email" {...field} />
+                    <Input type="email" className='border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -184,10 +183,9 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               name="position"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Vị trí ứng tuyển (*)</FormLabel>
                   <FormControl>
                     <select
-                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="mt-1 block w-full focus-visible:ring-0! px-3 py-2 border  rounded-md  focus:outline-none border-gray-9 focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none! sm:text-sm"
                       {...field}
                       // disabled={!!selectedPosition} // Vô hiệu hóa nếu đã có selectedPosition
                     >
@@ -206,7 +204,6 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               name="cvFile"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>File CV (*)</FormLabel>
                   <FormControl>
                     <div className="relative">
                       <input

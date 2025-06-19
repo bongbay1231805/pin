@@ -24,7 +24,7 @@ strong {
   @apply hidden;
 }
 figure.image >img {
-  @apply m-auto rounded-[10px] w-full;
+  @apply m-auto rounded-[10px] w-full object-cover max-h-[600px];
 }
 @theme {
   --background: #fff;

@@ -171,7 +171,7 @@ export default function Hero({ data, dataPage }: any) {
               </div>
               <div className="grid text-[13px]">
                 <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px]">{humanre[0].value}</h4>
-                <div className='mb-[30px] sm:mb-0'>
+                <div className='mb-[30px] sm:mb-0 grid gap-[15px]'>
                   <div dangerouslySetInnerHTML={{ __html: humanre[1].value}}></div>
                   <div dangerouslySetInnerHTML={{ __html: humanre[2].value}}></div>
                   <div dangerouslySetInnerHTML={{ __html: humanre[3].value}}></div>

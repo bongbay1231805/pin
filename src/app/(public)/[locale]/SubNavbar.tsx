@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { useScrollRefs } from '@/context/ScrollRefsContext'
 import CategoryAndPostSearch from "@/components/search/CategoryAndPostSearch";
+import { usePathname } from "next/navigation";
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
@@ -9,6 +10,8 @@ interface PropSub {
 }
 export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
+  const pathname = usePathname();
+  let myArray = pathname.split("/");
   const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs();
   const isActive = (path: string) => {
     return nameCurent === path.split("/").pop();
@@ -80,7 +83,7 @@ export default function SubNavbar(props: PropSub) {
       }
     ];
   }
-  if (news.includes(nameCurent.split("/").pop() || "")) {
+  if (news.includes(nameCurent.split("/").pop() || "") || myArray[2] === "posts") {
     navItems = [
       {
         name: "Tin thị trường",
@@ -180,7 +183,7 @@ export default function SubNavbar(props: PropSub) {
       <div className={`w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px]`} >
         <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
           {
-              ['tin-thi-truong','tin-pi-group','tin-dau-thau','news'].includes(nameCurent) ? (
+              (['tin-thi-truong','tin-pi-group','tin-dau-thau','news'].includes(nameCurent) || myArray[2] === "posts") ? (
                 <CategoryAndPostSearch />
               ) : null
             }
