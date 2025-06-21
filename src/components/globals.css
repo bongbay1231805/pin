@@ -259,6 +259,12 @@ figure.image > img {
   .hvr-bounce-to-right:active::before {
     transform: scaleX(1);
   }
+
+  @media (hover: none) {
+    .hvr-bounce-to-right:hover::before {
+      transform: scaleX(0) !important;
+    }
+  }
 }
 @layer utilities {
   .custom-scrollbar {
