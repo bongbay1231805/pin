@@ -3,3 +3,5 @@
 .DS_Store
 tsconfig.tsbuildinfo
 test-results
+.history
+/src/components/home/SmartCity-hover.tsx

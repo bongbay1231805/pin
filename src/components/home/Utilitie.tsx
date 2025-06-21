@@ -1,7 +1,7 @@
 'use client';
-import Image from 'next/image'
-import { forwardRef } from 'react';
-import { useScrollReveal } from '@/hooks/useScrollReveal';
+import Image from 'next/image';
+import {forwardRef} from 'react';
+import {useScrollReveal} from '@/hooks/useScrollReveal';
 const Utilitie = forwardRef<HTMLDivElement>((props, ref) => {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   return (
@@ -20,7 +20,8 @@ const Utilitie = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
       </div>
     </>
-  )
-})
+  );
+});
 export default Utilitie;
 Utilitie.displayName = 'Utilitie';
+

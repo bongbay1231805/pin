@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 html {
   scroll-behavior: smooth;
 }
@@ -23,12 +23,12 @@ strong {
 .hide-info.opacity-0 {
   @apply hidden;
 }
-figure.image >img {
+figure.image > img {
   @apply m-auto rounded-[10px] w-full object-cover max-h-[600px];
 }
 @theme {
   --background: #fff;
-  --font-montserrat: Montserrat, "Montserrat", sans-serif;
+  --font-montserrat: Montserrat, 'Montserrat', sans-serif;
   --breakpoint-sml: 320px;
   --breakpoint-li: 500px;
   --breakpoint-sm: 768px;
@@ -39,26 +39,26 @@ figure.image >img {
   --breakpoint-ex: 1500px;
   --breakpoint-2xl: 1660px;
   --breakpoint-3xl: 1800px;
-  --color-blue-1: #20446F;
-  --color-blue-2: #3B5D8D;
-  --color-blue-3: #13283E;
-  --color-blue-4: #243B5A;
-  --color-blue-5: #4C73A8;
-  --color-yellow-1: #C48C5E;
-  --color-yellow-2: #CFA176;
-  --color-yellow-3: #F7EFE8;
-  --color-yellow-4: #EFDBC9;
-  --color-gray-1: #243B5A;
-  --color-gray-2: #E5E5E5;
-  --color-gray-3: #F5F5F5;
-  --color-gray-4: #13273F;
+  --color-blue-1: #20446f;
+  --color-blue-2: #3b5d8d;
+  --color-blue-3: #13283e;
+  --color-blue-4: #243b5a;
+  --color-blue-5: #4c73a8;
+  --color-yellow-1: #c48c5e;
+  --color-yellow-2: #cfa176;
+  --color-yellow-3: #f7efe8;
+  --color-yellow-4: #efdbc9;
+  --color-gray-1: #243b5a;
+  --color-gray-2: #e5e5e5;
+  --color-gray-3: #f5f5f5;
+  --color-gray-4: #13273f;
   --color-gray-5: #555;
   --color-gray-6: #666;
-  --color-gray-7: #A4AABB;
-  --color-gray-8: #D9D9D9;
-  --color-gray-9: #CDCDCD;
-  --color-zgray-1: #A4AABB;
-  --color-white-1: #F2F2F2;
+  --color-gray-7: #a4aabb;
+  --color-gray-8: #d9d9d9;
+  --color-gray-9: #cdcdcd;
+  --color-zgray-1: #a4aabb;
+  --color-white-1: #f2f2f2;
   --text-size-14: 14px;
   --text-size-17: 17px;
   --text-size-35: 35px;
@@ -68,7 +68,7 @@ figure.image >img {
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
   --animate-energy-circle: energy-circle 1s ease 0.2s infinite;
   --animate-energy-rotate: half-circle 8s linear infinite;
-  --animate-half-circle: half-circle 4s linear infinite;
+  --animate-half-circle: half-circle 7s linear infinite;
   --animate-reveal-text: reveal-text 1s ease-in-out forwards;
   --animate-fade-in-up-medium: fade-in-up-medium 1s ease-in-out both;
   --animate-fade-in-left-short: fade-in-left-short 1s both;
@@ -79,11 +79,11 @@ figure.image >img {
   @keyframes fade-in-left-short {
     0% {
       opacity: 0;
-      transform: translateX(-20px)
+      transform: translateX(-20px);
     }
     100% {
       opacity: 1;
-      transform: translateX(0)
+      transform: translateX(0);
     }
   }
   @keyframes fade-in-scale {
@@ -135,12 +135,12 @@ figure.image >img {
   @keyframes reveal-text {
     0% {
       transform: translateX(17%);
-      clipPath: inset(0px 50% 0px 50%);
-      -webkit-clipPath: inset(0px 50% 0px 50%);
+      clippath: inset(0px 50% 0px 50%);
+      -webkit-clippath: inset(0px 50% 0px 50%);
     }
     100% {
-      clipPath: inset(0px 0px 0px 0px);
-      -webkit-clipPath: inset(0px 0px 0px 0px);
+      clippath: inset(0px 0px 0px 0px);
+      -webkit-clippath: inset(0px 0px 0px 0px);
       transform: translateX(0%);
       opacity: 1;
     }
@@ -185,27 +185,27 @@ figure.image >img {
 }
 @container (min-width: 320px) {
   .top--10 {
-    @apply top-[-10%]
+    @apply top-[-10%];
   }
   .max-w-70 {
-    @apply max-w-[70%]
+    @apply max-w-[70%];
   }
   .max-w-28 {
-    @apply max-w-[28%]
+    @apply max-w-[28%];
   }
 }
 @media (max-width: 1200px) {
   .ecosystem-masonry-1,
   .ecosystem-masonry-9 {
-    @apply order-1
+    @apply order-1;
   }
   .ecosystem-masonry-5,
   .ecosystem-masonry-6,
   .ecosystem-masonry-7 {
-    @apply col-span-1
+    @apply col-span-1;
   }
   .ecosystem-masonry-8 {
-    @apply col-span-3
+    @apply col-span-3;
   }
 }
 @layer components {
@@ -227,7 +227,7 @@ figure.image >img {
   }
   .fade-in-left-short {
     opacity: 0;
-    transform: translateX(-20px)
+    transform: translateX(-20px);
   }
   .fade-in-left-short.show,
   .show .fade-in-left-short {
@@ -242,7 +242,7 @@ figure.image >img {
     transition-duration: 0.5s;
   }
   .hvr-bounce-to-right::before {
-    content: "";
+    content: '';
     @apply absolute -z-10 inset-0;
     /* Các thuộc tính từ Tailwind */
     /* Các thuộc tính CSS thuần còn lại */
@@ -285,15 +285,15 @@ figure.image >img {
     }
   }
   #body:is(.about) {
-    @apply mt-[0]
+    @apply mt-[0];
   }
   #body:is(.ecosystem) {
-    @apply mt-[106px]
+    @apply mt-[106px];
   }
-  #menusub:not(.active)>img:last-child {
+  #menusub:not(.active) > img:last-child {
     display: none;
   }
-  #menusub:is(.active)>img:first-child {
+  #menusub:is(.active) > img:first-child {
     display: none;
   }
   .carouselitemcenter:not(.center) svg {
@@ -307,8 +307,8 @@ figure.image >img {
   .carouselitemcenter:is(.center) {
     color: #fff;
   }
-  .carouselitemcenter:is(.center)>.relative:after {
-    content: "";
+  .carouselitemcenter:is(.center) > .relative:after {
+    content: '';
     position: absolute;
     width: 420px;
     height: 420px;
@@ -319,34 +319,34 @@ figure.image >img {
     border: 1px solid var(--color-yellow-1);
   }
   .sliderswrap {
-    @apply basis-3/5 sm:basis-[33%]
+    @apply basis-3/5 sm:basis-[33%];
   }
   .center.sliderswrap {
-    @apply basis-3/5 sm:basis-[37%]
+    @apply basis-3/5 sm:basis-[37%];
   }
   .sliderstaff {
-    @apply px-[15px]
+    @apply px-[15px];
   }
   .center .sliderstaff {
-    @apply w-full px-0
+    @apply w-full px-0;
   }
   .center .sliderstaff h3 {
-    @apply bottom-[20px] text-[16px]
+    @apply bottom-[20px] text-[16px];
   }
   .picitycenter {
-    @apply origin-left translate-x-[30px]
+    @apply origin-left translate-x-[30px];
   }
   .center .picitycenter {
-    @apply rotate-y-0 scale-y-88 origin-center translate-x-0
+    @apply rotate-y-0 scale-y-88 origin-center translate-x-0;
   }
   .center .picitycenter h3 {
-    @apply opacity-100
+    @apply opacity-100;
   }
-  .center+div .picitycenter {
-    @apply rotate-y-[-30deg] translate-z-[-30px] origin-right translate-x-[-30px]
+  .center + div .picitycenter {
+    @apply rotate-y-[-30deg] translate-z-[-30px] origin-right translate-x-[-30px];
   }
   .list-dash li::before {
-    content: "—";
+    content: '—';
     /* Ký tự gạch ngang và một khoảng trắng */
     @apply text-gray-5;
     /* Màu xanh của Tailwind (blue-500) */
@@ -363,49 +363,57 @@ figure.image >img {
 .ecosystem-masonry-10,
 .ecosystem-masonry-11,
 .ecosystem-masonry-12 {
-  @apply after:content-[''] after:inset-0 after:bg-[#20446F] after:mix-blend-color after:z-9 after:absolute after:duration-1000
+  @apply after:content-[''] after:inset-0 after:bg-[#20446F] after:mix-blend-color after:z-9 after:absolute after:duration-1000;
 }
-.ecosystem-masonry-2:hover:after, .ecosystem-masonry-3:hover:after, .ecosystem-masonry-4:hover:after, .ecosystem-masonry-5:hover:after, .ecosystem-masonry-6:hover:after, .ecosystem-masonry-7:hover:after, .ecosystem-masonry-10:hover:after, .ecosystem-masonry-11:hover:after, .ecosystem-masonry-12:hover:after {
-  background-color: rgba(0, 0, 0, 0)
+.ecosystem-masonry-2:hover:after,
+.ecosystem-masonry-3:hover:after,
+.ecosystem-masonry-4:hover:after,
+.ecosystem-masonry-5:hover:after,
+.ecosystem-masonry-6:hover:after,
+.ecosystem-masonry-7:hover:after,
+.ecosystem-masonry-10:hover:after,
+.ecosystem-masonry-11:hover:after,
+.ecosystem-masonry-12:hover:after {
+  background-color: rgba(0, 0, 0, 0);
 }
 .timeline-carousel .timeline-item.active {
-  border: 1px solid #c48c5e
+  border: 1px solid #c48c5e;
 }
 .timeline-carousel .timeline-item.active .bg {
   color: #fff;
   background: #c48c5e;
   width: 100%;
   height: 100%;
-  border-radius: 50%
+  border-radius: 50%;
 }
 .timeline-carousel .timeline-item.active .bg .title {
-  color: #fff
+  color: #fff;
 }
 .timeline-carousel .arrow {
-  border: 1px solid rgba(196, 140, 94, 0)
+  border: 1px solid rgba(196, 140, 94, 0);
 }
 .timeline-carousel .arrow:hover {
-  border: 1px solid #c48c5e
+  border: 1px solid #c48c5e;
 }
-.timeline-carousel .timeline-item span{
+.timeline-carousel .timeline-item span {
   position: absolute;
   width: 38px;
   height: 1px;
   left: 0;
   right: 0;
-  top:-9px;
+  top: -9px;
   margin: 0 auto;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 .vision-item {
-  cursor: pointer
+  cursor: pointer;
 }
 .vision-item .vision-content .title {
   position: absolute;
   position: relative;
   padding-top: 30px;
   transition: all 350ms linear;
-  z-index: 10
+  z-index: 10;
 }
 .vision-item .vision-content .content {
   z-index: 10;
@@ -415,7 +423,7 @@ figure.image >img {
   width: 100%;
   text-align: center;
   opacity: 0;
-  transition: all 350ms linear
+  transition: all 350ms linear;
 }
 .vision-item .vision-content .bg {
   position: absolute;
@@ -424,35 +432,35 @@ figure.image >img {
   width: 100%;
   height: 100%;
   background: #a87136;
-  opacity: .68;
+  opacity: 0.68;
   z-index: 0;
   transform: scaleX(0);
   transform-origin: left;
-  transition: all 350ms linear
+  transition: all 350ms linear;
 }
 .vision-item:hover .vision-content .title {
-  padding-top: 0
+  padding-top: 0;
 }
 .vision-item:hover .vision-content .content {
   bottom: calc(50% - 50px);
-  opacity: 1
+  opacity: 1;
 }
 .vision-item:hover .vision-content .bg {
-  transform: scaleX(1)
+  transform: scaleX(1);
 }
 .profile-btn {
   position: relative;
   text-transform: uppercase;
   color: #4c73a8;
   border: 1px solid #4c73a8;
-  transition: all 200ms linear
+  transition: all 200ms linear;
 }
 .profile-btn .proico {
-  transition: all 200ms linear
+  transition: all 200ms linear;
 }
 .profile-btn::before {
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   right: 0;
   width: 100%;
@@ -461,15 +469,47 @@ figure.image >img {
   z-index: -1;
   transform-origin: left;
   transition: all 200ms linear;
-  transform: scaleX(0)
+  transform: scaleX(0);
 }
 .profile-btn:hover {
   color: #fff;
-  border: 1px solid #c48c5e
+  border: 1px solid #c48c5e;
 }
 .profile-btn:hover .proico {
-  stroke: #fff
+  stroke: #fff;
 }
 .profile-btn:hover::before {
-  transform: scaleX(1)
+  transform: scaleX(1);
 }
+
+.border-circle {
+  /* Chu vi của hình tròn (r=87) là C = 2 * PI * r = 2 * 3.14159 * 87 ≈ 546.6 */
+  --circumference: 547;
+  stroke-dasharray: var(--circumference);
+  stroke-dashoffset: var(--circumference); /* Ban đầu ẩn hoàn toàn */
+  transform-origin: center;
+  transition: stroke-dashoffset 0.8s ease-in-out;
+}
+
+.border-circle-right {
+  transition: opacity 0.8s ease-out;
+}
+
+.border-circle-right:hover {
+  opacity: 0;
+}
+
+.group:hover .border-circle {
+  stroke-dashoffset: 0; /* Khi hover, vẽ đầy vòng tròn */
+}
+
+.static-arc-path {
+  /* Thêm transition để path mờ đi/hiện ra mượt mà */
+  transition: opacity 0.8s ease-out;
+}
+
+.group:hover .static-arc-path {
+  /* Khi hover vào group, làm cho path tĩnh biến mất */
+  opacity: 0;
+}
+

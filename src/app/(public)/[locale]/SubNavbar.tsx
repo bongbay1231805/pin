@@ -1,24 +1,26 @@
 'use client';
-import Link from "next/link"
-import { useScrollRefs } from '@/context/ScrollRefsContext'
-import CategoryAndPostSearch from "@/components/search/CategoryAndPostSearch";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import {useScrollRefs} from '@/context/ScrollRefsContext';
+import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
+import {usePathname} from 'next/navigation';
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
   nameCurent: string;
 }
 export default function SubNavbar(props: PropSub) {
-  const { nameCurent } = props;
+  const {nameCurent} = props;
   const pathname = usePathname();
-  let myArray = pathname.split("/");
-  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = useScrollRefs();
+  let myArray = pathname.split('/');
+  const {oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef} =
+    useScrollRefs();
   const isActive = (path: string) => {
-    return nameCurent === path.split("/").pop();
+    return nameCurent === path.split('/').pop();
   };
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (!ref.current) return;
-    const targetPosition = ref.current.getBoundingClientRect().top + window.pageYOffset;
+    const targetPosition =
+      ref.current.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     const duration = 500; // 500ms
@@ -32,182 +34,199 @@ export default function SubNavbar(props: PropSub) {
     };
     const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
       t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
+      if (t < 1) return (c / 2) * t * t + b;
       t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
     };
     requestAnimationFrame(animation);
   };
-  let navItems: { name: string, href: string, hrefb?: React.RefObject<HTMLDivElement | null> | undefined }[] = [];
-  const ecosystem = ['ecosystem','investment-development', 'real-estate-services', 'management-operation'];
+  let navItems: {
+    name: string;
+    href: string;
+    hrefb?: React.RefObject<HTMLDivElement | null> | undefined;
+  }[] = [];
+  const ecosystem = [
+    'ecosystem',
+    'investment-development',
+    'real-estate-services',
+    'management-operation'
+  ];
   const news = ['news', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau'];
   const humanresource = ['human-resource'];
   const about = ['about'];
   const digitalcity = ['digitalcity'];
-  if (about.includes(nameCurent.split("/").pop() || "")) {
+  if (about.includes(nameCurent.split('/').pop() || '')) {
     navItems = [
       {
-        name: "Định vị thương hiệu",
-        href: "#about",
+        name: 'Định vị thương hiệu',
+        href: '#about',
         hrefb: oneRef
       },
       {
-        name: "Con số ấn tượng",
-        href: "#about",
+        name: 'Con số ấn tượng',
+        href: '#about',
         hrefb: twoRef
       },
       {
-        name: "Lịch sử hình thành",
-        href: "#about",
+        name: 'Lịch sử hình thành',
+        href: '#about',
         hrefb: threeRef
       },
       {
-        name: "Triết lý kinh doanh",
-        href: "#about",
+        name: 'Triết lý kinh doanh',
+        href: '#about',
         hrefb: fourRef
       },
       {
-        name: "Tầm nhìn - Sứ mệnh",
-        href: "#about",
+        name: 'Tầm nhìn - Sứ mệnh',
+        href: '#about',
         hrefb: fiveRef
       },
       {
-        name: "Văn hóa doanh nghiệp",
-        href: "#about",
+        name: 'Văn hóa doanh nghiệp',
+        href: '#about',
         hrefb: sixRef
       },
       {
-        name: "Hồ sơ năng lực",
-        href: "#about",
+        name: 'Hồ sơ năng lực',
+        href: '#about',
         hrefb: seventRef
       }
     ];
   }
-  if (news.includes(nameCurent.split("/").pop() || "") || myArray[2] === "posts") {
+  if (
+    news.includes(nameCurent.split('/').pop() || '') ||
+    myArray[2] === 'posts'
+  ) {
     navItems = [
       {
-        name: "Tin thị trường",
-        href: "/categories/tin-thi-truong"
+        name: 'Tin thị trường',
+        href: '/categories/tin-thi-truong'
       },
       {
-        name: "Tin Pi Group",
-        href: "/categories/tin-pi-group"
+        name: 'Tin Pi Group',
+        href: '/categories/tin-pi-group'
       },
       {
-        name: "Tin đấu thầu",
-        href: "/categories/tin-dau-thau"
+        name: 'Tin đấu thầu',
+        href: '/categories/tin-dau-thau'
       }
     ];
   }
-  if (ecosystem.includes(nameCurent.split("/").pop() || "")) {
+  if (ecosystem.includes(nameCurent.split('/').pop() || '')) {
     navItems = [
       {
-        name: "Đầu tư & Phát triển dự án",
-        href: "/ecosystem/investment-development"
+        name: 'Đầu tư & Phát triển dự án',
+        href: '/ecosystem/investment-development'
       },
       {
-        name: "Dịch vụ Bất động sản",
-        href: "/ecosystem/real-estate-services"
+        name: 'Dịch vụ Bất động sản',
+        href: '/ecosystem/real-estate-services'
       },
       {
-        name: "Quản lý & Vận hành",
-        href: "/ecosystem/management-operation"
+        name: 'Quản lý & Vận hành',
+        href: '/ecosystem/management-operation'
       }
     ];
   }
-  if (humanresource.includes(nameCurent.split("/").pop() || "")) {
+  if (humanresource.includes(nameCurent.split('/').pop() || '')) {
     navItems = [
       {
-        name: "Văn hóa làm việc",
-        href: "",
+        name: 'Văn hóa làm việc',
+        href: '',
         hrefb: oneRef
       },
       {
-        name: "Phúc lợi & Đào tạo",
-        href: "",
+        name: 'Phúc lợi & Đào tạo',
+        href: '',
         hrefb: twoRef
       },
       {
-        name: "Hình thức tuyển dụng",
-        href: "",
+        name: 'Hình thức tuyển dụng',
+        href: '',
         hrefb: threeRef
       },
       {
-        name: "Vị trí tuyển dụng",
-        href: "",
+        name: 'Vị trí tuyển dụng',
+        href: '',
         hrefb: fourRef
       }
     ];
   }
-  if (digitalcity.includes(nameCurent.split("/").pop() || "")) {
+  if (digitalcity.includes(nameCurent.split('/').pop() || '')) {
     navItems = [
       {
-        name: "Picity - Đô thị số",
-        href: "",
+        name: 'Picity - Đô thị số',
+        href: '',
         hrefb: oneRef
       },
       {
-        name: "Công nghệ 4.0",
-        href: "",
+        name: 'Công nghệ 4.0',
+        href: '',
         hrefb: twoRef
       },
       {
-        name: "Độc quyền Picity App",
-        href: "",
+        name: 'Độc quyền Picity App',
+        href: '',
         hrefb: threeRef
       },
       {
-        name: "Tiện ích 5★",
-        href: "",
+        name: 'Tiện ích 5★',
+        href: '',
         hrefb: fourRef
       },
       {
-        name: "Dịch vụ quản lý",
-        href: "",
+        name: 'Dịch vụ quản lý',
+        href: '',
         hrefb: fiveRef
       },
       {
-        name: "Giá trị vượt trội",
-        href: "",
+        name: 'Giá trị vượt trội',
+        href: '',
         hrefb: sixRef
       },
       {
-        name: "Dự án thành công",
-        href: "",
+        name: 'Dự án thành công',
+        href: '',
         hrefb: seventRef
       }
     ];
   }
-  return (
-    (Array.isArray(navItems) && navItems.length) ? (
-      <div className={`w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px]`} >
-        <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
-          {
-              (['tin-thi-truong','tin-pi-group','tin-dau-thau','news'].includes(nameCurent) || myArray[2] === "posts") ? (
-                <CategoryAndPostSearch />
-              ) : null
-            }
-          <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
-            {navItems.map((item) => (
-              item.hrefb ? (
-                <li key={item.name}>
-                  <button onClick={() => scrollTo(item.hrefb!)} key={item.name} className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${isActive(item.href) ? 'text-yellow-1' : ''}`}>
-                    {item.name}
-                  </button>
-                </li>
-              ) : (
-                <li key={item.name}>
-                  <Link href={item.href} className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${isActive(item.href) ? 'text-yellow-1' : ''}`}>
-                    {item.name}
-                  </Link>
-                </li>
-              )
-            ))}
-          </ul>
-        </div>
+  return Array.isArray(navItems) && navItems.length ? (
+    <div
+      className={`w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px]`}
+    >
+      <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
+        {['tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'news'].includes(
+          nameCurent
+        ) || myArray[2] === 'posts' ? (
+          <CategoryAndPostSearch />
+        ) : null}
+        <ul className="flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
+          {navItems.map((item) =>
+            item.hrefb ? (
+              <li key={item.name}>
+                <button
+                  onClick={() => scrollTo(item.hrefb!)}
+                  key={item.name}
+                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${isActive(item.href) ? 'text-yellow-1' : ''}`}
+                >
+                  {item.name}
+                </button>
+              </li>
+            ) : (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${isActive(item.href) ? 'text-yellow-1' : ''}`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
       </div>
-    ) : (
-      null
-    )
-  )
+    </div>
+  ) : null;
 }
