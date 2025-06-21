@@ -29,9 +29,9 @@ export function Footer() {
                 TẬP ĐOÀN PI GROUP
               </h3>
               <ul className="text-[13px] 2xl:text-[17px] text-gray-6">
-                <li className="flex items-center">
+                <li className="flex items-start">
                   <svg
-                    className="mr-[5px] min-w-[24px] w-[24px] h-[24px]"
+                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[24px] h-[24px]"
                     width="24"
                     height="24"
                     viewBox="0 0 30 30"
@@ -62,7 +62,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-center">
                   <svg
-                    className="mr-[5px] min-w-[24px] w-[24px] h-[24px]"
+                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[24px] h-[24px]"
                     width="24"
                     height="24"
                     viewBox="0 0 30 30"
@@ -83,7 +83,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-center">
                   <svg
-                    className="mr-[8px] min-w-[24px] w-[24px] h-[24px]"
+                    className="ml-[-3px] mr-[8px] min-w-[24px] w-[24px] h-[24px]"
                     width="21"
                     height="21"
                     viewBox="0 0 26 26"
