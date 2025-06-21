@@ -323,7 +323,7 @@ export function Values({custom_fields}: any) {
             {field_12}
           </p>
           <div
-            className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-center md:text-justify mx-auto sm:mx-0 md:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px]"
+            className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-justify md:text-justify mx-auto sm:mx-0 md:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px]"
             dangerouslySetInnerHTML={{__html: field_13}}
           ></div>
           <div className="flex items-center justify-center mb-[30px] md:mb-0 md:justify-start">
