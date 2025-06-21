@@ -359,6 +359,25 @@ figure.image > img {
     margin-right: 0.2rem;
     /* Khoảng cách giữa dấu và nội dung */
   }
+
+  @keyframes pulse-arrow {
+    /* Trạng thái đầu và cuối */
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* Trạng thái ở giữa animation */
+    50% {
+      transform: scale(1.5); /* Phóng to 120% */
+      opacity: 0.8;
+    }
+  }
+
+  /* Tạo class để gọi animation trên */
+  .animate-arrow-pulse {
+    animation: pulse-arrow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
 }
 .ecosystem-masonry-2,
 .ecosystem-masonry-3,
