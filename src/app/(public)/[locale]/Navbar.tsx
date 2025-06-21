@@ -1,10 +1,36 @@
 'use client';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-// import { useRouter } from "next/navigation";
-import {usePathname} from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import SubNavbar from './SubNavbar';
-import {MainDrawer} from '@/components/MainDrawer';
+import { MainDrawer } from '@/components/MainDrawer';
+
+// Generic throttle function
+const throttle = (func: Function, delay: number) => {
+  let inThrottle: boolean;
+  let lastFn: NodeJS.Timeout | null;
+  let lastTime: number;
+
+  return function(this: any) { // Use 'this: any' for context when called as an event listener
+    const context = this;
+    const args = arguments;
+
+    if (!inThrottle) {
+      func.apply(context, args);
+      lastTime = Date.now();
+      inThrottle = true;
+    } else {
+      clearTimeout(lastFn!);
+      lastFn = setTimeout(() => {
+        if (Date.now() - lastTime >= delay) {
+          func.apply(context, args);
+          lastTime = Date.now();
+        }
+      }, Math.max(delay - (Date.now() - lastTime), 0)); // Ensure non-negative delay
+    }
+  };
+};
+
 const Navbar = () => {
   const pathname = usePathname().split('/').pop();
   const isHomePage = pathname === 'en' || pathname === 'vi';
@@ -19,7 +45,7 @@ const Navbar = () => {
     'tin-dau-thau',
     'human-resource',
     'contact',
-    'digitalcity'
+    'digitalcity',
   ];
   const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;
@@ -28,19 +54,40 @@ const Navbar = () => {
     return pathname === path;
   };
   const [hasShadow, setHasShadow] = useState(false);
+
+  // Ref to store the timeout ID for shadow (retained for delay logic)
+  const shadowTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     let lastScrollY = window.scrollY;
-    const handleScroll = () => {
+
+    // Define the core scroll logic function
+    const scrollLogic = () => {
       const currentScrollY = window.scrollY;
       const isScrollingUp = currentScrollY < lastScrollY;
+
       if (isScrollingUp && currentScrollY >= 96) {
-        setHasShadow(true);
+        if (shadowTimeoutRef.current) {
+          clearTimeout(shadowTimeoutRef.current);
+        }
+        shadowTimeoutRef.current = setTimeout(() => {
+          setHasShadow(true);
+        }, 150); // Delay for 150 milliseconds
       } else {
+        if (shadowTimeoutRef.current) {
+          clearTimeout(shadowTimeoutRef.current);
+          shadowTimeoutRef.current = null;
+        }
         setHasShadow(false);
       }
-      lastScrollY = currentScrollY;
+      lastScrollY = currentScrollY; // Update lastScrollY after processing
     };
-    window.addEventListener('scroll', handleScroll);
+
+    // Apply throttling to the scroll logic
+    const throttledHandleScroll = throttle(scrollLogic, 100); // Run scrollLogic at most every 100ms
+
+    window.addEventListener('scroll', throttledHandleScroll);
+
     const body = document.getElementById('body');
     if (isHomePage && body) {
       body.removeAttribute('class');
@@ -50,24 +97,30 @@ const Navbar = () => {
       body.removeAttribute('class');
       body.classList.add(pathname as string);
     }
-    return () => window.removeEventListener('scroll', handleScroll);
-  });
+
+    return () => {
+      window.removeEventListener('scroll', throttledHandleScroll);
+      if (shadowTimeoutRef.current) {
+        clearTimeout(shadowTimeoutRef.current);
+      }
+    };
+  }, [pathname, isHomePage]);
+
   useEffect(() => {
-    // Hàm xử lý sự kiện cuộn
     const handleScroll = () => {
       if (mobileMenuOpen) {
-        // Chỉ đóng menu nếu nó đang mở
         setMobileMenuOpen(false);
       }
     };
-    // Thêm event listener cho sự kiện cuộn
+    // This scroll handler can also benefit from throttling/debouncing
+    // depending on how often `mobileMenuOpen` is toggled.
+    // For now, keeping it separate, but consider applying similar optimization.
     window.addEventListener('scroll', handleScroll);
-    // Dọn dẹp event listener khi component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [mobileMenuOpen]); // Dependency array: Chỉ chạy lại effect khi mobileMenuOpen thay đổi
-  // --- End: Phần mới cần thêm ---
+  }, [mobileMenuOpen]);
+
   return (
     <nav
       id="topMenu"
@@ -172,10 +225,10 @@ const Navbar = () => {
               className={`group relative grow-1 text-center text-white-1 hover:text-yellow-2 ${isActive('about') ? 'text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Giới thiệu
+                Giới thiệu
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Giới thiệu
+                Giới thiệu
               </span>
             </Link>
             <Link
@@ -194,10 +247,10 @@ const Navbar = () => {
               className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('digitalcity') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Đô thị số Picity
+                Đô thị số Picity
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Đô thị số Picity
+                Đô thị số Picity
               </span>
             </Link>
             <Link
