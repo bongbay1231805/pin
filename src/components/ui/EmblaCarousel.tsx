@@ -47,7 +47,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className={`bg-blue-1 rounded-[16px] ${styles.embla}`}>
       <div className={`${styles.embla__viewport}`} ref={emblaRef}>
         <div
-          className={`pl-[90px] pr-[20px] h-[150px] 2xl:h-[150px] ${styles.embla__container}`}
+          className={`pl-[80px] sm:pl-[100px] pr-[20px] sm:pr-[40px]  h-[150px] 2xl:h-[150px] ${styles.embla__container}`}
         >
           {slides.map((slide, index) => (
             <div
@@ -62,7 +62,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               </p>
               { <Link
                 href={slide[3].value}
-                className="mt-[10px] md:mt-[0] md:absolute text-[13px] 2xl:text-[17px] right-[5px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold px-[20px] w-[138px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text"
+                className="mt-[10px] md:mt-[0] md:absolute text-[13px] 2xl:text-[17px] right-[5px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold px-[20px] w-[138px] 2xl:w-[170px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text"
               >
                 <span className="uppercase">{slide[2].value}</span>
               </Link> }
@@ -72,7 +72,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           ))}
         </div>
       </div>
-      <div className={`left-[25px] mt-[1px] ${styles.embla__controls}`}>
+      <div className={`left-[25px] sm:left-[40px] mt-[1px] ${styles.embla__controls}`}>
         <div className={`${styles.embla__buttons}`}>
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

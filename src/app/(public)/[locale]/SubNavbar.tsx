@@ -3,6 +3,7 @@ import Link from 'next/link';
 import {useScrollRefs} from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
 import {usePathname} from 'next/navigation';
+import { useState, useEffect } from 'react'; // Import useState và useEffect
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
@@ -14,11 +15,43 @@ export default function SubNavbar(props: PropSub) {
   let myArray = pathname.split('/');
   const {oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef} =
     useScrollRefs();
+
+  // Thêm state để kiểm soát việc fixed menu
+  const [isFixed, setIsFixed] = useState(false);
+  const scrollThreshold = 70; // Ngưỡng cuộn để fixed menu
+
+  useEffect(() => {
+    // Chỉ áp dụng logic này cho màn hình PC (hoặc thiết bị có hover, nếu bạn có media query)
+    // Để đơn giản, tôi sẽ chỉ kiểm tra chiều rộng màn hình hoặc nếu là trình duyệt (không phải mobile view)
+    const handleScroll = () => {
+      // Chỉ chạy trên client side
+      if (window.innerWidth >= 1024) { // Giả định xl:block tương ứng với width >= 1024px
+        if (window.scrollY > scrollThreshold && !isFixed) {
+          setIsFixed(true);
+        } else if (window.scrollY <= scrollThreshold && isFixed) {
+          setIsFixed(false);
+        }
+      } else {
+        // Đảm bảo không fixed trên mobile nếu bạn không muốn
+        if (isFixed) setIsFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function để gỡ bỏ event listener khi component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isFixed]); // Dependency array: chỉ chạy lại effect khi isFixed thay đổi
+  
+  
   const isActive = (path: string) => {
     return nameCurent === path.split('/').pop();
   };
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (!ref.current) return;
+    const offset = isFixed ? 50 : 0; // Điều chỉnh offset nếu menu đã fixed (để nội dung không bị che)
     const targetPosition =
       ref.current.getBoundingClientRect().top + window.pageYOffset;
     const startPosition = window.pageYOffset;
@@ -194,7 +227,10 @@ export default function SubNavbar(props: PropSub) {
   }
   return Array.isArray(navItems) && navItems.length ? (
     <div
-      className={`w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px]`}
+      className={`
+        w-full hidden xl:block bg-gray-3 border-white-1 border-b-[1px] transition-all duration-300
+        ${isFixed ? 'fixed top-0 left-0 right-0 z-50 shadow-md' : 'relative'}
+      `}
     >
       <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
         {['tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'news'].includes(

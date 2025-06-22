@@ -316,7 +316,7 @@ export function Values({custom_fields}: any) {
     <div className="mx-auto border-b-[0] border-gray-2 boxanimation">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center">
         <div className="mt-[30px] 2xl:mt-[80px] grid justify-center md:justify-start text-center sm:text-left">
-          <h2 className="text-[20px] li:text-[22px] text-center md:text-start sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">
+          <h2 className="text-[22px] li:text-[22px] text-center md:text-start sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">
             {field_11}
           </h2>
           <p className="sm:text-[20px] text-[16px] 2xl:text-[28px] text-center md:text-start text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">
@@ -344,7 +344,7 @@ export function Values({custom_fields}: any) {
               <div className={`flex items-center justify-center w-[30%]`}>
                 {value.icon}
               </div>
-              <h3 className="text-[20px] li:text-[22px] 2xl:text-[30px] font-bold text-yellow-1 md:mt-[3%] ml-[8px]">
+              <h3 className="text-[18px] sm:text-[20px] li:text-[22px] 2xl:text-[30px] font-bold text-yellow-1 md:mt-[3%] ml-[8px]">
                 {value.title}
               </h3>
             </div>
