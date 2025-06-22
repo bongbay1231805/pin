@@ -329,7 +329,7 @@ export function Values({custom_fields}: any) {
           <div className="flex items-center justify-center mb-[30px] md:mb-0 md:justify-start">
             <Link
               href={field_15}
-              className="text-[13px] 2xl:text-[16px] text-center reveal-text hvr-bounce-to-right  text-yellow-1 font-[600] leading-[30px] w-[138px] h-[30px] 2xl:w-[200px] 2xl:leading-[32px] 2xl:h-[32] border border-yellow-1 hover:text-white"
+              className="text-[13px] 2xl:text-[16px] text-center reveal-text hvr-bounce-to-right  text-yellow-1 font-[600] leading-[30px] w-auto h-[30px] px-[20px] 2xl:leading-[32px] 2xl:h-[32] border border-yellow-1 hover:text-white"
             >
               {field_14}
             </Link>

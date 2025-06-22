@@ -62,7 +62,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               </p>
               { <Link
                 href={slide[3].value}
-                className="mt-[10px] md:mt-[0] md:absolute text-[13px] 2xl:text-[17px] right-[5px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold 2xl:w-[200px] w-[138px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text"
+                className="mt-[10px] md:mt-[0] md:absolute text-[13px] 2xl:text-[17px] right-[5px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold px-[20px] w-[138px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text"
               >
                 <span className="uppercase">{slide[2].value}</span>
               </Link> }

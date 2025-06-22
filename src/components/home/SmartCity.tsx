@@ -1427,7 +1427,7 @@ export function SmartCity({custom_fields}: any) {
                 alt="Smart City Features"
                 width={366}
                 height={50}
-                className="mb-[25px] 2xl:mb-[54px] reveal-text w-[80%] mx-auto sm:mx-0 2xl:w-auto md:w-[280px]"
+                className="mb-[25px] 2xl:mb-[54px] reveal-text w-[70%] mx-auto sm:mx-0 2xl:w-auto md:w-[280px]"
               />
               <div
                 className="text-gray-5 leading-[22px] font-normal md:mb-[35px] [&>p]:mb-[15px] [&>p]::last:mb-[30px] text-justify sm:reveal-text sm:text-justify text-[13px] 2xl:text-[17px]"
@@ -1436,7 +1436,7 @@ export function SmartCity({custom_fields}: any) {
               <div className="grid justify-center mb-[20px] sm:mb-0 sm:justify-start">
                 <Link
                   href={`${field_10}`}
-                  className="reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[13px] 2xl:text-[17px] font-semibold 2xl:w-[200px] w-[138px] h-[30px] border border-yellow-1 hover:text-white active:text-white"
+                  className="reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[13px] 2xl:text-[17px] font-semibold w-auto px-[20px] h-[30px] border border-yellow-1 hover:text-white active:text-white"
                 >
                   {field_9}
                 </Link>
