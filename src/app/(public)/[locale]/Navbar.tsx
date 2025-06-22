@@ -72,7 +72,7 @@ const Navbar = () => {
         }
         shadowTimeoutRef.current = setTimeout(() => {
           setHasShadow(true);
-        }, 150); // Delay for 150 milliseconds
+        }, 50); // Delay for 150 milliseconds
       } else {
         if (shadowTimeoutRef.current) {
           clearTimeout(shadowTimeoutRef.current);

@@ -54,36 +54,20 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               className="relative min-h-[100%] flex flex-col justify-center"
               key={index}
             >
-              <h3 className="text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 uppercase reveal-text">
+              <h3 className="sm:text-[22px] text-[18px] 2xl:text-[35px] font-bold text-yellow-1 uppercase reveal-text">
                 {slide[0].value}
               </h3>
-              <p className="text-[16px] sm:text-[22px] 2xl:text-[45px] text-gray-2 font-medium uppercase reveal-text">
+              <p className="sm:text-[16px] text-[14px]  2xl:text-[28px] text-gray-2 font-medium uppercase reveal-text">
                 {slide[1].value}
               </p>
-              {/* <Link
+              { <Link
                 href={slide[3].value}
-                className="md:absolute text-[13px] 2xl:text-[17px] right-[60px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold w-[138px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text"
+                className="mt-[10px] md:mt-[0] md:absolute text-[13px] 2xl:text-[17px] right-[60px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold 2xl:w-[200px] w-[138px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text"
               >
                 <span className="uppercase">{slide[2].value}</span>
-              </Link> */}
+              </Link> }
 
-              <Link
-                href={slide[3].value}
-                className={`reveal-text flex items-center justify-center transition-all duration-300 ease-in-out    absolute bottom-2 -right-1 w-12 h-12        
-                  md:absolute
-                  md: text-[13px] md:right-[60px] md:top-1/2 md:-translate-y-1/2 md:flex md:items-center md:border-text-white md:border-[1px] md:justify-center md:text-white md:font-semibold md:w-[138px] md:h-[30px] md:hover:border-yellow-1 md:hover:text-yellow-1
-                `}
-              >
-                {/* Chữ này sẽ ẨN trên mobile và HIỆN trên desktop */}
-                <span className="uppercase hidden md:inline">
-                  {slide[2].value}
-                </span>
-
-                {/* Icon này sẽ HIỆN trên mobile và ẨN trên desktop */}
-                <div className="md:hidden animate-arrow-pulse">
-                  <ArrowIcon />
-                </div>
-              </Link>
+              
             </div>
           ))}
         </div>
