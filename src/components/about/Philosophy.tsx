@@ -20,7 +20,7 @@ export function Philosophy({ custom_fields }: any) {
       </div>
       <div ref={fiveRef} className="m-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="relative vision-item vision-item h-[320px] 2xl:h-[380px] bg-gray-800 group rounded-[10px] overflow-hidden">
+          <div className="relative vision-item vision-item h-[180px] sm:h-[320px] 2xl:h-[380px] bg-gray-800 group rounded-[10px] overflow-hidden">
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <Image
                 src="/fabout/vision.png"
@@ -31,13 +31,13 @@ export function Philosophy({ custom_fields }: any) {
             </div>
             <div className="absolute vision-content inset-0 flex items-center justify-center">
               <div className="text-center p-6">
-                <h3 className="text-[30px] title font-bold mb-4 text-white">{field_21_about}</h3>
-                <div className="text-[14px] content text-white" dangerouslySetInnerHTML={{ __html: field_22_about }}></div>
+                <h3 className="text-[20px] sm:text-[23px] title font-bold mb-4 text-white">{field_21_about}</h3>
+                <div className="text-[14px] content text-white pl-[15px] pr-[15px]" dangerouslySetInnerHTML={{ __html: field_22_about }}></div>
                 <div className="bg"></div>
               </div>
             </div>
           </div>
-          <div className="relative vision-item h-[320px] 2xl:h-[380px] bg-gray-800 group rounded-[10px] overflow-hidden">
+          <div className="relative vision-item h-[180px] sm:h-[320px] 2xl:h-[380px] bg-gray-800 group rounded-[10px] overflow-hidden">
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
               <Image
                 src="/fabout/mission.png"
@@ -48,8 +48,8 @@ export function Philosophy({ custom_fields }: any) {
             </div>
             <div className="absolute vision-content inset-0 flex items-center justify-center">
               <div className="text-center p-6">
-                <h3 className="text-[30px] title font-bold mb-4 text-white">{field_22_about_174915960724}</h3>
-                <div className="text-[14px] content text-white" dangerouslySetInnerHTML={{ __html: field_23_about }}></div>
+                <h3 className="text-[20px] sm:text-[23px] title font-bold mb-4 text-white">{field_22_about_174915960724}</h3>
+                <div className="text-[14px] content text-white pl-[15px] pr-[15px]" dangerouslySetInnerHTML={{ __html: field_23_about }}></div>
                 <div className="bg"></div>
               </div>
             </div>

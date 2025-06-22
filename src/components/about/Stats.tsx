@@ -209,9 +209,9 @@ export function Stats({ custom_fields }: any) {
     <div ref={oneRef} className="mx-auto py-16 mt-[25px] px-[30px] w-full sm:max-w-[85%]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-[22px] 2xl:text-[28px] text-gray-1 font-normal mb-[6px]">{field_1_about}</h2>
-          <h3 className="text-[22px] 2xl:text-[45px] font-bold text-yellow-1 mb-[6px]">{field_2_about}</h3>
-          <p className="text-[22px] 2xl:text-[28px] text-gray-1 mb-[40px]">{field_2_about_sub}</p>
+          <h2 className="text-[16px] sm:text-[20px]  2xl:text-[28px] text-gray-1 font-normal mb-[6px]">{field_1_about}</h2>
+          <h3 className="text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 mb-[6px]">{field_2_about}</h3>
+          <p className="text-[16px] sm:text-[20px]  2xl:text-[28px] text-gray-1 mb-[40px]">{field_2_about_sub}</p>
           <div className="text-[13px] 2xl:text-[17px] text-gray-5 text-justify max-w-[408px] 2xl:max-w-[558px]" dangerouslySetInnerHTML={{ __html: field_3_about }}></div>
         </div>
         <div ref={twoRef} className="grid grid-cols-1">

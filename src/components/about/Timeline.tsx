@@ -61,11 +61,46 @@ export function Timeline({ custom_fields }: any) {
   }, [embla]);
   const scrollPrev = () => embla && embla.scrollPrev();
   const scrollNext = () => embla && embla.scrollNext();
+
+  // Lấy sự kiện hiện tại đang được chọn để hiển thị trong div cố định
+  console.log(sliderabout[selectedIndex])
+  const currentEvent = sliderabout[selectedIndex];
+
   return (
     <section ref={threeRef} className="mx-auto w-full px-[30px] md:px-0 md:max-w-[85%] 2xl:max-w-[1380px] bg-white timeline-carousel lg:py-16">
       <div className="">
-        <h2 className="text-[22px] 2xl:text-[30px] text-yellow-1 font-bold text-center mb-12">{field_12_about}</h2>
-        <div className="carousel-bg relative ">
+        <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold text-center mb-12">{field_12_about}</h2>
+        <div className="carousel-bg relative h-[360px] 2xl:h-[400px] flex items-center justify-center">
+          
+          {/* Div cố định ở giữa */}
+          <div
+            className="absolute z-20 w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item active rounded-full text-center flex flex-col items-center justify-center p-4 bg-white border-1 border-yellow-500 shadow-lg"
+          >
+            {currentEvent && (
+              <div className="bg w-full h-full flex flex-col items-center justify-center text-center pb-[20px]">
+                <div className="text-[26px] 2xl:text-[32px] title font-bold mb-2 text-yellow-1">
+                  {currentEvent[0].value || ''}
+                </div>
+                {
+                  (currentEvent[1].value) ? (
+                    <div
+                      className="text-[13px] 2xl:text-[15px]"
+                      dangerouslySetInnerHTML={{ __html: currentEvent[1].value || '' }}
+                    />
+                  ) : null
+                }
+                {
+                  (currentEvent[2].value) ? (
+                    <div
+                      className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
+                      dangerouslySetInnerHTML={{ __html: currentEvent[2].value || '' }}
+                    />
+                  ) : null
+                }
+              </div>
+            )}
+          </div>
+          
           {/* Nút trái */}
           <button
             onClick={scrollPrev}
@@ -74,7 +109,7 @@ export function Timeline({ custom_fields }: any) {
             <ChevronLeft />
           </button>
           {/* Carousel */}
-          <div className="overflow-hidden max-w-[86%] ml-[7%]" ref={emblaRef}>
+          <div className="overflow-hidden max-w-[86%]" ref={emblaRef}>
             <div className="flex">
               {sliderabout.map((event: any, index: number) => {
                 const isActive = index === selectedIndex;
@@ -85,12 +120,10 @@ export function Timeline({ custom_fields }: any) {
                     onClick={() => embla && embla.scrollTo(index)}
                   >
                     <div
-                      className={`w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white ${isActive
-                        ? 'border-1 active border-yellow-500'
-                        : 'opacity-100'
-                        }`}
+                      className={`w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white 
+                      `}
                     >
-                      <div className="bg w-full h-full flex flex-col items-center justify-center text-center pb-[20px]">
+                      <div className="hidden md:flex bg w-full h-full flex-col items-center justify-center text-center pb-[20px]">
                         <div className="text-[26px] 2xl:text-[32px] title font-bold mb-2 text-yellow-1">{event[0].value}</div>
                         {
                           event[1].value != '' ? (
