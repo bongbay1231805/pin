@@ -63,6 +63,11 @@ export function Partners({custom_fields}: any) {
       img: 'otis.png',
       width: 153,
       height: 50
+    },
+    {
+      img: 'UKDSGN.png',
+      width: 252,
+      height: 50
     }
   ];
   return (
