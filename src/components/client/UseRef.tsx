@@ -253,7 +253,7 @@ export default function ClientUseRef({custom_fields}: any) {
                   {field_3}
                 </p>
                 <div
-                  className="text-justify text-[13px] 2xl:text-[17px] mb-[35px] md:mb-[42px] text-gray-5 leading-[22px] 2xl:leading-[28px] fade-in-left-short"
+                  className="text-justify md:text-center text-[13px] 2xl:text-[17px] mb-[35px] md:mb-[42px] text-gray-5 leading-[22px] 2xl:leading-[28px] fade-in-left-short"
                   dangerouslySetInnerHTML={{__html: field_4}}
                 ></div>
               </div>

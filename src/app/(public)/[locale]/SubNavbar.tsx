@@ -1,63 +1,93 @@
 'use client';
 import Link from 'next/link';
-import {useScrollRefs} from '@/context/ScrollRefsContext';
+import { useScrollRefs } from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
-import {usePathname} from 'next/navigation';
-import { useState, useEffect } from 'react'; // Import useState và useEffect
+import { usePathname } from 'next/navigation';
+import { useState, useEffect, useRef } from 'react'; // Import useRef
+
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
   nameCurent: string;
 }
+
 export default function SubNavbar(props: PropSub) {
-  const {nameCurent} = props;
+  const { nameCurent } = props;
   const pathname = usePathname();
   let myArray = pathname.split('/');
-  const {oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef} =
+  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } =
     useScrollRefs();
 
-  // Thêm state để kiểm soát việc fixed menu
   const [isFixed, setIsFixed] = useState(false);
-  const scrollThreshold = 70; // Ngưỡng cuộn để fixed menu
+  const scrollThreshold = 100; // Ngưỡng cuộn để bắt đầu xem xét fixed menu.
+                               // Đặt giá trị này thấp hơn một chút so với header chính để menu phụ xuất hiện mượt mà.
+  const prevScrollY = useRef(0); // Dùng useRef để lưu trữ vị trí cuộn trước đó
+                                 // mà không gây re-render khi nó thay đổi
 
   useEffect(() => {
-    // Chỉ áp dụng logic này cho màn hình PC (hoặc thiết bị có hover, nếu bạn có media query)
-    // Để đơn giản, tôi sẽ chỉ kiểm tra chiều rộng màn hình hoặc nếu là trình duyệt (không phải mobile view)
     const handleScroll = () => {
-      // Chỉ chạy trên client side
-      if (window.innerWidth >= 1024) { // Giả định xl:block tương ứng với width >= 1024px
-        if (window.scrollY > scrollThreshold && !isFixed) {
+      // Chỉ áp dụng logic này cho màn hình PC
+      if (typeof window === 'undefined' || window.innerWidth < 1024) {
+        // Đảm bảo không fixed trên mobile hoặc nếu cửa sổ chưa định nghĩa
+        if (isFixed) setIsFixed(false);
+        prevScrollY.current = window.scrollY; // Cập nhật luôn prevScrollY ngay cả trên mobile
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > prevScrollY.current;
+      const scrollingUp = currentScrollY < prevScrollY.current;
+
+      // Logic fixed menu
+      if (currentScrollY > scrollThreshold) {
+        if (scrollingDown && !isFixed) {
+          // Chỉ fixed khi cuộn xuống và đã vượt qua ngưỡng
           setIsFixed(true);
-        } else if (window.scrollY <= scrollThreshold && isFixed) {
+        } else if (scrollingUp && isFixed) {
+          // Chỉ unfix khi cuộn lên và đang ở trạng thái fixed
           setIsFixed(false);
         }
       } else {
-        // Đảm bảo không fixed trên mobile nếu bạn không muốn
-        if (isFixed) setIsFixed(false);
+        // Nếu cuộn lên trên ngưỡng, luôn unfix
+        if (isFixed) {
+          setIsFixed(false);
+        }
       }
+      
+      prevScrollY.current = currentScrollY; // Luôn cập nhật vị trí cuộn trước đó
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup function để gỡ bỏ event listener khi component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isFixed]); // Dependency array: chỉ chạy lại effect khi isFixed thay đổi
-  
-  
+  }, [isFixed]); // isFixed vẫn là dependency vì nó ảnh hưởng đến điều kiện của handleScroll
+
   const isActive = (path: string) => {
+    // Để active chính xác hơn cho các đường dẫn có slug ở cuối,
+    // bạn có thể so sánh toàn bộ pathname hoặc thêm logic cụ thể hơn.
+    // Hiện tại, nó so sánh nameCurent với phần cuối cùng của path.
+    // Đảm bảo nameCurent được truyền vào là phần cuối của URL.
     return nameCurent === path.split('/').pop();
   };
+
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (!ref.current) return;
-    const offset = isFixed ? 50 : 0; // Điều chỉnh offset nếu menu đã fixed (để nội dung không bị che)
+
+    // Điều chỉnh offset nếu menu đã fixed
+    // Offset này sẽ trừ đi chiều cao của sub-navbar khi nó fixed
+    // để nội dung không bị che khuất
+    const subNavbarHeight = 50; // Ước tính chiều cao của sub-navbar khi fixed (ví dụ: h-[50px] nếu bạn có)
+    const offset = isFixed ? subNavbarHeight : 0; 
+
     const targetPosition =
-      ref.current.getBoundingClientRect().top + window.pageYOffset;
+      ref.current.getBoundingClientRect().top + window.pageYOffset - offset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     const duration = 500; // 500ms
     let startTime: number | null = null;
+
     const animation = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
@@ -65,6 +95,7 @@ export default function SubNavbar(props: PropSub) {
       window.scrollTo(0, run);
       if (timeElapsed < duration) requestAnimationFrame(animation);
     };
+
     const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
       t /= d / 2;
       if (t < 1) return (c / 2) * t * t + b;
@@ -73,11 +104,13 @@ export default function SubNavbar(props: PropSub) {
     };
     requestAnimationFrame(animation);
   };
+
   let navItems: {
     name: string;
     href: string;
     hrefb?: React.RefObject<HTMLDivElement | null> | undefined;
   }[] = [];
+
   const ecosystem = [
     'ecosystem',
     'investment-development',
@@ -88,7 +121,12 @@ export default function SubNavbar(props: PropSub) {
   const humanresource = ['human-resource'];
   const about = ['about'];
   const digitalcity = ['digitalcity'];
-  if (about.includes(nameCurent.split('/').pop() || '')) {
+
+  // Logic để xác định navItems dựa trên nameCurent
+  // (Đảm bảo nameCurent được truyền vào là slug cuối cùng của URL)
+  const currentSlug = nameCurent.split('/').pop() || '';
+
+  if (about.includes(currentSlug)) {
     navItems = [
       {
         name: 'Định vị thương hiệu',
@@ -101,7 +139,7 @@ export default function SubNavbar(props: PropSub) {
         hrefb: twoRef
       },
       {
-        name: 'Lịch sử hình thành',
+        name: 'Lịch sử hình thành',
         href: '#about',
         hrefb: threeRef
       },
@@ -126,11 +164,7 @@ export default function SubNavbar(props: PropSub) {
         hrefb: seventRef
       }
     ];
-  }
-  if (
-    news.includes(nameCurent.split('/').pop() || '') ||
-    myArray[2] === 'posts'
-  ) {
+  } else if (news.includes(currentSlug) || myArray[2] === 'posts') {
     navItems = [
       {
         name: 'Tin thị trường',
@@ -145,8 +179,7 @@ export default function SubNavbar(props: PropSub) {
         href: '/categories/tin-dau-thau'
       }
     ];
-  }
-  if (ecosystem.includes(nameCurent.split('/').pop() || '')) {
+  } else if (ecosystem.includes(currentSlug)) {
     navItems = [
       {
         name: 'Đầu tư & Phát triển dự án',
@@ -161,8 +194,7 @@ export default function SubNavbar(props: PropSub) {
         href: '/ecosystem/management-operation'
       }
     ];
-  }
-  if (humanresource.includes(nameCurent.split('/').pop() || '')) {
+  } else if (humanresource.includes(currentSlug)) {
     navItems = [
       {
         name: 'Văn hóa làm việc',
@@ -185,8 +217,7 @@ export default function SubNavbar(props: PropSub) {
         hrefb: fourRef
       }
     ];
-  }
-  if (digitalcity.includes(nameCurent.split('/').pop() || '')) {
+  } else if (digitalcity.includes(currentSlug)) {
     navItems = [
       {
         name: 'Picity - Đô thị số',
@@ -209,22 +240,23 @@ export default function SubNavbar(props: PropSub) {
         hrefb: fourRef
       },
       {
-        name: 'Dịch vụ quản lý',
+        name: 'Dịch vụ quản lý',
         href: '',
         hrefb: fiveRef
       },
       {
-        name: 'Giá trị vượt trội',
+        name: 'Giá trị vượt trội',
         href: '',
         hrefb: sixRef
       },
       {
-        name: 'Dự án thành công',
+        name: 'Dự án thành công',
         href: '',
         hrefb: seventRef
       }
     ];
   }
+
   return Array.isArray(navItems) && navItems.length ? (
     <div
       className={`
