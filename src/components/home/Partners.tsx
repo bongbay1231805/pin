@@ -25,9 +25,44 @@ export function Partners({custom_fields}: any) {
       height: 77
     },
     {
-      img: 'hyundai.png',
-      width: 130,
-      height: 77
+      img: 'ong.png',
+      width: 190,
+      height: 25
+    },
+    {
+      img: 'ht.png',
+      width: 190,
+      height: 95
+    },
+    {
+      img: 'ariston.png',
+      width: 190,
+      height: 50
+    },
+    {
+      img: 'bosch.png',
+      width: 190,
+      height: 43
+    },
+    {
+      img: 'ferroli.png',
+      width: 190,
+      height: 95
+    },
+    {
+      img: 'lg.png',
+      width: 190,
+      height: 87
+    },
+    {
+      img: 'malloca.png',
+      width: 190,
+      height: 49
+    },
+    {
+      img: 'otis.png',
+      width: 190,
+      height: 62
     }
   ];
   return (
