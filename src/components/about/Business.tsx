@@ -128,8 +128,8 @@ export function Business({custom_fields}: any) {
         </div>
         <div className="relative md:pl-[26px] aspect-square items-center flex justify-center overflow-hidden md:overflow-visible">
           <svg
-            width="436"
-            height="436"
+            width="600"
+            height="600"
             style={{
               transform: `rotate(${currentRotation}deg)`,
               transition: 'transform 1.5s ease'
@@ -252,7 +252,7 @@ export function Business({custom_fields}: any) {
             viewBox="0 0 553 554"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute m-auto w-[90%] h-[90%] pointer-events-none"
+            className="absolute m-auto w-[95%] h-[95%] pointer-events-none"
           >
             <g
               className={`${activeChild === 'child1' ? 'opacity-100' : 'opacity-0'}`}
