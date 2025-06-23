@@ -32,7 +32,7 @@ export default function ValueItem({icon, title}: ValueItemProps) {
         setIsInView(entry.isIntersecting);
       },
       {
-        threshold: 1 // Kích hoạt khi 100% của item hiện ra
+        threshold: 0.5 // Kích hoạt khi 100% của item hiện ra
       }
     );
 

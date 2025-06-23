@@ -573,14 +573,14 @@ figure.image > img {
     transition: none;
   }
 
-  /* 2. Kích hoạt animation lặp vô hạn khi scroll vào view */
+  /* 2. Kích hoạt animation lặp khi scroll vào view */
   .group.is-in-view .border-circle {
-    animation: draw-circle 1.5s ease-in-out infinite;
+    animation: draw-circle 1.5s ease-in-out;
   }
 
-  /* Ẩn path tĩnh đi khi animation trên mobile đang chạy */
+  /* Hiện path tĩnh đi khi animation trên mobile đang chạy */
   .group.is-in-view .static-arc-path {
-    opacity: 0;
+    opacity: 1;
   }
 }
 
