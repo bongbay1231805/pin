@@ -582,5 +582,13 @@ figure.image > img {
   .group.is-in-view .static-arc-path {
     opacity: 1;
   }
+
+  .timeline-carousel .arrow {
+    border: none;
+  }
+
+  .timeline-carousel .arrow:hover {
+    border: none;
+  }
 }
 

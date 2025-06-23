@@ -104,7 +104,7 @@ export function Timeline({ custom_fields }: any) {
           {/* Nút trái */}
           <button
             onClick={scrollPrev}
-            className="absolute arrow cursor-pointer z-10 left-0 top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2"
+            className="absolute arrow cursor-pointer z-10 sm:left-0 left-[-30px] top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2"
           >
             <ChevronLeft />
           </button>
@@ -151,7 +151,7 @@ export function Timeline({ custom_fields }: any) {
           {/* Nút phải */}
           <button
             onClick={scrollNext}
-            className="absolute arrow cursor-pointer z-10 right-0 top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2"
+            className="absolute arrow cursor-pointer z-10 sm:right-0 right-[-30px] top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2"
           >
             <ChevronRight />
           </button>
