@@ -316,7 +316,10 @@ export function Stats({ custom_fields }: any) {
                 return (
                   <div
                     key={index}
-                    ref={el => itemRefs.current[index] = el} // Gán ref cho từng item
+                    // Corrected line:
+                    ref={(el: HTMLDivElement | null) => {
+                      itemRefs.current[index] = el;
+                    }}
                     className={`flex items-center text-left gap-[30px] border-b-[1px] border-gray-2 h-[82px] flex-shrink-0 transition-opacity duration-300`}
                     style={{ opacity: opacityValue }} // Áp dụng opacity trực tiếp
                   >
