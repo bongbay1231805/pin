@@ -14,9 +14,9 @@ export default function Detail3({ custom_fields }: any) {
   const { management_operation_title_banner, management_operation_title, management_operation_des, management_operation_1, management_operation_2, management_operation_3, management_operation_4, management_operation_5, management_operation_6, management_operation_7, management_operation_8, management_operation_9, management_operation_10, management_operation_11, management_operation_12, management_operation_13, management_operation_14, management_operation_15, management_operation_16, management_operation_17, management_operation_18, management_operation_14_add } = custom_fields;
   return (
     <>
-      <div className="relative mx-auto h-[500px] md:h-[100vh] px-[30px] pd:px-0 w-[100vw] text-center pt-[70px] md:pt-[150px]">
-        <div className="relative mx-auto top-[30%] max-w-[1250px]  ">
-          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white leading-[48px] 2xl:leading-[56px] text-[22px] xl:text-[46px]' dangerouslySetInnerHTML={{ __html: management_operation_title_banner }}></h2>
+      <div className="relative mx-auto h-[500px] md:h-[100vh] pd:px-0 w-[100vw] text-center pt-[70px] md:pt-[150px]">
+        <div className="relative mx-auto top-[30%] max-w-[85%]">
+          <h2 className='absolute  z-10 left-0 text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[56px] text-[22px] xl:text-[46px] 2xl:text-[80px] 2xl:leading-[90px]' dangerouslySetInnerHTML={{ __html: management_operation_title_banner }}></h2>
         </div>
         <Image fill src="/fecosystem/detail/management-1.png" alt="Smart City Features" className="object-cover" />
       </div>
