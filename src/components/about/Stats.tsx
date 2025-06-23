@@ -324,10 +324,10 @@ export function Stats({ custom_fields }: any) {
                     style={{ opacity: opacityValue }} // Áp dụng opacity trực tiếp
                   >
                     <h3 className="max-w-[258px] 2xl:max-w-[280px] lg:pl-[60px] grow font-semibold text-blue-1 text-[30px] 2xl:text-[60px] 2xl:mr-[90px]">
-                      {value} {unit !== '' && <span className="text-[26px] 2xl:text-[35px]">{unit}</span>}
+                      {value} {unit !== '' && <span className="text-[20px] 2xl:text-[35px]">{unit}</span>}
                     </h3>
                     <div
-                      className="w-[130px] 2xl:w-[200px] text-gray-5 font-[500] text-[14px] 2xl:text-[17px]"
+                      className="w-[150px] 2xl:w-[200px] text-gray-5 font-[500] text-[13px] 2xl:text-[17px]"
                       dangerouslySetInnerHTML={{ __html: description }}
                     ></div>
                   </div>

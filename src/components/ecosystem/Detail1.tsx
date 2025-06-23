@@ -150,7 +150,7 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span className="font-bold">{item[0].value}</span>{' '}
+                      <span>{item[0].value}</span>{' '}
                       {item[1].value}
                     </p>
                   ))}
@@ -202,10 +202,13 @@ export default function Detail1({custom_fields}: any) {
             <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
               <Link
                 href={customfields[0][5].value}
-                className="hvr-bounce-to-right flex text-[12px] 2xl:text-[16px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
               >
                 {customfields[0][4].value}
               </Link>
+              
             </div>
           </div>
           <div className="relative h-[265px] sm:h-[388px]">
@@ -289,7 +292,7 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span className="font-bold">{item[0].value}</span>{' '}
+                      <span>{item[0].value}</span>{' '}
                       {item[1].value}
                     </p>
                   ))}
@@ -338,10 +341,13 @@ export default function Detail1({custom_fields}: any) {
             <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
               <Link
                 href={customfields[1][5].value}
-                className="hvr-bounce-to-right flex text-[12px] 2xl:text-[16px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
               >
                 {customfields[1][4].value}
               </Link>
+              
             </div>
           </div>
         </div>
@@ -405,7 +411,7 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span className="font-bold">{item[0].value}</span>{' '}
+                      <span>{item[0].value}</span>{' '}
                       {item[1].value}
                     </p>
                   ))}
@@ -454,10 +460,13 @@ export default function Detail1({custom_fields}: any) {
             <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
               <Link
                 href={customfields[2][5].value}
-                className="hvr-bounce-to-right flex text-[12px] 2xl:text-[16px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
               >
                 {customfields[2][4].value}
               </Link>
+              
             </div>
           </div>
           <div className="relative h-[265px] sm:h-[388px]">
