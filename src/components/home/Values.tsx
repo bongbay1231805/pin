@@ -316,15 +316,15 @@ export function Values({custom_fields}: any) {
   return (
     <div className="mx-auto border-b-[0] border-gray-2 boxanimation">
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center">
-        <div className="mt-[30px] 2xl:mt-[80px] grid justify-center md:justify-start text-center sm:text-left">
+        <div className="mt-[50px] 2xl:mt-[80px] grid justify-center md:justify-start text-center sm:text-left">
           <h2 className="text-[22px] li:text-[22px] text-center md:text-start sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold reveal-text">
             {field_11}
           </h2>
-          <p className="sm:text-[20px] text-[16px] 2xl:text-[28px] text-center md:text-start text-blue-4 mb-[10px] md:mb-[41px]  reveal-text">
+          <p className="sm:text-[20px] text-[16px] 2xl:text-[28px] text-center md:text-start text-blue-4 mb-[20px] md:mb-[40px]  reveal-text">
             {field_12}
           </p>
           <div
-            className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[10px] md:mb-[39px] text-justify md:text-justify mx-auto sm:mx-0 md:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px]"
+            className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[15px] md:mb-[35px] text-justify md:text-justify mx-auto sm:mx-0 md:max-w-[448px] 2xl:max-w-[628px] leading-[22px] 2xl:leading-[28px]"
             dangerouslySetInnerHTML={{__html: field_13}}
           ></div>
           <div className="flex items-center justify-center mb-[30px] md:mb-0 md:justify-start">

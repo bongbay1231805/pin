@@ -73,7 +73,7 @@ export function Partners({custom_fields}: any) {
   return (
     <div className="mb-[50px] 2xl:mb-[96px]">
       <div className="m-auto w-full px-[30px] sm:max-w-[85%]">
-        <h2 className="text-[30px] 2xl:text-[42px] text-gray-1 font-bold text-center pt-[50px] sm:pt-[82px] mb-[51px] uppercase">
+        <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-gray-1 font-bold text-center pt-[50px] sm:pt-[82px] mb-[51px] uppercase">
           {field_19 || field_19_add}
         </h2>
         <div className={`grid gap-8 items-center ${styles.carouselonlycss}`}>

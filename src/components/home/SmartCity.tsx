@@ -1418,7 +1418,7 @@ export function SmartCity({custom_fields}: any) {
                 </svg>
               </div>
             </div>
-            <div className="mt-[40px] 2xl:mt-68px] md:pl-[46px] md:pr-[46px] text-center sm:text-left fade-in-left-short">
+            <div className="mt-[35px] sm:mt-[40px] 2xl:mt-68px] md:pl-[46px] md:pr-[46px] text-center sm:text-left fade-in-left-short">
               <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold mb-[20px] reveal-text">
                 {field_6}
               </h2>
