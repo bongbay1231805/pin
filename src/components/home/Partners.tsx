@@ -6,23 +6,23 @@ export function Partners({custom_fields}: any) {
   const partners: {img: string; width: number; height: number}[] = [
     {
       img: 'hyundai.png',
-      width: 130,
+      width: 84,
       height: 77
     },
     {
       img: 'decori.png',
-      width: 190,
+      width: 172,
       height: 55
     },
     {
       img: 'vietcombank.png',
-      width: 190,
-      height: 65
+      width: 146,
+      height: 50
     },
     {
       img: 'nama.png',
-      width: 190,
-      height: 77
+      width: 123,
+      height: 50
     },
     {
       img: 'ong.png',
@@ -31,7 +31,7 @@ export function Partners({custom_fields}: any) {
     },
     {
       img: 'ht.png',
-      width: 190,
+      width: 100,
       height: 95
     },
     {
@@ -46,13 +46,13 @@ export function Partners({custom_fields}: any) {
     },
     {
       img: 'ferroli.png',
-      width: 190,
-      height: 95
+      width: 100,
+      height: 50
     },
     {
       img: 'lg.png',
-      width: 190,
-      height: 87
+      width: 109,
+      height: 50
     },
     {
       img: 'malloca.png',
@@ -61,8 +61,8 @@ export function Partners({custom_fields}: any) {
     },
     {
       img: 'otis.png',
-      width: 190,
-      height: 62
+      width: 153,
+      height: 50
     }
   ];
   return (
@@ -80,7 +80,8 @@ export function Partners({custom_fields}: any) {
               ) => (
                 <div key={index + 'c1'} className="flex-1">
                   <div
-                    className={`h-[52px] 2xl:h-[60px] w-[160px] ml-[20px] mr-[20px] text-center ${styles.cardcarousel}`}
+                    className={`h-[52px] 2xl:h-[60px] w-[160px] ml-[20px] mr-[20px] 
+                    flex items-end justify-center ${styles.cardcarousel}`}
                   >
                     <Image
                       src={`/${partner.img}`}
