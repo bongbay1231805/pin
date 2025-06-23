@@ -323,7 +323,7 @@ export function Stats({ custom_fields }: any) {
                     className={`flex items-center text-left gap-[30px] border-b-[1px] border-gray-2 h-[82px] flex-shrink-0 transition-opacity duration-300`}
                     style={{ opacity: opacityValue }} // Áp dụng opacity trực tiếp
                   >
-                    <h3 className="max-w-[258px] 2xl:max-w-[280px] lg:pl-[60px] grow font-semibold text-blue-1 text-[30px] 2xl:text-[60px] 2xl:mr-[100px]">
+                    <h3 className="max-w-[258px] 2xl:max-w-[280px] lg:pl-[60px] grow font-semibold text-blue-1 text-[30px] 2xl:text-[60px] 2xl:mr-[90px]">
                       {value} {unit !== '' && <span className="text-[26px] 2xl:text-[35px]">{unit}</span>}
                     </h3>
                     <div

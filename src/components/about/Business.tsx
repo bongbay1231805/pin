@@ -117,7 +117,7 @@ export function Business({custom_fields}: any) {
       ref={sixRef}
       className="mx-auto px-[30px] w-full sm:px-[15px] sm:max-w-[85%] border-b-1 border-gray-2 items-center pt-[16px] pb-[88px]"
     >
-      <div className="grid grid-cols-1 items-center justify-center px-[6.5%] md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 items-center justify-center px-[4.5%] md:grid-cols-2 gap-12">
         <div>
           <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold mb-[2px]">
             {field_24_about}

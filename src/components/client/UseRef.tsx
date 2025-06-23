@@ -249,7 +249,7 @@ export default function ClientUseRef({custom_fields}: any) {
                 <h2 className="text-[22px] lg:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 mt-[0] mb-[2px] fade-in-left-short">
                   {field_2}
                 </h2>
-                <p className="text-[16px] lg:text-[22px] 2xl:text-[45px] mb-[37px] text-gray-1 -mt-[8px] fade-in-left-short">
+                <p className="text-[16px] lg:text-[22px] 2xl:text-[45px] mb-[37px] mt-[2px] sm:mt-[2px] text-gray-1 -mt-[8px] fade-in-left-short">
                   {field_3}
                 </p>
                 <div
