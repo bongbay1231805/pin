@@ -74,7 +74,7 @@ export function Timeline({ custom_fields }: any) {
           
           {/* Div cố định ở giữa */}
           <div
-            className="absolute z-20 w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item active rounded-full text-center flex flex-col items-center justify-center p-4 bg-white border-1 border-yellow-500 shadow-lg"
+            className="absolute z-20 w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item active rounded-full text-center flex flex-col items-center justify-center p-4 bg-white border-1 border-yellow-500"
           >
             {currentEvent && (
               <div className="bg w-full h-full flex flex-col items-center justify-center text-center pb-[20px]">
