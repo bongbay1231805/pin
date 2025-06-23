@@ -507,15 +507,6 @@ figure.image > img {
   transform: scaleX(1);
 }
 
-.border-circle {
-  /* Chu vi của hình tròn (r=87) là C = 2 * PI * r = 2 * 3.14159 * 87 ≈ 546.6 */
-  --circumference: 547;
-  stroke-dasharray: var(--circumference);
-  stroke-dashoffset: var(--circumference); /* Ban đầu ẩn hoàn toàn */
-  transform-origin: center;
-  transition: stroke-dashoffset 0.8s ease-in-out;
-}
-
 .border-circle-right {
   transition: opacity 0.8s ease-out;
 }
@@ -524,17 +515,72 @@ figure.image > img {
   opacity: 0;
 }
 
-.group:hover .border-circle {
-  stroke-dashoffset: 0; /* Khi hover, vẽ đầy vòng tròn */
+/* ======================================================= */
+/* === ĐỊNH NGHĨA CHUNG === */
+/* ======================================================= */
+
+/* Định nghĩa keyframes cho animation lặp lại trên mobile */
+@keyframes draw-circle {
+  from {
+    stroke-dashoffset: var(--circumference);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.border-circle {
+  /* Chu vi của hình tròn (r=87) là C = 2 * PI * r = 2 * 3.14159 * 87 ≈ 546.6 */
+  --circumference: 547;
+  stroke-dasharray: var(--circumference);
+  stroke-dashoffset: var(--circumference);
+  transform-origin: center;
 }
 
 .static-arc-path {
-  /* Thêm transition để path mờ đi/hiện ra mượt mà */
   transition: opacity 0.8s ease-out;
 }
 
+/* ======================================================== */
+/* === HÀNH VI CHO DESKTOP (>= 768px) - CHẠY 1 LẦN === */
+/* ======================================================== */
+
+/* Mặc định, sử dụng 'transition' cho hiệu ứng 1 lần trên desktop */
+.border-circle {
+  transition: stroke-dashoffset 0.8s ease-in-out;
+}
+
+/* Kích hoạt transition khi hover */
+.group:hover .border-circle {
+  stroke-dashoffset: 0;
+}
+
 .group:hover .static-arc-path {
-  /* Khi hover vào group, làm cho path tĩnh biến mất */
   opacity: 0;
+}
+
+/* ========================================================= */
+/* === HÀNH VI CHO MOBILE (< 768px) - LẶP LẠI VÔ HẠN === */
+/* ========================================================= */
+@media (max-width: 767px) {
+  /*
+    BÊN TRONG MEDIA QUERY CHO MOBILE:
+    Chúng ta sẽ ghi đè hành vi mặc định của desktop.
+  */
+
+  .border-circle {
+    /* 1. Tắt transition đi để nó không xung đột với animation */
+    transition: none;
+  }
+
+  /* 2. Kích hoạt animation lặp vô hạn khi scroll vào view */
+  .group.is-in-view .border-circle {
+    animation: draw-circle 1.5s ease-in-out infinite;
+  }
+
+  /* Ẩn path tĩnh đi khi animation trên mobile đang chạy */
+  .group.is-in-view .static-arc-path {
+    opacity: 0;
+  }
 }
 

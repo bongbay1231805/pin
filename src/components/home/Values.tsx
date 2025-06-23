@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import ValueItem from './ValueItem';
 export function Values({custom_fields}: any) {
   const {
     field_11,
@@ -285,7 +286,7 @@ export function Values({custom_fields}: any) {
           <circle
             cx="87.5"
             cy="88.5"
-            r="87"
+            r="85"
             stroke="#C48C5E"
             strokeOpacity="0.1"
           ></circle>
@@ -295,7 +296,7 @@ export function Values({custom_fields}: any) {
             className="border-circle rotate-315"
             cx="87.5"
             cy="88.5"
-            r="87"
+            r="85"
             stroke="#C48C5E"
             strokeWidth="3"
             fill="none"
@@ -337,17 +338,18 @@ export function Values({custom_fields}: any) {
         </div>
         <div className="grid md:grid-cols-1 gap-8 md:mt-[61px]">
           {values.map((value, index) => (
-            <div
-              key={index}
-              className="reveal-text flex items-center gap-[20px] sm:gap-[35px] relative after:content-[''] after:absolute after:w-[100%] sm:after:w-[72%] after:left-[50%] sm:after:left-[47%] after:-translate-1/2 after:bottom-0 after:h-[1px] after:bg-yellow-1/20 last:after:content-none pb-[20px] md:last:pb-[60px] md:pb-[40px] md:pl-[101px] last:border-0"
-            >
-              <div className={`flex items-center justify-center w-[30%]`}>
-                {value.icon}
-              </div>
-              <h3 className="text-[18px] sm:text-[20px] li:text-[22px] 2xl:text-[30px] font-bold text-yellow-1 md:mt-[3%] ml-[8px]">
-                {value.title}
-              </h3>
-            </div>
+            <ValueItem key={index} icon={value.icon} title={value.title} />
+            // <div
+            //   key={index}
+            //   className="reveal-text flex items-center gap-[20px] sm:gap-[35px] relative after:content-[''] after:absolute after:w-[100%] sm:after:w-[72%] after:left-[50%] sm:after:left-[47%] after:-translate-1/2 after:bottom-0 after:h-[1px] after:bg-yellow-1/20 last:after:content-none pb-[20px] md:last:pb-[60px] md:pb-[40px] md:pl-[101px] last:border-0"
+            // >
+            //   <div className={`flex items-center justify-center w-[30%]`}>
+            //     {value.icon}
+            //   </div>
+            //   <h3 className="text-[18px] sm:text-[20px] li:text-[22px] 2xl:text-[30px] font-bold text-yellow-1 md:mt-[3%] ml-[8px]">
+            //     {value.title}
+            //   </h3>
+            // </div>
           ))}
         </div>
       </div>
@@ -355,4 +357,3 @@ export function Values({custom_fields}: any) {
   );
 }
 Values.displayName = 'Values';
-
