@@ -66,9 +66,9 @@ figure.image > img {
   --text-size-25: 25px;
   --text-size-20: 20px;
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
-  --animate-energy-circle: energy-circle 1s ease 0.2s infinite;
+  --animate-energy-circle: energy-circle 10s ease-in-out infinite;
   --animate-energy-rotate: half-circle 8s linear infinite;
-  --animate-half-circle: half-circle 7s linear infinite;
+  --animate-half-circle: half-circle 50s linear infinite;
   --animate-reveal-text: reveal-text 1s ease-in-out forwards;
   --animate-fade-in-up-medium: fade-in-up-medium 1s ease-in-out both;
   --animate-fade-in-left-short: fade-in-left-short 1s both;
@@ -158,7 +158,7 @@ figure.image > img {
       transform: translateY(0);
     }
   }
-  @keyframes energy-circle {
+  /* @keyframes energy-circle {
     0% {
       opacity: 0.25;
     }
@@ -170,6 +170,23 @@ figure.image > img {
     }
     100% {
       opacity: 1;
+    }
+  } */
+  @keyframes energy-circle {
+    0% {
+        opacity: 0; /* Bắt đầu hoàn toàn trong suốt (chuẩn bị fade in) */
+    }
+    25% {
+        opacity: 0.5; /* Nhanh chóng đạt đến mức đầy đủ (kết thúc fade in) */
+    }
+    50% {
+      opacity: 1; /* Nhanh chóng đạt đến mức đầy đủ (kết thúc fade in) */
+    }
+    75% {
+        opacity: 0.5; /* Giữ ở mức đầy đủ trong một khoảng thời gian */
+    }
+    100% {
+        opacity: 0; /* Chậm rãi mờ đi (kết thúc fade out) */
     }
   }
   @keyframes half-circle {

@@ -47,8 +47,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className={`bg-blue-1 rounded-[16px] ${styles.embla}`}>
       <div className={`${styles.embla__viewport}`} ref={emblaRef}>
         <div
-          className={`pl-[80px] sm:pl-[100px] pr-[20px] sm:pr-[40px]  h-[150px] 2xl:h-[150px] ${styles.embla__container}`}
+          className={`pl-[80px] sm:pl-[100px] pr-[20px] sm:pr-[40px] h-[120px] sm:h-[110px] 2xl:h-[150px] ${styles.embla__container}`}
         >
+          
           {slides.map((slide, index) => (
             <div
               className="relative min-h-[100%] flex flex-col justify-center"
@@ -60,12 +61,32 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               <p className="sm:text-[16px] text-[14px]  2xl:text-[28px] text-gray-2 font-medium uppercase reveal-text">
                 {slide[1].value}
               </p>
-              { <Link
+
+
+              {/* { <Link
                 href={slide[3].value}
                 className="mt-[10px] md:mt-[0] md:absolute text-[13px] 2xl:text-[17px] right-[5px] top-1/2 md:-translate-y-1/2 flex items-center border-text-white border-[1px] justify-center text-white font-semibold px-[20px] w-[138px] 2xl:w-[170px] h-[30px] hover:border-yellow-1 hover:text-yellow-1 reveal-text"
               >
                 <span className="uppercase">{slide[2].value}</span>
-              </Link> }
+              </Link> } */}
+
+              <Link
+                href={slide[3].value}
+                className={`reveal-text flex items-center justify-center transition-all duration-300 ease-in-out    absolute bottom-2 -right-1 w-12 h-12        
+                  md:absolute
+                  md: text-[13px] md:right-[60px] md:top-1/2 md:-translate-y-1/2 md:flex md:items-center md:border-text-white md:border-[1px] md:justify-center md:text-white md:font-semibold md:w-[138px] md:h-[30px] md:hover:border-yellow-1 md:hover:text-yellow-1
+                `}
+              >
+                {/* Chữ này sẽ ẨN trên mobile và HIỆN trên desktop */}
+                <span className="uppercase hidden md:inline">
+                  {slide[2].value}
+                </span>
+
+                {/* Icon này sẽ HIỆN trên mobile và ẨN trên desktop */}
+                <div className="md:hidden animate-arrow-pulse">
+                  <Image src="/right-arrow.svg" width={15} height={15} alt="Social" />
+                </div>
+              </Link>
 
               
             </div>
