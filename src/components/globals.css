@@ -551,13 +551,17 @@ figure.image > img {
 }
 
 .static-arc-path {
-  /* Thêm transition để path mờ đi/hiện ra mượt mà */
-  transition: opacity 0.8s ease-out;
+  opacity: 1;
+  /* Transition cho lúc BỎ HOVER (hiện lại):
+    Chờ 0.8s rồi mới bắt đầu hiệu ứng hiện ra trong 2s.
+  */
+  transition: opacity 3s ease-out 0.8s;
 }
 
 .group:hover .static-arc-path {
   /* Khi hover vào group, làm cho path tĩnh biến mất */
   opacity: 0;
+  transition: ease-out 0s;
 }
 
 @media (max-width: 767px) {
