@@ -62,29 +62,39 @@ const MasonryGrid = ({custom_fields}: any) => {
     }
   ];
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    // Chặn logic nếu là mobile
     const isDesktop = window.innerWidth >= 1280;
     if (!isDesktop) return;
+
     gridConfigs.forEach((config) => {
       const {containerRef, fixedElements, expandableElements} = config;
       const container = containerRef.current;
       if (!container) return;
+
       const currentFixedElements = fixedElements
         .map((ref) => ref.current)
         .filter((el): el is HTMLDivElement => el !== null);
+
       const currentExpandableElements = expandableElements
         .map((ref) => ref.current)
         .filter((el): el is HTMLDivElement => el !== null);
+
+      // Gán class CSS để kích hoạt transition và will-change
+      currentExpandableElements.forEach((el) =>
+        el.classList.add('expandable-item')
+      );
+
       let lastHoveredSection: HTMLDivElement | null = null;
+
       const handleMouseEnter = (hoveredSection: HTMLDivElement) => {
         if (hoveredSection === lastHoveredSection) return;
         lastHoveredSection = hoveredSection;
+
         const containerWidth = container.offsetWidth;
         const fixedWidthSum = currentFixedElements.reduce(
           (sum, el) => sum + el.offsetWidth,
           0
         );
+
         const availableWidth = containerWidth - fixedWidthSum;
         const expandedRatio = 0.6;
         const expandedWidth = availableWidth * expandedRatio;
@@ -93,55 +103,66 @@ const MasonryGrid = ({custom_fields}: any) => {
           remainingCount > 0
             ? (availableWidth - expandedWidth) / remainingCount
             : 0;
+
+        // **TỐI ƯU HÓA:** Chỉ cần set width mới.
+        // Trình duyệt sẽ tự động áp dụng transition đã định nghĩa trong class CSS.
         currentExpandableElements.forEach((s) => {
-          const computedWidth = window.getComputedStyle(s).width;
-          s.style.transition = 'none';
-          s.style.width = computedWidth;
-          s.offsetHeight;
-          s.style.transition = 'width 0.5s ease-in-out';
-          s.style.width = `${s === hoveredSection ? expandedWidth : collapsedWidth}px`;
+          // BƯỚC 1 & 2: Đọc và "khóa" ngay lập tức width hiện tại bằng pixel.
+          // Điều này tạo ra một điểm bắt đầu animation rõ ràng cho trình duyệt.
+          const currentPixelWidth = s.getBoundingClientRect().width;
+          s.style.width = `${currentPixelWidth}px`;
+
+          // BƯỚC 3: Yêu cầu trình duyệt bắt đầu animation ở khung hình tiếp theo.
+          requestAnimationFrame(() => {
+            const newWidth =
+              s === hoveredSection ? expandedWidth : collapsedWidth;
+            s.style.width = `${newWidth}px`;
+          });
         });
       };
+
       const handleMouseLeave = () => {
         lastHoveredSection = null;
+
+        // Tính toán kích thước "nghỉ" (chia đều) bằng pixel.
         const containerWidth = container.offsetWidth;
         const fixedWidthSum = currentFixedElements.reduce(
           (sum, el) => sum + el.offsetWidth,
           0
         );
         const availableWidth = containerWidth - fixedWidthSum;
-        const equalWidth =
-          currentExpandableElements.length > 0
-            ? availableWidth / currentExpandableElements.length
-            : 0;
+
+        if (currentExpandableElements.length === 0) return;
+
+        const equalWidth = availableWidth / currentExpandableElements.length;
+
+        // Animate tất cả các khối về kích thước nghỉ.
+        // Các khối sẽ giữ nguyên style width này cho đến lần tương tác tiếp theo.
+        // Điều này tạo ra trạng thái ổn định, không còn race condition.
         currentExpandableElements.forEach((s) => {
-          const computedWidth = window.getComputedStyle(s).width;
-          s.style.transition = 'none';
-          s.style.width = computedWidth;
-          s.offsetHeight;
-          s.style.transition = 'width 0.5s ease-in-out';
           s.style.width = `${equalWidth}px`;
-          setTimeout(() => {
-            s.style.transition = '';
-            s.style.width = '';
-          }, 500);
         });
       };
+
+      // Gán sự kiện cho container thay vì từng element để tối ưu hơn,
+      // nhưng để giữ nguyên logic của bạn, ta vẫn gán cho từng element.
       currentExpandableElements.forEach((section) => {
-        section.addEventListener(
-          'mouseenter',
-          handleMouseEnter.bind(null, section)
-        );
-        section.addEventListener('mouseleave', handleMouseLeave);
+        section.addEventListener('mouseenter', () => handleMouseEnter(section));
       });
+
+      // Chỉ cần 1 event listener ở container là đủ
+      container.addEventListener('mouseleave', handleMouseLeave);
+
+      // Cleanup function
       return () => {
         currentExpandableElements.forEach((section) => {
-          section.removeEventListener(
-            'mouseenter',
-            handleMouseEnter.bind(null, section)
+          section.removeEventListener('mouseenter', () =>
+            handleMouseEnter(section)
           );
-          section.removeEventListener('mouseleave', handleMouseLeave);
         });
+        if (container) {
+          container.removeEventListener('mouseleave', handleMouseLeave);
+        }
       };
     });
   }, []);
@@ -201,7 +222,7 @@ const MasonryGrid = ({custom_fields}: any) => {
                 />
               ) : null}
               {item[0].value && item[4].value !== '' && (
-                <h3 className="z-10 left-[25px] bottom-[8px] text-white absolute text-[18px] 2xl:text-[26px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-500">
+                <h3 className="z-10 left-[25px] bottom-[8px] text-white absolute text-[16px] 2xl:text-[24px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-500">
                   {item[0].value}
                 </h3>
               )}
@@ -217,7 +238,7 @@ const MasonryGrid = ({custom_fields}: any) => {
                       <p className="text-gray-6 text-justify mt-[10px] mb-[12px] text-[13px] 2xl:text-[17px]">
                         {item[1].value}
                       </p>
-                      <div className="flex items-center justify-center text-yellow-1 font-semibold w-[116px] h-[28px] text-[12px] 2xl:text-[16px] 2xl:w-[138px] 2xl:h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300">
+                      <div className="flex items-center justify-center text-yellow-1 uppercase font-semibold w-[116px] h-[28px] text-[12px] 2xl:text-[16px] 2xl:w-[138px] 2xl:h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300">
                         {item[2].value}
                       </div>
                     </div>
@@ -237,3 +258,4 @@ const MasonryGrid = ({custom_fields}: any) => {
   );
 };
 export default MasonryGrid;
+

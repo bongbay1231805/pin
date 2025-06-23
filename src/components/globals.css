@@ -577,3 +577,11 @@ figure.image > img {
     border: none;
   }
 }
+
+.eco-item.expandable-item {
+  /* Luôn sẵn sàng cho animation */
+  transition: width 0.5s ease-in-out;
+
+  /* Báo cho trình duyệt biết để tối ưu hóa */
+  will-change: width;
+}
