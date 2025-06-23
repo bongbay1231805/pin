@@ -246,10 +246,10 @@ export default function ClientUseRef({custom_fields}: any) {
                 <p className="text-[16px] sm:text-[22px] 2xl:text-[45px] mt-[7%] 2xl:mt-[71px] text-gray-1 fade-in-left-short">
                   {field_1}
                 </p>
-                <h2 className="text-[22px] lg:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 mt-[0] mb-[2px] fade-in-left-short">
+                <h2 className="text-[22px] lg:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 mt-[5px] mb-[5px] fade-in-left-short">
                   {field_2}
                 </h2>
-                <p className="text-[16px] lg:text-[22px] 2xl:text-[45px] mb-[37px] text-gray-1 -mt-[8px] fade-in-left-short">
+                <p className="text-[16px] lg:text-[22px] 2xl:text-[45px] mb-[37px] text-gray-1 fade-in-left-short">
                   {field_3}
                 </p>
                 <div
@@ -264,4 +264,3 @@ export default function ClientUseRef({custom_fields}: any) {
     </>
   );
 }
-
