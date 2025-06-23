@@ -26,7 +26,7 @@ export function Values({custom_fields}: any) {
           <circle
             cx="88"
             cy="88"
-            r="87"
+            r="85"
             stroke="#C48C5E"
             strokeOpacity="0.1"
           ></circle>
@@ -36,7 +36,7 @@ export function Values({custom_fields}: any) {
             className="border-circle rotate-90"
             cx="88"
             cy="88"
-            r="87"
+            r="85"
             stroke="#C48C5E"
             strokeWidth="3"
             fill="none" /* Quan trọng: phải là fill="none" */
@@ -160,7 +160,7 @@ export function Values({custom_fields}: any) {
           <circle
             cx="88"
             cy="88"
-            r="87"
+            r="85"
             stroke="#C48C5E"
             strokeOpacity="0.1"
           ></circle>
@@ -170,7 +170,7 @@ export function Values({custom_fields}: any) {
             className="border-circle rotate-180"
             cx="88"
             cy="88"
-            r="87"
+            r="85"
             stroke="#C48C5E"
             strokeWidth="3"
             fill="none"
