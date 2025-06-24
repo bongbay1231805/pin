@@ -115,7 +115,7 @@ export function Business({custom_fields}: any) {
   return (
     <div
       ref={sixRef}
-      className="mx-auto px-[30px] w-full sm:px-[15px] sm:max-w-[80%] border-b-1 border-gray-2 items-center pt-[20px] sm:pt-[16px] pb-[88px]"
+      className="mx-auto px-[30px] w-full sm:px-[15px] 2xl:max-w-[85%] sm:max-w-[80%] border-b-1 border-gray-2 items-center pt-[20px] sm:pt-[16px] pb-[88px]"
     >
       <div className="grid grid-cols-1 items-center justify-center px-[0] sm:px-[4.5%] md:grid-cols-2 gap-12">
         <div className="text-center md:text-justify">
@@ -433,7 +433,8 @@ export function Business({custom_fields}: any) {
       >
         <Link
           href={link_ho_so_nang_luc}
-          className="text-[13px] 2xl:text-[17px] flex profile-btn items-center justify-center font-semibold w-auto px-[20px] md:px-[80px] h-[54px]"
+          target="_blank"
+          className="text-[13px] 2xl:text-[17px] flex profile-btn items-center justify-center font-semibold w-auto px-[20px] h-[54px]"
         >
           <svg
             width="40"
