@@ -97,11 +97,14 @@ const EmblaCarouselCenterPicity = () => {
     <section className={`relative mx-auto md:my-[50px] max-w-full order-1 xl:order-0 2xl:max-w-[1645px]`}>
       <Carousel
         plugins={
-          [Autoplay()]
+          [Autoplay({
+            delay: 2000, // Decrease this value to make it faster (e.g., 1500ms for 1.5 seconds)
+          })]
         }
         opts={{
           align: "center",
-          loop: true
+          loop: true,
+          watchDrag: false
         }}
       >
         <CarouselContent className="w-full items-center ml-0">

@@ -111,8 +111,8 @@ export default function Part({ custom_fields }: any) {
       </div>
       <div ref={twoRef} className="relative mx-auto pt-[65px] pb-[115px] h-[490px]">
         <div className='relative z-1 '>
-          <h3 className='text-yellow-1 text-[20px] xl:text-[30px] font-bold uppercase text-center'>{digitalcity_4}</h3>
-          <p className='uppercase text-center text-blue-1 text-[20px] xl:text-[25px] mb-[35px]'>{digitalcity_5}</p>
+          <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase text-center'>{digitalcity_4}</h3>
+          <p className='uppercase text-center text-blue-1 text-[16px] sm:text-[20px] 2xl:text-[28px] mb-[35px]'>{digitalcity_5}</p>
           <HorizontalScroll custom_fields={custom_fields} />
         </div>
         <Image fill src="/fdigitalcity/digitalcity-2.png" alt="Smart City Features" className="object-fill md:max-w-[85%] mx-auto sm:rounded-[20px]" />
@@ -398,13 +398,13 @@ export default function Part({ custom_fields }: any) {
           </div>
         </div>
       </div>
-      <h3 ref={fourRef} className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mt-[-8rem] md:mt-[-60px] mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_8 }}></h3>
-      <div className="mx-auto mb-[100px] md:mb-[30px]">
+      <h3 ref={fourRef} className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mt-[-8rem] md:mt-[-60px] mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_8 }}></h3>
+      <div className="mx-auto mb-[100px] md:mb-[30px] sliderreal">
         <EmblaCarouselCenter slides={digitalcityslideruni} />
       </div>
       <div ref={fiveRef} className="relative mx-auto pb-[80px]">
         <div className='relative z-1 sm:mt-[80px]'>
-          <h3 className='text-yellow-1 text-[20px] xl:text-[30px] font-bold mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_9 }}></h3>
+          <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_9 }}></h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px] px-6 md:px-0">
             <div
               className="group relative overflow-hidden  grid items-center bg-blue-1 content-evenly duration-500 
@@ -448,7 +448,7 @@ export default function Part({ custom_fields }: any) {
       <div ref={sixRef} className="mx-auto  max-w-[85%] mb-[90px] sm:mb-[50px]">
         <div className="md:grid grid-cols-[67%_33%] mt-[30px]">
           <div>
-            <h3 className="uppercase font-bold text-yellow-1 text-[20px] md:text-[30px] mb-[20px]" dangerouslySetInnerHTML={{ __html: digitalcity_16 }}></h3>
+            <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[20px]" dangerouslySetInnerHTML={{ __html: digitalcity_16 }}></h3>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-[16px]'>
               <div className="grid grid-cols-1]">
                 {
@@ -485,7 +485,7 @@ export default function Part({ custom_fields }: any) {
           <Image className="md:pl-[55px] pt-8 md:pt-0 w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_17}`} />
         </div>
       </div>
-      <h3 ref={seventRef} className='text-yellow-1 text-[25px] xl:text-[30px] font-bold mb-[30px] uppercase text-center'>{digitalcity_18}</h3>
+      <h3 ref={seventRef} className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center'>{digitalcity_18}</h3>
     </>
   );
 }
