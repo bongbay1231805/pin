@@ -185,7 +185,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
                 <FormItem>
                   <FormControl>
                     <select
-                      className="mt-1 block w-full focus-visible:ring-0! px-3 py-2 border  rounded-md  focus:outline-none border-gray-9 focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none! sm:text-sm"
+                      className="custom-select-arrow mt-1 block w-full focus-visible:ring-0! px-3 py-2 border  rounded-md  focus:outline-none border-gray-9 focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none! sm:text-sm"
                       {...field}
                       // disabled={!!selectedPosition} // Vô hiệu hóa nếu đã có selectedPosition
                     >

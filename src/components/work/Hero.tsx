@@ -22,7 +22,7 @@ export default function Hero({ data, dataPage }: any) {
   const [allJobData, setAllJobData] = useState(datas);
   // Hàm xử lý việc toggle trạng thái mở/đóng của hàng
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
   // Tính toán tổng số trang
   const totalPages = Math.ceil(allJobData.length / itemsPerPage);
   // Lấy dữ liệu cho trang hiện tại
