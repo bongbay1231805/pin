@@ -342,10 +342,12 @@ figure.image > img {
     border: 1px solid var(--color-yellow-1);
   }
   .sliderswrap {
-    @apply basis-3/5 sm:basis-[33%];
+      @apply basis-3/5 sm:basis-[33%];
+      will-change: width, flex-basis; /* Thêm vào đây */
   }
   .center.sliderswrap {
-    @apply basis-3/5 sm:basis-[37%];
+      /* @apply basis-3/5 sm:basis-[37%]; */
+      will-change: width, flex-basis; /* Thêm vào đây */
   }
   .sliderstaff {
     @apply px-[15px];
