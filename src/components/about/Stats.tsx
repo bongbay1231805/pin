@@ -289,7 +289,7 @@ export function Stats({ custom_fields }: any) {
   }, [handleMouseDown, handleMouseMove, handleMouseUp, handleMouseLeave, handleTouchStart, handleTouchMove, handleTouchEnd, handleScroll]);
 
   return (
-    <div ref={oneRef} className="mx-auto py-16 mt-[0px] sm:mt-[25px] px-[30px] w-full sm:max-w-[85%]">
+    <div ref={oneRef} className="mx-auto py-[50px] sm:py-16 mt-[0px] sm:mt-[25px] px-[30px] w-full sm:max-w-[85%]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="text-center md:text-justify">
           <h2 className="text-[16px] sm:text-[20px] 2xl:text-[28px] text-gray-1 font-normal mb-[6px]">{field_1_about}</h2>
@@ -323,7 +323,7 @@ export function Stats({ custom_fields }: any) {
                     className={`flex items-center text-left gap-[30px] border-b-[1px] border-gray-2 h-[82px] flex-shrink-0 transition-opacity duration-300`}
                     style={{ opacity: opacityValue }} // Áp dụng opacity trực tiếp
                   >
-                    <h3 className="max-w-[258px] 2xl:max-w-[280px] lg:pl-[60px] grow font-semibold text-blue-1 text-[30px] 2xl:text-[60px] 2xl:mr-[90px]">
+                    <h3 className="max-w-[258px] 2xl:max-w-[280px] lg:pl-[60px] grow font-semibold text-blue-1 text-[35px] md:text-[40px] 2xl:text-[60px] 2xl:mr-[90px]">
                       {value} {unit !== '' && <span className="text-[20px] 2xl:text-[35px]">{unit}</span>}
                     </h3>
                     <div
