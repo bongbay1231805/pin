@@ -243,13 +243,13 @@ export default function ClientUseRef({custom_fields}: any) {
           <div className="mx-auto max-w-[90%] md:max-w-[85%] 2xl:max-w-[1058px]">
             <div className="relative mx-auto flex items-center justify-center">
               <div className="text-center max-w-[836px] 2xl:max-w-[1088px]">
-                <p className="text-[16px] sm:text-[22px] 2xl:text-[45px] mt-[50px] 2xl:mt-[60px] text-gray-1 fade-in-left-short">
+                <p className="text-[16px] sm:text-[20px] 2xl:text-[28px] mt-[50px] 2xl:mt-[60px] text-gray-1 fade-in-left-short">
                   {field_1}
                 </p>
                 <h2 className="text-[22px] lg:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 mt-[5px] mb-[5px] fade-in-left-short">
                   {field_2}
                 </h2>
-                <p className="text-[16px] lg:text-[22px] 2xl:text-[45px] mb-[20px] 2xl:mb-[50px] text-gray-1 fade-in-left-short">
+                <p className="text-[16px] sm:text-[20px] 2xl:text-[28px] mb-[20px] 2xl:mb-[50px] text-gray-1 fade-in-left-short">
                   {field_3}
                 </p>
                 <div

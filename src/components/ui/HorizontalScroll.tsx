@@ -75,7 +75,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({
               className="grid justify-center items-center"
               dangerouslySetInnerHTML={{__html: text[0].value}}
             ></div>
-            <h4 className="uppercase text-white text-[14px] text-center font-bold">
+            <h4 className="uppercase text-white px-[20px] text-[14px] text-center font-bold">
               {text[1].value}
             </h4>
           </div>

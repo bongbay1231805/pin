@@ -53,8 +53,9 @@ export default function Part({ custom_fields }: any) {
     ]
   ];
   const digitalcityconnect = convertJsonStringToArrayOrObject(digitalcity_connect);
-  const firstConnect = digitalcityconnect.slice(0, 3);
-  const secondConnect = digitalcityconnect.slice(3);
+  const firstConnect = digitalcityconnect.slice(0, 2);
+  const secondConnect = digitalcityconnect.slice(2, 4);
+  const thirdConnect = digitalcityconnect.slice(4, 6);
   return (
     <>
       <div className="relative">
@@ -446,11 +447,11 @@ export default function Part({ custom_fields }: any) {
         </div>
       </div>
       <div ref={sixRef} className="mx-auto  max-w-[85%] mb-[90px] sm:mb-[50px]">
-        <div className="md:grid grid-cols-[67%_33%] mt-[30px]">
+        <div className="md:grid mt-[30px]">
           <div>
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[20px]" dangerouslySetInnerHTML={{ __html: digitalcity_16 }}></h3>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-[16px]'>
-              <div className="grid grid-cols-1]">
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-[16px]'>
+              <div className="grid grid-cols-1">
                 {
                   firstConnect.map((digitalcity: any, index: number) => {
                     return (
@@ -480,9 +481,24 @@ export default function Part({ custom_fields }: any) {
                   })
                 }
               </div>
+              <div className="grid grid-cols-1">
+                {
+                  thirdConnect.map((digitalcity: any, index: number) => {
+                    return (
+                      <div key={index + "third"} className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full">
+                        <div className="relative w-[68px] h-[52px] flex items-center justify-center bg-white"  dangerouslySetInnerHTML={{ __html: digitalcity[0].value }}></div>
+                        <div>
+                          <h3 className="blue-1 font-bold text-[18px] uppercase text-yellow-1">{digitalcity[1].value}</h3>
+                          <p className="text-gray-5 text-[13px]" dangerouslySetInnerHTML={{ __html: digitalcity[2].value }}></p>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+              </div>
             </div>
           </div>
-          <Image className="md:pl-[55px] pt-8 md:pt-0 w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_17}`} />
+          {/* <Image className="md:pl-[55px] pt-8 md:pt-0 w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_17}`} /> */}
         </div>
       </div>
       <h3 ref={seventRef} className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center'>{digitalcity_18}</h3>
