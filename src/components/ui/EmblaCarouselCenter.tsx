@@ -54,11 +54,11 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({slides}) => {
         </CarouselContent>
         <CarouselPreviousCenter
           variant="link"
-          className="hidden md:inline-flex items-center justify-center absolute  left-[-20px] top-1/2 -translate-y-1/2"
+          className="hidden md:inline-flex items-center justify-center absolute  left-[-40px] top-1/2 -translate-y-1/2"
         />
         <CarouselNextCenter
           variant="link"
-          className="hidden md:inline-flex items-center justify-center absolute   right-[-20px] top-1/2 -translate-y-1/2"
+          className="hidden md:inline-flex items-center justify-center absolute   right-[-40px] top-1/2 -translate-y-1/2"
         />
       </Carousel>
     </section>

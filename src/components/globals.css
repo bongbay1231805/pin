@@ -66,7 +66,7 @@ figure.image > img {
   --text-size-25: 25px;
   --text-size-20: 20px;
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
-  --animate-energy-circle: energy-circle 10s ease-in-out infinite;
+  --animate-energy-circle: energy-circle 20s ease-in-out infinite;
   --animate-energy-rotate: half-circle 8s linear infinite;
   --animate-half-circle: half-circle 50s linear infinite;
   --animate-reveal-text: reveal-text 1s ease-in-out forwards;
@@ -530,6 +530,10 @@ figure.image > img {
 
 .border-circle-right:hover {
   opacity: 0;
+}
+
+.sliderreal button:hover {
+  border: 1px solid #c48c5e;
 }
 
 /* ======================================================= */

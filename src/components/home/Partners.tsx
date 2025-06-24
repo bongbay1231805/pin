@@ -20,7 +20,7 @@ export function Partners({custom_fields}: any) {
       height: 50
     },
     {
-      img: 'nama.png',
+      img: 'nama_v2.png',
       width: 123,
       height: 50
     },
@@ -60,7 +60,7 @@ export function Partners({custom_fields}: any) {
       height: 49
     },
     {
-      img: 'otis.png',
+      img: 'otis_v2.png',
       width: 153,
       height: 50
     },
