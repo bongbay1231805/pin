@@ -406,7 +406,7 @@ export default function Part({ custom_fields }: any) {
       <div ref={fiveRef} className="relative mx-auto pb-[80px]">
         <div className='relative z-1 sm:mt-[80px]'>
           <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center' dangerouslySetInnerHTML={{ __html: digitalcity_9 }}></h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px] px-6 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-[5px] px-6 md:px-0">
             <div
               className="group relative overflow-hidden  grid items-center bg-blue-1 content-evenly duration-500 
               before:content-[''] before:absolute before:left-0 before:top-0 
@@ -430,6 +430,18 @@ export default function Part({ custom_fields }: any) {
             ">
               <Image className='group-hover:scale-[120%] duration-1000 w-full' src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_12}`} width={639} height={414} alt='Image' />
               <h4 className='z-20 text-white text-[18px] text-center absolute bottom-[20px] w-full'>{digitalcity_13}</h4>
+            </div>
+            <div
+              className="group relative overflow-hidden  grid items-center bg-blue-1 content-evenly duration-500 
+              before:content-[''] before:absolute before:left-0 before:top-0 
+              before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0
+              bg-gradient-to-t from-blue-dark via-blue-dark-transparent to-transparent before:opacity-80
+              after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
+              after:opacity-80 hover:after:opacity-100
+            ">
+              <Image className='group-hover:scale-[120%] duration-1000 w-full' src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_14}`} width={639} height={414} alt='Image' />
+              <h4 className='z-20 text-white text-[18px] text-center absolute bottom-[20px] w-full'>{digitalcity_15}</h4>
             </div>
             <div
               className="group relative overflow-hidden  grid items-center bg-blue-1 content-evenly duration-500 

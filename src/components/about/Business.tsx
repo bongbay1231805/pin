@@ -369,6 +369,7 @@ export function Business({custom_fields}: any) {
               />
             </g>
             <g
+              transform="translate(-10, 10)"
               className={`${activeChild === 'child3' ? 'opacity-100' : 'opacity-0'}`}
             >
               <path

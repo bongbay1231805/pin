@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import ImagePopup from "@/components/ui/ImagePopup";
+
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
@@ -12,6 +14,20 @@ interface ToggleSectionProps {
 export default function Detail3({ custom_fields }: any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   const { management_operation_title_banner, management_operation_title, management_operation_des, management_operation_1, management_operation_2, management_operation_3, management_operation_4, management_operation_5, management_operation_6, management_operation_7, management_operation_8, management_operation_9, management_operation_10, management_operation_11, management_operation_12, management_operation_13, management_operation_14, management_operation_15, management_operation_16, management_operation_17, management_operation_18, management_operation_14_add } = custom_fields;
+  
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [currentImageSrc, setCurrentImageSrc] = useState('');
+
+  const openPopup = (src: string) => {
+    setCurrentImageSrc(src);
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setCurrentImageSrc(''); // Clear the image source when closing
+  };
+
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] pd:px-0 w-[100vw] text-center pt-[70px] md:pt-[150px]">
@@ -154,25 +170,30 @@ export default function Detail3({ custom_fields }: any) {
         </div>
       </div>
       <div className='relative bg-[url("/fecosystem/detail/management-13-m.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-size-[100%_110%] sm:bg-size-[100%_100%] h-[330px] sm:h-[620px] content-center'>
-        <div className='mt-[-100%] xl:mt-0 xl:ml-[48%] max-w-[1250px] grid'>
+        <div className='mt-[-100px] sm:ml-[48%] max-w-[1250px] grid'>
           <div className='px-[30px] xl:px-0 xl:w-[650px]'>
             <div className='grid grid-cols-1 2xl:w-[905px] sm:mb-[45px]'>
               <h4 className='text-[18px] sm:text-[24px] text-blue-1 uppercase font-bold'>{management_operation_15}</h4>
             </div>
             <div className='grid grid-cols-2 sm:grid-cols-3 gap-[15px] 2xl:gap-[50px]  mb-[30px]'>
-              <div className='relative pt-[200px] bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-                <Image src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`} alt='Image' fill />
+              <div className='relative  bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+                <Image onClick={() => openPopup(`https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`)} src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`} alt='Image' width="150" height="100"  />
               </div>
-              <div className='relative pt-[200px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-                <Image src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`} alt='Image' fill />
+              <div className='relative   bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+                <Image onClick={() => openPopup(`https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`)} src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`} alt='Image' width="150" height="100"  />
               </div>
-              <div className='hidden sm:block relative pt-[200px]  bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
-                <Image src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`} alt='Image' fill />
+              <div className='hidden sm:block relative   bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+                <Image onClick={() => openPopup(`https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`)} src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`} alt='Image' width="150" height="100" />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Pop-up component */}
+      {isPopupOpen && (
+        <ImagePopup src={currentImageSrc} onClose={closePopup} />
+      )}
     </>
   );
 }

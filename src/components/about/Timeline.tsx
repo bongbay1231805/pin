@@ -17,6 +17,7 @@ export function Timeline({ custom_fields }: any) {
     }
   }
   const sliderabout = convertJsonStringToArrayOrObject(slider_about);
+  console.log(slider_about)
   const timelineEvents = [
     {
       year: '2008',
@@ -40,13 +41,63 @@ export function Timeline({ custom_fields }: any) {
     }
   ];
   const autoplay = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
   const [emblaRef, embla] = useEmblaCarousel(
-    { loop: true, align: 'center', skipSnaps: false },
+    { 
+      loop: true, 
+      align: 'center', 
+      skipSnaps: false,
+      slidesToScroll: 1,
+    },
     [autoplay.current]
   );
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Reference cho div cố định ở giữa
+  const fixedDivRef = useRef<HTMLDivElement>(null);
+
+  // State để xử lý vuốt trên div cố định
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const minSwipeDistance = 50; // Khoảng cách vuốt tối thiểu để kích hoạt chuyển slide (pixels)
+
+  // Xử lý sự kiện chạm bắt đầu
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  // Xử lý sự kiện chạm kết thúc
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const distance = touchStartX.current - touchEndX.current;
+
+    // Kích hoạt Autoplay plugin để tiếp tục sau khi tương tác kết thúc nếu muốn
+    if (autoplay.current && embla) {
+        autoplay.current.reset(); // Reset autoplay timer after interaction
+        // If stopOnInteraction is false, it will continue automatically.
+        // If stopOnInteraction is true, it means interaction itself stops it,
+        // so you might want to restart it manually here if that's the desired behavior.
+        // For this specific setup (stopOnInteraction: true), this line alone might not restart it.
+        // You'd need to manually call autoplay.current.play() or similar if you want it to restart
+        // despite stopOnInteraction being true.
+        // Given your current config `stopOnInteraction: true`, this interaction will stop autoplay.
+        // If you want it to restart, you might need:
+        // autoplay.current.play()
+    }
+
+
+    if (Math.abs(distance) > minSwipeDistance) {
+      if (distance > 0) {
+        // Vuốt sang trái (chuyển slide kế tiếp)
+        scrollNext();
+      } else {
+        // Vuốt sang phải (chuyển slide trước)
+        scrollPrev();
+      }
+    }
+  };
+
   // Cập nhật selected index mỗi lần carousel thay đổi
   useEffect(() => {
     if (!embla) return;
@@ -63,8 +114,8 @@ export function Timeline({ custom_fields }: any) {
   const scrollNext = () => embla && embla.scrollNext();
 
   // Lấy sự kiện hiện tại đang được chọn để hiển thị trong div cố định
-  console.log(sliderabout[selectedIndex])
-  const currentEvent = sliderabout[selectedIndex];
+  const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
+
 
   return (
     <section ref={threeRef} className="mx-auto w-full px-[30px] md:px-0 md:max-w-[85%] 2xl:max-w-[1380px] bg-white timeline-carousel lg:py-16">
@@ -74,6 +125,10 @@ export function Timeline({ custom_fields }: any) {
           
           {/* Div cố định ở giữa */}
           <div
+            ref={fixedDivRef}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            data-embla-draggable="false"
             className="absolute z-20 w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item active rounded-full text-center flex flex-col items-center justify-center p-4 bg-white border-1 border-yellow-500"
           >
             {currentEvent && (

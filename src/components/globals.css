@@ -371,11 +371,11 @@ figure.image > img {
     @apply rotate-y-[-30deg] translate-z-[-30px] origin-right translate-x-[-30px];
   }
   .list-dash li::before {
-    content: '—';
+    /* content: '—'; */
     /* Ký tự gạch ngang và một khoảng trắng */
-    @apply text-gray-5;
+    /* @apply text-gray-5; */
     /* Màu xanh của Tailwind (blue-500) */
-    margin-right: 0.2rem;
+    /* margin-right: 0.2rem; */
     /* Khoảng cách giữa dấu và nội dung */
   }
 

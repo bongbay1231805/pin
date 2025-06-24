@@ -61,13 +61,13 @@ export default function Hero({ data, dataPage }: any) {
   return (
     <>
       <div className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw] text-center pt-[70px] md:pt-[150px]">
-        <div className="relative mx-auto top-[25%] max-w-[85%]">
-          <h1 className='absolute z-10 left-0 text-left  uppercase font-bold text-white text-[22px] md:text-[30px] leading-[48px] 2xl:leading-[56px] 2xl:text-[46px]'>{name}</h1>
+        <div className="relative mx-auto top-[30%] max-w-[85%]">
+          <h1 className='absolute z-10 left-0 text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[56px] text-[22px] xl:text-[46px] 2xl:text-[80px] 2xl:leading-[90px]'>{name}</h1>
         </div>
         <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-cover" />
       </div>
       <div ref={oneRef} className=" mx-auto max-w-[85%]  text-center pt-[50px] md:pt-[110px]">
-        <h2 className='uppercase font-bold text-yellow-1 text-[22px] mb-[25px] sm:mb-[50px]'>{human_resource_2}</h2>
+        <h2 className='uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[25px] sm:mb-[50px]'>{human_resource_2}</h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px]  mx-auto w-full px-[30px]  xl:max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
@@ -89,7 +89,8 @@ export default function Hero({ data, dataPage }: any) {
       </div>
       <div className='mx-auto w-full px-[30px]  xl:max-w-[85%]'>
         <div className="h-[180px] relative bg-blue-3 rounded-[10px] flex pl-[30px] sm:pl-[50px] lg:pl-[100px] md:pr-[10px] items-center justify-between">
-          <p className='text-[18px] [&>br]:hidden sm:[&>br]:inline-block z-1 md:text-[25px] text-yellow-1' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
+          <Image width={50} height={100} src="/quotation_marks.svg" alt="Smart City Features" className="absolute left-6 top-6" />
+          <p className='text-[20px] [&>br]:hidden sm:[&>br]:inline-block z-1 md:text-[25px] text-yellow-1' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
           <svg className='absolute right-0 bottom-0 h-[170px] w-[170px] sm:ml-0' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M45.1741 60.1561L31.3036 65.0217C28.828 65.8918 26.7555 67.6409 25.48 69.9405L19.8778 80.0535C17.9558 83.5162 13.5848 84.7415 10.1526 82.7748C6.74699 80.8259 5.56455 76.4798 7.51314 73.0659L16.5298 57.2483C17.5882 55.3926 19.2357 53.941 21.2108 53.1285L45.7188 43.0467C50.1164 41.2354 55.1119 41.6083 59.195 44.0411C65.0408 47.526 67.8485 54.4914 66.0594 61.0706L59.7885 84.12L83.6233 102.868C86.6923 105.283 88.2644 109.14 87.7552 113.016L84.1458 140.5" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -113,7 +114,7 @@ export default function Hero({ data, dataPage }: any) {
       <div>
         <div ref={twoRef}>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]  text-center pt-[50px] sm:pt-[100px]">
-            <h2 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px]">{human_resource_12}</h2>
+            <h2 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px]">{human_resource_12}</h2>
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <div className="grid grid-cols-1 md:grid-cols-[380px_1fr_1fr] md:gap-[50px] mt-[30px] md:mt-[42px]">
@@ -143,7 +144,7 @@ export default function Hero({ data, dataPage }: any) {
             </div>
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
-            <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px] text-center py-[50px_25px] sm:py-[100px_25px]">{human_resource_14}</h3>
+            <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_25px] sm:py-[100px_25px]">{human_resource_14}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3  sm:grid-rows-2 gap-[10px] sm:gap-[20px] h-[510px]">
               <div className="relative row-span-2">
                 <Image alt="benefit 8" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
@@ -162,7 +163,7 @@ export default function Hero({ data, dataPage }: any) {
             </div>
           </div>
         </div>
-        <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-center text-[22px] sm:text-[30px] py-[50px_25px] sm:py-[100px_25px]">{human_resource_21}</h3>
+        <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-center text-[22px] sm:text-[28px] 2xl:text-[45px] py-[50px_25px] sm:py-[100px_25px]">{human_resource_21}</h3>
         <div className="mx-auto w-full px-[30px] sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
           {humanresourcestep.map((humanre: any, index: number) => (
             <div key={index} className='grid gap-[25px]'>
@@ -181,7 +182,7 @@ export default function Hero({ data, dataPage }: any) {
             </div>
           ))}
         </div>
-        <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[30px] text-center py-[25px_25px] sm:py-[120px_25px]">{human_resource_22}</h3>
+        <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[25px_25px] sm:py-[120px_25px]">{human_resource_22}</h3>
         <div className="overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto">
           <div className="overflow-x-auto">
             <table id="job-table" className="min-w-full">
