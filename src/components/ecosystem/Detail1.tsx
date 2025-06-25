@@ -169,7 +169,8 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span>{item[0].value}</span> {item[1].value}
+                      <span className="text-black">{item[0].value}</span>{' '}
+                      {item[1].value}
                     </p>
                   ))}
                 </div>
@@ -310,7 +311,8 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span>{item[0].value}</span> {item[1].value}
+                      <span className="text-black">{item[0].value}</span>{' '}
+                      {item[1].value}
                     </p>
                   ))}
                 </div>
@@ -428,7 +430,8 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span>{item[0].value}</span> {item[1].value}
+                      <span className="text-black">{item[0].value}</span>{' '}
+                      {item[1].value}
                     </p>
                   ))}
                 </div>
