@@ -41,6 +41,7 @@ export default function Detail1({custom_fields}: any) {
     [PROJECT_KEYS.PICITY_SKY_PARK]: '106px',
     [PROJECT_KEYS.PRIME_MASTER]: '106px'
   });
+
   useEffect(() => {
     // Update max-height when openStates change
     const newMaxHeights = {...contentMaxHeights};
@@ -82,6 +83,11 @@ export default function Detail1({custom_fields}: any) {
       // 3. Trả về trạng thái cuối cùng
       return allClosedState;
     });
+  };
+
+  //TẠO HÀM XỬ LÝ CLICK
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.blur();
   };
 
   if (!customfields) {
@@ -221,6 +227,7 @@ export default function Detail1({custom_fields}: any) {
             </div>
             <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
               <Link
+                onClick={handleLinkClick}
                 href={customfields[0][5].value}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -360,6 +367,7 @@ export default function Detail1({custom_fields}: any) {
             </div>
             <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
               <Link
+                onClick={handleLinkClick}
                 href={customfields[1][5].value}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -479,9 +487,11 @@ export default function Detail1({custom_fields}: any) {
             </div>
             <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
               <Link
-                href={customfields[2][5].value}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+                href="#"
+                // href={customfields[2][5].value}
+                // target="_blank"
+                // rel="noopener noreferrer"
                 className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
               >
                 {customfields[2][4].value}
