@@ -99,7 +99,7 @@ export function MainDrawer() {
                       "flex items-center gap-4 p-3 rounded-xl transition-colors relative uppercase",
                       isActive
                         ? "bg-primary/10 text-primary"
-                        : "hover:bg-gray-100"
+                        : ""
                     )}
                   >
                     <div className="group relative flex flex-col text-[17px] font-semibold  focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1">
