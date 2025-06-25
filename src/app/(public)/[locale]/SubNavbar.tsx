@@ -1,9 +1,9 @@
 'use client';
 import Link from 'next/link';
-import { useScrollRefs } from '@/context/ScrollRefsContext';
+import {useScrollRefs} from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect, useRef } from 'react';
+import {usePathname} from 'next/navigation';
+import {useState, useEffect, useRef} from 'react';
 
 interface PropSub {
   hasShadow: boolean;
@@ -12,14 +12,15 @@ interface PropSub {
 }
 
 export default function SubNavbar(props: PropSub) {
-  const { nameCurent } = props;
+  const {nameCurent} = props;
   const pathname = usePathname();
   let myArray = pathname.split('/');
-  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } =
+  const {oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef} =
     useScrollRefs();
 
   const [isFixed, setIsFixed] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State mới để kiểm soát menu dropdown
+  const [activeSection, setActiveSection] = useState(''); // State để theo dõi section active
   const scrollThreshold = 100;
   const prevScrollY = useRef(0);
   const menuRef = useRef<HTMLDivElement | null>(null); // Ref cho container của dropdown để xử lý click ngoài
@@ -65,6 +66,39 @@ export default function SubNavbar(props: PropSub) {
       }
 
       prevScrollY.current = currentScrollY;
+
+      // --- LOGIC SCROLL-SPY ĐÃ CẢI TIẾN ---
+      const subNavHeight = menuRef.current?.offsetHeight || 60; // Lấy chiều cao thực tế, fallback là 60
+      const buffer = 80; // Khoảng đệm bạn muốn bên dưới submenu
+      const scrollOffset = subNavHeight + buffer;
+
+      let newActiveSection = '';
+
+      // Lặp qua các mục theo thứ tự ngược. Đây là cách làm ổn định nhất.
+      // Nó sẽ tìm section cuối cùng đã vượt qua "vạch kích hoạt".
+      for (let i = navItems.length - 1; i >= 0; i--) {
+        const item = navItems[i];
+        if (item.hrefb?.current) {
+          const section = item.hrefb.current;
+          const sectionTop = section.getBoundingClientRect().top;
+
+          if (sectionTop <= scrollOffset) {
+            newActiveSection = item.name;
+            break; // Đã tìm thấy section active, thoát vòng lặp
+          }
+        }
+      }
+
+      // Nếu cuộn lên trên cùng và không có section nào active, hãy active section đầu tiên
+      const firstScrollItem = navItems.find((item) => item.hrefb);
+      if (newActiveSection === '' && firstScrollItem) {
+        newActiveSection = firstScrollItem.name;
+      }
+
+      // Chỉ cập nhật state nếu thực sự có thay đổi
+      if (activeSection !== newActiveSection) {
+        setActiveSection(newActiveSection);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -130,42 +164,45 @@ export default function SubNavbar(props: PropSub) {
 
   if (about.includes(currentSlug)) {
     navItems = [
-      { name: 'Định vị thương hiệu', href: '#about', hrefb: oneRef },
-      { name: 'Con số ấn tượng', href: '#about', hrefb: twoRef },
-      { name: 'Lịch sử hình thành', href: '#about', hrefb: threeRef },
-      { name: 'Triết lý kinh doanh', href: '#about', hrefb: fourRef },
-      { name: 'Tầm nhìn - Sứ mệnh', href: '#about', hrefb: fiveRef },
-      { name: 'Văn hóa doanh nghiệp', href: '#about', hrefb: sixRef },
-      { name: 'Hồ sơ năng lực', href: '#about', hrefb: seventRef }
+      {name: 'Định vị thương hiệu', href: '#about', hrefb: oneRef},
+      {name: 'Con số ấn tượng', href: '#about', hrefb: twoRef},
+      {name: 'Lịch sử hình thành', href: '#about', hrefb: threeRef},
+      {name: 'Triết lý kinh doanh', href: '#about', hrefb: fourRef},
+      {name: 'Tầm nhìn - Sứ mệnh', href: '#about', hrefb: fiveRef},
+      {name: 'Văn hóa doanh nghiệp', href: '#about', hrefb: sixRef},
+      {name: 'Hồ sơ năng lực', href: '#about', hrefb: seventRef}
     ];
   } else if (news.includes(currentSlug) || myArray[2] === 'posts') {
     navItems = [
-      { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
-      { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
-      { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' }
+      {name: 'Tin thị trường', href: '/categories/tin-thi-truong'},
+      {name: 'Tin Pi Group', href: '/categories/tin-pi-group'},
+      {name: 'Tin đấu thầu', href: '/categories/tin-dau-thau'}
     ];
   } else if (ecosystem.includes(currentSlug)) {
     navItems = [
-      { name: 'Đầu tư & Phát triển dự án', href: '/ecosystem/investment-development' },
-      { name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services' },
-      { name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation' }
+      {
+        name: 'Đầu tư & Phát triển dự án',
+        href: '/ecosystem/investment-development'
+      },
+      {name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services'},
+      {name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation'}
     ];
   } else if (humanresource.includes(currentSlug)) {
     navItems = [
-      { name: 'Văn hóa làm việc', href: '', hrefb: oneRef },
-      { name: 'Phúc lợi & Đào tạo', href: '', hrefb: twoRef },
-      { name: 'Hình thức tuyển dụng', href: '', hrefb: threeRef },
-      { name: 'Vị trí tuyển dụng', href: '', hrefb: fourRef }
+      {name: 'Văn hóa làm việc', href: '', hrefb: oneRef},
+      {name: 'Phúc lợi & Đào tạo', href: '', hrefb: twoRef},
+      {name: 'Hình thức tuyển dụng', href: '', hrefb: threeRef},
+      {name: 'Vị trí tuyển dụng', href: '', hrefb: fourRef}
     ];
   } else if (digitalcity.includes(currentSlug)) {
     navItems = [
-      { name: 'Picity - Đô thị số', href: '', hrefb: oneRef },
-      { name: 'Công nghệ 4.0', href: '', hrefb: twoRef },
-      { name: 'Độc quyền Picity App', href: '', hrefb: threeRef },
-      { name: 'Tiện ích 5★', href: '', hrefb: fourRef },
-      { name: 'Dịch vụ quản lý', href: '', hrefb: fiveRef },
-      { name: 'Giá trị vượt trội', href: '', hrefb: sixRef },
-      { name: 'Dự án thành công', href: '', hrefb: seventRef }
+      {name: 'Picity - Đô thị số', href: '', hrefb: oneRef},
+      {name: 'Công nghệ 4.0', href: '', hrefb: twoRef},
+      {name: 'Độc quyền Picity App', href: '', hrefb: threeRef},
+      {name: 'Tiện ích 5★', href: '', hrefb: fourRef},
+      {name: 'Dịch vụ quản lý', href: '', hrefb: fiveRef},
+      {name: 'Giá trị vượt trội', href: '', hrefb: sixRef},
+      {name: 'Dự án thành công', href: '', hrefb: seventRef}
     ];
   }
 
@@ -191,7 +228,8 @@ export default function SubNavbar(props: PropSub) {
               <li key={item.name}>
                 <button
                   onClick={() => scrollTo(item.hrefb!)}
-                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${isActive(item.href) ? 'text-yellow-1' : ''}`}
+                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${activeSection === item.name ? 'text-yellow-1' : ''}`}
+                  // className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${activeSection === item.name ? 'text-yellow-1' : ''}`}
                 >
                   {item.name}
                 </button>
@@ -208,8 +246,6 @@ export default function SubNavbar(props: PropSub) {
             )
           )}
         </ul>
-
-        
       </div>
     </div>
   ) : null;

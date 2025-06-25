@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useRef} from 'react';
 type ChildClass = 'child1' | 'child2' | 'child3';
 import {useScrollRefs} from '@/context/ScrollRefsContext';
 export function Business({custom_fields}: any) {
@@ -12,6 +12,12 @@ export function Business({custom_fields}: any) {
   const [currentRotation, setCurrentRotation] = useState<number>(0);
   // `activeChild` để theo dõi child nào đang được active
   const [activeChild, setActiveChild] = useState<ChildClass | null>('child1');
+
+  // MỚI: Thêm state để kiểm soát trạng thái tạm dừng khi hover
+  const [isPaused, setIsPaused] = useState(false);
+  // MỚI: Dùng useRef để lưu trữ ID của interval
+  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
+
   // Định nghĩa các góc "mục tiêu" tương ứng với mỗi child nếu chúng bắt đầu từ 0deg
   const targetDegrees: {[key in ChildClass]: number} = {
     child1: 0,
@@ -86,6 +92,14 @@ export function Business({custom_fields}: any) {
     return targetAngle;
   };
   useEffect(() => {
+    // Nếu đang tạm dừng, ta sẽ dọn dẹp interval và không làm gì cả
+    if (isPaused) {
+      if (intervalIdRef.current) {
+        clearInterval(intervalIdRef.current);
+      }
+      return;
+    }
+
     const childrenOrder: ChildClass[] = ['child1', 'child2', 'child3'];
     let currentIndex = 0;
     // Thiết lập interval để tự động thay đổi góc xoay
@@ -111,7 +125,7 @@ export function Business({custom_fields}: any) {
       clearInterval(intervalId);
       console.log('Auto-rotate interval cleared!');
     };
-  }, []);
+  }, [isPaused]);
   return (
     <div
       ref={sixRef}
@@ -126,7 +140,11 @@ export function Business({custom_fields}: any) {
             {field_25_about}
           </p>
         </div>
-        <div className="relative md:pl-[26px] aspect-square items-center flex justify-center overflow-hidden md:overflow-visible">
+        <div
+          className="relative md:pl-[26px] aspect-square items-center flex justify-center overflow-hidden md:overflow-visible"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <svg
             width="600"
             height="600"
