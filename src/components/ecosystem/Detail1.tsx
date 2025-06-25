@@ -486,16 +486,22 @@ export default function Detail1({custom_fields}: any) {
               </svg>
             </div>
             <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
-              <Link
+              <button
+                type="button"
                 onClick={handleLinkClick}
-                href="#"
-                // href={customfields[2][5].value}
-                // target="_blank"
-                // rel="noopener noreferrer"
                 className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
               >
                 {customfields[2][4].value}
-              </Link>
+              </button>
+              {/* <Link
+                onClick={handleLinkClick}
+                href={customfields[2][5].value}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
+              >
+                {customfields[2][4].value}
+              </Link> */}
             </div>
           </div>
           <div className="relative h-[265px] sm:h-[388px]">

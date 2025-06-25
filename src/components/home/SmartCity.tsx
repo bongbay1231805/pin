@@ -1448,4 +1448,3 @@ export function SmartCity({custom_fields}: any) {
     </>
   );
 }
-
