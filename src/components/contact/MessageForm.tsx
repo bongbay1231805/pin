@@ -74,7 +74,7 @@ export function MessageForm({custom_fields}:any) {
   }
   return (
     <Form {...form}>
-      <h2 className="text-yellow-1 font-bold text-[23px] 2xl:text-[26px] uppercase mb-[30px]">{field_contact_8}</h2>
+      <h2 className="text-yellow-1 font-bold text-[22px] sm:text-[28px] 2xl:text-[45px] uppercase mb-[30px]">{field_contact_8}</h2>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <div className="grid grid-cols-1 gap-[30px]">
           <FormField
