@@ -109,7 +109,7 @@ export function Timeline({custom_fields}: any) {
 
   const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
 
-
+  console.log(selectedIndex)
   return (
     <section
       ref={threeRef}
@@ -154,7 +154,7 @@ export function Timeline({custom_fields}: any) {
         <button
           onClick={scrollPrev}
           className={`absolute arrow cursor-pointer z-10 sm:left-0 left-[-20px] top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2 ${
-            canScrollPrev ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            canScrollPrev && selectedIndex > 1 ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
           <ChevronLeft />
@@ -199,7 +199,7 @@ export function Timeline({custom_fields}: any) {
         <button
           onClick={scrollNext}
           className={`absolute arrow cursor-pointer z-10 sm:right-0 right-[-20px] top-1/2 -translate-y-1/2 scale-[1.1] text-yellow-1 rounded-full p-2 ${
-            canScrollNext ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            canScrollNext && selectedIndex < 7 ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
           <ChevronRight />
