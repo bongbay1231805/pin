@@ -63,11 +63,30 @@ export default function Detail1({custom_fields}: any) {
     setContentMaxHeights(newMaxHeights);
   }, [openStates]); // Thêm contentMaxHeights vào dependency array để đảm bảo effect chạy lại khi cần
   const toggleVisibility = (projectKey: string) => {
-    setOpenStates((prevStates) => ({
-      ...prevStates,
-      [projectKey]: !prevStates[projectKey]
-    }));
+    setOpenStates((prevStates) => {
+      const isCurrentlyOpen = prevStates[projectKey];
+
+      // 1. Tạo trạng thái mới với tất cả các mục đều đóng
+      const allClosedState: Record<string, boolean> = {
+        [PROJECT_KEYS.PICITY_HIGH_PARK]: false,
+        [PROJECT_KEYS.PICITY_SKY_PARK]: false,
+        [PROJECT_KEYS.PRIME_MASTER]: false
+      };
+
+      // 2. Nếu mục vừa click đang đóng, thì mở nó ra.
+      // Nếu nó đang mở, thì object `allClosedState` sẽ tự động đóng nó lại.
+      if (!isCurrentlyOpen) {
+        allClosedState[projectKey] = true;
+      }
+
+      // 3. Trả về trạng thái cuối cùng
+      return allClosedState;
+    });
   };
+
+  if (!customfields) {
+    return <div>Loading...</div>; // Hoặc một fallback UI khác
+  }
   // console.log(customfields);
   return (
     <>
@@ -150,8 +169,7 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span>{item[0].value}</span>{' '}
-                      {item[1].value}
+                      <span>{item[0].value}</span> {item[1].value}
                     </p>
                   ))}
                 </div>
@@ -208,7 +226,6 @@ export default function Detail1({custom_fields}: any) {
               >
                 {customfields[0][4].value}
               </Link>
-              
             </div>
           </div>
           <div className="relative h-[265px] sm:h-[388px]">
@@ -292,8 +309,7 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span>{item[0].value}</span>{' '}
-                      {item[1].value}
+                      <span>{item[0].value}</span> {item[1].value}
                     </p>
                   ))}
                 </div>
@@ -347,7 +363,6 @@ export default function Detail1({custom_fields}: any) {
               >
                 {customfields[1][4].value}
               </Link>
-              
             </div>
           </div>
         </div>
@@ -411,8 +426,7 @@ export default function Detail1({custom_fields}: any) {
                             );
                         }
                       })()}
-                      <span>{item[0].value}</span>{' '}
-                      {item[1].value}
+                      <span>{item[0].value}</span> {item[1].value}
                     </p>
                   ))}
                 </div>
@@ -466,7 +480,6 @@ export default function Detail1({custom_fields}: any) {
               >
                 {customfields[2][4].value}
               </Link>
-              
             </div>
           </div>
           <div className="relative h-[265px] sm:h-[388px]">
