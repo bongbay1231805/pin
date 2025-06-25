@@ -20,8 +20,8 @@ export function Partners({custom_fields}: any) {
       height: 50
     },
     {
-      img: 'nama_v2.png',
-      width: 123,
+      img: 'logo_nam_a_bank.png',
+      width: 140,
       height: 50
     },
     {
