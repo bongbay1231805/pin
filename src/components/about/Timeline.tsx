@@ -94,18 +94,21 @@ export function Timeline({custom_fields}: any) {
     }
   };
 
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsMobile(window.innerWidth < 768);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     setIsMobile(window.innerWidth < 768);
+  //   }
+  // }, []);
 
-  const currentEvent =
-    sliderabout && sliderabout[selectedIndex]
-      ? sliderabout[isMobile ? selectedIndex : selectedIndex + 1]
-      : null;
+  // const currentEvent =
+  //   sliderabout && sliderabout[selectedIndex]
+  //     ? sliderabout[isMobile ? selectedIndex : selectedIndex + 1]
+  //     : null;
+
+  const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
+
 
   return (
     <section
