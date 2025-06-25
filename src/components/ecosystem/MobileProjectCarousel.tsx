@@ -50,7 +50,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
       {/* Phần Header: Giữ nguyên */}
       {headerItem && (
         <Link href={headerItem[3]?.value || '#'}>
-          <div className="ml-4 mb-4 px-4 border-l-2 border-blue-1 text-justify">
+          <div className="ml-4 mb-4 px-4 text-justify">
             <h3 className="text-[19px] font-semibold text-blue-1 uppercase">
               {headerItem[0]?.value}
             </h3>

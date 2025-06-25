@@ -24,7 +24,7 @@ const MasonryGrid = ({custom_fields}: any) => {
   }
   const customfields = convertJsonStringToArrayOrObject(custom_fields);
   // Sử dụng hook để xác định kích thước màn hình
-  const isDesktop = useMediaQuery('(min-width: 1280px)');
+  const isDesktop = useMediaQuery('(min-width: 768px)');
   useScrollReveal(); // dùng mặc định `.boxanimation`
   const rows = [];
   // Refs cho từng grid container
@@ -264,7 +264,7 @@ const MasonryGrid = ({custom_fields}: any) => {
   }
   // Nếu là MOBILE, render layout mới
   return (
-    <div className="w-full">
+    <div className="w-full **md:hidden**">
       {(() => {
         const rowsContent = [];
         for (let i = 0; i < customfields.length; i += 4) {
