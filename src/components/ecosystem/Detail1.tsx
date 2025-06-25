@@ -186,7 +186,8 @@ export default function Detail1({custom_fields}: any) {
                           src="/fecosystem/detail/circle.svg"
                         />
                         <span>
-                          <strong>{item[0].value}</strong> {item[1].value}
+                          <span className="text-black">{item[0].value}</span>{' '}
+                          {item[1].value}
                         </span>
                       </p>
                     )
@@ -326,7 +327,8 @@ export default function Detail1({custom_fields}: any) {
                           src="/fecosystem/detail/circle.svg"
                         />
                         <span>
-                          <strong>{item[0].value}</strong> {item[1].value}
+                          <span className="text-black">{item[0].value}</span>{' '}
+                          {item[1].value}
                         </span>
                       </p>
                     )
@@ -443,7 +445,8 @@ export default function Detail1({custom_fields}: any) {
                           src="/fecosystem/detail/circle.svg"
                         />
                         <span>
-                          <strong>{item[0].value}</strong> {item[1].value}
+                          <span className="text-black">{item[0].value}</span>{' '}
+                          {item[1].value}
                         </span>
                       </p>
                     )
