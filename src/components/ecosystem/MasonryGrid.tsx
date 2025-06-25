@@ -263,34 +263,34 @@ const MasonryGrid = ({custom_fields}: any) => {
     );
   }
   // Nếu là MOBILE, render layout mới
-  // return (
-  //   <div className="w-full">
-  //     {(() => {
-  //       const rowsContent = [];
-  //       for (let i = 0; i < customfields.length; i += 4) {
-  //         const rowItems = customfields.slice(i, i + 4);
+  return (
+    <div className="w-full">
+      {(() => {
+        const rowsContent = [];
+        for (let i = 0; i < customfields.length; i += 4) {
+          const rowItems = customfields.slice(i, i + 4);
 
-  //         const headerItem = rowItems.find(
-  //           (item) => item[3]?.value && !item[4]?.value
-  //         );
-  //         const galleryItems = rowItems.filter((item) => item[4]?.value);
+          const headerItem = rowItems.find(
+            (item: { value: any; }[]) => item[3]?.value && !item[4]?.value
+          );
+          const galleryItems = rowItems.filter((item: { value: any; }[]) => item[4]?.value);
 
-  //         // BỌC TRONG LỆNH IF ĐỂ KIỂM TRA
-  //         // Chỉ thêm vào mảng render khi headerItem thực sự tồn tại
-  //         if (headerItem) {
-  //           rowsContent.push(
-  //             <MobileProjectCarousel
-  //               key={i}
-  //               headerItem={headerItem}
-  //               galleryItems={galleryItems}
-  //             />
-  //           );
-  //         }
-  //       }
-  //       return rowsContent;
-  //     })()}
-  //   </div>
-  // );
+          // BỌC TRONG LỆNH IF ĐỂ KIỂM TRA
+          // Chỉ thêm vào mảng render khi headerItem thực sự tồn tại
+          if (headerItem) {
+            rowsContent.push(
+              <MobileProjectCarousel
+                key={i}
+                headerItem={headerItem}
+                galleryItems={galleryItems}
+              />
+            );
+          }
+        }
+        return rowsContent;
+      })()}
+    </div>
+  );
 };
 export default MasonryGrid;
 
