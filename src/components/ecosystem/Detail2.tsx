@@ -606,7 +606,7 @@ export default function Detail2({custom_fields}: any) {
                 dangerouslySetInnerHTML={{__html: real_estate_services_8}}
               ></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[10px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
                     className="2xl:w-[auto] h-[80px]"
                     width="99"
@@ -672,11 +672,11 @@ export default function Detail2({custom_fields}: any) {
                       strokeWidth="2.5"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
                     {real_estate_services_9}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[10px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
                     className="2xl:w-[auto] h-[80px]"
                     width="70"
@@ -812,11 +812,11 @@ export default function Detail2({custom_fields}: any) {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
                     {real_estate_services_10}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[10px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
                     className="2xl:w-[auto] h-[80px]"
                     width="70"
@@ -938,11 +938,11 @@ export default function Detail2({custom_fields}: any) {
                       stroke="white"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
                     {real_estate_services_11}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[10px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
                     className="2xl:w-[auto] h-[80px]"
                     viewBox="0 0 105 105"
@@ -996,7 +996,7 @@ export default function Detail2({custom_fields}: any) {
                       strokeWidth="2"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
                     {real_estate_services_12}
                   </h4>
                 </div>
