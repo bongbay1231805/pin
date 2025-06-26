@@ -112,10 +112,12 @@ export default function Detail2({custom_fields}: any) {
               className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px]"
               dangerouslySetInnerHTML={{__html: real_estate_services_1}}
             ></h3>
-            <div className="text-[13px] text-gray-5 mb-[15px]">
+            <div className="text-[13px] text-gray-5 mb-[15px] text-justify">
               {real_estate_services_2} 
             </div>
-            <p className="text-[13px] text-gray-5">{real_estate_services_3}</p>
+            <p className="text-[13px] text-gray-5 text-justify">
+              {real_estate_services_3}
+            </p>
           </div>
           <div className="relative pt-[85%] sm:pt-[100%] 2xl:pt-[677px]">
             <Image
@@ -141,7 +143,7 @@ export default function Detail2({custom_fields}: any) {
           <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
             <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[35px] group">
               <svg
-                height="110"
+                className="h-20 sm:h-28"
                 viewBox="0 0 113 112"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +194,7 @@ export default function Detail2({custom_fields}: any) {
                 {real_estate_services_5}
               </h4>
               {/* --- LỚP POPUP HIỆN RA KHI HOVER --- */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+              <div className=" hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <div className="absolute inset-0 bg-[#fff] transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                   <h3 className="text-[18px] 2xl:text-[22px] font-bold text-yellow-1 uppercase mb-4 transform transition-all duration-500 ease-out delay-150 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
@@ -226,7 +228,7 @@ export default function Detail2({custom_fields}: any) {
             "
             >
               <svg
-                height="110"
+                className="h-20 sm:h-28"
                 viewBox="0 0 110 111"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -377,7 +379,7 @@ export default function Detail2({custom_fields}: any) {
                 {real_estate_services_6}
               </h4>
               {/* --- LỚP POPUP HIỆN RA KHI HOVER --- */}
-              <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+              <div className="hidden md:block absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <div className="absolute inset-0 bg-[#fff] transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                   <h3 className="text-[18px] 2xl:text-[22px] font-bold text-yellow-1 uppercase mb-4 transform transition-all duration-500 ease-out delay-150 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
@@ -393,7 +395,7 @@ export default function Detail2({custom_fields}: any) {
 
             <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[35px] group">
               <svg
-                height="110"
+                className="h-20 sm:h-28"
                 viewBox="0 0 114 114"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -579,7 +581,7 @@ export default function Detail2({custom_fields}: any) {
                 {real_estate_services_7}
               </h4>
               {/* --- LỚP POPUP HIỆN RA KHI HOVER --- */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+              <div className="hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <div className="absolute inset-0 bg-[#fff] transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
                   <h3 className="text-[18px] 2xl:text-[22px] font-bold text-yellow-1 uppercase mb-4 transform transition-all duration-500 ease-out delay-150 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
