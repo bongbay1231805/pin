@@ -602,7 +602,7 @@ export default function Detail2({custom_fields}: any) {
           <div className="max-w-[85%]" style={{marginLeft: '8%'}}>
             <div className="grid items-start">
               <h3
-                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase mb-[60px] mt-8"
+                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase mb-[30px] sm:mb-[60px] mt-[30px] sm:mt-8"
                 dangerouslySetInnerHTML={{__html: real_estate_services_8}}
               ></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">

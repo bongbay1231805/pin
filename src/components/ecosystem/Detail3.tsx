@@ -36,7 +36,7 @@ export default function Detail3({ custom_fields }: any) {
         </div>
         <Image fill src="/fecosystem/detail/management-1.png" alt="Smart City Features" className="object-cover" />
       </div>
-      <div className='mx-auto mt-[60px] sm:mt-[50px] max-w-[1250px] mb-[105px] sm:mb-[115px]'>
+      <div className='mx-auto mt-[60px] sm:mt-[50px] max-w-[1250px] mb-[50px] sm:mb-[115px]'>
         <div className="grid grid-cols-1 px-[30px] sm:px-0 lg:grid-cols-[1fr_1fr]">
           <div className='grid grid-cols-[45%_1fr] sm:grid-cols-[280px_1fr] gap-[20px]'>
             <div className='grid gap-[20px]'>
@@ -52,7 +52,7 @@ export default function Detail3({ custom_fields }: any) {
             </div>
           </div>
           <div className='grid content-center sm:pl-[140px] pr-[160px mt-[35px] sm:mt-0'>
-            <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase  xl:[&>br]:inline-block mb-[40px]' dangerouslySetInnerHTML={{ __html: management_operation_title }}></h3>
+            <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold  xl:[&>br]:inline-block  mb-[30px] sm:mb-[40px]' dangerouslySetInnerHTML={{ __html: management_operation_title }}></h3>
             <p className='text-[13px] text-gray-5 sm:mb-[18px] text-justify'>{management_operation_des}</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function Detail3({ custom_fields }: any) {
       <div className='relative mx-auto max-w-[95%]  mb-[47px]'>
         <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px]  font-bold uppercase my-[20px] lg:my-0 text-center' dangerouslySetInnerHTML={{ __html: management_operation_1 }}></h3>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[110px]'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[50px] sm:mb-[110px]'>
         <div className='group relative pt-[373px] overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image fill src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_3}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000" />
           <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{ __html: management_operation_2 }}></h4>
@@ -78,7 +78,7 @@ export default function Detail3({ custom_fields }: any) {
           <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{ __html: management_operation_10 }}></h4>
         </div>
       </div>
-      <div className='relative mx-auto top-[25%] max-w-[1250px]   mb-[40px]'>
+      <div className='relative mx-auto top-[25%] max-w-[1250px] mb-[30px]  md:mb-[40px]'>
         <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase text-center' dangerouslySetInnerHTML={{ __html: management_operation_11 }}></h3>
       </div>
       <div className='relative mx-auto px-[30px] sm:px-0 top-[25%] max-w-[1250px]   mb-[117px]'>
@@ -173,7 +173,7 @@ export default function Detail3({ custom_fields }: any) {
         <div className='mt-[-450px] sm:mt-[-100px] sm:ml-[48%] max-w-[1250px] grid'>
           <div className='px-[30px] xl:px-0 xl:w-[650px]'>
             <div className='grid grid-cols-1 2xl:w-[905px] sm:mb-[45px]'>
-              <h4 className='text-[18px] mb-[30px] sm:text-[24px] text-blue-1 uppercase font-bold'>{management_operation_15}</h4>
+              <h4 className='text-[16px] mb-[30px] sm:text-[24px] text-blue-1 uppercase font-bold text-center sm:text-justify'>{management_operation_15}</h4>
             </div>
             <div className='grid grid-cols-2 sm:grid-cols-3 gap-[15px] 2xl:gap-[50px]  mb-[30px]'>
               <div className='relative  bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
