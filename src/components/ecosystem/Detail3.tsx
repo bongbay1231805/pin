@@ -170,10 +170,10 @@ export default function Detail3({ custom_fields }: any) {
         </div>
       </div>
       <div className='relative bg-[url("/fecosystem/detail/management-13-m.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-size-[100%_110%] sm:bg-size-[100%_100%] h-[330px] sm:h-[620px] content-center'>
-        <div className='mt-[-100px] sm:ml-[48%] max-w-[1250px] grid'>
+        <div className='mt-[-450px] sm:mt-[-100px] sm:ml-[48%] max-w-[1250px] grid'>
           <div className='px-[30px] xl:px-0 xl:w-[650px]'>
             <div className='grid grid-cols-1 2xl:w-[905px] sm:mb-[45px]'>
-              <h4 className='text-[18px] sm:text-[24px] text-blue-1 uppercase font-bold'>{management_operation_15}</h4>
+              <h4 className='text-[18px] mb-[30px] sm:text-[24px] text-blue-1 uppercase font-bold'>{management_operation_15}</h4>
             </div>
             <div className='grid grid-cols-2 sm:grid-cols-3 gap-[15px] 2xl:gap-[50px]  mb-[30px]'>
               <div className='relative  bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
