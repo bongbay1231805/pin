@@ -56,7 +56,7 @@ export default function ImagePopup({ src, onClose }: ImagePopupProps) {
             <Image
                 src={src}
                 alt="Full size image"
-                width="200"
+                width="400"
                 height="200"
             />
             </div>
