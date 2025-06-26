@@ -264,16 +264,18 @@ const MasonryGrid = ({custom_fields}: any) => {
   }
   // Nếu là MOBILE, render layout mới
   return (
-    <div className="w-full **md:hidden**">
+    <div className="w-full mt-34 **md:hidden**">
       {(() => {
         const rowsContent = [];
         for (let i = 0; i < customfields.length; i += 4) {
           const rowItems = customfields.slice(i, i + 4);
 
           const headerItem = rowItems.find(
-            (item: { value: any; }[]) => item[3]?.value && !item[4]?.value
+            (item: {value: any}[]) => item[3]?.value && !item[4]?.value
           );
-          const galleryItems = rowItems.filter((item: { value: any; }[]) => item[4]?.value);
+          const galleryItems = rowItems.filter(
+            (item: {value: any}[]) => item[4]?.value
+          );
 
           // BỌC TRONG LỆNH IF ĐỂ KIỂM TRA
           // Chỉ thêm vào mảng render khi headerItem thực sự tồn tại
@@ -293,4 +295,3 @@ const MasonryGrid = ({custom_fields}: any) => {
   );
 };
 export default MasonryGrid;
-
