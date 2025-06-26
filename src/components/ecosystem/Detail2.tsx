@@ -11,24 +11,24 @@ interface ToggleSectionProps {
   initialOpen?: boolean; // Mặc định ban đầu là ẩn hay hiện (optional)
 }
 export default function Detail2({custom_fields}: any) {
-  // const [isOpen, setIsOpen] = useState(false);
-  // const contentRef = useRef<HTMLDivElement>(null); // Ref to access the content div directly
-  // const [contentHeight, setContentHeight] = useState('0px'); // State to control the max-height for animation
-  // useEffect(() => {
-  //   if (contentRef.current) {
-  //     // When opening, set max-height to the actual scrollHeight of the content
-  //     // This allows the content to expand fully.
-  //     // A small timeout ensures the height calculation happens after the ref is available.
-  //     if (isOpen) {
-  //       // setContentHeight(`${contentRef.current.scrollHeight}px`);
-  //       setContentHeight('100%');
-  //     } else {
-  //       // When closing, set max-height to 0, which will collapse the content.
-  //       // When closing, set max-height to 0, which will collapse the content.
-  //       setContentHeight('10px');
-  //     }
-  //   }
-  // }, [isOpen]); // Re-run this effect whenever 'isOpen' changes
+  const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null); // Ref to access the content div directly
+  const [contentHeight, setContentHeight] = useState('0px'); // State to control the max-height for animation
+  useEffect(() => {
+    if (contentRef.current) {
+      // When opening, set max-height to the actual scrollHeight of the content
+      // This allows the content to expand fully.
+      // A small timeout ensures the height calculation happens after the ref is available.
+      if (isOpen) {
+        // setContentHeight(`${contentRef.current.scrollHeight}px`);
+        setContentHeight('100%');
+      } else {
+        // When closing, set max-height to 0, which will collapse the content.
+        // When closing, set max-height to 0, which will collapse the content.
+        setContentHeight('10px');
+      }
+    }
+  }, [isOpen]); // Re-run this effect whenever 'isOpen' changes
   const toggleVisibility = () => {
     setIsOpen(!isOpen);
   };
