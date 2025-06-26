@@ -14,7 +14,7 @@ export default function ClientUseRef({custom_fields}: any) {
       <HomeHero onScrollToDigitalCity={scrollToDigitalCity} />
       <div className="boxanimation relative bg-no-repeat bg-position-[0_-75px] bg-size-[20%_60%] xl:bg-size-[15%_75%] lg:bg-size-[10%_60%] 2xl:bg-size-[contain]">
         <svg
-          className="hidden md:block border-circle-right absolute top-[-10%] 2xl:top-[-100px] left-0 -translate-x-1/2 max-w-[28%] h-auto"
+          className="hidden md:block border-circle-right absolute top-[-10%] 2xl:top-[-100px] left-0 -translate-x-[50%] overflow-x-hidden max-w-[25%] h-auto"
           width="528.46"
           height="523.07"
           id="Layer_1"
