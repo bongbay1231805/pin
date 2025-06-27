@@ -112,10 +112,10 @@ export default function Detail2({custom_fields}: any) {
               className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px]"
               dangerouslySetInnerHTML={{__html: real_estate_services_1}}
             ></h3>
-            <div className="text-[13px] text-gray-5 mb-[15px] text-justify">
+            <div className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[15px] text-justify">
               {real_estate_services_2} 
             </div>
-            <p className="text-[13px] text-gray-5 text-justify">
+            <p className="text-[13px] 2xl:text-[17px] text-gray-5 text-justify">
               {real_estate_services_3}
             </p>
           </div>

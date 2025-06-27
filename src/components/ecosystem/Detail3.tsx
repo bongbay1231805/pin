@@ -62,19 +62,19 @@ export default function Detail3({ custom_fields }: any) {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[50px] sm:mb-[110px]'>
         <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image width="100" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_3}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
+          <Image width="500" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_3}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
           <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{ __html: management_operation_2 }}></h4>
         </div>
         <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image width="100" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_5}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
+          <Image width="500" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_5}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
           <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{ __html: management_operation_6 }}></h4>
         </div>
         <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image width="100" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_7}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
+          <Image width="500" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_7}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
           <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{ __html: management_operation_8 }}></h4>
         </div>
         <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
-          <Image width="100" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_9}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
+          <Image width="500" height="100" src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_9}`} alt="Smart City Features" className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto" />
           <h4 className='absolute z-1 bottom-[20px] w-full text-[16px] font-semibold text-center text-white uppercase' dangerouslySetInnerHTML={{ __html: management_operation_10 }}></h4>
         </div>
       </div>
