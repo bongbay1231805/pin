@@ -21,7 +21,7 @@ const ServiceBlockMobile: React.FC<{
 }> = ({service, isOpen, onToggle}) => {
   return (
     <div
-      className="relative w-full h-[200px] overflow-hidden cursor-pointer after:content-['']"
+      className="relative w-full h-[210px] overflow-hidden cursor-pointer after:content-['']"
       onClick={onToggle}
     >
       {/* Lớp 1: Trạng thái ban đầu (sẽ ẩn đi khi isOpen) */}
