@@ -331,7 +331,10 @@ export default function Part({custom_fields}: any) {
           <p className="uppercase text-center text-blue-1 text-[16px] sm:text-[20px] 2xl:text-[28px] mb-[35px]">
             {digitalcity_5}
           </p>
-          <HorizontalScroll custom_fields={custom_fields} />
+          
+          <div className="w-[85%] mx-auto">
+            <HorizontalScroll custom_fields={custom_fields} />
+          </div>
         </div>
         <Image
           fill
