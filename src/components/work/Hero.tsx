@@ -72,24 +72,24 @@ export default function Hero({ data, dataPage }: any) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px]  mx-auto w-full px-[30px]  xl:max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_3 }}></div>
-          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_5 }}></div>
-          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_6 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_6 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_7 }}></div>
-          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_8 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_8 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_9 }}></div>
-          <div className='text-[13px] sm:text-[17px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
         </div>
       </div>
       <div className='mx-auto w-full px-[30px]  xl:max-w-[85%]'>
         <div className="h-[180px] relative bg-blue-3 rounded-[10px] flex pl-[30px] sm:pl-[50px] lg:pl-[100px] md:pr-[10px] items-center justify-between">
-          <Image width={50} height={100} src="/quotation_marks.svg" alt="Smart City Features" className="absolute sm:left-6 sm:top-6 left-[20px] top-[20px] w-[30px] sm:w-[50px]" />
+          <Image width={50} height={100} src="/quotation_marks.svg" alt="Smart City Features" className="absolute sm:left-6 sm:top-6 left-[10px] top-[10px] w-[30px] sm:w-[50px]" />
           <p className='text-[20px] [&>br]:hidden sm:[&>br]:inline-block z-1 md:text-[25px] text-yellow-1' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
           <svg className='absolute right-0 bottom-0 h-[170px] w-[170px] sm:ml-0' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
