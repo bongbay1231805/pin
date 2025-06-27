@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import ImagePopup from "@/components/ui/ImagePopup";
+import HorizontalImageScroller from "@/components/ui/HorizontalImageScroller";
 
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
@@ -28,6 +29,13 @@ export default function Detail3({ custom_fields }: any) {
     setCurrentImageSrc(''); // Clear the image source when closing
   };
 
+  const imageUrls = [
+    `https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`,
+    `https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`,
+    `https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`,
+  ];
+
+
   return (
     <>
       <div className="relative mx-auto h-[500px] md:h-[100vh] pd:px-0 w-[100vw] text-center pt-[70px] md:pt-[150px]">
@@ -41,7 +49,7 @@ export default function Detail3({ custom_fields }: any) {
           <div className=''>
               <Image src="/toi-uu-quy-trinh.webp" alt="Smart City Features" width={350} height={500} className="w-full h-full object-cover rounded-[10px]" />
           </div>
-          <div className='grid content-center sm:pl-[140px] pr-[160px mt-[35px] sm:mt-0 sm:w-[415px] 2xl:w-[585px]'>
+          <div className='grid content-center sm:pl-[140px] pr-[160px mt-[35px] sm:mt-0 sm:w-[430px] 2xl:w-[590px]'>
             <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold  xl:[&>br]:inline-block  mb-[30px] sm:mb-[40px]' dangerouslySetInnerHTML={{ __html: management_operation_title }}></h3>
             <p className='text-[13px] text-gray-5 sm:mb-[18px] text-justify'>{management_operation_des}</p>
           </div>
@@ -165,16 +173,23 @@ export default function Detail3({ custom_fields }: any) {
             <div className='grid grid-cols-1 2xl:w-[905px] sm:mb-[45px]'>
               <h4 className='text-[16px] mb-[30px] sm:text-[24px] text-blue-1 uppercase font-bold text-center sm:text-justify'>{management_operation_15}</h4>
             </div>
-            <div className='grid grid-cols-2 sm:grid-cols-3 gap-[15px] 2xl:gap-[50px]  mb-[30px]'>
+
+            <div className='mb-[30px] sm:hidden'> 
+              <HorizontalImageScroller imageUrls={imageUrls} openPopup={openPopup} />
+            </div>
+
+            <div className="hidden sm:block">
+              <div className='grid grid-cols-2 sm:grid-cols-3 gap-[15px] 2xl:gap-[50px]  mb-[30px]'>
               <div className='relative  bg-[#ECF5FA]/30 border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
                 <Image onClick={() => openPopup(`https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`)} src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`} alt='Image' width="500" height="100"  />
               </div>
               <div className='relative   bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
                 <Image onClick={() => openPopup(`https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`)} src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`} alt='Image' width="500" height="100"  />
               </div>
-              <div className='hidden sm:block relative   bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
+              <div className='relative   bg-[#ECF5FA]/30  border-[25px] border-[#ECF5FA]/30 rounded-[5px]'>
                 <Image onClick={() => openPopup(`https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`)} src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`} alt='Image' width="500" height="100" />
               </div>
+            </div>
             </div>
           </div>
         </div>

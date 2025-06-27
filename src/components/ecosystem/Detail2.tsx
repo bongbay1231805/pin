@@ -518,7 +518,7 @@ export default function Detail2({custom_fields}: any) {
       </div>
       <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]">
-          <div className="mt-[100px] sm:w-[83%] 2xl:sm:w-[100%] order-1 sm:order-0">
+          <div className="mt-[100px] sm:w-[85%] 2xl:w-[85%] order-1 sm:order-0">
             <h3
               className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px]"
               dangerouslySetInnerHTML={{__html: real_estate_services_1}}
