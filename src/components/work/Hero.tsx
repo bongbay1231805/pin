@@ -117,26 +117,26 @@ export default function Hero({ data, dataPage }: any) {
             <h2 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px]">{human_resource_12}</h2>
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
-            <div className="grid grid-cols-1 md:grid-cols-[380px_1fr_1fr] md:gap-[50px] mt-[30px] md:mt-[42px]">
+            <div className="grid grid-cols-1 md:grid-cols-[400px_1fr_1fr] md:gap-[20px] mt-[30px] md:mt-[42px]">
               <div className="order-1 md:order-0 relative md:mr-[20px] min-h-[320px] rounded-[10px] overflow-hidden">
-                <Image alt="benefit 7" loading="lazy" decoding="async" className='object-cover' fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_13}`} />
+                <Image alt="benefit 7" loading="lazy" decoding="async" className='object-cover h-auto' width="600" height="600" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_13}`} />
               </div>
-              <div className="grid grid-cols-1 md:gap-[20px] [&>div]:last:border-b-[0] md:[&>div]:last:border-b-[1px]">
+              <div className="grid grid-cols-1 md:gap-y-[0px] md:gap-x-[20px] [&>div]:last:border-b-[0] md:[&>div]:last:border-b-[1px]">
                 {
                   firstConnect.map((firstC: any, index: number) => (
-                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"}  border-gray-8 flex items-center py-[24px] gap-[24px]`}>
+                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"}  border-gray-8 flex items-center py-[24px] sm:py-[0px] gap-[24px]`}>
                       <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: firstC[0].value }}></div>
-                      <h3 className="text-blue-1 font-semibold text-[16px]" dangerouslySetInnerHTML={{ __html: firstC[1].value }}></h3>
+                      <h3 className="text-blue-1 font-semibold text-[13px]" dangerouslySetInnerHTML={{ __html: firstC[1].value }}></h3>
                     </div>
                   ))
                 }
               </div>
-              <div className="grid grid-cols-1 md:gap-[20px]">
+              <div className="grid grid-cols-1 md:gap-y-[0px] md:gap-x-[20px]">
                 {
                   secondConnect.map((secondC: any, index: number) => (
-                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"} border-gray-8 flex items-center py-[24px] gap-[24px]`}>
+                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"} border-gray-8 flex items-center py-[24px] sm:py-[0px] gap-[24px]`}>
                       <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: secondC[0].value }}></div>
-                      <h3 className="text-blue-1 font-semibold text-[16px]" dangerouslySetInnerHTML={{ __html: secondC[1].value }}></h3>
+                      <h3 className="text-blue-1 font-semibold text-[13px]" dangerouslySetInnerHTML={{ __html: secondC[1].value }}></h3>
                     </div>
                   ))
                 }
@@ -145,18 +145,18 @@ export default function Hero({ data, dataPage }: any) {
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_25px] sm:py-[100px_25px]">{human_resource_14}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3  sm:grid-rows-2 gap-[10px] sm:gap-[20px] h-[510px]">
+            <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3  sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[510px] h-auto">
               <div className="relative row-span-2">
-                <Image alt="benefit 8" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
-                <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold object-cover">{human_resource_16}</div>
+                <Image alt="benefit 8" loading="lazy" decoding="async" width="1000" height="1000" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
+                <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold object-top" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px]">
                 <div className="relative row-start-1 col-span-1 sm:col-span-2">
-                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px]' />
+                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px]' style={{ objectFit: 'cover' }}  />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_18}</div>
                 </div>
                 <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2">
-                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-cover rounded-[10px]' />
+                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-top rounded-[10px]' style={{ objectFit: 'cover' }}  />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_20}</div>
                 </div>
               </div>
@@ -167,8 +167,8 @@ export default function Hero({ data, dataPage }: any) {
         <div className="mx-auto w-full px-[30px] sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
           {humanresourcestep.map((humanre: any, index: number) => (
             <div key={index} className='grid gap-[25px]'>
-              <div className='relative  h-[220px] sm:h-[360px]'>
-                <Image alt="benefit 14" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${humanre[5].value}`} />
+              <div className='relative  h-auto'>
+                <Image className="h-auto" alt="benefit 14" loading="lazy" decoding="async" width="900" height="900" src={`https://admin.pigroup.tqdesign.vn/storage/${humanre[5].value}`} />
               </div>
               <div className="grid text-[13px]">
                 <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px]">{humanre[0].value}</h4>
