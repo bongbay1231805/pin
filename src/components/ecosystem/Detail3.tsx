@@ -38,18 +38,8 @@ export default function Detail3({ custom_fields }: any) {
       </div>
       <div className='mx-auto mt-[60px] sm:mt-[50px] sm:max-w-[85%] mb-[50px] sm:mb-[115px]'>
         <div className="grid grid-cols-1 px-[30px] sm:px-0 lg:grid-cols-[1fr_1fr]">
-          <div className='grid grid-cols-[50%_1fr] sm:grid-cols-[280px_1fr] gap-[20px]'>
-            <div className='grid gap-[20px]'>
-              <div className='relative  row-span-1 row-start-1 col-span-1 h-[186px] mt-[8px] sm:mt-[-3px] sm:h-[295px]'>
-                <Image fill src="/fecosystem/detail/management-2.png" alt="Smart City Features" className="object-fill rounded-[10px]" />
-              </div>
-              <div className='relative  row-span-1 row-start-2 col-span-1 h-[120px] sm:h-[186px]'>
-                <Image fill src="/fecosystem/detail/management-3.png" alt="Smart City Features" className="object-cover rounded-[10px]" />
-              </div>
-            </div>
-            <div className='relative h-[325px] sm:h-[500px] mt-[10px] pt-[20px] sm:pb-[5px]'>
-              <Image src="/fecosystem/detail/management-4.png" alt="Smart City Features" width={350} height={500} className="w-full h-full object-cover rounded-[10px]" />
-            </div>
+          <div className=''>
+              <Image src="/toi-uu-quy-trinh.webp" alt="Smart City Features" width={350} height={500} className="w-full h-full object-cover rounded-[10px]" />
           </div>
           <div className='grid content-center sm:pl-[140px] pr-[160px mt-[35px] sm:mt-0 sm:w-[415px] 2xl:w-[585px]'>
             <h3 className='text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold  xl:[&>br]:inline-block  mb-[30px] sm:mb-[40px]' dangerouslySetInnerHTML={{ __html: management_operation_title }}></h3>
