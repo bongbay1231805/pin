@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import ImagePopup from "@/components/ui/ImagePopup";
-import HorizontalImageScroller from "@/components/ui/HorizontalImageScroller";
+import EmblaCarouselCer from "@/components/ui/EmblaCarouselCer";
 
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
@@ -175,7 +175,7 @@ export default function Detail3({ custom_fields }: any) {
             </div>
 
             <div className='mb-[30px] sm:hidden'> 
-              <HorizontalImageScroller imageUrls={imageUrls} openPopup={openPopup} />
+              <EmblaCarouselCer imageUrls={imageUrls} openPopup={openPopup} />
             </div>
 
             <div className="hidden sm:block">
