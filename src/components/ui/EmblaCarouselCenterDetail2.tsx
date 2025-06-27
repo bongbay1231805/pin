@@ -57,7 +57,7 @@ const EmblaCarouselCenterDetail2: React.FC<EmblaCarouselCenterProps> = ({slides}
       className={`relative mx-auto max-w-[85%]`}
     >
       <Carousel
-        plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+        plugins={[Autoplay({ delay: 20000, stopOnInteraction: false, stopOnMouseEnter: true })]}
         opts={{
           align: 'center',
           loop: true,
@@ -79,11 +79,11 @@ const EmblaCarouselCenterDetail2: React.FC<EmblaCarouselCenterProps> = ({slides}
                   isSelected ? 'is-selected' : 'is-not-selected'
                 }`}
               >
-                <div className="relative w-full h-full flex items-center justify-center">
+                <div className="relative swap-item w-full h-full flex items-center justify-center">
                   <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center sliderstaff">
                     <Image
                       className={`rounded-[10px] overflow-hidden transition-all duration-300 ease-in-out cursor-pointer
-                        ${isSelected ? 'scale-100' : 'scale-75'} `}
+                        ${isSelected ? 'scale-120' : 'scale-80'} `}
                       src={imageUrl} // Sử dụng imageUrl
                       alt="event"
                       width={630}

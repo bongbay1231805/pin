@@ -349,6 +349,7 @@ figure.image > img {
       /* @apply basis-3/5 sm:basis-[37%]; */
       will-change: width, flex-basis; /* Thêm vào đây */
   }
+
   .sliderstaff {
     @apply px-[15px];
   }
