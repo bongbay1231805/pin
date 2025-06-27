@@ -107,7 +107,7 @@ export default function Detail1({custom_fields}: any) {
         </div>
         <Image
           fill
-          src="/fecosystem/detail/development.png"
+          src="/banner_dautuphattrienduan.jpg"
           alt="Smart City Features"
           className="object-cover"
         />

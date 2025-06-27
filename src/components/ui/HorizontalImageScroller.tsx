@@ -211,7 +211,7 @@ const HorizontalImageScroller: React.FC<HorizontalImageScrollerProps> = ({
       // Loại bỏ overflow-x-auto và scrollbar-hide khỏi đây,
       // vì chúng ta sẽ dùng transform để di chuyển nội dung
       // Thay vào đó, đặt overflow-hidden cho container bao bọc.
-      className="overflow-hidden cursor-grab select-none h-[310px] sm:h-[250px]"
+      className="overflow-hidden cursor-grab select-none h-[330px] sm:h-[250px]"
       onMouseDown={onMouseDown}
       onMouseLeave={onMouseLeave}
       onMouseUp={onMouseUp}
