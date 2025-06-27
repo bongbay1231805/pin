@@ -137,7 +137,7 @@ export default function Detail2({custom_fields}: any) {
         </div>
         <div>
           <h3
-            className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px] mt-[20%] sm:mt-[10%]"
+            className="text-yellow-1 text-[21px] sm:text-[28px] 2xl:text-[45px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px] mt-[20%] sm:mt-[10%]"
             dangerouslySetInnerHTML={{__html: real_estate_services_4}}
           ></h3>
           <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
