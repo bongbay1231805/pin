@@ -5,3 +5,4 @@ tsconfig.tsbuildinfo
 test-results
 .history
 /src/components/home/SmartCity-hover.tsx
+/src/components/ecosystem/Detail2 copy.tsx

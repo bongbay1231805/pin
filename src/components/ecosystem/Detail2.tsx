@@ -1,9 +1,12 @@
 'use client';
 import React, {useState, useEffect, useRef} from 'react';
-import EmblaCarouselCenterDetail2 from '@/components/ui/EmblaCarouselCenterDetail2';
+import EmblaCarouselCenter from '@/components/ui/EmblaCarouselCenter';
 import {EmblaOptionsType} from 'embla-carousel';
 import Image from 'next/image';
 import {useScrollReveal} from '@/hooks/useScrollReveal';
+import {useMediaQuery} from '@/hooks/useMediaQuery';
+import {ServicesDesktop} from './ServicesDesktop'; // Import component mới
+import {ServicesMobile} from './ServicesMobile'; // Import component mới
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
@@ -49,6 +52,394 @@ export default function Detail2({custom_fields}: any) {
     real_estate_services_slider
   } = custom_fields;
 
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+
+  const IconService1 = (
+    <svg
+      className="h-20 sm:h-28"
+      viewBox="0 0 113 112"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M24 31L61.73 10L101 31"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+      />
+      <path
+        d="M37 25V69H86V25"
+        stroke="#4C73A8"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+      />
+      <path
+        d="M70 69V56.5V52C70 47.5817 66.4183 44 62 44V44C57.5817 44 54 47.5817 54 52V56.5V69"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+      />
+      <path
+        d="M46 10L46 19"
+        stroke="#4C73A8"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+      />
+      <path
+        d="M46 9C43.7909 9 42 7.20914 42 5C42 2.79086 43.7909 1 46 1C48.2091 1 50 2.79086 50 5C50 7.20914 48.2091 9 46 9Z"
+        stroke="#4C73A8"
+        strokeWidth="2"
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+      />
+      <path
+        d="M6.87109 79.498V79.4971C7.50932 79.5644 8.09123 80.1103 8.58105 80.9844C8.99805 81.7286 9.28818 82.6089 9.45508 83.3184L9.51953 83.6113C10.6346 89.1582 11.8289 98.672 12.2012 104.807L12.2646 105.986V105.987C12.3066 106.861 12.2604 107.909 11.9971 108.825C11.7495 109.686 11.3309 110.367 10.6768 110.729L10.5469 110.795C10.3596 110.88 9.94222 110.995 9.36133 111.108C8.79661 111.219 8.12073 111.319 7.44824 111.392C6.77415 111.464 6.11397 111.506 5.57812 111.499C5.30978 111.496 5.08247 111.481 4.90527 111.454C4.71703 111.426 4.63332 111.391 4.61328 111.379C4.26386 111.165 4.11775 110.767 4.17188 110.384C4.22022 110.042 4.4046 109.813 4.6416 109.738L4.74609 109.716L10.0088 109.072L10.4209 109.022L10.4473 108.607C10.5113 107.575 10.5947 106.482 10.5635 105.395L10.543 104.93L10.542 104.929L10.4658 103.808C10.0763 98.436 9.22912 91.1673 8.27637 85.8857L8.07129 84.7861C7.96035 84.2021 7.77733 83.6369 7.60254 83.1055C7.42426 82.5635 7.25503 82.0584 7.14648 81.5498L7.06445 81.1631L6.66992 81.1543C5.78556 81.1328 4.72403 81.3513 3.7627 81.5381C2.75845 81.7332 1.86402 81.8928 1.1875 81.8301L1.14746 81.8262C0.852178 81.7835 0.598703 81.5131 0.520508 81.083C0.447208 80.6797 0.568776 80.3959 0.733398 80.2734L0.805664 80.2305L0.808594 80.2295C0.808589 80.2295 0.81559 80.2267 0.831055 80.2217C0.847333 80.2164 0.869245 80.2097 0.897461 80.2021C0.954631 80.1868 1.02936 80.1697 1.12109 80.1504C1.30442 80.1119 1.5416 80.0689 1.81836 80.0244C2.37118 79.9355 3.06522 79.841 3.7666 79.7568C4.46771 79.6727 5.1722 79.5996 5.74512 79.5518C6.3403 79.502 6.73995 79.4852 6.87109 79.498ZM99.1963 74.0967C101.794 72.6681 104.522 71.9452 107.72 73.0059V73.0068C108.408 73.2377 109.943 73.9852 111.108 74.9053C111.694 75.3678 112.14 75.8378 112.357 76.2676C112.463 76.4769 112.505 76.6576 112.5 76.8115C112.495 76.9588 112.446 77.1135 112.316 77.2803L112.308 77.291L73.6963 106.876C71.7412 107.722 70.1736 107.822 68.1738 107.623L67.2793 107.521V107.52L66.2256 107.381C60.9558 106.663 55.6298 105.587 50.2822 104.495C44.5846 103.332 38.8612 102.152 33.1885 101.381L33.126 101.372L33.0645 101.38L24.085 102.404L23.7139 102.447L23.6494 102.815C23.4209 104.12 22.4304 105.512 21.1924 106.015L20.9414 106.103C19.1811 106.625 17.8374 106.331 16.9043 105.669C15.9586 104.997 15.3754 103.906 15.2305 102.736C15.0856 101.567 15.3844 100.362 16.1445 99.4697C16.8485 98.6438 17.9884 98.0389 19.665 98.0146L20.0068 98.0176C20.7152 98.0397 21.3602 98.3853 21.9883 98.9072C22.6285 99.4392 23.169 100.078 23.7383 100.663L23.9092 100.839L24.1523 100.812L33.5596 99.7578L68.584 106.089L68.6221 106.096L68.6602 106.097C70.4111 106.143 72.2787 105.928 73.8691 104.947L73.8916 104.933L73.9131 104.916L109.825 77.0273L110.274 76.6777L109.87 76.2773C108.374 74.7917 106.797 74.1298 105.186 74.0596C103.592 73.9901 102.017 74.502 100.515 75.2607C99.012 76.0197 97.5423 77.0469 96.1572 78.0498C94.7584 79.0626 93.457 80.0419 92.2451 80.7529L91.8691 80.9727L92.0361 81.375C92.916 83.5029 91.85 85.398 90.1211 86.3359C88.4406 87.2476 86.266 87.1786 84.8438 85.5391L84.709 85.375L84.5605 85.1787C83.8502 84.1957 83.6199 83.2134 83.709 82.3291C83.8048 81.3789 84.2735 80.5009 84.9902 79.8262C86.4242 78.4764 88.8058 77.9789 90.9775 79.3711L91.249 79.5449L91.5195 79.3701C92.8173 78.5308 94.0942 77.5624 95.3564 76.6377C96.627 75.7069 97.8903 74.8148 99.1963 74.0967ZM20.6611 99.9199C20.1238 99.6407 19.4727 99.562 18.75 99.7422L18.4355 99.8359H18.4346C16.941 100.354 16.5807 101.899 16.9814 103.062C17.1859 103.656 17.5965 104.2 18.2021 104.515C18.7394 104.794 19.3905 104.873 20.1133 104.692L20.4277 104.6L20.4287 104.599C21.9225 104.081 22.2828 102.535 21.8818 101.372C21.6773 100.779 21.2668 100.235 20.6611 99.9199ZM31.042 79.1953C39.7262 74.8842 49.556 71.9175 57.5 78.6221L57.876 78.9482L57.8789 78.9502C58.0408 79.0926 58.3155 79.3953 58.665 79.8018C59.0082 80.2007 59.3961 80.6681 59.7822 81.126C60.1645 81.5792 60.5445 82.0232 60.8594 82.3604C61.0161 82.5281 61.1657 82.6788 61.2959 82.793C61.3606 82.8497 61.4293 82.9046 61.498 82.9502C61.5556 82.9883 61.6608 83.0534 61.792 83.0771L61.8457 83.0859L61.8994 83.084C64.161 83.0036 66.4893 82.63 68.7744 82.2637C70.7849 81.9414 72.762 81.6252 74.6748 81.501L75.4902 81.46C77.3496 81.3963 78.7719 81.983 79.7705 82.9014C80.775 83.8252 81.3793 85.1106 81.5469 86.4824C81.8812 89.2189 80.4766 92.2089 77.1865 93.2246L61.4609 95.1846L61.4502 95.1865L61.0762 95.2324L61.0176 95.6045C60.4412 99.2464 56.057 100.583 53.7002 97.8936L53.4785 97.6211L53.4775 97.6201L53.3281 97.4121C52.613 96.3732 52.4046 95.3382 52.5234 94.4092C52.6514 93.4099 53.1625 92.4967 53.9014 91.8096C55.3412 90.4706 57.5406 90.0588 59.2861 91.4268L59.4531 91.5645C59.5579 91.6551 59.6661 91.7894 59.79 91.9707C59.8507 92.0595 59.9103 92.153 59.9746 92.2529C60.0377 92.3509 60.1052 92.4558 60.1748 92.5576C60.4266 92.9262 60.8311 93.458 61.4932 93.502L61.54 93.5049L61.5869 93.499L76.7471 91.6455L76.8203 91.6367L76.8877 91.6074C79.1823 90.5979 80.2113 88.4664 79.9238 86.5654C79.7802 85.6153 79.306 84.7281 78.5059 84.0918C77.7546 83.4944 76.7438 83.1404 75.5078 83.1348L75.2578 83.1377C72.8595 83.2158 70.3667 83.6191 67.9062 84.0146C65.4913 84.4029 63.1053 84.7812 60.8027 84.8672C60.1795 84.4148 59.7098 83.8228 59.2227 83.1406C58.7142 82.4286 58.1738 81.6032 57.4355 80.8828H57.4365C53.4035 76.9406 48.8191 75.9506 44.1973 76.498C39.8911 77.0081 35.5442 78.8526 31.5518 80.8564L30.7578 81.2588H30.7568C30.214 81.538 29.5031 82.0351 28.8701 82.4639C28.5452 82.684 28.2354 82.8903 27.959 83.0576C27.7468 83.1861 27.5709 83.2812 27.4336 83.3418L27.3086 83.3916H27.3066C26.5821 83.639 25.6801 83.7242 24.6973 83.791C23.7439 83.8559 22.7068 83.9042 21.8223 84.1045L21.542 84.168L21.4561 84.4424C20.5564 87.3134 18.1388 88.213 16.1074 87.6973C15.0838 87.4374 14.1639 86.8185 13.5781 85.9072C12.9965 85.0022 12.7232 83.7758 13.0469 82.2559C13.3497 80.8481 14.4308 79.8634 15.7666 79.4502C17.0233 79.0615 18.4494 79.1989 19.5576 79.9307L19.7754 80.085C20.1152 80.3459 20.332 80.6722 20.5762 81.0684C20.8102 81.4481 21.0831 81.9196 21.5234 82.3018L21.7021 82.4561L21.9346 82.417C22.5713 82.3095 23.2989 82.2744 24.0723 82.2197C24.7309 82.1732 25.4207 82.1122 26.0449 81.9688L26.3076 81.9023L26.3135 81.9004C26.63 81.8082 27.0146 81.6173 27.4053 81.3984C27.8045 81.1748 28.246 80.9016 28.6855 80.624C29.4711 80.1281 30.2346 79.6292 30.8076 79.3174L31.041 79.1963L31.042 79.1953ZM58.3555 92.8066C57.7813 92.3316 57.0044 92.1325 56.1172 92.3779L55.9385 92.4336H55.9365C54.7503 92.839 54.1793 93.9888 54.1758 95.0361C54.1726 96.0243 54.6818 97.0754 55.8027 97.4092L56.0352 97.4658L56.0371 97.4668C57.1732 97.6844 58.0651 97.4478 58.6523 96.874C59.2257 96.3137 59.4211 95.5154 59.3525 94.7793C59.2839 94.0435 58.947 93.296 58.3555 92.8066ZM18.1572 81.1006C17.5854 80.8561 16.9129 80.8297 16.1846 81.0781L15.8701 81.2012C15.1881 81.5016 14.7899 82.0779 14.6318 82.707C14.4761 83.3269 14.5466 84.0115 14.7969 84.6045C15.0477 85.1987 15.4963 85.7393 16.1338 86.0225C16.7429 86.293 17.4665 86.3029 18.248 85.9824L18.4053 85.9131C19.8159 85.261 20.014 83.6385 19.5166 82.4941C19.2598 81.9035 18.801 81.3759 18.1572 81.1006ZM88.1211 80.1289C87.4384 80.1532 86.7805 80.4677 86.2871 80.9209C85.7939 81.3741 85.422 82.0056 85.3721 82.709C85.3239 83.3895 85.5822 84.0736 86.2012 84.6504L86.3291 84.7646H86.3301C87.4376 85.6952 88.8716 85.4172 89.7432 84.6309C90.185 84.2322 90.511 83.6839 90.5947 83.0518C90.6689 82.4916 90.5484 81.8977 90.1973 81.3242L90.0332 81.0801C89.5247 80.3905 88.8247 80.104 88.1211 80.1289Z"
+        fill="#4C73A8"
+        stroke="#4C73A8"
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+      />
+    </svg>
+  );
+  const IconService2 = (
+    <svg
+      className="h-20 sm:h-28"
+      viewBox="0 0 110 111"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M31.0234 15L55.5234 2L81.0234 15"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M39.5234 11V38.5H72.0234V11"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M96.5 13.5H103.023C104.523 13.3333 107.523 14 107.523 18V81.5C107.523 89.5 101.023 89 101.023 89H8.02294C6.02294 89.3333 2.02294 89 2.02294 85V18.5C1.85627 16.8333 2.52294 13.5 6.52294 13.5H15.5"
+        stroke="#4C73A8"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M2.52344 74H26.0234"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M38.5234 74H107.523"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M11.0234 73.5V23.5H39.0234M72.5234 23.5H98.0234V73.5"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M22.5234 109H84.5234"
+        stroke="#4C73A8"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M63.5234 89L71.5234 109"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M43.5234 89L35.5234 109"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M19.0234 50.5H44.0234"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M19.0234 58H44.0234"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M20 65H81"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M61.5234 39V30.5V27.5C61.5234 24.4624 59.061 22 56.0234 22V22C52.9859 22 50.5234 24.4624 50.5234 27.5V30.5V39"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="53.0234"
+        cy="80.5"
+        r="1.25"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M88.5234 40H84.5234V44H80.5234V49.5H86.5234V54H83.0234"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="21"
+        cy="13"
+        r="4"
+        stroke="#4C73A8"
+        strokeWidth="2"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="91"
+        cy="14"
+        r="4"
+        stroke="#4C73A8"
+        strokeWidth="2"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="86"
+        cy="65"
+        r="4"
+        stroke="#4C73A8"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+  const IconService3 = (
+    <svg
+      className="h-20 sm:h-28"
+      viewBox="0 0 114 114"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <mask id="path-1-inside-1_1_2377" fill="white">
+        <rect x="18" y="22" width="75" height="92" rx="3" />
+      </mask>
+      <rect
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        x="18"
+        y="22"
+        width="75"
+        height="92"
+        rx="3"
+        stroke="#4C73A8"
+        strokeWidth="8"
+        strokeLinejoin="round"
+        mask="url(#path-1-inside-1_1_2377)"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M33 23V15C33 13.3431 34.3431 12 36 12H99C100.657 12 102 13.3431 102 15V97C102 98.6569 100.657 100 99 100H91.5"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M43 13V5C43 3.34315 44.3431 2 46 2H109C110.657 2 112 3.34315 112 5V87C112 88.6569 110.657 90 109 90H101.5"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M26 42L42.66 31L60 42"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M31 39V62H55V39"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M47 62V55V52C47 49.7909 45.2091 48 43 48V48C40.7909 48 39 49.7909 39 52V55V62"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M65 37H82"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M65 44H82"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M65 51H82"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M65 58H82"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M29 80H43"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M67 87H81"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M54 80L81 80"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M29 87L56 87"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="31"
+        cy="97"
+        r="4"
+        stroke="#4C73A8"
+        strokeWidth="2"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="78"
+        cy="71"
+        r="4"
+        stroke="#4C73A8"
+        strokeWidth="2"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="7"
+        cy="101"
+        r="4"
+        stroke="#4C73A8"
+        strokeWidth="2"
+      />
+      <circle
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        cx="24"
+        cy="7"
+        r="4"
+        stroke="#4C73A8"
+        strokeWidth="2"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M29 71H73"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M36 97L81 97"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M2 42H11.5"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="group-hover:stroke-yellow-1 transition-colors duration-300"
+        d="M7 30.25C9.62335 30.25 11.75 32.3766 11.75 35V78.7041C11.75 79.3517 11.669 79.9964 11.5088 80.623L11.4355 80.8906L7.08301 95.6875C7.07218 95.7243 7.03836 95.75 7 95.75C6.97107 95.75 6.94455 95.7358 6.92871 95.7129L6.91699 95.6875L2.56445 80.8906C2.35564 80.1806 2.25002 79.4442 2.25 78.7041V35C2.25 32.3766 4.37665 30.25 7 30.25Z"
+        stroke="#4C73A8"
+        strokeWidth="2.5"
+      />
+    </svg>
+  );
+
   const real_estate_services_13 =
     'Ecoe Việt Nam là đối tác chiến lược phân phối các dự án: Picity High Park, Picity Sky Park, SkyZen, Prime Master. Hệ thống bán hàng đa kênh giúp tiếp cận chính xác tệp khách hàng, thiết lập chuẩn mực phục vụ chuyên nghiệp và bảo đảm tỷ lệ giao dịch thành công vượt trội.';
 
@@ -57,6 +448,26 @@ export default function Detail2({custom_fields}: any) {
 
   const real_estate_services_15 = `Ecoe Việt Nam cung cấp dịch vụ tư vấn, hỗ trợ pháp lý bao gồm: Soạn thảo hợp đồng mua bán; chuyển nhượng; cho thuê. Tư vấn, đại diện thực hiện thủ tục đăng ký đất đai, sang tên Giấy chứng nhận. Giải quyết tranh chấp và kiểm soát rủi ro pháp lý dự án.`;
 
+  const servicesData = [
+    {
+      id: 1,
+      icon: IconService1,
+      title: real_estate_services_5,
+      text: real_estate_services_13
+    },
+    {
+      id: 2,
+      icon: IconService2,
+      title: real_estate_services_6,
+      text: real_estate_services_14
+    },
+    {
+      id: 3,
+      icon: IconService3,
+      title: real_estate_services_7,
+      text: real_estate_services_15
+    }
+  ];
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
     try {
       const parsedData = JSON.parse(jsonString);
@@ -107,7 +518,7 @@ export default function Detail2({custom_fields}: any) {
       </div>
       <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]">
-          <div className="mt-[100px] sm:w-[85%] order-1 sm:order-0">
+          <div className="mt-[100px] sm:w-[83%] 2xl:sm:w-[100%] order-1 sm:order-0">
             <h3
               className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px]"
               dangerouslySetInnerHTML={{__html: real_estate_services_1}}
@@ -140,475 +551,25 @@ export default function Detail2({custom_fields}: any) {
             className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px] mt-[20%] sm:mt-[10%]"
             dangerouslySetInnerHTML={{__html: real_estate_services_4}}
           ></h3>
-          <div className="flex overflow-x-scroll md:overflow-x-visible  md:grid md:grid-cols-3">
-            <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[35px] group">
-              <svg
-                className="h-20 sm:h-28"
-                viewBox="0 0 113 112"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 31L61.73 10L101 31"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                />
-                <path
-                  d="M37 25V69H86V25"
-                  stroke="#4C73A8"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                />
-                <path
-                  d="M70 69V56.5V52C70 47.5817 66.4183 44 62 44V44C57.5817 44 54 47.5817 54 52V56.5V69"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                />
-                <path
-                  d="M46 10L46 19"
-                  stroke="#4C73A8"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                />
-                <path
-                  d="M46 9C43.7909 9 42 7.20914 42 5C42 2.79086 43.7909 1 46 1C48.2091 1 50 2.79086 50 5C50 7.20914 48.2091 9 46 9Z"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                />
-                <path
-                  d="M6.87109 79.498V79.4971C7.50932 79.5644 8.09123 80.1103 8.58105 80.9844C8.99805 81.7286 9.28818 82.6089 9.45508 83.3184L9.51953 83.6113C10.6346 89.1582 11.8289 98.672 12.2012 104.807L12.2646 105.986V105.987C12.3066 106.861 12.2604 107.909 11.9971 108.825C11.7495 109.686 11.3309 110.367 10.6768 110.729L10.5469 110.795C10.3596 110.88 9.94222 110.995 9.36133 111.108C8.79661 111.219 8.12073 111.319 7.44824 111.392C6.77415 111.464 6.11397 111.506 5.57812 111.499C5.30978 111.496 5.08247 111.481 4.90527 111.454C4.71703 111.426 4.63332 111.391 4.61328 111.379C4.26386 111.165 4.11775 110.767 4.17188 110.384C4.22022 110.042 4.4046 109.813 4.6416 109.738L4.74609 109.716L10.0088 109.072L10.4209 109.022L10.4473 108.607C10.5113 107.575 10.5947 106.482 10.5635 105.395L10.543 104.93L10.542 104.929L10.4658 103.808C10.0763 98.436 9.22912 91.1673 8.27637 85.8857L8.07129 84.7861C7.96035 84.2021 7.77733 83.6369 7.60254 83.1055C7.42426 82.5635 7.25503 82.0584 7.14648 81.5498L7.06445 81.1631L6.66992 81.1543C5.78556 81.1328 4.72403 81.3513 3.7627 81.5381C2.75845 81.7332 1.86402 81.8928 1.1875 81.8301L1.14746 81.8262C0.852178 81.7835 0.598703 81.5131 0.520508 81.083C0.447208 80.6797 0.568776 80.3959 0.733398 80.2734L0.805664 80.2305L0.808594 80.2295C0.808589 80.2295 0.81559 80.2267 0.831055 80.2217C0.847333 80.2164 0.869245 80.2097 0.897461 80.2021C0.954631 80.1868 1.02936 80.1697 1.12109 80.1504C1.30442 80.1119 1.5416 80.0689 1.81836 80.0244C2.37118 79.9355 3.06522 79.841 3.7666 79.7568C4.46771 79.6727 5.1722 79.5996 5.74512 79.5518C6.3403 79.502 6.73995 79.4852 6.87109 79.498ZM99.1963 74.0967C101.794 72.6681 104.522 71.9452 107.72 73.0059V73.0068C108.408 73.2377 109.943 73.9852 111.108 74.9053C111.694 75.3678 112.14 75.8378 112.357 76.2676C112.463 76.4769 112.505 76.6576 112.5 76.8115C112.495 76.9588 112.446 77.1135 112.316 77.2803L112.308 77.291L73.6963 106.876C71.7412 107.722 70.1736 107.822 68.1738 107.623L67.2793 107.521V107.52L66.2256 107.381C60.9558 106.663 55.6298 105.587 50.2822 104.495C44.5846 103.332 38.8612 102.152 33.1885 101.381L33.126 101.372L33.0645 101.38L24.085 102.404L23.7139 102.447L23.6494 102.815C23.4209 104.12 22.4304 105.512 21.1924 106.015L20.9414 106.103C19.1811 106.625 17.8374 106.331 16.9043 105.669C15.9586 104.997 15.3754 103.906 15.2305 102.736C15.0856 101.567 15.3844 100.362 16.1445 99.4697C16.8485 98.6438 17.9884 98.0389 19.665 98.0146L20.0068 98.0176C20.7152 98.0397 21.3602 98.3853 21.9883 98.9072C22.6285 99.4392 23.169 100.078 23.7383 100.663L23.9092 100.839L24.1523 100.812L33.5596 99.7578L68.584 106.089L68.6221 106.096L68.6602 106.097C70.4111 106.143 72.2787 105.928 73.8691 104.947L73.8916 104.933L73.9131 104.916L109.825 77.0273L110.274 76.6777L109.87 76.2773C108.374 74.7917 106.797 74.1298 105.186 74.0596C103.592 73.9901 102.017 74.502 100.515 75.2607C99.012 76.0197 97.5423 77.0469 96.1572 78.0498C94.7584 79.0626 93.457 80.0419 92.2451 80.7529L91.8691 80.9727L92.0361 81.375C92.916 83.5029 91.85 85.398 90.1211 86.3359C88.4406 87.2476 86.266 87.1786 84.8438 85.5391L84.709 85.375L84.5605 85.1787C83.8502 84.1957 83.6199 83.2134 83.709 82.3291C83.8048 81.3789 84.2735 80.5009 84.9902 79.8262C86.4242 78.4764 88.8058 77.9789 90.9775 79.3711L91.249 79.5449L91.5195 79.3701C92.8173 78.5308 94.0942 77.5624 95.3564 76.6377C96.627 75.7069 97.8903 74.8148 99.1963 74.0967ZM20.6611 99.9199C20.1238 99.6407 19.4727 99.562 18.75 99.7422L18.4355 99.8359H18.4346C16.941 100.354 16.5807 101.899 16.9814 103.062C17.1859 103.656 17.5965 104.2 18.2021 104.515C18.7394 104.794 19.3905 104.873 20.1133 104.692L20.4277 104.6L20.4287 104.599C21.9225 104.081 22.2828 102.535 21.8818 101.372C21.6773 100.779 21.2668 100.235 20.6611 99.9199ZM31.042 79.1953C39.7262 74.8842 49.556 71.9175 57.5 78.6221L57.876 78.9482L57.8789 78.9502C58.0408 79.0926 58.3155 79.3953 58.665 79.8018C59.0082 80.2007 59.3961 80.6681 59.7822 81.126C60.1645 81.5792 60.5445 82.0232 60.8594 82.3604C61.0161 82.5281 61.1657 82.6788 61.2959 82.793C61.3606 82.8497 61.4293 82.9046 61.498 82.9502C61.5556 82.9883 61.6608 83.0534 61.792 83.0771L61.8457 83.0859L61.8994 83.084C64.161 83.0036 66.4893 82.63 68.7744 82.2637C70.7849 81.9414 72.762 81.6252 74.6748 81.501L75.4902 81.46C77.3496 81.3963 78.7719 81.983 79.7705 82.9014C80.775 83.8252 81.3793 85.1106 81.5469 86.4824C81.8812 89.2189 80.4766 92.2089 77.1865 93.2246L61.4609 95.1846L61.4502 95.1865L61.0762 95.2324L61.0176 95.6045C60.4412 99.2464 56.057 100.583 53.7002 97.8936L53.4785 97.6211L53.4775 97.6201L53.3281 97.4121C52.613 96.3732 52.4046 95.3382 52.5234 94.4092C52.6514 93.4099 53.1625 92.4967 53.9014 91.8096C55.3412 90.4706 57.5406 90.0588 59.2861 91.4268L59.4531 91.5645C59.5579 91.6551 59.6661 91.7894 59.79 91.9707C59.8507 92.0595 59.9103 92.153 59.9746 92.2529C60.0377 92.3509 60.1052 92.4558 60.1748 92.5576C60.4266 92.9262 60.8311 93.458 61.4932 93.502L61.54 93.5049L61.5869 93.499L76.7471 91.6455L76.8203 91.6367L76.8877 91.6074C79.1823 90.5979 80.2113 88.4664 79.9238 86.5654C79.7802 85.6153 79.306 84.7281 78.5059 84.0918C77.7546 83.4944 76.7438 83.1404 75.5078 83.1348L75.2578 83.1377C72.8595 83.2158 70.3667 83.6191 67.9062 84.0146C65.4913 84.4029 63.1053 84.7812 60.8027 84.8672C60.1795 84.4148 59.7098 83.8228 59.2227 83.1406C58.7142 82.4286 58.1738 81.6032 57.4355 80.8828H57.4365C53.4035 76.9406 48.8191 75.9506 44.1973 76.498C39.8911 77.0081 35.5442 78.8526 31.5518 80.8564L30.7578 81.2588H30.7568C30.214 81.538 29.5031 82.0351 28.8701 82.4639C28.5452 82.684 28.2354 82.8903 27.959 83.0576C27.7468 83.1861 27.5709 83.2812 27.4336 83.3418L27.3086 83.3916H27.3066C26.5821 83.639 25.6801 83.7242 24.6973 83.791C23.7439 83.8559 22.7068 83.9042 21.8223 84.1045L21.542 84.168L21.4561 84.4424C20.5564 87.3134 18.1388 88.213 16.1074 87.6973C15.0838 87.4374 14.1639 86.8185 13.5781 85.9072C12.9965 85.0022 12.7232 83.7758 13.0469 82.2559C13.3497 80.8481 14.4308 79.8634 15.7666 79.4502C17.0233 79.0615 18.4494 79.1989 19.5576 79.9307L19.7754 80.085C20.1152 80.3459 20.332 80.6722 20.5762 81.0684C20.8102 81.4481 21.0831 81.9196 21.5234 82.3018L21.7021 82.4561L21.9346 82.417C22.5713 82.3095 23.2989 82.2744 24.0723 82.2197C24.7309 82.1732 25.4207 82.1122 26.0449 81.9688L26.3076 81.9023L26.3135 81.9004C26.63 81.8082 27.0146 81.6173 27.4053 81.3984C27.8045 81.1748 28.246 80.9016 28.6855 80.624C29.4711 80.1281 30.2346 79.6292 30.8076 79.3174L31.041 79.1963L31.042 79.1953ZM58.3555 92.8066C57.7813 92.3316 57.0044 92.1325 56.1172 92.3779L55.9385 92.4336H55.9365C54.7503 92.839 54.1793 93.9888 54.1758 95.0361C54.1726 96.0243 54.6818 97.0754 55.8027 97.4092L56.0352 97.4658L56.0371 97.4668C57.1732 97.6844 58.0651 97.4478 58.6523 96.874C59.2257 96.3137 59.4211 95.5154 59.3525 94.7793C59.2839 94.0435 58.947 93.296 58.3555 92.8066ZM18.1572 81.1006C17.5854 80.8561 16.9129 80.8297 16.1846 81.0781L15.8701 81.2012C15.1881 81.5016 14.7899 82.0779 14.6318 82.707C14.4761 83.3269 14.5466 84.0115 14.7969 84.6045C15.0477 85.1987 15.4963 85.7393 16.1338 86.0225C16.7429 86.293 17.4665 86.3029 18.248 85.9824L18.4053 85.9131C19.8159 85.261 20.014 83.6385 19.5166 82.4941C19.2598 81.9035 18.801 81.3759 18.1572 81.1006ZM88.1211 80.1289C87.4384 80.1532 86.7805 80.4677 86.2871 80.9209C85.7939 81.3741 85.422 82.0056 85.3721 82.709C85.3239 83.3895 85.5822 84.0736 86.2012 84.6504L86.3291 84.7646H86.3301C87.4376 85.6952 88.8716 85.4172 89.7432 84.6309C90.185 84.2322 90.511 83.6839 90.5947 83.0518C90.6689 82.4916 90.5484 81.8977 90.1973 81.3242L90.0332 81.0801C89.5247 80.3905 88.8247 80.104 88.1211 80.1289Z"
-                  fill="#4C73A8"
-                  stroke="#4C73A8"
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                />
-              </svg>
-              <h4 className="text-yellow-1 uppercase font-bold text-[18px] 2xl:text-[22px]">
-                {real_estate_services_5}
-              </h4>
-              {/* --- LỚP POPUP HIỆN RA KHI HOVER --- */}
-              <div className=" hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                <div className="absolute inset-0 bg-[#fff] transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"></div>
-                <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
-                  <h3 className="text-[18px] 2xl:text-[22px] font-bold text-yellow-1 uppercase mb-4 transform transition-all duration-500 ease-out delay-150 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
-                    {real_estate_services_5}
-                  </h3>
-                  <p className="text-gray-5 text-[13px] 2xl:text-[17px] text-justify transform transition-all duration-500 ease-out delay-200 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
-                    {real_estate_services_13}{' '}
-                    {/* Thay bằng text mô tả tương ứng */}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex 
-            flex-col justify-center items-center gap-[35px]
-            after:content-['']
-            after:bg-[url('/fecosystem/detail/operation-5.svg')]
-            after:absolute
-            after:left-0
-            after:w-[22px]
-            after:h-[100%]
-            after:bg-center
-            before:content-['']
-            before:bg-[url('/fecosystem/detail/operation-5.svg')]
-            before:absolute
-            before:right-0
-            before:w-[22px]
-            before:h-[100%]
-            before:bg-center
-            group
-            "
-            >
-              <svg
-                className="h-20 sm:h-28"
-                viewBox="0 0 110 111"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M31.0234 15L55.5234 2L81.0234 15"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M39.5234 11V38.5H72.0234V11"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M96.5 13.5H103.023C104.523 13.3333 107.523 14 107.523 18V81.5C107.523 89.5 101.023 89 101.023 89H8.02294C6.02294 89.3333 2.02294 89 2.02294 85V18.5C1.85627 16.8333 2.52294 13.5 6.52294 13.5H15.5"
-                  stroke="#4C73A8"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M2.52344 74H26.0234"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M38.5234 74H107.523"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M11.0234 73.5V23.5H39.0234M72.5234 23.5H98.0234V73.5"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M22.5234 109H84.5234"
-                  stroke="#4C73A8"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M63.5234 89L71.5234 109"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M43.5234 89L35.5234 109"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M19.0234 50.5H44.0234"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M19.0234 58H44.0234"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M20 65H81"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M61.5234 39V30.5V27.5C61.5234 24.4624 59.061 22 56.0234 22V22C52.9859 22 50.5234 24.4624 50.5234 27.5V30.5V39"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="53.0234"
-                  cy="80.5"
-                  r="1.25"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M88.5234 40H84.5234V44H80.5234V49.5H86.5234V54H83.0234"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="21"
-                  cy="13"
-                  r="4"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="91"
-                  cy="14"
-                  r="4"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="86"
-                  cy="65"
-                  r="4"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                />
-              </svg>
-              <h4 className="text-yellow-1 uppercase font-bold text-[18px] 2xl:text-[24px]">
-                {real_estate_services_6}
-              </h4>
-              {/* --- LỚP POPUP HIỆN RA KHI HOVER --- */}
-              <div className="hidden md:block absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                <div className="absolute inset-0 bg-[#fff] transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"></div>
-                <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
-                  <h3 className="text-[18px] 2xl:text-[22px] font-bold text-yellow-1 uppercase mb-4 transform transition-all duration-500 ease-out delay-150 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
-                    {real_estate_services_6}
-                  </h3>
-                  <p className="text-gray-5 text-[13px] 2xl:text-[17px] text-justify transform transition-all duration-500 ease-out delay-200 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
-                    {real_estate_services_14}{' '}
-                    {/* Thay bằng text mô tả tương ứng */}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="grow-1 relative flex-shrink-0 w-[95%] md:w-auto flex  flex-col justify-center items-center gap-[35px] group">
-              <svg
-                className="h-20 sm:h-28"
-                viewBox="0 0 114 114"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <mask id="path-1-inside-1_1_2377" fill="white">
-                  <rect x="18" y="22" width="75" height="92" rx="3" />
-                </mask>
-                <rect
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  x="18"
-                  y="22"
-                  width="75"
-                  height="92"
-                  rx="3"
-                  stroke="#4C73A8"
-                  strokeWidth="8"
-                  strokeLinejoin="round"
-                  mask="url(#path-1-inside-1_1_2377)"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M33 23V15C33 13.3431 34.3431 12 36 12H99C100.657 12 102 13.3431 102 15V97C102 98.6569 100.657 100 99 100H91.5"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M43 13V5C43 3.34315 44.3431 2 46 2H109C110.657 2 112 3.34315 112 5V87C112 88.6569 110.657 90 109 90H101.5"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M26 42L42.66 31L60 42"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M31 39V62H55V39"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M47 62V55V52C47 49.7909 45.2091 48 43 48V48C40.7909 48 39 49.7909 39 52V55V62"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M65 37H82"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M65 44H82"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M65 51H82"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M65 58H82"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M29 80H43"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M67 87H81"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M54 80L81 80"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M29 87L56 87"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="31"
-                  cy="97"
-                  r="4"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="78"
-                  cy="71"
-                  r="4"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="7"
-                  cy="101"
-                  r="4"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                />
-                <circle
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  cx="24"
-                  cy="7"
-                  r="4"
-                  stroke="#4C73A8"
-                  strokeWidth="2"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M29 71H73"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M36 97L81 97"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M2 42H11.5"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  className="group-hover:stroke-yellow-1 transition-colors duration-300"
-                  d="M7 30.25C9.62335 30.25 11.75 32.3766 11.75 35V78.7041C11.75 79.3517 11.669 79.9964 11.5088 80.623L11.4355 80.8906L7.08301 95.6875C7.07218 95.7243 7.03836 95.75 7 95.75C6.97107 95.75 6.94455 95.7358 6.92871 95.7129L6.91699 95.6875L2.56445 80.8906C2.35564 80.1806 2.25002 79.4442 2.25 78.7041V35C2.25 32.3766 4.37665 30.25 7 30.25Z"
-                  stroke="#4C73A8"
-                  strokeWidth="2.5"
-                />
-              </svg>
-              <h4 className="text-yellow-1 uppercase font-bold text-[18px] 2xl:text-[24px]">
-                {real_estate_services_7}
-              </h4>
-              {/* --- LỚP POPUP HIỆN RA KHI HOVER --- */}
-              <div className="hidden md:block absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
-                <div className="absolute inset-0 bg-[#fff] transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"></div>
-                <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
-                  <h3 className="text-[18px] 2xl:text-[22px] font-bold text-yellow-1 uppercase mb-4 transform transition-all duration-500 ease-out delay-150 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
-                    {real_estate_services_7}
-                  </h3>
-                  <p className="text-gray-5 text-[13px] 2xl:text-[17px] text-justify transform transition-all duration-500 ease-out delay-200 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">
-                    {real_estate_services_15}{' '}
-                    {/* Thay bằng text mô tả tương ứng */}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {isDesktop ? (
+            <ServicesDesktop servicesData={servicesData} />
+          ) : (
+            <ServicesMobile servicesData={servicesData} />
+          )}
         </div>
       </div>
-      <div className="relative">
+      <div className="2xl:mb-[120px] relative">
         <div className="flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center sm:h-[100vh] h-[60vh]">
           <div className="max-w-[85%]" style={{marginLeft: '8%'}}>
             <div className="grid items-start">
               <h3
-                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase mb-[30px] sm:mb-[60px] mt-[0px] sm:mt-8"
+                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase mb-[60px] mt-8"
                 dangerouslySetInnerHTML={{__html: real_estate_services_8}}
               ></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                    className="2xl:w-[auto] h-[80px]"
+                    className="2xl:w-[auto] 2xl:h-[auto]"
                     width="99"
                     height="91"
                     viewBox="0 0 99 91"
@@ -672,13 +633,13 @@ export default function Detail2({custom_fields}: any) {
                       strokeWidth="2.5"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_9}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                    className="2xl:w-[auto] h-[80px]"
+                    className="2xl:w-[auto] 2xl:h-[auto]"
                     width="70"
                     height="70"
                     viewBox="0 0 97 87"
@@ -812,13 +773,13 @@ export default function Detail2({custom_fields}: any) {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_10}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                    className="2xl:w-[auto] h-[80px]"
+                    className="2xl:w-[auto] 2xl:h-[auto]"
                     width="70"
                     height="90"
                     viewBox="0 0 70 90"
@@ -938,13 +899,14 @@ export default function Detail2({custom_fields}: any) {
                       stroke="white"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_11}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[220px] 2xl:w-[260px] 2xl:h-[220px] rounded-[10px] gap-[20px] justify-center p-4 px-[8px] sm:px-[0px] text-center h-[120px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                    className="2xl:w-[auto] h-[80px]"
+                    width="100"
+                    height="105"
                     viewBox="0 0 105 105"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -996,7 +958,7 @@ export default function Detail2({custom_fields}: any) {
                       strokeWidth="2"
                     />
                   </svg>
-                  <h4 className="text-white uppercase text-[10px] sm:text-[12px] 2xl:text-[16px] font-semibold">
+                  <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_12}
                   </h4>
                 </div>
@@ -1005,8 +967,8 @@ export default function Detail2({custom_fields}: any) {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-16 sliderreal my-[50px] sm:my[100px]">
-        <EmblaCarouselCenterDetail2 slides={sliders} />
+      <div className="mx-auto my-16 sliderreal">
+        <EmblaCarouselCenter slides={sliders} />
       </div>
     </>
   );
