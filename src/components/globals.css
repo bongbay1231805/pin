@@ -174,19 +174,19 @@ figure.image > img {
   } */
   @keyframes energy-circle {
     0% {
-        opacity: 0; /* Bắt đầu hoàn toàn trong suốt (chuẩn bị fade in) */
+      opacity: 0; /* Bắt đầu hoàn toàn trong suốt (chuẩn bị fade in) */
     }
     25% {
-        opacity: 0.5; /* Nhanh chóng đạt đến mức đầy đủ (kết thúc fade in) */
+      opacity: 0.5; /* Nhanh chóng đạt đến mức đầy đủ (kết thúc fade in) */
     }
     50% {
       opacity: 1; /* Nhanh chóng đạt đến mức đầy đủ (kết thúc fade in) */
     }
     75% {
-        opacity: 0.5; /* Giữ ở mức đầy đủ trong một khoảng thời gian */
+      opacity: 0.5; /* Giữ ở mức đầy đủ trong một khoảng thời gian */
     }
     100% {
-        opacity: 0; /* Chậm rãi mờ đi (kết thúc fade out) */
+      opacity: 0; /* Chậm rãi mờ đi (kết thúc fade out) */
     }
   }
   @keyframes half-circle {
@@ -342,12 +342,12 @@ figure.image > img {
     border: 1px solid var(--color-yellow-1);
   }
   .sliderswrap {
-      @apply basis-3/5 sm:basis-[33%];
-      will-change: width, flex-basis; /* Thêm vào đây */
+    @apply basis-3/5 sm:basis-[33%];
+    will-change: width, flex-basis; /* Thêm vào đây */
   }
   .center.sliderswrap {
-      /* @apply basis-3/5 sm:basis-[37%]; */
-      will-change: width, flex-basis; /* Thêm vào đây */
+    /* @apply basis-3/5 sm:basis-[37%]; */
+    will-change: width, flex-basis; /* Thêm vào đây */
   }
 
   .sliderstaff {
