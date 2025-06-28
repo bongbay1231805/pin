@@ -24,7 +24,7 @@
   position: relative;
   img {
     width: 100%;
-    height: 100%;
+    height: 300;
     object-fit: cover;
     transition-duration: 200ms;
   }
@@ -49,8 +49,14 @@
 }
 @media (max-width: 768px) {
   .news-item {
+    img {
+      height: 240;
+    }
+    .news-item {
+      margin-bottom: 50px;
+    }
     &:nth-child(even) {
-      padding-top: 0;
+      top: 0;
     }
   }
 }

@@ -1,66 +1,92 @@
+// components/news/Related.tsx
 'use client';
-import Image from "next/image"
+
+import Image from "next/image";
 import Link from "next/link";
+import { useState, useMemo } from 'react';
+
 const mainImage = "/fnews/news-1.png";
-const services = [
-  {
-    title: 'Tập đoàn Pi Group chuẩn bị triển khai dự án căn hộ Picity Sky Park - Bình Dương',
-    img: '/fnews/post-1.png'
-  },
-  {
-    title: 'Khởi công dòng sản phẩm căn Picity cửa ngõ TP Thủ Đức',
-    img: '/fnews/post-2.png'
-  },
-  {
-    title: 'Khởi công dòng sản phẩm căn Picity cửa ngõ TP Thủ Đức',
-    img: '/fnews/post-1.png'
-  },
-  {
-    title: 'Picity High Park được quy hoạch như một thành phố đa chức năng thu nhỏ với 5 tòa căn hộ cao tầng, ',
-    img: '/fnews/post-1.png'
-  },
-  {
-    title: 'Picity High Park được quy hoạch như một thành phố đa chức năng thu nhỏ với 5 tòa căn hộ cao tầng, ',
-    img: '/fnews/post-2.png'
-  },
-  {
-    title: 'Tập đoàn Pi Group chuẩn bị triển khai dự án căn hộ Picity Sky Park - Bình Dương',
-    img: '/fnews/post-1.png'
-  }
-];
-export default function Related({ post }: any) {
-  if (!Object.keys(post).length) {
+
+interface PostItem {
+  id?: number;
+  name: string;
+  slug: string;
+  image?: string;
+  is_featured?: boolean;
+}
+
+export default function Related({ post }: { post: PostItem[] }) {
+  const ITEMS_PER_PAGE = 2;
+  
+  const [currentPage, setCurrentPage] = useState(1);
+
+  if (!Array.isArray(post) || post.length === 0) {
     return <div className="text-center mt-20">Không tìm thấy bài viết liên quan</div>;
   }
+
+  const totalPages = Math.ceil(post.length / ITEMS_PER_PAGE);
+
+  const currentPosts = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    return post.slice(startIndex, endIndex);
+  }, [post, currentPage, ITEMS_PER_PAGE]);
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+      // Xóa hoặc comment dòng này để không cuộn lên đầu trang
+      // window.scrollTo({ top: 0, behavior: 'smooth' }); 
+    }
+  };
+
   return (
-    <div className="grid md:grid-cols-2 gap-x-[168px] 2xl:gap-x-[268px] gap-y-[33px]">
-      {post.map((item: any, index: number) => (
-        <Link key={index} href={`https://pigroup.tqdesign.vn/posts/${item.slug}`}>
-          <div
-            className="grid grid-cols-[45%_1fr] overflow-hidden  pb-[33px] gap-y-[33px] gap-x-[20px] sm:gap-x-[40px] 2xl:gap-x-[46px] sm:flex items-center border-b-1 border-b-gray-8"
-          >{
-              item.is_featured ? (
-                <Image
-                  src={`https://admin.pigroup.tqdesign.vn/storage/${item.image}`}
-                  alt={item.name}
-                  width={250}
-                  height={150}
-                  className="min-h-[150px] max-x-[250px] rounded-xl"
-                />
-              ) : (
-                <Image
-                  src={mainImage}
-                  alt={item.name}
-                  width={250}
-                  height={150}
-                  className="min-h-[150px] rounded-xl"
-                />
-              )
-            }
-            <h3 className="text-[14px] 2xl:text-[17px] font-semibold text-gray-5">{item.name}</h3>
-          </div>
-        </Link>
-      ))}
-    </div>
-  )
+    <>
+      <div className="grid md:grid-cols-2 gap-x-[168px] 2xl:gap-x-[268px] gap-y-[33px]">
+        {currentPosts.map((item: PostItem, index: number) => (
+          <Link key={item.slug || index} href={`/posts/${item.slug}`}>
+            <div
+              className="grid grid-cols-[45%_1fr] overflow-hidden pb-[33px] gap-y-[33px] gap-x-[20px] sm:gap-x-[40px] 2xl:gap-x-[46px] sm:flex items-center border-b-1 border-b-gray-8"
+            >
+              {
+                item.is_featured ? (
+                  <Image
+                    src={`https://admin.pigroup.tqdesign.vn/storage/${item.image}`}
+                    alt={item.name}
+                    width={250}
+                    height={150}
+                    className="min-h-[150px] max-x-[250px] rounded-xl object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={mainImage}
+                    alt={item.name}
+                    width={250}
+                    height={150}
+                    className="min-h-[150px] rounded-xl object-cover"
+                  />
+                )
+              }
+              <h3 className="text-[14px] 2xl:text-[17px] font-semibold text-gray-5">{item.name}</h3>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="flex justify-center items-center space-x-2 mt-[25px] mb-[75px]">
+        {totalPages > 1 && Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+          <button
+            key={pageNumber}
+            onClick={() => handlePageChange(pageNumber)}
+            className={`w-[25px] h-[25px] text-center rounded-full ${currentPage === pageNumber
+              ? 'bg-yellow-1 text-white'
+              : 'text-yellow-1 bg-white border border-yellow-1 hover:bg-yellow-1 hover:text-white'
+            }`}
+          >
+            {pageNumber}
+          </button>
+        ))}
+      </div>
+    </>
+  );
 }
