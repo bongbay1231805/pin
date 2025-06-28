@@ -5,14 +5,12 @@ import {RegistrationForm} from '@/components/news/RegistrationForm';
 import {Metadata} from 'next';
 import CategorySetter from './CategorySetter';
 
-interface Params {
-  params: {
-    slug: string;
-  };
-}
-
-// Sửa hàm metadata
-export async function generateMetadata({params}: Params): Promise<Metadata> {
+// ✅ Không dùng interface riêng, khai báo inline
+export async function generateMetadata({
+  params
+}: {
+  params: {slug: string};
+}): Promise<Metadata> {
   const {slug} = params;
   const res = await fetch(
     `https://admin.pigroup.tqdesign.vn/api/posts/${slug}`,
@@ -20,6 +18,7 @@ export async function generateMetadata({params}: Params): Promise<Metadata> {
       cache: 'no-store'
     }
   );
+
   const {data: post} = await res.json();
 
   if (!post) {
@@ -58,8 +57,7 @@ async function getPostBySlug(slug: string) {
   return json.data;
 }
 
-// Sửa kiểu Props trong Page component
-export default async function DetailPost({params}: Params) {
+export default async function DetailPost({params}: {params: {slug: string}}) {
   const {slug} = params;
   const post = await getPostBySlug(slug);
 
@@ -69,9 +67,7 @@ export default async function DetailPost({params}: Params) {
 
   const related = await fetch(
     `https://admin.pigroup.tqdesign.vn/api/posts/${slug}/related`,
-    {
-      cache: 'no-store'
-    }
+    {cache: 'no-store'}
   );
   const {data} = await related.json();
 
@@ -85,8 +81,8 @@ export default async function DetailPost({params}: Params) {
   return (
     <div>
       <CategorySetter categorySlug={firstCategorySlug} />
-
       <Hero post={post} />
+
       <div className="m-auto w-full sm:max-w-[70%] px-[30px] sm:px-0">
         <ContentBidding post={post} />
       </div>
@@ -100,7 +96,7 @@ export default async function DetailPost({params}: Params) {
         </div>
       )}
 
-      <div className=" m-auto w-full sm:max-w-[85%] px-[30px] mb-[80px]">
+      <div className="m-auto w-full sm:max-w-[85%] px-[30px] mb-[80px]">
         <h2 className="text-yellow-1 uppercase text-left sm:text-center text-[22px] 2xl:text-[45px] font-bold my-[30px] sm:mb-[45px] sm:mt-[90px]">
           Tin liên quan
         </h2>
