@@ -1444,10 +1444,10 @@ export default function Part({custom_fields}: any) {
         className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mt-[-8rem] md:mt-[-60px] mb-[30px] uppercase text-center"
         dangerouslySetInnerHTML={{__html: digitalcity_8}}
       ></h3>
-      <div className="mx-auto mb-[100px] md:mb-[30px] sliderreal">
+      <div className="mx-auto mb-[50px] sm:mb-[30px] sliderreal">
         <EmblaCarouselCenter slides={digitalcityslideruni} />
       </div>
-      <div ref={fiveRef} className="relative mx-auto pb-[80px]">
+      <div ref={fiveRef} className="relative mx-auto sm:pb-[80px] pb-[50px]">
         <div className="relative z-1 sm:mt-[80px]">
           <h3
             className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center"
@@ -1542,14 +1542,14 @@ export default function Part({custom_fields}: any) {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto  max-w-[85%] mb-[90px] sm:mb-[50px]">
-        <div className="md:grid mt-[30px]">
+      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[50px] sm:mb-[50px]">
+        <div className="md:grid mt-[30px] sm:mt-[30px]">
           <div>
             <h3
-              className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[20px]"
+              className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[30px]"
               dangerouslySetInnerHTML={{__html: digitalcity_16}}
             ></h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[0px] sm:gap-[16px]">
               <div className="grid grid-cols-1">
                 {firstConnect.map((digitalcity: any, index: number) => {
                   return (
@@ -1558,7 +1558,7 @@ export default function Part({custom_fields}: any) {
                       className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full"
                     >
                       <div
-                        className="relative w-[68px] h-[52px] flex items-center justify-center bg-white"
+                        className="values relative w-[68px] h-[52px] flex items-center justify-center bg-white"
                         dangerouslySetInnerHTML={{__html: digitalcity[0].value}}
                       ></div>
                       <div>
@@ -1584,7 +1584,7 @@ export default function Part({custom_fields}: any) {
                       className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full"
                     >
                       <div
-                        className="relative w-[68px] h-[52px] flex items-center justify-center bg-white"
+                        className="values relative w-[68px] h-[52px] flex items-center justify-center bg-white"
                         dangerouslySetInnerHTML={{__html: digitalcity[0].value}}
                       ></div>
                       <div>
@@ -1610,7 +1610,7 @@ export default function Part({custom_fields}: any) {
                       className="border-b-[1px] border-gray-8 flex items-center h-[105px] gap-[45px] md:w-[80%] w-full"
                     >
                       <div
-                        className="relative w-[68px] h-[52px] flex items-center justify-center bg-white"
+                        className="values relative w-[68px] h-[52px] flex items-center justify-center bg-white"
                         dangerouslySetInnerHTML={{__html: digitalcity[0].value}}
                       ></div>
                       <div>

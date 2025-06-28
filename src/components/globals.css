@@ -560,6 +560,9 @@ figure.image > figcaption > span {
   padding-right: 35px; /* Đảm bảo có đủ không gian cho mũi tên mới */
 }
 
+.values svg{
+  height: 80px;
+}
 /* ======================================================= */
 /* === ĐỊNH NGHĨA CHUNG === */
 /* ======================================================= */
