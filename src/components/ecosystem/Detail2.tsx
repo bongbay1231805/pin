@@ -56,7 +56,7 @@ export default function Detail2({custom_fields}: any) {
 
   const IconService1 = (
     <svg
-      className="h-20 sm:h-28"
+      className="sm:h-28 w-[80px] h-[81px]"
       viewBox="0 0 113 112"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ export default function Detail2({custom_fields}: any) {
   );
   const IconService2 = (
     <svg
-      className="h-20 sm:h-28"
+      className="w-[80px] h-[81px] sm:h-28"
       viewBox="0 0 110 111"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +256,7 @@ export default function Detail2({custom_fields}: any) {
   );
   const IconService3 = (
     <svg
-      className="h-20 sm:h-28"
+      className="w-[80px] h-[81px] sm:h-28"
       viewBox="0 0 114 114"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -511,14 +511,14 @@ export default function Detail2({custom_fields}: any) {
         </div>
         <Image
           fill
-          src="/fecosystem/detail/operation.png"
+          src="/banner_dvbds.jpg"
           alt="Smart City Features"
           className="object-cover"
         ></Image>
       </div>
       <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]">
-          <div className="mt-[100px] sm:w-[83%] 2xl:sm:w-[100%] order-1 sm:order-0">
+          <div className="mt-[100px] sm:w-[85%] 2xl:w-[85%] order-1 sm:order-0">
             <h3
               className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px]"
               dangerouslySetInnerHTML={{__html: real_estate_services_1}}
@@ -559,17 +559,17 @@ export default function Detail2({custom_fields}: any) {
         </div>
       </div>
       <div className="2xl:mb-[120px] relative">
-        <div className="flex items-center bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center sm:h-[100vh] h-[60vh]">
+        <div className="flex bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center sm:h-[100vh] h-[75vh]">
           <div className="max-w-[85%]" style={{marginLeft: '8%'}}>
             <div className="grid items-start">
               <h3
-                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase mb-[60px] mt-8"
+                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase sm:mb-[60px] mb-[50px] mt-[50px] sm:mt-[60px]"
                 dangerouslySetInnerHTML={{__html: real_estate_services_8}}
               ></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                    className="2xl:w-[auto] 2xl:h-[auto]"
+                    className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="99"
                     height="91"
                     viewBox="0 0 99 91"
@@ -639,7 +639,7 @@ export default function Detail2({custom_fields}: any) {
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                    className="2xl:w-[auto] 2xl:h-[auto]"
+                    className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="70"
                     height="70"
                     viewBox="0 0 97 87"
@@ -779,7 +779,7 @@ export default function Detail2({custom_fields}: any) {
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                    className="2xl:w-[auto] 2xl:h-[auto]"
+                    className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="70"
                     height="90"
                     viewBox="0 0 70 90"
@@ -905,6 +905,7 @@ export default function Detail2({custom_fields}: any) {
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
+                  className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="100"
                     height="105"
                     viewBox="0 0 105 105"

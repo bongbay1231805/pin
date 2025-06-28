@@ -2,23 +2,64 @@ import React from "react";
 import { MessageForm } from "@/components/contact/MessageForm";
 import Image from "next/image";
 import { Metadata } from 'next';
+
 export const metadata: Metadata = {
   title: 'Liên hệ',
   description: 'Liên hệ',
 };
+
 export default async function Contact() {
   const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/contact', {
     cache: 'no-store',
   });
-  const {data} = await res.json();
+  const { data } = await res.json();
   const { custom_fields } = data;
-  const {field_contact_1,field_contact_3,field_contact_5,field_contact_7} = custom_fields;
+  const { field_contact_1, field_contact_3, field_contact_5, field_contact_7 } = custom_fields;
+
   return (
-    <div className="relative h-[calc(100vh)] after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:w-full after:h-[100%] after:bg-[linear-gradient(180deg,_#CDEBFE_0%,_#FFFFFF_100%)] after:opacity-60 after:pointer-events-none">
-      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 h-full">
-        <div className="grid h-full items-end">
-          <div className="max-w-[300px] sm:max-w-[100%]">
-            <h2 className="text-[22px] 2xl:text-[28px] mt-[126px] 2xl:mt-[156px] font-bold mb-4 text-blue-1 uppercase">{field_contact_1}</h2>
+    // Điều chỉnh lớp after: để nó chỉ áp dụng cho phần nội dung hoặc chỉ trên desktop
+    // Loại bỏ after:opacity-60 khỏi div cha nếu bạn muốn hình ảnh không bị mờ
+    // hoặc điều chỉnh để nó chỉ là lớp phủ cho phần nội dung bên dưới banner.
+    // Ví dụ: chỉ áp dụng opacity trên md, hoặc di chuyển after: vào div nội dung chính
+    <div className="relative"> 
+      
+      {/* Background gradient overlay:
+        - On mobile: we might not want this overlay on the banner image, 
+          so we can make it hidden or apply it only to content below.
+        - On desktop: it acts as a background gradient.
+        Let's try to apply it only to the content area or conditionally.
+        For simplicity, let's remove it from the main wrapper and assume it's part of the content background.
+        Or, make it apply *only* on md and up.
+      */}
+      <div className="absolute inset-x-0 bottom-0 w-full h-full 
+                      hidden md:block 
+                      md:bg-[linear-gradient(180deg,_#CDEBFE_0%,_#FFFFFF_100%)] md:opacity-60 md:pointer-events-none">
+      </div>
+
+
+      {/* Mobile Banner Image - ensure it's on top of other elements on mobile */}
+      <div className="relative h-[200px] w-full overflow-hidden mt-[70px] md:hidden z-20"> {/* Tăng z-index lên 20 */}
+        <Image
+          src="/fcontact/contact-1.png"
+          alt="Modern city skyline"
+          fill
+          className="object-cover object-center" 
+        />
+        {/* Optional overlay for text readability on banner, if needed */}
+        {/* <div className="absolute inset-0 bg-black opacity-20"></div> */}
+      </div>
+
+      {/* Main Content Container - Relative Z-index for its content to be above image */}
+      {/* On desktop, this div will contain the gradient background */}
+      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 h-full"> {/* Giữ z-index 10 cho nội dung */}
+        {/* The gradient overlay if you want it only for the content on mobile
+            You can add it here if you want it to cover the content area, not the banner.
+            For now, I've moved the main gradient overlay outside and made it desktop-only.
+        */}
+
+        <div className="grid h-full items-end md:items-start">
+          <div className="max-w-[300px] sm:max-w-[100%] pt-[50px] md:pt-[126px] 2xl:pt-[156px]">
+            <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px]  font-bold mb-4 text-blue-1 uppercase">{field_contact_1}</h2>
             <div className="space-y-6">
               <div className="grid grid-cols-1 gap-y-1">
                 <div className="flex text-blue-1 text-[15px] 2xl:text-[19px]">
@@ -38,15 +79,15 @@ export default async function Contact() {
                 </div>
                 <div className="flex text-blue-1 text-[15px] 2xl:text-[19px]">
                   <svg width="21" height="21" className="mr-[8px] mt-[-1px] 2xl:mt-[3px] 2xl:w-[24px] 2xl:h-[24px]" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.9184 9.77933C20.9332 10.1933 21.2807 10.5169 21.6947 10.5022C22.1086 10.4874 22.4322 10.1399 22.4175 9.72595L20.9184 9.77933ZM17.0248 5.41931V6.16931C17.0332 6.16931 17.0415 6.16917 17.0499 6.16889L17.0248 5.41931ZM10.0611 5.41931L10.0361 6.16889C10.0444 6.16917 10.0528 6.16931 10.0611 6.16931V5.41931ZM4.66844 9.72595C4.6537 10.1399 4.97733 10.4874 5.39128 10.5022C5.80523 10.5169 6.15275 10.1933 6.16749 9.77933L4.66844 9.72595ZM22.418 9.75264C22.418 9.33843 22.0822 9.00264 21.668 9.00264C21.2538 9.00264 20.918 9.33843 20.918 9.75264H22.418ZM21.668 16.2526L22.4175 16.2793C22.4178 16.2704 22.418 16.2615 22.418 16.2526H21.668ZM17.0248 20.586L17.0499 19.8364C17.0415 19.8361 17.0332 19.836 17.0248 19.836V20.586ZM10.0611 20.586V19.836C10.0528 19.836 10.0444 19.8361 10.0361 19.8364L10.0611 20.586ZM5.41797 16.2526H4.66797C4.66797 16.2615 4.66813 16.2704 4.66844 16.2793L5.41797 16.2526ZM6.16797 9.75264C6.16797 9.33843 5.83218 9.00264 5.41797 9.00264C5.00376 9.00264 4.66797 9.33843 4.66797 9.75264H6.16797ZM22.0463 10.4002C22.4039 10.1913 22.5245 9.732 22.3156 9.37434C22.1066 9.01668 21.6473 8.89611 21.2897 9.10504L22.0463 10.4002ZM15.9653 13.0839L15.587 12.4363L15.5808 12.44L15.9653 13.0839ZM11.1206 13.0839L11.5052 12.4399L11.4989 12.4363L11.1206 13.0839ZM5.79627 9.10504C5.43861 8.89611 4.9793 9.01668 4.77037 9.37434C4.56144 9.732 4.68201 10.1913 5.03967 10.4002L5.79627 9.10504ZM21.668 9.75264L22.4175 9.72595C22.3146 6.83506 19.8909 4.57309 16.9997 4.66972L17.0248 5.41931L17.0499 6.16889C19.1143 6.09989 20.8449 7.71506 20.9184 9.77933L21.668 9.75264ZM17.0248 5.41931V4.66931H10.0611V5.41931V6.16931H17.0248V5.41931ZM10.0611 5.41931L10.0862 4.66972C7.19508 4.57309 4.77139 6.83506 4.66844 9.72595L5.41797 9.75264L6.16749 9.77933C6.241 7.71506 7.97166 6.09989 10.0361 6.16889L10.0611 5.41931ZM21.668 9.75264H20.918V16.2526H21.668H22.418V9.75264H21.668ZM21.668 16.2526L20.9184 16.2259C20.8449 18.2902 19.1143 19.9054 17.0499 19.8364L17.0248 20.586L16.9997 21.3356C19.8909 21.4322 22.3146 19.1702 22.4175 16.2793L21.668 16.2526ZM17.0248 20.586V19.836H10.0611V20.586V21.336H17.0248V20.586ZM10.0611 20.586L10.0361 19.8364C7.97166 19.9054 6.241 18.2902 6.16749 16.2259L5.41797 16.2526L4.66844 16.2793C4.77139 19.1702 7.19508 21.4322 10.0862 21.3356L10.0611 20.586ZM5.41797 16.2526H6.16797V9.75264H5.41797H4.66797V16.2526H5.41797ZM21.668 9.75264L21.2897 9.10504L15.587 12.4363L15.9653 13.0839L16.3436 13.7315L22.0463 10.4002L21.668 9.75264ZM15.9653 13.0839L15.5808 12.44C14.3256 13.1895 12.7603 13.1895 11.5052 12.44L11.1206 13.0839L10.7361 13.7278C12.4649 14.7603 14.621 14.7603 16.3498 13.7278L15.9653 13.0839ZM11.1206 13.0839L11.4989 12.4363L5.79627 9.10504L5.41797 9.75264L5.03967 10.4002L10.7423 13.7315L11.1206 13.0839Z" fill="#20446F" />
+                    <path d="M20.9184 9.77933C20.9332 10.1933 21.2807 10.5169 21.6947 10.5022C22.1086 10.4874 22.4322 10.1399 22.4175 9.72595L20.9184 9.77933ZM17.0248 5.41931V6.16931C17.0332 6.16931 17.0415 6.16917 17.0499 6.16889L17.0248 5.41931ZM10.0611 5.41931L10.0361 6.16889C10.0444 6.16917 10.0528 6.16931 10.0611 6.16931V5.41931ZM4.66844 9.72595C4.6537 10.1399 4.97733 10.4874 5.39128 10.5022C5.80523 10.5169 6.15275 10.1933 6.16749 9.77933L4.66844 9.72595ZM22.418 9.75264C22.418 9.33843 22.0822 9.00264 21.668 9.00264C21.2538 9.00264 20.918 9.33843 20.918 9.75264H22.418ZM21.668 16.2526L22.4175 16.2793C22.4178 16.2704 22.418 16.2615 22.418 16.2526H21.668ZM17.0248 20.586L17.0499 19.8364C17.0415 19.8361 17.0332 19.836 17.0248 19.836V20.586ZM10.0611 20.586V19.836C10.0528 19.836 10.0444 19.8361 10.0361 19.8364L10.0611 20.586ZM5.41797 16.2526H4.66797C4.66797 16.2615 4.66813 16.2704 4.66844 16.2793L5.41797 16.2526ZM6.16797 9.75264C6.16797 9.33843 5.83218 9.00264 5.41797 9.00264C5.00376 9.00264 4.66797 9.33843 4.66797 9.75264H6.16797ZM22.0463 10.4002C22.4039 10.1913 22.5245 9.732 22.3156 9.37434C22.1066 9.01668 21.6473 8.89611 21.2897 9.10504L22.0463 10.4002ZM15.9653 13.0839L15.587 12.4363L15.5808 12.44L15.9653 13.0839ZM11.1206 13.0839L11.5052 12.4399L11.4989 12.4363L11.1206 13.0839ZM5.79627 9.10504C5.43861 8.89611 4.9793 9.01668 4.77037 9.37434C4.56144 9.732 4.68201 10.1913 5.03967 10.4002L5.79627 9.10504ZM21.668 9.75264L22.4175 9.72595C22.3146 6.83506 19.8909 4.57309 16.9997 4.66972L17.0248 5.41931L17.0499 6.16889C19.1143 6.09989 20.8449 7.71506 20.9184 9.77933L21.668 9.75264ZM17.0248 5.41931V4.66931H10.0611V5.41931V6.16931H17.0248V5.41931ZM10.0611 5.41931L10.0862 4.66972C7.19508 4.57309 4.77139 6.83506 4.66844 9.72595L5.41797 9.75264L6.16749 9.77933C6.241 7.71506 7.97166 6.09989 10.0361 6.16889L10.0611 5.41931ZM21.668 9.75264H20.918V16.2526H21.668H22.418V9.75264H21.668ZM21.668 16.2526L20.9184 16.2259C20.8449 18.2902 19.1143 19.9054 17.0499 19.8364L17.0248 20.586L16.9997 21.3356C19.8909 21.4322 22.3146 19.1702 22.4175 16.2793L21.668 16.2526ZM17.0248 20.586V19.836H10.0611V20.586V21.336H17.0248V20.586ZM10.0611 20.586L10.0361 19.8364C7.97166 19.9054 6.241 18.2902 6.16749 16.2259L5.41797 16.2526L4.66844 16.2793C4.77139 19.1702 7.19508 21.4322 10.0862 21.3356L10.0611 20.586ZM5.41797 16.2526H6.16797V9.75264H5.41797H4.66797V16.2526H5.41797ZM21.668 9.75264L21.2897 9.10504L15.587 12.4363L15.9653 13.0839L16.3436 13.7315L22.0463 10.4002L21.668 9.75264ZM15.9653 13.0839L15.5808 12.44C14.3256 13.1895 12.7603 13.1895 11.5052 12.44L11.1206 13.0839L10.7361 13.7278C12.4649 14.7603 14.621 14.7603 16.3498 13.7278L15.9653 13.0839Z" fill="#20446F" />
                   </svg>
                   <p className="font-normal">{field_contact_7}</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-[320px_1fr] sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] gap-8 max-w-[70%] sm:max-w-[100%]">
-            <div className=" sm:max-w-[100%]">
+          <div className="mt-[50px] grid grid-cols-[320px_1fr] sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] gap-8 max-w-[70%] sm:max-w-[100%]">
+            <div className="sm:max-w-[100%]">
               <div className="bg-[#F0F7FF]/70 rounded-tl-[10px] rounded-tr-[60px] p-[25px] sm:p-[50px]">
                 <MessageForm custom_fields={custom_fields} />
               </div>
@@ -54,11 +95,13 @@ export default async function Contact() {
           </div>
         </div>
       </div>
+
+      {/* Original Image component for desktop, now conditionally hidden on mobile */}
       <Image
         src="/fcontact/contact-1.png"
         alt="Modern city skyline"
         fill
-        className="z-1"
+        className="z-1 hidden md:block" // Hidden on mobile, block on md and up
       />
     </div>
   );

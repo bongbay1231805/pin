@@ -4,6 +4,8 @@ import PublicNavigation from '@/components/PublicNavigation';
 import { FooterContact } from '@/components/footer/FooterContact';
 import { Footer } from '@/components/footer/Footer';
 import { ScrollRefsProvider } from '@/context/ScrollRefsContext';
+import { NewsCategoryProvider } from '@/context/NewsCategoryContext';
+
 import { useEffect } from 'react';
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname().split("/").pop();
@@ -29,10 +31,12 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     <>
       <div>
         <ScrollRefsProvider>
-          <PublicNavigation />
-          <div className={shouldHideOverflow ? 'overflow-x-hidden' : ''}>
-            {children}
-          </div>
+          <NewsCategoryProvider>  
+            <PublicNavigation />
+            <div className={shouldHideOverflow ? 'overflow-x-hidden' : ''}>
+              {children}
+            </div>
+          </NewsCategoryProvider>
         </ScrollRefsProvider>
       </div>
       {isContactPage ? <FooterContact /> : <Footer />}

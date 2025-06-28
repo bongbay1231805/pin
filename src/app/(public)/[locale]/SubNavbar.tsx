@@ -1,14 +1,17 @@
+// components/news/SubNavbar.tsx
 'use client';
+
 import Link from 'next/link';
 import { useScrollRefs } from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
+import { useNewsCategory } from '@/context/NewsCategoryContext'; // Import hook từ Context
 
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
-  nameCurent: string;
+  nameCurent: string; // nameCurent ở đây vẫn có thể là slug của trang chính (news, about...)
 }
 
 export default function SubNavbar(props: PropSub) {
@@ -18,32 +21,19 @@ export default function SubNavbar(props: PropSub) {
   const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } =
     useScrollRefs();
 
+  // Lấy currentCategorySlug từ Context
+  const { currentCategorySlug } = useNewsCategory(); 
+
   const [isFixed, setIsFixed] = useState(false);
-  // Không cần isMobileMenuOpen nữa
-  const [activeSection, setActiveSection] = useState(''); // State để theo dõi section active
+  const [activeSection, setActiveSection] = useState('');
   const scrollThreshold = 100;
   const prevScrollY = useRef(0);
-  const menuRef = useRef<HTMLDivElement | null>(null); // Ref cho container của submenu
-
-  // Logic đóng menu khi click ra ngoài (Không cần thiết nếu không có dropdown)
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-  //       setIsMobileMenuOpen(false);
-  //     }
-  //   };
-  //   document.addEventListener('mousedown', handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside);
-  //   };
-  // }, [menuRef]);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Chỉ áp dụng logic này cho màn hình PC
       if (typeof window === 'undefined' || window.innerWidth < 1024) {
         if (isFixed) setIsFixed(false);
-        // isMobileMenuOpen không còn được sử dụng ở đây nữa
         prevScrollY.current = window.scrollY;
         return;
       }
@@ -66,15 +56,12 @@ export default function SubNavbar(props: PropSub) {
 
       prevScrollY.current = currentScrollY;
 
-      // --- LOGIC SCROLL-SPY ĐÃ CẢI TIẾN ---
-      const subNavbarHeight = menuRef.current?.offsetHeight || 60; // Lấy chiều cao thực tế, fallback là 60
-      const buffer = 80; // Khoảng đệm bạn muốn bên dưới submenu
+      const subNavbarHeight = menuRef.current?.offsetHeight || 60;
+      const buffer = 80;
       const scrollOffset = subNavbarHeight + buffer;
 
       let newActiveSection = '';
 
-      // Lặp qua các mục theo thứ tự ngược. Đây là cách làm ổn định nhất.
-      // Nó sẽ tìm section cuối cùng đã vượt qua "vạch kích hoạt".
       for (let i = navItems.length - 1; i >= 0; i--) {
         const item = navItems[i];
         if (item.hrefb?.current) {
@@ -83,18 +70,16 @@ export default function SubNavbar(props: PropSub) {
 
           if (sectionTop <= scrollOffset) {
             newActiveSection = item.name;
-            break; // Đã tìm thấy section active, thoát vòng lặp
+            break;
           }
         }
       }
 
-      // Nếu cuộn lên trên cùng và không có section nào active, hãy active section đầu tiên
       const firstScrollItem = navItems.find((item) => item.hrefb);
       if (newActiveSection === '' && firstScrollItem) {
         newActiveSection = firstScrollItem.name;
       }
 
-      // Chỉ cập nhật state nếu thực sự có thay đổi
       if (activeSection !== newActiveSection) {
         setActiveSection(newActiveSection);
       }
@@ -105,41 +90,23 @@ export default function SubNavbar(props: PropSub) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isFixed]); // isMobileMenuOpen đã bị xóa khỏi dependency
+  }, [isFixed]);
 
-  const isActive = (path: string) => {
-    return nameCurent === path.split('/').pop();
-  };
+  const isActive = (itemHref: string) => {
+    const itemSlug = itemHref.split('/').pop(); // Lấy slug của mục menu (vd: 'tin-dau-thau')
+    
+    // Kiểm tra nếu đang ở một URL dạng /posts/some-slug
+    // Next.js App Router thường đặt slug ở myArray[1] cho /posts/[slug]
+    // hoặc myArray[2] nếu có /news/posts/[slug]
+    const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts';
 
-  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
-    if (!ref.current) return;
-
-    const subNavbarHeight = 50;
-    const offset = isFixed ? subNavbarHeight : 0;
-
-    const targetPosition =
-      ref.current.getBoundingClientRect().top + window.pageYOffset - offset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 500;
-    let startTime: number | null = null;
-
-    const animation = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    };
-
-    const easeInOutQuad = (t: number, b: number, c: number, d: number) => {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    };
-    requestAnimationFrame(animation);
-    // setIsMobileMenuOpen(false); // Không cần đóng menu nữa
+    if (isPostDetailPage) {
+      // Nếu đang ở trang chi tiết bài viết, sử dụng currentCategorySlug từ Context
+      return currentCategorySlug === itemSlug;
+    }
+    // Nếu không phải trang chi tiết bài viết (ví dụ: đang ở trang danh mục như /categories/tin-thi-truong)
+    // thì dùng nameCurent (prop được truyền vào, thường là slug của trang danh mục)
+    return nameCurent === itemSlug;
   };
 
   let navItems: {
@@ -159,9 +126,11 @@ export default function SubNavbar(props: PropSub) {
   const about = ['about'];
   const digitalcity = ['digitalcity'];
 
-  const currentSlug = nameCurent.split('/').pop() || '';
+  // currentSlugFromPathname sẽ là slug cuối cùng trong URL, ví dụ: 'tin-thi-truong', 'about', 'slug-bai-viet'
+  const currentSlugFromPathname = pathname.split('/').pop() || '';
 
-  if (about.includes(currentSlug)) {
+  // Sử dụng currentSlugFromPathname hoặc kiểm tra myArray để xác định loại trang
+  if (about.includes(currentSlugFromPathname)) {
     navItems = [
       { name: 'Định vị thương hiệu', href: '#about', hrefb: oneRef },
       { name: 'Con số ấn tượng', href: '#about', hrefb: twoRef },
@@ -171,13 +140,16 @@ export default function SubNavbar(props: PropSub) {
       { name: 'Văn hóa doanh nghiệp', href: '#about', hrefb: sixRef },
       { name: 'Hồ sơ năng lực', href: '#about', hrefb: seventRef }
     ];
-  } else if (news.includes(currentSlug) || myArray[2] === 'posts') {
+  } else if (
+    news.includes(currentSlugFromPathname) || // Trang danh mục tin tức (e.g., /categories/tin-thi-truong)
+    myArray.includes('posts') // Hoặc nếu pathname chứa 'posts' (e.g., /posts/slug-bai-viet)
+  ) {
     navItems = [
       { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
       { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
       { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' }
     ];
-  } else if (ecosystem.includes(currentSlug)) {
+  } else if (ecosystem.includes(currentSlugFromPathname)) {
     navItems = [
       {
         name: 'Đầu tư & Phát triển dự án',
@@ -186,14 +158,14 @@ export default function SubNavbar(props: PropSub) {
       { name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services' },
       { name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation' }
     ];
-  } else if (humanresource.includes(currentSlug)) {
+  } else if (humanresource.includes(currentSlugFromPathname)) {
     navItems = [
       { name: 'Văn hóa làm việc', href: '', hrefb: oneRef },
       { name: 'Phúc lợi & Đào tạo', href: '', hrefb: twoRef },
       { name: 'Hình thức tuyển dụng', href: '', hrefb: threeRef },
       { name: 'Vị trí tuyển dụng', href: '', hrefb: fourRef }
     ];
-  } else if (digitalcity.includes(currentSlug)) {
+  } else if (digitalcity.includes(currentSlugFromPathname)) {
     navItems = [
       { name: 'Picity - Đô thị số', href: '', hrefb: oneRef },
       { name: 'Công nghệ 4.0', href: '', hrefb: twoRef },
@@ -205,9 +177,7 @@ export default function SubNavbar(props: PropSub) {
     ];
   }
 
-  // Logic kiểm tra điều kiện hiển thị cho mobile submenu (ecosystem)
-  const shouldShowEcosystemMobileSubmenu = ecosystem.includes(currentSlug);
-  // Logic kiểm tra xem có bất kỳ navItems nào được định nghĩa để hiển thị navbar không
+  const shouldShowEcosystemMobileSubmenu = ecosystem.includes(currentSlugFromPathname);
   const hasNavItemsToDisplay = Array.isArray(navItems) && navItems.length;
 
   return hasNavItemsToDisplay ? (
@@ -216,17 +186,14 @@ export default function SubNavbar(props: PropSub) {
         w-full bg-gray-3 border-white-1 border-b-[1px] transition-all duration-300
         ${isFixed ? 'fixed top-0 left-0 right-0 z-50 shadow-md' : 'relative'}
       `}
-      ref={menuRef} // Gán ref cho div cha
+      ref={menuRef}
     >
       <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
-        {/* CategoryAndPostSearch chỉ hiển thị khi cần */}
-        {['tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'news'].includes(
-          nameCurent
-        ) || myArray[2] === 'posts' ? (
+        {/* Điều kiện hiển thị CategoryAndPostSearch */}
+        {(news.includes(currentSlugFromPathname) || myArray.includes('posts')) && (
           <CategoryAndPostSearch />
-        ) : null}
+        )}
 
-        {/* --- Phần hiển thị cho Desktop (xl:flex) --- */}
         <ul className="hidden xl:flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
           {navItems.map((item) =>
             item.hrefb ? (
@@ -255,8 +222,6 @@ export default function SubNavbar(props: PropSub) {
           )}
         </ul>
 
-        {/* --- Phần hiển thị cho Mobile (có thể cuộn ngang) --- */}
-        {/* Chỉ hiển thị ul này nếu shouldShowEcosystemMobileSubmenu là true và trên mobile */}
         {shouldShowEcosystemMobileSubmenu && (
           <ul className="xl:hidden flex overflow-x-auto whitespace-nowrap py-[3px] px-[10px] text-gray-5 scrollbar-hide">
             {navItems.map((item) =>

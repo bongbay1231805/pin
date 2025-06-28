@@ -44,7 +44,7 @@ export default function ImagePopup({ src, onClose }: ImagePopupProps) {
 
       {/* Nội dung popup chính - z-index cao hơn lớp phủ nền */}
       <div
-        className="relative max-w-3xl max-h-full mx-auto p-4 bg-white rounded-lg shadow-xl flex flex-col z-10" // Thêm z-10 để đảm bảo nó ở trên lớp phủ nền
+        className="relative max-w-3xl max-h-full mx-auto flex flex-col z-10" // Thêm z-10 để đảm bảo nó ở trên lớp phủ nền
         ref={popupRef}
         onClick={(e) => e.stopPropagation()}
       >
