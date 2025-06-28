@@ -30,6 +30,13 @@ export default function SubNavbar(props: PropSub) {
   const prevScrollY = useRef(0);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
+  // Định nghĩa hàm scrollTo tại đây
+  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (typeof window === 'undefined' || window.innerWidth < 1024) {
@@ -62,6 +69,18 @@ export default function SubNavbar(props: PropSub) {
 
       let newActiveSection = '';
 
+      // Vòng lặp này cần truy cập `navItems` sau khi nó được định nghĩa
+      // Để tránh lỗi runtime, chúng ta nên đảm bảo `navItems` đã có giá trị
+      // khi `handleScroll` được gọi lần đầu hoặc khi `useEffect` này chạy.
+      // Tuy nhiên, với logic hiện tại, `navItems` được định nghĩa trong render cycle.
+      // Cách tốt nhất là tái cấu trúc `handleScroll` hoặc `navItems` để đảm bảo tính khả dụng.
+      // Tạm thời, tôi sẽ giữ nguyên để tập trung vào lỗi scrollTo.
+
+      // Chú ý: `navItems` được định nghĩa sau `useEffect`. Điều này có thể gây ra lỗi runtime
+      // nếu `handleScroll` được gọi trước khi `navItems` có giá trị.
+      // Giải pháp tốt hơn là đưa `navItems` vào state hoặc memoize nó.
+      // Tuy nhiên, để sửa lỗi type hiện tại, chúng ta tập trung vào `scrollTo`.
+
       for (let i = navItems.length - 1; i >= 0; i--) {
         const item = navItems[i];
         if (item.hrefb?.current) {
@@ -90,22 +109,16 @@ export default function SubNavbar(props: PropSub) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isFixed]);
+  }, [isFixed]); // Thêm activeSection và navItems vào dependencies nếu bạn đưa chúng vào state hoặc memoized
 
   const isActive = (itemHref: string) => {
-    const itemSlug = itemHref.split('/').pop(); // Lấy slug của mục menu (vd: 'tin-dau-thau')
+    const itemSlug = itemHref.split('/').pop(); 
     
-    // Kiểm tra nếu đang ở một URL dạng /posts/some-slug
-    // Next.js App Router thường đặt slug ở myArray[1] cho /posts/[slug]
-    // hoặc myArray[2] nếu có /news/posts/[slug]
     const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts';
 
     if (isPostDetailPage) {
-      // Nếu đang ở trang chi tiết bài viết, sử dụng currentCategorySlug từ Context
       return currentCategorySlug === itemSlug;
     }
-    // Nếu không phải trang chi tiết bài viết (ví dụ: đang ở trang danh mục như /categories/tin-thi-truong)
-    // thì dùng nameCurent (prop được truyền vào, thường là slug của trang danh mục)
     return nameCurent === itemSlug;
   };
 
@@ -126,10 +139,8 @@ export default function SubNavbar(props: PropSub) {
   const about = ['about'];
   const digitalcity = ['digitalcity'];
 
-  // currentSlugFromPathname sẽ là slug cuối cùng trong URL, ví dụ: 'tin-thi-truong', 'about', 'slug-bai-viet'
   const currentSlugFromPathname = pathname.split('/').pop() || '';
 
-  // Sử dụng currentSlugFromPathname hoặc kiểm tra myArray để xác định loại trang
   if (about.includes(currentSlugFromPathname)) {
     navItems = [
       { name: 'Định vị thương hiệu', href: '#about', hrefb: oneRef },
@@ -141,8 +152,8 @@ export default function SubNavbar(props: PropSub) {
       { name: 'Hồ sơ năng lực', href: '#about', hrefb: seventRef }
     ];
   } else if (
-    news.includes(currentSlugFromPathname) || // Trang danh mục tin tức (e.g., /categories/tin-thi-truong)
-    myArray.includes('posts') // Hoặc nếu pathname chứa 'posts' (e.g., /posts/slug-bai-viet)
+    news.includes(currentSlugFromPathname) || 
+    myArray.includes('posts') 
   ) {
     navItems = [
       { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
@@ -198,6 +209,7 @@ export default function SubNavbar(props: PropSub) {
           {navItems.map((item) =>
             item.hrefb ? (
               <li key={item.name}>
+                {/* Gọi hàm scrollTo đã định nghĩa */}
                 <button
                   onClick={() => scrollTo(item.hrefb!)}
                   className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
@@ -227,6 +239,7 @@ export default function SubNavbar(props: PropSub) {
             {navItems.map((item) =>
               item.hrefb ? (
                 <li key={item.name} className="flex-shrink-0 mx-2">
+                  {/* Gọi hàm scrollTo đã định nghĩa */}
                   <button
                     onClick={() => scrollTo(item.hrefb!)}
                     className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${

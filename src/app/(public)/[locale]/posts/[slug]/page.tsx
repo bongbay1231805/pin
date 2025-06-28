@@ -8,33 +8,16 @@ import CategorySetter from './CategorySetter';
 // ✅ BƯỚC 1: ĐỊNH NGHĨA TYPE CHO PROPS MỘT CÁCH RÕ RÀNG
 // Type này bao gồm cả `params` và `searchParams` (một best practice)
 type Props = {
-  params: {
-    slug: string;
-    locale: string; // ✅ Thêm 'locale' vì nó có trong đường dẫn file
-  };
-  searchParams?: {[key: string]: string | string[] | undefined};
+  params: Promise<{ slug: string }>;
 };
 
-// ✅ BƯỚC 2: ÁP DỤNG TYPE MỚI CHO `generateMetadata`
-export async function generateMetadata({params}: Props): Promise<Metadata> {
-  const {slug} = params;
-  const res = await fetch(
-    `https://admin.pigroup.tqdesign.vn/api/posts/${slug}`,
-    {
-      cache: 'no-store'
-    }
-  );
-
-  // Thêm kiểm tra nếu fetch thất bại
-  if (!res.ok) {
-    return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
-    };
-  }
-
-  const {data: post} = await res.json();
-
+// Hàm generateMetadata vẫn là Server Component
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
+    cache: 'no-store',
+  });
+  const { data: post } = await res.json();
   if (!post) {
     return {
       title: 'Bài viết không tồn tại',
@@ -75,9 +58,9 @@ async function getPostBySlug(slug: string) {
   return json.data;
 }
 
-// ✅ BƯỚC 3: ÁP DỤNG TYPE MỚI CHO COMPONENT PAGE
-export default async function DetailPost({params}: Props) {
-  const {slug} = params; // `locale` cũng có sẵn ở đây nếu bạn cần dùng: const { slug, locale } = params;
+// Component Page của bạn (Server Component)
+export default async function DetailPost({ params }: Props) {
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
