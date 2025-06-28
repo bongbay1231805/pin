@@ -37,7 +37,7 @@ export default function Part({custom_fields}: any) {
     digitalcity_connect,
     digitalcity_slider_uni
   } = custom_fields;
-  console.log(custom_fields)
+  console.log(custom_fields);
   const digitalcityslideruni = convertJsonStringToArrayOrObject(
     digitalcity_slider_uni
   );
@@ -332,7 +332,7 @@ export default function Part({custom_fields}: any) {
           <p className="uppercase text-center text-blue-1 text-[16px] sm:text-[20px] 2xl:text-[28px] mb-[35px]">
             {digitalcity_5}
           </p>
-          
+
           <div className="w-[85%] mx-auto">
             <HorizontalScroll custom_fields={custom_fields} />
           </div>
@@ -774,50 +774,50 @@ export default function Part({custom_fields}: any) {
             <path
               d="M1040.75 504.55C1043.01 504.34 1044.67 502.344 1044.46 500.091C1044.25 497.837 1042.25 496.181 1039.99 496.39C1037.73 496.6 1036.07 498.597 1036.28 500.85C1036.49 503.103 1038.49 504.76 1040.75 504.55Z"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M1035.05 506.642C1032.92 507.747 1030.55 508.468 1028.02 508.703C1017.57 509.673 1008.32 502.016 1007.35 491.6L1005.74 474.283L1023.97 465.094L1043.58 470.773L1045.19 488.09C1045.39 490.25 1045.22 492.359 1044.73 494.353"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M1023.07 483.631L1022.62 478.706C1022.48 477.202 1023.59 475.87 1025.09 475.73C1026.6 475.59 1027.94 476.695 1028.08 478.199L1028.54 483.125"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M1019.89 483.927L1019.44 479.131C1019.14 475.909 1021.52 473.054 1024.75 472.755C1027.99 472.455 1030.85 474.824 1031.15 478.045L1031.58 482.712"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M1018.58 484.048L1032.76 482.732C1033.19 482.693 1033.57 483.007 1033.61 483.434L1034.41 492.046C1034.57 493.734 1033.32 495.232 1031.63 495.389L1022.03 496.279C1020.33 496.436 1018.83 495.194 1018.68 493.506L1017.88 484.893C1017.84 484.466 1018.15 484.088 1018.58 484.048L1018.58 484.048Z"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M1026.46 489.724C1027.53 489.624 1028.33 488.672 1028.23 487.598C1028.13 486.524 1027.17 485.735 1026.1 485.835C1025.02 485.935 1024.23 486.886 1024.32 487.96C1024.42 489.034 1025.38 489.824 1026.46 489.724Z"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M1026.72 492.575L1026.47 489.854"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
             <path
               d="M916.831 117.271L1319.73 100.971C1324.71 100.77 1328.99 104.442 1329.56 109.387L1340.29 203.535C1340.92 208.994 1336.79 213.841 1331.3 214.101L929.26 233.126C924.284 233.362 919.97 229.712 919.378 224.765L907.782 127.893C907.124 122.391 911.295 117.495 916.831 117.271Z"
@@ -834,42 +834,42 @@ export default function Part({custom_fields}: any) {
             <path
               d="M964.172 189.306L958.51 189.92C957.078 190.075 955.8 189.112 955.654 187.769L951.686 151.183C951.54 149.839 952.582 148.625 954.014 148.469L971.965 147.522C973.397 147.367 974.675 148.33 974.821 149.674L977.16 170.239"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M965.297 177.521C960.614 177.52 956.585 173.99 956.069 169.227C955.515 164.123 959.204 159.537 964.307 158.984C969.411 158.43 973.997 162.119 974.55 167.222C974.611 167.782 974.62 168.336 974.583 168.88"
               stroke="#4C73A8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M963.714 174.982C960.931 174.326 958.735 171.978 958.409 168.973C957.995 165.162 960.751 161.737 964.561 161.323C968.372 160.91 971.798 163.665 972.211 167.476"
               stroke="#4C73A8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M983.451 195.993C985.135 195.81 987.06 195.392 989.083 192.803C989.083 192.803 991.655 190.084 991.531 185.884C991.531 185.884 991.441 182.012 986.638 174.328L985.926 173.29C985.363 172.472 984.277 172.211 983.409 172.686L983.041 172.887C982.124 173.389 981.77 174.532 982.241 175.47L980.996 173.357C980.547 172.596 979.61 172.282 978.799 172.622L978.529 172.734C977.53 173.152 977.137 174.368 977.702 175.297L976.488 173.589C975.849 172.69 974.635 172.426 973.686 172.98C972.744 173.53 972.369 174.705 972.815 175.705L973.012 176.146L968.665 168.564C968.096 167.573 966.821 167.261 965.866 167.878C964.995 168.442 964.701 169.582 965.19 170.502L973.19 185.545L970.407 184.294C970.407 184.294 967.758 183.251 966.458 185.498C966.458 185.498 965.314 188.173 968.653 189.474C968.653 189.474 971.425 190.9 975.99 194.223"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M956.887 151.571L969.84 151.166"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M981.061 197.227C982.126 197.111 982.895 196.155 982.78 195.09C982.664 194.025 981.708 193.255 980.643 193.371C979.578 193.486 978.808 194.443 978.924 195.508C979.039 196.573 979.996 197.342 981.061 197.227Z"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-linecap="square"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="square"
+              strokeLinejoin="round"
             />
             <path
               d="M937.659 274.881L1340.56 258.581C1345.54 258.38 1349.82 262.051 1350.38 266.996L1361.12 361.145C1361.74 366.604 1357.62 371.451 1352.13 371.711L950.088 390.735C945.112 390.971 940.798 387.322 940.206 382.375L928.61 285.502C927.952 280.001 932.123 275.105 937.659 274.881Z"
@@ -888,20 +888,20 @@ export default function Part({custom_fields}: any) {
             <path
               d="M999.371 340.275L998.995 336.4"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M998.992 336.4L998.829 334.721L997.518 333.649"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M997.516 333.649L996.931 333.171"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M996.626 333.538L997.234 332.804L996.648 332.325L996.04 333.059L996.626 333.538Z"
@@ -914,38 +914,38 @@ export default function Part({custom_fields}: any) {
             <path
               d="M994.164 341.971L993.828 338.508"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M993.828 338.508L993.665 336.826L991.974 336.99"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M991.973 336.99L991.204 337.065"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M991.203 337.064L990.432 337.139"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M990.434 337.14L989.665 337.214"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M989.664 337.214L988.896 337.288"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M988.173 337.837L988.941 337.763L988.85 336.817L988.081 336.891L988.173 337.837Z"
@@ -958,44 +958,44 @@ export default function Part({custom_fields}: any) {
             <path
               d="M1006.15 328.736L1000.99 329.237"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M1000.98 329.237L999.294 329.401L997.982 328.329"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M997.984 328.329L997.251 327.729"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M997.254 327.729L996.52 327.13"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M996.52 327.13L995.208 326.058L995.045 324.379"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M995.043 324.378L994.969 323.621"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M994.969 323.621L994.895 322.864"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M994.423 322.909L995.375 322.817L995.302 322.06L994.349 322.152L994.423 322.909Z"
@@ -1008,8 +1008,8 @@ export default function Part({custom_fields}: any) {
             <path
               d="M1005.09 323.452L999.996 323.947"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M999.287 324.492L1000.04 324.419L999.945 323.473L999.195 323.546L999.287 324.492Z"
@@ -1022,68 +1022,68 @@ export default function Part({custom_fields}: any) {
             <path
               d="M990.323 315.491L990.883 321.262"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M990.885 321.261L990.961 322.04"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M990.959 322.039L991.035 322.82"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M991.034 322.82L991.109 323.599"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M991.112 323.6L991.188 324.378"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M991.186 324.377L991.262 325.158"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M991.261 325.159L991.424 326.838L990.343 328.142"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M990.344 328.141L989.867 328.716"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M989.867 328.716L989.391 329.291"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M989.391 329.292L988.914 329.867"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M988.914 329.866L988.438 330.441"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M988.331 331.32L988.809 330.744L988.07 330.141L987.593 330.717L988.331 331.32Z"
@@ -1096,20 +1096,20 @@ export default function Part({custom_fields}: any) {
             <path
               d="M978.978 327.075L983.064 326.679"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M983.064 326.68L984.755 326.516L985.836 325.211"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M985.833 325.211L986.307 324.639"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M986.677 324.939L987.15 324.368L986.412 323.764L985.939 324.336L986.677 324.939Z"
@@ -1122,62 +1122,62 @@ export default function Part({custom_fields}: any) {
             <path
               d="M991.381 315.347C983.974 316.066 978.548 322.613 979.262 329.97C979.976 337.328 986.559 342.709 993.967 341.991C1001.37 341.272 1006.8 334.725 1006.09 327.367C1005.37 320.01 998.789 314.628 991.381 315.347Z"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinejoin="round"
             />
             <path
               d="M991.089 312.375C982.029 313.254 975.393 321.262 976.266 330.26C977.139 339.259 985.192 345.841 994.252 344.962C1003.31 344.083 1009.95 336.075 1009.08 327.076C1008.2 318.078 1000.15 311.495 991.089 312.375Z"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinejoin="round"
             />
             <path
               d="M982.017 341.3L978.127 346.134"
               stroke="#4C73A8"
-              stroke-width="3"
-              stroke-miterlimit="10"
+              strokeWidth="3"
+              strokeMiterlimit="10"
             />
             <path
               d="M1003.02 316.033L1006.77 311.509"
               stroke="#4C73A8"
-              stroke-width="3"
-              stroke-miterlimit="10"
+              strokeWidth="3"
+              strokeMiterlimit="10"
             />
             <path
               d="M979.883 318.248L975.263 314.587"
               stroke="#4C73A8"
-              stroke-width="3"
-              stroke-miterlimit="10"
+              strokeWidth="3"
+              strokeMiterlimit="10"
             />
             <path
               d="M1005.29 339.073L1009.8 342.764"
               stroke="#4C73A8"
-              stroke-width="3"
-              stroke-miterlimit="10"
+              strokeWidth="3"
+              strokeMiterlimit="10"
             />
             <path
               d="M976.159 330.226L967.032 331.203"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M1008.97 327.088L1018.11 326.201"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M991.031 312.379L990.06 303.313"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <path
               d="M994.147 344.969L995.027 354.044"
               stroke="#4C73A8"
-              stroke-width="2"
-              stroke-miterlimit="10"
+              strokeWidth="2"
+              strokeMiterlimit="10"
             />
             <defs>
               <pattern
