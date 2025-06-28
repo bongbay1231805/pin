@@ -16,17 +16,16 @@ type HorizontalScrollProps = {
 const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
   const autoplay = useRef(
     Autoplay({
-      delay: 3000,
+      delay: 2000,
       stopOnInteraction: true,
-      stopOnMouseEnter: true,
-      stopOnLastSnap: true
+      stopOnMouseEnter: true
     })
   );
   // 1. Cấu hình Embla
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true, // Cho phép lặp vô tận
-      align: 'start', // Căn chỉnh các slide từ bên trái
+      align: 'center', // Căn chỉnh các slide từ bên trái
       slidesToScroll: 1 // Mỗi lần bấm next/prev chỉ cuộn 1 item
     },
     [autoplay.current]
