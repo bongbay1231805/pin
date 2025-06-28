@@ -44,7 +44,7 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({slides}) => {
                   />
                   {!!event[1] && event[1].value ? (
                     <h3
-                      className="absolute bottom-[20px] text-[13px] font-bold text-center uppercase text-white"
+                      className="absolute bottom-[20px] 2xl:bottom-[50px] text-[13px] font-bold text-center uppercase text-white"
                       dangerouslySetInnerHTML={{__html: event[1].value}}
                     ></h3>
                   ) : null}

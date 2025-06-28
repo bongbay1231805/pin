@@ -366,13 +366,13 @@ figure.image > figcaption > span {
     @apply w-full px-0;
   }
   .center .sliderstaff h3 {
-    @apply bottom-[20px] text-[16px];
+    @apply bottom-[20px] 2xl:bottom-[50px] text-[16px];
   }
   .picitycenter {
     @apply origin-left translate-x-[30px];
   }
   .center .picitycenter {
-    @apply rotate-y-0 scale-y-88 origin-center translate-x-0;
+    @apply rotate-y-0 scale-y-90 scale-x-96 origin-center translate-x-0;
   }
   .center .picitycenter h3 {
     @apply opacity-100;

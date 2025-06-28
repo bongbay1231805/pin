@@ -1203,7 +1203,7 @@ export default function Part({custom_fields}: any) {
             </defs>
           </svg>
         </div>
-        <div className="grid content-center justify-center  xl:justify-auto ml-[70px] mt-[80px]">
+        <div className="grid content-center justify-center  xl:justify-auto ml-[70px] mt-[80px] sm:mt-[-20px]">
           <h2 className="text-[30px] md:text-[40px] text-yellow-1 uppercase font-bold">
             {digitalcity_6}
           </h2>
@@ -1566,7 +1566,7 @@ export default function Part({custom_fields}: any) {
                           {digitalcity[1].value}
                         </h3>
                         <p
-                          className="text-gray-5 text-[13px]"
+                          className="text-gray-5 text-[13px] 2xl:text-[17px]"
                           dangerouslySetInnerHTML={{
                             __html: digitalcity[2].value
                           }}
@@ -1592,7 +1592,7 @@ export default function Part({custom_fields}: any) {
                           {digitalcity[1].value}
                         </h3>
                         <p
-                          className="text-gray-5 text-[13px]"
+                          className="text-gray-5 text-[13px] 2xl:text-[17px]"
                           dangerouslySetInnerHTML={{
                             __html: digitalcity[2].value
                           }}
@@ -1618,7 +1618,7 @@ export default function Part({custom_fields}: any) {
                           {digitalcity[1].value}
                         </h3>
                         <p
-                          className="text-gray-5 text-[13px]"
+                          className="text-gray-5 text-[13px] 2xl:text-[17px]"
                           dangerouslySetInnerHTML={{
                             __html: digitalcity[2].value
                           }}
