@@ -22,7 +22,7 @@ export default function Success({ custom_fields }: any) {
   const {digitalcity_success} = custom_fields;
   const digitalcitysuccess = convertJsonStringToArrayOrObject(digitalcity_success);
   return (
-    <div className="flex items-start justify-end relative mx-auto max-w-[85%] h-[200px] md:h-[570px] mb-[65px]">
+    <div className="flex items-start justify-end relative mx-auto max-w-[85%] h-[200px] md:h-[570px] mb-[50px]">
       {digitalcitysuccess.map((digitalcsuccess:any,index:number) => (
         <Image
           key={index+1}

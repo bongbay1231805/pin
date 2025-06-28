@@ -80,7 +80,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
   }
 
   return (
-    <div className="relative max-w-screen-xl mx-auto technology-carousel">
+    <div className="relative mx-auto technology-carousel">
       {/* 4. Cấu trúc JSX cho Embla */}
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">

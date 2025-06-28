@@ -94,7 +94,7 @@ export default function Hero({ data, dataPage }: any) {
       </div>
       <div className='mx-auto w-full px-[30px] xl:max-w-[85%]'>
         <div className="h-[180px] relative bg-blue-3 rounded-[10px] flex pl-[30px] sm:pl-[50px] lg:pl-[100px] md:pr-[10px] items-center justify-between">
-          <Image width={50} height={100} src="/quotation_marks.svg" alt="Smart City Features" className="absolute sm:left-6 sm:top-6 left-[10px] top-[10px] w-[30px] sm:w-[50px]" />
+          <Image width={50} height={100} src="/quotation_marks.svg" alt="Smart City Features" className="absolute sm:left-6 sm:top-6 left-[10px] top-[30px] w-[20px] sm:w-[50px]" />
           <p className='text-[20px] [&>br]:hidden sm:[&>br]:inline-block z-1 md:text-[25px] text-yellow-1' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
           <svg className='absolute right-0 bottom-0 h-[170px] w-[170px] sm:ml-0' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
