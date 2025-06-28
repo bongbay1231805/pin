@@ -8,12 +8,12 @@ import { Metadata } from 'next'; // Giữ lại Metadata cho Server Component
 import CategorySetter from './CategorySetter'; // Import component Client mới tạo
 
 type Props = {
-  params: { slug: string }; // params không phải là Promise khi sử dụng trong Page component
+  params: Promise<{ slug: string }>;
 };
 
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
     cache: 'no-store',
   });
@@ -53,7 +53,7 @@ async function getPostBySlug(slug: string) {
 
 // Component Page của bạn (Server Component)
 export default async function DetailPost({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
