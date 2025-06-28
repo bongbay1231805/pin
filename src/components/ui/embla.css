@@ -7,17 +7,17 @@
 .embla__container {
   display: flex;
   /* Mobile gap: 16px */
-  margin-left: -16px;
+  margin-left: -45px;
 }
 
 .embla__slide {
   position: relative;
   min-width: 0;
   /* Mobile gap: 16px */
-  padding-left: 16px;
+  padding-left: 45px;
 
   /* Mobile: hiển thị 1 item */
-  flex: 0 0 100%;
+  flex: 0 0 70%;
 }
 
 /* === BỔ SUNG MỚI: ẨN NÚT TRÊN MOBILE === */
