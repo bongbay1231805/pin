@@ -5,12 +5,18 @@ import {RegistrationForm} from '@/components/news/RegistrationForm';
 import {Metadata} from 'next';
 import CategorySetter from './CategorySetter';
 
-// ✅ Không dùng interface riêng, khai báo inline
-export async function generateMetadata({
-  params
-}: {
-  params: {slug: string};
-}): Promise<Metadata> {
+// ✅ BƯỚC 1: ĐỊNH NGHĨA TYPE CHO PROPS MỘT CÁCH RÕ RÀNG
+// Type này bao gồm cả `params` và `searchParams` (một best practice)
+type Props = {
+  params: {
+    slug: string;
+    locale: string; // ✅ Thêm 'locale' vì nó có trong đường dẫn file
+  };
+  searchParams?: {[key: string]: string | string[] | undefined};
+};
+
+// ✅ BƯỚC 2: ÁP DỤNG TYPE MỚI CHO `generateMetadata`
+export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {slug} = params;
   const res = await fetch(
     `https://admin.pigroup.tqdesign.vn/api/posts/${slug}`,
@@ -18,6 +24,14 @@ export async function generateMetadata({
       cache: 'no-store'
     }
   );
+
+  // Thêm kiểm tra nếu fetch thất bại
+  if (!res.ok) {
+    return {
+      title: 'Bài viết không tồn tại',
+      description: 'Không tìm thấy bài viết này.'
+    };
+  }
 
   const {data: post} = await res.json();
 
@@ -36,7 +50,11 @@ export async function generateMetadata({
       description: post.description,
       images: [
         {
-          url: `/storage/${post.image}` || '/logo.png'
+          // Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
+          // Giả sử domain admin là nơi chứa ảnh
+          url:
+            `https://admin.pigroup.tqdesign.vn/storage/${post.image}` ||
+            '/logo.png'
         }
       ]
     }
@@ -57,8 +75,9 @@ async function getPostBySlug(slug: string) {
   return json.data;
 }
 
-export default async function DetailPost({params}: {params: {slug: string}}) {
-  const {slug} = params;
+// ✅ BƯỚC 3: ÁP DỤNG TYPE MỚI CHO COMPONENT PAGE
+export default async function DetailPost({params}: Props) {
+  const {slug} = params; // `locale` cũng có sẵn ở đây nếu bạn cần dùng: const { slug, locale } = params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -69,6 +88,7 @@ export default async function DetailPost({params}: {params: {slug: string}}) {
     `https://admin.pigroup.tqdesign.vn/api/posts/${slug}/related`,
     {cache: 'no-store'}
   );
+  // Thêm kiểm tra fetch cho related posts
   const {data} = await related.json();
 
   const isBiddingPost = post.categories.some(
