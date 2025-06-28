@@ -1,29 +1,34 @@
-// app/posts/[slug]/page.tsx
-
-import { ContentBidding } from '@/components/news/ContentBidding';
-import { Hero } from '@/components/news/Hero';
+import {ContentBidding} from '@/components/news/ContentBidding';
+import {Hero} from '@/components/news/Hero';
 import Related from '@/components/news/Related';
-import { RegistrationForm } from '@/components/news/RegistrationForm';
-import { Metadata } from 'next'; // Giữ lại Metadata cho Server Component
-import CategorySetter from './CategorySetter'; // Import component Client mới tạo
+import {RegistrationForm} from '@/components/news/RegistrationForm';
+import {Metadata} from 'next';
+import CategorySetter from './CategorySetter';
 
-type Props = {
-  params: { slug: string }; // params không phải là Promise khi sử dụng trong Page component
-};
+interface Params {
+  params: {
+    slug: string;
+  };
+}
 
-// Hàm generateMetadata vẫn là Server Component
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = params;
-  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
-    cache: 'no-store',
-  });
-  const { data: post } = await res.json();
+// Sửa hàm metadata
+export async function generateMetadata({params}: Params): Promise<Metadata> {
+  const {slug} = params;
+  const res = await fetch(
+    `https://admin.pigroup.tqdesign.vn/api/posts/${slug}`,
+    {
+      cache: 'no-store'
+    }
+  );
+  const {data: post} = await res.json();
+
   if (!post) {
     return {
       title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.',
+      description: 'Không tìm thấy bài viết này.'
     };
   }
+
   return {
     title: post.name,
     description: post.description,
@@ -32,66 +37,73 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       images: [
         {
-          url: `/storage/${post.image}` || '/logo.png',
-        },
-      ],
-    },
+          url: `/storage/${post.image}` || '/logo.png'
+        }
+      ]
+    }
   };
 }
 
-// Hàm fetch dữ liệu cho bài viết
 async function getPostBySlug(slug: string) {
-  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
-    cache: 'no-store',
-  });
-  if (!res.ok) {
-    return null;
-  }
+  const res = await fetch(
+    `https://admin.pigroup.tqdesign.vn/api/posts/${slug}`,
+    {
+      cache: 'no-store'
+    }
+  );
+
+  if (!res.ok) return null;
+
   const json = await res.json();
   return json.data;
 }
 
-// Component Page của bạn (Server Component)
-export default async function DetailPost({ params }: Props) {
-  const { slug } = params;
+// Sửa kiểu Props trong Page component
+export default async function DetailPost({params}: Params) {
+  const {slug} = params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
     return <div className="text-center mt-20">Không tìm thấy bài viết</div>;
   }
 
-  const related = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}/related`, {
-    cache: 'no-store',
-  });
-  const { data } = await related.json();
+  const related = await fetch(
+    `https://admin.pigroup.tqdesign.vn/api/posts/${slug}/related`,
+    {
+      cache: 'no-store'
+    }
+  );
+  const {data} = await related.json();
 
-  const isBiddingPost = post.categories.some((category: { name: string; }) => category.name === 'Tin Đấu Thầu');
-  
-  // Lấy slug của danh mục đầu tiên (hoặc logic của bạn để chọn danh mục chính)
-  const firstCategorySlug = post.categories.length > 0 ? post.categories[0].slug : null;
+  const isBiddingPost = post.categories.some(
+    (category: {name: string}) => category.name === 'Tin Đấu Thầu'
+  );
+
+  const firstCategorySlug =
+    post.categories.length > 0 ? post.categories[0].slug : null;
 
   return (
     <div>
-      {/* Render Client Component CategorySetter.
-        Nó sẽ nhận 'firstCategorySlug' từ Server Component này
-        và sử dụng useEffect để đẩy slug này vào Context.
-      */}
       <CategorySetter categorySlug={firstCategorySlug} />
-      
-      <Hero post={post}/>
+
+      <Hero post={post} />
       <div className="m-auto w-full sm:max-w-[70%] px-[30px] sm:px-0">
-        <ContentBidding post={post}/>
+        <ContentBidding post={post} />
       </div>
-      
+
       {isBiddingPost && (
         <div className="m-auto w-full sm:max-w-[85%] px-[30px] rounded-[10px] bg-[#EAF3FF]/50 mt-[80px] sm:px-[90px] pt-[70px] pb-[70px]">
-          <h2 className='text-yellow-1 uppercase text-center text-size-30 md:text-size-35 lg:text-[38px] 2xl:text-[45px] font-bold mb-[35px]'>Đăng ký dự thầu</h2>
+          <h2 className="text-yellow-1 uppercase text-center text-size-30 md:text-size-35 lg:text-[38px] 2xl:text-[45px] font-bold mb-[35px]">
+            Đăng ký dự thầu
+          </h2>
           <RegistrationForm />
         </div>
       )}
 
       <div className=" m-auto w-full sm:max-w-[85%] px-[30px] mb-[80px]">
-        <h2 className='text-yellow-1 uppercase text-left sm:text-center text-[22px] 2xl:text-[45px] font-bold my-[30px] sm:mb-[45px] sm:mt-[90px]'>Tin liên quan</h2>
+        <h2 className="text-yellow-1 uppercase text-left sm:text-center text-[22px] 2xl:text-[45px] font-bold my-[30px] sm:mb-[45px] sm:mt-[90px]">
+          Tin liên quan
+        </h2>
         <Related post={data} />
       </div>
     </div>
