@@ -37,6 +37,7 @@ export default function Part({custom_fields}: any) {
     digitalcity_connect,
     digitalcity_slider_uni
   } = custom_fields;
+  console.log(custom_fields)
   const digitalcityslideruni = convertJsonStringToArrayOrObject(
     digitalcity_slider_uni
   );
