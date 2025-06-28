@@ -7,11 +7,11 @@ const mainImage = "/fnews/news-1.png";
 export default function News({ posts }: any) {
   useScrollReveal();
   return (
-    <div className="min-h-screen pt-[70px] sm:pt-[190px] 2xl:pt-[226px] pb-[90px] m-auto w-full px-[30px] sm:px-0 sm:max-w-[75%]">
+    <div className="min-h-screen pt-[70px] sm:pt-[190px] 2xl:pt-[226px] pb-[30px] sm:pb-[90px] m-auto w-full px-[30px] sm:px-0 sm:max-w-[75%]">
       <div className="mx-auto flex flex-col gap-12">
         {/* Top Image w/ Overlayed Card */}
         <Link href={`https://pigroup.tqdesign.vn/posts/${posts[0].slug}`} className="relative news-top-item">
-          <div className='img-container flex justify-center items-center ef:w-[1178px] w-full max-w-[100%] sm:max-w-[75%] rounded-[10px] h-[262px] sm:h-auto ef:max-h-[58vh]'>
+          <div className='img-container flex justify-center items-center ef:w-[1178px] w-full max-w-[100%] sm:max-w-[75%] rounded-[10px] h-[262px] sm:h-auto ef:max-h-[58vh] mt-[50px] sm:mt-[0px]'>
             {
               posts[0].is_featured ? (
                 <Image
@@ -42,7 +42,7 @@ export default function News({ posts }: any) {
           </div>
         </Link>
         {/* Bottom 2 cards section (responsive grid) */}
-        <div className="grid mt-[50px] sm:mt-[25px] 2xl:mt-[25px] grid-cols-1 gap-y-[90px] gap-x-[10px] sm:grid-cols-2 sm:gap-y-[35px] sm:gap-x-[40px]">
+        <div className="grid mt-[30px] sm:mt-[25px] 2xl:mt-[25px] grid-cols-1 sm:gap-y-[50px] gap-y-[10px] gap-x-[10px] sm:grid-cols-2 sm:gap-y-[35px] sm:gap-x-[40px]">
           {/* Card 1 */}
           {
             posts.map((post: any, index: number) =>
@@ -67,7 +67,7 @@ export default function News({ posts }: any) {
                   </div>
                   {/* Label */}
                   <div >
-                    <div className={`title absolute ${index % 2 === 0 ? 'bottom-[-30px] sm:bottom-[50px]' : 'bottom-[-30px] sm:bottom-[50px]' }  left-0 translate-y-2/5 leading-[21px] 2xl:leading-[26px] z-10 bg-[#EAF3FF] rounded-tr-[40px] w-[90%] sm:w-[80%] px-6 py-[18px] text-blue-1 font-bold text-[13px] 2xl:text-[17px] uppercase`}>
+                    <div className={`title absolute ${index % 2 === 0 ? 'bottom-[15px] sm:bottom-[50px]' : 'bottom-[15px] sm:bottom-[50px]' }  left-0 translate-y-2/5 leading-[21px] 2xl:leading-[26px] z-10 bg-[#EAF3FF] rounded-tr-[40px] w-[100%] sm:w-[80%] px-6 py-[18px] text-blue-1 font-bold text-[13px] 2xl:text-[17px] uppercase`}>
                       <span  className="line-clamp-2 sm:line-clamp-none">
                         {post.name}
                       </span>

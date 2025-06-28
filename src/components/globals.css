@@ -26,6 +26,15 @@ strong {
 figure.image > img {
   @apply m-auto rounded-[10px] w-full object-cover max-h-[600px];
 }
+figure.image > figcaption {
+  padding-top: 10px;
+}
+figure.image > figcaption > span {
+  font-size: 13px!important;
+  @media (width >= 1660px) {
+    font-size: 17px!important;
+  }
+}
 @theme {
   --background: #fff;
   --font-montserrat: Montserrat, 'Montserrat', sans-serif;
