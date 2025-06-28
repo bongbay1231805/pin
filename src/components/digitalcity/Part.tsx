@@ -35,7 +35,9 @@ export default function Part({custom_fields}: any) {
     digitalcity_17,
     digitalcity_18,
     digitalcity_connect,
-    digitalcity_slider_uni
+    digitalcity_slider_uni,
+    digitalcity_text_legal,
+    digitalcity_image_legal
   } = custom_fields;
   console.log(custom_fields);
   const digitalcityslideruni = convertJsonStringToArrayOrObject(
@@ -1528,13 +1530,13 @@ export default function Part({custom_fields}: any) {
             >
               <Image
                 className="group-hover:scale-[120%] duration-1000 w-full"
-                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_14}`}
+                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_image_legal}`}
                 width={639}
                 height={414}
                 alt="Image"
               />
               <h4 className="z-20 text-white text-[18px] text-center absolute bottom-[20px] w-full">
-                {digitalcity_15}
+                {digitalcity_text_legal}
               </h4>
             </div>
           </div>

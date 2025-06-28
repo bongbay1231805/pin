@@ -1,87 +1,127 @@
 'use client';
+
 import convertJsonStringToArrayOrObject from '@/hooks/useConvertJsonToArray';
-import React, {useRef} from 'react';
+import React, {useEffect, useState, useRef, useCallback} from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import {ChevronLeft, ChevronRight} from 'lucide-react'; // Giữ lại icon hoặc thay thế
+
+// Import file CSS cho Embla (bạn sẽ tạo file này ở bước 3)
+import './embla.css';
+
 type HorizontalScrollProps = {
   custom_fields: any;
 };
-const HorizontalScroll: React.FC<HorizontalScrollProps> = ({
-  custom_fields
-}: any) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  let isDown = false;
-  let startX = 0;
-  let scrollLeft = 0;
-  const onMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    isDown = true;
-    scrollRef.current.classList.add('cursor-grabbing');
-    startX = e.pageX - scrollRef.current.offsetLeft;
-    scrollLeft = scrollRef.current.scrollLeft;
-  };
-  const onMouseLeave = () => {
-    isDown = false;
-    scrollRef.current?.classList.remove('cursor-grabbing');
-  };
-  const onMouseUp = () => {
-    isDown = false;
-    scrollRef.current?.classList.remove('cursor-grabbing');
-  };
-  const onMouseMove = (e: React.MouseEvent) => {
-    if (!isDown || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 1.5; // tốc độ kéo
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-  // Thêm hàm xử lý scroll vòng lặp
-  const onScroll = () => {
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const scrollWidth = container.scrollWidth / 2; // chiều rộng 1 vòng
-    // Nếu scroll gần cuối vòng đầu tiên, nhảy về đầu vòng lặp
-    if (container.scrollLeft >= scrollWidth) {
-      container.scrollLeft = container.scrollLeft - scrollWidth;
-    }
-    // Nếu scroll về đầu vòng lặp, nhảy về cuối vòng đầu tiên
-    else if (container.scrollLeft <= 0) {
-      container.scrollLeft = container.scrollLeft + scrollWidth;
-    }
-  };
-  const {digitalcity_slider_horizoltal} = custom_fields;
-  const digitalcitysliderhorizoltal = convertJsonStringToArrayOrObject(
-    digitalcity_slider_horizoltal
+
+const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
+  const autoplay = useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+      stopOnLastSnap: true
+    })
   );
-  const digitalcitysliderhorizoltals = [
-    ...digitalcitysliderhorizoltal,
-    ...digitalcitysliderhorizoltal
-  ];
+  // 1. Cấu hình Embla
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true, // Cho phép lặp vô tận
+      align: 'start', // Căn chỉnh các slide từ bên trái
+      slidesToScroll: 1 // Mỗi lần bấm next/prev chỉ cuộn 1 item
+    },
+    [autoplay.current]
+  );
+
+  const [items, setItems] = useState<any[]>([]);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  // 2. Xử lý logic cho nút bấm
+  const scrollPrev = useCallback(
+    () => emblaApi && emblaApi.scrollPrev(),
+    [emblaApi]
+  );
+  const scrollNext = useCallback(
+    () => emblaApi && emblaApi.scrollNext(),
+    [emblaApi]
+  );
+
+  // 3. Lắng nghe sự kiện của Embla để cập nhật trạng thái nút bấm
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect); // Cập nhật khi carousel re-initialize (vd: resize)
+    onSelect(); // Cập nhật trạng thái ban đầu
+
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi]);
+
+  // Lấy dữ liệu
+  useEffect(() => {
+    const {digitalcity_slider_horizoltal} = custom_fields;
+    if (digitalcity_slider_horizoltal) {
+      const parsedItems = convertJsonStringToArrayOrObject(
+        digitalcity_slider_horizoltal
+      );
+      setItems(parsedItems);
+    }
+  }, [custom_fields]);
+
+  if (!items || items.length === 0) {
+    return null;
+  }
+
   return (
-    <div
-      ref={scrollRef}
-      className="overflow-x-auto scrollbar-hide cursor-grab select-none"
-      onMouseDown={onMouseDown}
-      onMouseLeave={onMouseLeave}
-      onMouseUp={onMouseUp}
-      onMouseMove={onMouseMove}
-      onScroll={onScroll} // thêm sự kiện onScroll
-    >
-      <div className="flex gap-[40px] h-[222px] px-6">
-        {digitalcitysliderhorizoltals.map((text: any, i: number) => (
-          <div
-            key={i}
-            className="grid items-center bg-blue-1 rounded-[20px] min-w-[250px] w-[250px] h-full content-evenly hover:bg-yellow-1 duration-500"
-          >
-            <div
-              className="grid justify-center items-center"
-              dangerouslySetInnerHTML={{__html: text[0].value}}
-            ></div>
-            <h4 className="uppercase text-white px-[20px] text-[14px] text-center font-bold">
-              {text[1].value}
-            </h4>
-          </div>
-        ))}
+    <div className="relative max-w-screen-xl mx-auto technology-carousel">
+      {/* 4. Cấu trúc JSX cho Embla */}
+      <div className="embla" ref={emblaRef}>
+        <div className="embla__container">
+          {items.map((item: any, i: number) => (
+            <div className="embla__slide" key={i}>
+              <div className="grid items-center bg-blue-1 rounded-[20px] h-[222px] content-evenly hover:bg-yellow-1 duration-500">
+                <div
+                  className="grid justify-center items-center"
+                  dangerouslySetInnerHTML={{__html: item[0]?.value || ''}}
+                ></div>
+                <h4 className="uppercase text-white px-[20px] text-[14px] text-center font-bold">
+                  {item[1]?.value || ''}
+                </h4>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Nút Previous */}
+      <button
+        onClick={scrollPrev}
+        disabled={!canScrollPrev && !emblaApi?.internalEngine().options.loop}
+        className="absolute arrow cursor-pointer top-1/2 left-[-20px] md:left-[-50px] -translate-y-1/2 z-10 text-yellow-1 rounded-full p-2"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={24} />
+      </button>
+
+      {/* Nút Next */}
+      <button
+        onClick={scrollNext}
+        disabled={!canScrollNext && !emblaApi?.internalEngine().options.loop}
+        className="absolute arrow cursor-pointer top-1/2 right-[-20px] md:right-[-50px] -translate-y-1/2 z-10 text-yellow-1 rounded-full p-2"
+        aria-label="Next slide"
+      >
+        <ChevronRight size={24} />
+      </button>
     </div>
   );
 };
+
 export default HorizontalScroll;
