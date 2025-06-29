@@ -87,7 +87,7 @@ const CategoryAndPostSearch: React.FC = () => {
           onChange={handleKeywordChange}
           onKeyDown={handleKeyDown}
           placeholder="Tìm kiếm bài viết..."
-          className="h-[25px] w-full p-2 border border-[#ccc] rounded-[4px] focus:outline-none focus:border-[#cfa176] text-[13px] 2xl:text-[17px] text-gray-700 mr-[10px]"
+          className="h-[25px] w-full p-2 border border-[#ccc] rounded-[4px] focus:outline-none focus:border-[#cfa176] text-[10px] 2xl:text-[15px] text-gray-700 mr-[10px]"
         />
         <button
           onClick={performSearch}
@@ -119,7 +119,7 @@ const CategoryAndPostSearch: React.FC = () => {
               onChange={handleKeywordChange}
               onKeyDown={handleKeyDown}
               placeholder="Tìm kiếm bài viết..."
-              className="h-[25px] w-full p-2 border border-[#ccc] rounded-[4px] focus:outline-none focus:border-[#cfa176] text-[13px] 2xl:text-[17px] text-gray-700 mr-[10px]"
+              className="h-[25px] w-full p-2 border border-[#ccc] rounded-[4px] focus:outline-none focus:border-[#cfa176] text-[10px] 2xl:text-[15px] text-gray-700 mr-[10px]"
             />
             <button
               onClick={performSearch}
