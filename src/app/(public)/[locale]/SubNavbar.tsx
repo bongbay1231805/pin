@@ -4,8 +4,8 @@
 import Link from 'next/link';
 import { useScrollRefs } from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation'; // FIX: Corrected import syntax here
+import { useState, useEffect, useRef, RefObject } from 'react';
 import { useNewsCategory } from '@/context/NewsCategoryContext';
 
 interface PropSub {
@@ -13,6 +13,20 @@ interface PropSub {
   pageCurent: boolean;
   nameCurent: string;
 }
+
+// Define the types for your navigation items more explicitly
+interface NavItemWithRef {
+  name: string;
+  href: string;
+  hrefb: RefObject<HTMLDivElement | null>;
+}
+
+interface NavItemWithoutRef {
+  name: string;
+  href: string;
+}
+
+type NavItem = NavItemWithRef | NavItemWithoutRef; // Union type for all possible nav items
 
 const ECOSYSTEM_SLUGS = [
   'ecosystem',
@@ -36,15 +50,13 @@ export default function SubNavbar(props: PropSub) {
 
   const [isFixed, setIsFixed] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  // const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false); // KHÔNG CẦN NỮA
   const scrollThreshold = 100;
   const prevScrollY = useRef(0);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+  const scrollTo = (ref: RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Không cần setIsOpenMobileMenu(false) nữa
     }
   };
 
@@ -80,11 +92,11 @@ export default function SubNavbar(props: PropSub) {
 
       let newActiveSection = '';
 
-      const currentNavItems = getNavItems(pathname, myArray, currentCategorySlug, { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
+      const currentNavItems: NavItem[] = getNavItems(pathname, myArray, currentCategorySlug || '', { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
 
       for (let i = currentNavItems.length - 1; i >= 0; i--) {
         const item = currentNavItems[i];
-        if (item.hrefb?.current) {
+        if ('hrefb' in item && item.hrefb?.current) {
           const section = item.hrefb.current;
           const sectionTop = section.getBoundingClientRect().top;
 
@@ -95,7 +107,7 @@ export default function SubNavbar(props: PropSub) {
         }
       }
 
-      const firstScrollItem = currentNavItems.find((item) => item.hrefb);
+      const firstScrollItem = currentNavItems.find((item): item is NavItemWithRef => 'hrefb' in item && item.hrefb !== undefined);
       if (newActiveSection === '' && firstScrollItem) {
         newActiveSection = firstScrollItem.name;
       }
@@ -120,7 +132,7 @@ export default function SubNavbar(props: PropSub) {
 
     if (isPostDetailPage || NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
         if (itemHref.includes('/categories/')) {
-            return currentCategorySlug === itemSlug;
+            return (currentCategorySlug || '') === itemSlug;
         }
         return false;
     }
@@ -137,7 +149,7 @@ export default function SubNavbar(props: PropSub) {
     myArray: string[],
     currentCategorySlug: string,
     refs: ReturnType<typeof useScrollRefs>
-  ) => {
+  ): NavItem[] => {
     const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = refs;
     const currentSlugFromPathname = pathname.split('/').pop() || '';
 
@@ -187,7 +199,7 @@ export default function SubNavbar(props: PropSub) {
     return [];
   };
 
-  const navItems = getNavItems(pathname, myArray, currentCategorySlug, { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
+  const navItems = getNavItems(pathname, myArray, currentCategorySlug || '', { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
 
   const hasNavItemsToDisplay = Array.isArray(navItems) && navItems.length > 0;
   const isNewsOrSearchPage = NEWS_SLUGS.includes(pathname.split('/').pop() || '') || myArray.includes('posts') || myArray.includes('search');
@@ -202,7 +214,7 @@ export default function SubNavbar(props: PropSub) {
     >
       <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
         {/* CategoryAndPostSearch on mobile (always visible, no toggle button) */}
-        <div className="hidden sm:hidden flex items-center justify-between py-2 px-4">
+        <div className="hidden sm:block flex items-center justify-between py-2 px-4">
           {isNewsOrSearchPage && (
              <CategoryAndPostSearch />
           )}
@@ -211,7 +223,7 @@ export default function SubNavbar(props: PropSub) {
         {/* Desktop menu */}
         <ul className="hidden xl:flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
           {navItems.map((item) =>
-            item.hrefb ? (
+            'hrefb' in item && item.hrefb ? (
               <li key={item.name}>
                 <button
                   onClick={() => scrollTo(item.hrefb!)}
@@ -245,7 +257,7 @@ export default function SubNavbar(props: PropSub) {
         {/* Mobile submenu (always visible on screens smaller than xl, cuộn ngang) */}
         <ul className="xl:hidden flex overflow-x-auto whitespace-nowrap py-[3px] px-[10px] text-gray-5 scrollbar-hide bg-gray-3 border-t border-white-1">
           {navItems.map((item) =>
-            item.hrefb ? (
+            'hrefb' in item && item.hrefb ? (
               <li key={item.name} className="flex-shrink-0 mx-2">
                 <button
                   onClick={() => scrollTo(item.hrefb!)}
@@ -260,7 +272,6 @@ export default function SubNavbar(props: PropSub) {
               <li key={item.name} className="flex-shrink-0 mx-2">
                 <Link
                   href={item.href}
-                  // Không cần onClick={() => setIsOpenMobileMenu(false)} nữa
                   className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
                     isActive(item.href) ? 'text-yellow-1' : ''
                   }`}
