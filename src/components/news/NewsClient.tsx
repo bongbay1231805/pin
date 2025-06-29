@@ -16,11 +16,21 @@ type Props = {
 };
 export default function NewsClient({ initialPage, initialData }: Props) {
   const searchParams = useSearchParams();
-  const searchKeyword = searchParams.get('keyword') || '';
+  // Lấy searchKeyword từ URL. useSearchParams sẽ tự động re-render khi URL params thay đổi.
+  const searchKeyword = searchParams.get('keyword') || ''; 
 
   const [currentPage, setCurrentPage] = useState(initialPage);
   const [paginationLinks, setPaginationLinks] = useState<PaginationLink[]>(initialData.links);
   const [posts, setPosts] = useState(initialData.data);
+
+  useEffect(() => {
+    // Mỗi khi searchKeyword thay đổi, reset về trang 1
+    // Điều này đảm bảo rằng khi bạn tìm kiếm một từ khóa mới, kết quả sẽ bắt đầu từ trang đầu tiên.
+    setCurrentPage(1); 
+    // Nếu bạn muốn giữ lại trang hiện tại khi chỉ thay đổi từ khóa (ít phổ biến cho tìm kiếm mới),
+    // bạn có thể bỏ dòng trên và chỉ thêm searchKeyword vào dependency array.
+  }, [searchKeyword]); // Chạy lại khi searchKeyword thay đổi
+
   useEffect(() => {
     const fetchData = async () => {
       let apiUrl = `https://admin.pigroup.tqdesign.vn/api/posts?page=${currentPage}`;
@@ -34,7 +44,7 @@ export default function NewsClient({ initialPage, initialData }: Props) {
 
       try {
         const res = await fetch(apiUrl, {
-          cache: 'no-store',
+          cache: 'no-store', // Đảm bảo không cache dữ liệu
         });
 
         if (!res.ok) {
@@ -43,16 +53,16 @@ export default function NewsClient({ initialPage, initialData }: Props) {
 
         const json = await res.json();
         const { data } = json; // data ở đây là đối tượng chứa 'data' (bài viết) và 'links' (phân trang)
-
+        console.log("data", data)
         setPaginationLinks(data.links);
         setPosts(data.data);
       } catch (e: any) {
         console.error("Error fetching data in NewsClient:", e);
-      } finally {
       }
     };
     fetchData();
-  }, [currentPage]);
+  }, [currentPage, searchKeyword]); // *** THÊM searchKeyword VÀO ĐÂY ***
+
   return (
     <div>
       {/* Hiển thị danh sách bài viết */}

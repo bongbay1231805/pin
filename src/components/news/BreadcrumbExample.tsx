@@ -10,7 +10,7 @@ import {
 export default function BreadcrumbExample({ post }: any) {
   return (
     <Breadcrumb className="text-white">
-      <BreadcrumbList className="text-[18px] 2xl:text-[22px] font-bold">
+      <BreadcrumbList className="text-[13px] 2xl:text-[22px] font-bold">
         <BreadcrumbItem>
           <BreadcrumbLink href="/news">Tin tức</BreadcrumbLink>
         </BreadcrumbItem>

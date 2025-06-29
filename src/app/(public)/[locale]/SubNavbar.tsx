@@ -210,6 +210,12 @@ export default function SubNavbar(props: PropSub) {
     myArray.includes('posts') || // Bao gồm các trang chi tiết bài viết (thuộc News)
     myArray.includes('search'); // Bao gồm trang tìm kiếm (thuộc News)
 
+    const shouldShowSearchMobileSubmenu = 
+    NEWS_SLUGS.includes(currentSlugFromPathname) || 
+    // ECOSYSTEM_SLUGS.includes(currentSlugFromPathname) || 
+    myArray.includes('posts') || // Bao gồm các trang chi tiết bài viết (thuộc News)
+    myArray.includes('search'); // Bao gồm trang tìm kiếm (thuộc News)
+
 
   return hasNavItemsToDisplay ? (
     <div
@@ -221,11 +227,7 @@ export default function SubNavbar(props: PropSub) {
     >
       <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
         {/* CategoryAndPostSearch on mobile (visible only for news/ecosystem pages on mobile/tablet) */}
-        {shouldShowMobileSubmenu && ( // Sử dụng điều kiện mới
-          <div className="hidden sm:block flex items-center justify-between px-4"> {/* Chỉnh lại breakpoint để khớp với mobile submenu */}
-            <CategoryAndPostSearch />
-          </div>
-        )}
+        
 
         {/* Desktop menu */}
         <ul className="hidden xl:flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
@@ -254,7 +256,13 @@ export default function SubNavbar(props: PropSub) {
               </li>
             )
           )}
-           
+          <li>
+          {shouldShowSearchMobileSubmenu && ( // Sử dụng điều kiện mới
+            <div className="hidden sm:flex items-center justify-between px-4"> {/* Chỉnh lại breakpoint để khớp với mobile submenu */}
+              <CategoryAndPostSearch />
+            </div>
+          )}
+          </li>
            
         </ul>
 
@@ -286,6 +294,13 @@ export default function SubNavbar(props: PropSub) {
                 </li>
               )
             )}
+            <li>
+            {shouldShowSearchMobileSubmenu && ( // Sử dụng điều kiện mới
+              <div className="flex items-center justify-between px-4"> {/* Chỉnh lại breakpoint để khớp với mobile submenu */}
+                <CategoryAndPostSearch />
+              </div>
+            )}
+            </li>
           </ul>
         )}
       </div>

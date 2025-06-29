@@ -1,5 +1,5 @@
 import NewsClient from '@/components/news/NewsClient'; // Giả sử NewsClient có thể nhận prop searchKeyword
-
+import { Suspense } from 'react';
 // Định nghĩa props cho Server Component, bao gồm searchParams
 // interface SearchPageProps {
 //   searchParams?: {
@@ -15,7 +15,9 @@ async function SearchPage() {
   const json = await res.json();
   const { data } = json;
   return (
-    <NewsClient initialPage={currentPage} initialData={data} />
+    <Suspense fallback={<div>Đang tải tìm kiếm...</div>}>
+        <NewsClient initialPage={currentPage} initialData={data} />
+      </Suspense>
   );
 }
 

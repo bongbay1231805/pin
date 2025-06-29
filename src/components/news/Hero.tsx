@@ -25,7 +25,7 @@ export function Hero({ post }: any) {
           />
         )
       }
-      <div className="absolute z-1 container m-auto  max-w-[91.4%] 2xl:max-w-[91.4%] px-[10px] left-1/2 -translate-x-1/2 bottom-[56px]">
+      <div className="absolute z-1 container m-auto  max-w-[91.4%] 2xl:max-w-[91.4%] px-[10px] left-1/2 -translate-x-1/2 bottom-[20px] sm:bottom-[56px]">
         <BreadcrumbExample post={post} />
       </div>
     </div>
