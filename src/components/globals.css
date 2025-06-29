@@ -624,6 +624,10 @@ figure.image > figcaption > span {
   .timeline-carousel .arrow:hover {
     border: none;
   }
+
+  .post-content h2, .post-content h2 span{
+    font-size: 15px!important;
+  }
 }
 
 .eco-item.expandable-item {
@@ -633,3 +637,4 @@ figure.image > figcaption > span {
   /* Báo cho trình duyệt biết để tối ưu hóa */
   will-change: width;
 }
+
