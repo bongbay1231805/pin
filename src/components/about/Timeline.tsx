@@ -1,13 +1,14 @@
+// components/Timeline.tsx
 'use client';
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import {ChevronLeft, ChevronRight} from 'lucide-react';
-import {useScrollRefs} from '@/context/ScrollRefsContext';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useScrollRefs } from '@/context/ScrollRefsContext';
 
-export function Timeline({custom_fields}: any) {
-  const {threeRef} = useScrollRefs();
-  const {field_12_about, slider_about} = custom_fields;
+export function Timeline({ custom_fields }: any) {
+  const { threeRef } = useScrollRefs();
+  const { field_12_about, slider_about } = custom_fields;
 
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
     try {
@@ -34,12 +35,14 @@ export function Timeline({custom_fields}: any) {
       loop: false,
       align: 'center',
       skipSnaps: false,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      watchDrag: false
     },
     [autoplay.current]
   );
 
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // Bắt đầu từ index 1 (năm 2015)
+  const [selectedIndex, setSelectedIndex] = useState(1);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
@@ -71,19 +74,37 @@ export function Timeline({custom_fields}: any) {
 
   useEffect(() => {
     if (!embla) return;
+
+    // Cuộn đến index 1 (slide năm 2015) khi component mount
+    // Đảm bảo sliderabout có đủ phần tử trước khi cuộn
+    if (sliderabout.length > 1) {
+      embla.scrollTo(1, false); // false để cuộn ngay lập tức mà không có animation
+    }
+
     const onSelect = () => {
-      setSelectedIndex(embla.selectedScrollSnap());
-      setCanScrollPrev(embla.canScrollPrev());
-      setCanScrollNext(embla.canScrollNext());
+      const currentSnap = embla.selectedScrollSnap();
+      setSelectedIndex(currentSnap);
+
+      // --- LOGIC MỚI CHO NÚT TRÁI ---
+      // Ẩn nút trái khi index hiện tại là 1 (năm 2015)
+      setCanScrollPrev(currentSnap > 1);
+
+      // --- LOGIC MỚI CHO NÚT PHẢI ---
+      // Ẩn nút phải khi index hiện tại là sliderabout.length - 2 (năm 2023 là gần cuối)
+      // Giả sử năm 2023 là phần tử cuối cùng thứ 2 trong mảng, hoặc bạn muốn nó ẩn đi trước slide cuối cùng
+      // Nếu 2023 là index 7 và tổng số slide là 9 (index 0-8), thì nó là length - 2
+      // Nếu bạn muốn ẩn nó khi đến slide cuối cùng (2024), thì chỉ cần !embla.canScrollNext()
+      setCanScrollNext(currentSnap < sliderabout.length - 2);
     };
+
     embla.on('select', onSelect);
     embla.on('reInit', onSelect);
-    onSelect();
+    onSelect(); // Gọi lần đầu để thiết lập trạng thái ban đầu
     return () => {
       embla.off('select', onSelect);
       embla.off('reInit', onSelect);
     };
-  }, [embla]);
+  }, [embla, sliderabout.length]); // Thêm sliderabout.length vào dependency array
 
   const scrollPrev = () => embla && embla.scrollPrev();
   const scrollNext = () => embla && embla.scrollNext();
@@ -100,20 +121,12 @@ export function Timeline({custom_fields}: any) {
     if (typeof window !== 'undefined') {
       setIsMobile(window.innerWidth < 768);
     }
-
-    // if(!isMobile) {
-    //   setSelectedIndex(1)
-    // }
   }, []);
 
-  // const currentEvent =
-  //   sliderabout && sliderabout[selectedIndex]
-  //     ? sliderabout[isMobile ? selectedIndex : selectedIndex + 1]
-  //     : null;
+  console.log(sliderabout, selectedIndex);
 
   const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
 
-  console.log(selectedIndex, isMobile)
   return (
     <section
       ref={threeRef}
@@ -141,13 +154,13 @@ export function Timeline({custom_fields}: any) {
               {currentEvent[1]?.value && (
                 <div
                   className="text-[13px] 2xl:text-[15px]"
-                  dangerouslySetInnerHTML={{__html: currentEvent[1].value}}
+                  dangerouslySetInnerHTML={{ __html: currentEvent[1].value }}
                 />
               )}
               {currentEvent[2]?.value && (
                 <div
                   className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
-                  dangerouslySetInnerHTML={{__html: currentEvent[2].value}}
+                  dangerouslySetInnerHTML={{ __html: currentEvent[2].value }}
                 />
               )}
             </div>
@@ -182,13 +195,13 @@ export function Timeline({custom_fields}: any) {
                       {event[1]?.value && (
                         <div
                           className="text-[13px] 2xl:text-[15px]"
-                          dangerouslySetInnerHTML={{__html: event[1].value}}
+                          dangerouslySetInnerHTML={{ __html: event[1].value }}
                         />
                       )}
                       {event[2]?.value && (
                         <div
                           className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
-                          dangerouslySetInnerHTML={{__html: event[2].value}}
+                          dangerouslySetInnerHTML={{ __html: event[2].value }}
                         />
                       )}
                     </div>

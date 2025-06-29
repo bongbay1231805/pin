@@ -1,13 +1,14 @@
+// components/TimelineMobile.tsx
 'use client';
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import {ChevronLeft, ChevronRight} from 'lucide-react';
-import {useScrollRefs} from '@/context/ScrollRefsContext';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useScrollRefs } from '@/context/ScrollRefsContext';
 
-export function TimelineMobile({custom_fields}: any) {
-  const {threeRef} = useScrollRefs();
-  const {field_12_about, slider_about} = custom_fields;
+export function TimelineMobile({ custom_fields }: any) {
+  const { threeRef } = useScrollRefs();
+  const { field_12_about, slider_about } = custom_fields;
 
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
     try {
@@ -39,6 +40,7 @@ export function TimelineMobile({custom_fields}: any) {
     [autoplay.current]
   );
 
+  // Khởi tạo selectedIndex là 0, vì bạn muốn ẩn nút trái khi ở index 0
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -72,18 +74,26 @@ export function TimelineMobile({custom_fields}: any) {
   useEffect(() => {
     if (!embla) return;
     const onSelect = () => {
-      setSelectedIndex(embla.selectedScrollSnap());
-      setCanScrollPrev(embla.canScrollPrev());
-      setCanScrollNext(embla.canScrollNext());
+      const currentSnap = embla.selectedScrollSnap();
+      setSelectedIndex(currentSnap);
+
+      // --- LOGIC MỚI CHO NÚT TRÁI ---
+      // Ẩn nút trái khi index hiện tại là 0
+      setCanScrollPrev(currentSnap > 0);
+
+      // --- LOGIC MỚI CHO NÚT PHẢI ---
+      // Ẩn nút phải khi index hiện tại là phần tử cuối cùng
+      setCanScrollNext(currentSnap < sliderabout.length - 1);
     };
+
     embla.on('select', onSelect);
     embla.on('reInit', onSelect);
-    onSelect();
+    onSelect(); // Gọi lần đầu để thiết lập trạng thái ban đầu
     return () => {
       embla.off('select', onSelect);
       embla.off('reInit', onSelect);
     };
-  }, [embla]);
+  }, [embla, sliderabout.length]); // Thêm sliderabout.length vào dependency array
 
   const scrollPrev = () => embla && embla.scrollPrev();
   const scrollNext = () => embla && embla.scrollNext();
@@ -94,26 +104,8 @@ export function TimelineMobile({custom_fields}: any) {
     }
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsMobile(window.innerWidth < 768);
-    }
-
-    // if(!isMobile) {
-    //   setSelectedIndex(1)
-    // }
-  }, []);
-
-  // const currentEvent =
-  //   sliderabout && sliderabout[selectedIndex]
-  //     ? sliderabout[isMobile ? selectedIndex : selectedIndex + 1]
-  //     : null;
-
   const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
 
-  console.log(selectedIndex, isMobile)
   return (
     <section
       ref={threeRef}
@@ -141,13 +133,13 @@ export function TimelineMobile({custom_fields}: any) {
               {currentEvent[1]?.value && (
                 <div
                   className="text-[13px] 2xl:text-[15px]"
-                  dangerouslySetInnerHTML={{__html: currentEvent[1].value}}
+                  dangerouslySetInnerHTML={{ __html: currentEvent[1].value }}
                 />
               )}
               {currentEvent[2]?.value && (
                 <div
                   className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
-                  dangerouslySetInnerHTML={{__html: currentEvent[2].value}}
+                  dangerouslySetInnerHTML={{ __html: currentEvent[2].value }}
                 />
               )}
             </div>
@@ -182,13 +174,13 @@ export function TimelineMobile({custom_fields}: any) {
                       {event[1]?.value && (
                         <div
                           className="text-[13px] 2xl:text-[15px]"
-                          dangerouslySetInnerHTML={{__html: event[1].value}}
+                          dangerouslySetInnerHTML={{ __html: event[1].value }}
                         />
                       )}
                       {event[2]?.value && (
                         <div
                           className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
-                          dangerouslySetInnerHTML={{__html: event[2].value}}
+                          dangerouslySetInnerHTML={{ __html: event[2].value }}
                         />
                       )}
                     </div>
