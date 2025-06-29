@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { useScrollRefs } from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
-import { usePathname } from 'next/navigation'; // FIX: Corrected import syntax here
+import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef, RefObject } from 'react';
 import { useNewsCategory } from '@/context/NewsCategoryContext';
 
@@ -14,7 +14,6 @@ interface PropSub {
   nameCurent: string;
 }
 
-// Define the types for your navigation items more explicitly
 interface NavItemWithRef {
   name: string;
   href: string;
@@ -26,7 +25,7 @@ interface NavItemWithoutRef {
   href: string;
 }
 
-type NavItem = NavItemWithRef | NavItemWithoutRef; // Union type for all possible nav items
+type NavItem = NavItemWithRef | NavItemWithoutRef;
 
 const ECOSYSTEM_SLUGS = [
   'ecosystem',
@@ -202,7 +201,15 @@ export default function SubNavbar(props: PropSub) {
   const navItems = getNavItems(pathname, myArray, currentCategorySlug || '', { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
 
   const hasNavItemsToDisplay = Array.isArray(navItems) && navItems.length > 0;
-  const isNewsOrSearchPage = NEWS_SLUGS.includes(pathname.split('/').pop() || '') || myArray.includes('posts') || myArray.includes('search');
+
+  // NEW: Điều kiện để hiển thị submenu mobile (chỉ Tin tức và Hệ sinh thái)
+  const currentSlugFromPathname = pathname.split('/').pop() || '';
+  const shouldShowMobileSubmenu = 
+    NEWS_SLUGS.includes(currentSlugFromPathname) || 
+    ECOSYSTEM_SLUGS.includes(currentSlugFromPathname) || 
+    myArray.includes('posts') || // Bao gồm các trang chi tiết bài viết (thuộc News)
+    myArray.includes('search'); // Bao gồm trang tìm kiếm (thuộc News)
+
 
   return hasNavItemsToDisplay ? (
     <div
@@ -213,12 +220,12 @@ export default function SubNavbar(props: PropSub) {
       ref={menuRef}
     >
       <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
-        {/* CategoryAndPostSearch on mobile (always visible, no toggle button) */}
-        <div className="hidden sm:block flex items-center justify-between px-4">
-          {isNewsOrSearchPage && (
-             <CategoryAndPostSearch />
-          )}
-        </div>
+        {/* CategoryAndPostSearch on mobile (visible only for news/ecosystem pages on mobile/tablet) */}
+        {shouldShowMobileSubmenu && ( // Sử dụng điều kiện mới
+          <div className="hidden sm:block flex items-center justify-between px-4"> {/* Chỉnh lại breakpoint để khớp với mobile submenu */}
+            <CategoryAndPostSearch />
+          </div>
+        )}
 
         {/* Desktop menu */}
         <ul className="hidden xl:flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
@@ -248,36 +255,39 @@ export default function SubNavbar(props: PropSub) {
             )
           )}
            
+           
         </ul>
 
-        {/* Mobile submenu (always visible on screens smaller than xl, cuộn ngang) */}
-        <ul className="xl:hidden flex overflow-x-auto whitespace-nowrap py-[3px] px-[10px] text-gray-5 scrollbar-hide bg-gray-3 border-t border-white-1">
-          {navItems.map((item) =>
-            'hrefb' in item && item.hrefb ? (
-              <li key={item.name} className="flex-shrink-0 mx-2">
-                <button
-                  onClick={() => scrollTo(item.hrefb!)}
-                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
-                    activeSection === item.name ? 'text-yellow-1' : ''
-                  }`}
-                >
-                  {item.name}
-                </button>
-              </li>
-            ) : (
-              <li key={item.name} className="flex-shrink-0 mx-2">
-                <Link
-                  href={item.href}
-                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
-                    isActive(item.href) ? 'text-yellow-1' : ''
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            )
-          )}
-        </ul>
+        {/* Mobile submenu (only visible for News/Ecosystem pages on screens smaller than xl) */}
+        {shouldShowMobileSubmenu && ( // Sử dụng điều kiện mới để chỉ hiển thị trên mobile cho News/Ecosystem
+          <ul className="xl:hidden flex overflow-x-auto whitespace-nowrap py-[3px] px-[10px] text-gray-5 scrollbar-hide bg-gray-3 border-t border-white-1">
+            {navItems.map((item) =>
+              'hrefb' in item && item.hrefb ? (
+                <li key={item.name} className="flex-shrink-0 mx-2">
+                  <button
+                    onClick={() => scrollTo(item.hrefb!)}
+                    className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
+                      activeSection === item.name ? 'text-yellow-1' : ''
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                </li>
+              ) : (
+                <li key={item.name} className="flex-shrink-0 mx-2">
+                  <Link
+                    href={item.href}
+                    className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
+                      isActive(item.href) ? 'text-yellow-1' : ''
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
+        )}
       </div>
     </div>
   ) : null;
