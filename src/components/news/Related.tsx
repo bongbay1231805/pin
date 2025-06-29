@@ -16,7 +16,7 @@ interface PostItem {
 }
 
 export default function Related({ post }: { post: PostItem[] }) {
-  const ITEMS_PER_PAGE = 2;
+  const ITEMS_PER_PAGE = 4;
   
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -59,7 +59,7 @@ export default function Related({ post }: { post: PostItem[] }) {
                   />
                 ) : (
                   <Image
-                    src={mainImage}
+                    src={`https://admin.pigroup.tqdesign.vn/storage/${item.image}`}
                     alt={item.name}
                     width={250}
                     height={150}
@@ -73,7 +73,7 @@ export default function Related({ post }: { post: PostItem[] }) {
         ))}
       </div>
 
-      <div className="flex justify-center items-center space-x-2 mt-[25px] mb-[75px]">
+      <div className="text-[13px] 2xl:text-[17px] flex justify-center items-center space-x-2 mt-[25px] mb-[75px]">
         {totalPages > 1 && Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
           <button
             key={pageNumber}

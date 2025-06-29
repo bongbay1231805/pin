@@ -316,7 +316,7 @@ export default function Hero({ data, dataPage }: any) {
 </div>
 
           {/* Pagination Controls */}
-          <div className="flex justify-center items-center space-x-2 mt-[25px] mb-[75px]">
+          <div className="text-[13px] 2xl:text-[17px] flex justify-center items-center space-x-2 mt-[25px] mb-[75px]">
             {totalPages > 1 && Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
               <button
                 key={pageNumber}

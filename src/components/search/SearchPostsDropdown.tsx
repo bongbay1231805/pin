@@ -1,146 +1,96 @@
-"use client"; // Đảm bảo đây là Client Component trong App Router
-import React, { useState, useEffect } from 'react';
-import Select from 'react-select';
-import { useRouter } from 'next/navigation'; // Sử dụng useRouter từ next/navigation cho App Router
-import CustomSelectOption from './CustomSelectOption';
-// 1. Định nghĩa kiểu dữ liệu cho một bài post từ API
+// components/search/SearchPostsDropdown.tsx
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+
+// Cập nhật interface props
+interface SearchPostsDropdownProps {
+  searchKeyword: string; // Đây là prop mà component này mong đợi
+}
+
 interface Post {
   id: number;
-  name: string;
-  description: string;
-  content: string;
-  is_featured: number;
-  image: string | null;
-  created_at: string;
-  slug: string;
-  custom_fields: {
-    vi_tri_tuyen_dung: string;
-    so_luong: string;
-    thoi_han: string;
-  };
+  title: string;
+  slug: string; // Thêm slug nếu bài viết có slug để tạo URL
+  // Thêm các trường khác của bài viết nếu cần
 }
-// 2. Định nghĩa kiểu dữ liệu cho phản hồi từ API
-interface ApiResponse {
-  data: {
-    current_page: number;
-    data: Post[];
-    first_page_url: string;
-    from: number;
-    last_page: number;
-    last_page_url: string;
-    links: any[];
-    next_page_url: string | null;
-    path: string;
-    per_page: number;
-    prev_page_url: string | null;
-    to: number;
-    total: number;
-  };
-  category: {
-    name: string;
-    description: string;
-  };
-}
-// 3. Định nghĩa kiểu dữ liệu cho option trong react-select
-interface SelectOption {
-  value: string;
-  label: string;
-  image?: string | null;
-}
-// 4. Định nghĩa Props cho component SearchPostsDropdown
-interface SearchPostsDropdownProps {
-  categorySlug: string; // Tên prop mới để truyền slug của chuyên mục
-}
-// Cố định currentPage như bạn yêu cầu
-const currentPage = 1;
-const customStyles = {
-  control: (provided: any, state: any) => ({
-    ...provided, // Keep the default styles
-    backgroundColor: '#fff', // Custom background for the control (input area)
-    borderColor: state.isFocused ? '#555' : '#555', // Custom border color on focus
-    boxShadow: state.isFocused ? '0 0 0 1px #cfa176' : 'none',
-    '&:hover': {
-      borderColor: '#cfa176', // Custom border color on hover
-    },
-  }),
-  option: (provided: any, state: any) => ({
-    ...provided, // Keep the default styles
-    backgroundColor: state.isFocused
-      ? '#cfa176' // Background when option is hovered/focused
-      : state.isSelected
-        ? '#cfa176'  // Background when option is selected
-        : 'white',    // Default background
-    color: state.isSelected ? 'white' : '#555', // Text color
-    cursor: 'pointer',
-  }),
-  singleValue: (provided: any) => ({
-    ...provided,
-    color: '#cfa176', // Color of the selected value displayed in the control
-  }),
-  menu: (provided: any) => ({
-    ...provided,
-    backgroundColor: 'white', // Background of the dropdown menu itself
-    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', // Optional shadow
-  }),
-  placeholder: (provided: any) => ({
-    ...provided,
-    color: '#888', // Color of the placeholder text
-  }),
-};
-const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ categorySlug }) => {
+
+const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ searchKeyword }) => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
+
   useEffect(() => {
+    // Kiểm tra an toàn: đảm bảo searchKeyword là một chuỗi và không null/undefined
+    if (typeof searchKeyword !== 'string' || searchKeyword === null) {
+      console.error("searchKeyword received is not a string or is null:", searchKeyword);
+      setPosts([]); // Xóa danh sách bài viết để tránh hiển thị sai
+      return; // Thoát sớm
+    }
+
+    // Chỉ fetch dữ liệu nếu có từ khóa tìm kiếm
+    if (searchKeyword.trim() === '') {
+      setPosts([]); // Xóa danh sách bài viết nếu không có từ khóa
+      return;
+    }
+
     const fetchPosts = async () => {
       setLoading(true);
       setError(null);
       try {
-        const apiUrl = `https://admin.pigroup.tqdesign.vn/api/categories/${categorySlug}/posts?page=${currentPage}`;
+        // Địa chỉ API của bạn (ví dụ)
+        // THAY THẾ 'http://your-cms-url/api/posts' BẰNG ENDPOINT THỰC TẾ CỦA BẠN
+        // Giả sử API của bạn hỗ trợ tìm kiếm bằng query parameter 'q'
+        const apiUrl = `http://your-cms-url/api/posts?q=${encodeURIComponent(searchKeyword)}`;
+
         const response = await fetch(apiUrl);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const result: ApiResponse = await response.json();
-        setPosts(result.data.data);
-      } catch (err: any) {
-        setError(err.message);
+        const data: Post[] = await response.json();
+        setPosts(data);
+      } catch (e: any) {
+        setError(e.message || 'Failed to fetch posts.');
       } finally {
         setLoading(false);
       }
     };
-    fetchPosts();
-  }, [categorySlug]);
-  if (loading) {
-    return <div>Đang tải bài viết chuyên mục "{categorySlug}"...</div>;
-  }
-  if (error) {
-    return <div>Lỗi khi tải bài viết: {error}</div>;
-  }
-  const options: SelectOption[] = posts.map(p => ({
-    value: p.slug,
-    label: p.name,
-    image: p.image
-  }));
-  const handleChange = (selectedOption: SelectOption | null) => {
-    if (selectedOption) {
-      router.push(`/posts/${selectedOption.value}`);
-    }
-  };
+
+    // Debounce search input để tránh gọi API quá thường xuyên
+    const handler = setTimeout(() => {
+      fetchPosts();
+    }, 300); // Đợi 300ms sau khi người dùng ngừng gõ
+
+    return () => {
+      clearTimeout(handler); // Clear timeout nếu từ khóa thay đổi trước khi fetch
+    };
+  }, [searchKeyword]); // Dependency là searchKeyword
+
   return (
-    <div style={{ width: '100%', margin: '0 auto' }}>
-      <Select<SelectOption>
-        options={options}
-        onChange={handleChange}
-        placeholder={`Tìm bài viết trong ${categorySlug}...`}
-        isClearable={true}
-        isSearchable={true}
-        noOptionsMessage={() => "Không tìm thấy bài viết"}
-        styles={customStyles}
-        components={{ Option: CustomSelectOption }} // <-- Gán CustomSelectOption ở đây
-      />
+    <div className='bg-white rounded-[4px] shadow-md max-h-[300px] overflow-y-auto'>
+      {loading && <p className="p-2 text-center text-gray-600">Đang tìm kiếm...</p>}
+      {error && <p className="p-2 text-center text-red-500">Lỗi: {error}</p>}
+      {!loading && !error && posts.length === 0 && searchKeyword.trim() !== '' && (
+        <p className="p-2 text-center text-gray-600">Không tìm thấy bài viết nào.</p>
+      )}
+      {!loading && !error && posts.length > 0 && (
+        <ul className="list-none p-0 m-0">
+          {posts.map((post) => (
+            <li key={post.id} className="border-b border-gray-200 last:border-b-0">
+              {/* Giả sử mỗi bài viết có một slug để tạo URL chi tiết */}
+              <Link href={`/posts/${post.slug}`} className="block p-3 text-blue-700 hover:bg-gray-100">
+                {post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+      {!loading && !error && searchKeyword.trim() === '' && (
+        <p className="p-2 text-center text-gray-600">Vui lòng nhập từ khóa để tìm kiếm.</p>
+      )}
     </div>
   );
 };
+
 export default SearchPostsDropdown;

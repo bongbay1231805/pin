@@ -6,13 +6,24 @@ import { useScrollRefs } from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { useNewsCategory } from '@/context/NewsCategoryContext'; // Import hook từ Context
+import { useNewsCategory } from '@/context/NewsCategoryContext';
 
 interface PropSub {
   hasShadow: boolean;
   pageCurent: boolean;
-  nameCurent: string; // nameCurent ở đây vẫn có thể là slug của trang chính (news, about...)
+  nameCurent: string;
 }
+
+const ECOSYSTEM_SLUGS = [
+  'ecosystem',
+  'investment-development',
+  'real-estate-services',
+  'management-operation',
+];
+const NEWS_SLUGS = ['news', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'search'];
+const HUMAN_RESOURCE_SLUGS = ['human-resource'];
+const ABOUT_SLUGS = ['about'];
+const DIGITAL_CITY_SLUGS = ['digitalcity'];
 
 export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
@@ -21,19 +32,19 @@ export default function SubNavbar(props: PropSub) {
   const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } =
     useScrollRefs();
 
-  // Lấy currentCategorySlug từ Context
-  const { currentCategorySlug } = useNewsCategory(); 
+  const { currentCategorySlug } = useNewsCategory();
 
   const [isFixed, setIsFixed] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  // const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false); // KHÔNG CẦN NỮA
   const scrollThreshold = 100;
   const prevScrollY = useRef(0);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  // Định nghĩa hàm scrollTo tại đây
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Không cần setIsOpenMobileMenu(false) nữa
     }
   };
 
@@ -69,20 +80,10 @@ export default function SubNavbar(props: PropSub) {
 
       let newActiveSection = '';
 
-      // Vòng lặp này cần truy cập `navItems` sau khi nó được định nghĩa
-      // Để tránh lỗi runtime, chúng ta nên đảm bảo `navItems` đã có giá trị
-      // khi `handleScroll` được gọi lần đầu hoặc khi `useEffect` này chạy.
-      // Tuy nhiên, với logic hiện tại, `navItems` được định nghĩa trong render cycle.
-      // Cách tốt nhất là tái cấu trúc `handleScroll` hoặc `navItems` để đảm bảo tính khả dụng.
-      // Tạm thời, tôi sẽ giữ nguyên để tập trung vào lỗi scrollTo.
+      const currentNavItems = getNavItems(pathname, myArray, currentCategorySlug, { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
 
-      // Chú ý: `navItems` được định nghĩa sau `useEffect`. Điều này có thể gây ra lỗi runtime
-      // nếu `handleScroll` được gọi trước khi `navItems` có giá trị.
-      // Giải pháp tốt hơn là đưa `navItems` vào state hoặc memoize nó.
-      // Tuy nhiên, để sửa lỗi type hiện tại, chúng ta tập trung vào `scrollTo`.
-
-      for (let i = navItems.length - 1; i >= 0; i--) {
-        const item = navItems[i];
+      for (let i = currentNavItems.length - 1; i >= 0; i--) {
+        const item = currentNavItems[i];
         if (item.hrefb?.current) {
           const section = item.hrefb.current;
           const sectionTop = section.getBoundingClientRect().top;
@@ -94,7 +95,7 @@ export default function SubNavbar(props: PropSub) {
         }
       }
 
-      const firstScrollItem = navItems.find((item) => item.hrefb);
+      const firstScrollItem = currentNavItems.find((item) => item.hrefb);
       if (newActiveSection === '' && firstScrollItem) {
         newActiveSection = firstScrollItem.name;
       }
@@ -109,87 +110,87 @@ export default function SubNavbar(props: PropSub) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isFixed]); // Thêm activeSection và navItems vào dependencies nếu bạn đưa chúng vào state hoặc memoized
+  }, [isFixed, pathname, currentCategorySlug]);
 
   const isActive = (itemHref: string) => {
-    const itemSlug = itemHref.split('/').pop(); 
-    
-    const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts';
+    const itemSlug = itemHref.split('/').pop();
 
-    if (isPostDetailPage) {
-      return currentCategorySlug === itemSlug;
+    const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts';
+    const isSearchPage = myArray[myArray.length - 1] === 'search';
+
+    if (isPostDetailPage || NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
+        if (itemHref.includes('/categories/')) {
+            return currentCategorySlug === itemSlug;
+        }
+        return false;
     }
+
+    if (isSearchPage) {
+      return false;
+    }
+
     return nameCurent === itemSlug;
   };
 
-  let navItems: {
-    name: string;
-    href: string;
-    hrefb?: React.RefObject<HTMLDivElement | null> | undefined;
-  }[] = [];
+  const getNavItems = (
+    pathname: string,
+    myArray: string[],
+    currentCategorySlug: string,
+    refs: ReturnType<typeof useScrollRefs>
+  ) => {
+    const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = refs;
+    const currentSlugFromPathname = pathname.split('/').pop() || '';
 
-  const ecosystem = [
-    'ecosystem',
-    'investment-development',
-    'real-estate-services',
-    'management-operation'
-  ];
-  const news = ['news', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau'];
-  const humanresource = ['human-resource'];
-  const about = ['about'];
-  const digitalcity = ['digitalcity'];
+    if (ABOUT_SLUGS.includes(currentSlugFromPathname)) {
+      return [
+        { name: 'Định vị thương hiệu', href: '#about', hrefb: oneRef },
+        { name: 'Con số ấn tượng', href: '#about', hrefb: twoRef },
+        { name: 'Lịch sử hình thành', href: '#about', hrefb: threeRef },
+        { name: 'Triết lý kinh doanh', href: '#about', hrefb: fourRef },
+        { name: 'Tầm nhìn - Sứ mệnh', href: '#about', hrefb: fiveRef },
+        { name: 'Văn hóa doanh nghiệp', href: '#about', hrefb: sixRef },
+        { name: 'Hồ sơ năng lực', href: '#about', hrefb: seventRef },
+      ];
+    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || myArray.includes('posts')) {
+      return [
+        { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
+        { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
+        { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' },
+      ];
+    } else if (ECOSYSTEM_SLUGS.includes(currentSlugFromPathname)) {
+      return [
+        {
+          name: 'Đầu tư & Phát triển dự án',
+          href: '/ecosystem/investment-development',
+        },
+        { name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services' },
+        { name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation' },
+      ];
+    } else if (HUMAN_RESOURCE_SLUGS.includes(currentSlugFromPathname)) {
+      return [
+        { name: 'Văn hóa làm việc', href: '', hrefb: oneRef },
+        { name: 'Phúc lợi & Đào tạo', href: '', hrefb: twoRef },
+        { name: 'Hình thức tuyển dụng', href: '', hrefb: threeRef },
+        { name: 'Vị trí tuyển dụng', href: '', hrefb: threeRef },
+      ];
+    } else if (DIGITAL_CITY_SLUGS.includes(currentSlugFromPathname)) {
+      return [
+        { name: 'Picity - Đô thị số', href: '', hrefb: oneRef },
+        { name: 'Công nghệ 4.0', href: '', hrefb: twoRef },
+        { name: 'Độc quyền Picity App', href: '', hrefb: threeRef },
+        { name: 'Tiện ích 5★', href: '', hrefb: fourRef },
+        { name: 'Dịch vụ quản lý', href: '', hrefb: fiveRef },
+        { name: 'Giá trị vượt trội', href: '', hrefb: sixRef },
+        { name: 'Dự án thành công', href: '', hrefb: seventRef },
+      ];
+    }
+    return [];
+  };
 
-  const currentSlugFromPathname = pathname.split('/').pop() || '';
+  const navItems = getNavItems(pathname, myArray, currentCategorySlug, { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
 
-  if (about.includes(currentSlugFromPathname)) {
-    navItems = [
-      { name: 'Định vị thương hiệu', href: '#about', hrefb: oneRef },
-      { name: 'Con số ấn tượng', href: '#about', hrefb: twoRef },
-      { name: 'Lịch sử hình thành', href: '#about', hrefb: threeRef },
-      { name: 'Triết lý kinh doanh', href: '#about', hrefb: fourRef },
-      { name: 'Tầm nhìn - Sứ mệnh', href: '#about', hrefb: fiveRef },
-      { name: 'Văn hóa doanh nghiệp', href: '#about', hrefb: sixRef },
-      { name: 'Hồ sơ năng lực', href: '#about', hrefb: seventRef }
-    ];
-  } else if (
-    news.includes(currentSlugFromPathname) || 
-    myArray.includes('posts') 
-  ) {
-    navItems = [
-      { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
-      { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
-      { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' }
-    ];
-  } else if (ecosystem.includes(currentSlugFromPathname)) {
-    navItems = [
-      {
-        name: 'Đầu tư & Phát triển dự án',
-        href: '/ecosystem/investment-development'
-      },
-      { name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services' },
-      { name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation' }
-    ];
-  } else if (humanresource.includes(currentSlugFromPathname)) {
-    navItems = [
-      { name: 'Văn hóa làm việc', href: '', hrefb: oneRef },
-      { name: 'Phúc lợi & Đào tạo', href: '', hrefb: twoRef },
-      { name: 'Hình thức tuyển dụng', href: '', hrefb: threeRef },
-      { name: 'Vị trí tuyển dụng', href: '', hrefb: fourRef }
-    ];
-  } else if (digitalcity.includes(currentSlugFromPathname)) {
-    navItems = [
-      { name: 'Picity - Đô thị số', href: '', hrefb: oneRef },
-      { name: 'Công nghệ 4.0', href: '', hrefb: twoRef },
-      { name: 'Độc quyền Picity App', href: '', hrefb: threeRef },
-      { name: 'Tiện ích 5★', href: '', hrefb: fourRef },
-      { name: 'Dịch vụ quản lý', href: '', hrefb: fiveRef },
-      { name: 'Giá trị vượt trội', href: '', hrefb: sixRef },
-      { name: 'Dự án thành công', href: '', hrefb: seventRef }
-    ];
-  }
-
-  const shouldShowEcosystemMobileSubmenu = ecosystem.includes(currentSlugFromPathname);
-  const hasNavItemsToDisplay = Array.isArray(navItems) && navItems.length;
+  const hasNavItemsToDisplay = Array.isArray(navItems) && navItems.length > 0;
+  const isNewsOrSearchPage = NEWS_SLUGS.includes(pathname.split('/').pop() || '') || myArray.includes('posts') || myArray.includes('search');
 
   return hasNavItemsToDisplay ? (
     <div
@@ -200,16 +201,18 @@ export default function SubNavbar(props: PropSub) {
       ref={menuRef}
     >
       <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
-        {/* Điều kiện hiển thị CategoryAndPostSearch */}
-        {(news.includes(currentSlugFromPathname) || myArray.includes('posts')) && (
-          <CategoryAndPostSearch />
-        )}
+        {/* CategoryAndPostSearch on mobile (always visible, no toggle button) */}
+        <div className="hidden sm:hidden flex items-center justify-between py-2 px-4">
+          {isNewsOrSearchPage && (
+             <CategoryAndPostSearch />
+          )}
+        </div>
 
+        {/* Desktop menu */}
         <ul className="hidden xl:flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
           {navItems.map((item) =>
             item.hrefb ? (
               <li key={item.name}>
-                {/* Gọi hàm scrollTo đã định nghĩa */}
                 <button
                   onClick={() => scrollTo(item.hrefb!)}
                   className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
@@ -232,38 +235,42 @@ export default function SubNavbar(props: PropSub) {
               </li>
             )
           )}
+           {isNewsOrSearchPage && (
+             <li className="relative">
+                 <CategoryAndPostSearch />
+             </li>
+          )}
         </ul>
 
-        {shouldShowEcosystemMobileSubmenu && (
-          <ul className="xl:hidden flex overflow-x-auto whitespace-nowrap py-[3px] px-[10px] text-gray-5 scrollbar-hide">
-            {navItems.map((item) =>
-              item.hrefb ? (
-                <li key={item.name} className="flex-shrink-0 mx-2">
-                  {/* Gọi hàm scrollTo đã định nghĩa */}
-                  <button
-                    onClick={() => scrollTo(item.hrefb!)}
-                    className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
-                      activeSection === item.name ? 'text-yellow-1' : ''
-                    }`}
-                  >
-                    {item.name}
-                  </button>
-                </li>
-              ) : (
-                <li key={item.name} className="flex-shrink-0 mx-2">
-                  <Link
-                    href={item.href}
-                    className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
-                      isActive(item.href) ? 'text-yellow-1' : ''
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              )
-            )}
-          </ul>
-        )}
+        {/* Mobile submenu (always visible on screens smaller than xl, cuộn ngang) */}
+        <ul className="xl:hidden flex overflow-x-auto whitespace-nowrap py-[3px] px-[10px] text-gray-5 scrollbar-hide bg-gray-3 border-t border-white-1">
+          {navItems.map((item) =>
+            item.hrefb ? (
+              <li key={item.name} className="flex-shrink-0 mx-2">
+                <button
+                  onClick={() => scrollTo(item.hrefb!)}
+                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
+                    activeSection === item.name ? 'text-yellow-1' : ''
+                  }`}
+                >
+                  {item.name}
+                </button>
+              </li>
+            ) : (
+              <li key={item.name} className="flex-shrink-0 mx-2">
+                <Link
+                  href={item.href}
+                  // Không cần onClick={() => setIsOpenMobileMenu(false)} nữa
+                  className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
+                    isActive(item.href) ? 'text-yellow-1' : ''
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
       </div>
     </div>
   ) : null;

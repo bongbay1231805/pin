@@ -67,8 +67,8 @@ export default function News({ posts }: any) {
                   </div>
                   {/* Label */}
                   <div >
-                    <div className={`title absolute ${index % 2 === 0 ? 'bottom-[15px] sm:bottom-[50px]' : 'bottom-[15px] sm:bottom-[50px]' }  left-0 translate-y-2/5 leading-[21px] 2xl:leading-[26px] z-10 bg-[#EAF3FF] rounded-tr-[40px] w-[100%] sm:w-[80%] px-6 py-[18px] text-blue-1 font-bold text-[13px] 2xl:text-[17px] uppercase`}>
-                      <span  className="line-clamp-2 sm:line-clamp-none">
+                    <div className={`title absolute ${index % 2 === 0 ? 'bottom-[15px] sm:bottom-[50px]' : 'bottom-[15px] sm:bottom-[50px]' }  left-0 translate-y-2/5 leading-[21px] 2xl:leading-[26px] z-10 bg-[#EAF3FF] rounded-tr-[40px] w-[100%] sm:w-[80%] px-6 py-[18px] text-blue-1 font-bold text-[13px] 2xl:text-[17px] uppercase sm:h-[78px]`}>
+                      <span  className="line-clamp-2">
                         {post.name}
                       </span>
                     </div>

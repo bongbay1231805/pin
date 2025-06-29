@@ -2,6 +2,7 @@
 
 .embla {
   overflow: hidden;
+  padding: 0 18px;
 }
 
 .embla__container {
