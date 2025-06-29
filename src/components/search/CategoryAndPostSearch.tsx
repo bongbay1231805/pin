@@ -69,7 +69,7 @@ const CategoryAndPostSearch: React.FC = () => {
       {/* Button Search SVG (Hiển thị trên Mobile/Tablet, ẩn trên Desktop) */}
       <button
         onClick={handleMobileSearchButtonClick}
-        className='bg-none border-none cursor-pointer p-0 flex items-center justify-center xl:hidden'
+        className='absolute top-[7px] right-[35px] bg-none border-none cursor-pointer p-0 flex items-center justify-center xl:hidden'
         aria-label="Toggle Search"
       >
         <svg className="w-[16px] h-[16px]" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
