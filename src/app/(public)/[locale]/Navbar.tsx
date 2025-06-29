@@ -302,7 +302,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-          <div className="flex items-center xl:hidden">
+          <div className="flex items-center xl:hidden mr-[-15px]">
             <MainDrawer />
           </div>
         </div>
