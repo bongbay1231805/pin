@@ -214,7 +214,7 @@ export default function SubNavbar(props: PropSub) {
     >
       <div className="relative mx-auto w-full px-[30px] sm:px-0 sm:max-w-[85%]">
         {/* CategoryAndPostSearch on mobile (always visible, no toggle button) */}
-        <div className="hidden sm:block flex items-center justify-between py-2 px-4">
+        <div className="hidden sm:block flex items-center justify-between px-4">
           {isNewsOrSearchPage && (
              <CategoryAndPostSearch />
           )}
@@ -247,11 +247,7 @@ export default function SubNavbar(props: PropSub) {
               </li>
             )
           )}
-           {isNewsOrSearchPage && (
-             <li className="relative">
-                 <CategoryAndPostSearch />
-             </li>
-          )}
+           
         </ul>
 
         {/* Mobile submenu (always visible on screens smaller than xl, cuộn ngang) */}
