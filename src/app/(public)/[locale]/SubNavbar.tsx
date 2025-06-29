@@ -256,13 +256,15 @@ export default function SubNavbar(props: PropSub) {
               </li>
             )
           )}
-          <li>
+          
           {shouldShowSearchMobileSubmenu && ( // Sử dụng điều kiện mới
-            <div className="hidden sm:flex items-center justify-between px-4 sm:absolute sm:px-0 sm:right-[0px]"> {/* Chỉnh lại breakpoint để khớp với mobile submenu */}
-              <CategoryAndPostSearch />
-            </div>
+            <li>
+              <div className="hidden sm:flex items-center justify-between px-4 sm:absolute sm:px-0 sm:right-[0px]"> {/* Chỉnh lại breakpoint để khớp với mobile submenu */}
+                <CategoryAndPostSearch />
+              </div>
+            </li>
           )}
-          </li>
+          
            
         </ul>
 
@@ -294,13 +296,15 @@ export default function SubNavbar(props: PropSub) {
                 </li>
               )
             )}
-            <li>
+            
             {shouldShowSearchMobileSubmenu && ( // Sử dụng điều kiện mới
+              <li>
               <div className="flex items-center justify-between px-4"> {/* Chỉnh lại breakpoint để khớp với mobile submenu */}
                 <CategoryAndPostSearch />
               </div>
+              </li>
             )}
-            </li>
+            
           </ul>
         )}
       </div>

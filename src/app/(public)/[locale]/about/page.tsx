@@ -3,6 +3,7 @@
 import { Hero } from "@/components/about/Hero"
 import { Stats } from "@/components/about/Stats"
 import { Timeline } from "@/components/about/Timeline"
+import { TimelineMobile } from "@/components/about/TimelineMobile"
 import { Philosophy } from "@/components/about/Philosophy"
 import { Partners } from "@/components/home/Partners"
 import { Business } from "@/components/about/Business"
@@ -20,7 +21,16 @@ export default async function About() {
     <>
       <Hero />
       <Stats custom_fields={custom_fields} />
-      <Timeline custom_fields={custom_fields} />
+      
+      <div className="hidden sm:block tl-pc">
+        <Timeline custom_fields={custom_fields} />
+      </div>
+
+      <div className="sm:hidden tl-mobile">
+        <TimelineMobile custom_fields={custom_fields} />
+      </div>
+      
+
       <Philosophy custom_fields={custom_fields} />
       <Business custom_fields={custom_fields} />
       <div className='boxanimation fade-in-up-medium mb-[5%] 2xl:mb-[96px]'>
