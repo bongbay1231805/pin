@@ -49,6 +49,9 @@ export default function Detail2({custom_fields}: any) {
     real_estate_services_10,
     real_estate_services_11,
     real_estate_services_12,
+    real_estate_services_13,
+    real_estate_services_14,
+    real_estate_services_15,
     real_estate_services_slider
   } = custom_fields;
 
@@ -439,14 +442,6 @@ export default function Detail2({custom_fields}: any) {
       />
     </svg>
   );
-
-  const real_estate_services_13 =
-    'Ecoe Việt Nam là đối tác chiến lược phân phối các dự án: Picity High Park, Picity Sky Park, SkyZen, Prime Master. Hệ thống bán hàng đa kênh giúp tiếp cận chính xác tệp khách hàng, thiết lập chuẩn mực phục vụ chuyên nghiệp và bảo đảm tỷ lệ giao dịch thành công vượt trội.';
-
-  const real_estate_services_14 =
-    'Ecoe Việt Nam cung cấp hệ sinh thái dịch vụ quản lý BĐS chuyên nghiệp, bao gồm quản lý, khai thác cho thuê và quản trị tài chính. Mọi quy trình đều ứng dụng nền tảng số và tiêu chuẩn quốc tế, bảo đảm minh bạch chi phí, tối ưu công suất và gia tăng giá trị tài sản dài hạn cho chủ đầu tư cũng như khách hàng.';
-
-  const real_estate_services_15 = `Ecoe Việt Nam cung cấp dịch vụ tư vấn, hỗ trợ pháp lý bao gồm: Soạn thảo hợp đồng mua bán; chuyển nhượng; cho thuê. Tư vấn, đại diện thực hiện thủ tục đăng ký đất đai, sang tên Giấy chứng nhận. Giải quyết tranh chấp và kiểm soát rủi ro pháp lý dự án.`;
 
   const servicesData = [
     {
@@ -905,7 +900,7 @@ export default function Detail2({custom_fields}: any) {
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   <svg
-                  className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
+                    className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="100"
                     height="105"
                     viewBox="0 0 105 105"
