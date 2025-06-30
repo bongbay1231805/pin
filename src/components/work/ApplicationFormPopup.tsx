@@ -123,9 +123,9 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
           transform: `translateY(var(--tw-translate-y))`,
           transition: 'transform 0.3s ease-out' // Rút ngắn thời gian transition cho mượt hơn
         }}
-        className={`bg-white relative p-6 rounded-lg  w-full mx-[30px] sm:mx-[20%]`}
+        className={`bg-white relative p-5 sm:px-[70px] sm:py-[10px_50px] rounded-lg  w-full mx-[30px] sm:mx-[20%]`}
       >
-        <Image className='absolute right-[70px] top-[-30px]' src="/pin.svg" width={44} height={68} alt='Pin'/>
+        <Image className='absolute right-[70px] sm:right-[120px] top-[-30px]' src="/pin.svg" width={44} height={68} alt='Pin'/>
         <div className='flex justify-end'>
           <button
             onClick={onClose}

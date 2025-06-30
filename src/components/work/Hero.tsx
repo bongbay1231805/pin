@@ -77,19 +77,19 @@ export default function Hero({ data, dataPage }: any) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px] mx-auto w-full px-[30px] xl:max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_3 }}></div>
-          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_5 }}></div>
-          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_6 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_6 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_7 }}></div>
-          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_8 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_8 }}></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_9 }}></div>
-          <div className='text-[10px] px-[10px] sm:text-[15px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
         </div>
       </div>
       <div className='mx-auto w-full px-[30px] xl:max-w-[85%]'>
@@ -131,7 +131,7 @@ export default function Hero({ data, dataPage }: any) {
                   firstConnect.map((firstC: any, index: number) => (
                     <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"} border-gray-8 flex items-center py-[24px] sm:py-[0px] gap-[24px]`}>
                       <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: firstC[0].value }}></div>
-                      <h3 className="text-blue-1 font-semibold text-[13px]" dangerouslySetInnerHTML={{ __html: firstC[1].value }}></h3>
+                      <h3 className="text-blue-1 font-semibold text-[13px] 2xl:text-[17px]" dangerouslySetInnerHTML={{ __html: firstC[1].value }}></h3>
                     </div>
                   ))
                 }
@@ -141,7 +141,7 @@ export default function Hero({ data, dataPage }: any) {
                   secondConnect.map((secondC: any, index: number) => (
                     <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"} border-gray-8 flex items-center py-[24px] sm:py-[0px] gap-[24px]`}>
                       <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: secondC[0].value }}></div>
-                      <h3 className="text-blue-1 font-semibold text-[13px]" dangerouslySetInnerHTML={{ __html: secondC[1].value }}></h3>
+                      <h3 className="text-blue-1 font-semibold text-[13px] 2xl:text-[17px]" dangerouslySetInnerHTML={{ __html: secondC[1].value }}></h3>
                     </div>
                   ))
                 }
@@ -157,11 +157,11 @@ export default function Hero({ data, dataPage }: any) {
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px]">
                 <div className="relative row-start-1 col-span-1 sm:col-span-2">
-                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px]' style={{ objectFit: 'cover' }} />
+                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_18}</div>
                 </div>
                 <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2">
-                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-top rounded-[10px]' style={{ objectFit: 'cover' }} />
+                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-top rounded-[10px]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_20}</div>
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function Hero({ data, dataPage }: any) {
               </div>
               <div className="grid text-[13px]">
                 <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px]">{humanre[0].value}</h4>
-                <div className='mb-[30px] sm:mb-0 grid gap-[15px]'>
+                <div className='2xl:text-[17px] mb-[30px] sm:mb-0 grid gap-[15px]'>
                   <div dangerouslySetInnerHTML={{ __html: humanre[1].value }}></div>
                   <div dangerouslySetInnerHTML={{ __html: humanre[2].value }}></div>
                   <div dangerouslySetInnerHTML={{ __html: humanre[3].value }}></div>
@@ -203,7 +203,7 @@ export default function Hero({ data, dataPage }: any) {
             <tbody className="divide-y divide-gray-200">
               {currentJobs.map((job: any) => ( // Thêm kiểu any cho job
                 <React.Fragment key={job.id}>
-                  <tr className="hover:bg-gray-50 text-[14px] font-semibold uppercase">
+                  <tr className="hover:bg-gray-50 text-[14px] 2xl:text-[20px] font-semibold uppercase">
                     <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] whitespace-nowrap text-center">
                       <button
                         className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-blue-100 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
@@ -241,7 +241,7 @@ export default function Hero({ data, dataPage }: any) {
                     <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] flex justify-center">
                       <button
                         onClick={() => handleOpenPopup(job.position)}
-                        className="hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
+                        className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
                       >
                         Ứng tuyển
                       </button>
@@ -251,11 +251,11 @@ export default function Hero({ data, dataPage }: any) {
                   <tr className={job.isOpen ? '' : 'hidden'}>
                     <td></td>
                     <td colSpan={4} className="px-6 text-sm text-gray-700 py-[50px]">
-                      <div dangerouslySetInnerHTML={{ __html: job.details.rawHtml || "" }}></div>
+                      <div className="2xl:text-[17px] content-container" dangerouslySetInnerHTML={{ __html: job.details.rawHtml || "" }}></div>
                       <div className='flex justify-center pt-[50px]'>
                         <button
                           onClick={() => handleOpenPopup(job.position)}
-                          className="hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
+                          className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
                         >
                           Ứng tuyển
                         </button>
@@ -312,7 +312,7 @@ export default function Hero({ data, dataPage }: any) {
           <div className='flex justify-center py-[20px]'>
             <button
               onClick={() => handleOpenPopup(job.position)}
-              className="hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
+              className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
             >
               Ứng tuyển
             </button>
