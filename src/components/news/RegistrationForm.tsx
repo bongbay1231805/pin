@@ -155,7 +155,7 @@ export function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <div className="flex items-center space-x-2">
+                <div className="relative flex items-center space-x-2">
                   <Button type="button" className="border rounded-none text-[#8a8a8a] border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
                     Profile công ty (file pdf, .pptx, .doc, .zip)
                   </Button>
@@ -168,11 +168,12 @@ export function RegistrationForm() {
                     className="hidden" // Ẩn input file mặc định
                   />
                   {form.watch("companyProfile")?.[0]?.name && (
-                    <span className="text-sm text-muted-foreground">
+                    <div className="text-sm text-muted-foreground absolute right-[0px] bottom-[-25px]">
                       Đã chọn: {form.watch("companyProfile")[0].name}
-                    </span>
+                    </div>
                   )}
                 </div>
+                
               </FormControl>
               <FormMessage />
             </FormItem>
