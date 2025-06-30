@@ -53,7 +53,7 @@ export function MessageForm({custom_fields}:any) {
       content: values.content
     }
     try {
-      const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', {
+      const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(val),
