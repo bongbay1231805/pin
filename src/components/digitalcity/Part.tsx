@@ -317,7 +317,7 @@ export default function Part({custom_fields}: any) {
         >
           <div className="grid xl:grid-cols-[67.5%_32.5%] md:gap-[10px]">
             <EmblaCarouselCenterPicity />
-            <div className="flex items-center text-gray-1 text-[13px] md:pl-[40px]">
+            <div className="flex items-center text-gray-1 text-[13px] 2xl:text-[17px] md:pl-[40px]">
               {digitalcity_3}
             </div>
           </div>
