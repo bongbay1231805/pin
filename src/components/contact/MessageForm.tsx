@@ -133,7 +133,7 @@ export function MessageForm({custom_fields}:any) {
           />
         </div>
         <div className="flex justify-end">
-          <Button onClick={() => console.log("Submit button clicked")} type="submit" className="hvr-bounce-to-right shadow-none uppercase rounded-none sm:flex items-center cursor-pointer justify-center text-yellow-1 text-[13px] font-semibold w-[112px] h-[30px] border border-yellow-1 hover:text-white  focus:text-white">{field_contact_send}</Button>
+          <Button onClick={() => console.log("Submit button clicked")} type="submit" className="hvr-bounce-to-right shadow-none uppercase rounded-none sm:flex items-center cursor-pointer justify-center text-yellow-1 text-[13px] 2xl:text-[17px] font-semibold w-[112px] h-[30px] border border-yellow-1 hover:text-white  focus:text-white">{field_contact_send}</Button>
         </div>
       </form>
     </Form>

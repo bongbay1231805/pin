@@ -152,12 +152,12 @@ export default function Hero({ data, dataPage }: any) {
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_30px] sm:py-[100px_25px]">{human_resource_14}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[510px] h-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[508px] h-auto">
               <div className="relative row-span-2">
                 <Image alt="benefit 8" loading="lazy" decoding="async" width="1000" height="1000" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
                 <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold object-top" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
               </div>
-              <div className="grid grid-cols-2 row-span-2 gap-[10px]">
+              <div className="grid grid-cols-2 row-span-2 gap-[10px] sm:gap-[20px]">
                 <div className="relative row-start-1 col-span-1 sm:col-span-2">
                   <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_18}</div>
