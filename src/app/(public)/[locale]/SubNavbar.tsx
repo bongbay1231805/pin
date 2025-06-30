@@ -182,7 +182,7 @@ export default function SubNavbar(props: PropSub) {
         { name: 'Văn hóa làm việc', href: '', hrefb: oneRef },
         { name: 'Phúc lợi & Đào tạo', href: '', hrefb: twoRef },
         { name: 'Hình thức tuyển dụng', href: '', hrefb: threeRef },
-        { name: 'Vị trí tuyển dụng', href: '', hrefb: threeRef },
+        { name: 'Vị trí tuyển dụng', href: '', hrefb: fourRef },
       ];
     } else if (DIGITAL_CITY_SLUGS.includes(currentSlugFromPathname)) {
       return [
