@@ -22,7 +22,7 @@ export function FooterContact() {
                 alt="Modern city skyline"
                 width={38}
                 height={38}
-                className='absolute right-0 top-1/2 -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium'
+                className='absolute right-0 top-[-30px] -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium'
               />
             </div>
             <div className='flex justify-center items-center gap-[15px] sm:pr-[58px] mt-[30px] fade-in-up-medium'>

@@ -20,8 +20,10 @@ export default function Hero({ data, dataPage }: any) {
   const secondConnect = humanresourceslider.slice(4);
 
   useScrollReveal(); // dùng mặc định `.boxanimation`
-
+    console.log(data.data)
   const datas = transformJobPosts(data.data);
+
+  console.log(datas)
   const [allJobData, setAllJobData] = useState(datas);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -190,7 +192,7 @@ export default function Hero({ data, dataPage }: any) {
         <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[25px_10px] sm:py-[120px_25px]">{human_resource_22}</h3>
         <div className="overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto">
           {/* --- PHẦN BẢNG (CHỈ HIỂN THỊ TRÊN MÀN HÌNH LỚN HƠN HOẶC BẰNG MD) --- */}
-          <table id="job-table" className="min-w-full hidden md:table"> {/* hidden by default, visible on md and up */}
+          <table id="job-table" className="min-w-full hidden md:table">
             <thead className="bg-gray-100 border-b border-gray-200">
               <tr className='bg-blue-1 text-[15px] font-semibold text-white'>
                 <th className='rounded-tl-[10px] rounded-bl-[10px]'></th>

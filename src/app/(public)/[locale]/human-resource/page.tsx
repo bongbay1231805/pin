@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   description: 'Phát triển nhân lực',
 };
 export default async function Human() {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/categories/human/posts', {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/careers', {
+  // const res = await fetch('https://admin.pigroup.tqdesign.vn/api/categories/human/posts', {
     cache: 'no-store',
   });
    const resPage = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/human-resource-development', {

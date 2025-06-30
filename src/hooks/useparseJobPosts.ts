@@ -2,16 +2,17 @@ import * as cheerio from 'cheerio';
 type RawPost = {
   id: number;
   name: string;
-  description?: string;
+  // description?: string;
   content?: string | null;
-  is_featured: number;
-  image?: string | null;
+  // is_featured: number;
+  // image?: string | null;
   created_at: string;
-  slug: string;
+  // slug: string;
   custom_fields?: {
-    vi_tri_tuyen_dung?: string;
-    so_luong?: string;
-    thoi_han?: string;
+    career_content?: string;
+    // career_position?: string;
+    career_quantity?: string;
+    career_date?: string;
   };
 };
 type JobDetailSection = {
@@ -35,9 +36,9 @@ export function transformJobPosts(posts: RawPost[]): JobPost[] {
     const details = extractDetailsFromHtml(post.content ?? '');
     return {
       id: `job-${post.id}`,
-      position: post.custom_fields?.vi_tri_tuyen_dung ?? post.name,
-      quantity: parseInt(post.custom_fields?.so_luong ?? '0', 10),
-      deadline: post.custom_fields?.thoi_han ?? '',
+      position: post.name ?? post.name,
+      quantity: parseInt(post.custom_fields?.career_quantity ?? '0', 10),
+      deadline: post.custom_fields?.career_date ?? '',
       details,
       isOpen: false
     };
