@@ -1,4 +1,4 @@
-// components/Timeline.tsx
+// components/TimelineMobile.tsx
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -6,7 +6,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useScrollRefs } from '@/context/ScrollRefsContext';
 
-export function Timeline({ custom_fields }: any) {
+export function TimelineMobile({ custom_fields }: any) {
   const { threeRef } = useScrollRefs();
   const { field_12_about, slider_about } = custom_fields;
 
@@ -35,14 +35,13 @@ export function Timeline({ custom_fields }: any) {
       loop: false,
       align: 'center',
       skipSnaps: false,
-      slidesToScroll: 1,
-      watchDrag: false
+      slidesToScroll: 1
     },
     [autoplay.current]
   );
 
-  // Bắt đầu từ index 1 (năm 2015)
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  // Khởi tạo selectedIndex là 0, vì bạn muốn ẩn nút trái khi ở index 0
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
@@ -74,27 +73,17 @@ export function Timeline({ custom_fields }: any) {
 
   useEffect(() => {
     if (!embla) return;
-
-    // Cuộn đến index 1 (slide năm 2015) khi component mount
-    // Đảm bảo sliderabout có đủ phần tử trước khi cuộn
-    if (sliderabout.length > 1) {
-      embla.scrollTo(1, false); // false để cuộn ngay lập tức mà không có animation
-    }
-
     const onSelect = () => {
       const currentSnap = embla.selectedScrollSnap();
       setSelectedIndex(currentSnap);
 
       // --- LOGIC MỚI CHO NÚT TRÁI ---
-      // Ẩn nút trái khi index hiện tại là 1 (năm 2015)
-      setCanScrollPrev(currentSnap > 1);
+      // Ẩn nút trái khi index hiện tại là 0
+      setCanScrollPrev(currentSnap > 0);
 
       // --- LOGIC MỚI CHO NÚT PHẢI ---
-      // Ẩn nút phải khi index hiện tại là sliderabout.length - 2 (năm 2023 là gần cuối)
-      // Giả sử năm 2023 là phần tử cuối cùng thứ 2 trong mảng, hoặc bạn muốn nó ẩn đi trước slide cuối cùng
-      // Nếu 2023 là index 7 và tổng số slide là 9 (index 0-8), thì nó là length - 2
-      // Nếu bạn muốn ẩn nó khi đến slide cuối cùng (2024), thì chỉ cần !embla.canScrollNext()
-      setCanScrollNext(currentSnap < sliderabout.length - 2);
+      // Ẩn nút phải khi index hiện tại là phần tử cuối cùng
+      setCanScrollNext(currentSnap < sliderabout.length - 1);
     };
 
     embla.on('select', onSelect);
@@ -114,16 +103,6 @@ export function Timeline({ custom_fields }: any) {
       embla.scrollTo(index);
     }
   };
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setIsMobile(window.innerWidth < 768);
-    }
-  }, []);
-
-  console.log(sliderabout, selectedIndex);
 
   const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
 

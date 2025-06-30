@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image'
 import lightImage from "../../../public/fhome/herocity.jpg";
-const heavyImage = "https://room.veritasedu.asia/banner.gif";
+const heavyImage = "https://admin.pigroup.tqdesign.vn/storage/home.gif";
 import { useEffect, useState } from 'react';
 type HeroProps = {
   onScrollToDigitalCity: () => void;

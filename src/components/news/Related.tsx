@@ -46,7 +46,7 @@ export default function Related({ post }: { post: PostItem[] }) {
         {currentPosts.map((item: PostItem, index: number) => (
           <Link key={item.slug || index} href={`/posts/${item.slug}`}>
             <div
-              className="grid grid-cols-[45%_1fr] overflow-hidden pb-[33px] gap-y-[33px] gap-x-[20px] sm:gap-x-[40px] 2xl:gap-x-[46px] sm:flex items-center border-b-1 border-b-gray-8"
+              className="grid grid-cols-[34%_1fr] sm:grid-cols-[45%_1fr] overflow-hidden pb-[33px] gap-y-[33px] gap-x-[20px] sm:gap-x-[40px] 2xl:gap-x-[46px] sm:flex items-center border-b-1 border-b-gray-8"
             >
               {
                 item.is_featured ? (
@@ -55,7 +55,7 @@ export default function Related({ post }: { post: PostItem[] }) {
                     alt={item.name}
                     width={250}
                     height={150}
-                    className="min-h-[150px] max-x-[250px] rounded-xl object-cover"
+                    className="sm:min-h-[150px] sm:max-x-[250px] h-auto rounded-xl object-cover"
                   />
                 ) : (
                   <Image
@@ -63,11 +63,11 @@ export default function Related({ post }: { post: PostItem[] }) {
                     alt={item.name}
                     width={250}
                     height={150}
-                    className="min-h-[150px] rounded-xl object-cover"
+                    className="sm:min-h-[150px] h-auto rounded-xl object-cover"
                   />
                 )
               }
-              <h3 className="text-[14px] 2xl:text-[17px] font-semibold text-gray-5">{item.name}</h3>
+              <h3 className="text-[13px] 2xl:text-[17px] font-semibold text-gray-5 uppercase">{item.name}</h3>
             </div>
           </Link>
         ))}

@@ -17,7 +17,7 @@ export function Hero({ post }: any) {
           />
         ) : (
           <Image
-            src="/fnews/post-1.png"
+            src={`https://admin.pigroup.tqdesign.vn/storage/${post.image}`}
             alt="Modern cityscape with high-rise buildings"
             fill
             className="object-cover"

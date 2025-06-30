@@ -25,7 +25,7 @@ export function FooterContact() {
                 className='absolute right-0 top-1/2 -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium'
               />
             </div>
-            <div className='flex justify-center items-center gap-[15px] pr-[58px] mt-[30px] fade-in-up-medium'>
+            <div className='flex justify-center items-center gap-[15px] sm:pr-[58px] mt-[30px] fade-in-up-medium'>
               <Link href="/" className="flex-shrink-0 flex items-center">
                 <Image src="/fb.svg" width={36} height={36} alt="Social" />
               </Link>

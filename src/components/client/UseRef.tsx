@@ -4,15 +4,26 @@ import HomeHero from '@/components/home/HomeHero';
 import {useScrollReveal} from '@/hooks/useScrollReveal';
 export default function ClientUseRef({custom_fields}: any) {
   const digitalCityRef = useRef<HTMLDivElement>(null);
+  
   const scrollToDigitalCity = () => {
-    digitalCityRef.current?.scrollIntoView({behavior: 'smooth'});
+    // 2. Trong hàm này, bạn truy cập đến phần tử DOM thông qua digitalCityRef.current
+    // và gọi phương thức scrollIntoView.
+    // Luôn kiểm tra digitalCityRef.current có tồn tại (không null) trước khi sử dụng.
+    if (digitalCityRef.current) {
+      digitalCityRef.current.scrollIntoView({ behavior: 'smooth' }); // 'smooth' cho hiệu ứng cuộn mượt mà
+    } else {
+      // (Tùy chọn) Thêm console.warn để dễ debug nếu ref không được gán đúng
+      console.warn('digitalCityRef is not available to scroll to. Make sure the ref is correctly attached to the target DOM element.');
+    }
   };
+
+
   useScrollReveal(); // dùng mặc định `.boxanimation`
   const {field_1, field_2, field_3, field_4} = custom_fields || {};
   return (
     <>
       <HomeHero onScrollToDigitalCity={scrollToDigitalCity} />
-      <div className="boxanimation relative bg-no-repeat bg-position-[0_-75px] bg-size-[20%_60%] xl:bg-size-[15%_75%] lg:bg-size-[10%_60%] 2xl:bg-size-[contain]">
+      <div ref={digitalCityRef} className="boxanimation relative bg-no-repeat bg-position-[0_-75px] bg-size-[20%_60%] xl:bg-size-[15%_75%] lg:bg-size-[10%_60%] 2xl:bg-size-[contain]">
         <svg
           className="hidden md:block border-circle-right absolute top-[-10%] 2xl:top-[-100px] left-0 -translate-x-[50%] overflow-x-hidden max-w-[25%] h-auto"
           width="528.46"

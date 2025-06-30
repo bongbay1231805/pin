@@ -624,6 +624,10 @@ figure.image > figcaption > span {
   .timeline-carousel .arrow:hover {
     border: none;
   }
+
+  .post-content h2, .post-content h2 span{
+    font-size: 15px!important;
+  }
 }
 
 .eco-item.expandable-item {
@@ -633,3 +637,11 @@ figure.image > figcaption > span {
   /* Báo cho trình duyệt biết để tối ưu hóa */
   will-change: width;
 }
+
+/* Áp dụng cho màn hình lớn hơn 2xl (nếu bạn muốn chỉ áp dụng ở breakpoint đó) */
+@media (min-width: 1536px) { /* 1536px là breakpoint mặc định của 2xl trong Tailwind */
+  .content-container span {
+    font-size: 17px!important;
+  }
+}
+
