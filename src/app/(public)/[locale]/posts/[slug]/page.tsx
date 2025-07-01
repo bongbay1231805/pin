@@ -26,17 +26,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: post.name,
-    description: post.description,
+    title: post.seo_meta[0].seo_title || post.name,
+    description: post.seo_meta[0].seo_description || post.seo_description,
     openGraph: {
-      title: post.name,
-      description: post.description,
+      title: post.seo_meta[0].seo_title || post.name,
+      description: post.seo_meta[0].seo_description || post.seo_description,
       images: [
         {
-          // Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
+          //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
           // Giả sử domain admin là nơi chứa ảnh
           url:
-            `https://admin.pigroup.tqdesign.vn/storage/${post.image}` ||
+            `https://admin.pigroup.tqdesign.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
             '/logo.png'
         }
       ]
