@@ -230,7 +230,7 @@ export default function SubNavbar(props: PropSub) {
         
 
         {/* Desktop menu */}
-        <ul className="hidden xl:flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[38px] ef:gap-[38px] py-[3px] text-gray-5">
+        <ul className="hidden xl:flex flex-wrap space-x-2 ef:space-x-6 justify-center gap-[30px] ef:gap-[30px] py-[3px] text-gray-5">
           {navItems.map((item) =>
             'hrefb' in item && item.hrefb ? (
               <li key={item.name}>
