@@ -34,22 +34,34 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({slides}) => {
               className={`h-full sliderswrap`}
             >
               <div className="relative w-full h-full flex items-center justify-center">
-                <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center sliderstaff">
-                  <Image
-                    className="rounded-[10px] overflow-hidden"
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${event[0].value}`}
-                    alt="event"
-                    width={630}
-                    height={435}
-                  />
-                  {!!event[1] && event[1].value ? (
-                    <h3
-                      className="absolute bottom-[20px] 2xl:bottom-[50px] text-[13px] font-bold text-center uppercase text-white"
-                      dangerouslySetInnerHTML={{__html: event[1].value}}
-                    ></h3>
-                  ) : null}
-                </div>
-              </div>
+  <div className="z-10 flex flex-wrap gap-[30px] items-center justify-center sliderstaff">
+    {/* Container cho Image và Gradient Overlay */}
+    <div className="relative rounded-[10px] overflow-hidden">
+      <Image
+        src={`https://admin.pigroup.tqdesign.vn/storage/${event[0].value}`}
+        alt="event"
+        width={630}
+        height={435}
+        className="block" // Đảm bảo Image là block để không có khoảng trắng thừa
+      />
+      {/* Lớp phủ gradient đã điều chỉnh để mờ hơn */}
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"
+        // from-blue-900/50: Bắt đầu với màu xanh đậm với độ trong suốt 50%
+        // (Bạn có thể thử blue-900/40, blue-900/30 để xem mức độ mờ nào phù hợp nhất)
+        // via-transparent: trong suốt ở giữa
+        // to-transparent: trong suốt ở trên
+      ></div>
+    </div>
+
+    {!!event[1] && event[1].value ? (
+      <h3
+        className="absolute bottom-[20px] 2xl:bottom-[50px] text-[13px] font-bold text-center uppercase text-white z-20"
+        dangerouslySetInnerHTML={{ __html: event[1].value }}
+      ></h3>
+    ) : null}
+  </div>
+</div>
             </CarouselItem>
           ))}
         </CarouselContent>

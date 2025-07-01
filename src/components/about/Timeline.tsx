@@ -23,7 +23,7 @@ export function Timeline({ custom_fields }: any) {
 
   const autoplay = useRef(
     Autoplay({
-      delay: 3000,
+      delay: 1000000,
       stopOnInteraction: true,
       stopOnMouseEnter: true,
       stopOnLastSnap: true
@@ -32,10 +32,10 @@ export function Timeline({ custom_fields }: any) {
 
   const [emblaRef, embla] = useEmblaCarousel(
     {
-      loop: false,
+      loop: true,
       align: 'center',
-      skipSnaps: false,
-      slidesToScroll: 1,
+      skipSnaps: false, 
+      // slidesToScroll: 1,
       watchDrag: false
     },
     [autoplay.current]
@@ -185,7 +185,7 @@ export function Timeline({ custom_fields }: any) {
                 <div
                   key={index}
                   className="flex-none min-w-[33.333%] flex justify-center items-center p-6 cursor-pointer"
-                  onClick={() => scrollTo(index)}
+                  // onClick={() => scrollTo(index)}
                 >
                   <div className="w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white">
                     <div className="hidden md:flex bg w-full h-full flex-col items-center justify-center text-center pb-[20px]">

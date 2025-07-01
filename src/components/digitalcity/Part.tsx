@@ -1546,7 +1546,7 @@ export default function Part({custom_fields}: any) {
         <div className="md:grid mt-[0px] sm:mt-[30px]">
           <div>
             <h3
-              className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[10px] sm:mb-[30px]"
+              className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[10px] sm:mb-[30px] text-center"
               dangerouslySetInnerHTML={{__html: digitalcity_16}}
             ></h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[0px] sm:gap-[16px]">
