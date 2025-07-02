@@ -65,7 +65,7 @@ export default function Detail2({custom_fields}: any) {
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const IconService1 = (
-    // <span dangerouslySetInnerHTML={{__html: real_estate_services_20}} />
+    // <div dangerouslySetInnerHTML={{__html: real_estate_services_20}}></div>
     <svg
       className="sm:h-28 w-[80px] h-[81px]"
       viewBox="0 0 113 112"
