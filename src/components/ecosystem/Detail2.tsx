@@ -52,12 +52,20 @@ export default function Detail2({custom_fields}: any) {
     real_estate_services_13,
     real_estate_services_14,
     real_estate_services_15,
+    real_estate_services_16,
+    real_estate_services_17,
+    real_estate_services_18,
+    real_estate_services_19,
+    real_estate_services_20,
+    real_estate_services_21,
+    real_estate_services_22,
     real_estate_services_slider
   } = custom_fields;
 
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const IconService1 = (
+    // <div dangerouslySetInnerHTML={{__html: real_estate_services_20}}></div>
     <svg
       className="sm:h-28 w-[80px] h-[81px]"
       viewBox="0 0 113 112"
@@ -108,6 +116,7 @@ export default function Detail2({custom_fields}: any) {
     </svg>
   );
   const IconService2 = (
+    // <div dangerouslySetInnerHTML={{__html: real_estate_services_21}} />
     <svg
       className="w-[80px] h-[81px] sm:h-28"
       viewBox="0 0 110 111"
@@ -258,6 +267,7 @@ export default function Detail2({custom_fields}: any) {
     </svg>
   );
   const IconService3 = (
+    // <div dangerouslySetInnerHTML={{__html: real_estate_services_22}} />
     <svg
       className="w-[80px] h-[81px] sm:h-28"
       viewBox="0 0 114 114"
@@ -563,7 +573,10 @@ export default function Detail2({custom_fields}: any) {
               ></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <svg
+                  <div
+                    dangerouslySetInnerHTML={{__html: real_estate_services_16}}
+                  />
+                  {/* <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="99"
                     height="91"
@@ -627,13 +640,16 @@ export default function Detail2({custom_fields}: any) {
                       stroke="white"
                       strokeWidth="2.5"
                     />
-                  </svg>
+                  </svg> */}
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_9}
                   </h4>
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <svg
+                  <div
+                    dangerouslySetInnerHTML={{__html: real_estate_services_17}}
+                  />
+                  {/* <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="70"
                     height="70"
@@ -767,13 +783,16 @@ export default function Detail2({custom_fields}: any) {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                  </svg>
+                  </svg> */}
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_10}
                   </h4>
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <svg
+                  <div
+                    dangerouslySetInnerHTML={{__html: real_estate_services_18}}
+                  />
+                  {/* <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="70"
                     height="90"
@@ -893,13 +912,16 @@ export default function Detail2({custom_fields}: any) {
                       fill="#888888"
                       stroke="white"
                     />
-                  </svg>
+                  </svg> */}
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_11}
                   </h4>
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <svg
+                  <div
+                    dangerouslySetInnerHTML={{__html: real_estate_services_19}}
+                  />
+                  {/* <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="100"
                     height="105"
@@ -953,7 +975,7 @@ export default function Detail2({custom_fields}: any) {
                       stroke="white"
                       strokeWidth="2"
                     />
-                  </svg>
+                  </svg> */}
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_12}
                   </h4>
