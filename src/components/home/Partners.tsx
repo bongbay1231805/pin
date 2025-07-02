@@ -68,7 +68,7 @@ export function Partners({
                       alt="Partner logo"
                       width={partner.width}
                       height={partner.height}
-                      className="grayscale-[100%] opacity-75 hover:grayscale-0 hover:opacity-100"
+                      className="sm:grayscale-[100%] opacity-75 hover:grayscale-0 hover:opacity-100"
                       style={{objectFit: 'contain'}}
                     />
                   </div>
