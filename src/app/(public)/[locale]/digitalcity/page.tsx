@@ -59,6 +59,10 @@ export default async function Digitalcity() {
   const {data} = await res.json();
   const { custom_fields } = data;
   const {digitalcity_1,digitalcity_2} = custom_fields;
+  const { image } = data;
+  const imageSrc = image
+? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+  : '/fdigitalcity/digitalcity-1.png';
   return (
     <>
       <div className="relative mx-auto h-[320px] md:h-[100vh] w-[100vw]  text-center pt-[20%] md:pt-[106px]">
@@ -80,7 +84,7 @@ export default async function Digitalcity() {
             </svg>
           </h2>
         </div>
-        <Image fill src="/fdigitalcity/digitalcity-1.png" alt="Smart City Features" />
+        <Image fill src={imageSrc} alt="Smart City Features" />
       </div>
       <Part custom_fields={custom_fields} />
       <Success custom_fields={custom_fields} />

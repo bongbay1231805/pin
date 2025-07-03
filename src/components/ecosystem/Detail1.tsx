@@ -10,7 +10,7 @@ const PROJECT_KEYS = {
   PICITY_SKY_PARK: 'picitySkyPark',
   PRIME_MASTER: 'primeMaster'
 };
-export default function Detail1({custom_fields}: any) {
+export default function Detail1({custom_fields, image}: any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
     try {
@@ -21,10 +21,13 @@ export default function Detail1({custom_fields}: any) {
       return null; // Return null or throw the error, depending on your error handling preference
     }
   }
+  const imageSrc = image
+  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+    : '/banner_dautuphattrienduan.jpg';
+
   const customfields = convertJsonStringToArrayOrObject(
     custom_fields.field_investment_development_repeater
   );
-  console.log('customfields', customfields);
   // State to manage open/closed status for each section
   const [openStates, setOpenStates] = useState<Record<string, boolean>>({
     [PROJECT_KEYS.PICITY_HIGH_PARK]: false, // Initially closed, or true if you want it open
@@ -107,7 +110,7 @@ export default function Detail1({custom_fields}: any) {
         </div>
         <Image
           fill
-          src="/banner_dautuphattrienduan.jpg"
+          src={imageSrc}
           alt="Smart City Features"
           className="object-cover"
         />

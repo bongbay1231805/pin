@@ -12,8 +12,12 @@ interface ToggleSectionProps {
   children: React.ReactNode; // Nội dung sẽ được ẩn/hiện khi toggle
   initialOpen?: boolean; // Mặc định ban đầu là ẩn hay hiện (optional)
 }
-export default function Detail3({custom_fields}: any) {
+export default function Detail3({custom_fields, image}: any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
+  const imageSrc = image
+  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+    : '/banner_quanlyvanhanh.jpg';
+
   const {
     management_operation_title_banner,
     management_operation_title,
@@ -75,7 +79,7 @@ export default function Detail3({custom_fields}: any) {
         </div>
         <Image
           fill
-          src="/banner_quanlyvanhanh.jpg"
+          src={imageSrc}
           alt="Smart City Features"
           className="object-cover"
         />

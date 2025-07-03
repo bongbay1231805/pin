@@ -9,9 +9,13 @@ import { transformJobPosts } from '@/hooks/useparseJobPosts';
 import convertJsonStringToArrayOrObject from '@/hooks/useConvertJsonToArray';
 
 export default function Hero({ data, dataPage }: any) {
-  const { name, description, custom_fields: { human_resource_1, human_resource_2, human_resource_3, human_resource_4, human_resource_5, human_resource_6, human_resource_7, human_resource_8, human_resource_9
+  const { name, description, image, custom_fields: { human_resource_1, human_resource_2, human_resource_3, human_resource_4, human_resource_5, human_resource_6, human_resource_7, human_resource_8, human_resource_9
     , human_resource_10, human_resource_11, human_resource_12, human_resource_13, human_resource_14, human_resource_15, human_resource_16, human_resource_17, human_resource_18, human_resource_19,
     human_resource_20, human_resource_21, human_resource_22, human_resource_23, human_resource_24, human_resource_25, human_resource_26, human_resource_slider, human_resource_step } } = dataPage;
+
+  const imageSrc = image
+  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+    : '/fhuman/human.png';
 
   const { oneRef, twoRef, threeRef, fourRef } = useScrollRefs();
   const humanresourceslider = convertJsonStringToArrayOrObject(human_resource_slider);
@@ -71,7 +75,7 @@ export default function Hero({ data, dataPage }: any) {
         <div className="relative mx-auto top-[30%] max-w-[85%]">
           <h1 className='absolute z-10 left-0 text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[56px] text-[22px] xl:text-[46px] 2xl:text-[80px] 2xl:leading-[90px]'>{name}</h1>
         </div>
-        <Image fill src="/fhuman/human.png" alt="Smart City Features" className="object-cover" />
+        <Image fill src={imageSrc} alt="Smart City Features" className="object-cover" />
       </div>
       <div ref={oneRef} className="mx-auto max-w-[85%] text-center pt-[50px] md:pt-[110px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[30px] sm:mb-[50px]'>{human_resource_2}</h2>

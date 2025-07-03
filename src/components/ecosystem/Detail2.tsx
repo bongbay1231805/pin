@@ -13,7 +13,11 @@ interface ToggleSectionProps {
   children: React.ReactNode; // Nội dung sẽ được ẩn/hiện khi toggle
   initialOpen?: boolean; // Mặc định ban đầu là ẩn hay hiện (optional)
 }
-export default function Detail2({custom_fields}: any) {
+export default function Detail2({custom_fields, image}: any) {
+  const imageSrc = image
+  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+    : '/banner_dvbds.jpg';
+
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null); // Ref to access the content div directly
   const [contentHeight, setContentHeight] = useState('0px'); // State to control the max-height for animation
@@ -516,7 +520,7 @@ export default function Detail2({custom_fields}: any) {
         </div>
         <Image
           fill
-          src="/banner_dvbds.jpg"
+          src={imageSrc}
           alt="Smart City Features"
           className="object-cover"
         ></Image>

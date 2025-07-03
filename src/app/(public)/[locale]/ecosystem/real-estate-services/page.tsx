@@ -50,10 +50,11 @@ export default async function EcosystemDetail() {
   );
   const {data} = await res.json();
   const {custom_fields} = data;
+  const { image } = data;
   return (
     <>
       <div>
-        <Detail2 custom_fields={custom_fields} />
+        <Detail2 custom_fields={custom_fields} image={image} />
       </div>
     </>
   );
