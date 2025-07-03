@@ -14,37 +14,42 @@ export function MainDrawer() {
       icon: Search,
       label: "Giới thiệu",
       description: "Find anything you need",
-      href: "/about",
+      href: "/gioi-thieu",
     },
     {
       icon: Bell,
       label: "Hệ sinh thái",
       description: "See your alerts",
-      href: "/ecosystem"
+      href: "/he-sinh-thai"
     },
     {
       icon: Calendar,
       label: "Đô thị số Picity",
       description: "Manage your schedule",
-      href: "/digitalcity",
+      href: "/do-thi-so",
+      // href: "/digitalcity",
+      
     },
     {
       icon: Calendar,
       label: "Tin tức",
       description: "Manage your schedule",
-      href: "/news",
+      href: "/tin-tuc",
+      // href: "/news",
     },
     {
       icon: Calendar,
       label: "Phát triển nhân lực",
       description: "Manage your schedule",
-      href: "/human-resource",
+      // href: "/human-resource",
+      href: "/phat-trien-nhan-luc",
     },
     {
       icon: Calendar,
       label: "Liên hệ",
       description: "Manage your schedule",
-      href: "/contact",
+      // href: "/contact",
+      href: "/lien-he",
     }
   ];
   return (

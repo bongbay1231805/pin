@@ -56,7 +56,6 @@ export default async function About() {
   const {data} = await res.json();
   const {custom_fields} = data;
   const {image} = data;
-  console.log(image);
   return (
     <>
       <Hero image={image} />

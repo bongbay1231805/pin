@@ -32,11 +32,15 @@ const ECOSYSTEM_SLUGS = [
   'investment-development',
   'real-estate-services',
   'management-operation',
+  'he-sinh-thai',
+  'dau-tu-phat-trien-du-an',
+  'dich-vu-bat-dong-san',
+  'quan-ly-van-hanh'
 ];
-const NEWS_SLUGS = ['news', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'search'];
-const HUMAN_RESOURCE_SLUGS = ['human-resource'];
-const ABOUT_SLUGS = ['about'];
-const DIGITAL_CITY_SLUGS = ['digitalcity'];
+const NEWS_SLUGS = ['news', 'tin-tuc', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'search', 'tim-kiem'];
+const HUMAN_RESOURCE_SLUGS = ['human-resource', 'phat-trien-nhan-luc'];
+const ABOUT_SLUGS = ['about', 'gioi-thieu'];
+const DIGITAL_CITY_SLUGS = ['digitalcity', 'do-thi-so'];
 
 export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
@@ -154,28 +158,38 @@ export default function SubNavbar(props: PropSub) {
 
     if (ABOUT_SLUGS.includes(currentSlugFromPathname)) {
       return [
-        { name: 'Định vị thương hiệu', href: '#about', hrefb: oneRef },
-        { name: 'Con số ấn tượng', href: '#about', hrefb: twoRef },
-        { name: 'Lịch sử hình thành', href: '#about', hrefb: threeRef },
-        { name: 'Triết lý kinh doanh', href: '#about', hrefb: fourRef },
-        { name: 'Tầm nhìn - Sứ mệnh', href: '#about', hrefb: fiveRef },
-        { name: 'Văn hóa doanh nghiệp', href: '#about', hrefb: sixRef },
-        { name: 'Hồ sơ năng lực', href: '#about', hrefb: seventRef },
+        { name: 'Định vị thương hiệu', href: '#gioi-thieu', hrefb: oneRef },
+        { name: 'Con số ấn tượng', href: '#gioi-thieu', hrefb: twoRef },
+        { name: 'Lịch sử hình thành', href: '#gioi-thieu', hrefb: threeRef },
+        { name: 'Triết lý kinh doanh', href: '#gioi-thieu', hrefb: fourRef },
+        { name: 'Tầm nhìn - Sứ mệnh', href: '#gioi-thieu', hrefb: fiveRef },
+        { name: 'Văn hóa doanh nghiệp', href: '#gioi-thieu', hrefb: sixRef },
+        { name: 'Hồ sơ năng lực', href: '#gioi-thieu', hrefb: seventRef },
       ];
     } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || myArray.includes('posts')) {
       return [
-        { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
-        { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
-        { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' },
+        // { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
+        // { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
+        // { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' },
+        { name: 'Tin thị trường', href: '/the-loai/tin-thi-truong' },
+        { name: 'Tin Pi Group', href: '/the-loai/tin-pi-group' },
+        { name: 'Tin đấu thầu', href: '/the-loai/tin-dau-thau' },
       ];
     } else if (ECOSYSTEM_SLUGS.includes(currentSlugFromPathname)) {
       return [
         {
           name: 'Đầu tư & Phát triển dự án',
-          href: '/ecosystem/investment-development',
+          href: '/he-sinh-thai/dau-tu-phat-trien-du-an',
         },
-        { name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services' },
-        { name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation' },
+        { name: 'Dịch vụ Bất động sản', href: '/he-sinh-thai/dich-vu-bat-dong-san' },
+        { name: 'Quản lý & Vận hành', href: '/he-sinh-thai/quan-ly-van-hanh' },
+
+        // {
+        //   name: 'Đầu tư & Phát triển dự án',
+        //   href: '/ecosystem/investment-development',
+        // },
+        // { name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services' },
+        // { name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation' },
       ];
     } else if (HUMAN_RESOURCE_SLUGS.includes(currentSlugFromPathname)) {
       return [

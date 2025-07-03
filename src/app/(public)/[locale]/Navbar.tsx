@@ -46,6 +46,15 @@ const Navbar = () => {
     'human-resource',
     'contact',
     'digitalcity',
+    
+    'he-sinh-thai',
+    'dau-tu-phat-trien-du-an',
+    'dich-vu-bat-dong-san',
+    'quan-ly-van-hanh',
+    'tin-tuc',
+    'phat-trien-nhan-luc',
+    'lien-he',
+    'do-thi-so'
   ];
   const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;
@@ -221,8 +230,8 @@ const Navbar = () => {
             className={`hidden xl:flex text-[13px] 2xl:text-[17px] font-[600] items-center ml-[11.5%] 2xl:ml-[204px] uppercase grow-1 ${hasShadow ? 'h-[70px]' : isHomePage ? 'h-[106px]' : 'h-[70px]'}`}
           >
             <Link
-              href="/about"
-              className={`group relative grow-1 text-center text-white-1 hover:text-yellow-2 ${isActive('about') ? 'text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              href="/gioi-thieu"
+              className={`group relative grow-1 text-center text-white-1 hover:text-yellow-2 ${isActive('gioi-thieu') ? 'text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
                 Giới thiệu
@@ -232,8 +241,8 @@ const Navbar = () => {
               </span>
             </Link>
             <Link
-              href="/ecosystem"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('ecosystem') || isActive('investment-development') || isActive('real-estate-services') || isActive('management-operation') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              href="/he-sinh-thai"
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('he-sinh-thai') || isActive('dau-tu-phat-trien-du-an') || isActive('dich-vu-bat-dong-san') || isActive('quan-ly-van-hanh') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
                 Hệ Sinh Thái
@@ -243,8 +252,9 @@ const Navbar = () => {
               </span>
             </Link>
             <Link
-              href="/digitalcity"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('digitalcity') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              // href="/digitalcity"
+              href="/do-thi-so"
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('digitalcity') || isActive('do-thi-so') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
                 Đô thị số Picity
@@ -254,8 +264,9 @@ const Navbar = () => {
               </span>
             </Link>
             <Link
-              href="/news"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('news') || isActive('tin-thi-truong') || isActive('tin-pi-group') || isActive('tin-dau-thau') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              // href="/news"
+              href="/tin-tuc"
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('news') || isActive('tin-thi-truong') || isActive('tin-pi-group') || isActive('tin-dau-thau') || isActive('tin-tuc')? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
                 Tin Tức
@@ -265,8 +276,9 @@ const Navbar = () => {
               </span>
             </Link>
             <Link
-              href="/human-resource"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('human-resource') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              // href="/human-resource"
+              href="/phat-trien-nhan-luc"
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('human-resource') || isActive('phat-trien-nhan-luc') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
                 Phát Triển Nhân Lực
@@ -276,8 +288,9 @@ const Navbar = () => {
               </span>
             </Link>
             <Link
-              href="/contact"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('contact') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              // href="/contact"
+              href="/lien-he"
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('contact') || isActive('lien-he') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
                 Liên Hệ

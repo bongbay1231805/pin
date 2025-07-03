@@ -104,7 +104,7 @@ export function Footer() {
               <ul className="space-y-3 text-gray-6 fade-in-left-short uppercase font-[600] text-[13px] 2xl:text-[17px]">
                 <li>
                   <Link
-                    href="https://pigroup.tqdesign.vn/vi/about"
+                    href="/gioi-thieu"
                     className="hover:text-yellow-1"
                   >
                     Giới thiệu
@@ -112,7 +112,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="https://pigroup.tqdesign.vn/vi/ecosystem"
+                    href="/he-sinh-thai"
                     className="hover:text-yellow-1"
                   >
                     Hệ Sinh Thái
@@ -120,7 +120,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="https://pigroup.tqdesign.vn/vi/digitalcity"
+                    href="/do-thi-so"
                     className="hover:text-yellow-1"
                   >
                     Đô thị số Picity
@@ -128,7 +128,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="https://pigroup.tqdesign.vn/vi/news"
+                    href="/tin-tuc"
                     className="hover:text-yellow-1"
                   >
                     Tin Tức
@@ -136,7 +136,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="https://pigroup.tqdesign.vn/vi/human-resource"
+                    href="/phat-trien-nhan-luc"
                     className="hover:text-yellow-1"
                   >
                     Phát Triển Nhân Lực
@@ -144,7 +144,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="https://pigroup.tqdesign.vn/vi/contact"
+                    href="/lien-he"
                     className="hover:text-yellow-1"
                   >
                     Liên Hệ

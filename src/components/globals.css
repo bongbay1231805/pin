@@ -319,7 +319,13 @@ figure.image > figcaption > span {
   #body:is(.about) {
     @apply mt-[0];
   }
+  #body:is(.gioi-thieu) {
+    @apply mt-[0];
+  }
   #body:is(.ecosystem) {
+    @apply mt-[106px];
+  }
+  #body:is(.he-sinh-thai) {
     @apply mt-[106px];
   }
   #menusub:not(.active) > img:last-child {

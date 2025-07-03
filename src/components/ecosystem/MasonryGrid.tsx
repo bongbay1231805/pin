@@ -22,6 +22,11 @@ const MasonryGrid = ({custom_fields}: any) => {
       return null; // Return null or throw the error, depending on your error handling preference
     }
   }
+  const ecosystemUrl: any = {
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: '/vi/he-sinh-thai/dau-tu-phat-trien-du-an',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: '/vi/he-sinh-thai/dich-vu-bat-dong-san',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: '/vi/he-sinh-thai/quan-ly-van-hanh',
+  };
   const customfields = convertJsonStringToArrayOrObject(custom_fields);
   // Sử dụng hook để xác định kích thước màn hình
   const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -232,7 +237,7 @@ const MasonryGrid = ({custom_fields}: any) => {
                   </h3>
                 )}
                 {item[0].value && item[3].value !== '' && (
-                  <Link href={item[3].value}>
+                  <Link href={ecosystemUrl[item[3].value]}>
                     <div
                       className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[100px]' : 'justify-center xl:pr-[100px]'} duration-300`}
                     >

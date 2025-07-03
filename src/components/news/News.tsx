@@ -21,7 +21,8 @@ export default function News({ posts }: any) {
       <div className="mx-auto flex flex-col gap-12">
         
         {/* Top Image w/ Overlayed Card */}
-        <Link href={`https://pigroup.tqdesign.vn/posts/${posts[0].slug}`} className="relative news-top-item mb-[100px] sm:mb-[0px]">
+        {/* <Link href={`https://pigroup.tqdesign.vn/posts/${posts[0].slug}`} className="relative news-top-item mb-[100px] sm:mb-[0px]"> */}
+        <Link href={`/tin-chi-tiet/${posts[0].slug}`} className="relative news-top-item mb-[100px] sm:mb-[0px]">
           <div className='img-container flex justify-center items-center ef:w-[1178px] w-full max-w-[100%] sm:max-w-[75%] rounded-[10px] h-[262px] sm:h-auto ef:max-h-[58vh] mt-[50px] sm:mt-[0px]'>
             {
               posts[0].is_featured ? (
