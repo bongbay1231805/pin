@@ -175,11 +175,11 @@ export default function Detail3({custom_fields, image}: any) {
       <div className="relative mx-auto px-[30px] sm:px-0 top-[25%] sm:max-w-[90%]  mb-[117px]">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-[10px] sm:gap-[15px]">
           <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
-            <div
+            {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_19}}
-            ></div>
-            {/* <svg
+            ></div> */}
+            <svg
               className="m-auto h-[81px] sm:h-[100px] transition-transform duration-300 group-hover:scale-110"
               height="100"
               viewBox="0 0 88 100"
@@ -271,17 +271,17 @@ export default function Detail3({custom_fields, image}: any) {
                 strokeWidth="2"
                 strokeMiterlimit="10"
               />
-            </svg> */}
+            </svg>
             <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_12}
             </h4>
           </div>
           <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
-            <div
+            {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_20}}
-            ></div>
-            {/* <svg
+            ></div> */}
+            <svg
               className="m-auto h-[81px] sm:h-[100px] transition-transform duration-300 group-hover:scale-110"
               height="100"
               viewBox="0 0 94 91"
@@ -396,17 +396,17 @@ export default function Detail3({custom_fields, image}: any) {
                 fill="#4C73A8"
                 stroke="#4C73A8"
               />
-            </svg> */}
+            </svg>
             <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_13}
             </h4>
           </div>
           <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
-            <div
+            {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_21}}
-            ></div>
-            {/* <svg
+            ></div> */}
+            <svg
               className="m-auto h-[81px] sm:h-[100px] transition-transform duration-300 group-hover:scale-110"
               height="100"
               viewBox="0 0 84 97"
@@ -573,17 +573,17 @@ export default function Detail3({custom_fields, image}: any) {
                 strokeMiterlimit="10"
                 strokeLinecap="round"
               />
-            </svg> */}
+            </svg>
             <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_14}
             </h4>
           </div>
           <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
-            <div
+            {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_22}}
-            ></div>
-            {/* <svg
+            ></div> */}
+            <svg
               className="m-auto h-[81px] sm:h-[100px] transition-transform duration-300 group-hover:scale-110"
               width="100"
               height="100"
@@ -663,7 +663,7 @@ export default function Detail3({custom_fields, image}: any) {
                 strokeMiterlimit="10"
                 strokeLinecap="round"
               />
-            </svg> */}
+            </svg>
             <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_14_add}
             </h4>

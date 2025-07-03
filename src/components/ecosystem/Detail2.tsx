@@ -577,10 +577,10 @@ export default function Detail2({custom_fields, image}: any) {
               ></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <div
+                  {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_16}}
-                  />
-                  {/* <svg
+                  /> */}
+                  <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="99"
                     height="91"
@@ -644,16 +644,16 @@ export default function Detail2({custom_fields, image}: any) {
                       stroke="white"
                       strokeWidth="2.5"
                     />
-                  </svg> */}
+                  </svg>
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_9}
                   </h4>
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <div
+                  {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_17}}
-                  />
-                  {/* <svg
+                  /> */}
+                  <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="70"
                     height="70"
@@ -787,16 +787,16 @@ export default function Detail2({custom_fields, image}: any) {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
-                  </svg> */}
+                  </svg>
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_10}
                   </h4>
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <div
+                  {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_18}}
-                  />
-                  {/* <svg
+                  /> */}
+                  <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="70"
                     height="90"
@@ -916,16 +916,16 @@ export default function Detail2({custom_fields, image}: any) {
                       fill="#888888"
                       stroke="white"
                     />
-                  </svg> */}
+                  </svg>
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_11}
                   </h4>
                 </div>
                 <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
-                  <div
+                  {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_19}}
-                  />
-                  {/* <svg
+                  /> */}
+                  <svg
                     className="w-[80px] w-[81px] sm:w-[auto] sm:h-[auto]"
                     width="100"
                     height="105"
@@ -979,7 +979,7 @@ export default function Detail2({custom_fields, image}: any) {
                       stroke="white"
                       strokeWidth="2"
                     />
-                  </svg> */}
+                  </svg>
                   <h4 className="text-white uppercase text-[12px] 2xl:text-[20px] font-semibold">
                     {real_estate_services_12}
                   </h4>
