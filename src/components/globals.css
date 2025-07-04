@@ -651,3 +651,10 @@ figure.image > figcaption > span {
   }
 }
 
+.navi ul li:first-child {
+  display: none;
+}
+
+.navi ul li:last-child {
+  display: none;
+}

@@ -25,10 +25,10 @@ export function FooterContact() {
               />
             </div>
             <div className='flex justify-center items-center gap-[15px] sm:pr-[58px] mt-[30px] fade-in-up-medium'>
-              <Link href="/" className="flex-shrink-0 flex items-center">
+              <Link href="https://www.facebook.com/Official.PiGroup/" className="flex-shrink-0 flex items-center">
                 <Image src="/fb.svg" width={36} height={36} alt="Social" />
               </Link>
-              <Link href="/" className="flex-shrink-0 flex items-center">
+              <Link href="https://www.youtube.com/@pigroup.officia" className="flex-shrink-0 flex items-center">
                 <Image src="/yt.svg" width={36} height={36} alt="Social" />
               </Link>
               <Link href="/" className="flex-shrink-0 flex items-center">

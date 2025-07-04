@@ -71,7 +71,7 @@ export default function Detail3({custom_fields, image}: any) {
       <div className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[70px] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[85%]">
           <h2
-            className="absolute  z-10 left-0 text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[56px] text-[22px] xl:text-[46px] 2xl:text-[80px] 2xl:leading-[90px]"
+            className="absolute  z-10 left-0 top-[-20px] text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[60px] text-[22px] xl:text-[40px] 2xl:text-[70px] 2xl:leading-[100px]"
             dangerouslySetInnerHTML={{
               __html: management_operation_title_banner
             }}

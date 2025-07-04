@@ -232,7 +232,7 @@ const MasonryGrid = ({custom_fields}: any) => {
                   />
                 ) : null}
                 {item[0].value && item[4].value !== '' && (
-                  <h3 className="z-10 left-[25px] bottom-[8px] text-white absolute text-[16px] 2xl:text-[24px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-500">
+                  <h3 className="z-10 left-[25px] bottom-[8px] text-white absolute text-[16px] 2xl:text-[24px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-1000 delay-100">
                     {item[0].value}
                   </h3>
                 )}

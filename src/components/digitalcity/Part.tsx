@@ -1214,7 +1214,7 @@ export default function Part({custom_fields}: any) {
             dangerouslySetInnerHTML={{__html: digitalcity_7}}
           ></p>
           <div className="flex gap-[30px] mb-[30px] xl:mb-0 w-[80%] xl:w-[auto] z-0">
-            <a href={digitalcity_link_app_store}>
+            {/* <a href={digitalcity_link_app_store}> */}
               <svg
               className='w-40 sm:w-50'
                 // width="200"
@@ -1324,8 +1324,8 @@ export default function Part({custom_fields}: any) {
                   fill="white"
                 />
               </svg>
-            </a>
-            <a href={digitalcity_link_google_play}>
+            {/* </a> */}
+            {/* <a href={digitalcity_link_google_play}> */}
               <svg
                className='w-40 sm:w-50'
                 // width="199"
@@ -1443,7 +1443,7 @@ export default function Part({custom_fields}: any) {
                   </linearGradient>
                 </defs>
               </svg>
-            </a>
+            {/* </a> */}
           </div>
         </div>
       </div>

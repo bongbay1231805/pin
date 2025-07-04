@@ -175,10 +175,10 @@ export function Footer() {
               />
             </div>
             <div className="flex justify-center items-center gap-[15px] mt-[23px] fade-in-up-medium">
-              <Link href="/" className="flex-shrink-0 flex items-center">
+              <Link href="https://www.facebook.com/Official.PiGroup/" className="flex-shrink-0 flex items-center">
                 <Image src="/fb.svg" width={32} height={32} alt="Social" />
               </Link>
-              <Link href="/" className="flex-shrink-0 flex items-center">
+              <Link href="https://www.youtube.com/@pigroup.officia" className="flex-shrink-0 flex items-center">
                 <Image src="/yt.svg" width={32} height={32} alt="Social" />
               </Link>
               <Link href="/" className="flex-shrink-0 flex items-center">
