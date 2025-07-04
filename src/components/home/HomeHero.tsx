@@ -1,7 +1,8 @@
 'use client';
 import Image from 'next/image'
 import lightImage from "../../../public/fhome/herocity.jpg";
-const heavyImage = "https://admin.pigroup.tqdesign.vn/storage/home.gif";
+// const heavyImage = "https://admin.pigroup.tqdesign.vn/storage/home.gif";
+const heavyImage = "https://admin.pigroup.tqdesign.vn/storage/pi-group-corp-video.mp4";
 import { useEffect, useState } from 'react';
 type HeroProps = {
   onScrollToDigitalCity: () => void;
@@ -33,7 +34,28 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
           // blurDataURL={lightImage.src} // Hoặc một base64 string của ảnh mờ
           />
         )}
-        <img
+        {/* Video hoặc ảnh nặng hiển thị sau khi tải xong */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          onCanPlayThrough={() => setIsLoaded(true)}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: isLoaded ? 1 : 0,
+            transition: 'opacity 0.3s ease-in-out',
+          }}
+        >
+          <source src={heavyImage} type="video/mp4" />
+        </video>
+
+        {/* <img
           src={heavyImage}
           alt="Modern city"
           style={{
@@ -46,7 +68,7 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
             opacity: isLoaded ? 1 : 0,
             transition: 'opacity 0.3s ease-in-out',
           }}
-        />
+        /> */}
       </div>
       <div onClick={onScrollToDigitalCity} className="font-[600] text-[13px] 2xl:text-[17px] cursor-pointer absolute bottom-[30px] left-1/2 -translate-x-1/2 flex justify-center flex-col items-center text-white uppercase gap-[15px]">
         <Image
