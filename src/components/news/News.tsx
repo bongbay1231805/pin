@@ -60,7 +60,8 @@ export default function News({ posts }: any) {
           {
             posts.map((post: any, index: number) =>
               index ? (
-                <Link key={index + "post"} href={`https://pigroup.tqdesign.vn/posts/${post.slug}`} className="news-item relative rounded-2xl flex flex-col sm:h-[350px]">
+                // <Link key={index + "post"} href={`https://pigroup.tqdesign.vn/posts/${post.slug}`} className="news-item relative rounded-2xl flex flex-col sm:h-[350px]">
+                <Link key={index + "post"} href={`/tin-chi-tiet/${post.slug}`} className="news-item relative rounded-2xl flex flex-col sm:h-[350px]">
                   <div className='img-container rounded-[10px] overflow-hidden w-full'>
                     {
                       post.is_featured ? (
