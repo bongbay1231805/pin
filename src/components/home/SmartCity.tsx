@@ -1435,7 +1435,8 @@ export function SmartCity({custom_fields}: any) {
               ></div>
               <div className="grid justify-center mb-[20px] sm:mb-0 sm:justify-start">
                 <Link
-                  href={`${field_10}`}
+                  // href={`${field_10}`}
+                  href="/do-thi-so"
                   className="reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[13px] 2xl:text-[17px] font-semibold w-auto px-[20px] h-[30px] border border-yellow-1 hover:text-white active:text-white"
                 >
                   {field_9}
