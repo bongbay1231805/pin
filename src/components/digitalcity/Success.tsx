@@ -2,68 +2,117 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
+
 export default function Success({ custom_fields }: any) {
-  useScrollReveal(); // dùng mặc định `.boxanimation`
-  const images = [
-    { id: 1, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 1' },
-    { id: 2, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 2' },
-    { id: 3, src: '/fdigitalcity/digitalcity-22.png', alt: 'Picity Sky Park 3' },
-  ];
-  const [hoveredBox, setHoveredBox] = useState<number>(1);
+  useScrollReveal();
+
+  const [activeBox, setActiveBox] = useState<number>(1); // Mặc định tab 1 active
+
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
     try {
       const parsedData = JSON.parse(jsonString);
       return parsedData;
     } catch (error) {
       console.error("Error parsing JSON string:", error);
-      return null; // Return null or throw the error, depending on your error handling preference
+      return null;
     }
   }
-  const {digitalcity_success} = custom_fields;
+
+  const { digitalcity_success } = custom_fields;
   const digitalcitysuccess = convertJsonStringToArrayOrObject(digitalcity_success);
+
+  const totalImages = digitalcitysuccess.length;
+
+  // Hàm xử lý khi click nút trái (Previous)
+  const goToPrev = () => {
+    setActiveBox((prevActiveBox) => {
+      if (prevActiveBox === 1) {
+        return totalImages;
+      }
+      return prevActiveBox - 1;
+    });
+  };
+
+  // Hàm xử lý khi click nút phải (Next)
+  const goToNext = () => {
+    setActiveBox((prevActiveBox) => {
+      if (prevActiveBox === totalImages) {
+        return 1;
+      }
+      return prevActiveBox + 1;
+    });
+  };
+
   return (
-    <div className="flex items-start justify-end relative mx-auto max-w-[85%] h-[200px] md:h-[570px] mb-[50px]">
-      {digitalcitysuccess.map((digitalcsuccess:any,index:number) => (
-        <Image
-          key={index+1}
-          src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcsuccess[1].value}`}
-          alt={digitalcsuccess[0].value}
-          fill
-          className={`w-[calc(100%-45px)]! rounded-[20px] transition-opacity duration-500 ease-in-out ${(hoveredBox === index+1)? 'opacity-100' : 'opacity-0 absolute'}`}
-        />
-      ))}
-      <div className='relative z-10 flex flex-col mt-[66px] text-center text-[12px] md:text-[30px] font-bold'>
-        {digitalcitysuccess.map((digitalcsuccess:any,index:number) => (
-          <div
-            key={index + "box"}
-            // Khi chuột vào, set active cho box đó
-            onMouseEnter={() => setHoveredBox(index+1)}
-            // Xóa bỏ onMouseLeave hoặc để trống để giữ trạng thái
-            // onMouseLeave={() => { /* Do nothing */ }}
-            // Nếu bạn muốn có một số hành vi khi chuột rời khỏi toàn bộ khu vực hộp,
-            // bạn có thể đặt onMouseLeave trên div cha của các box.
-            // Nhưng để giữ trạng thái khi rời box con, chúng ta bỏ qua onMouseLeave ở đây.
-            // Tailwind classes cho vị trí và style
-            className={`
-                ${index + 1 === 1 ? "top-[-45px] md:top-[-15px]" : ""}
-                ${index + 1 === 2 ? "top-[-3px] md:top-[40px]" : ""}
-                ${index + 1 === 3 ? "top-[40px] md:top-[95px]" : ""}
-                flex justify-start overflow-hidden absolute items-center rounded-tl-[10px] rounded-bl-[10px] rounded-tr-[10px] rounded-br-[10px]
-                h-[35px] md:h-[45px] w-[180px] sm:w-[395px] right-0 cursor-pointer
-                md:text-[20px] font-bold text-white
+    // Outer container (overall area for tabs, image, and controls)
+    <div className="relative mx-auto max-w-[85%] h-[200px] md:h-[570px] mb-[120px] md:mb-[150px]">
+
+      {/* Tabs container - Moved to top, centered, flex-row */}
+      <div className='z-20 pb-[30px] flex flex-row justify-center items-center space-x-2 md:space-x-4 text-[12px] md:text-[16px] font-bold whitespace-nowrap'>
+        {digitalcitysuccess.map((digitalcsuccess: any, index: number) => {
+          const isCurrentActive = activeBox === index + 1;
+
+          return (
+            <div
+              key={index + "box"}
+              onClick={() => setActiveBox(index + 1)}
+              className={`
+                flex-shrink-0 px-4 py-2 rounded-full cursor-pointer
                 transition-colors duration-300 ease-in-out
-                // Trạng thái active cho box
-                ${hoveredBox === index + 1 ? 'bg-yellow-1 [&>p]:opacity-100 [&>div]:bg-yellow-1' : 'hover:bg-yellow-1 hover:[&>p]:opacity-100 hover:[&>div]:bg-yellow-1'}
+                ${isCurrentActive ? 'bg-yellow-1 text-white' : 'bg-gray-200 text-gray-700 hover:bg-yellow-1 hover:text-white'}
               `}
-          >
-            <p className="grow text-center opacity-0 transition-opacity duration-300 ease-in-out uppercase">
-              {digitalcsuccess[0].value}
-            </p>
-            <div className="w-[45px] flex items-center justify-center h-full bg-blue-1 transition-colors duration-300 ease-in-out">
-              <span>{index + 1}</span>
+            >
+              <p className="uppercase">
+                {digitalcsuccess[0].value}
+              </p>
             </div>
-          </div>
-        ))}
+          );
+        })}
+      </div>
+
+      {/* Main content area for image AND buttons. This div will control their relative positions. */}
+      {/* We apply the padding here to create space for buttons around the image */}
+      <div className="relative w-full h-full mt-0 px-[30px] md:px-[50px]">
+        {/* Image specific container - This div ensures the image doesn't fill the padding area */}
+        <div className="relative w-full h-full"> {/* Removed px- from here, now applied to parent */}
+            {digitalcitysuccess.map((digitalcsuccess: any, index: number) => (
+            <Image
+                key={index + 1}
+                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcsuccess[1].value}`}
+                alt={digitalcsuccess[0].value}
+                fill
+                className={`rounded-[20px] transition-opacity duration-500 ease-in-out ${activeBox === index + 1 ? 'opacity-100' : 'opacity-0 absolute'}`}
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+            />
+            ))}
+        </div>
+
+        {/* Navigation Buttons - positioned relative to their direct parent (the px-padded div) */}
+        {/* Nút trái */}
+        <button
+          onClick={goToPrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full z-30
+                     hover:bg-opacity-75 transition-colors duration-200 focus:outline-none"
+          aria-label="Previous image"
+        >
+          {/* Bạn có thể dùng icon SVG hoặc ký tự mũi tên */}
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Nút phải */}
+        <button
+          onClick={goToNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full z-30
+                     hover:bg-opacity-75 transition-colors duration-200 focus:outline-none"
+          aria-label="Next image"
+        >
+          {/* Bạn có thể dùng icon SVG hoặc ký tự mũi tên */}
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
   );

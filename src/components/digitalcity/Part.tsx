@@ -350,10 +350,10 @@ export default function Part({custom_fields}: any) {
       </div>
       <div
         ref={threeRef}
-        className="relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px] mt-[-40px]"
+        className="relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px] mt-[-40px] overflow-x-hidden"
       >
         <svg
-          className="absolute top-[-20%] 2xl:top-[-190px] right-0 translate-x-[50%] overflow-x-hidden max-w-[28%] h-auto"
+          className="absolute top-[0] 2xl:top-[-190px] right-0 translate-x-[50%] hidden sm:block overflow-x-hidden max-w-[20%] h-auto"
           width="528.46"
           height="523.07"
           id="Layer_1"

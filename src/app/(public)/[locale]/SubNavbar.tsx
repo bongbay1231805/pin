@@ -218,7 +218,9 @@ export default function SubNavbar(props: PropSub) {
 
   // NEW: Điều kiện để hiển thị submenu mobile (chỉ Tin tức và Hệ sinh thái)
   const currentSlugFromPathname = pathname.split('/').pop() || '';
+  console.log(currentSlugFromPathname)
   const shouldShowMobileSubmenu = 
+    currentSlugFromPathname == "gioi-thieu" ||
     NEWS_SLUGS.includes(currentSlugFromPathname) || 
     ECOSYSTEM_SLUGS.includes(currentSlugFromPathname) || 
     myArray.includes('posts') || // Bao gồm các trang chi tiết bài viết (thuộc News)
