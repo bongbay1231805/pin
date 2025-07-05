@@ -55,7 +55,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
     <div className="mb-10">
       {/* Phần Header: Giữ nguyên */}
       {headerItem && (
-        <Link href={ecosystemUrl[headerItem[3].value]}>
+        <Link href="#">
           <div className="ml-4 mb-4 px-4 text-justify">
             <h3 className="text-[19px] font-semibold text-blue-1 uppercase">
               {headerItem[0]?.value}
@@ -88,7 +88,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
                     ${isActive ? 'scale-100 opacity-100' : 'scale-90 opacity-60'}
                   `}
                 >
-                  <Link href={ecosystemUrl[item[3].value]}>
+                  <Link href="#">
                     <div className="group block relative w-full h-auto aspect-[16/9] overflow-hidden rounded-lg shadow-md">
                       {item[4]?.value && (
                         <Image
