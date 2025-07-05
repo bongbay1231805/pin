@@ -22,9 +22,12 @@
 }
 
 /* === BỔ SUNG MỚI: ẨN NÚT TRÊN MOBILE === */
-.technology-carousel .arrow:hover {
+.technology-carousel .arrow:hover,
+.success-slider button:hover
+{
   border: 1px solid #c48c5e;
 }
+
 .arrow {
   display: none;
 }

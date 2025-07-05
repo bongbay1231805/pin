@@ -2,6 +2,7 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
+import {ChevronLeft, ChevronRight} from 'lucide-react';
 
 export default function Success({ custom_fields }: any) {
   useScrollReveal();
@@ -72,7 +73,7 @@ export default function Success({ custom_fields }: any) {
 
       {/* Main content area for image AND buttons. This div will control their relative positions. */}
       {/* We apply the padding here to create space for buttons around the image */}
-      <div className="relative w-full h-full mt-0 px-[30px] md:px-[50px]">
+      <div className="relative w-full h-full mt-0 px-[30px] md:px-[50px] success-slider">
         {/* Image specific container - This div ensures the image doesn't fill the padding area */}
         <div className="relative w-full h-full"> {/* Removed px- from here, now applied to parent */}
             {digitalcitysuccess.map((digitalcsuccess: any, index: number) => (
@@ -91,27 +92,23 @@ export default function Success({ custom_fields }: any) {
         {/* Nút trái */}
         <button
           onClick={goToPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full z-30
-                     hover:bg-opacity-75 transition-colors duration-200 focus:outline-none"
+          className="absolute left-[-20px] sm:left-0 top-1/2 -translate-y-1/2 p-2 rounded-full z-30
+                     hover:bg-opacity-75 transition-colors duration-200 focus:outline-none text-yellow-1 rounded-full"
           aria-label="Previous image"
         >
           {/* Bạn có thể dùng icon SVG hoặc ký tự mũi tên */}
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
+          <ChevronLeft size={24} />
         </button>
 
         {/* Nút phải */}
         <button
           onClick={goToNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full z-30
-                     hover:bg-opacity-75 transition-colors duration-200 focus:outline-none"
+          className="absolute right-[-20px] sm:right-0 top-1/2 -translate-y-1/2 p-2 rounded-full z-30
+                     hover:bg-opacity-75 transition-colors duration-200 focus:outline-none text-yellow-1 rounded-full"
           aria-label="Next image"
         >
           {/* Bạn có thể dùng icon SVG hoặc ký tự mũi tên */}
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <ChevronRight size={24} />
         </button>
       </div>
     </div>
