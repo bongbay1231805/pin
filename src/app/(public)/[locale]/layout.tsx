@@ -11,6 +11,8 @@ type Props = {
   children: ReactNode;
   params: Promise<{ locale: Locale }>;
 };
+
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
