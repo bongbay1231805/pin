@@ -1,14 +1,17 @@
 'use client'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Search, Bell, Calendar } from "lucide-react";
+import { Search, Bell, Calendar, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { cn } from "@/app/lib/utils";
 import { useState } from "react";
+
 export function MainDrawer() {
-  const pathname = usePathname().split("/").pop();
+  const currentPathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [openSubmenus, setOpenSubmenus] = useState<Set<string>>(new Set());
+
   const navItems = [
     {
       icon: Search,
@@ -20,38 +23,79 @@ export function MainDrawer() {
       icon: Bell,
       label: "Hệ sinh thái",
       description: "See your alerts",
-      href: "/he-sinh-thai"
+      href: "/he-sinh-thai",
+      childs: [
+        {
+          label: "Đầu tư & Phát triển dự án",
+          href: "/he-sinh-thai/dau-tu-phat-trien-du-an",
+        },
+        {
+          label: "Dịch vụ Bất động sản",
+          href: "/he-sinh-thai/dich-vu-bat-dong-san",
+        },{
+          label: "Quản lý & Vận hành",
+          href: "/he-sinh-thai/quan-ly-van-hanh",
+        }
+      ]
     },
     {
       icon: Calendar,
-      label: "Đô thị số Picity",
+      label: "Đô thị số Picity",
       description: "Manage your schedule",
       href: "/do-thi-so",
-      // href: "/digitalcity",
-      
     },
     {
       icon: Calendar,
       label: "Tin tức",
-      description: "Manage your schedule",
       href: "/tin-tuc",
-      // href: "/news",
+      childs: [
+        {
+          label: "Tin thị trường",
+          href: "/the-loai/tin-thi-truong",
+        },
+        {
+          label: "Tin Pi Group",
+          href: "/the-loai/tin-pi-group",
+        },{
+          label: "Tin đấu thầu",
+          href: "/the-loai/tin-dau-thau",
+        }
+      ]
     },
     {
       icon: Calendar,
       label: "Phát triển nhân lực",
       description: "Manage your schedule",
-      // href: "/human-resource",
       href: "/phat-trien-nhan-luc",
     },
     {
       icon: Calendar,
       label: "Liên hệ",
       description: "Manage your schedule",
-      // href: "/contact",
       href: "/lien-he",
     }
   ];
+
+  const toggleSubmenu = (href: string) => {
+    setOpenSubmenus(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(href)) {
+        newSet.delete(href);
+      } else {
+        newSet.add(href);
+      }
+      return newSet;
+    });
+  };
+
+  const isParentActive = (parentHref: string, childs?: any[]) => {
+    if (currentPathname === parentHref) return true;
+    if (childs) {
+      return childs.some(child => currentPathname.startsWith(child.href)); // Use startsWith for broader match
+    }
+    return false;
+  };
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -63,12 +107,12 @@ export function MainDrawer() {
       </SheetTrigger>
       <SheetContent side="left" className="w-full p-0">
         <SheetHeader>
-          <SheetTitle className="sr-only">Main Navigation</SheetTitle> {/* Ẩn tiêu đề này với screen reader vẫn dùng được */}
+          <SheetTitle className="sr-only">Main Navigation</SheetTitle>
         </SheetHeader>
         <div className="flex flex-col h-[90%] w-full pointer-events-auto">
           <div className="pt-[6px] pb-[8px] pl-[28px] pr-[18px]">
             <div className="flex items-center gap-4">
-              <div className="relative  overflow-hidden">
+              <div className="relative overflow-hidden">
                 <svg className={`text-yellow-1`} width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M36.7468 11.6881L29.9983 0C17.6246 7.14545 10.001 20.3492 10.001 34.6401C10.001 56.7306 27.9097 74.6393 50.0002 74.6393C66.9617 74.6393 81.4601 64.079 87.2748 49.1746C89.0341 44.6681 89.9995 39.7646 89.9995 34.6401C89.9995 20.3492 82.3758 7.14545 69.9976 0L63.2491 11.6881C71.1705 16.2712 76.498 24.8332 76.498 34.6401C76.498 49.2784 64.634 61.1424 50.0002 61.1424C35.3665 61.1424 23.5025 49.2784 23.5025 34.6401C23.5025 24.8332 28.83 16.2712 36.7513 11.6881" fill="currentColor" />
                   <path d="M63.1311 55.914C70.0556 51.6286 74.7335 44.0591 74.9861 35.3799L53.1934 36.4851L63.1357 55.914H63.1311Z" fill="currentColor" />
@@ -94,24 +138,84 @@ export function MainDrawer() {
           <nav className="flex-1 overflow-y-auto p-4">
             <div className="grid gap-2">
               {navItems.map((item) => {
-                const isActive = pathname === item.href.split("/").pop();
+                const isActiveParent = isParentActive(item.href, item.childs);
+                const isSubmenuOpen = openSubmenus.has(item.href);
+
                 return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)} // 👈 đóng Drawer khi click
-                    className={cn(
-                      "flex items-center gap-4 p-3 rounded-xl transition-colors relative uppercase",
-                      isActive
-                        ? "bg-primary/10 text-primary"
-                        : ""
+                  <div key={item.href}>
+                    {item.childs ? (
+                      <div className={cn(
+                        "flex justify-between items-center p-3 rounded-xl transition-colors relative uppercase text-[17px] font-semibold",
+                        isActiveParent
+                          ? "bg-primary/10 text-yellow-1"
+                          : "text-gray-800 hover:bg-gray-100"
+                      )}>
+                        {/* Parent link that navigates */}
+                        <Link
+                          href={item.href}
+                          onClick={() => setOpen(false)} // Close drawer on link click
+                          className="flex-1 text-left" // Occupy available space
+                        >
+                          <div className="group relative flex flex-col focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1">
+                            <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0 group-visited:-translate-y-full group-visited:opacity-0 group-active:-translate-y-full group-active:opacity-0">
+                                {item.label}
+                            </span>
+                            <span className="absolute inset-0 flex items-center justify-start transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-visited:translate-y-0 group-visited:opacity-100 group-active:translate-y-0 group-active:opacity-100 text-yellow-2">
+                                {item.label}
+                            </span>
+                          </div>
+                        </Link>
+                        {/* Button to toggle submenu */}
+                        <Button
+                          variant="ghost"
+                          size="icon" // Use icon size for arrow button
+                          onClick={(e) => {
+                            e.stopPropagation(); // Prevent link click event from propagating
+                            toggleSubmenu(item.href);
+                          }}
+                          className="ml-2 p-0 h-auto w-auto" // Adjust padding/size for the icon button
+                        >
+                          {isSubmenuOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                        </Button>
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className={cn(
+                          "flex items-center gap-4 p-3 rounded-xl transition-colors relative uppercase",
+                          currentPathname === item.href
+                            ? "bg-primary/10 text-yellow-1"
+                            : "text-gray-800 hover:bg-gray-100" // Added default hover style for consistency
+                        )}
+                      >
+                        <div className="group relative flex flex-col text-[17px] font-semibold focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1">
+                          <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0 group-visited:-translate-y-full group-visited:opacity-0 group-active:-translate-y-full group-active:opacity-0">{item.label}</span>
+                          <span className="absolute inset-0 flex items-center justify-start transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-visited:translate-y-0 group-visited:opacity-100 group-active:translate-y-0 group-active:opacity-100 text-yellow-2">{item.label}</span>
+                        </div>
+                      </Link>
                     )}
-                  >
-                    <div className="group relative flex flex-col text-[17px] font-semibold  focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1">
-                      <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0 group-visited:-translate-y-full group-visited:opacity-0 group-active:-translate-y-full group-active:opacity-0">{item.label}</span>
-                      <span className="absolute inset-0 flex items-center justify-start transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-visited:translate-y-0 group-visited:opacity-100 group-active:translate-y-0 group-active:opacity-100 text-yellow-2">{item.label}</span>
-                    </div>
-                  </Link>
+
+                    {item.childs && isSubmenuOpen && (
+                      <div className="ml-4 mt-1 grid gap-1">
+                        {item.childs.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "flex items-center p-2 rounded-xl transition-colors text-sm",
+                              currentPathname === child.href
+                                ? "bg-primary/5 text-yellow-1"
+                                : "text-gray-700 hover:bg-gray-100"
+                            )}
+                          >
+                            <span className="block">{child.label}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
