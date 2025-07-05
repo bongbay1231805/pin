@@ -9,6 +9,7 @@ type ScrollRefs = {
   fiveRef: React.RefObject<HTMLDivElement | null>
   sixRef: React.RefObject<HTMLDivElement | null>
   seventRef: React.RefObject<HTMLDivElement | null>
+  eightRef: React.RefObject<HTMLDivElement | null>
 }
 const ScrollRefsContext = createContext<ScrollRefs | null>(null)
 export const useScrollRefs = () => {
@@ -24,8 +25,9 @@ export const ScrollRefsProvider = ({ children }: { children: React.ReactNode }) 
   const fiveRef = useRef<HTMLDivElement>(null)
   const sixRef = useRef<HTMLDivElement>(null)
   const seventRef = useRef<HTMLDivElement>(null)
+  const eightRef = useRef<HTMLDivElement>(null)
   return (
-    <ScrollRefsContext.Provider value={{ oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef }}>
+    <ScrollRefsContext.Provider value={{ oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef }}>
       {children}
     </ScrollRefsContext.Provider>
   )

@@ -18,6 +18,7 @@ interface NavItemWithRef {
   name: string;
   href: string;
   hrefb: RefObject<HTMLDivElement | null>;
+  hrefm: RefObject<HTMLDivElement | null>;
 }
 
 interface NavItemWithoutRef {
@@ -46,7 +47,7 @@ export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
   const pathname = usePathname();
   let myArray = pathname.split('/');
-  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } =
+  const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef } =
     useScrollRefs();
 
   const { currentCategorySlug } = useNewsCategory();
@@ -95,7 +96,7 @@ export default function SubNavbar(props: PropSub) {
 
       let newActiveSection = '';
 
-      const currentNavItems: NavItem[] = getNavItems(pathname, myArray, currentCategorySlug || '', { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
+      const currentNavItems: NavItem[] = getNavItems(pathname, myArray, currentCategorySlug || '', { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef });
 
       for (let i = currentNavItems.length - 1; i >= 0; i--) {
         const item = currentNavItems[i];
@@ -153,14 +154,14 @@ export default function SubNavbar(props: PropSub) {
     currentCategorySlug: string,
     refs: ReturnType<typeof useScrollRefs>
   ): NavItem[] => {
-    const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef } = refs;
+    const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef } = refs;
     const currentSlugFromPathname = pathname.split('/').pop() || '';
 
     if (ABOUT_SLUGS.includes(currentSlugFromPathname)) {
       return [
         { name: 'Định vị thương hiệu', href: '#gioi-thieu', hrefb: oneRef },
         { name: 'Con số ấn tượng', href: '#gioi-thieu', hrefb: twoRef },
-        { name: 'Lịch sử hình thành', href: '#gioi-thieu', hrefb: threeRef },
+        { name: 'Lịch sử hình thành', href: '#gioi-thieu', hrefb: threeRef, hrefm: eightRef },
         { name: 'Triết lý kinh doanh', href: '#gioi-thieu', hrefb: fourRef },
         { name: 'Tầm nhìn - Sứ mệnh', href: '#gioi-thieu', hrefb: fiveRef },
         { name: 'Văn hóa doanh nghiệp', href: '#gioi-thieu', hrefb: sixRef },
@@ -212,7 +213,7 @@ export default function SubNavbar(props: PropSub) {
     return [];
   };
 
-  const navItems = getNavItems(pathname, myArray, currentCategorySlug || '', { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef });
+  const navItems = getNavItems(pathname, myArray, currentCategorySlug || '', { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef });
 
   const hasNavItemsToDisplay = Array.isArray(navItems) && navItems.length > 0;
 
@@ -291,7 +292,7 @@ export default function SubNavbar(props: PropSub) {
               'hrefb' in item && item.hrefb ? (
                 <li key={item.name} className="flex-shrink-0 mx-2">
                   <button
-                    onClick={() => scrollTo(item.hrefb!)}
+                    onClick={() => scrollTo(item.hrefm || item.hrefb!)}
                     className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
                       activeSection === item.name ? 'text-yellow-1' : ''
                     }`}
