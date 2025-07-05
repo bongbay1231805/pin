@@ -4,10 +4,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useScrollRefs } from '@/context/ScrollRefsContext';
+// import { useScrollRefs } from '@/context/ScrollRefsContext';
 
 export function TimelineMobile({ custom_fields }: any) {
-  const { eightRef } = useScrollRefs();
+  // const { eightRef } = useScrollRefs();
   const { field_12_about, slider_about } = custom_fields;
 
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
@@ -107,9 +107,7 @@ export function TimelineMobile({ custom_fields }: any) {
   const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
 
   return (
-    <section
-      ref={eightRef}
-      className="mx-auto w-full px-[30px] md:px-0 md:max-w-[85%] 2xl:max-w-[1380px] bg-white timeline-carousel lg:py-16"
+    <div
     >
       <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold text-center mb-[0px] sm:mb-12">
         {field_12_about}
@@ -201,6 +199,6 @@ export function TimelineMobile({ custom_fields }: any) {
           <ChevronRight />
         </button>
       </div>
-    </section>
+    </div>
   );
 }

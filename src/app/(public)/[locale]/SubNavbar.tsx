@@ -68,11 +68,11 @@ export default function SubNavbar(props: PropSub) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window === 'undefined' || window.innerWidth < 1024) {
-        if (isFixed) setIsFixed(false);
-        prevScrollY.current = window.scrollY;
-        return;
-      }
+      // if (typeof window === 'undefined' || window.innerWidth < 1024) {
+      //   if (isFixed) setIsFixed(false);
+      //   prevScrollY.current = window.scrollY;
+      //   return;
+      // }
 
       const currentScrollY = window.scrollY;
       const scrollingDown = currentScrollY > prevScrollY.current;
@@ -293,7 +293,7 @@ export default function SubNavbar(props: PropSub) {
               'hrefb' in item && item.hrefb ? (
                 <li key={item.name} className="flex-shrink-0 mx-2">
                   <button
-                    onClick={() => scrollTo(item.hrefm || item.hrefb!)}
+                    onClick={() => scrollTo(item.hrefb!)}
                     className={`text-[12px] 2xl:text-[16px] cursor-pointer font-regular hover:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1 ${
                       activeSection === item.name ? 'text-yellow-1' : ''
                     }`}
