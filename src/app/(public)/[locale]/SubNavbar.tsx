@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { useScrollRefs } from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams  } from 'next/navigation';
 import { useState, useEffect, useRef, RefObject } from 'react';
 import { useNewsCategory } from '@/context/NewsCategoryContext';
 
@@ -46,6 +46,8 @@ const DIGITAL_CITY_SLUGS = ['digitalcity', 'do-thi-so'];
 export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   let myArray = pathname.split('/');
   const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef } =
     useScrollRefs();
@@ -131,14 +133,11 @@ export default function SubNavbar(props: PropSub) {
   const isActive = (itemHref: string) => {
     const itemSlug = itemHref.split('/').pop();
 
-    const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts';
+    const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts' || currentCategorySlug != null;
     const isSearchPage = myArray[myArray.length - 1] === 'search';
-
+    
     if (isPostDetailPage || NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
-        if (itemHref.includes('/categories/')) {
-            return (currentCategorySlug || '') === itemSlug;
-        }
-        return false;
+        return (currentCategorySlug || '') === itemSlug;
     }
 
     if (isSearchPage) {
@@ -167,7 +166,7 @@ export default function SubNavbar(props: PropSub) {
         { name: 'Văn hóa doanh nghiệp', href: '#gioi-thieu', hrefb: sixRef },
         { name: 'Hồ sơ năng lực', href: '#gioi-thieu', hrefb: seventRef },
       ];
-    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || myArray.includes('posts')) {
+    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null || myArray.includes('posts')) {
       return [
         // { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
         // { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
@@ -219,17 +218,19 @@ export default function SubNavbar(props: PropSub) {
 
   // NEW: Điều kiện để hiển thị submenu mobile (chỉ Tin tức và Hệ sinh thái)
   const currentSlugFromPathname = pathname.split('/').pop() || '';
-  console.log(currentSlugFromPathname)
+  
   const shouldShowMobileSubmenu = 
     currentSlugFromPathname == "gioi-thieu" ||
     NEWS_SLUGS.includes(currentSlugFromPathname) || 
     ECOSYSTEM_SLUGS.includes(currentSlugFromPathname) || 
+    currentCategorySlug != null ||
     myArray.includes('posts') || // Bao gồm các trang chi tiết bài viết (thuộc News)
     myArray.includes('search'); // Bao gồm trang tìm kiếm (thuộc News)
 
     const shouldShowSearchMobileSubmenu = 
     NEWS_SLUGS.includes(currentSlugFromPathname) || 
     // ECOSYSTEM_SLUGS.includes(currentSlugFromPathname) || 
+    currentCategorySlug != null ||
     myArray.includes('posts') || // Bao gồm các trang chi tiết bài viết (thuộc News)
     myArray.includes('search'); // Bao gồm trang tìm kiếm (thuộc News)
 
