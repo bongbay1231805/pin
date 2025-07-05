@@ -33,7 +33,8 @@ const throttle = (func: Function, delay: number) => {
 
 const Navbar = () => {
   const pathname = usePathname().split('/').pop();
-  const isHomePage = pathname === 'en' || pathname === 'vi';
+  // const isHomePage = pathname === 'en' || pathname === 'vi';
+  const isHomePage = pathname === '';
   const aPage = [
     'ecosystem',
     'investment-development',

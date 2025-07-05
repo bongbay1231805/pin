@@ -23,9 +23,9 @@ const MasonryGrid = ({custom_fields}: any) => {
     }
   }
   const ecosystemUrl: any = {
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: '/vi/he-sinh-thai/dau-tu-phat-trien-du-an',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: '/vi/he-sinh-thai/dich-vu-bat-dong-san',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: '/vi/he-sinh-thai/quan-ly-van-hanh',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: '/he-sinh-thai/dau-tu-phat-trien-du-an',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: '/he-sinh-thai/dich-vu-bat-dong-san',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: '/he-sinh-thai/quan-ly-van-hanh',
   };
   const customfields = convertJsonStringToArrayOrObject(custom_fields);
   // Sử dụng hook để xác định kích thước màn hình

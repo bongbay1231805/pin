@@ -24,11 +24,11 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
     loop: true,
     containScroll: 'trimSnaps'
   });
-
+  
   const ecosystemUrl: any = {
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: '/vi/he-sinh-thai/dau-tu-phat-trien-du-an',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: '/vi/he-sinh-thai/dich-vu-bat-dong-san',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: '/vi/he-sinh-thai/quan-ly-van-hanh',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: '/he-sinh-thai/dau-tu-phat-trien-du-an',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: '/he-sinh-thai/dich-vu-bat-dong-san',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: '/he-sinh-thai/quan-ly-van-hanh',
   };
 
   // --- THAY ĐỔI 2: Thêm state để biết slide nào đang active ---
@@ -55,7 +55,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
     <div className="mb-10">
       {/* Phần Header: Giữ nguyên */}
       {headerItem && (
-        <Link href="#">
+        <Link href={headerItem[3]?.value ? ecosystemUrl[headerItem[3]?.value] : '#'}>
           <div className="ml-4 mb-4 px-4 text-justify">
             <h3 className="text-[19px] font-semibold text-blue-1 uppercase">
               {headerItem[0]?.value}

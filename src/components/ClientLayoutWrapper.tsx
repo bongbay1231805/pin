@@ -9,8 +9,9 @@ import { NewsCategoryProvider } from '@/context/NewsCategoryContext';
 import { useEffect } from 'react';
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname().split("/").pop();
-  const isContactPage = pathname === 'contact';
-  const shouldHideOverflow = pathname === 'en' || pathname === 'vi' || pathname === 'digitalcity';
+  const isContactPage = pathname === 'contact' || pathname === 'lien-he';
+  // const shouldHideOverflow = pathname === 'en' || pathname === 'vi' || pathname === 'digitalcity';
+  const shouldHideOverflow = pathname === '' || pathname === 'do-thi-so' || pathname === 'digitalcity';
   useEffect(() => {
     const interval = setInterval(() => {
       document.querySelectorAll('canvas').forEach((el) => {
@@ -30,7 +31,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
   return (
     <>
       <div>
-        <ScrollRefsProvider>
+        <ScrollRefsProvider><></>
           <NewsCategoryProvider>  
             <PublicNavigation />
             <div className={shouldHideOverflow ? 'overflow-x-hidden' : ''}>
@@ -39,7 +40,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
           </NewsCategoryProvider>
         </ScrollRefsProvider>
       </div>
-      {isContactPage ? <FooterContact /> : <Footer />}
+      {isContactPage ? <FooterContact /> : <Footer />} 
     </>
   );
 }
