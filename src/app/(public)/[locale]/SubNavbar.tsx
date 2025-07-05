@@ -166,15 +166,6 @@ export default function SubNavbar(props: PropSub) {
         { name: 'Văn hóa doanh nghiệp', href: '#gioi-thieu', hrefb: sixRef },
         { name: 'Hồ sơ năng lực', href: '#gioi-thieu', hrefb: seventRef },
       ];
-    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null || myArray.includes('posts')) {
-      return [
-        // { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
-        // { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
-        // { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' },
-        { name: 'Tin thị trường', href: '/the-loai/tin-thi-truong' },
-        { name: 'Tin Pi Group', href: '/the-loai/tin-pi-group' },
-        { name: 'Tin đấu thầu', href: '/the-loai/tin-dau-thau' },
-      ];
     } else if (ECOSYSTEM_SLUGS.includes(currentSlugFromPathname)) {
       return [
         {
@@ -207,6 +198,15 @@ export default function SubNavbar(props: PropSub) {
         { name: 'Dịch vụ quản lý', href: '', hrefb: fiveRef },
         { name: 'Giá trị vượt trội', href: '', hrefb: sixRef },
         { name: 'Dự án thành công', href: '', hrefb: seventRef },
+      ];
+    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null || myArray.includes('posts')) {
+      return [
+        // { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
+        // { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
+        // { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' },
+        { name: 'Tin thị trường', href: '/the-loai/tin-thi-truong' },
+        { name: 'Tin Pi Group', href: '/the-loai/tin-pi-group' },
+        { name: 'Tin đấu thầu', href: '/the-loai/tin-dau-thau' },
       ];
     }
     return [];
