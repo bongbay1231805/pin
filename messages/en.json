@@ -24,5 +24,49 @@
   },
   "Profile": {
     "title": "Profile"
+  },
+  "Ecosystem": {
+    "title": "Ecosystem"
+  },
+  "Digitalcity": {
+    "title": "Picity digitalcity"
+  },
+  "News": {
+    "title": "News"
+  },
+  "HumanResource": {
+    "title": "Human Resource"
+  },
+  "Contact": {
+    "title": "Contact"
+  },
+  "Submenu": {
+    "brandPositioning": "Brand positioning",
+    "impressiveFigures": "Impressive figures",
+    "historyOfEstablishment": "History of establishment",
+    "businessPhilosophy": "Business philosophy",
+    "visionMission": "Vision - Mission",
+    "corporateCulture": "Corporate culture",
+    "capabilityProfile": "Capability profile",
+    "marketNews": "Market news",
+    "piGroupNews": "Pi Group news",
+    "biddingNews": "Bidding news",
+    "investmentProjectDevelopment": "Investment & Project development",
+    "realEstateServices": "Real estate services",
+    "managementOperations": "Management & Operations",
+    "workCulture": "Work culture",
+    "benefitsTraining": "Benefits & Training",
+    "recruitmentForm": "Recruitment form",
+    "jobOpenings": "Job openings",
+    "picityDigitalCity": "Picity - Digital city",
+    "technology4_0": "4.0 technology",
+    "exclusivePicityApp": "Exclusive Picity App",
+    "fiveStarAmenities": "5★ amenities",
+    "managementServices": "Management services",
+    "superiorValue": "Superior value",
+    "successfulProjects": "Successful projects"
+  },
+  "Footer": {
+    "piGroupCorporation": "PI GROUP CORPORATION"
   }
 }

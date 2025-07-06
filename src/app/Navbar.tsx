@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import SubNavbar from './SubNavbar';
 import { MainDrawer } from '@/components/MainDrawer';
+import { setUserLocale } from '@/db';
+import {useLocale, useTranslations} from 'next-intl';
+import { routeLocales } from '@/routes';
 
 // Generic throttle function
 const throttle = (func: Function, delay: number) => {
@@ -33,6 +36,8 @@ const throttle = (func: Function, delay: number) => {
 
 const Navbar = () => {
   const pathname = usePathname().split('/').pop();
+  const currentLocale = useLocale();
+  const t = useTranslations();
   // const isHomePage = pathname === 'en' || pathname === 'vi';
   const isHomePage = pathname === '';
   const aPage = [
@@ -61,7 +66,8 @@ const Navbar = () => {
   const nameCurent = pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isActive = (path: string) => {
-    return pathname === path;
+    const pathWithoutSlash = path.split('/').pop();
+    return pathname === pathWithoutSlash;
   };
   const [hasShadow, setHasShadow] = useState(false);
 
@@ -130,6 +136,12 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [mobileMenuOpen]);
+
+
+  function changeLocal(local: string) {
+   setUserLocale(local);
+  }
+ 
 
   return (
     <nav
@@ -231,89 +243,85 @@ const Navbar = () => {
             className={`hidden xl:flex text-[13px] 2xl:text-[17px] font-[600] items-center ml-[11.5%] 2xl:ml-[204px] uppercase grow-1 ${hasShadow ? 'h-[70px]' : isHomePage ? 'h-[106px]' : 'h-[70px]'}`}
           >
             <Link
-              href="/gioi-thieu"
-              className={`group relative grow-1 text-center text-white-1 hover:text-yellow-2 ${isActive('gioi-thieu') ? 'text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              href={routeLocales[currentLocale]['about']}
+              className={`group relative grow-1 text-center text-white-1 hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['about']) ? 'text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Giới thiệu
+                {t('About.title')}
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Giới thiệu
+                {t('About.title')}
               </span>
             </Link>
             <Link
-              href="/he-sinh-thai"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('he-sinh-thai') || isActive('dau-tu-phat-trien-du-an') || isActive('dich-vu-bat-dong-san') || isActive('quan-ly-van-hanh') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              href={routeLocales[currentLocale]['ecosystem']}
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['ecosystem']) || isActive(routeLocales[currentLocale]['investmentDevelopment']) || isActive(routeLocales[currentLocale]['realEstateServices']) || isActive(routeLocales[currentLocale]['managementOperation']) ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Hệ Sinh Thái
+                {t('Ecosystem.title')}
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Hệ Sinh Thái
+                {t('Ecosystem.title')}
               </span>
             </Link>
             <Link
-              // href="/digitalcity"
-              href="/do-thi-so"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('digitalcity') || isActive('do-thi-so') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              href={routeLocales[currentLocale]['digitalcity']}
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['digitalcity'])  ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Đô thị số Picity
+                {t('Digitalcity.title')}
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Đô thị số Picity
+                {t('Digitalcity.title')}
               </span>
             </Link>
             <Link
-              // href="/news"
-              href="/tin-tuc"
+              href={routeLocales[currentLocale]['news']}
               className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('news') || isActive('tin-thi-truong') || isActive('tin-pi-group') || isActive('tin-dau-thau') || isActive('tin-tuc')? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Tin Tức
+                {t('News.title')}
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Tin Tức
+                {t('News.title')}
               </span>
             </Link>
             <Link
-              // href="/human-resource"
-              href="/phat-trien-nhan-luc"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('human-resource') || isActive('phat-trien-nhan-luc') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              href={routeLocales[currentLocale]['humanResource']}
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['humanResource'])  ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Phát Triển Nhân Lực
+                {t('HumanResource.title')}
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Phát Triển Nhân Lực
+                {t('HumanResource.title')}
               </span>
             </Link>
             <Link
-              // href="/contact"
-              href="/lien-he"
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive('contact') || isActive('lien-he') ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              href={routeLocales[currentLocale]['contact']}
+              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['contact']) ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                Liên Hệ
+                {t('Contact.title')}
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
-                Liên Hệ
+                {t('Contact.title')}
               </span>
             </Link>
             <div className="flex justify-end font-semibold items-center grow-1">
-              <Link
-                href="/vi"
-                className={`text-yellow-2! ${isActive('vi') ? ' text-yellow-2' : 'text-white-1'} ${hasShadow || pageCurent ? 'text-yellow-2' : ''}`}
+             <button
+                onClick={() => changeLocal('vi')}
+                className={`cursor-pointer ${currentLocale === 'vi' ? ' text-yellow-2!' : ''} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6' : 'text-white-1'}`}
               >
                 VN
-              </Link>
+              </button>
               <span className="text-gray-300 px-[7px] inline-block">|</span>
-              <Link
-                href="/en"
-                className={`hover:text-yellow-2 ${isActive('en') ? ' text-yellow-2' : 'text-gray-6'} ${hasShadow || pageCurent || !isHomePage ? '' : 'text-white-1!'}`}
+              <button
+                 onClick={() => changeLocal('en')}
+                className={`cursor-pointer ${currentLocale === 'en' ? ' text-yellow-2!' : ''} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6' : 'text-white-1'}`}
               >
                 EN
-              </Link>
+              </button>
             </div>
           </div>
           <div className="flex items-center xl:hidden mr-[-15px]">

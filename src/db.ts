@@ -1,3 +1,5 @@
+'use server';
+
 import {cookies} from 'next/headers';
 import {Locale, hasLocale} from 'next-intl';
 import {defaultLocale, locales} from './config';

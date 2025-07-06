@@ -6,24 +6,28 @@ import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { cn } from "@/app/lib/utils";
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { routeLocales } from "@/routes";
 
 export function MainDrawer() {
   const currentPathname = usePathname();
   const [open, setOpen] = useState(false);
+  const currentLocale = useLocale();
+  const t = useTranslations();
   const [openSubmenus, setOpenSubmenus] = useState<Set<string>>(new Set());
 
   const navItems = [
     {
       icon: Search,
-      label: "Giới thiệu",
+      label: t('About.title'),
       description: "Find anything you need",
-      href: "/gioi-thieu",
+      href: routeLocales[currentLocale]['about'],
     },
     {
       icon: Bell,
-      label: "Hệ sinh thái",
+      label: t('Ecosystem.title'),
       description: "See your alerts",
-      href: "/he-sinh-thai",
+      href: routeLocales[currentLocale]['ecosystem'],
       childs: [
         {
           label: "Đầu tư & Phát triển dự án",
@@ -40,14 +44,16 @@ export function MainDrawer() {
     },
     {
       icon: Calendar,
-      label: "Đô thị số Picity",
+      label: t('Digitalcity.title'),
       description: "Manage your schedule",
-      href: "/do-thi-so",
+      href: routeLocales[currentLocale]['digitalcity'],
+      
     },
     {
       icon: Calendar,
-      label: "Tin tức",
-      href: "/tin-tuc",
+      label: t('News.title'),
+      description: "Manage your schedule",
+      href: routeLocales[currentLocale]['news'],
       childs: [
         {
           label: "Tin thị trường",
@@ -64,15 +70,15 @@ export function MainDrawer() {
     },
     {
       icon: Calendar,
-      label: "Phát triển nhân lực",
+      label: t('HumanResource.title'),
       description: "Manage your schedule",
-      href: "/phat-trien-nhan-luc",
+      href: routeLocales[currentLocale]['humanResource'],
     },
     {
       icon: Calendar,
-      label: "Liên hệ",
+      label: t('Contact.title'),
       description: "Manage your schedule",
-      href: "/lien-he",
+      href: routeLocales[currentLocale]['contact'],
     }
   ];
 

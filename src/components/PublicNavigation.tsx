@@ -3,7 +3,7 @@
 // import NavLink from './NavLink';
 import { Suspense } from 'react';
 
-import Navbar from '../app/(public)/[locale]/Navbar';
+import Navbar from '../app/Navbar';
 export default function PublicNavigation() {
   // const t = useTranslations('PublicNavigation');
   return (

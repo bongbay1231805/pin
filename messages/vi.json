@@ -1,28 +1,72 @@
 {
   "About": {
-    "title": "About"
+    "title": "Giới Thiệu"
   },
   "App": {
-    "title": "Home"
+    "title": "Trang chủ"
   },
   "AppNavigation": {
-    "home": "Home",
+    "home": "Trang chủ",
     "profile": "Profile"
   },
   "Index": {
-    "title": "Home"
+    "title": "Trang chủ"
   },
   "Login": {
-    "label": "Login →"
+    "label": "Đăng nhập →"
   },
   "Logout": {
     "label": "Logout →"
   },
   "PublicNavigation": {
     "about": "About",
-    "home": "Home"
+    "home": "Trang chủ"
   },
   "Profile": {
     "title": "Profile"
+  },
+  "Ecosystem": {
+    "title": "Hệ Sinh Thái"
+  },
+  "Digitalcity": {
+    "title": "Đô thị số Picity"
+  },
+  "News": {
+    "title": "Tin Tức"
+  },
+  "HumanResource": {
+    "title": "Phát Triển Nhân Lực"
+  },
+  "Contact": {
+    "title": "Liên Hệ"
+  },
+  "Submenu": {
+    "brandPositioning": "Định vị thương hiệu",
+    "impressiveFigures": "Con số ấn tượng",
+    "historyOfEstablishment": "Lịch sử hình thành",
+    "businessPhilosophy": "Triết lý kinh doanh",
+    "visionMission": "Tầm nhìn - Sứ mệnh",
+    "corporateCulture": "Văn hóa doanh nghiệp",
+    "capabilityProfile": "Hồ sơ năng lực",
+    "marketNews": "Tin thị trường",
+    "piGroupNews": "Tin Pi Group",
+    "biddingNews": "Tin đấu thầu",
+    "investmentProjectDevelopment": "Đầu tư & Phát triển dự án",
+    "realEstateServices": "Dịch vụ Bất động sản",
+    "managementOperations": "Quản lý & Vận hành",
+    "workCulture": "Văn hóa làm việc",
+    "benefitsTraining": "Phúc lợi & Đào tạo",
+    "recruitmentForm": "Hình thức tuyển dụng",
+    "jobOpenings": "Vị trí tuyển dụng",
+    "picityDigitalCity": "Picity - Đô thị số",
+    "technology4_0": "Công nghệ 4.0",
+    "exclusivePicityApp": "Độc quyền Picity App",
+    "fiveStarAmenities": "Tiện ích 5★",
+    "managementServices": "Dịch vụ quản lý",
+    "superiorValue": "Giá trị vượt trội",
+    "successfulProjects": "Dự án thành công"
+  },
+  "Footer": {
+    "piGroupCorporation": "TẬP ĐOÀN PI GROUP"
   }
 }
