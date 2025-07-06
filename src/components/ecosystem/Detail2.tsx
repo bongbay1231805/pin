@@ -7,6 +7,7 @@ import {useScrollReveal} from '@/hooks/useScrollReveal';
 import {useMediaQuery} from '@/hooks/useMediaQuery';
 import {ServicesDesktop} from './ServicesDesktop'; // Import component mới
 import {ServicesMobile} from './ServicesMobile'; // Import component mới
+import SlickCarouselCenter from '../ui/SlickCarouselCenter';
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
@@ -990,7 +991,8 @@ export default function Detail2({custom_fields, image}: any) {
         </div>
       </div>
       <div className="mx-auto my-16 sliderreal">
-        <EmblaCarouselCenter slides={sliders} />
+        {/* <EmblaCarouselCenter slides={sliders} /> */}
+        <SlickCarouselCenter slides={sliders} />
       </div>
     </>
   );
