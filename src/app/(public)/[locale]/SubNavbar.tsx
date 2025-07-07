@@ -42,6 +42,7 @@ const NEWS_SLUGS = ['news', 'tin-tuc', 'tin-thi-truong', 'tin-pi-group', 'tin-da
 const HUMAN_RESOURCE_SLUGS = ['human-resource', 'phat-trien-nhan-luc'];
 const ABOUT_SLUGS = ['about', 'gioi-thieu'];
 const DIGITAL_CITY_SLUGS = ['digitalcity', 'do-thi-so'];
+const CONTACT_SLUGS = ['digitalcity', 'lien-he'];
 
 export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
@@ -199,7 +200,9 @@ export default function SubNavbar(props: PropSub) {
         { name: 'Giá trị vượt trội', href: '', hrefb: sixRef },
         { name: 'Dự án thành công', href: '', hrefb: seventRef },
       ];
-    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null || myArray.includes('posts')) {
+    } else if ( CONTACT_SLUGS.includes(currentSlugFromPathname) ){
+      return [];
+    }else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null || myArray.includes('posts')) {
       return [
         // { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
         // { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
