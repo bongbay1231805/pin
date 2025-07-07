@@ -106,7 +106,7 @@ export default async function Contact() {
                   <Image
                     src="/contact/map.svg"
                     alt="Modern city skyline"
-                    width="18" height="18" className="mr-[5px] mt-[-1px] 2xl:w-[28px] 2xl:h-[28px]" 
+                    width="13" height="13" className="mr-[5px] mt-[-1px] 2xl:w-[28px] 2xl:h-[28px]" 
                   />
 
                   <div>
@@ -121,7 +121,7 @@ export default async function Contact() {
                   <Image
                     src="/contact/phone.svg"
                     alt="Modern city skyline"
-                    width="18" height="18" className="mr-[5px] mt-[-1px] 2xl:w-[28px] 2xl:h-[28px]" 
+                    width="13" height="13" className="mr-[5px] mt-[-1px] 2xl:w-[28px] 2xl:h-[28px]" 
                   />
                   <p className="font-normal">{field_contact_5}</p>
                 </div>
@@ -134,7 +134,7 @@ export default async function Contact() {
                   <Image
                     src="/contact/event.svg"
                     alt="Modern city skyline"
-                    width="18" height="18" className="mr-[5px] mt-[-1px] 2xl:w-[28px] 2xl:h-[28px]" 
+                    width="13" height="13" className="mr-[5px] mt-[-1px] 2xl:w-[28px] 2xl:h-[28px]" 
                   />
                   <p className="font-normal">{field_contact_7}</p>
                 </div>

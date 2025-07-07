@@ -73,7 +73,7 @@ export default function Hero({ data, dataPage }: any) {
     <>
       <div className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw] text-center pt-[70px] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[85%]">
-          <h1 className='absolute z-10 left-0 text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[56px] text-[22px] xl:text-[46px] 2xl:text-[80px] 2xl:leading-[90px]'>{name}</h1>
+          <h1 className='absolute z-10 left-0 text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[56px] text-[22px] xl:text-[46px] 2xl:text-[80px] 2xl:leading-[90px]' dangerouslySetInnerHTML={{ __html: human_resource_1 }}></h1>
         </div>
         <Image fill src={imageSrc} alt="Smart City Features" className="object-cover" />
       </div>
@@ -83,7 +83,7 @@ export default function Hero({ data, dataPage }: any) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px] mx-auto w-full px-[30px] xl:max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_3 }}></div>
-          <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
+          <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' ></div>
         </div>
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_5 }}></div>
@@ -158,16 +158,16 @@ export default function Hero({ data, dataPage }: any) {
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_30px] sm:py-[100px_25px]">{human_resource_14}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-[70%_1fr] 2xl:grid-cols-[65%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[385px] 2xl:h-[508px] h-auto">
               <div className="relative row-span-2 group overflow-hidden rounded-[10px]">
-                <Image className="transition-transform duration-300 ease-in-out group-hover:scale-105" alt="benefit 8" loading="lazy" decoding="async" width="1000" height="1000" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
+                <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1000" height="1000" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
                 <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold object-top" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px] sm:gap-[20px]">
                 <div className="relative row-start-1 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px]">
-                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-105' style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_18}</div>
                 </div>
                 <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px]">
-                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-top rounded-[10px] transition-transform duration-300 ease-in-out group-hover:scale-105' style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-top rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_20}</div>
                 </div>
               </div>
