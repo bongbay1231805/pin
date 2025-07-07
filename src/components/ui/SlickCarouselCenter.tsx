@@ -50,6 +50,7 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
   const settings = {
     dots: false,
     infinite: true,
+    cssEase: 'linear',
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,

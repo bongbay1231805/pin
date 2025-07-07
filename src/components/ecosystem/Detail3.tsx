@@ -670,7 +670,7 @@ export default function Detail3({custom_fields, image}: any) {
           </div>
         </div>
       </div>
-      <div className='relative bg-[url("/bg-1.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-cover sm:bg-size-[100%_110%] sm:bg-size-[100%_100%] h-[330px] sm:h-[620px] content-center'>
+      <div className='relative bg-[url("/bg-1.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat bg-cover sm:bg-size-[100%_110%] sm:bg-size-[100%_100%] h-[330px] sm:h-[620px] content-center bg-cover bg-top'>
         <div className="mt-[-470px] sm:mt-[-100px] sm:ml-[48%] max-w-[1250px] grid">
           <div className="px-[30px] xl:px-0 xl:w-[650px]">
             <div className="grid grid-cols-1 2xl:w-[905px] sm:mb-[45px]">
