@@ -57,7 +57,7 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  663 - 665 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh.
+                  663 - 665 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh
                 </li>
                 <li className="flex items-center">
                   <svg
