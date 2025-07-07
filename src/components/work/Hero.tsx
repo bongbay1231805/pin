@@ -156,7 +156,7 @@ export default function Hero({ data, dataPage }: any) {
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_30px] sm:py-[100px_25px]">{human_resource_14}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[508px] h-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-[677px_1fr] 2xl:grid-cols-[65%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[385px] 2xl:h-[508px] h-auto">
               <div className="relative row-span-2 group overflow-hidden rounded-[10px]">
                 <Image className="transition-transform duration-300 ease-in-out group-hover:scale-105" alt="benefit 8" loading="lazy" decoding="async" width="1000" height="1000" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
                 <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold object-top" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
