@@ -170,13 +170,7 @@ export default function SubNavbar(props: PropSub) {
         { name: t('Submenu.corporateCulture'), href: '#gioi-thieu', hrefb: sixRef },
         { name: t('Submenu.capabilityProfile'), href: '#gioi-thieu', hrefb: seventRef },
       ];
-    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || myArray.includes('posts')) {
-      return [
-        { name: t('Submenu.marketNews'), href: routeLocales[currentLocale]['categories']+'/tin-thi-truong' },
-        { name: t('Submenu.piGroupNews'), href: routeLocales[currentLocale]['categories']+'/tin-pi-group' },
-        { name: t('Submenu.biddingNews'), href: routeLocales[currentLocale]['categories']+'/tin-dau-thau' },
-      ];
-    } else if (ECOSYSTEM_SLUGS.includes(currentSlugFromPathname)) {
+    }  else if (ECOSYSTEM_SLUGS.includes(currentSlugFromPathname)) {
       return [
         {
           name: t('Submenu.investmentProjectDevelopment'),
@@ -204,6 +198,12 @@ export default function SubNavbar(props: PropSub) {
       ];
     } else if ( CONTACT_SLUGS.includes(currentSlugFromPathname) ){
       return [];
+    }else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null ) {
+      return [
+        { name: t('Submenu.marketNews'), href: routeLocales[currentLocale]['categories']+'/tin-thi-truong' },
+        { name: t('Submenu.piGroupNews'), href: routeLocales[currentLocale]['categories']+'/tin-pi-group' },
+        { name: t('Submenu.biddingNews'), href: routeLocales[currentLocale]['categories']+'/tin-dau-thau' },
+      ];
     }
     return [];
   };
