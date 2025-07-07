@@ -702,16 +702,26 @@ figure.image > figcaption > span {
   }
 } */
 
+@media (min-width: 1470px) {
+  .slick-center .slick-ii {
+    width: 490px;
+  }
+}
+
 @media (min-width: 1512px) {
   .slick-center .slick-ii {
     width: 500px;
   }
 }
 
+
+
+
+
 @media (min-width: 1536px) {
   .slick-center .slick-ii {
-    width: 660px;
-    margin-left: -60px;
+    width: 515px;
+    margin-left: -40px;
   }
 
   .slick-slide:not(.slick-center) .slick-ii {
@@ -723,6 +733,18 @@ figure.image > figcaption > span {
   }
 }
 
+@media (min-width: 1643px) {
+  .slick-center .slick-ii {
+    width: 540px;
+  }
+}
+
+@media (min-width: 1728px) {
+  .slick-center .slick-ii {
+    width: 660px;
+    margin-left: -60px;
+  }
+}
 
 
 /* Điều chỉnh kích thước của .slick-list và .slick-track nếu cần để chứa slide lớn hơn */
