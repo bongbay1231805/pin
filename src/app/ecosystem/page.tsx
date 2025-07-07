@@ -11,7 +11,6 @@ export default async function Ecosystem() {
   const {data} = await res.json();
   const { custom_fields } = data;
   const {field_ecosystem} = custom_fields;
-  console.log(field_ecosystem)
   return (
     <>
       <div>

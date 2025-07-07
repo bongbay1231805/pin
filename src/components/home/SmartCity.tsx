@@ -1,9 +1,13 @@
 'use client';
+import { routeLocales } from '@/routes';
+import { useLocale } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import {useEffect, useState, useRef} from 'react';
 type ChildClass = 'child1' | 'child2' | 'child3';
 export function SmartCity({custom_fields}: any) {
+  const currentLocale = useLocale();
+  
   // `currentRotation` sẽ lưu trữ tổng số độ xoay hiện tại của phần tử
   const [currentRotation, setCurrentRotation] = useState<number>(0);
   // `activeChild` để theo dõi child nào đang được active
@@ -1436,7 +1440,7 @@ export function SmartCity({custom_fields}: any) {
               <div className="grid justify-center mb-[20px] sm:mb-0 sm:justify-start">
                 <Link
                   // href={`${field_10}`}
-                  href="/do-thi-so"
+                  href={routeLocales[currentLocale]['digitalcity']}
                   className="reveal-text hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[13px] 2xl:text-[17px] font-semibold w-auto px-[20px] h-[30px] border border-yellow-1 hover:text-white active:text-white"
                 >
                   {field_9}

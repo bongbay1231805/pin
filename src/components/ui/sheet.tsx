@@ -3,7 +3,8 @@ import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/app/lib/utils"
-import Link from "next/link"
+import { setUserLocale } from "@/db"
+import { useLocale } from "next-intl"
 const Sheet = SheetPrimitive.Root
 const SheetTrigger = SheetPrimitive.Trigger
 const SheetClose = SheetPrimitive.Close
@@ -46,37 +47,49 @@ interface SheetContentProps
 const SheetContent = React.forwardRef<
   React.ComponentRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => (
-  <SheetPortal>
-    <SheetOverlay />
-    <SheetPrimitive.Content
-      ref={ref}
-      className={cn(sheetVariants({ side }), className)}
-      {...props}
-      onOpenAutoFocus={(event) => {
-        event.preventDefault();
-        document.body.style.pointerEvents = '';
-      }}
-      onCloseAutoFocus={(event) => {
-        event.preventDefault();
-        document.body.style.pointerEvents = '';
-      }}
-    >
-      <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[25px] top-[35px] focus:outline-none">
-        <div className="flex gap-[15px] justify-end font-semibold items-center grow-1">
-          <Link href="/vn" className="text-yellow-2">VN</Link>
-          <span className="text-gray-300 inline-block">|</span>
-          <Link href="/en" className=" text-[#20446F]">EN</Link>
-        </div>
-        <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 7L19 21" stroke="#C48C5E" strokeWidth="2" strokeLinecap="round" />
-          <path d="M19 7L4 21" stroke="#C48C5E" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-      </SheetPrimitive.Close>
-      {children}
-    </SheetPrimitive.Content>
-  </SheetPortal>
-))
+>(({ side = "right", className, children, ...props }, ref) => {
+  const currentLocale = useLocale();
+  function changeLocal(local: string) {
+    setUserLocale(local);
+  }
+  
+
+  return (
+    <SheetPortal>
+      <SheetOverlay />
+      <SheetPrimitive.Content
+        ref={ref}
+        className={cn(sheetVariants({ side }), className)}
+        {...props}
+        onOpenAutoFocus={(event) => {
+          event.preventDefault();
+          document.body.style.pointerEvents = '';
+        }}
+        onCloseAutoFocus={(event) => {
+          event.preventDefault();
+          document.body.style.pointerEvents = '';
+        }}
+      >
+        <SheetPrimitive.Close className="absolute flex items-center gap-[30px] right-[25px] top-[35px] focus:outline-none">
+          <div className="flex gap-[15px] justify-end font-semibold items-center grow-1">
+            <button
+                className={currentLocale === 'vi' ? ' text-yellow-2' : 'text-[#20446F]'}
+                onClick={() => changeLocal('vi')}>VN</button>
+            <span className="text-gray-300 inline-block">|</span>
+            <button
+                className={currentLocale === 'en' ? ' text-yellow-2' : 'text-[#20446F]'}
+                onClick={() => changeLocal('en')}>EN</button>
+          </div>
+          <svg width="23" height="27" viewBox="0 0 23 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 7L19 21" stroke="#C48C5E" strokeWidth="2" strokeLinecap="round" />
+            <path d="M19 7L4 21" stroke="#C48C5E" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </SheetPrimitive.Close>
+        {children}
+      </SheetPrimitive.Content>
+    </SheetPortal>
+  )
+});
 SheetContent.displayName = SheetPrimitive.Content.displayName
 const SheetHeader = ({
   className,

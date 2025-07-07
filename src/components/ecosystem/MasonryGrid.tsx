@@ -5,6 +5,8 @@ import Link from 'next/link';
 import {useScrollReveal} from '@/hooks/useScrollReveal';
 import {useMediaQuery} from '@/hooks/useMediaQuery'; // Import hook vừa tạo
 import {MobileProjectCarousel} from './MobileProjectCarousel'; // Import component mobile vừa tạo
+import { useLocale } from 'next-intl';
+import { routeLocales } from '@/routes';
 // Định nghĩa kiểu cho một phần tử ref
 type ElementRef = React.RefObject<HTMLDivElement | null>;
 interface GridConfig {
@@ -22,10 +24,11 @@ const MasonryGrid = ({custom_fields}: any) => {
       return null; // Return null or throw the error, depending on your error handling preference
     }
   }
+  const currentLocale = useLocale();
   const ecosystemUrl: any = {
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: '/he-sinh-thai/dau-tu-phat-trien-du-an',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: '/he-sinh-thai/dich-vu-bat-dong-san',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: '/he-sinh-thai/quan-ly-van-hanh',
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: routeLocales[currentLocale]['investmentDevelopment'],
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: routeLocales[currentLocale]['realEstateServices'],
+    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: routeLocales[currentLocale]['managementOperation'],
   };
   const customfields = convertJsonStringToArrayOrObject(custom_fields);
   // Sử dụng hook để xác định kích thước màn hình

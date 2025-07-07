@@ -4,6 +4,8 @@ import React, {useState, useEffect} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
+import { routeLocales } from '@/routes';
 
 interface Project {
   [index: number]: {value: string};
@@ -24,12 +26,13 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
     loop: true,
     containScroll: 'trimSnaps'
   });
-  
+  const currentLocale = useLocale();
+
   const ecosystemUrl: any = {
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: '/he-sinh-thai/dau-tu-phat-trien-du-an',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: '/he-sinh-thai/dich-vu-bat-dong-san',
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: '/he-sinh-thai/quan-ly-van-hanh',
-  };
+      ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: routeLocales[currentLocale]['investmentDevelopment'],
+      ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: routeLocales[currentLocale]['realEstateServices'],
+      ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: routeLocales[currentLocale]['managementOperation'],
+    };
 
   // --- THAY ĐỔI 2: Thêm state để biết slide nào đang active ---
   const [selectedIndex, setSelectedIndex] = useState(0);

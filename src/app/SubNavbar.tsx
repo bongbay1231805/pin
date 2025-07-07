@@ -7,6 +7,8 @@ import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
 import { usePathname, useSearchParams  } from 'next/navigation';
 import { useState, useEffect, useRef, RefObject } from 'react';
 import { useNewsCategory } from '@/context/NewsCategoryContext';
+import { useLocale, useTranslations } from 'next-intl';
+import { routeLocales } from '@/routes';
 
 interface PropSub {
   hasShadow: boolean;
@@ -46,10 +48,11 @@ const CONTACT_SLUGS = ['digitalcity', 'lien-he'];
 
 export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
+  const currentLocale = useLocale();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const t = useTranslations();
 
-  let myArray = pathname.split('/');
+  const myArray = pathname.split('/');
   const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef } =
     useScrollRefs();
 
@@ -156,61 +159,51 @@ export default function SubNavbar(props: PropSub) {
   ): NavItem[] => {
     const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef } = refs;
     const currentSlugFromPathname = pathname.split('/').pop() || '';
-
+    
     if (ABOUT_SLUGS.includes(currentSlugFromPathname)) {
       return [
-        { name: 'Định vị thương hiệu', href: '#gioi-thieu', hrefb: oneRef },
-        { name: 'Con số ấn tượng', href: '#gioi-thieu', hrefb: twoRef },
-        { name: 'Lịch sử hình thành', href: '#gioi-thieu', hrefb: threeRef, hrefm: eightRef },
-        { name: 'Triết lý kinh doanh', href: '#gioi-thieu', hrefb: fourRef },
-        { name: 'Tầm nhìn - Sứ mệnh', href: '#gioi-thieu', hrefb: fiveRef },
-        { name: 'Văn hóa doanh nghiệp', href: '#gioi-thieu', hrefb: sixRef },
-        { name: 'Hồ sơ năng lực', href: '#gioi-thieu', hrefb: seventRef },
+        { name: t('Submenu.brandPositioning'), href: '#gioi-thieu', hrefb: oneRef },
+        { name: t('Submenu.impressiveFigures'), href: '#gioi-thieu', hrefb: twoRef },
+        { name: t('Submenu.historyOfEstablishment'), href: '#gioi-thieu', hrefb: threeRef, hrefm: eightRef },
+        { name: t('Submenu.businessPhilosophy'), href: '#gioi-thieu', hrefb: fourRef },
+        { name: t('Submenu.visionMission'), href: '#gioi-thieu', hrefb: fiveRef },
+        { name: t('Submenu.corporateCulture'), href: '#gioi-thieu', hrefb: sixRef },
+        { name: t('Submenu.capabilityProfile'), href: '#gioi-thieu', hrefb: seventRef },
+      ];
+    } else if (NEWS_SLUGS.includes(currentSlugFromPathname) || myArray.includes('posts')) {
+      return [
+        { name: t('Submenu.marketNews'), href: routeLocales[currentLocale]['categories']+'/tin-thi-truong' },
+        { name: t('Submenu.piGroupNews'), href: routeLocales[currentLocale]['categories']+'/tin-pi-group' },
+        { name: t('Submenu.biddingNews'), href: routeLocales[currentLocale]['categories']+'/tin-dau-thau' },
       ];
     } else if (ECOSYSTEM_SLUGS.includes(currentSlugFromPathname)) {
       return [
         {
-          name: 'Đầu tư & Phát triển dự án',
-          href: '/he-sinh-thai/dau-tu-phat-trien-du-an',
+          name: t('Submenu.investmentProjectDevelopment'),
+          href: routeLocales[currentLocale]['investmentDevelopment'],
         },
-        { name: 'Dịch vụ Bất động sản', href: '/he-sinh-thai/dich-vu-bat-dong-san' },
-        { name: 'Quản lý & Vận hành', href: '/he-sinh-thai/quan-ly-van-hanh' },
-
-        // {
-        //   name: 'Đầu tư & Phát triển dự án',
-        //   href: '/ecosystem/investment-development',
-        // },
-        // { name: 'Dịch vụ Bất động sản', href: '/ecosystem/real-estate-services' },
-        // { name: 'Quản lý & Vận hành', href: '/ecosystem/management-operation' },
+        { name: t('Submenu.realEstateServices'), href: routeLocales[currentLocale]['realEstateServices'] },
+        { name: t('Submenu.managementOperations'), href: routeLocales[currentLocale]['managementOperation'] },
       ];
     } else if (HUMAN_RESOURCE_SLUGS.includes(currentSlugFromPathname)) {
       return [
-        { name: 'Văn hóa làm việc', href: '', hrefb: oneRef },
-        { name: 'Phúc lợi & Đào tạo', href: '', hrefb: twoRef },
-        { name: 'Hình thức tuyển dụng', href: '', hrefb: threeRef },
-        { name: 'Vị trí tuyển dụng', href: '', hrefb: fourRef },
+        { name: t('Submenu.workCulture'), href: '', hrefb: oneRef },
+        { name: t('Submenu.benefitsTraining'), href: '', hrefb: twoRef },
+        { name: t('Submenu.recruitmentForm'), href: '', hrefb: threeRef },
+        { name: t('Submenu.jobOpenings'), href: '', hrefb: fourRef },
       ];
     } else if (DIGITAL_CITY_SLUGS.includes(currentSlugFromPathname)) {
       return [
-        { name: 'Picity - Đô thị số', href: '', hrefb: oneRef },
-        { name: 'Công nghệ 4.0', href: '', hrefb: twoRef },
-        { name: 'Độc quyền Picity App', href: '', hrefb: threeRef },
-        { name: 'Tiện ích 5★', href: '', hrefb: fourRef },
-        { name: 'Dịch vụ quản lý', href: '', hrefb: fiveRef },
-        { name: 'Giá trị vượt trội', href: '', hrefb: sixRef },
-        { name: 'Dự án thành công', href: '', hrefb: seventRef },
+        { name: t('Submenu.picityDigitalCity'), href: '', hrefb: oneRef },
+        { name: t('Submenu.technology4_0'), href: '', hrefb: twoRef },
+        { name: t('Submenu.exclusivePicityApp'), href: '', hrefb: threeRef },
+        { name: t('Submenu.fiveStarAmenities'), href: '', hrefb: fourRef },
+        { name: t('Submenu.managementServices'), href: '', hrefb: fiveRef },
+        { name: t('Submenu.superiorValue'), href: '', hrefb: sixRef },
+        { name: t('Submenu.successfulProjects'), href: '', hrefb: seventRef },
       ];
     } else if ( CONTACT_SLUGS.includes(currentSlugFromPathname) ){
       return [];
-    }else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null || myArray.includes('posts')) {
-      return [
-        // { name: 'Tin thị trường', href: '/categories/tin-thi-truong' },
-        // { name: 'Tin Pi Group', href: '/categories/tin-pi-group' },
-        // { name: 'Tin đấu thầu', href: '/categories/tin-dau-thau' },
-        { name: 'Tin thị trường', href: '/the-loai/tin-thi-truong' },
-        { name: 'Tin Pi Group', href: '/the-loai/tin-pi-group' },
-        { name: 'Tin đấu thầu', href: '/the-loai/tin-dau-thau' },
-      ];
     }
     return [];
   };

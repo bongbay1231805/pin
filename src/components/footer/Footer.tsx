@@ -2,10 +2,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './footer.module.css';
+import { routeLocales } from '@/routes';
+import { useLocale, useTranslations } from 'next-intl';
 export function Footer() {
   const handleClick = () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   };
+  const currentLocale = useLocale();
+  const t = useTranslations();
   return (
     <footer className={`bg-gray-3 text-white text-left`}>
       <div className={`pt-[60px] 2xl:pt-[82px] ${styles.bgfooter}`}>
@@ -26,7 +30,7 @@ export function Footer() {
             {/* contact */}
             <div className="mt-0 fade-in-left-short mb-4 md:mb-0">
               <h3 className="text-[16px] 2xl:text-[20px] font-bold mb-[10px] 2xl:mb-[20px] text-gray-4">
-                TẬP ĐOÀN PI GROUP
+                {t('Footer.piGroupCorporation')}
               </h3>
               <ul className="text-[13px] 2xl:text-[17px] text-gray-6">
                 <li className="flex items-start">
@@ -103,50 +107,50 @@ export function Footer() {
               <ul className="space-y-3 text-gray-6 fade-in-left-short uppercase font-[600] text-[13px] 2xl:text-[17px]">
                 <li>
                   <Link
-                    href="/gioi-thieu"
+                    href={routeLocales[currentLocale]['about']}
                     className="hover:text-yellow-1"
                   >
-                    Giới thiệu
+                    {t('About.title')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/he-sinh-thai"
+                    href={routeLocales[currentLocale]['ecosystem']}
                     className="hover:text-yellow-1"
                   >
-                    Hệ Sinh Thái
+                    {t('Ecosystem.title')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/do-thi-so"
+                    href={routeLocales[currentLocale]['digitalcity']}
                     className="hover:text-yellow-1"
                   >
-                    Đô thị số Picity
+                    {t('Digitalcity.title')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/tin-tuc"
+                    href={routeLocales[currentLocale]['news']}
                     className="hover:text-yellow-1"
                   >
-                    Tin Tức
+                    {t('News.title')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/phat-trien-nhan-luc"
+                    href={routeLocales[currentLocale]['humanResource']}
                     className="hover:text-yellow-1"
                   >
-                    Phát Triển Nhân Lực
+                    {t('HumanResource.title')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/lien-he"
+                    href={routeLocales[currentLocale]['contact']}
                     className="hover:text-yellow-1"
                   >
-                    Liên Hệ
+                    {t('Contact.title')}
                   </Link>
                 </li>
               </ul>
