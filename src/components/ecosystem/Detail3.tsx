@@ -100,7 +100,7 @@ export default function Detail3({custom_fields, image}: any) {
               className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold  xl:[&>br]:inline-block  mb-[30px] sm:mb-[40px]"
               dangerouslySetInnerHTML={{__html: management_operation_title}}
             ></h3>
-            <p className="text-[13px] 2xl:text-[13px] text-gray-5 sm:mb-[18px] text-justify">
+            <p className="text-[13px] 2xl:text-[17px] text-gray-5 sm:mb-[18px] text-justify">
               {management_operation_des}
             </p>
           </div>
