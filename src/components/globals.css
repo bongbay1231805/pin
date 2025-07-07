@@ -680,7 +680,7 @@ figure.image > figcaption > span {
   }
 
   .slick-slide:not(.slick-center) h3 {
-    bottom: 60px;
+    bottom: 20px;
   }
   
   /* Tăng kích thước (và chiều cao) của slide trung tâm */
@@ -713,7 +713,7 @@ figure.image > figcaption > span {
   }
 
   .slick-slide:not(.slick-center) h3 {
-    bottom: 80px;
+    bottom: 40px;
   }
 }
 
