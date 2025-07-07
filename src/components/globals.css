@@ -696,6 +696,12 @@ figure.image > figcaption > span {
   }
 }
 
+@media (min-width: 1021px) {
+  .slick-center .slick-ii {
+    width: 415px;
+  }
+}
+
 @media (min-width: 1512px) {
   .slick-center .slick-ii {
     width: 500px;
