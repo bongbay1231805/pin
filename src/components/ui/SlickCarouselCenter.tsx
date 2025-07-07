@@ -50,7 +50,7 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1500,
+    speed: 9500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -108,15 +108,13 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
       <Slider {...settings}>
         {slides.map((event: any, index: number) => (
           <div key={index}>
-            <div className="relative w-full h-full flex items-center justify-center">
-              <div className="z-10 flex flex-wrap gap-[10px] items-center justify-center sliderstaff">
-                <div className="relative rounded-[10px] overflow-hidden">
+                <div className="slick-ii relative rounded-[10px] overflow-hidden mx-[0px]">
                   <Image
                     src={`https://admin.pigroup.tqdesign.vn/storage/${event[0].value}`}
                     alt="event"
                     width={1000}
                     height={600}
-                    className="block w-full "
+                    className="block w-full rounded-[10px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"></div>
                 </div>
@@ -127,8 +125,6 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
                     dangerouslySetInnerHTML={{ __html: event[1].value }}
                   ></h3>
                 ) : null}
-              </div>
-            </div>
           </div>
         ))}
       </Slider>
