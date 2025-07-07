@@ -696,11 +696,11 @@ figure.image > figcaption > span {
   }
 }
 
-/* @media (min-width: 1280px) {
+@media (min-width: 1280px) {
   .slick-center .slick-ii {
-    width: 545px;
+    width: 500px;
   }
-} */
+}
 
 @media (min-width: 1536px) {
   .slick-center .slick-ii {
