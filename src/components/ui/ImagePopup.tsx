@@ -56,7 +56,7 @@ export default function ImagePopup({ src, onClose }: ImagePopupProps) {
           &times;
         </button>
 
-        <div className="relative w-full h-full" style={{ maxHeight: 'calc(100vh - 80px)' }}>
+        <div className="relative w-auto h-[500px]">
           <Image
             src={src}
             alt="Full size image"
