@@ -666,29 +666,58 @@ figure.image > figcaption > span {
 /* --- Custom Styles for Center Mode Scaling and Opacity --- */
 /* These rules apply on desktop screens (>= 1024px) */
 @media (min-width: 1024px) {
+  .slick-slide {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    will-change: transform, opacity; /* Hint to browser for performance */
+  }
   
+  /* Scale down and dim non-centered slides */
+  /* Giảm scale của các slide không phải trung tâm để chúng nhỏ hơn nữa */
+  .slick-slide:not(.slick-center) .slick-ii {
+    transform: scale(0.7); /* Điều chỉnh giá trị này. Ví dụ: 0.7 hoặc 0.6 */
+    opacity: 0.9; /* Làm mờ nhẹ */
+    margin-top: 20px;
+  }
+
+  .slick-slide:not(.slick-center) h3 {
+    bottom: 60px;
+  }
+  
+  /* Tăng kích thước (và chiều cao) của slide trung tâm */
+  .slick-center .slick-ii {
+    /* transform: scale(1.18);  */
+    width: 433px;
+    margin-left: -40px;
+    /* Tăng scale của hình trung tâm lên 1.15 lần kích thước gốc */
+    /* Bạn có thể thử các giá trị khác như 1.1, 1.2, 1.3 tùy theo mức độ bạn muốn nó lớn */
+    opacity: 1;
+    /* Đảm bảo z-index để nó luôn ở trên cùng khi scale */
+    z-index: 10;
+  }
 }
 
-.slick-slide {
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  will-change: transform, opacity; /* Hint to browser for performance */
+/* @media (min-width: 1280px) {
+  .slick-center .slick-ii {
+    width: 545px;
+  }
+} */
+
+@media (min-width: 1536px) {
+  .slick-center .slick-ii {
+    width: 660px;
+    margin-left: -60px;
+  }
+
+  .slick-slide:not(.slick-center) .slick-ii {
+    margin-top: 40px;
+  }
+
+  .slick-slide:not(.slick-center) h3 {
+    bottom: 80px;
+  }
 }
 
-/* Scale down and dim non-centered slides */
-/* Giảm scale của các slide không phải trung tâm để chúng nhỏ hơn nữa */
-.slick-slide:not(.slick-center) .slick-ii {
-  transform: scale(0.7); /* Điều chỉnh giá trị này. Ví dụ: 0.7 hoặc 0.6 */
-  opacity: 0.9; /* Làm mờ nhẹ */
-}
 
-/* Tăng kích thước (và chiều cao) của slide trung tâm */
-.slick-center .slick-ii {
-  transform: scale(1.18); /* Tăng scale của hình trung tâm lên 1.15 lần kích thước gốc */
-  /* Bạn có thể thử các giá trị khác như 1.1, 1.2, 1.3 tùy theo mức độ bạn muốn nó lớn */
-  opacity: 1;
-  /* Đảm bảo z-index để nó luôn ở trên cùng khi scale */
-  z-index: 10;
-}
 
 /* Điều chỉnh kích thước của .slick-list và .slick-track nếu cần để chứa slide lớn hơn */
 /* Đây là một tinh chỉnh nâng cao, có thể không cần nếu thiết kế của bạn có đủ không gian */
@@ -699,9 +728,21 @@ figure.image > figcaption > span {
 /* } */
 
 /* --- Hide Navigation Arrows on Smaller Screens --- */
-/* @media (max-width: 1023px) {
-  .slick-prev,
-  .slick-next {
-    display: none !important;
+@media (max-width: 768px) {
+
+
+  .slick-slide:not(.slick-center) .slick-ii {
+    transform: scale(0.8); 
+    /* Điều chỉnh giá trị này. Ví dụ: 0.7 hoặc 0.6 */
+    /* opacity: 0.9;  */
+    /* Làm mờ nhẹ */
+
+    /* width: 200px; */
   }
-} */
+  
+  /* .slick-center .slick-ii {
+    width: 315px;
+    left: 40px;
+    top: 20px;
+  } */
+}

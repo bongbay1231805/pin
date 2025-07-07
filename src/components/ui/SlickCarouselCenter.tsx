@@ -50,11 +50,11 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
   const settings = {
     dots: false,
     infinite: true,
-    speed: 9500,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    autoplay: false,
+    autoplaySpeed: 2000,
     centerMode: true,
     centerPadding: '10px',
     nextArrow: <SampleNextArrow />,
@@ -83,20 +83,20 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
       {
         breakpoint: 768, // sm breakpoint (tablet)
         settings: {
-          slidesToShow: 3, // Để hiển thị 1 slide trên tablet/mobile
+          slidesToShow: 1, // Để hiển thị 1 slide trên tablet/mobile
           slidesToScroll: 1,
           centerMode: true,
-          centerPadding: '0px',
+          centerPadding: '10px',
           className: 'center-with-scale',
         },
       },
       {
         breakpoint: 480, // xs breakpoint (mobile)
         settings: {
-          slidesToShow: 3, // Để hiển thị 1 slide trên mobile
+          slidesToShow: 1, // Để hiển thị 1 slide trên mobile
           slidesToScroll: 1,
           centerMode: true,
-          centerPadding: '0px',
+          centerPadding: '10px',
           className: 'center-with-scale',
         },
       },
@@ -117,14 +117,15 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
                     className="block w-full rounded-[10px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"></div>
-                </div>
-
-                {!!event[1] && event[1].value ? (
+                  {!!event[1] && event[1].value ? (
                   <h3
-                    className="absolute bottom-[20px] 2xl:bottom-[50px] text-[13px] font-bold text-center uppercase text-white z-20"
+                    className="absolute bottom-[20px] 2xl:bottom-[50px] text-[13px] font-bold text-center uppercase text-white z-20 w-full"
                     dangerouslySetInnerHTML={{ __html: event[1].value }}
                   ></h3>
                 ) : null}
+                </div>
+
+                
           </div>
         ))}
       </Slider>

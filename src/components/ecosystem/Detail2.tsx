@@ -991,8 +991,14 @@ export default function Detail2({custom_fields, image}: any) {
         </div>
       </div>
       <div className="mx-auto my-16 sliderreal">
-        {/* <EmblaCarouselCenter slides={sliders} /> */}
-        <SlickCarouselCenter slides={sliders} />
+        <div className="hidden sm:block">
+          <SlickCarouselCenter slides={sliders} />
+        </div>
+
+        <div className="sm:hidden">
+          <EmblaCarouselCenter slides={sliders} />
+        </div>
+        
       </div>
     </>
   );
