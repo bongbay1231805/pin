@@ -5,6 +5,7 @@ import {useScrollRefs} from '@/context/ScrollRefsContext';
 import EmblaCarouselCenterPicity from '@/components/ui/EmblaCarouselCenterPicity';
 import EmblaCarouselCenter from '@/components/ui/EmblaCarouselCenter';
 import HorizontalScroll from '@/components/ui/HorizontalScroll';
+import SlickCarouselCenter from '../ui/SlickCarouselCenter';
 export default function Part({custom_fields}: any) {
   const {oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef} =
     useScrollRefs();
@@ -1453,7 +1454,13 @@ export default function Part({custom_fields}: any) {
         dangerouslySetInnerHTML={{__html: digitalcity_8}}
       ></h3>
       <div className="mx-auto mb-[50px] sm:mb-[30px] sliderreal">
-        <EmblaCarouselCenter slides={digitalcityslideruni} />
+          <div className="hidden sm:block">
+            <SlickCarouselCenter slides={digitalcityslideruni} />
+          </div>
+
+          <div className="sm:hidden">
+            <EmblaCarouselCenter slides={digitalcityslideruni} />
+          </div>
       </div>
       <div ref={fiveRef} className="relative mx-auto sm:pb-[80px] pb-[50px]">
         <div className="relative z-1 sm:mt-[80px]">
