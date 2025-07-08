@@ -117,7 +117,11 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
                     height={600}
                     className="block w-full rounded-[10px]"
                   />
+                  
+                  {!!event[1] && event[1].value ? (
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent"></div>
+                  ) : null}
+
                   {!!event[1] && event[1].value ? (
                   <h3
                     className="absolute bottom-[20px] 2xl:bottom-[50px] text-[13px] font-bold text-center uppercase text-white z-20 w-full"

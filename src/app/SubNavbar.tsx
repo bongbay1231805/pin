@@ -44,7 +44,7 @@ const NEWS_SLUGS = ['news', 'tin-tuc', 'tin-thi-truong', 'tin-pi-group', 'tin-da
 const HUMAN_RESOURCE_SLUGS = ['human-resource', 'phat-trien-nhan-luc'];
 const ABOUT_SLUGS = ['about', 'gioi-thieu'];
 const DIGITAL_CITY_SLUGS = ['digitalcity', 'do-thi-so'];
-const CONTACT_SLUGS = ['digitalcity', 'lien-he'];
+const CONTACT_SLUGS = ['contact', 'lien-he'];
 
 export default function SubNavbar(props: PropSub) {
   const { nameCurent } = props;
