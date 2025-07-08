@@ -35,7 +35,7 @@ export function Footer() {
               <ul className="text-[13px] 2xl:text-[17px] text-gray-6">
                 <li className="flex items-start">
                   <svg
-                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[24px] h-[24px]"
+                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[20px]"
                     width="24"
                     height="24"
                     viewBox="0 0 30 30"
@@ -61,11 +61,41 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  663 - 665 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh
+                  <span className="font-semibold">Trụ sở chính:</span>&nbsp;Số 9A, Đường Thạnh Xuân, Khu phố 1, Phường Thới An, Thành Phố Hồ Chí Minh
+                </li>
+                <li className="flex items-start">
+                  <svg
+                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[20px]"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 30 30"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M20.3033 8.37357C21.7055 9.70958 22.4991 11.5618 22.4991 13.4986C22.4991 15.4354 21.7055 17.2876 20.3033 18.6236L14.9996 23.7486L9.69581 18.6236C8.29358 17.2876 7.5 15.4354 7.5 13.4986C7.5 11.5618 8.29358 9.70958 9.69581 8.37357C12.6648 5.54214 17.3343 5.54214 20.3033 8.37357Z"
+                      stroke="#20446F"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M18 13.0538C17.9891 13.8385 17.6669 14.5868 17.1043 15.1339C16.5417 15.6811 15.7847 15.9823 15 15.9713C14.2153 15.9823 13.4583 15.6811 12.8957 15.1339C12.3331 14.5868 12.0109 13.8385 12 13.0538C12.0233 11.4201 13.3663 10.1146 15 10.1375C16.6337 10.1146 17.9767 11.4201 18 13.0538V13.0538Z"
+                      stroke="#20446F"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="font-semibold">Văn phòng:</span>&nbsp;663 - 665 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh
                 </li>
                 <li className="flex items-center">
                   <svg
-                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[24px] h-[24px]"
+                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[20px]"
                     width="24"
                     height="24"
                     viewBox="0 0 30 30"
@@ -86,7 +116,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-center">
                   <svg
-                    className="ml-[-3px] mr-[8px] min-w-[24px] w-[24px] h-[24px]"
+                    className="ml-[-3px] mr-[8px] min-w-[24px] w-[20px] h-[20px]"
                     width="21"
                     height="21"
                     viewBox="0 0 26 26"
