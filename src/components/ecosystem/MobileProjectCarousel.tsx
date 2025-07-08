@@ -67,7 +67,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
               {headerItem[1]?.value}
             </p>
             <span className="inline-flex items-center justify-center text-yellow-1 uppercase font-semibold w-[116px] h-[28px] text-[12px] border border-yellow-1 hover:bg-yellow-1 hover:text-white transition-colors duration-300">
-              {headerItem[2]?.value}
+              XEM THÊM
             </span>
           </div>
         </Link>
@@ -93,9 +93,9 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
                 >
                   <Link href="#">
                     <div className="group block relative w-full h-auto aspect-[16/9] overflow-hidden rounded-lg shadow-md">
-                      {item[4]?.value && (
+                      {item[2]?.value && (
                         <Image
-                          src={`https://admin.pigroup.tqdesign.vn/storage/${item[4].value}`}
+                          src={`https://admin.pigroup.tqdesign.vn/storage/${item[2].value}`}
                           alt={item[0]?.value || 'Project Image'}
                           fill
                           className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"

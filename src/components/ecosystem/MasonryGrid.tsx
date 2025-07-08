@@ -280,10 +280,10 @@ const MasonryGrid = ({custom_fields}: any) => {
           const rowItems = customfields.slice(i, i + 4);
 
           const headerItem = rowItems.find(
-            (item: {value: any}[]) => item[3]?.value && !item[4]?.value
+            (item: {value: any}[]) => item[0]?.value && !item[2]?.value
           );
           const galleryItems = rowItems.filter(
-            (item: {value: any}[]) => item[4]?.value
+            (item: {value: any}[]) => item[2]?.value
           );
 
           // BỌC TRONG LỆNH IF ĐỂ KIỂM TRA
