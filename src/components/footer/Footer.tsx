@@ -61,7 +61,9 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="font-semibold">Trụ sở chính:</span>&nbsp;Số 9A, Đường Thạnh Xuân, Khu phố 1, Phường Thới An, Thành Phố Hồ Chí Minh
+                  <p>
+                    <span className="font-semibold">Trụ sở chính: </span>Số 9A, Đường Thạnh Xuân, Khu phố 1, Phường Thới An, Thành Phố Hồ Chí Minh
+                  </p>
                 </li>
                 <li className="flex items-start">
                   <svg
@@ -91,7 +93,9 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="font-semibold">Văn phòng:</span>&nbsp;663 - 665 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh
+                  <p>
+                     <span className="font-semibold">Văn phòng: </span>663 - 665 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh
+                  </p>
                 </li>
                 <li className="flex items-center">
                   <svg
