@@ -7,6 +7,7 @@ import {useMediaQuery} from '@/hooks/useMediaQuery'; // Import hook vừa tạo
 import {MobileProjectCarousel} from './MobileProjectCarousel'; // Import component mobile vừa tạo
 import { useLocale } from 'next-intl';
 import { routeLocales } from '@/routes';
+import {removeVietnameseSignsAndConcat} from '@/utils';
 // Định nghĩa kiểu cho một phần tử ref
 type ElementRef = React.RefObject<HTMLDivElement | null>;
 interface GridConfig {
@@ -26,9 +27,9 @@ const MasonryGrid = ({custom_fields}: any) => {
   }
   const currentLocale = useLocale();
   const ecosystemUrl: any = {
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/investment-development']: routeLocales[currentLocale]['investmentDevelopment'],
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/real-estate-services']: routeLocales[currentLocale]['realEstateServices'],
-    ['https://pigroup.tqdesign.vn/vi/ecosystem/management-operation']: routeLocales[currentLocale]['managementOperation'],
+    ['đau-tu---phat-trien-du-an']: routeLocales[currentLocale]['investmentDevelopment'],
+    ['dich-vu-bat-đong-san']: routeLocales[currentLocale]['realEstateServices'],
+    ['quan-ly---van-hanh']: routeLocales[currentLocale]['managementOperation'],
   };
   const customfields = convertJsonStringToArrayOrObject(custom_fields);
   // Sử dụng hook để xác định kích thước màn hình
@@ -240,8 +241,8 @@ const MasonryGrid = ({custom_fields}: any) => {
                   </h3>
                 )}
                 {item[0].value && item[1].value !== '' && (
-                  <Link href="#">
-                  {/* <Link href={ecosystemUrl[item[3].value]}> */}
+                   // <Link href={ecosystemUrl[item[1].value]}> 
+                  <Link href={ecosystemUrl[removeVietnameseSignsAndConcat(item[0].value)]}>
                     <div
                       className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[100px]' : 'justify-center xl:pr-[100px]'} duration-300`}
                     >

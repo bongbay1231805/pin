@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { useScrollRefs } from '@/context/ScrollRefsContext';
 import CategoryAndPostSearch from '@/components/search/CategoryAndPostSearch';
-import { usePathname, useSearchParams  } from 'next/navigation';
+import { usePathname  } from 'next/navigation';
 import { useState, useEffect, useRef, RefObject } from 'react';
 import { useNewsCategory } from '@/context/NewsCategoryContext';
 import { useLocale, useTranslations } from 'next-intl';
@@ -51,7 +51,7 @@ export default function SubNavbar(props: PropSub) {
   const currentLocale = useLocale();
   const pathname = usePathname();
   const t = useTranslations();
-
+  const [submenus, setSubmenus] = useState([])
   const myArray = pathname.split('/');
   const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef } =
     useScrollRefs();
@@ -134,6 +134,26 @@ export default function SubNavbar(props: PropSub) {
     };
   }, [isFixed, pathname, currentCategorySlug]);
 
+  useEffect( () => {
+    const currentSlugFromPathname = pathname.split('/').pop() || '';
+    const fetchData = async () => {
+      try {
+        const res = await fetch("https://admin.pigroup.tqdesign.vn/api/categories", {
+          cache: 'no-store',
+        });
+       
+        const data = await res.json();
+        setSubmenus(data[currentLocale])
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (error) {}
+    };
+
+    if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null ) {
+      fetchData();
+    }
+   
+  }, [pathname, currentLocale, currentCategorySlug]);
+
   const isActive = (itemHref: string) => {
     const itemSlug = itemHref.split('/').pop();
 
@@ -199,11 +219,10 @@ export default function SubNavbar(props: PropSub) {
     } else if ( CONTACT_SLUGS.includes(currentSlugFromPathname) ){
       return [];
     }else if (NEWS_SLUGS.includes(currentSlugFromPathname) || currentCategorySlug!= null ) {
-      return [
-        { name: t('Submenu.marketNews'), href: routeLocales[currentLocale]['categories']+'/tin-thi-truong' },
-        { name: t('Submenu.piGroupNews'), href: routeLocales[currentLocale]['categories']+'/tin-pi-group' },
-        { name: t('Submenu.biddingNews'), href: routeLocales[currentLocale]['categories']+'/tin-dau-thau' },
-      ];
+      return submenus.map(item => ({
+        name: item['name'], 
+        href: routeLocales[currentLocale]['categories']+'/' + item['slug'] 
+      }))
     }
     return [];
   };
