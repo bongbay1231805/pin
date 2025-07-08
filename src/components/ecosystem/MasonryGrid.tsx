@@ -226,21 +226,22 @@ const MasonryGrid = ({custom_fields}: any) => {
                 }
                 className={`group eco-item transition-all duration-[500ms] ease-in-out relative pt-[200px] xl:pt-[33.33%] overflow-hidden ecosystem-masonry-${j} ${index === 0 ? 'col-span-3 xl:col-span-1' : 'col-span-1'}`}
               >
-                {item[4].value !== '' ? (
+                {item[2].value !== '' ? (
                   <Image
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${item[4].value}`}
+                    src={`https://admin.pigroup.tqdesign.vn/storage/${item[2].value}`}
                     alt="masonry"
                     fill
                     className="object-cover justify-end"
                   />
                 ) : null}
-                {item[0].value && item[4].value !== '' && (
+                {item[0].value && item[2].value !== '' && (
                   <h3 className="z-10 left-[25px] bottom-[8px] text-white absolute text-[16px] 2xl:text-[24px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-1000 delay-100">
                     {item[0].value}
                   </h3>
                 )}
-                {item[0].value && item[3].value !== '' && (
-                  <Link href={ecosystemUrl[item[3].value]}>
+                {item[0].value && item[1].value !== '' && (
+                  <Link href="#">
+                  {/* <Link href={ecosystemUrl[item[3].value]}> */}
                     <div
                       className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[100px]' : 'justify-center xl:pr-[100px]'} duration-300`}
                     >
@@ -252,7 +253,7 @@ const MasonryGrid = ({custom_fields}: any) => {
                           {item[1].value}
                         </p>
                         <div className="flex items-center justify-center text-yellow-1 uppercase font-semibold w-[116px] h-[28px] text-[12px] 2xl:text-[16px] 2xl:w-[138px] 2xl:h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300">
-                          {item[2].value}
+                          XEM THÊM
                         </div>
                       </div>
                     </div>
