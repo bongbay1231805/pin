@@ -14,7 +14,7 @@ export function Footer() {
     <footer className={`bg-gray-3 text-white text-left`}>
       <div className={`pt-[60px] 2xl:pt-[82px] ${styles.bgfooter}`}>
         <div className={`mx-auto w-full px-[30px] md:px-0 md:max-w-[85%]`}>
-          <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_26%] 2xl:grid-cols-[340px_1fr_370px] gap-8 boxanimation">
+          <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_24%] 2xl:grid-cols-[340px_1fr_370px] gap-8 boxanimation">
             {/* logo */}
             <div className="flex justify-center sm:justify-normal reveal-tex fade-in-left-short mb-6 md:mb-0">
               <Link href="/" className="flex-shrink-0 flex">
