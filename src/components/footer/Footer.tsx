@@ -62,7 +62,7 @@ export function Footer() {
                     />
                   </svg>
                   <p>
-                    <span className="font-semibold">Trụ sở chính: </span>Số 9A, Đường Thạnh Xuân, Khu phố 1, Phường Thới An, Thành Phố Hồ Chí Minh
+                    <span className="font-semibold">Trụ sở chính: </span>Số 9A Đường Thạnh Xuân 13, Khu phố 1, Phường Thạnh Xuân, Quận 12, Thành Phố Hồ Chí Minh
                   </p>
                 </li>
                 <li className="flex items-start">
@@ -94,7 +94,7 @@ export function Footer() {
                     />
                   </svg>
                   <p>
-                     <span className="font-semibold">Văn phòng: </span>663 - 665 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh
+                     <span className="font-semibold">Văn phòng: </span>663 – 665 Điện Biên Phủ, Phường 25, Quận Bình Thạnh, Thành phố Hồ Chí Minh
                   </p>
                 </li>
                 <li className="flex items-center">
