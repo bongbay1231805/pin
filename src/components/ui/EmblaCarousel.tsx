@@ -76,6 +76,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   md:absolute
                   md: text-[13px] md:right-[60px] md:top-1/2 md:-translate-y-1/2 md:flex md:items-center md:border-text-white md:border-[1px] md:justify-center md:text-white md:font-semibold md:w-[138px] md:h-[30px] md:hover:border-yellow-1 md:hover:text-yellow-1
                 `}
+                target="_blank" // Add this attribute
+                rel="noopener noreferrer" // Add this attribute for security
               >
                 {/* Chữ này sẽ ẨN trên mobile và HIỆN trên desktop */}
                 <span className="uppercase hidden md:inline">

@@ -84,7 +84,7 @@ export function RegistrationForm() {
       });
       const result = await response.json();
       if (response.ok) {
-        alert(result.message);
+        alert("Hồ sơ đăng ký dự thầu được gởi thành công. Cám ơn Quý công ty!");
         form.reset(); // Reset form sau khi gửi thành công
       } else {
         alert(`Lỗi: ${result.message || 'Không thể gửi dữ liệu.'}`);

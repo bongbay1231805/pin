@@ -35,7 +35,7 @@ export function Footer() {
               <ul className="text-[13px] 2xl:text-[17px] text-gray-6">
                 <li className="flex items-start">
                   <svg
-                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[20px]"
+                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[18px]"
                     width="24"
                     height="24"
                     viewBox="0 0 30 30"
@@ -67,7 +67,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-start">
                   <svg
-                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[20px]"
+                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[18px]"
                     width="24"
                     height="24"
                     viewBox="0 0 30 30"
@@ -99,7 +99,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-center">
                   <svg
-                    className="ml-[-3px] mr-[5px] min-w-[24px] w-[20px] h-[20px]"
+                    className="ml-[-3px] mt-[-1px] mr-[5px] min-w-[24px] w-[20px] h-[17px]"
                     width="24"
                     height="24"
                     viewBox="0 0 30 30"
@@ -120,7 +120,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-center">
                   <svg
-                    className="ml-[-3px] mr-[8px] min-w-[24px] w-[20px] h-[20px]"
+                    className="ml-[-3px] mt-[-1px] mr-[8px] min-w-[24px] w-[20px] h-[16px]"
                     width="21"
                     height="21"
                     viewBox="0 0 26 26"
