@@ -86,7 +86,7 @@ export default async function Contact() {
 
       {/* Main Content Container - Relative Z-index for its content to be above image */}
       {/* On desktop, this div will contain the gradient background */}
-      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 h-full"> {/* Giữ z-index 10 cho nội dung */}
+      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 h-full 2xl:h-[calc(100vh-100px)]"> {/* Giữ z-index 10 cho nội dung */}
         {/* The gradient overlay if you want it only for the content on mobile
             You can add it here if you want it to cover the content area, not the banner.
             For now, I've moved the main gradient overlay outside and made it desktop-only.
@@ -172,7 +172,7 @@ export default async function Contact() {
         src="/fcontact/contact-1.png"
         alt="Modern city skyline"
         fill
-        className="z-1 hidden md:block" // Hidden on mobile, block on md and up
+        className="z-1 hidden md:block object-cover" // Hidden on mobile, block on md and up
       />
     </div>
   );

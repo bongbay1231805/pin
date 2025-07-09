@@ -105,6 +105,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
         setSubmissionStatus("Gửi thông tin thành công!");
         form.reset(); // Reset form sau khi gửi thành công
         onClose(); // Đóng popup
+        alert("Ứng tuyển thành công. Cám ơn bạn!")
       } else {
         console.error("API error:", response.status, response.statusText, data);
         setSubmissionStatus(`Lỗi: ${data.message || 'Không thể gửi dữ liệu.'}`);
