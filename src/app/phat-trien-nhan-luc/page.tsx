@@ -1,3 +1,4 @@
-import Human from '../human-resource/page';
+import Human, { generateMetadata } from '../human-resource/page';
 
+export { generateMetadata };
 export default Human;

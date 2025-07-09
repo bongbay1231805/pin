@@ -1,4 +1,5 @@
-import EcosystemDetail from '../../ecosystem/real-estate-services/page';
+import EcosystemDetail, { generateMetadata } from '../../ecosystem/real-estate-services/page';
 
+export { generateMetadata };
 export default EcosystemDetail;
 

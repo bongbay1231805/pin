@@ -1,3 +1,4 @@
-import NewsPage from '../news/page';
+import NewsPage, { generateMetadata } from '../news/page';
 
+export { generateMetadata };
 export default NewsPage;
