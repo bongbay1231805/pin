@@ -81,19 +81,19 @@ export default function Hero({ data, dataPage }: any) {
         <h2 className='uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[30px] sm:mb-[50px]'>{human_resource_2}</h2>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px] mx-auto w-full px-[30px] xl:max-w-[85%] pb-[45px]">
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] 2xl:h-[300px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_3 }}></div>
           <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
         </div>
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] 2xl:h-[300px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_5 }}></div>
           <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_6 }}></div>
         </div>
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] 2xl:h-[300px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_7 }}></div>
           <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_8 }}></div>
         </div>
-        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] items-center justify-center'>
+        <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] 2xl:h-[300px] items-center justify-center'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px]' dangerouslySetInnerHTML={{ __html: human_resource_9 }}></div>
           <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
         </div>
@@ -156,19 +156,25 @@ export default function Hero({ data, dataPage }: any) {
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_30px] sm:py-[100px_25px]">{human_resource_14}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-[70%_1fr] 2xl:grid-cols-[65%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[385px] 2xl:h-[508px] h-auto">
-              <div className="relative row-span-2 group overflow-hidden rounded-[10px]">
-                <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1000" height="1000" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
-                <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold object-top" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-[70%_1fr] 2xl:grid-cols-[75%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[385px] 2xl:h-[700px] h-auto">
+              <div className="relative row-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
+              after:opacity-80 hover:after:opacity-100">
+                <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1900" height="1000" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
+                <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] 2xl:text-[20px] text-white font-bold object-top" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px] sm:gap-[20px]">
-                <div className="relative row-start-1 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px]">
+                <div className="relative row-start-1 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
+              after:opacity-80 hover:after:opacity-100">
                   <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
-                  <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_18}</div>
+                  <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] 2xl:text-[20px] text-white font-bold">{human_resource_18}</div>
                 </div>
-                <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px]">
+                <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
+              after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
+              after:opacity-80 hover:after:opacity-100">
                   <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-top rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
-                  <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold">{human_resource_20}</div>
+                  <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] 2xl:text-[20px] text-white font-bold">{human_resource_20}</div>
                 </div>
               </div>
             </div>
