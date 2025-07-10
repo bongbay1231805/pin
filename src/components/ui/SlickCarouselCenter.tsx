@@ -124,7 +124,7 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
 
                   {!!event[1] && event[1].value ? (
                   <h3
-                    className="absolute bottom-[20px] 2xl:bottom-[50px] text-[13px] font-bold text-center uppercase text-white z-20 w-full"
+                    className="absolute bottom-[15px] 2xl:bottom-[20px] text-[13px] sm:text-[16px] 2xl:text-[26px] font-bold text-center uppercase text-white z-20 w-full"
                     dangerouslySetInnerHTML={{ __html: event[1].value }}
                   ></h3>
                 ) : null}

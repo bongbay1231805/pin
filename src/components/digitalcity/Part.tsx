@@ -1463,7 +1463,7 @@ export default function Part({custom_fields}: any) {
           </div>
       </div>
       <div ref={fiveRef} className="relative mx-auto sm:pb-[80px] pb-[50px]">
-        <div className="relative z-1 sm:mt-[80px]">
+        <div className="relative z-1 mt-[50px] sm:mt-[80px]">
           <h3
             className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center"
             dangerouslySetInnerHTML={{__html: digitalcity_9}}
@@ -1557,8 +1557,8 @@ export default function Part({custom_fields}: any) {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[50px] sm:mb-[50px]">
-        <div className="md:grid mt-[0px] sm:mt-[30px]">
+      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[50px] sm:mb-[80px]">
+        <div className="md:grid mt-[0px]">
           <div>
             <h3
               className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[10px] sm:mb-[30px] text-center"

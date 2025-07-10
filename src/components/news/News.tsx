@@ -15,6 +15,7 @@ export default function News({ posts }: any) {
     ); // Hoặc trả về null, hoặc một thông báo khác
   }
 
+  // console.log(posts)
 
   return (
     <div className="min-h-screen pt-[70px] sm:pt-[190px] 2xl:pt-[226px] pb-[30px] sm:pb-[90px] m-auto w-full px-[30px] sm:px-0 sm:max-w-[75%]">
