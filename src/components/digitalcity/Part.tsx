@@ -42,7 +42,6 @@ export default function Part({custom_fields}: any) {
     digitalcity_link_app_store,
     digitalcity_link_google_play
   } = custom_fields;
-  console.log(custom_fields);
   const digitalcityslideruni = convertJsonStringToArrayOrObject(
     digitalcity_slider_uni
   );

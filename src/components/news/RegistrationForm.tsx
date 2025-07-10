@@ -157,7 +157,7 @@ export function RegistrationForm() {
               <FormControl>
                 <div className="relative flex items-center space-x-2">
                   <Button type="button" className="border rounded-none text-[#8a8a8a] border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
-                    Profile công ty (file pdf, .pptx, .doc, .zip)
+                    Profile công ty (file pdf, .pptx, .doc, .docx .zip)
                   </Button>
                   <Input
                     type="file"
