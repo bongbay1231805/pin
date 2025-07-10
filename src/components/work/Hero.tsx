@@ -156,9 +156,9 @@ export default function Hero({ data, dataPage }: any) {
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_30px] sm:py-[100px_25px]">{human_resource_14}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-[70%_1fr] 2xl:grid-cols-[75%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[385px] 2xl:h-[650px] h-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-[70%_1fr] 2xl:grid-cols-[63%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[500px] 2xl:h-[650px] h-auto" style={{ background: 'linear-gradient(0deg, #20446F 14.58%, rgba(32, 68, 111, 0) 100%)' }}>
               <div className="relative row-span-2 group overflow-hidden rounded-[10px]">
-                <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1900" height="1000" style={{ height: '100%', objectFit: 'cover', objectPosition: 'top' }} src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
+                <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1900" height="1000" style={{ height: '100%', objectFit: 'cover' }} src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
                 <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] 2sm:text-[17px] text-white font-bold object-top" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px] sm:gap-[20px]">
