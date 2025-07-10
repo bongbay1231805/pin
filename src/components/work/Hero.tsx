@@ -156,7 +156,7 @@ export default function Hero({ data, dataPage }: any) {
           </div>
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_30px] sm:py-[100px_25px]">{human_resource_14}</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-[70%_1fr] 2xl:grid-cols-[63%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[500px] 2xl:h-[650px] h-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-[63%_1fr] 2xl:grid-cols-[63%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[500px] 2xl:h-[650px] h-auto">
               <div className="relative row-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100" >
