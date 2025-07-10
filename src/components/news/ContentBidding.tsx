@@ -2,11 +2,12 @@
 import Image from "next/image"
 export function ContentBidding({post}:any) {
   const specificDateString = new Date(post.created_at);
+  
   return (
     <>
       <div className="flex items-center gap-[20px] gap-y-[0px] sm:gap-[40px] border-b-[2px] border-[#D9D9D9] pt-[30px] sm:pt-[70px]">
         <div className="ml-[-30px] sm:ml-[0px] grid grid-cols-1 text-center min-w-[90px] w-[90px] h-[90px] bg-blue-1 items-top justify-center p-x-[15px] rounded-tr-[16px]">
-          <span className="text-white font-semibold text-[15px] mt-[20px] leading-none">{specificDateString.getDay()}.{specificDateString.getFullYear()}</span>
+          <span className="text-white font-semibold text-[15px] mt-[20px] leading-none">{specificDateString.getMonth() + 1}.{specificDateString.getFullYear()}</span>
           <span className="text-white font-bold text-size-35 mb-[10px] leading-none">{specificDateString.getDate()}</span>
         </div>
         <h1 className="uppercase text-[15px] sm:text-[28px] 2xl:text-[39px] text-blue-1 font-bold">{post.name}</h1>

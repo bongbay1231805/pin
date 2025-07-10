@@ -42,7 +42,6 @@ export default function Part({custom_fields}: any) {
     digitalcity_link_app_store,
     digitalcity_link_google_play
   } = custom_fields;
-  console.log(custom_fields);
   const digitalcityslideruni = convertJsonStringToArrayOrObject(
     digitalcity_slider_uni
   );
@@ -1557,7 +1556,7 @@ export default function Part({custom_fields}: any) {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[50px] sm:mb-[50px]">
+      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[110px] sm:mb-[110px]">
         <div className="md:grid mt-[0px] sm:mt-[30px]">
           <div>
             <h3

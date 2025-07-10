@@ -41,6 +41,7 @@ async function NewsCategoryPage({ params }: Props) {
   }
   const json = await res.json();
   const { data } = json;
+  
   return (
     <CategoryClient
       initialPage={currentPage}
