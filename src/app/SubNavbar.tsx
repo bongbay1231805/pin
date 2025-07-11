@@ -43,7 +43,7 @@ const ECOSYSTEM_SLUGS = [
 const NEWS_SLUGS = ['news', 'tin-tuc', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'search', 'tim-kiem'];
 const HUMAN_RESOURCE_SLUGS = ['human-resource', 'phat-trien-nhan-luc'];
 const ABOUT_SLUGS = ['about', 'gioi-thieu'];
-const DIGITAL_CITY_SLUGS = ['digitalcity', 'do-thi-so'];
+const DIGITAL_CITY_SLUGS = ['digitalcity', 'do-thi-so-picity'];
 const CONTACT_SLUGS = ['contact', 'lien-he'];
 
 export default function SubNavbar(props: PropSub) {
@@ -157,17 +157,17 @@ export default function SubNavbar(props: PropSub) {
   const isActive = (itemHref: string) => {
     const itemSlug = itemHref.split('/').pop();
 
-    const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts' || currentCategorySlug != null;
+    // const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts' || currentCategorySlug != null;
     const isSearchPage = myArray[myArray.length - 1] === 'search';
     
-    if (isPostDetailPage || NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
-        return (currentCategorySlug || '') === itemSlug;
-    }
+    // if (isPostDetailPage || NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
+    // if (NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
+    //     return (currentCategorySlug || '') === itemSlug;
+    // }
 
     if (isSearchPage) {
       return false;
     }
-
     return nameCurent === itemSlug;
   };
 

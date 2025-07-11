@@ -2,7 +2,7 @@ export const routeLocales = {
   'vi': {
     'about': '/gioi-thieu',
     'ecosystem': '/he-sinh-thai',
-    'digitalcity': '/do-thi-so',
+    'digitalcity': '/do-thi-so-picity',
     'news': '/tin-tuc',
     'humanResource': '/phat-trien-nhan-luc',
     'contact': '/lien-he',

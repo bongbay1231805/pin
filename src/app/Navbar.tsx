@@ -60,7 +60,7 @@ const Navbar = () => {
     'tin-tuc',
     'phat-trien-nhan-luc',
     'lien-he',
-    'do-thi-so'
+    'do-thi-so-picity'
   ];
   const pageCurent = aPage.includes(pathname!);
   const nameCurent = pathname;

@@ -11,7 +11,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
   const pathname = usePathname().split("/").pop();
   const isContactPage = pathname === 'contact' || pathname === 'lien-he';
   // const shouldHideOverflow = pathname === 'en' || pathname === 'vi' || pathname === 'digitalcity';
-  const shouldHideOverflow = pathname === '' || pathname === 'do-thi-so' || pathname === 'digitalcity';
+  const shouldHideOverflow = pathname === '' || pathname === 'do-thi-so-picity' || pathname === 'digitalcity';
   useEffect(() => {
     const interval = setInterval(() => {
       document.querySelectorAll('canvas').forEach((el) => {
