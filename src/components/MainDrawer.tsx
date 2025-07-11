@@ -164,10 +164,10 @@ export function MainDrawer() {
                         >
                           <div className="group relative flex flex-col focus:text-yellow-1 focus-visible:text-yellow-1 active:text-yellow-1">
                             <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0 group-visited:-translate-y-full group-visited:opacity-0 group-active:-translate-y-full group-active:opacity-0">
-                                {item.label}ccccc
+                                {item.label}
                             </span>
                             <span className="absolute inset-0 flex items-center justify-start transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-visited:translate-y-0 group-visited:opacity-100 group-active:translate-y-0 group-active:opacity-100 text-yellow-2">
-                                {item.label}ccccc
+                                {item.label}
                             </span>
                           </div>
                         </Link>
