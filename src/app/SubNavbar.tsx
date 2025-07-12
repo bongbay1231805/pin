@@ -57,7 +57,6 @@ export default function SubNavbar(props: PropSub) {
     useScrollRefs();
 
   const { currentCategorySlug } = useNewsCategory();
-
   const [isFixed, setIsFixed] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const scrollThreshold = 100;
@@ -156,14 +155,11 @@ export default function SubNavbar(props: PropSub) {
 
   const isActive = (itemHref: string) => {
     const itemSlug = itemHref.split('/').pop();
-
-    // const isPostDetailPage = myArray[1] === 'posts' || myArray[2] === 'posts' || currentCategorySlug != null;
     const isSearchPage = myArray[myArray.length - 1] === 'search';
     
-    // if (isPostDetailPage || NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
-    // if (NEWS_SLUGS.includes(myArray[myArray.length - 1] || '')) {
-    //     return (currentCategorySlug || '') === itemSlug;
-    // }
+    if(currentCategorySlug) {
+      return currentCategorySlug === itemSlug;
+    }
 
     if (isSearchPage) {
       return false;

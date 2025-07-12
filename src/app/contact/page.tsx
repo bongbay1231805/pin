@@ -2,6 +2,8 @@ import React from "react";
 import { MessageForm } from "@/components/contact/MessageForm";
 import Image from "next/image";
 import { Metadata } from 'next';
+import {getUserLocale} from '@/db';
+import {useLocale} from 'next-intl';
 
 // export const metadata: Metadata = {
 //   title: 'Liên hệ',
@@ -13,9 +15,10 @@ type Props = {
 
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/contact', {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/contact/lang', {
     cache: 'no-store'
   });
+  const currentLocale = await getUserLocale();
   const { data: post } = await res.json();
   if (!post) {
     return {
@@ -25,17 +28,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: post.seo_meta[0].seo_title || post.name,
-    description: post.seo_meta[0].seo_description || post.seo_description,
+    title: post[currentLocale].seo_meta[0].seo_title || post[currentLocale].name,
+    description: post[currentLocale].seo_meta[0].seo_description || post[currentLocale].seo_description,
     openGraph: {
-      title: post.seo_meta[0].seo_title || post.name,
-      description: post.seo_meta[0].seo_description || post.seo_description,
+      title: post[currentLocale].seo_meta[0].seo_title || post[currentLocale].name,
+      description: post[currentLocale].seo_meta[0].seo_description || post[currentLocale].seo_description,
       images: [
         {
           //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
           // Giả sử domain admin là nơi chứa ảnh
           url:
-            `https://admin.pigroup.tqdesign.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
+            `https://admin.pigroup.tqdesign.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
             '/logo.png'
         }
       ]
@@ -44,11 +47,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Contact() {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/contact', {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/contact/lang', {
     cache: 'no-store',
   });
   const { data } = await res.json();
-  const { custom_fields } = data;
+  const currentLocale = await getUserLocale();
+  const { custom_fields } = data[currentLocale];
   const { field_contact_1, field_contact_3, field_contact_5, field_contact_7, field_contact_13 } = custom_fields;
 
   return (

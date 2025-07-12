@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import { routeLocales } from '@/routes';
 import {removeVietnameseSignsAndConcat} from '@/utils';
 
@@ -21,6 +21,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
   headerItem,
   galleryItems
 }) => {
+  const t = useTranslations();
   // --- THAY ĐỔI 1: Cấu hình Embla để căn giữa ---
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'center', // Yêu cầu Embla căn slide active vào giữa
@@ -67,7 +68,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
               {headerItem[1]?.value}
             </p>
             <span className="inline-flex items-center justify-center text-yellow-1 uppercase font-semibold w-[116px] h-[28px] text-[12px] border border-yellow-1 hover:bg-yellow-1 hover:text-white transition-colors duration-300">
-              XEM THÊM
+              {t('Global.seeMore')}
             </span>
           </div>
         </Link>

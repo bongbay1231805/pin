@@ -4,13 +4,15 @@ import {SmartCity} from '@/components/home/SmartCity';
 import SkyPart from '@/components/home/SkyPart';
 import {Values} from '@/components/home/Values';
 import {Partners} from '@/components/home/Partners';
+import {getUserLocale} from '@/db';
 
 export default async function Home() {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/home', {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/home/lang', {
     cache: 'no-store'
   });
+  const currentLocale = await getUserLocale();
   const {data} = await res.json();
-  const {custom_fields} = data;
+  const {custom_fields} = data[currentLocale];
 
   return (
     <>

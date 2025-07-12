@@ -15,7 +15,6 @@ const NewsCategoryContext = createContext<NewsCategoryContextType | undefined>(u
 // Provider Component
 export function NewsCategoryProvider({ children }: { children: ReactNode }) {
   const [currentCategorySlug, setCurrentCategorySlug] = useState<string | null>(null);
-
   return (
     <NewsCategoryContext.Provider value={{ currentCategorySlug, setCurrentCategorySlug }}>
       {children}

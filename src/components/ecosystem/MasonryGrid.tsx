@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {useScrollReveal} from '@/hooks/useScrollReveal';
 import {useMediaQuery} from '@/hooks/useMediaQuery'; // Import hook vừa tạo
 import {MobileProjectCarousel} from './MobileProjectCarousel'; // Import component mobile vừa tạo
-import { useLocale } from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import { routeLocales } from '@/routes';
 import {removeVietnameseSignsAndConcat} from '@/utils';
 // Định nghĩa kiểu cho một phần tử ref
@@ -26,6 +26,7 @@ const MasonryGrid = ({custom_fields}: any) => {
     }
   }
   const currentLocale = useLocale();
+  const t = useTranslations();
   const ecosystemUrl: any = {
     ['đau-tu---phat-trien-du-an']: routeLocales[currentLocale]['investmentDevelopment'],
     ['dich-vu-bat-đong-san']: routeLocales[currentLocale]['realEstateServices'],
@@ -254,7 +255,7 @@ const MasonryGrid = ({custom_fields}: any) => {
                           {item[1].value}
                         </p>
                         <div className="flex items-center justify-center text-yellow-1 uppercase font-semibold w-[116px] h-[28px] text-[12px] 2xl:text-[16px] 2xl:w-[138px] 2xl:h-[35px] border border-yellow-1 hover:text-amber-50 hvr-bounce-to-right duration-300">
-                          XEM THÊM
+                          {t('Global.seeMore')}
                         </div>
                       </div>
                     </div>

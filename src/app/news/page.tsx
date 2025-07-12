@@ -1,6 +1,7 @@
 import NewsClient from '@/components/news/NewsClient';
 import { Suspense } from 'react';
 import { Metadata } from 'next';
+import {getUserLocale} from '@/db';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -8,10 +9,11 @@ type Props = {
 
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/news', {
+  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/news/lang', {
     cache: 'no-store',
   });
   const { data: post } = await res.json();
+  const currentLocale = await getUserLocale();
   if (!post) {
     return {
       title: 'Bài viết không tồn tại',
@@ -20,17 +22,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: post.seo_meta[0].seo_title || post.name,
-    description: post.seo_meta[0].seo_description || post.seo_description,
+    title: post[currentLocale].seo_meta[0].seo_title || post[currentLocale].name,
+    description: post[currentLocale].seo_meta[0].seo_description || post[currentLocale].seo_description,
     openGraph: {
-      title: post.seo_meta[0].seo_title || post.name,
-      description: post.seo_meta[0].seo_description || post.seo_description,
+      title: post[currentLocale].seo_meta[0].seo_title || post[currentLocale].name,
+      description: post[currentLocale].seo_meta[0].seo_description || post[currentLocale].seo_description,
       images: [
         {
           //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
           // Giả sử domain admin là nơi chứa ảnh
           url:
-            `https://admin.pigroup.tqdesign.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
+            `https://admin.pigroup.tqdesign.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
             '/logo.png'
         }
       ]
