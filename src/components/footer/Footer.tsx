@@ -4,12 +4,35 @@ import Image from 'next/image';
 import styles from './footer.module.css';
 import { routeLocales } from '@/routes';
 import { useLocale, useTranslations } from 'next-intl';
+import {useEffect, useState} from 'react';
 export function Footer() {
   const handleClick = () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   };
   const currentLocale = useLocale();
   const t = useTranslations();
+  const [contactConfig, setContactConfig] = useState<any[]>([]);
+  const [socialConfig, setSocialConfig] = useState();
+  
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch('https://admin.pigroup.tqdesign.vn/api/settings'); // Replace with your API endpoint
+        const data = await res.json();
+        setContactConfig(data?.contact);
+        const social = JSON.parse(data?.social?.[0]?.value);
+        const facebook = social[0].find(item => item.key === 'url').value;
+        const youtube = social[1].find(item => item.key === 'url').value;
+        const tiktok = social[2].find(item => item.key === 'url').value;
+        setSocialConfig( { facebook, youtube, tiktok});
+      } catch(error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <footer className={`bg-gray-3 text-white text-left`}>
       <div className={`pt-[60px] 2xl:pt-[82px] ${styles.bgfooter}`}>
@@ -61,8 +84,7 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p>
-                    <span className="font-semibold">Trụ sở chính: </span>Số 9A Đường Thạnh Xuân 13, Khu phố 1, Phường Thạnh Xuân, Quận 12, Thành Phố Hồ Chí Minh
+                  <p dangerouslySetInnerHTML={{ __html: contactConfig?.[contactConfig?.length - 4]?.value }}>
                   </p>
                 </li>
                 <li className="flex items-start">
@@ -93,8 +115,7 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p>
-                     <span className="font-semibold">Văn phòng: </span>663 – 665 Điện Biên Phủ, Phường 25, Quận Bình Thạnh, Thành phố Hồ Chí Minh
+                  <p dangerouslySetInnerHTML={{ __html: contactConfig?.[contactConfig?.length - 3]?.value }}>
                   </p>
                 </li>
                 <li className="flex items-center">
@@ -116,7 +137,7 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  1900 9999 08
+                  {contactConfig?.[contactConfig?.length - 2]?.value }
                 </li>
                 <li className="flex items-center">
                   <svg
@@ -132,7 +153,7 @@ export function Footer() {
                       fill="#20446F"
                     />
                   </svg>
-                  info@pigroup.vn
+                  {contactConfig?.[contactConfig?.length - 1]?.value }
                 </li>
               </ul>
             </div>
@@ -212,13 +233,13 @@ export function Footer() {
               />
             </div>
             <div className="flex justify-center items-center gap-[15px] mt-[23px] fade-in-up-medium">
-              <Link href="https://www.facebook.com/Official.PiGroup/" className="flex-shrink-0 flex items-center">
+              <Link href={socialConfig?.['facebook'] || ''} className="flex-shrink-0 flex items-center">
                 <Image src="/fb.svg" width={32} height={32} alt="Social" />
               </Link>
-              <Link href="https://www.youtube.com/@pigroup.officia" className="flex-shrink-0 flex items-center">
+              <Link href={socialConfig?.['youtube'] || ''} className="flex-shrink-0 flex items-center">
                 <Image src="/yt.svg" width={32} height={32} alt="Social" />
               </Link>
-              <Link href="/" className="flex-shrink-0 flex items-center">
+              <Link href={socialConfig?.['tiktok'] || ''} className="flex-shrink-0 flex items-center">
                 <Image src="/tk.svg" width={32} height={32} alt="Social" />
               </Link>
             </div>
