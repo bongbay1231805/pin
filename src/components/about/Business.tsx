@@ -451,8 +451,8 @@ export function Business({custom_fields}: any) {
         className="relative flex items-center justify-center px-[0px] sm:px-[30px] mt-[46px]"
       >
         <Link
-          href={link_ho_so_nang_luc}
-          target="_blank"
+          href={link_ho_so_nang_luc || "javascript:void(0);"}
+          target={link_ho_so_nang_luc ? "_blank" : ""}
           className="text-[13px] 2xl:text-[17px] flex profile-btn items-center justify-center font-semibold w-auto px-[20px] h-[54px]"
         >
           <svg

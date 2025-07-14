@@ -233,16 +233,27 @@ export function Footer() {
               />
             </div>
             <div className="flex justify-center items-center gap-[15px] mt-[23px] fade-in-up-medium">
-              <Link target="_blank" href={socialConfig?.['facebook'] || ''} className="flex-shrink-0 flex items-center">
-                <Image src="/fb.svg" width={32} height={32} alt="Social" />
+              <Link target={socialConfig?.['facebook'] ? "_blank" : ''} href={socialConfig?.['facebook'] || 'javascript:void(0);'} className="flex-shrink-0 flex items-center">
+                <div className="relative group">
+                  <Image src="/fb.svg" width={32} height={32} alt="Social" 
+                          className="transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </Link>
-              <Link target="_blank" href={socialConfig?.['youtube'] || ''} className="flex-shrink-0 flex items-center">
-                <Image src="/yt.svg" width={32} height={32} alt="Social" />
+              <Link target={socialConfig?.['youtube'] ? "_blank" : ''} href={socialConfig?.['youtube'] || 'javascript:void(0);'} className="flex-shrink-0 flex items-center">
+                <div className="relative group">
+                  <Image src="/yt.svg" width={32} height={32} alt="Social" className="transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </Link>
               
-              <Link target="_blank" href={socialConfig?.['tiktok'] || ''} className="flex-shrink-0 flex items-center">
-                <Image src="/tk.svg" width={32} height={32} alt="Social" />
+              <Link target={socialConfig?.['tiktok'] ? "_blank" : ''} href={socialConfig?.['tiktok'] || 'javascript:void(0);'} className="flex-shrink-0 flex items-center">
+                <div className="relative group">
+                    <Image src="/tk.svg" width={32} height={32} alt="Social" className="transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </Link>
+              
             </div>
           </div>
         </div>

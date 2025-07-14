@@ -42,7 +42,7 @@ export function FooterContact() {
                     className="w-[36px] h-[36px] bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100"></div>
                 </div>
               </Link>
-              <Link target="_blank" href="/" className="flex-shrink-0 flex items-center">
+              <Link href="javascript:void(0);" className="flex-shrink-0 flex items-center">
                 <div className="relative group">
                   <Image src="/tk.svg" width={36} height={36} alt="Social"
                          className="inset-0 absolute bottom-0" />
