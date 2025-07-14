@@ -263,7 +263,7 @@ export default function Hero({ data, dataPage }: any) {
                   <tr className={job.isOpen ? '' : 'hidden'}>
                     <td></td>
                     <td colSpan={4} className="px-6 text-sm text-gray-700 py-[50px]">
-                      <div className="2xl:text-[17px] content-container" dangerouslySetInnerHTML={{ __html: job.details.rawHtml || "" }}></div>
+                      <div className="text-[13px] [&>h5]:!text-[13px] [&>ul]:!text-[13px] content-container" dangerouslySetInnerHTML={{ __html: job.details.rawHtml || "" }}></div>
                       <div className='flex justify-center pt-[50px]'>
                         <button
                           onClick={() => handleOpenPopup(job.position)}

@@ -21,33 +21,33 @@ export function FooterContact() {
                 alt="Modern city skyline"
                 width={38}
                 height={38}
-                className='absolute right-0 top-[-30px] -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium'
+                className='absolute sm:right-0 right-[-27px] top-[-30px] -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium'
               />
             </div>
             <div className='flex justify-center items-center gap-[15px] sm:pr-[58px] mt-[30px] fade-in-up-medium'>
               <Link target="_blank" href="https://www.facebook.com/Official.PiGroup/" className="flex-shrink-0 flex items-center">
                 <div className="relative group">
                     <Image src="/fb.svg" width={36} height={36} alt="Social"
-                           className="transition-transform duration-300" />
+                           className="inset-0 absolute bottom-0" />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    className="w-[36px] h-[36px] bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100"></div>
                 </div>
               </Link>
 
               <Link target="_blank" href="https://www.youtube.com/@pigroup.official" className="flex-shrink-0 flex items-center">
                 <div className="relative group">
                   <Image src="/yt.svg" width={36} height={36} alt="Social"
-                         className="transition-transform duration-300" />
+                         className="inset-0 absolute bottom-0" />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    className="w-[36px] h-[36px] bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100"></div>
                 </div>
               </Link>
               <Link target="_blank" href="/" className="flex-shrink-0 flex items-center">
                 <div className="relative group">
                   <Image src="/tk.svg" width={36} height={36} alt="Social"
-                         className="transition-transform duration-300" />
+                         className="inset-0 absolute bottom-0" />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    className="w-[36px] h-[36px] bg-gradient-to-t from-[#20446F] to-transparent rounded-full opacity-0 group-hover:opacity-100"></div>
                 </div>
               </Link>
             </div>

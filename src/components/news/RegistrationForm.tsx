@@ -157,7 +157,11 @@ export function RegistrationForm() {
               <FormControl>
                 <div className="relative flex items-center space-x-2">
                   <Button type="button" className="border rounded-none text-[#8a8a8a] border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
-                    Profile công ty (file pdf, .pptx, .doc, .docx .zip)
+                    {form.watch("companyProfile")?.[0]?.name ? (
+                      <>{form.watch("companyProfile")?.[0]?.name}</>
+                    ) : (
+                      <>Profile công ty (file pdf, .pptx, .doc, .docx .zip)</>
+                    )}
                   </Button>
                   <Input
                     type="file"
@@ -167,9 +171,9 @@ export function RegistrationForm() {
                     multiple={false}
                     className="hidden" // Ẩn input file mặc định
                   />
-                  {form.watch("companyProfile")?.[0]?.name && (
+                  {form.watch("companyProfile")?.[0]?.size && (
                     <div className="text-sm text-muted-foreground absolute right-[0px] bottom-[-25px]">
-                      Đã chọn: {form.watch("companyProfile")[0].name}
+                      Kích thước: {(form.watch("companyProfile")[0].size/ 1024 / 1024).toFixed(2)} MB
                     </div>
                   )}
                 </div>
