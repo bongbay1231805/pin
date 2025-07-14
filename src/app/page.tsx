@@ -7,7 +7,7 @@ import {Partners} from '@/components/home/Partners';
 import {getUserLocale} from '@/db';
 
 export default async function Home() {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/home/lang', {
+  const res = await fetch('https://admin.pigroup.vn/api/pages/home/lang', {
     cache: 'no-store'
   });
   const currentLocale = await getUserLocale();

@@ -95,7 +95,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
         formData.append("companyProfile", values.cvFile[0]); // Đổi tên trường file thành 'companyProfile' để khớp với API
         formData.append("cvfilename", values.cvFile[0].name); // Gửi tên file gốc
       }
-      const response = await fetch('https://admin.pigroup.tqdesign.vn/api/humanresource', {
+      const response = await fetch('https://admin.pigroup.vn/api/humanresource', {
         method: 'POST',
         body: formData,
       });

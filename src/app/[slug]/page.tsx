@@ -14,7 +14,7 @@ type Props = {
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts/${slug}`, {
+  const res = await fetch(`https://admin.pigroup.vn/api/posts/${slug}`, {
     cache: 'no-store',
   });
   const { data: post } = await res.json();
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
           // Giả sử domain admin là nơi chứa ảnh
           url:
-            `https://admin.pigroup.tqdesign.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
+            `https://admin.pigroup.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
             '/logo.png'
         }
       ]
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function getPostBySlug(slug: string) {
   const res = await fetch(
-    `https://admin.pigroup.tqdesign.vn/api/posts/${slug}`,
+    `https://admin.pigroup.vn/api/posts/${slug}`,
     {
       cache: 'no-store'
     }
@@ -68,7 +68,7 @@ export default async function DetailPost({ params }: Props) {
   }
 
   const related = await fetch(
-    `https://admin.pigroup.tqdesign.vn/api/posts/${slug}/related`,
+    `https://admin.pigroup.vn/api/posts/${slug}/related`,
     {cache: 'no-store'}
   );
   // Thêm kiểm tra fetch cho related posts

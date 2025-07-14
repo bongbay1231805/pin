@@ -22,7 +22,7 @@ export default function Detail1({custom_fields, image}: any) {
     }
   }
   const imageSrc = image
-  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+  ? `https://admin.pigroup.vn/storage/${image}`
     : '/banner_dautuphattrienduan.jpg';
 
   const customfields = convertJsonStringToArrayOrObject(
@@ -248,7 +248,7 @@ export default function Detail1({custom_fields, image}: any) {
           </div>
           <div className="relative h-[265px] sm:h-[388px]">
             <Image
-              src={`https://admin.pigroup.tqdesign.vn/storage/${customfields[0][6].value}`}
+              src={`https://admin.pigroup.vn/storage/${customfields[0][6].value}`}
               alt="Modern city skyline"
               fill
               className="object-cover rounded-[10px] overflow-hidden"
@@ -258,7 +258,7 @@ export default function Detail1({custom_fields, image}: any) {
         <div className="grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
           <div className="relative h-[265px] sm:h-[388px]">
             <Image
-              src={`https://admin.pigroup.tqdesign.vn/storage/${customfields[1][6].value}`}
+              src={`https://admin.pigroup.vn/storage/${customfields[1][6].value}`}
               alt="Modern city skyline"
               fill
               className="rounded-[10px] object-cover overflow-hidden"
@@ -520,7 +520,7 @@ export default function Detail1({custom_fields, image}: any) {
           </div>
           <div className="relative h-[265px] sm:h-[388px]">
             <Image
-              src={`https://admin.pigroup.tqdesign.vn/storage/${customfields[2][6].value}`}
+              src={`https://admin.pigroup.vn/storage/${customfields[2][6].value}`}
               alt="Modern city skyline"
               fill
               className="rounded-[10px] object-cover overflow-hidden"

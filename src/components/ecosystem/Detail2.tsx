@@ -16,7 +16,7 @@ interface ToggleSectionProps {
 }
 export default function Detail2({custom_fields, image}: any) {
   const imageSrc = image
-  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+  ? `https://admin.pigroup.vn/storage/${image}`
     : '/banner_dvbds.jpg';
 
   const [isOpen, setIsOpen] = useState(false);

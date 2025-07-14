@@ -9,7 +9,7 @@ type Props = {
 
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/news/lang', {
+  const res = await fetch('https://admin.pigroup.vn/api/pages/news/lang', {
     cache: 'no-store',
   });
   const { data: post } = await res.json();
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
           // Giả sử domain admin là nơi chứa ảnh
           url:
-            `https://admin.pigroup.tqdesign.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
+            `https://admin.pigroup.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
             '/logo.png'
         }
       ]
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function NewsPage() {
   const currentPage = 1;
-  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts?page=${currentPage}`, {
+  const res = await fetch(`https://admin.pigroup.vn/api/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
   const json = await res.json();

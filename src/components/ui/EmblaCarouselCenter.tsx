@@ -38,7 +38,7 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({slides}) => {
     {/* Container cho Image và Gradient Overlay */}
     <div className="relative rounded-[10px] overflow-hidden">
       <Image
-        src={`https://admin.pigroup.tqdesign.vn/storage/${event[0].value}`}
+        src={`https://admin.pigroup.vn/storage/${event[0].value}`}
         alt="event"
         width={630}
         height={435}

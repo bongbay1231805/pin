@@ -14,7 +14,7 @@ export default function Hero({ data, dataPage }: any) {
     human_resource_20, human_resource_21, human_resource_22, human_resource_23, human_resource_24, human_resource_25, human_resource_26, human_resource_slider, human_resource_step } } = dataPage;
 
   const imageSrc = image
-  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+  ? `https://admin.pigroup.vn/storage/${image}`
     : '/fhuman/human.png';
 
   const { oneRef, twoRef, threeRef, fourRef } = useScrollRefs();
@@ -130,7 +130,7 @@ export default function Hero({ data, dataPage }: any) {
           <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
             <div className="grid grid-cols-1 md:grid-cols-[400px_1fr_1fr] md:gap-[20px] mt-[30px] md:mt-[42px]">
               <div className="order-1 md:order-0 relative md:mr-[20px] min-h-[320px] rounded-[10px] overflow-hidden">
-                <Image alt="benefit 7" loading="lazy" decoding="async" className='object-cover h-auto' width="600" height="600" src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_13}`} />
+                <Image alt="benefit 7" loading="lazy" decoding="async" className='object-cover h-auto' width="600" height="600" src={`https://admin.pigroup.vn/storage/${human_resource_13}`} />
               </div>
               <div className="grid grid-cols-1 md:gap-y-[0px] md:gap-x-[20px] [&>div]:last:border-b-[0] md:[&>div]:last:border-b-[1px]">
                 {
@@ -160,20 +160,20 @@ export default function Hero({ data, dataPage }: any) {
               <div className="relative row-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100" >
-                <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1900" height="1000" style={{ height: '100%', objectFit: 'cover' }} src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_15}`} />
+                <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1900" height="1000" style={{ height: '100%', objectFit: 'cover' }} src={`https://admin.pigroup.vn/storage/${human_resource_15}`} />
                 <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] 2sm:text-[17px] text-white font-bold object-top z-10" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px] sm:gap-[20px]">
                 <div className="relative row-start-1 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100" >
-                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                  <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">{human_resource_18}</div>
                 </div>
                 <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100">
-                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.tqdesign.vn/storage/${human_resource_19}`} className='object-top rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
+                  <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.vn/storage/${human_resource_19}`} className='object-top rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
                   <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">{human_resource_20}</div>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function Hero({ data, dataPage }: any) {
           {humanresourcestep.map((humanre: any, index: number) => (
             <div key={index} className='grid gap-[25px]'>
               <div className='relative h-auto'>
-                <Image className="h-auto" alt="benefit 14" loading="lazy" decoding="async" width="900" height="900" src={`https://admin.pigroup.tqdesign.vn/storage/${humanre[5].value}`} />
+                <Image className="h-auto" alt="benefit 14" loading="lazy" decoding="async" width="900" height="900" src={`https://admin.pigroup.vn/storage/${humanre[5].value}`} />
               </div>
               <div className="grid text-[13px]">
                 <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px]">{humanre[0].value}</h4>

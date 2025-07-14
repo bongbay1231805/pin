@@ -1427,7 +1427,7 @@ export function SmartCity({custom_fields}: any) {
                 {field_6}
               </h2>
               <Image
-                src={`https://admin.pigroup.tqdesign.vn/storage/${field_7}`}
+                src={`https://admin.pigroup.vn/storage/${field_7}`}
                 alt="Smart City Features"
                 width={366}
                 height={50}

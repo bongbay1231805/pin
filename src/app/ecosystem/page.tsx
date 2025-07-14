@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Hệ sinh thái',
 };
 export default async function Ecosystem() {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/ecosystem/lang', {
+  const res = await fetch('https://admin.pigroup.vn/api/pages/he-sinh-thai/lang', {
     cache: 'no-store',
   });
   const currentLocale = await getUserLocale();

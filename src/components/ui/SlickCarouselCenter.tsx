@@ -111,7 +111,7 @@ const SlickCarouselCenter: React.FC<SlickCarouselCenterProps> = ({ slides }) => 
           <div key={index}>
                 <div className="slick-ii relative rounded-[10px] overflow-hidden mx-[0px]">
                   <Image
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${event[0].value}`}
+                    src={`https://admin.pigroup.vn/storage/${event[0].value}`}
                     alt="event"
                     width={1000}
                     height={600}

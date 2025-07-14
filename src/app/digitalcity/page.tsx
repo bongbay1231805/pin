@@ -21,7 +21,7 @@ type Props = {
 
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/picity-digital-city/lang', {
+  const res = await fetch('https://admin.pigroup.vn/api/pages/do-thi-so-picity/lang', {
     cache: 'no-store',
   });
   const { data: post } = await res.json();
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
           // Giả sử domain admin là nơi chứa ảnh
           url:
-            `https://admin.pigroup.tqdesign.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
+            `https://admin.pigroup.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
             '/logo.png'
         }
       ]
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 
 export default async function Digitalcity() {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/picity-digital-city/lang', {
+  const res = await fetch('https://admin.pigroup.vn/api/pages/do-thi-so-picity/lang', {
     cache: 'no-store',
   });
   const currentLocale = await getUserLocale();
@@ -64,7 +64,7 @@ export default async function Digitalcity() {
   const {digitalcity_1,digitalcity_2} = custom_fields;
   const { image } = data[currentLocale];
   const imageSrc = image
-? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+? `https://admin.pigroup.vn/storage/${image}`
   : '/fdigitalcity/digitalcity-1.png';
   return (
     <>

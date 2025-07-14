@@ -96,7 +96,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
                     <div className="group block relative w-full h-auto aspect-[16/9] overflow-hidden rounded-lg shadow-md">
                       {item[2]?.value && (
                         <Image
-                          src={`https://admin.pigroup.tqdesign.vn/storage/${item[2].value}`}
+                          src={`https://admin.pigroup.vn/storage/${item[2].value}`}
                           alt={item[0]?.value || 'Project Image'}
                           fill
                           className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"

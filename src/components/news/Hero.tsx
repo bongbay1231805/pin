@@ -9,7 +9,7 @@ export function Hero({ post }: any) {
       {
         post.is_featured ? (
           <Image
-            src={`https://admin.pigroup.tqdesign.vn/storage/${post.image}`}
+            src={`https://admin.pigroup.vn/storage/${post.image}`}
             alt="Modern cityscape with high-rise buildings"
             fill
             className="object-cover"
@@ -17,7 +17,7 @@ export function Hero({ post }: any) {
           />
         ) : (
           <Image
-            src={`https://admin.pigroup.tqdesign.vn/storage/${post.image}`}
+            src={`https://admin.pigroup.vn/storage/${post.image}`}
             alt="Modern cityscape with high-rise buildings"
             fill
             className="object-cover"

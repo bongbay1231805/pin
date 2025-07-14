@@ -1,9 +1,9 @@
 'use client';
 import Image from 'next/image'
 import lightImage from "../../../public/fhome/PI-GROUP-CORP.png";
-const heavyImage = "https://admin.pigroup.tqdesign.vn/storage/pi-group-corp-video.mp4";
+const heavyImage = "https://admin.pigroup.vn/storage/pi-group-corp-video.mp4";
 // import lightImage from "../../../public/fhome/herocity.jpg";
-// const heavyImage = "https://admin.pigroup.tqdesign.vn/storage/home.gif";
+// const heavyImage = "https://admin.pigroup.vn/storage/home.gif";
 import { useEffect, useState } from 'react';
 type HeroProps = {
   onScrollToDigitalCity: () => void;

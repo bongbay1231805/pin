@@ -33,7 +33,7 @@ const CustomSelectOption: React.FC<CustomOptionProps> = (props) => {
     <div {...innerProps} style={optionStyle}>
       {data.image && (
         <img
-          src={`https://admin.pigroup.tqdesign.vn/storage/${data.image}`}
+          src={`https://admin.pigroup.vn/storage/${data.image}`}
           alt={data.label}
           style={thumbnailStyle}
           onError={(e) => {

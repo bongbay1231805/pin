@@ -51,7 +51,7 @@ export default function Related({ post }: { post: PostItem[] }) {
               {
                 item.is_featured ? (
                   <Image
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${item.image}`}
+                    src={`https://admin.pigroup.vn/storage/${item.image}`}
                     alt={item.name}
                     width={250}
                     height={150}
@@ -59,7 +59,7 @@ export default function Related({ post }: { post: PostItem[] }) {
                   />
                 ) : (
                   <Image
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${item.image}`}
+                    src={`https://admin.pigroup.vn/storage/${item.image}`}
                     alt={item.name}
                     width={250}
                     height={150}

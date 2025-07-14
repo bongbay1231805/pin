@@ -12,7 +12,7 @@ type Props = {
 
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const res = await fetch('https://admin.pigroup.tqdesign.vn/api/pages/real-estate-services/lang', {
+  const res = await fetch('https://admin.pigroup.vn/api/pages/dich-vu-bat-dong-san/lang', {
     cache: 'no-store'
   });
   const currentLocale = await getUserLocale();
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
           // Giả sử domain admin là nơi chứa ảnh
           url:
-            `https://admin.pigroup.tqdesign.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
+            `https://admin.pigroup.vn/storage/${post[currentLocale].seo_meta[0].seo_image || post[currentLocale].image}` ||
             '/logo.png'
         }
       ]
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EcosystemDetail() {
   const res = await fetch(
-    'https://admin.pigroup.tqdesign.vn/api/pages/real-estate-services/lang',
+    'https://admin.pigroup.vn/api/pages/dich-vu-bat-dong-san/lang',
     {
       cache: 'no-store'
     }

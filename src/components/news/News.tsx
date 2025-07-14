@@ -28,7 +28,7 @@ export default function News({ posts }: any) {
             {
               posts[0].is_featured ? (
                 <Image
-                  src={`https://admin.pigroup.tqdesign.vn/storage/${posts[0].image}`}
+                  src={`https://admin.pigroup.vn/storage/${posts[0].image}`}
                   alt="PiGroup building"
                   width={1234}
                   height={885}
@@ -36,7 +36,7 @@ export default function News({ posts }: any) {
                 />
               ) : (
                 <Image
-                  src={`https://admin.pigroup.tqdesign.vn/storage/${posts[0].image}`}
+                  src={`https://admin.pigroup.vn/storage/${posts[0].image}`}
                   alt="PiGroup building"
                   width={1234}
                   height={885}
@@ -67,13 +67,13 @@ export default function News({ posts }: any) {
                     {
                       post.is_featured ? (
                         <img
-                          src={`https://admin.pigroup.tqdesign.vn/storage/${post.image}`}
+                          src={`https://admin.pigroup.vn/storage/${post.image}`}
                           alt="PiGroup building"
                           className="object-cover shadow-lg"
                         />
                       ) : (
                         <img
-                          src={`https://admin.pigroup.tqdesign.vn/storage/${post.image}`}
+                          src={`https://admin.pigroup.vn/storage/${post.image}`}
                           alt="PiGroup building"
                           className="object-cover shadow-lg"
                         />

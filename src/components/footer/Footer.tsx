@@ -17,7 +17,7 @@ export function Footer() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch('https://admin.pigroup.tqdesign.vn/api/settings'); // Replace with your API endpoint
+        const res = await fetch('https://admin.pigroup.vn/api/settings'); // Replace with your API endpoint
         const data = await res.json();
         setContactConfig(data?.contact);
         const social = JSON.parse(data?.social?.[0]?.value);

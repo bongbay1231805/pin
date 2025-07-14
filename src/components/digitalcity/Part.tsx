@@ -1480,7 +1480,7 @@ export default function Part({custom_fields}: any) {
             >
               <Image
                 className="group-hover:scale-[120%] duration-1000 w-full"
-                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_10}`}
+                src={`https://admin.pigroup.vn/storage/${digitalcity_10}`}
                 width={639}
                 height={414}
                 alt="Image"
@@ -1502,7 +1502,7 @@ export default function Part({custom_fields}: any) {
             >
               <Image
                 className="group-hover:scale-[120%] duration-1000 w-full"
-                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_12}`}
+                src={`https://admin.pigroup.vn/storage/${digitalcity_12}`}
                 width={639}
                 height={414}
                 alt="Image"
@@ -1523,7 +1523,7 @@ export default function Part({custom_fields}: any) {
             >
               <Image
                 className="group-hover:scale-[120%] duration-1000 w-full"
-                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_14}`}
+                src={`https://admin.pigroup.vn/storage/${digitalcity_14}`}
                 width={639}
                 height={414}
                 alt="Image"
@@ -1544,7 +1544,7 @@ export default function Part({custom_fields}: any) {
             >
               <Image
                 className="group-hover:scale-[120%] duration-1000 w-full"
-                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_image_legal}`}
+                src={`https://admin.pigroup.vn/storage/${digitalcity_image_legal}`}
                 width={639}
                 height={414}
                 alt="Image"
@@ -1644,7 +1644,7 @@ export default function Part({custom_fields}: any) {
               </div>
             </div>
           </div>
-          {/* <Image className="md:pl-[55px] pt-8 md:pt-0 w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcity_17}`} /> */}
+          {/* <Image className="md:pl-[55px] pt-8 md:pt-0 w-full h-[423px]" alt="benefit 7" loading="lazy" decoding="async" width={507} height={588} src={`https://admin.pigroup.vn/storage/${digitalcity_17}`} /> */}
         </div>
       </div>
       <h3

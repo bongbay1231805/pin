@@ -19,7 +19,7 @@ const config: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: 'admin.pigroup.tqdesign.vn',
+        hostname: 'admin.pigroup.vn',
       }
     ],
   }

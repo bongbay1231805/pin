@@ -15,7 +15,7 @@ interface ToggleSectionProps {
 export default function Detail3({custom_fields, image}: any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   const imageSrc = image
-  ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+  ? `https://admin.pigroup.vn/storage/${image}`
     : '/banner_quanlyvanhanh.jpg';
 
   const {
@@ -61,9 +61,9 @@ export default function Detail3({custom_fields, image}: any) {
   };
 
   const imageUrls = [
-    `https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`,
-    `https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`,
-    `https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`
+    `https://admin.pigroup.vn/storage/${management_operation_16}`,
+    `https://admin.pigroup.vn/storage/${management_operation_17}`,
+    `https://admin.pigroup.vn/storage/${management_operation_18}`
   ];
 
   return (
@@ -117,7 +117,7 @@ export default function Detail3({custom_fields, image}: any) {
           <Image
             width="500"
             height="100"
-            src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_3}`}
+            src={`https://admin.pigroup.vn/storage/${management_operation_3}`}
             alt="Smart City Features"
             className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto"
           />
@@ -130,7 +130,7 @@ export default function Detail3({custom_fields, image}: any) {
           <Image
             width="500"
             height="100"
-            src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_5}`}
+            src={`https://admin.pigroup.vn/storage/${management_operation_5}`}
             alt="Smart City Features"
             className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto"
           />
@@ -143,7 +143,7 @@ export default function Detail3({custom_fields, image}: any) {
           <Image
             width="500"
             height="100"
-            src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_7}`}
+            src={`https://admin.pigroup.vn/storage/${management_operation_7}`}
             alt="Smart City Features"
             className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto"
           />
@@ -156,7 +156,7 @@ export default function Detail3({custom_fields, image}: any) {
           <Image
             width="500"
             height="100"
-            src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_9}`}
+            src={`https://admin.pigroup.vn/storage/${management_operation_9}`}
             alt="Smart City Features"
             className="object-cover group-hover:scale-[120%] duration-1000 w-full h-auto"
           />
@@ -689,10 +689,10 @@ export default function Detail3({custom_fields, image}: any) {
                   <Image
                     onClick={() =>
                       openPopup(
-                        `https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`
+                        `https://admin.pigroup.vn/storage/${management_operation_16}`
                       )
                     }
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_16}`}
+                    src={`https://admin.pigroup.vn/storage/${management_operation_16}`}
                     alt="Image"
                     width="500"
                     height="100"
@@ -702,10 +702,10 @@ export default function Detail3({custom_fields, image}: any) {
                   <Image
                     onClick={() =>
                       openPopup(
-                        `https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`
+                        `https://admin.pigroup.vn/storage/${management_operation_17}`
                       )
                     }
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_17}`}
+                    src={`https://admin.pigroup.vn/storage/${management_operation_17}`}
                     alt="Image"
                     width="500"
                     height="100"
@@ -715,10 +715,10 @@ export default function Detail3({custom_fields, image}: any) {
                   <Image
                     onClick={() =>
                       openPopup(
-                        `https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`
+                        `https://admin.pigroup.vn/storage/${management_operation_18}`
                       )
                     }
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${management_operation_18}`}
+                    src={`https://admin.pigroup.vn/storage/${management_operation_18}`}
                     alt="Image"
                     width="500"
                     height="100"

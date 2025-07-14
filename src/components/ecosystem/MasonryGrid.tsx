@@ -230,7 +230,7 @@ const MasonryGrid = ({custom_fields}: any) => {
               >
                 {item[2].value !== '' ? (
                   <Image
-                    src={`https://admin.pigroup.tqdesign.vn/storage/${item[2].value}`}
+                    src={`https://admin.pigroup.vn/storage/${item[2].value}`}
                     alt="masonry"
                     fill
                     className="object-cover justify-end"

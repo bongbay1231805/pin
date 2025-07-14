@@ -4,7 +4,7 @@ import Image from 'next/image';
 export function Hero({image}: {image?: string}) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   const imageSrc = image
-    ? `https://admin.pigroup.tqdesign.vn/storage/${image}`
+    ? `https://admin.pigroup.vn/storage/${image}`
     : '/fabout/TT.png';
 
   return (

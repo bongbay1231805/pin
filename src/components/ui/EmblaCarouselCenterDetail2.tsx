@@ -69,7 +69,7 @@ const EmblaCarouselCenterDetail2: React.FC<EmblaCarouselCenterProps> = ({slides}
         <CarouselContent className="w-full items-center 2xl:h-[435px] ml-0">
           {slides.map((event: any, index) => {
             const isSelected = index === selectedIndex;
-            const imageUrl = `https://admin.pigroup.tqdesign.vn/storage/${event[0].value}`; // Lấy URL ảnh
+            const imageUrl = `https://admin.pigroup.vn/storage/${event[0].value}`; // Lấy URL ảnh
 
             return (
               <CarouselItem

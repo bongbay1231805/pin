@@ -137,7 +137,7 @@ export default function SubNavbar(props: PropSub) {
     const currentSlugFromPathname = pathname.split('/').pop() || '';
     const fetchData = async () => {
       try {
-        const res = await fetch("https://admin.pigroup.tqdesign.vn/api/categories", {
+        const res = await fetch("https://admin.pigroup.vn/api/categories", {
           cache: 'no-store',
         });
        

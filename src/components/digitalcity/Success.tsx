@@ -79,7 +79,7 @@ export default function Success({ custom_fields }: any) {
             {digitalcitysuccess.map((digitalcsuccess: any, index: number) => (
             <Image
                 key={index + 1}
-                src={`https://admin.pigroup.tqdesign.vn/storage/${digitalcsuccess[1].value}`}
+                src={`https://admin.pigroup.vn/storage/${digitalcsuccess[1].value}`}
                 alt={digitalcsuccess[0].value}
                 fill
                 className={`rounded-[20px] transition-opacity duration-500 ease-in-out ${activeBox === index + 1 ? 'opacity-100' : 'opacity-0 absolute'}`}

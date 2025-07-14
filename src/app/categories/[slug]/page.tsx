@@ -5,7 +5,7 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
   const currentPage = 1;
   const { slug } = await params;
-  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/categories/${slug}/posts?page=${currentPage}`, {
+  const res = await fetch(`https://admin.pigroup.vn/api/categories/${slug}/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
   if (!res.ok) {
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
 async function NewsCategoryPage({ params }: Props) {
   const currentPage = 1;
   const { slug } = await params;
-  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/categories/${slug}/posts?page=${currentPage}`, {
+  const res = await fetch(`https://admin.pigroup.vn/api/categories/${slug}/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
   if (!res.ok) {
@@ -46,7 +46,7 @@ async function NewsCategoryPage({ params }: Props) {
     <CategoryClient
       initialPage={currentPage}
       initialData={data}
-      apiPath={`https://admin.pigroup.tqdesign.vn/api/categories/${slug}/posts`}
+      apiPath={`https://admin.pigroup.vn/api/categories/${slug}/posts`}
     />
   );
 }

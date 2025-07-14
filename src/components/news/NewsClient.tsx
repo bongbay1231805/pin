@@ -33,7 +33,7 @@ export default function NewsClient({ initialPage, initialData }: Props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      let apiUrl = `https://admin.pigroup.tqdesign.vn/api/posts?page=${currentPage}`;
+      let apiUrl = `https://admin.pigroup.vn/api/posts?page=${currentPage}`;
 
       // Thêm tham số tìm kiếm vào URL nếu có từ khóa
       if (searchKeyword.trim() !== '') {

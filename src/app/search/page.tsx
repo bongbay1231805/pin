@@ -9,7 +9,7 @@ import { Suspense } from 'react';
 
 async function SearchPage() {
   const currentPage = 1;
-  const res = await fetch(`https://admin.pigroup.tqdesign.vn/api/posts?page=${currentPage}`, {
+  const res = await fetch(`https://admin.pigroup.vn/api/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
   const json = await res.json();

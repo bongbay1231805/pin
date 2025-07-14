@@ -78,7 +78,7 @@ export function RegistrationForm() {
       formData.append("cvfilename", values.companyProfile[0].name);
     }
     try {
-      const response = await fetch('https://admin.pigroup.tqdesign.vn/api/contactforconsultation', { // Thay đổi '/api/contactforconsultation' bằng URL API chính xác của bạn
+      const response = await fetch('https://admin.pigroup.vn/api/contactforconsultation', { // Thay đổi '/api/contactforconsultation' bằng URL API chính xác của bạn
         method: 'POST',
         body: formData, // Gửi FormData
       });

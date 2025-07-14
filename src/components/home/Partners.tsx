@@ -43,7 +43,7 @@ export function Partners({
         const size = imageSizeMap[fileName] || {width: 100, height: 50};
 
         return {
-          img: `https://admin.pigroup.tqdesign.vn/storage/${fileName}`,
+          img: `https://admin.pigroup.vn/storage/${fileName}`,
           ...size
         };
       })
