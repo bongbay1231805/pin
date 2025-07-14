@@ -233,13 +233,14 @@ export function Footer() {
               />
             </div>
             <div className="flex justify-center items-center gap-[15px] mt-[23px] fade-in-up-medium">
-              <Link href={socialConfig?.['facebook'] || ''} className="flex-shrink-0 flex items-center">
+              <Link target="_blank" href={socialConfig?.['facebook'] || ''} className="flex-shrink-0 flex items-center">
                 <Image src="/fb.svg" width={32} height={32} alt="Social" />
               </Link>
-              <Link href={socialConfig?.['youtube'] || ''} className="flex-shrink-0 flex items-center">
+              <Link target="_blank" href={socialConfig?.['youtube'] || ''} className="flex-shrink-0 flex items-center">
                 <Image src="/yt.svg" width={32} height={32} alt="Social" />
               </Link>
-              <Link href={socialConfig?.['tiktok'] || ''} className="flex-shrink-0 flex items-center">
+              
+              <Link target="_blank" href={socialConfig?.['tiktok'] || ''} className="flex-shrink-0 flex items-center">
                 <Image src="/tk.svg" width={32} height={32} alt="Social" />
               </Link>
             </div>
