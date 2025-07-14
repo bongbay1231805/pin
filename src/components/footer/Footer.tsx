@@ -12,7 +12,7 @@ export function Footer() {
   const currentLocale = useLocale();
   const t = useTranslations();
   const [contactConfig, setContactConfig] = useState<any[]>([]);
-  const [socialConfig, setSocialConfig] = useState();
+  const [socialConfig, setSocialConfig] = useState<Record<string, string>>();
   
   useEffect(() => {
     async function fetchData() {
@@ -21,9 +21,9 @@ export function Footer() {
         const data = await res.json();
         setContactConfig(data?.contact);
         const social = JSON.parse(data?.social?.[0]?.value);
-        const facebook = social[0].find(item => item.key === 'url').value;
-        const youtube = social[1].find(item => item.key === 'url').value;
-        const tiktok = social[2].find(item => item.key === 'url').value;
+        const facebook = social[0].find((item:any) => item.key === 'url').value;
+        const youtube = social[1].find((item:any) => item.key === 'url').value;
+        const tiktok = social[2].find((item:any) => item.key === 'url').value;
         setSocialConfig( { facebook, youtube, tiktok});
       } catch(error) {
         console.error(error);
