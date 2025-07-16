@@ -32,10 +32,14 @@
     "title": "Picity digitalcity"
   },
   "News": {
-    "title": "News"
+    "title": "News",
+    "relatedNews": "Tin liên quan",
+    "registerToBid": "Register to bid"
   },
   "HumanResource": {
-    "title": "Human Resource"
+    "title": "Human Resource",
+    "apply": "Apply",
+    "Quantity": "Quantity"
   },
   "Contact": {
     "title": "Contact"

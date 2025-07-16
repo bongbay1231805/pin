@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import PaginationExample from './PaginationExample';
 import News from './News';
-import { useSearchParams } from 'next/navigation'; // Import useSearchParams để lấy keyword từ URL
+import { useSearchParams } from 'next/navigation';
 
 
 type PaginationLink = {

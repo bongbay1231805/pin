@@ -7,12 +7,15 @@ import { useScrollRefs } from '@/context/ScrollRefsContext';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { transformJobPosts } from '@/hooks/useparseJobPosts';
 import convertJsonStringToArrayOrObject from '@/hooks/useConvertJsonToArray';
+import {useLocale, useTranslations} from 'next-intl';
+import {LANGUAGE} from '@/config';
 
 export default function Hero({ data, dataPage }: any) {
+  const currentLocale = useLocale();
+  const t = useTranslations();
   const { name, description, image, custom_fields: { human_resource_1, human_resource_2, human_resource_3, human_resource_4, human_resource_5, human_resource_6, human_resource_7, human_resource_8, human_resource_9
     , human_resource_10, human_resource_11, human_resource_12, human_resource_13, human_resource_14, human_resource_15, human_resource_16, human_resource_17, human_resource_18, human_resource_19,
     human_resource_20, human_resource_21, human_resource_22, human_resource_23, human_resource_24, human_resource_25, human_resource_26, human_resource_slider, human_resource_step } } = dataPage;
-
   const imageSrc = image
   ? `https://admin.pigroup.vn/storage/${image}`
     : '/fhuman/human.png';
@@ -24,8 +27,7 @@ export default function Hero({ data, dataPage }: any) {
   const secondConnect = humanresourceslider.slice(4);
 
   useScrollReveal(); // dùng mặc định `.boxanimation`
-    console.log(data.data)
-  const datas = transformJobPosts(data.data);
+  const datas = transformJobPosts(data.data, currentLocale);
 
   console.log(datas)
   const [allJobData, setAllJobData] = useState(datas);
@@ -255,7 +257,7 @@ export default function Hero({ data, dataPage }: any) {
                         onClick={() => handleOpenPopup(job.position)}
                         className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
                       >
-                        Ứng tuyển
+                        {t('HumanResource.apply')}
                       </button>
                     </td>
                   </tr>
@@ -269,7 +271,7 @@ export default function Hero({ data, dataPage }: any) {
                           onClick={() => handleOpenPopup(job.position)}
                           className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
                         >
-                          Ứng tuyển
+                          {t('HumanResource.apply')}
                         </button>
                       </div>
                     </td>

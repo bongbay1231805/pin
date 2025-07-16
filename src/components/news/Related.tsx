@@ -4,6 +4,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from 'react';
+import {useLocale} from 'next-intl';
+import {LANGUAGE} from '@/config';
 
 const mainImage = "/fnews/news-1.png";
 
@@ -13,13 +15,19 @@ interface PostItem {
   slug: string;
   image?: string;
   is_featured?: boolean;
+  translation: {
+  "lang_code": string;
+  "name": string;
+  "description": string;
+  "content": string;
+}
 }
 
 export default function Related({ post }: { post: PostItem[] }) {
   const ITEMS_PER_PAGE = 4;
   
   const [currentPage, setCurrentPage] = useState(1);
-
+  const currentLocale = useLocale();
   if (!Array.isArray(post) || post.length === 0) {
     return <div className="text-center mt-20">Không tìm thấy bài viết liên quan</div>;
   }
@@ -39,7 +47,7 @@ export default function Related({ post }: { post: PostItem[] }) {
       // window.scrollTo({ top: 0, behavior: 'smooth' }); 
     }
   };
-
+console.log('currentPosts ', currentPosts)
   return (
     <>
       <div className="grid md:grid-cols-2 gap-x-[168px] 2xl:gap-x-[268px] gap-y-[33px]">
@@ -67,7 +75,7 @@ export default function Related({ post }: { post: PostItem[] }) {
                   />
                 )
               }
-              <h3 className="text-[13px] 2xl:text-[17px] font-semibold text-gray-5 uppercase">{item.name}</h3>
+              <h3 className="text-[13px] 2xl:text-[17px] font-semibold text-gray-5 uppercase">{currentLocale !== LANGUAGE.en ? item.name : item.translation.name}</h3>
             </div>
           </Link>
         ))}

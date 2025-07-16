@@ -4,6 +4,7 @@ import Related from '@/components/news/Related';
 import {RegistrationForm} from '@/components/news/RegistrationForm';
 import {Metadata} from 'next';
 import CategorySetter from './CategorySetter';
+import {getTranslations} from 'next-intl/server';
 
 // ✅ BƯỚC 1: ĐỊNH NGHĨA TYPE CHO PROPS MỘT CÁCH RÕ RÀNG
 // Type này bao gồm cả `params` và `searchParams` (một best practice)
@@ -62,7 +63,7 @@ async function getPostBySlug(slug: string) {
 export default async function DetailPost({ params }: Props) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-
+  const t = await getTranslations();
   if (!post) {
     return <div className="text-center mt-20">Không tìm thấy bài viết</div>;
   }
@@ -93,7 +94,7 @@ export default async function DetailPost({ params }: Props) {
       {isBiddingPost && (
         <div className="m-auto w-full sm:max-w-[85%] px-[30px] rounded-[10px] bg-[#EAF3FF]/50 mt-[80px] sm:px-[90px] pt-[70px] pb-[70px]">
           <h2 className="text-yellow-1 uppercase text-center text-size-30 md:text-size-35 lg:text-[38px] 2xl:text-[45px] font-bold mb-[35px]">
-            Đăng ký dự thầu
+            {t('News.registerToBid')}
           </h2>
           <RegistrationForm />
         </div>
@@ -101,7 +102,7 @@ export default async function DetailPost({ params }: Props) {
 
       <div className="m-auto w-full sm:max-w-[85%] px-[30px] mb-[80px]">
         <h2 className="text-yellow-1 uppercase text-left sm:text-center text-[22px] 2xl:text-[45px] font-bold my-[30px] sm:mb-[45px] sm:mt-[90px]">
-          Tin liên quan
+          {t('News.relatedNews')}
         </h2>
         <Related post={data} />
       </div>

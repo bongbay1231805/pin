@@ -1,4 +1,6 @@
 import * as cheerio from 'cheerio';
+import {LANGUAGE, TLANGUAGE} from '@/config';
+
 type RawPost = {
   id: number;
   name: string;
@@ -13,6 +15,17 @@ type RawPost = {
     // career_position?: string;
     career_quantity?: string;
     career_date?: string;
+  };
+  custom_fields_translations?: {
+    career_content?: string;
+    // career_position?: string;
+    career_quantity?: string;
+    career_date?: string;
+  };
+  translation: {
+    "lang_code": string;
+    "positions_id": number;
+    "name": string;
   };
 };
 type JobDetailSection = {
@@ -31,12 +44,12 @@ type JobPost = {
   details: JobDetailSection;
   isOpen: boolean;
 };
-export function transformJobPosts(posts: RawPost[]): JobPost[] {
+export function transformJobPosts(posts: RawPost[], currentLocale: TLANGUAGE): JobPost[] {
   return posts.map((post): JobPost => {
-    const details = extractDetailsFromHtml(post.content ?? '');
+    const details = extractDetailsFromHtml((currentLocale !== LANGUAGE.en ? post?.custom_fields?.career_content : post?.custom_fields_translations?.career_content) || '');
     return {
       id: `job-${post.id}`,
-      position: post.name ?? post.name,
+      position: currentLocale !== LANGUAGE.en ? post.name : post?.translation?.name,
       quantity: parseInt(post.custom_fields?.career_quantity ?? '0', 10),
       deadline: post.custom_fields?.career_date ?? '',
       details,

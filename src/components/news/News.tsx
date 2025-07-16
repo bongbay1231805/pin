@@ -3,9 +3,12 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Link from "next/link";
 import '@/components/news.css'; // Ensure this file contains the necessary styles
 import Image from "next/image";
+import {useLocale} from 'next-intl';
+import {LANGUAGE} from '@/config';
 const mainImage = "/fnews/news-1.png";
 export default function News({ posts }: any) {
   useScrollReveal();
+  const currentLocale = useLocale();
 
   if (!posts || posts.length === 0) {
     return (
@@ -47,10 +50,10 @@ export default function News({ posts }: any) {
           </div>
           <div className="absolute h-[145px] sm:h-auto bottom-[-105px] sm:bottom-0 right-0 translate-y-1/4 z-10 sm:max-w-[calc(50%_-_15px)] bg-[#142F4F] rounded-tr-[40px] text-white p-[20px] sm:pl-10 sm:pr-10 sm:py-6 shadow-xl">
             <div className="font-bold uppercase title text-[17px] 2xl:text-[21px] mb-2 line-clamp-2 md:line-clamp-none">
-              {posts[0].name}
+              {currentLocale !== LANGUAGE.en ? posts?.[0].name : posts?.[0]?.translation?.name}
             </div>
             <div className="text-[13px] 2xl:text-[17px] text-white/85 line-clamp-2">
-              {posts[0].description}
+              {currentLocale !== LANGUAGE.en ? posts?.[0].description : posts?.[0].translation?.description}
             </div>
           </div>
         </Link>
@@ -84,7 +87,7 @@ export default function News({ posts }: any) {
                   <div >
                     <div className={`title absolute ${index % 2 === 0 ? 'bottom-[-30px] sm:bottom-[50px]' : 'bottom-[-30px] sm:bottom-[50px]' }  left-0 translate-y-2/5 leading-[21px] 2xl:leading-[26px] z-10 bg-[#EAF3FF] rounded-tr-[40px] w-[100%] sm:w-[80%] px-6 py-[18px] text-blue-1 font-bold text-[13px] 2xl:text-[17px] uppercase sm:h-[78px]`}>
                       <span  className="line-clamp-2">
-                        {post.name}
+                        {currentLocale !== LANGUAGE.en ? post.name : post?.translation?.name}
                       </span>
                     </div>
                   </div>

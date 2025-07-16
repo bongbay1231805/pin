@@ -32,10 +32,14 @@
     "title": "Đô thị số Picity"
   },
   "News": {
-    "title": "Tin Tức"
+    "title": "Tin Tức",
+    "relatedNews": "Tin liên quan",
+    "registerToBid": "Đăng ký dự thầu"
   },
   "HumanResource": {
-    "title": "Phát Triển Nhân Lực"
+    "title": "Phát Triển Nhân Lực",
+    "apply": "Ứng tuyển",
+    "Quantity": "Số lượng"
   },
   "Contact": {
     "title": "Liên Hệ"
