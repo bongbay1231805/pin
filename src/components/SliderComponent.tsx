@@ -36,7 +36,7 @@ export default function SliderComponent({ slides }: Props) {
   const slideData = slides.map((item: any) => {
     return {
       image: `https://admin.pigroup.vn/storage/${item[0].value}`,
-      caption: item[0].slug
+      caption: item[1] ? item[1].value : ""
     }
   });
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -76,14 +76,7 @@ export default function SliderComponent({ slides }: Props) {
 
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-white overflow-hidden">
-      <div className="w-full max-w-6xl text-center">
-        <h2 className="text-4xl font-bold text-[#a88a5f] tracking-widest">
-          TIỆN ÍCH 5<span className="text-3xl align-middle">★</span>
-        </h2>
-        <h3 className="mt-2 text-xl font-bold tracking-wider text-gray-700 uppercase">
-          NGHỈ DƯỠNG CHUẨN RESORT
-        </h3>
-      </div>
+      
 
       <div
         className="relative flex items-center justify-center w-full mt-12 h-[350px] md:h-[550px]"
