@@ -6,6 +6,7 @@ import EmblaCarouselCenterPicity from '@/components/ui/EmblaCarouselCenterPicity
 import EmblaCarouselCenter from '@/components/ui/EmblaCarouselCenter';
 import HorizontalScroll from '@/components/ui/HorizontalScroll';
 import SlickCarouselCenter from '../ui/SlickCarouselCenter';
+import SliderComponent from '@/components/SliderComponent';
 export default function Part({custom_fields}: any) {
   const {oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef} =
     useScrollRefs();
@@ -1456,7 +1457,7 @@ export default function Part({custom_fields}: any) {
       ></h3>
       <div className="mx-auto mb-[50px] sm:mb-[30px] sliderreal">
           <div className="hidden sm:block">
-            <SlickCarouselCenter slides={digitalcityslideruni} />
+            <SliderComponent slides={digitalcityslideruni}/>
           </div>
 
           <div className="sm:hidden">

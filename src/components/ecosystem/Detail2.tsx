@@ -8,6 +8,7 @@ import {useMediaQuery} from '@/hooks/useMediaQuery';
 import {ServicesDesktop} from './ServicesDesktop'; // Import component mới
 import {ServicesMobile} from './ServicesMobile'; // Import component mới
 import SlickCarouselCenter from '../ui/SlickCarouselCenter';
+import SliderComponent from '@/components/SliderComponent';
 // Định nghĩa kiểu dữ liệu cho props của component
 interface ToggleSectionProps {
   headerContent: React.ReactNode; // Nội dung của phần header (có thể là JSX, chuỗi,...)
@@ -18,7 +19,6 @@ export default function Detail2({custom_fields, image}: any) {
   const imageSrc = image
   ? `https://admin.pigroup.vn/storage/${image}`
     : '/banner_dvbds.jpg';
-
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null); // Ref to access the content div directly
   const [contentHeight, setContentHeight] = useState('0px'); // State to control the max-height for animation
@@ -992,7 +992,7 @@ export default function Detail2({custom_fields, image}: any) {
       </div>
       <div className="mx-auto my-16 sliderreal">
         <div className="hidden sm:block">
-          <SlickCarouselCenter slides={sliders} />
+          <SliderComponent slides={sliders}/>
         </div>
 
         <div className="sm:hidden">
