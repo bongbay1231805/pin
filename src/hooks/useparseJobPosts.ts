@@ -47,6 +47,7 @@ type JobPost = {
 export function transformJobPosts(posts: RawPost[], currentLocale: TLANGUAGE): JobPost[] {
   return posts.map((post): JobPost => {
     const details = extractDetailsFromHtml((currentLocale !== LANGUAGE.en ? post?.custom_fields?.career_content : post?.custom_fields_translations?.career_content) || '');
+    
     return {
       id: `job-${post.id}`,
       position: currentLocale !== LANGUAGE.en ? post.name : post?.translation?.name,

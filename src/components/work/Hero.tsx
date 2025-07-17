@@ -29,7 +29,6 @@ export default function Hero({ data, dataPage }: any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
   const datas = transformJobPosts(data.data, currentLocale);
 
-  console.log(datas)
   const [allJobData, setAllJobData] = useState(datas);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -43,6 +42,11 @@ export default function Hero({ data, dataPage }: any) {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedJobPosition, setSelectedJobPosition] = useState('');
 
+
+  useEffect(() => {
+    const datasTrans = transformJobPosts(data.data, currentLocale);
+    setAllJobData(datasTrans);
+  }, [currentLocale]);
   const handleOpenPopup = (position: string) => {
     setSelectedJobPosition(position);
     setIsPopupOpen(true);
