@@ -85,10 +85,10 @@ export default function SliderComponent({ slides }: Props) {
       >
         <button
           onClick={prevSlide}
-          className="absolute left-0 z-30 p-2 -translate-y-1/2 bg-white/80 border border-gray-200 rounded-full shadow-lg top-1/2 hover:scale-110 focus:ring-2 md:left-10 backdrop-blur-sm"
+          className="absolute left-0 sm:left-0 top-1/2 -translate-y-1/2 p-2 rounded-full z-30   hover:bg-opacity-75 transition-colors duration-200 focus:outline-none text-yellow-1 rounded-full"
           aria-label="Previous Slide"
         >
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -101,7 +101,8 @@ export default function SliderComponent({ slides }: Props) {
             className="w-6 h-6 text-gray-800 md:w-8 md:h-8"
           >
             <path d="m15 18-6-6 6-6" />
-          </svg>
+          </svg> */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
         </button>
 
         <div className="relative w-full h-full perspective-1200">
@@ -133,10 +134,10 @@ export default function SliderComponent({ slides }: Props) {
 
         <button
           onClick={nextSlide}
-          className="absolute right-0 z-30 p-2 -translate-y-1/2 bg-white/80 border border-gray-200 rounded-full shadow-lg top-1/2 hover:scale-110 focus:ring-2 md:right-10 backdrop-blur-sm"
+          className="absolute right-0 sm:right-0 top-1/2 -translate-y-1/2 p-2 rounded-full z-30   hover:bg-opacity-75 transition-colors duration-200 focus:outline-none text-yellow-1 rounded-full"
           aria-label="Next Slide"
         >
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -149,7 +150,8 @@ export default function SliderComponent({ slides }: Props) {
             className="w-6 h-6 text-gray-800 md:w-8 md:h-8"
           >
             <path d="m9 18 6-6-6-6" />
-          </svg>
+          </svg> */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
         </button>
       </div>
 
@@ -158,7 +160,7 @@ export default function SliderComponent({ slides }: Props) {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 hover:bg-gray-400 ${
+            className={`w-2 h-2 rounded-full transition-all duration-300 hover:bg-gray-400 ${
               index === currentIndex
                 ? "bg-[#a88a5f] scale-125 shadow-md"
                 : "bg-gray-300"
