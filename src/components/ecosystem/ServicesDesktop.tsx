@@ -51,7 +51,7 @@ const ServiceBlockDesktop: React.FC<ServiceData> = ({
           {title}
         </h4>
         {/* --- LỚP POPUP HIỆN RA KHI HOVER --- */}
-        <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
+        <div className="left-7 w-[85%] absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
           <div className="absolute inset-0 bg-[#fff] transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-center">
             <h3 className="text-[18px] 2xl:text-[22px] font-bold text-yellow-1 uppercase mb-4 transform transition-all duration-500 ease-out delay-150 opacity-0 translate-y-30 group-hover:opacity-100 group-hover:translate-y-0">

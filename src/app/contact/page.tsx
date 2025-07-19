@@ -90,7 +90,7 @@ export default async function Contact() {
 
       {/* Main Content Container - Relative Z-index for its content to be above image */}
       {/* On desktop, this div will contain the gradient background */}
-      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 2xl:h-[calc(100vh-96px)]"> {/* Giữ z-index 10 cho nội dung */}
+      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 md:h-[calc(100vh-96px)]"> {/* Giữ z-index 10 cho nội dung */}
         {/* The gradient overlay if you want it only for the content on mobile
             You can add it here if you want it to cover the content area, not the banner.
             For now, I've moved the main gradient overlay outside and made it desktop-only.
@@ -102,7 +102,7 @@ export default async function Contact() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 gap-y-1">
                 <div className="flex text-blue-1 text-[15px] 2xl:text-[17px]">
-                  {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px] 2xl:w-[25px] 2xl:h-[25px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M20.3033 8.37357C21.7055 9.70958 22.4991 11.5618 22.4991 13.4986C22.4991 15.4354 21.7055 17.2876 20.3033 18.6236L14.9996 23.7486L9.69581 18.6236C8.29358 17.2876 7.5 15.4354 7.5 13.4986C7.5 11.5618 8.29358 9.70958 9.69581 8.37357C12.6648 5.54214 17.3343 5.54214 20.3033 8.37357Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     <path fillRule="evenodd" clipRule="evenodd" d="M18 13.0535C17.9891 13.8382 17.6669 14.5865 17.1043 15.1337C16.5417 15.6808 15.7847 15.982 15 15.971C14.2153 15.982 13.4583 15.6808 12.8957 15.1337C12.3331 14.5865 12.0109 13.8382 12 13.0535C12.0233 11.4199 13.3663 10.1143 15 10.1373C16.6337 10.1143 17.9767 11.4199 18 13.0535V13.0535Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg> */}
@@ -110,7 +110,7 @@ export default async function Contact() {
                   <Image
                     src="/contact/map.svg"
                     alt="Modern city skyline"
-                    width="13" height="13" className="mr-[5px] mt-[-1px] 2xl:w-[25px] 2xl:h-[25px]" 
+                    width="13" height="13" className="mr-[5px] mt-[-1px]" 
                   />
 
                   <div>
@@ -118,7 +118,7 @@ export default async function Contact() {
                   </div>
                 </div>
                 <div className="flex text-blue-1 text-[15px] 2xl:text-[17px]">
-                  {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px] 2xl:w-[25px] 2xl:h-[25px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M20.3033 8.37357C21.7055 9.70958 22.4991 11.5618 22.4991 13.4986C22.4991 15.4354 21.7055 17.2876 20.3033 18.6236L14.9996 23.7486L9.69581 18.6236C8.29358 17.2876 7.5 15.4354 7.5 13.4986C7.5 11.5618 8.29358 9.70958 9.69581 8.37357C12.6648 5.54214 17.3343 5.54214 20.3033 8.37357Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     <path fillRule="evenodd" clipRule="evenodd" d="M18 13.0535C17.9891 13.8382 17.6669 14.5865 17.1043 15.1337C16.5417 15.6808 15.7847 15.982 15 15.971C14.2153 15.982 13.4583 15.6808 12.8957 15.1337C12.3331 14.5865 12.0109 13.8382 12 13.0535C12.0233 11.4199 13.3663 10.1143 15 10.1373C16.6337 10.1143 17.9767 11.4199 18 13.0535V13.0535Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg> */}
@@ -126,7 +126,7 @@ export default async function Contact() {
                   <Image
                     src="/contact/map.svg"
                     alt="Modern city skyline"
-                    width="13" height="13" className="mr-[5px] mt-[-1px] 2xl:w-[25px] 2xl:h-[25px]" 
+                    width="13" height="13" className="mr-[5px] mt-[-1px]" 
                   />
 
                   <div>
@@ -134,14 +134,14 @@ export default async function Contact() {
                   </div>
                 </div>
                 <div className="flex text-blue-1 text-[15px] 2xl:text-[17px]">
-                  {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px] 2xl:w-[25px] 2xl:h-[25px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M7.32929 7.95244C8.42929 6.79369 8.81804 6.46869 9.28679 6.31744C9.61119 6.23244 9.95141 6.22772 10.278 6.30369C10.708 6.42869 10.8218 6.52369 12.2318 7.92869C13.4705 9.16244 13.5943 9.29619 13.713 9.53744C13.9401 9.96091 13.9756 10.4612 13.8105 10.9124C13.6855 11.2562 13.508 11.4837 12.7568 12.2374L12.2668 12.7287C12.1381 12.8595 12.1079 13.058 12.1918 13.2212C13.2805 15.0785 14.825 16.6274 16.6793 17.7212C16.8927 17.8355 17.1556 17.7986 17.3293 17.6299L17.8005 17.1662C18.0918 16.8676 18.4002 16.5863 18.7243 16.3237C19.2332 16.0112 19.8674 15.9833 20.4018 16.2499C20.663 16.3749 20.7493 16.4524 22.0268 17.7274C23.3443 19.0412 23.3818 19.0824 23.5268 19.3837C23.7996 19.8824 23.7968 20.4863 23.5193 20.9824C23.378 21.2624 23.2918 21.3637 22.5505 22.1212C22.103 22.5787 21.6818 22.9962 21.6143 23.0574C21.0028 23.5637 20.2182 23.8121 19.4268 23.7499C17.9787 23.618 16.5771 23.1704 15.3205 22.4387C12.537 20.9639 10.1673 18.8151 8.42804 16.1887C8.04922 15.639 7.71243 15.0616 7.42054 14.4612C6.63752 13.1192 6.23316 11.5899 6.25054 10.0362C6.31032 9.22339 6.70011 8.47046 7.32929 7.95244Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg> */}
 
                   <Image
                     src="/contact/phone.svg"
                     alt="Modern city skyline"
-                    width="13" height="13" className="mr-[5px] mt-[-1px] 2xl:w-[25px] 2xl:h-[25px]" 
+                    width="13" height="13" className="mr-[5px] mt-[-1px]" 
                   />
                   <p className="font-normal">{field_contact_5}</p>
                 </div>
@@ -154,7 +154,7 @@ export default async function Contact() {
                   <Image
                     src="/contact/event.svg"
                     alt="Modern city skyline"
-                    width="13" height="13" className="mr-[5px] mt-[-1px] 2xl:w-[25px] 2xl:h-[25px]" 
+                    width="13" height="13" className="mr-[5px] mt-[-1px]" 
                   />
                   <p className="font-normal">{field_contact_7}</p>
                 </div>

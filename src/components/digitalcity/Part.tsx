@@ -354,7 +354,7 @@ export default function Part({custom_fields}: any) {
         className="relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px] mt-[-40px] sm:overflow-x-hidden"
       >
         <svg
-          className="absolute top-[0] 2xl:top-[-190px] right-0 translate-x-[50%] hidden sm:block overflow-x-hidden max-w-[20%] h-auto"
+          className="absolute top-[0]  right-0 translate-x-[50%] hidden sm:block overflow-x-hidden max-w-[20%] h-auto"
           width="528.46"
           height="523.07"
           id="Layer_1"
@@ -1464,8 +1464,8 @@ export default function Part({custom_fields}: any) {
             <EmblaCarouselCenter slides={digitalcityslideruni} />
           </div>
       </div>
-      <div ref={fiveRef} className="relative mx-auto sm:pb-[80px] pb-[50px]">
-        <div className="relative z-1 mt-[50px] sm:mt-[80px]">
+      <div ref={fiveRef} className="relative mx-auto sm:pb-[100px] pb-[50px]">
+        <div className="relative z-1 mt-[50px] sm:mt-[100px]">
           <h3
             className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center"
             dangerouslySetInnerHTML={{__html: digitalcity_9}}
@@ -1559,7 +1559,7 @@ export default function Part({custom_fields}: any) {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[50px] sm:mb-[80px]">
+      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[50px] sm:mb-[100px]">
         <div className="md:grid mt-[0px]">
           <div>
             <h3

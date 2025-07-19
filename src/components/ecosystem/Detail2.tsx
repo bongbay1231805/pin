@@ -992,7 +992,8 @@ export default function Detail2({custom_fields, image}: any) {
       </div>
       <div className="mx-auto my-16 sliderreal">
         <div className="hidden sm:block">
-          <SliderComponent slides={sliders}/>
+          {/*<SlickCarouselCenter slides={sliders}/>*/}
+          <SliderComponent slides={sliders} />
         </div>
 
         <div className="sm:hidden">

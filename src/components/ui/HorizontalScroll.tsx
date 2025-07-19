@@ -86,9 +86,9 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
         <div className="embla__container">
           {items.map((item: any, i: number) => (
             <div className="embla__slide" key={i}>
-              <div className="grid items-center bg-blue-1 rounded-[20px] h-[222px] content-evenly hover:bg-yellow-1 duration-500">
+              <div className="grid items-center bg-blue-1 rounded-[20px] h-[222px] content-evenly hover:bg-yellow-1 duration-500 group">
                 <div
-                  className="grid justify-center items-center"
+                  className="grid justify-center items-center transition-transform duration-300 group-hover:scale-110"
                   dangerouslySetInnerHTML={{__html: item[0]?.value || ''}}
                 ></div>
                 <h4 className="uppercase text-white px-[20px] text-[14px] text-center font-bold">

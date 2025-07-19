@@ -179,6 +179,7 @@ export default function Detail3({custom_fields, image}: any) {
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_19}}
             ></div> */}
+            
             <svg
               className="m-auto h-[81px] sm:h-[100px] transition-transform duration-300 group-hover:scale-110"
               height="100"
@@ -670,7 +671,8 @@ export default function Detail3({custom_fields, image}: any) {
           </div>
         </div>
       </div>
-      <div className='bg-cover bg-[position:center_top] relative bg-[url("/bg-1.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat h-[330px] sm:h-[620px] content-center'>
+      
+      <div className='bg-cover bg-[position:center_top] relative bg-[url("/bg-1.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat h-[330px] sm:h-[620px] md:h-[820px] content-center'>
         <div className="mt-[-470px] sm:mt-[-100px] sm:ml-[48%] max-w-[1250px] grid">
           <div className="px-[30px] xl:px-0 xl:w-[650px]">
             <div className="grid grid-cols-1 2xl:w-[905px] sm:mb-[45px]">
