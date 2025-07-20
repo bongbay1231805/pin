@@ -146,7 +146,7 @@ const Navbar = () => {
   return (
     <nav
       id="topMenu"
-      className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 border-white-1 ${pathname === 'ecosystem' ? 'border-b-[1px]!' : ''} ${hasShadow ? 'bg-white border-b-[1px] fixed text-yellow-1' : isHomePage ? 'bg-transparent text-white' : 'bg-white text-yellow-1'}`}
+      className={`absolute top-0 left-0 w-full z-50 transition-all duration-300 border-white-1 ${pathname === 'ecosystem' ? 'border-b-[1px]!' : ''} ${hasShadow ? 'bg-white border-b-[1px] text-yellow-1' : isHomePage ? 'bg-transparent text-white' : 'bg-white text-yellow-1'}`}
     >
       <div
         className={`mx-auto ${hasShadow ? 'max-w-[85%]' : isHomePage ? 'max-w-[91.4%]' : 'max-w-[85%]'}`}

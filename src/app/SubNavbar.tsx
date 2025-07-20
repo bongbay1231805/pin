@@ -80,13 +80,13 @@ export default function SubNavbar(props: PropSub) {
       const currentScrollY = window.scrollY;
       const scrollingDown = currentScrollY > prevScrollY.current;
       const scrollingUp = currentScrollY < prevScrollY.current;
-
       if (currentScrollY > scrollThreshold) {
-        if (scrollingDown && !isFixed) {
-          setIsFixed(true);
-        } else if (scrollingUp && isFixed) {
-          setIsFixed(false);
-        }
+        // if (scrollingDown && !isFixed) {
+        //   setIsFixed(true);
+        // } else if (scrollingUp && isFixed) {
+        //   setIsFixed(false);
+        // }
+        setIsFixed(true);
       } else {
         if (isFixed) {
           setIsFixed(false);
