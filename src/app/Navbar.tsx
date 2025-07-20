@@ -247,7 +247,7 @@ const Navbar = () => {
               className={`group relative grow-1 text-center text-white-1 hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['about']) ? 'text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
-                {t('About.title')} jjjj
+                {t('About.title')}
               </span>
               <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 ease-in-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 text-yellow-2">
                 {t('About.title')}
