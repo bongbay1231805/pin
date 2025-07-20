@@ -569,15 +569,29 @@ export default function Detail2({custom_fields, image}: any) {
         </div>
       </div>
       <div className="2xl:mb-[120px] relative">
-        <div className="flex bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center sm:h-[100vh] h-[75vh]">
-          <div className="max-w-[85%]" style={{marginLeft: '8%'}}>
+        <img
+          src="/fecosystem/detail/operation-6.png"
+          alt="fecosystem"
+          className="max-w-[100%] h-auto "
+        />
+        {/*<div className="flex bg-[url(/fecosystem/detail/operation-6.png)] bg-cover bg-center sm:h-[100vh] h-[75vh]">*/}
+        <div className="relative left-[8%] top-0 max-w-[85%] md:absolute md:mas-w-[100%] m-0 md:mx-2">
+          {/*<Image*/}
+          {/*  fill*/}
+          {/*  src="/fecosystem/detail/operation-6.png"*/}
+          {/*  alt="fecosystem"*/}
+          {/*  className="object-fill max-w-[100%] h-auto "*/}
+          {/*/>*/}
+
+          <div>
             <div className="grid items-start">
               <h3
-                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase sm:mb-[60px] mb-[50px] mt-[50px] sm:mt-[60px]"
+                className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase sm:mb-[60px] mb-[50px] mt-[50px] sm:mt-[60px] text-center md:text-left"
                 dangerouslySetInnerHTML={{__html: real_estate_services_8}}
               ></h3>
               <div className="grid grid-cols-2 grid-rows-2 gap-[20px] sm:w-fit">
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div
+                  className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_16}}
                   /> */}
@@ -650,7 +664,8 @@ export default function Detail2({custom_fields, image}: any) {
                     {real_estate_services_9}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div
+                  className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_17}}
                   /> */}
@@ -793,7 +808,8 @@ export default function Detail2({custom_fields, image}: any) {
                     {real_estate_services_10}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div
+                  className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_18}}
                   /> */}
@@ -922,7 +938,8 @@ export default function Detail2({custom_fields, image}: any) {
                     {real_estate_services_11}
                   </h4>
                 </div>
-                <div className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
+                <div
+                  className="flex flex-col items-center bg-[#20446F]/80 sm:w-[300px] 2xl:h-[234px] rounded-[10px] gap-[20px] justify-center p-4 text-center h-[135px] sm:h-[auto] hover:bg-[#20446F] transition-all duration-300">
                   {/* <div
                     dangerouslySetInnerHTML={{__html: real_estate_services_19}}
                   /> */}

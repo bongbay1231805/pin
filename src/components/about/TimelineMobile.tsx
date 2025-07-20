@@ -9,6 +9,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 export function TimelineMobile({ custom_fields }: any) {
   // const { eightRef } = useScrollRefs();
   const { field_12_about, slider_about } = custom_fields;
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   function convertJsonStringToArrayOrObject(jsonString: string): any | null {
     try {
@@ -95,12 +96,19 @@ export function TimelineMobile({ custom_fields }: any) {
     };
   }, [embla, sliderabout.length]); // Thêm sliderabout.length vào dependency array
 
-  const scrollPrev = () => embla && embla.scrollPrev();
-  const scrollNext = () => embla && embla.scrollNext();
+  const scrollPrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + sliderabout.length) % sliderabout.length);
+    return embla && embla.scrollPrev();
+  }
+  const scrollNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderabout.length);
+    return embla && embla.scrollNext();
+  }
 
   const scrollTo = (index: number) => {
     if (embla && index >= 0 && index < sliderabout.length) {
       embla.scrollTo(index);
+      setCurrentIndex(index);
     }
   };
 
@@ -131,13 +139,13 @@ export function TimelineMobile({ custom_fields }: any) {
               {currentEvent[1]?.value && (
                 <div
                   className="text-[13px] 2xl:text-[15px]"
-                  dangerouslySetInnerHTML={{ __html: currentEvent[1].value }}
+                  dangerouslySetInnerHTML={{__html: currentEvent[1].value}}
                 />
               )}
               {currentEvent[2]?.value && (
                 <div
                   className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
-                  dangerouslySetInnerHTML={{ __html: currentEvent[2].value }}
+                  dangerouslySetInnerHTML={{__html: currentEvent[2].value}}
                 />
               )}
             </div>
@@ -164,21 +172,23 @@ export function TimelineMobile({ custom_fields }: any) {
                   className="flex-none min-w-[33.333%] flex justify-center items-center p-6 cursor-pointer"
                   onClick={() => scrollTo(index)}
                 >
-                  <div className="w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white">
-                    <div className="hidden md:flex bg w-full h-full flex-col items-center justify-center text-center pb-[20px]">
+                  <div
+                    className="w-[300px] h-[300px] 2xl:w-[360px] 2xl:h-[360px] timeline-item rounded-full transition-all duration-300 text-center flex flex-col items-center justify-center p-4 bg-white">
+                    <div
+                      className="hidden md:flex bg w-full h-full flex-col items-center justify-center text-center pb-[20px]">
                       <div className="text-[26px] 2xl:text-[32px] title font-bold mb-2 text-yellow-1">
                         {event[0]?.value}
                       </div>
                       {event[1]?.value && (
                         <div
                           className="text-[13px] 2xl:text-[15px]"
-                          dangerouslySetInnerHTML={{ __html: event[1].value }}
+                          dangerouslySetInnerHTML={{__html: event[1].value}}
                         />
                       )}
                       {event[2]?.value && (
                         <div
                           className="relative text-[13px] 2xl:text-[15px] mt-[20px]"
-                          dangerouslySetInnerHTML={{ __html: event[2].value }}
+                          dangerouslySetInnerHTML={{__html: event[2].value}}
                         />
                       )}
                     </div>
@@ -198,6 +208,20 @@ export function TimelineMobile({ custom_fields }: any) {
         >
           <ChevronRight />
         </button>
+      </div>
+      <div className="z-30 flex justify-center space-x-4">
+        {sliderabout.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 hover:bg-gray-400 ${
+              index === currentIndex
+                ? "bg-[#a88a5f] scale-125 shadow-md"
+                : "bg-gray-300"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   );

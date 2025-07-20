@@ -68,7 +68,8 @@ export default function Detail3({custom_fields, image}: any) {
 
   return (
     <>
-      <div className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[70px] md:pt-[150px]">
+      <div
+        className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[70px] md:pt-[150px]">
         <div className="relative mx-auto top-[30%] max-w-[85%]">
           <h2
             className="absolute  z-10 left-0 top-[-20px] text-left  uppercase font-bold text-white sm:leading-[50px] xl:leading-[60px] text-[22px] xl:text-[40px] 2xl:text-[70px] 2xl:leading-[100px]"
@@ -97,7 +98,7 @@ export default function Detail3({custom_fields, image}: any) {
           </div>
           <div className="grid content-center sm:pl-[140px] pr-[160px mt-[35px] sm:mt-0 sm:w-[430px] 2xl:w-[590px]">
             <h3
-              className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold  xl:[&>br]:inline-block  mb-[30px] sm:mb-[40px]"
+              className="text-center md:text-left text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold  xl:[&>br]:inline-block  mb-[30px] sm:mb-[40px]"
               dangerouslySetInnerHTML={{__html: management_operation_title}}
             ></h3>
             <p className="text-[13px] 2xl:text-[17px] text-gray-5 sm:mb-[18px] text-justify">
@@ -113,7 +114,8 @@ export default function Detail3({custom_fields, image}: any) {
         ></h3>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[50px] sm:mb-[110px]">
-        <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div
+          className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image
             width="500"
             height="100"
@@ -126,7 +128,8 @@ export default function Detail3({custom_fields, image}: any) {
             dangerouslySetInnerHTML={{__html: management_operation_2}}
           ></h4>
         </div>
-        <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div
+          className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image
             width="500"
             height="100"
@@ -139,7 +142,8 @@ export default function Detail3({custom_fields, image}: any) {
             dangerouslySetInnerHTML={{__html: management_operation_6}}
           ></h4>
         </div>
-        <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div
+          className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image
             width="500"
             height="100"
@@ -152,7 +156,8 @@ export default function Detail3({custom_fields, image}: any) {
             dangerouslySetInnerHTML={{__html: management_operation_8}}
           ></h4>
         </div>
-        <div className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
+        <div
+          className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image
             width="500"
             height="100"
@@ -174,12 +179,13 @@ export default function Detail3({custom_fields, image}: any) {
       </div>
       <div className="relative mx-auto px-[30px] sm:px-0 top-[25%] sm:max-w-[90%]  mb-[117px]">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-[10px] sm:gap-[15px]">
-          <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
+          <div
+            className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
             {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_19}}
             ></div> */}
-            
+
             <svg
               className="m-auto h-[81px] sm:h-[100px] transition-transform duration-300 group-hover:scale-110"
               height="100"
@@ -273,11 +279,13 @@ export default function Detail3({custom_fields, image}: any) {
                 strokeMiterlimit="10"
               />
             </svg>
-            <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
+            <h4
+              className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_12}
             </h4>
           </div>
-          <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
+          <div
+            className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
             {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_20}}
@@ -398,11 +406,13 @@ export default function Detail3({custom_fields, image}: any) {
                 stroke="#4C73A8"
               />
             </svg>
-            <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
+            <h4
+              className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_13}
             </h4>
           </div>
-          <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
+          <div
+            className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
             {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_21}}
@@ -575,11 +585,13 @@ export default function Detail3({custom_fields, image}: any) {
                 strokeLinecap="round"
               />
             </svg>
-            <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
+            <h4
+              className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_14}
             </h4>
           </div>
-          <div className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
+          <div
+            className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
             {/* <div
               className="m-auto"
               dangerouslySetInnerHTML={{__html: management_operation_22}}
@@ -665,18 +677,23 @@ export default function Detail3({custom_fields, image}: any) {
                 strokeLinecap="round"
               />
             </svg>
-            <h4 className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
+            <h4
+              className="text-[11px] sm:text-[18px] 2xl:text-[22px] font-bold uppercase text-yellow-1 group-hover:text-white transition-colors duration-300">
               {management_operation_14_add}
             </h4>
           </div>
         </div>
       </div>
-      
-      <div className='bg-cover bg-[position:center_top] relative bg-[url("/bg-1.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat h-[330px] sm:h-[620px] md:h-[820px] content-center'>
-        <div className="mt-[-470px] sm:mt-[-100px] sm:ml-[48%] max-w-[1250px] grid">
+
+      {/*<div className='bg-cover bg-[position:center_top] relative bg-[url("/bg-1.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat h-[330px] sm:h-[620px] md:h-[820px] content-center'>*/}
+      <div
+        className="relative  mt-[350px] lg:mt-0 content-center">
+        {/*<div className="mt-[-470px] sm:mt-[-100px] sm:ml-[48%] max-w-[1250px] grid">*/}
+        <div className="relative md:absolute mt-[-280px] sm:mt-0 sm:top-[50px] sm:left-[48%] max-w-[1250px] grid">
           <div className="px-[30px] xl:px-0 xl:w-[650px]">
             <div className="grid grid-cols-1 2xl:w-[905px] sm:mb-[45px]">
-              <h4 className="text-[16px] mb-[30px] sm:text-[24px] text-blue-1 uppercase font-bold text-center sm:text-justify">
+              <h4
+                className="text-[16px] mb-[30px] sm:text-[24px] text-blue-1 uppercase font-bold text-center sm:text-justify">
                 {management_operation_15}
               </h4>
             </div>
@@ -730,6 +747,11 @@ export default function Detail3({custom_fields, image}: any) {
             </div>
           </div>
         </div>
+        <img
+          src="/fecosystem/detail/management-13.png"
+          alt="ecosystem"
+          className="w-screen h-auto "
+        />
       </div>
 
       {/* Pop-up component */}
