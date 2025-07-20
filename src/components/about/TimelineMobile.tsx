@@ -210,7 +210,7 @@ export function TimelineMobile({ custom_fields }: any) {
         </button>
       </div>
       <div className="z-30 flex justify-center space-x-4">
-        {sliderabout.map((_, index) => (
+        {sliderabout.map((_: any, index: number) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
