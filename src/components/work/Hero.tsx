@@ -167,20 +167,20 @@ export default function Hero({ data, dataPage }: any) {
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100" >
                 <Image className="transition-transform duration-1000 group-hover:scale-[120%]" alt="benefit 8" loading="lazy" decoding="async" width="1900" height="1000" style={{ height: '100%', objectFit: 'cover' }} src={`https://admin.pigroup.vn/storage/${human_resource_15}`} />
-                <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] 2sm:text-[17px] text-white font-bold object-top z-10" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
+                <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] 2sm:text-[17px] text-white font-bold object-top z-10" style={{ objectFit: 'cover' }} >{human_resource_16}</div>
               </div>
               <div className="grid grid-cols-2 row-span-2 gap-[10px] sm:gap-[20px]">
                 <div className="relative row-start-1 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100" >
                   <Image alt="benefit w-1/2 sm:w-auto" loading="lazy" decoding="async" fill src={`https://admin.pigroup.vn/storage/${human_resource_17}`} className='object-cover rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
-                  <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">{human_resource_18}</div>
+                  <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">{human_resource_18}</div>
                 </div>
                 <div className="relative row-start-1 sm:row-start-2 col-span-1 sm:col-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100">
                   <Image alt="benefit 10" loading="lazy" decoding="async" fill src={`https://admin.pigroup.vn/storage/${human_resource_19}`} className='object-top rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]' style={{ objectFit: 'cover', objectPosition: 'top' }} />
-                  <div className="absolute uppercase bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">{human_resource_20}</div>
+                  <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">{human_resource_20}</div>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function Hero({ data, dataPage }: any) {
                 <Image className="h-auto" alt="benefit 14" loading="lazy" decoding="async" width="900" height="900" src={`https://admin.pigroup.vn/storage/${humanre[5].value}`} />
               </div>
               <div className="grid text-[13px]">
-                <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px]">{humanre[0].value}</h4>
+                <h4 className="uppercase font-bold text-blue-1 text-[20px] sm:text-[25px] mb-[12px] sm:mb-[22px] text-center md:text-left">{humanre[0].value}</h4>
                 <div className='2xl:text-[17px] mb-[30px] sm:mb-0 grid gap-[15px]'>
                   <div dangerouslySetInnerHTML={{ __html: humanre[1].value }}></div>
                   <div dangerouslySetInnerHTML={{ __html: humanre[2].value }}></div>
@@ -259,7 +259,7 @@ export default function Hero({ data, dataPage }: any) {
                     <td className="px-[12px] py-[10px] sm:px-[18px] sm:py-[15px] flex justify-center">
                       <button
                         onClick={() => handleOpenPopup(job.position)}
-                        className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
+                        className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white uppercase"
                       >
                         {t('HumanResource.apply')}
                       </button>
@@ -273,7 +273,7 @@ export default function Hero({ data, dataPage }: any) {
                       <div className='flex justify-center pt-[50px]'>
                         <button
                           onClick={() => handleOpenPopup(job.position)}
-                          className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
+                          className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white uppercase"
                         >
                           {t('HumanResource.apply')}
                         </button>
@@ -309,18 +309,23 @@ export default function Hero({ data, dataPage }: any) {
         </div>
         {/* Di chuyển Số lượng và Thời hạn lên đây */}
         <div className="flex justify-between items-center w-full text-sm">
-          <span className="text-black">{human_resource_24}: <span className="font-semibold">{job.quantity}</span></span>
-          <span>{human_resource_25}: <span className="text-yellow-1">{job.deadline}</span></span>
-        </div>
+          <div className="text-sm">
+            <p className="text-black">{human_resource_24}: <span className="font-semibold">{job.quantity}</span></p>
+            <p>{human_resource_25}: <span className="text-yellow-1">{job.deadline}</span></p>
+          </div>
 
-        <div className="pt-[15px]">
-          <button
-            onClick={() => handleOpenPopup(job.position)}
-            className="hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white focus:text-white"
-          >
-            Ứng tuyển
-          </button>
+          <div>
+            {!job.isOpen && (
+            <button
+              onClick={() => handleOpenPopup(job.position)}
+              className="hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white focus:text-white uppercase"
+            >
+              {t('HumanResource.apply')}
+            </button>
+            )}
+          </div>
         </div>
+       
       </div>
 
       {job.isOpen && (
@@ -332,7 +337,7 @@ export default function Hero({ data, dataPage }: any) {
               onClick={() => handleOpenPopup(job.position)}
               className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
             >
-              Ứng tuyển
+              {t('HumanResource.apply')}
             </button>
           </div>
         </div>

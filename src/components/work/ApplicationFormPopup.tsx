@@ -138,8 +138,8 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
           </button>
         </div>
         <div className="mb-4">
-          <h3 className="text-[25px] uppercase text-blue-1">Nộp Hồ Sơ</h3>
-          <h2 className='uppercase text-[40px] text-yellow-1 font-bold'>ứng tuyển</h2>
+          <h3 className="text-[20px] md:text-[25px] uppercase text-blue-1">Nộp Hồ Sơ</h3>
+          <h2 className='uppercase md:text-[40px] text-[35px] text-yellow-1 font-bold'>ứng tuyển</h2>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

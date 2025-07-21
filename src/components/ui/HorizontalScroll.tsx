@@ -34,6 +34,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
   const [items, setItems] = useState<any[]>([]);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // 2. Xử lý logic cho nút bấm
   const scrollPrev = useCallback(
@@ -52,6 +53,8 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
     const onSelect = () => {
       setCanScrollPrev(emblaApi.canScrollPrev());
       setCanScrollNext(emblaApi.canScrollNext());
+      const index = emblaApi.selectedScrollSnap(); // Get the current index
+      setCurrentIndex(index);
     };
 
     emblaApi.on('select', onSelect);
@@ -74,6 +77,13 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
       setItems(parsedItems);
     }
   }, [custom_fields]);
+
+   const scrollTo = (index: number) => {
+    if (emblaApi && index >= 0 && index < items.length) {
+      emblaApi.scrollTo(index);
+      setCurrentIndex(index);
+    }
+  };
 
   if (!items || items.length === 0) {
     return null;
@@ -119,6 +129,21 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({custom_fields}) => {
       >
         <ChevronRight size={24} />
       </button>
+
+      <div className="z-30 flex justify-center space-x-4 block sm:hidden mt-[46px]">
+        {items.map((_: any, index: number) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 hover:bg-gray-400 ${
+              index === currentIndex
+                ? "bg-[#a88a5f] scale-125 shadow-md"
+                : "bg-gray-300"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };

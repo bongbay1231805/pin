@@ -73,18 +73,16 @@ export default function Success({ custom_fields }: any) {
 
       {/* Main content area for image AND buttons. This div will control their relative positions. */}
       {/* We apply the padding here to create space for buttons around the image */}
-      <div className="relative w-full h-full mt-0 px-[30px] md:px-[50px] success-slider">
+      <div className="relative w-full mt-0 px-[30px] md:px-[50px] success-slider">
         {/* Image specific container - This div ensures the image doesn't fill the padding area */}
         <div className="relative w-full h-full"> {/* Removed px- from here, now applied to parent */}
             {digitalcitysuccess.map((digitalcsuccess: any, index: number) => (
-            <Image
+              <img
                 key={index + 1}
                 src={`https://admin.pigroup.vn/storage/${digitalcsuccess[1].value}`}
                 alt={digitalcsuccess[0].value}
-                fill
-                className={`rounded-[20px] transition-opacity duration-500 ease-in-out ${activeBox === index + 1 ? 'opacity-100' : 'opacity-0 absolute'}`}
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-            />
+                className={`rounded-[20px] transition-opacity duration-500 ease-in-out max-w-[100%] h-auto ${activeBox === index + 1 ? 'opacity-100' : 'opacity-0 absolute top-0'}`}
+              />
             ))}
         </div>
 

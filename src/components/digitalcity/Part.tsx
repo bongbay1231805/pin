@@ -320,7 +320,7 @@ export default function Part({custom_fields}: any) {
         >
           <div className="grid xl:grid-cols-[67.5%_32.5%] md:gap-[10px]">
             <EmblaCarouselCenterPicity />
-            <div className="flex items-center text-gray-1 text-[13px] 2xl:text-[17px] md:pl-[40px]">
+            <div className="flex items-center text-gray-1 text-[13px] 2xl:text-[17px] md:pl-[40px] !text-center sm:!text-left">
               {digitalcity_3}
             </div>
           </div>
@@ -1206,7 +1206,7 @@ export default function Part({custom_fields}: any) {
             </defs>
           </svg>
         </div>
-        <div className="grid content-center justify-center xl:justify-auto mt-[80px] sm:mt-[-100px]">
+        <div className="grid content-center justify-center xl:justify-auto mt-[80px] sm:mt-[-100px] text-center sm:text-left">
           <h2 className="text-[30px] md:text-[40px] text-yellow-1 uppercase font-bold">
             {digitalcity_6}
           </h2>

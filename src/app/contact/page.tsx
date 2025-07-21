@@ -101,7 +101,7 @@ export default async function Contact() {
             <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px]  font-bold mb-4 text-blue-1 uppercase">{field_contact_1}</h2>
             <div className="space-y-6">
               <div className="grid grid-cols-1 gap-y-1">
-                <div className="flex text-blue-1 text-[15px] 2xl:text-[17px]">
+                <div className="flex text-blue-1 text-[15px] 2xl:text-[17px] items-start md:items-center">
                   {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M20.3033 8.37357C21.7055 9.70958 22.4991 11.5618 22.4991 13.4986C22.4991 15.4354 21.7055 17.2876 20.3033 18.6236L14.9996 23.7486L9.69581 18.6236C8.29358 17.2876 7.5 15.4354 7.5 13.4986C7.5 11.5618 8.29358 9.70958 9.69581 8.37357C12.6648 5.54214 17.3343 5.54214 20.3033 8.37357Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     <path fillRule="evenodd" clipRule="evenodd" d="M18 13.0535C17.9891 13.8382 17.6669 14.5865 17.1043 15.1337C16.5417 15.6808 15.7847 15.982 15 15.971C14.2153 15.982 13.4583 15.6808 12.8957 15.1337C12.3331 14.5865 12.0109 13.8382 12 13.0535C12.0233 11.4199 13.3663 10.1143 15 10.1373C16.6337 10.1143 17.9767 11.4199 18 13.0535V13.0535Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -110,14 +110,14 @@ export default async function Contact() {
                   <Image
                     src="/contact/map.svg"
                     alt="Modern city skyline"
-                    width="13" height="13" className="mr-[5px] mt-[-1px]" 
+                    width="13" height="13" className="mr-[5px] mt-[5px] md:mt-[-1px]" 
                   />
 
                   <div>
                     <p className="font-normal max-w-[350px] md:max-w-none"><span className="font-semibold">Trụ sở chính:</span>&nbsp;{field_contact_13}</p>
                   </div>
                 </div>
-                <div className="flex text-blue-1 text-[15px] 2xl:text-[17px]">
+                <div className="flex text-blue-1 text-[15px] 2xl:text-[17px] items-start md:items-center">
                   {/* <svg width="23" height="23" className="mr-[5px] mt-[-1px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" clipRule="evenodd" d="M20.3033 8.37357C21.7055 9.70958 22.4991 11.5618 22.4991 13.4986C22.4991 15.4354 21.7055 17.2876 20.3033 18.6236L14.9996 23.7486L9.69581 18.6236C8.29358 17.2876 7.5 15.4354 7.5 13.4986C7.5 11.5618 8.29358 9.70958 9.69581 8.37357C12.6648 5.54214 17.3343 5.54214 20.3033 8.37357Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     <path fillRule="evenodd" clipRule="evenodd" d="M18 13.0535C17.9891 13.8382 17.6669 14.5865 17.1043 15.1337C16.5417 15.6808 15.7847 15.982 15 15.971C14.2153 15.982 13.4583 15.6808 12.8957 15.1337C12.3331 14.5865 12.0109 13.8382 12 13.0535C12.0233 11.4199 13.3663 10.1143 15 10.1373C16.6337 10.1143 17.9767 11.4199 18 13.0535V13.0535Z" stroke="#20446F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -126,7 +126,7 @@ export default async function Contact() {
                   <Image
                     src="/contact/map.svg"
                     alt="Modern city skyline"
-                    width="13" height="13" className="mr-[5px] mt-[-1px]" 
+                    width="13" height="13" className="mr-[5px] mt-[5px] md:mt-[-1px]" 
                   />
 
                   <div>
