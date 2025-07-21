@@ -61,7 +61,30 @@ export default async function Digitalcity() {
   const currentLocale = await getUserLocale();
   const {data} = await res.json();
   const { custom_fields } = data[currentLocale];
-  const {digitalcity_1,digitalcity_2} = custom_fields;
+  const {digitalcity_1,digitalcity_2, digitalcity_sliders} = custom_fields;
+  
+  function convertJsonStringToArrayOrObject(jsonString: string): any | null {
+    try {
+      return JSON.parse(jsonString);
+    } catch (error) {
+      console.error('Error parsing JSON string:', error);
+      return null;
+    }
+  }
+
+  const transformedSlideData = convertJsonStringToArrayOrObject(digitalcity_sliders).map((slideArray: any[]) => {
+    // Mỗi slideArray là một mảng con, ví dụ: [{"title_obj"}, {"image_obj"}]
+    const titleObject = slideArray.find(item => item.slug === 'digitalcity_slider_title' && item.type === 'text');
+    const imageObject = slideArray.find(item => item.slug === 'digitalcity_slider_image' && item.type === 'image');
+  
+    return {
+      image: imageObject ? imageObject.value : '', // Lấy giá trị của ảnh, hoặc chuỗi rỗng nếu không tìm thấy
+      caption: titleObject ? titleObject.value : '' // Lấy giá trị của caption, hoặc chuỗi rỗng nếu không tìm thấy
+    };
+  });
+
+  console.log(transformedSlideData)
+
   const { image } = data[currentLocale];
   const imageSrc = image
 ? `https://admin.pigroup.vn/storage/${image}`

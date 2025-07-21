@@ -41,7 +41,7 @@ const PaginationExample = ({ links, onPageChange }: Props) => {
                     {link.label}
                   </PaginationLink>
                 ) : (
-                  <span className="text-yellow-1">...</span> // Ellipsis (nếu có)
+                  <span className="text-yellow-1"></span> // Ellipsis (nếu có)
                 )}
               </PaginationItem>
             );

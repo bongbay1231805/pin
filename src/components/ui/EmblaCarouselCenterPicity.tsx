@@ -6,91 +6,97 @@ import {
 } from "@/components/ui/carousel"
 import Image from "next/image";
 import Autoplay from 'embla-carousel-autoplay';
-const EmblaCarouselCenterPicity = () => {
-  const slides = [
+type EmblaCarouselCenterType = any[];
+interface EmblaCarouselCenterProps {
+  slides: EmblaCarouselCenterType;
+}
+
+const EmblaCarouselCenterPicity: React.FC<EmblaCarouselCenterProps> = ({slides}) => {
+  // console.log(slides);
+  const sliders = [
     {
-      image: "/fdigitalcity/picity-2.png",
-      title: "Tối ưu vận hành, <br/> minh bạch quy trình <br/> quản lý"
+      image: slides[1].image,
+      title: slides[1].caption
     },
     {
-      image: "/fdigitalcity/picity-3.png",
-      title: "Đón đầu xu hướng <br/> đô thị thông minh"
+      image: slides[2].image,
+      title: slides[2].caption
     },
     {
-      image: "/fdigitalcity/picity-1.png",
-      title: "Gia tăng giá trị <br/> đầu tư"
+      image: slides[0].image,
+      title: slides[0].caption
     },
     {
-      image: "/fdigitalcity/picity-2.png",
-      title: "Tối ưu vận hành, <br/> minh bạch quy trình <br/> quản lý"
+      image: slides[1].image,
+      title: slides[1].caption
     },
     {
-      image: "/fdigitalcity/picity-3.png",
-      title: "Đón đầu xu hướng <br/> đô thị thông minh"
+      image: slides[2].image,
+      title: slides[2].caption
     },
     {
-      image: "/fdigitalcity/picity-1.png",
-      title: "Gia tăng giá trị <br/> đầu tư"
+      image: slides[0].image,
+      title: slides[0].caption
     },
     {
-      image: "/fdigitalcity/picity-2.png",
-      title: "Tối ưu vận hành, <br/> minh bạch quy trình <br/> quản lý"
+      image: slides[1].image,
+      title: slides[1].caption
     },
     {
-      image: "/fdigitalcity/picity-3.png",
-      title: "Đón đầu xu hướng <br/> đô thị thông minh"
+      image: slides[2].image,
+      title: slides[2].caption
     },
     {
-      image: "/fdigitalcity/picity-1.png",
-      title: "Gia tăng giá trị <br/> đầu tư"
+      image: slides[0].image,
+      title: slides[0].caption
     },
     {
-      image: "/fdigitalcity/picity-2.png",
-      title: "Tối ưu vận hành, <br/> minh bạch quy trình <br/> quản lý"
+      image: slides[1].image,
+      title: slides[1].caption
     },
     {
-      image: "/fdigitalcity/picity-3.png",
-      title: "Đón đầu xu hướng <br/> đô thị thông minh"
+      image: slides[2].image,
+      title: slides[2].caption
     },
     {
-      image: "/fdigitalcity/picity-1.png",
-      title: "Gia tăng giá trị <br/> đầu tư"
+      image: slides[0].image,
+      title: slides[0].caption
     },
     {
-      image: "/fdigitalcity/picity-2.png",
-      title: "Tối ưu vận hành, <br/> minh bạch quy trình <br/> quản lý"
+      image: slides[1].image,
+      title: slides[1].caption
     },
     {
-      image: "/fdigitalcity/picity-3.png",
-      title: "Đón đầu xu hướng <br/> đô thị thông minh"
+      image: slides[2].image,
+      title: slides[2].caption
     },
     {
-      image: "/fdigitalcity/picity-1.png",
-      title: "Gia tăng giá trị <br/> đầu tư"
+      image: slides[0].image,
+      title: slides[0].caption
     },
     {
-      image: "/fdigitalcity/picity-2.png",
-      title: "Tối ưu vận hành, <br/> minh bạch quy trình <br/> quản lý"
+      image: slides[1].image,
+      title: slides[1].caption
     },
     {
-      image: "/fdigitalcity/picity-3.png",
-      title: "Đón đầu xu hướng <br/> đô thị thông minh"
+      image: slides[2].image,
+      title: slides[2].caption
     },
     {
-      image: "/fdigitalcity/picity-1.png",
-      title: "Gia tăng giá trị <br/> đầu tư"
+      image: slides[0].image,
+      title: slides[0].caption
     },
     {
-      image: "/fdigitalcity/picity-2.png",
-      title: "Tối ưu vận hành, <br/> minh bạch quy trình <br/> quản lý"
+      image: slides[1].image,
+      title: slides[1].caption
     },
     {
-      image: "/fdigitalcity/picity-3.png",
-      title: "Đón đầu xu hướng <br/> đô thị thông minh"
+      image: slides[2].image,
+      title: slides[2].caption
     },
     {
-      image: "/fdigitalcity/picity-1.png",
-      title: "Gia tăng giá trị <br/> đầu tư"
+      image: slides[0].image,
+      title: slides[0].caption
     }
   ];
   return (
@@ -108,7 +114,7 @@ const EmblaCarouselCenterPicity = () => {
         }}
       >
         <CarouselContent className="w-full items-center ml-0">
-          {slides.map((event, index) => (
+          {sliders.map((event, index) => (
             <CarouselItem key={index} index={index} className={`sm:basis-1/3 h-full [perspective:1200px] picitycenterwrap`}>
               <div className="relative flex flex-wrap items-center justify-center picitycenter transform rotate-y-[30deg] translate-z-[-30px]">
                 <Image className="rounded-[10px]" src={event.image} alt="event" width={400} height={400} />

@@ -41,50 +41,67 @@ export default function Part({custom_fields}: any) {
     digitalcity_text_legal,
     digitalcity_image_legal,
     digitalcity_link_app_store,
-    digitalcity_link_google_play
+    digitalcity_link_google_play,
+    digitalcity_sliders
   } = custom_fields;
   const digitalcityslideruni = convertJsonStringToArrayOrObject(
     digitalcity_slider_uni
   );
-  const slides = [
-    [
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      },
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      }
-    ],
-    [
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      },
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      }
-    ],
-    [
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      },
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      }
-    ],
-    [
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      },
-      {
-        value: '/fdigitalcity/digitalcity-14.png'
-      }
-    ]
-  ];
+  // const slides = [
+  //   [
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     },
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     }
+  //   ],
+  //   [
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     },
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     }
+  //   ],
+  //   [
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     },
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     }
+  //   ],
+  //   [
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     },
+  //     {
+  //       value: '/fdigitalcity/digitalcity-14.png'
+  //     }
+  //   ]
+  // ];
   const digitalcityconnect =
     convertJsonStringToArrayOrObject(digitalcity_connect);
   const firstConnect = digitalcityconnect.slice(0, 2);
   const secondConnect = digitalcityconnect.slice(2, 4);
   const thirdConnect = digitalcityconnect.slice(4, 6);
+
+  // const {digitalcity_1,digitalcity_2, digitalcity_sliders} = custom_fields;
+  
+  const transformedSlideData = convertJsonStringToArrayOrObject(digitalcity_sliders).map((slideArray: any[]) => {
+      // Mỗi slideArray là một mảng con, ví dụ: [{"title_obj"}, {"image_obj"}]
+      const titleObject = slideArray.find(item => item.slug === 'digitalcity_slider_title' && item.type === 'text');
+      const imageObject = slideArray.find(item => item.slug === 'digitalcity_slider_image' && item.type === 'image');
+    
+      return {
+        image: imageObject ? `https://admin.pigroup.vn/storage/${imageObject.value}` : '', // Lấy giá trị của ảnh, hoặc chuỗi rỗng nếu không tìm thấy
+        caption: titleObject ? titleObject.value : '' // Lấy giá trị của caption, hoặc chuỗi rỗng nếu không tìm thấy
+      };
+  });
+
+  console.log("data", transformedSlideData)
+
   return (
     <>
       <div className="relative">
@@ -319,7 +336,7 @@ export default function Part({custom_fields}: any) {
           className="mx-auto max-w-[calc(85%+60px)] mt-[45px] md:mt-[80px] mb-[25px] px-[30px] md:pr-[60px]"
         >
           <div className="grid xl:grid-cols-[67.5%_32.5%] md:gap-[10px]">
-            <EmblaCarouselCenterPicity />
+            <EmblaCarouselCenterPicity slides={transformedSlideData} />
             <div className="flex items-center text-gray-1 text-[13px] 2xl:text-[17px] md:pl-[40px] !text-center sm:!text-left">
               {digitalcity_3}
             </div>
