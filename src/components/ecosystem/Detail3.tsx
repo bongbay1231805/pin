@@ -85,7 +85,7 @@ export default function Detail3({custom_fields, image}: any) {
           className="object-cover"
         />
       </div>
-      <div className="mx-auto mt-[60px] sm:mt-[50px] sm:max-w-[85%] mb-[50px] sm:mb-[115px]">
+      <div className="boxanimation fade-in-up-medium mx-auto mt-[60px] sm:mt-[50px] sm:max-w-[85%] mb-[50px] sm:mb-[115px]">
         <div className="grid grid-cols-1 px-[30px] sm:px-0 lg:grid-cols-[1fr_1fr]">
           <div className="">
             <Image
@@ -107,13 +107,13 @@ export default function Detail3({custom_fields, image}: any) {
           </div>
         </div>
       </div>
-      <div className="relative mx-auto max-w-[95%]  mb-[47px]">
+      <div className="boxanimation fade-in-up-medium relative mx-auto max-w-[95%]  mb-[47px]">
         <h3
           className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px]  font-bold uppercase my-[20px] lg:my-0 text-center"
           dangerouslySetInnerHTML={{__html: management_operation_1}}
         ></h3>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[50px] sm:mb-[110px]">
+      <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[2px] mb-[50px] sm:mb-[110px]">
         <div
           className='group relative overflow-hidden before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0'>
           <Image
@@ -171,13 +171,13 @@ export default function Detail3({custom_fields, image}: any) {
           ></h4>
         </div>
       </div>
-      <div className="relative mx-auto top-[25%] max-w-[1250px] mb-[30px]  md:mb-[40px]">
+      <div className="boxanimation fade-in-up-medium relative mx-auto top-[25%] max-w-[1250px] mb-[30px]  md:mb-[40px]">
         <h3
           className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase text-center"
           dangerouslySetInnerHTML={{__html: management_operation_11}}
         ></h3>
       </div>
-      <div className="relative mx-auto px-[30px] sm:px-0 top-[25%] sm:max-w-[90%]  mb-[117px]">
+      <div className="boxanimation fade-in-up-medium relative mx-auto px-[30px] sm:px-0 top-[25%] sm:max-w-[90%]  mb-[117px]">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-[10px] sm:gap-[15px]">
           <div
             className="2xl:h-[260px] px-[10px] grid text-center content-center justify-center gap-[20px] border-1 rounded-[10px] border-gray-8 h-[220px] group hover:bg-yellow-1 transition-all duration-300">
@@ -687,7 +687,7 @@ export default function Detail3({custom_fields, image}: any) {
 
       {/*<div className='bg-cover bg-[position:center_top] relative bg-[url("/bg-1.png")] mt-[350px] lg:mt-0 lg:bg-[url("/fecosystem/detail/management-13.png")] bg-no-repeat h-[330px] sm:h-[620px] md:h-[820px] content-center'>*/}
       <div
-        className="relative  mt-[350px] lg:mt-0 content-center">
+        className="boxanimation fade-in-up-medium relative  mt-[350px] lg:mt-0 content-center">
         {/*<div className="mt-[-470px] sm:mt-[-100px] sm:ml-[48%] max-w-[1250px] grid">*/}
         <div className="relative md:absolute mt-[-280px] sm:mt-0 sm:top-[50px] sm:left-[48%] max-w-[1250px] grid">
           <div className="px-[30px] xl:px-0 xl:w-[650px]">

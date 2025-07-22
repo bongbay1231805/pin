@@ -116,7 +116,7 @@ export default function Detail1({custom_fields, image}: any) {
         />
       </div>
       <div className="mx-auto px-[30px] sm:px-[0] max-full sm:max-w-[85%] mb-[55px] xl:mb-[87px]">
-        <div className="grid grid-cols-1 sm:grid-cols-[46%_1fr] gap-[25px] sm:gap-[50px] mb-[50px] mt-[60px] sm:mt-[100px]">
+        <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-[46%_1fr] gap-[25px] sm:gap-[50px] mb-[50px] mt-[60px] sm:mt-[100px]">
           <div className="border-t-1 border-gray-8 sm:mt-[15px] order-1  md:order-0 text-[14px] 2xl:text-[17px]">
             <h3 className="text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8">
               {customfields[0][0].value}
@@ -255,7 +255,7 @@ export default function Detail1({custom_fields, image}: any) {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
+        <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
           <div className="relative h-[265px] sm:h-[388px]">
             <Image
               src={`https://admin.pigroup.vn/storage/${customfields[1][6].value}`}
@@ -393,7 +393,7 @@ export default function Detail1({custom_fields, image}: any) {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-[46%_1fr] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
+        <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-[46%_1fr] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
           <div className="border-t-1 border-gray-8 order-1  md:order-0 text-[13px] 2xl:text-[17px]">
             <h3 className="text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8">
               {customfields[2][0].value}

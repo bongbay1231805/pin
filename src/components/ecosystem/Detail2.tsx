@@ -527,7 +527,7 @@ export default function Detail2({custom_fields, image}: any) {
         ></Image>
       </div>
       <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]">
+        <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]">
           <div className="mt-[100px] sm:w-[85%] 2xl:w-[100%] order-1 sm:order-0">
             <h3
               className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px]"
@@ -556,7 +556,7 @@ export default function Detail2({custom_fields, image}: any) {
             />
           </div>
         </div>
-        <div>
+        <div className="boxanimation fade-in-up-medium">
           <h3
             className="text-yellow-1 text-[21px] sm:text-[28px] 2xl:text-[45px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px] mt-[20%] sm:mt-[10%]"
             dangerouslySetInnerHTML={{__html: real_estate_services_4}}
@@ -568,7 +568,7 @@ export default function Detail2({custom_fields, image}: any) {
           )}
         </div>
       </div>
-      <div className="2xl:mb-[120px] relative">
+      <div className="boxanimation fade-in-up-medium 2xl:mb-[120px] relative">
         <img
           src="/fecosystem/detail/operation-6.png"
           alt="fecosystem"
@@ -1007,7 +1007,7 @@ export default function Detail2({custom_fields, image}: any) {
           </div>
         </div>
       </div>
-      <div className="mx-auto my-16 sliderreal">
+      <div className="mx-auto my-16 sliderreal boxanimation fade-in-up-medium">
         <div className="hidden sm:block">
           {/*<SlickCarouselCenter slides={sliders}/>*/}
           <SliderComponent slides={sliders} />

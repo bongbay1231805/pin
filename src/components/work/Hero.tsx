@@ -83,10 +83,10 @@ export default function Hero({ data, dataPage }: any) {
         </div>
         <Image fill src={imageSrc} alt="Smart City Features" className="object-cover" />
       </div>
-      <div ref={oneRef} className="mx-auto max-w-[85%] text-center pt-[50px] md:pt-[110px]">
+      <div ref={oneRef} className="boxanimation fade-in-up-medium mx-auto max-w-[85%] text-center pt-[50px] md:pt-[110px]">
         <h2 className='uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] mb-[30px] sm:mb-[50px]'>{human_resource_2}</h2>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px] mx-auto w-full px-[30px] xl:max-w-[85%] pb-[45px]">
+      <div className="boxanimation fade-in-up-medium grid grid-cols-2 md:grid-cols-4 gap-[10px] sm:gap-[20px] mx-auto w-full px-[30px] xl:max-w-[85%] pb-[45px]">
         <div className='border-1 border-gray-8 text-blue-1 hover:[&>svg>path]:fill-white hover:bg-yellow-1 hover:text-white gap-[10px] rounded-2xl flex flex-col h-[160px] sm:h-[218px] 2xl:h-[300px] items-center justify-center group'>
           <div className='[&>svg]:w-[50px] [&>svg]:h-[50px] sm:[&>svg]:w-[88px] sm:[&>svg]:h-[88px] transition-transform duration-300 group-hover:scale-110' dangerouslySetInnerHTML={{ __html: human_resource_3 }}></div>
           <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_4 }}></div>
@@ -104,10 +104,10 @@ export default function Hero({ data, dataPage }: any) {
           <div className='text-[10px] px-[10px] sm:text-[15px] 2xl:text-[22px] font-semibold uppercase text-center [&>br]:hidden sm:[&>br]:block' dangerouslySetInnerHTML={{ __html: human_resource_10 }}></div>
         </div>
       </div>
-      <div className='mx-auto w-full px-[30px] xl:max-w-[85%]'>
+      <div className='boxanimation mx-auto w-full px-[30px] xl:max-w-[85%]'>
         <div className="h-[180px] relative bg-blue-3 rounded-[10px] flex pl-[30px] sm:pl-[50px] lg:pl-[100px] md:pr-[10px] items-center justify-between">
           <Image width={50} height={100} src="/quotation_marks.svg" alt="Smart City Features" className="absolute sm:left-6 sm:top-6 left-[10px] top-[30px] w-[20px] sm:w-[50px]" />
-          <p className='text-[20px] [&>br]:hidden sm:[&>br]:inline-block z-1 md:text-[25px] text-yellow-1 px-[10px]' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
+          <p className='reveal-text text-[20px] [&>br]:hidden sm:[&>br]:inline-block z-1 md:text-[25px] text-yellow-1 px-[10px]' dangerouslySetInnerHTML={{ __html: human_resource_11 }}></p>
           <svg className='absolute right-0 bottom-0 h-[170px] w-[170px] sm:ml-0' width="217" height="200" viewBox="0 0 217 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M77.7226 31.744C85.9162 31.744 92.5584 25.0855 92.5584 16.872C92.5584 8.65841 85.9162 2 77.7226 2C69.529 2 62.8867 8.65841 62.8867 16.872C62.8867 25.0855 69.529 31.744 77.7226 31.744Z" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M45.1741 60.1561L31.3036 65.0217C28.828 65.8918 26.7555 67.6409 25.48 69.9405L19.8778 80.0535C17.9558 83.5162 13.5848 84.7415 10.1526 82.7748C6.74699 80.8259 5.56455 76.4798 7.51314 73.0659L16.5298 57.2483C17.5882 55.3926 19.2357 53.941 21.2108 53.1285L45.7188 43.0467C50.1164 41.2354 55.1119 41.6083 59.195 44.0411C65.0408 47.526 67.8485 54.4914 66.0594 61.0706L59.7885 84.12L83.6233 102.868C86.6923 105.283 88.2644 109.14 87.7552 113.016L84.1458 140.5" stroke="#1E3753" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -130,10 +130,10 @@ export default function Hero({ data, dataPage }: any) {
       </div>
       <div>
         <div ref={twoRef}>
-          <div className="mx-auto w-full px-[30px] xl:max-w-[85%] text-center pt-[50px] sm:pt-[100px]">
+          <div className="boxanimation fade-in-up-medium mx-auto w-full px-[30px] xl:max-w-[85%] text-center pt-[50px] sm:pt-[100px]">
             <h2 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px]">{human_resource_12}</h2>
           </div>
-          <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
+          <div className="boxanimation fade-in-up-medium mx-auto w-full px-[30px] xl:max-w-[85%]">
             <div className="grid grid-cols-1 md:grid-cols-[400px_1fr_1fr] md:gap-[20px] mt-[30px] md:mt-[42px]">
               <div className="order-1 md:order-0 relative md:mr-[20px] min-h-[320px] rounded-[10px] overflow-hidden">
                 <Image alt="benefit 7" loading="lazy" decoding="async" className='object-cover h-auto' width="600" height="600" src={`https://admin.pigroup.vn/storage/${human_resource_13}`} />
@@ -160,7 +160,7 @@ export default function Hero({ data, dataPage }: any) {
               </div>
             </div>
           </div>
-          <div className="mx-auto w-full px-[30px] xl:max-w-[85%]">
+          <div className="boxanimation fade-in-up-medium mx-auto w-full px-[30px] xl:max-w-[85%]">
             <h3 className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[50px_30px] sm:py-[100px_25px]">{human_resource_14}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-[63%_1fr] 2xl:grid-cols-[63%_1fr] grid-rows-3 sm:grid-rows-2 gap-[10px] sm:gap-[20px] sm:h-[500px] 2xl:h-[650px] h-auto">
               <div className="relative row-span-2 group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
@@ -186,8 +186,8 @@ export default function Hero({ data, dataPage }: any) {
             </div>
           </div>
         </div>
-        <h3 ref={threeRef} className="uppercase font-bold text-yellow-1 text-center text-[22px] sm:text-[28px] 2xl:text-[45px] py-[50px_30px] sm:py-[100px_25px]">{human_resource_21}</h3>
-        <div className="mx-auto w-full px-[30px] sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
+        <h3 ref={threeRef} className="boxanimation fade-in-up-medium uppercase font-bold text-yellow-1 text-center text-[22px] sm:text-[28px] 2xl:text-[45px] py-[50px_30px] sm:py-[100px_25px]">{human_resource_21}</h3>
+        <div className="boxanimation fade-in-up-medium mx-auto w-full px-[30px] sm:max-w-[85%] grid sm:gap-[50px] grid-cols-1 sm:grid-cols-2 text-gray-5">
           {humanresourcestep.map((humanre: any, index: number) => (
             <div key={index} className='grid gap-[25px]'>
               <div className='relative h-auto'>
@@ -205,8 +205,8 @@ export default function Hero({ data, dataPage }: any) {
             </div>
           ))}
         </div>
-        <h3 ref={fourRef} className="uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[25px_10px] sm:py-[120px_25px]">{human_resource_22}</h3>
-        <div className="overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto">
+        <h3 ref={fourRef} className="boxanimation fade-in-up-medium uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[25px_10px] sm:py-[120px_25px]">{human_resource_22}</h3>
+        <div className="boxanimation fade-in-up-medium overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto">
           {/* --- PHẦN BẢNG (CHỈ HIỂN THỊ TRÊN MÀN HÌNH LỚN HƠN HOẶC BẰNG MD) --- */}
           <table id="job-table" className="min-w-full hidden md:table">
             <thead className="bg-gray-100 border-b border-gray-200">

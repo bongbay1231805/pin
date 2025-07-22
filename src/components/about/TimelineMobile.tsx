@@ -85,6 +85,7 @@ export function TimelineMobile({ custom_fields }: any) {
       // --- LOGIC MỚI CHO NÚT PHẢI ---
       // Ẩn nút phải khi index hiện tại là phần tử cuối cùng
       setCanScrollNext(currentSnap < sliderabout.length - 1);
+      setCurrentIndex(currentSnap);
     };
 
     embla.on('select', onSelect);

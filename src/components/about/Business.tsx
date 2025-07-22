@@ -129,7 +129,7 @@ export function Business({custom_fields}: any) {
   return (
     <div
       ref={sixRef}
-      className="mx-auto px-[30px] w-full sm:px-[15px] 2xl:max-w-[85%] sm:max-w-[80%] border-b-1 border-gray-2 items-center pt-[20px] sm:pt-[16px] pb-[88px]"
+      className="boxanimation fade-in-up-medium mx-auto px-[30px] w-full sm:px-[15px] 2xl:max-w-[85%] sm:max-w-[80%] border-b-1 border-gray-2 items-center pt-[20px] sm:pt-[16px] pb-[88px]"
     >
       <div className="grid grid-cols-1 items-center justify-center px-[0] sm:px-[4.5%] md:grid-cols-2 gap-12">
         <div className="text-center md:text-justify">

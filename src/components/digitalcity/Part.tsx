@@ -316,7 +316,7 @@ export default function Part({custom_fields}: any) {
         </svg>
         <div
           ref={oneRef}
-          className="mx-auto max-w-[calc(85%+60px)] mt-[45px] md:mt-[80px] mb-[25px] px-[30px] md:pr-[60px]"
+          className="boxanimation fade-in-up-medium mx-auto max-w-[calc(85%+60px)] mt-[45px] md:mt-[80px] mb-[25px] px-[30px] md:pr-[60px]"
         >
           <div className="grid xl:grid-cols-[67.5%_32.5%] md:gap-[10px]">
             <EmblaCarouselCenterPicity />
@@ -328,7 +328,7 @@ export default function Part({custom_fields}: any) {
       </div>
       <div
         ref={twoRef}
-        className="relative mx-auto pt-[65px] pb-[115px] h-[490px]"
+        className="boxanimation fade-in-up-medium relative mx-auto pt-[65px] pb-[115px] h-[490px]"
       >
         <div className="relative z-1 ">
           <h3 className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold uppercase text-center">
@@ -351,7 +351,7 @@ export default function Part({custom_fields}: any) {
       </div>
       <div
         ref={threeRef}
-        className="relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px] mt-[-40px] sm:overflow-x-hidden"
+        className="boxanimation fade-in-up-medium relative grid grid-cols-1 xl:grid-cols-[713px_1fr] xl:pb-[5px] mt-[-40px] sm:overflow-x-hidden"
       >
         <svg
           className="absolute top-[0]  right-0 translate-x-[50%] hidden sm:block overflow-x-hidden max-w-[20%] h-auto"
@@ -1452,10 +1452,10 @@ export default function Part({custom_fields}: any) {
       </div>
       <h3
         ref={fourRef}
-        className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mt-[-8rem] md:mt-[-60px] mb-[30px] uppercase text-center"
+        className="boxanimation fade-in-up-medium text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mt-[-8rem] md:mt-[-60px] mb-[30px] uppercase text-center"
         dangerouslySetInnerHTML={{__html: digitalcity_8}}
       ></h3>
-      <div className="mx-auto mb-[50px] sm:mb-[30px] sliderreal">
+      <div className="boxanimation fade-in-up-medium mx-auto mb-[50px] sm:mb-[30px] sliderreal">
           <div className="hidden sm:block">
             <SliderComponent slides={digitalcityslideruni}/>
           </div>
@@ -1465,7 +1465,7 @@ export default function Part({custom_fields}: any) {
           </div>
       </div>
       <div ref={fiveRef} className="relative mx-auto sm:pb-[100px] pb-[50px]">
-        <div className="relative z-1 mt-[50px] sm:mt-[100px]">
+        <div className="boxanimation fade-in-up-medium relative z-1 mt-[50px] sm:mt-[100px]">
           <h3
             className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center"
             dangerouslySetInnerHTML={{__html: digitalcity_9}}
@@ -1559,7 +1559,7 @@ export default function Part({custom_fields}: any) {
           </div>
         </div>
       </div>
-      <div ref={sixRef} className="mx-auto max-w-[85%] mb-[50px] sm:mb-[100px]">
+      <div ref={sixRef} className="boxanimation fade-in-up-medium mx-auto max-w-[85%] mb-[50px] sm:mb-[100px]">
         <div className="md:grid mt-[0px]">
           <div>
             <h3
@@ -1652,7 +1652,7 @@ export default function Part({custom_fields}: any) {
       </div>
       <h3
         ref={seventRef}
-        className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center"
+        className="boxanimation fade-in-up-medium text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[30px] uppercase text-center"
       >
         {digitalcity_18}
       </h3>

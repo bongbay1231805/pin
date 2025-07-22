@@ -289,7 +289,7 @@ export function Stats({ custom_fields }: any) {
   }, [handleMouseDown, handleMouseMove, handleMouseUp, handleMouseLeave, handleTouchStart, handleTouchMove, handleTouchEnd, handleScroll]);
 
   return (
-    <div ref={oneRef} className="mx-auto py-[50px] sm:py-16 mt-[0px] sm:mt-[25px] px-[30px] w-full sm:max-w-[85%]">
+    <div ref={oneRef} className="mx-auto py-[50px] sm:py-16 mt-[0px] sm:mt-[25px] px-[30px] w-full sm:max-w-[85%] boxanimation fade-in-up-medium">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="text-center md:text-justify">
           <h2 className="text-[16px] sm:text-[20px] 2xl:text-[28px] text-gray-1 font-normal mb-[6px]">{field_1_about}</h2>
