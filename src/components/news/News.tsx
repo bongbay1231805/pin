@@ -49,7 +49,7 @@ export default function News({ posts }: any) {
             }
           </div>
           <div className="absolute h-[145px] sm:h-auto bottom-[-105px] sm:bottom-0 right-0 translate-y-1/4 z-10 sm:max-w-[calc(50%_-_15px)] bg-[#142F4F] rounded-tr-[40px] text-white p-[20px] sm:pl-10 sm:pr-10 sm:py-6 shadow-xl">
-            <div className="font-bold uppercase title text-[17px] 2xl:text-[21px] mb-2 line-clamp-2 md:line-clamp-none">
+            <div className="font-bold uppercase title text-[17px] 2xl:text-[21px] mb-2 line-clamp-2.5 md:line-clamp-2 md:line-clamp-none">
               {currentLocale !== LANGUAGE.en ? posts?.[0].name : posts?.[0]?.translation?.name}
             </div>
             <div className="text-[13px] 2xl:text-[17px] text-white/85 line-clamp-2">

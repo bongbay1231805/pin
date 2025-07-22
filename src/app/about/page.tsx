@@ -60,9 +60,12 @@ export default async function About() {
   const {data} = await res.json();
   const {custom_fields} = data[currentLocale];
   const {image} = data[currentLocale];
+  const {bannermobile} = custom_fields;
+
+  console.log(bannermobile);
   return (
     <>
-      <Hero image={image} />
+      <Hero image={image} bannermobile={bannermobile} />
       <Stats custom_fields={custom_fields} />
 
       <TimelineSection custom_fields={custom_fields} />
