@@ -337,7 +337,7 @@ export default function Part({custom_fields}: any) {
         >
           <div className="grid xl:grid-cols-[67.5%_32.5%] md:gap-[10px]">
             <EmblaCarouselCenterPicity slides={transformedSlideData} />
-            <div className="flex items-center text-gray-1 text-[13px] 2xl:text-[17px] md:pl-[40px] !text-center sm:!text-left">
+            <div className="flex items-center text-gray-1 text-[13px] 2xl:text-[17px] md:pl-[40px] !text-justify sm:!text-left">
               {digitalcity_3}
             </div>
           </div>

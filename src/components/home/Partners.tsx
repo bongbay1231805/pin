@@ -40,7 +40,7 @@ export function Partners({
         if (!imageField || !imageField.value) return null;
 
         const fileName = imageField.value;
-        const size = imageSizeMap[fileName] || {width: 100, height: 50};
+        const size = imageSizeMap[fileName] || {width: 170, height: 50};
 
         return {
           img: `https://admin.pigroup.vn/storage/${fileName}`,
@@ -61,7 +61,7 @@ export function Partners({
               {partners.map((partner, index) => (
                 <div key={index + '-carousel'} className="flex-1">
                   <div
-                    className={`h-[52px] 2xl:h-[60px] w-[160px] ml-[20px] mr-[20px] flex items-end justify-center ${styles.cardcarousel}`}
+                    className={`h-[52px] 2xl:h-[60px] w-[160px] ml-[20px] mr-[20px] flex items-center justify-center ${styles.cardcarousel}`}
                   >
                     <Image
                       src={partner.img}

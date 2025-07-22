@@ -46,7 +46,7 @@ export default function Success({ custom_fields }: any) {
 
   return (
     // Outer container (overall area for tabs, image, and controls)
-    <div className="relative mx-auto max-w-[85%] h-[200px] md:h-[570px] mb-[120px] md:mb-[170px]">
+    <div className="relative mx-auto max-w-[85%] h-auto mb-[120px] md:mb-[170px]">
 
       {/* Tabs container - Moved to top, centered, flex-row */}
       <div className='z-20 pb-[30px] flex flex-row justify-center items-center space-x-2 md:space-x-4 text-[12px] md:text-[16px] font-bold whitespace-nowrap'>
