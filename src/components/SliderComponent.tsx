@@ -1,32 +1,5 @@
-import {useEffect, useState, useRef, ReactNode} from 'react';
+import {useEffect, useState, useRef} from 'react';
 
-// const slideData = [
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=2070&auto=format&fit=crop",
-//     caption: "SẢNH ĐÓN TIẾP SANG TRỌNG",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=2071&auto=format&fit=crop",
-//     caption: "PHÒNG TẬP HIỆN ĐẠI",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop",
-//     caption: "HỒ BƠI VÔ CỰC",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1613910352529-6e676f4142b4?q=80&w=1974&auto=format&fit=crop",
-//     caption: "KHU VỰC NGOÀI TRỜI",
-//   },
-//   {
-//     image:
-//       "https://images.unsplash.com/photo-1568605117036-5fe5e7185743?q=80&w=2070&auto=format&fit=crop",
-//     caption: "PHÒNG GIẢI TRÍ & KARAOKE",
-//   },
-// ];
 
 type Props = {
   slides: any [];
@@ -67,7 +40,7 @@ export default function SliderComponent({ slides }: Props) {
 
     const isCenter = offset === 0;
     return {
-      transform: `translateX(${offset * 55}%) scale(${isCenter ? 1 : 0.8})`,
+      transform: `translateX(${offset * 64}%) scale(${isCenter ? 1 : 0.8})`,
       zIndex: isCenter ? 20 : 10 - Math.abs(offset),
       opacity: isCenter ? 1 : 0.4,
       filter: isCenter ? "blur(0px)" : "blur(4px)",
