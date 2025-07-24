@@ -383,6 +383,7 @@ const ECOSYSTEM_SLUGS = [
   'dich-vu-bat-dong-san',
   'quan-ly-van-hanh',
 ];
+
 const NEWS_SLUGS = ['news', 'tin-tuc', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'search', 'tim-kiem'];
 const HUMAN_RESOURCE_SLUGS = ['human-resource', 'phat-trien-nhan-luc'];
 const ABOUT_SLUGS = ['about', 'gioi-thieu'];
@@ -398,6 +399,10 @@ export default function SubNavbar(props: PropSub) {
   const myArray = pathname.split('/');
   const { oneRef, twoRef, threeRef, fourRef, fiveRef, sixRef, seventRef, eightRef } = useScrollRefs();
   const { currentCategorySlug } = useNewsCategory();
+  const MAIN_PAGE_SLUGS: any = {
+    'ecosystem': t('Ecosystem.title'),
+    'he-sinh-thai': t('Ecosystem.title'),
+  };
 
   const [isFixed, setIsFixed] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -597,7 +602,7 @@ export default function SubNavbar(props: PropSub) {
       }`}
       ref={menuRef}
     >
-      <div className="relative mx-auto w-full px-[10px] sm:px-[30px] sm:px-0 sm:max-w-[85%]">
+      <div className="relative mx-auto w-full sm:px-[30px] sm:px-0 sm:max-w-[85%]">
         {/* Desktop */}
         <ul className="hidden xl:flex flex-wrap justify-center gap-[30px] py-[3px] text-gray-5">
           {navItems.map((item) =>
@@ -637,23 +642,34 @@ export default function SubNavbar(props: PropSub) {
         {/* Mobile Dropdown Menu */}
         {shouldShowMobileSubmenu && (
           <div className="xl:hidden text-center w-full bg-gray-3 border-white-1 border-b-[1px] transition-all duration-300 relative">
-            <button
-              className="absolute top-2 right-2"
-              onClick={toggleDropdown}
-            >
-              {isDropdownOpen ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
-            </button>
+            {!MAIN_PAGE_SLUGS[currentSlugFromPathname] && (
+              <button
+                className="absolute top-2 right-2"
+                onClick={toggleDropdown}
+              >
+                {isDropdownOpen ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+              </button>
+            )}
 
             <ul>
+              {MAIN_PAGE_SLUGS[currentSlugFromPathname] && (
+                <li>
+                  <button
+                    className={`block w-full text-center py-2 text-sm hover:bg-neutral-700 text-yellow-1 font-bold uppercase`}
+                  >
+                    {MAIN_PAGE_SLUGS[currentSlugFromPathname]}
+                  </button>
+                </li>
+              )}
               {navItems.map((item, index) =>
                 'hrefb' in item && item.hrefb ? (
                   <li key={item.name}>
                     <button
                       onClick={() => scrollTo(item.hrefb!)}
-                      className={`block w-full text-center px-4 py-2 text-sm hover:bg-neutral-700 
-                        ${(index === 0 && !activeSection) || isDropdownOpen || activeSection === item.name ? 'block' : 'hidden'}
+                      className={`block w-full text-center py-2 text-sm hover:bg-neutral-700 
+                        ${!MAIN_PAGE_SLUGS[currentSlugFromPathname] && ((index === 0 && !activeSection) || isDropdownOpen || activeSection === item.name) ? 'block' : 'hidden'}
                         ${
-                          activeSection === item.name ? 'text-yellow-1' : 'text-gray-5'
+                          activeSection === item.name ? 'text-yellow-1 bg-white' : 'text-gray-5'
                         }
                         `}
                     >
@@ -665,7 +681,7 @@ export default function SubNavbar(props: PropSub) {
                     <Link
                       href={item.href}
                       className={`block w-full text-center px-4 py-2 text-sm hover:bg-neutral-700  
-                         ${((index === 0 && !hasOneActive(navItems)) || isDropdownOpen || isActive(item.href) ) ? 'block' : 'hidden'}
+                         ${!MAIN_PAGE_SLUGS[currentSlugFromPathname] && ((index === 0 && !hasOneActive(navItems)) || isDropdownOpen || isActive(item.href) ) ? 'block' : 'hidden'}
                         ${
                           isActive(item.href) ? 'text-yellow-1' : 'text-gray-5'
                         }`}
@@ -675,6 +691,8 @@ export default function SubNavbar(props: PropSub) {
                   </li>
                 )
               )}
+              
+              
             </ul>
              {shouldShowSearchMobileSubmenu && (
                   <CategoryAndPostSearch />

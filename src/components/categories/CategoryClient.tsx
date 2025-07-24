@@ -34,7 +34,7 @@ export default function CategoryClient({ initialPage, initialData, apiPath }: Pr
       <News posts={posts} />
       {/* Phân trang */}
       {paginationLinks.length > 3 && (
-        <div className="pb-[90px]">
+        <div className="pb-[50px]">
           <PaginationExample links={paginationLinks} onPageChange={setCurrentPage} />
         </div>
       )}

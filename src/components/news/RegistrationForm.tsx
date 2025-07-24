@@ -156,6 +156,14 @@ export function RegistrationForm() {
             <FormItem>
               <FormControl>
                 <div className="relative flex items-center space-x-2">
+                  <Input
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={(e) => field.onChange(e.target.files)}
+                    accept=".pdf, .pptx, .ppt, .doc, .docx, .zip"
+                    multiple={false}
+                    className="absolute inset-0 opacity-0 cursor-pointer z-10" // Ẩn input file mặc định
+                  />
                   <Button type="button" className="border rounded-none text-[#8a8a8a] border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
                     {form.watch("companyProfile")?.[0]?.name ? (
                       <>{form.watch("companyProfile")?.[0]?.name}</>
@@ -163,14 +171,6 @@ export function RegistrationForm() {
                       <>Profile công ty (file pdf, .pptx, .doc, .docx .zip)</>
                     )}
                   </Button>
-                  <Input
-                    type="file"
-                    ref={fileInputRef}
-                    onChange={(e) => field.onChange(e.target.files)}
-                    accept=".pdf, .pptx, .ppt, .doc, .docx, .zip"
-                    multiple={false}
-                    className="hidden" // Ẩn input file mặc định
-                  />
                   {form.watch("companyProfile")?.[0]?.size && (
                     <div className="text-sm text-muted-foreground absolute right-[0px] bottom-[-25px]">
                       Kích thước: {(form.watch("companyProfile")[0].size/ 1024 / 1024).toFixed(2)} MB

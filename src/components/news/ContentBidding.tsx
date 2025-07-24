@@ -12,7 +12,7 @@ export function ContentBidding({post}:any) {
         </div>
         <h1 className="uppercase text-[15px] sm:text-[28px] 2xl:text-[39px] text-blue-1 font-bold">{post.name}</h1>
       </div>
-      <div className="text-gray-5 text-[13px] 2xl:text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 [&>figure]:mb-[20px] sm:[&>figure]:mb-[20px] post-content [&>figure>figcaption]:text-[13px]" dangerouslySetInnerHTML={{ __html: post.content }}></div>
+      <div className="text-gray-5 text-[13px] 2xl:text-[17px] pt-[47px] [&>img]:my-[30px] [&>figure>img]:my-[30px] [&>figure]:text-center [&>figure]:text-[17px] [&>figure]:text-gray-6 sm:[&>figure]:mb-[20px] post-content [&>figure>figcaption]:text-[13px]" dangerouslySetInnerHTML={{ __html: post.content }}></div>
       <div>
         {/* <strong className="block mt-[40px] mb-[45px] w-full text-right">Ngọc Diễm</strong> */}
         <ul className="flex gap-[10px] mt-[86px] mb-[45px] items-center justify-end">

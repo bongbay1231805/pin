@@ -13,6 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     cache: 'no-store',
   });
   const { data: post } = await res.json();
+  console.log('post ', post)
   const currentLocale = await getUserLocale();
   if (!post) {
     return {

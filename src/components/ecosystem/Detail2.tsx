@@ -526,11 +526,11 @@ export default function Detail2({custom_fields, image}: any) {
           className="object-cover"
         ></Image>
       </div>
-      <div className="mx-auto max-w-[85%] mb-[20%] sm:mb-[5%] 2xl:mb-[203px]">
+      <div className="mx-auto max-w-[85%] mb-[7%] sm:mb-[5%] 2xl:mb-[203px]">
         <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-2 items-center mb-[5%] 2xl:mb-[150px]">
           <div className="mt-[100px] sm:w-[85%] 2xl:w-[100%] order-1 sm:order-0">
             <h3
-              className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px]"
+              className="text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mb-[35px] text-center md:text-left"
               dangerouslySetInnerHTML={{__html: real_estate_services_1}}
             ></h3>
             <div className="text-[13px] 2xl:text-[17px] text-gray-5 mb-[15px] text-justify">
@@ -558,7 +558,7 @@ export default function Detail2({custom_fields, image}: any) {
         </div>
         <div className="boxanimation fade-in-up-medium">
           <h3
-            className="text-yellow-1 text-[21px] sm:text-[28px] 2xl:text-[45px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px] mt-[20%] sm:mt-[10%]"
+            className="text-yellow-1 text-[21px] sm:text-[28px] 2xl:text-[45px] font-bold text-center uppercase mb-[5%] 2xl:mb-[117px] mt-[7%] sm:mt-[10%]"
             dangerouslySetInnerHTML={{__html: real_estate_services_4}}
           ></h3>
           {isDesktop ? (

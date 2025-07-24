@@ -21,7 +21,7 @@ export default function News({ posts }: any) {
   // console.log(posts)
 
   return (
-    <div className="min-h-screen pt-[70px] sm:pt-[190px] 2xl:pt-[226px] pb-[30px] sm:pb-[90px] m-auto w-full px-[30px] sm:px-0 sm:max-w-[75%]">
+    <div className="min-h-screen pt-[100px] sm:pt-[190px] 2xl:pt-[226px] pb-[30px] sm:pb-[90px] m-auto w-full px-[30px] sm:px-0 sm:max-w-[75%]">
       <div className="mx-auto flex flex-col gap-12">
         
         {/* Top Image w/ Overlayed Card */}

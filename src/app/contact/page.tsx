@@ -97,7 +97,7 @@ export default async function Contact() {
         */}
 
         <div className="grid h-full items-end md:items-start">
-          <div className="max-w-[300px] sm:max-w-[100%] pt-[50px] md:pt-[126px] 2xl:pt-[156px]">
+          <div className="max-w-[100%] pt-[50px] md:pt-[126px] 2xl:pt-[156px]">
             <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px]  font-bold mb-4 text-blue-1 uppercase">{field_contact_1}</h2>
             <div className="space-y-6">
               <div className="grid grid-cols-1 gap-y-1">
@@ -161,8 +161,8 @@ export default async function Contact() {
               </div>
             </div>
           </div>
-          <div className="mt-[50px] grid grid-cols-[320px_1fr] sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] gap-8 max-w-[70%] sm:max-w-[100%]">
-            <div className="sm:max-w-[100%]">
+          <div className="mt-[50px] grid sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] max-w-[100%]">
+            <div className="max-w-[100%]">
               <div className="bg-[#F0F7FF]/70 rounded-tl-[10px] rounded-tr-[60px] p-[25px] sm:p-[50px]">
                 <MessageForm custom_fields={custom_fields} />
               </div>
