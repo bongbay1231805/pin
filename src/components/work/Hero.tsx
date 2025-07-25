@@ -151,7 +151,7 @@ export default function Hero({ data, dataPage }: any) {
               <div className="grid grid-cols-1 md:gap-y-[0px] md:gap-x-[20px]">
                 {
                   secondConnect.map((secondC: any, index: number) => (
-                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : "border-b-[1px]"} border-gray-8 flex items-center py-[24px] sm:py-[0px] gap-[24px]`}>
+                    <div key={index} className={`${index === 0 ? "border-y-[1px]" : index === secondConnect.length - 1 ? "" : "border-b-[1px]"} md:border-b-[1px] border-gray-8 flex items-center py-[24px] sm:py-[0px] gap-[24px]`}>
                       <div className="relative min-w-[60px] w-[60px] min-h-h-[60px] h-[60px] flex items-center justify-center bg-white border-[1px] border-yellow-4 rounded-[7px]" dangerouslySetInnerHTML={{ __html: secondC[0].value }}></div>
                       <h3 className="text-blue-1 font-semibold text-[13px] 2xl:text-[17px]" dangerouslySetInnerHTML={{ __html: secondC[1].value }}></h3>
                     </div>
@@ -165,10 +165,13 @@ export default function Hero({ data, dataPage }: any) {
             {human_resource_14}
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-[63%_1fr] sm:grid-rows-2 gap-[10px] sm:gap-[20px]">
+          <div className="grid grid-cols-1 sm:grid-cols-[63%_1fr] sm:grid-rows-2 gap-[5px] sm:gap-[20px]">
             
             {/* Left Column - Large Block */}
-            <div className="relative sm:row-span-2 w-full aspect-square sm:aspect-auto sm:h-full group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
+            <div className="
+            bg-blue-1 content-evenly duration-500    before:content-[''] before:absolute before:left-0 before:top-0    before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0   bg-gradient-to-t from-blue-dark via-blue-dark-transparent to-transparent before:opacity-80   after:content-[''] after:absolute after:left-0 after:bottom-0   after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]   after:opacity-80 hover:after:opacity-100
+            
+            relative sm:row-span-2 w-full aspect-square sm:aspect-auto sm:h-full group overflow-hidden md:rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100">
               <Image
@@ -186,7 +189,9 @@ export default function Hero({ data, dataPage }: any) {
             </div>
 
             {/* Right Column - Top Block */}
-            <div className="relative w-full aspect-square sm:aspect-auto sm:h-full group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
+            <div className="
+            bg-blue-1 content-evenly duration-500    before:content-[''] before:absolute before:left-0 before:top-0    before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0   bg-gradient-to-t from-blue-dark via-blue-dark-transparent to-transparent before:opacity-80   after:content-[''] after:absolute after:left-0 after:bottom-0   after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]   after:opacity-80 hover:after:opacity-100   
+            relative w-full aspect-square sm:aspect-auto sm:h-full group overflow-hidden md:rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100">
               <Image
@@ -195,7 +200,7 @@ export default function Hero({ data, dataPage }: any) {
                 decoding="async"
                 fill
                 src={`https://admin.pigroup.vn/storage/${human_resource_17}`}
-                className="object-cover w-full h-full rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]"
+                className="object-cover w-full h-full md:rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]"
                 style={{ objectPosition: 'top' }}
               />
               <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">
@@ -204,7 +209,9 @@ export default function Hero({ data, dataPage }: any) {
             </div>
 
             {/* Right Column - Bottom Block */}
-            <div className="relative w-full aspect-square sm:aspect-auto sm:h-full group overflow-hidden rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
+            <div className="
+            bg-blue-1 content-evenly duration-500    before:content-[''] before:absolute before:left-0 before:top-0    before:w-full before:h-full before:duration-1000 before:z-1 before:bg-blue-1/40 hover:before:bg-blue-1/0   bg-gradient-to-t from-blue-dark via-blue-dark-transparent to-transparent before:opacity-80   after:content-[''] after:absolute after:left-0 after:bottom-0   after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]   after:opacity-80 hover:after:opacity-100   
+            relative w-full aspect-square sm:aspect-auto sm:h-full group overflow-hidden md:rounded-[10px] after:content-[''] after:absolute after:left-0 after:bottom-0
               after:w-full after:h-[30%] after:duration-1000 after:z-1 after:bg-[linear-gradient(0deg,_#20446F_0%,_rgba(32,68,111,0)_83.82%)]
               after:opacity-80 hover:after:opacity-100">
               <Image
@@ -213,7 +220,7 @@ export default function Hero({ data, dataPage }: any) {
                 decoding="async"
                 fill
                 src={`https://admin.pigroup.vn/storage/${human_resource_19}`}
-                className="object-cover w-full h-full rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]"
+                className="object-cover w-full h-full md:rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]"
                 style={{ objectPosition: 'top' }}
               />
               <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">

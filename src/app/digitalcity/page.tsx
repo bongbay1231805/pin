@@ -110,7 +110,7 @@ export default async function Digitalcity() {
             </svg>
           </h2>
         </div>
-        <Image fill src={imageSrc} alt="Smart City Features" />
+        <Image fill src={imageSrc} alt="Smart City Features" className="object-cover" />
       </div>
       <Part custom_fields={custom_fields} />
       <Success custom_fields={custom_fields} />
