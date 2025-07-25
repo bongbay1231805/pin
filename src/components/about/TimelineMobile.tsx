@@ -36,13 +36,14 @@ export function TimelineMobile({ custom_fields }: any) {
       loop: false,
       align: 'center',
       skipSnaps: false,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      startIndex: 9
     },
     [autoplay.current]
   );
 
   // Khởi tạo selectedIndex là 0, vì bạn muốn ẩn nút trái khi ở index 0
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(9);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 

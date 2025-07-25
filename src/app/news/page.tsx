@@ -9,7 +9,7 @@ type Props = {
 
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const res = await fetch('https://admin.pigroup.vn/api/pages/news/lang', {
+  const res = await fetch('https://admin.pigroup.vn/api/pages/tin-tuc/lang', {
     cache: 'no-store',
   });
   const { data: post } = await res.json();

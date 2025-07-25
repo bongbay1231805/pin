@@ -36,13 +36,13 @@ export function Timeline({ custom_fields }: any) {
       align: 'center',
       skipSnaps: false, 
       // slidesToScroll: 1,
-      watchDrag: false
+      watchDrag: false,
     },
     [autoplay.current]
   );
 
   // Bắt đầu từ index 1 (năm 2015)
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(8);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
@@ -78,7 +78,7 @@ export function Timeline({ custom_fields }: any) {
     // Cuộn đến index 1 (slide năm 2015) khi component mount
     // Đảm bảo sliderabout có đủ phần tử trước khi cuộn
     if (sliderabout.length > 1) {
-      embla.scrollTo(1, false); // false để cuộn ngay lập tức mà không có animation
+      embla.scrollTo(8, false); // false để cuộn ngay lập tức mà không có animation
     }
 
     const onSelect = () => {
@@ -123,15 +123,16 @@ export function Timeline({ custom_fields }: any) {
     }
   }, []);
 
-  console.log(sliderabout, selectedIndex);
 
   const currentEvent = sliderabout && sliderabout[selectedIndex] ? sliderabout[selectedIndex] : null;
+  console.log('selectedIndex >>> ', selectedIndex)
+  console.log('currentEvent >>> ', currentEvent)
 
   return (
     <div
     >
       <h2 className="text-[22px] sm:text-[28px] 2xl:text-[45px] text-yellow-1 font-bold text-center mb-[0px] sm:mb-12">
-        {field_12_about}
+        {field_12_about} 
       </h2>
 
       <div className="carousel-bg relative h-[360px] 2xl:h-[400px] flex items-center justify-center">
