@@ -37,7 +37,7 @@ export function FooterContact() {
         <div className="bg-gray-4 text-center boxanimation">
           <div className="relative pb-[30px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]">
             <div className='text-center md:text-left order-1 sm:order-0 '>
-              <p className="text-yellow-2/70 pt-[24px] pt-[45px] text-[14px] 2xl:text-[16px] reveal-text fade-in-up-medium">© 2025 Pi Group. All Rights Reserved.</p>
+              <p className="text-yellow-2/70 pt-[24px] sm:pt-[45px] text-[14px] 2xl:text-[16px] reveal-text fade-in-up-medium">© 2025 Pi Group. All Rights Reserved.</p>
             </div>
             <div>
               <Image
