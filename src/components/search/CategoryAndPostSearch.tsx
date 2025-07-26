@@ -65,7 +65,7 @@ const CategoryAndPostSearch: React.FC = () => {
 
   return (
     // Xóa các class định vị tuyệt đối khỏi div này, để cha nó xử lý
-    <div className='flex items-center h-full mt-[5px] sm:mt-[0px]'> {/* Thêm margin-left để cách submenu */}
+    <div className='flex items-center h-full mt-[0px] sm:mt-[0px]'> {/* Thêm margin-left để cách submenu */}
       {/* Button Search SVG (Hiển thị trên Mobile/Tablet, ẩn trên Desktop) */}
       <button
         onClick={handleMobileSearchButtonClick}
