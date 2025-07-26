@@ -459,10 +459,10 @@ export default function SubNavbar(props: PropSub) {
         }
       }
 
-      const firstScrollItem = currentNavItems.find((item): item is NavItemWithRef => 'hrefb' in item);
-      if (newActiveSection === '' && firstScrollItem) {
-        newActiveSection = firstScrollItem.name;
-      }
+      // const firstScrollItem = currentNavItems.find((item): item is NavItemWithRef => 'hrefb' in item);
+      // if (newActiveSection === '' && firstScrollItem) {
+      //   newActiveSection = firstScrollItem.name;
+      // }
 
       if (activeSection !== newActiveSection) {
         setActiveSection(newActiveSection);
