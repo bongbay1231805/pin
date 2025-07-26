@@ -183,7 +183,7 @@ export default function Hero({ data, dataPage }: any) {
                 height="1000"
                 src={`https://admin.pigroup.vn/storage/${human_resource_15}`}
               />
-              <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">
+              <div className="absolute uppercase bottom-[20px] w-full text-center text-[18px] sm:text-[17px] text-white font-bold z-10">
                 {human_resource_16}
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function Hero({ data, dataPage }: any) {
                 className="object-cover w-full h-full md:rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]"
                 style={{ objectPosition: 'top' }}
               />
-              <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">
+              <div className="absolute uppercase bottom-[20px] w-full text-center text-[18px] sm:text-[17px] text-white font-bold z-10">
                 {human_resource_18}
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function Hero({ data, dataPage }: any) {
                 className="object-cover w-full h-full md:rounded-[10px] transition-transform duration-1000 group-hover:scale-[120%]"
                 style={{ objectPosition: 'top' }}
               />
-              <div className="absolute uppercase bottom-[2px] md:bottom-[20px] w-full text-center text-[14px] sm:text-[17px] text-white font-bold z-10">
+              <div className="absolute uppercase bottom-[20px] w-full text-center text-[18px] sm:text-[17px] text-white font-bold z-10">
                 {human_resource_20}
               </div>
             </div>
