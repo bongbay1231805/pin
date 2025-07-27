@@ -161,7 +161,7 @@ export default async function Contact() {
               </div>
             </div>
           </div>
-          <div className="mt-[50px] grid sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] max-w-[100%]">
+          <div className="sm:absolute relative bottom-0 mt-[50px] grid sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] max-w-[100%]">
             <div className="max-w-[100%]">
               <div className="bg-[#F0F7FF]/70 rounded-tl-[10px] rounded-tr-[60px] p-[25px] sm:p-[50px]">
                 <MessageForm custom_fields={custom_fields} />
