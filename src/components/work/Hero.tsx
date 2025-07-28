@@ -365,7 +365,7 @@ export default function Hero({ data, dataPage }: any) {
             {!job.isOpen && (
             <button
               onClick={() => handleOpenPopup(job.position)}
-              className="hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white focus:text-white uppercase"
+              className="hvr-bounce-to-right flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[120px] h-[30px] sm:w-[150px] sm:h-[35px] border border-yellow-1 hover:text-white focus:text-white uppercase"
             >
               {t('HumanResource.apply')}
             </button>
@@ -382,7 +382,7 @@ export default function Hero({ data, dataPage }: any) {
           <div className='flex justify-center py-[20px]'>
             <button
               onClick={() => handleOpenPopup(job.position)}
-              className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
+              className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[120px] h-[30px] sm:w-[150px] sm:h-[35px] border border-yellow-1 hover:text-white  focus:text-white"
             >
               {t('HumanResource.apply')}
             </button>
