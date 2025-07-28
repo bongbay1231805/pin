@@ -412,19 +412,37 @@ export default function SubNavbar(props: PropSub) {
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
-  const scrollTo = (ref: RefObject<HTMLDivElement | null>) => {
+  // const scrollTo = (ref: RefObject<HTMLDivElement | null>) => {
+  //   if (ref.current) {
+  //     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //   }
+  // };
+
+  
+  const scrollTo = (ref: React.RefObject<HTMLDivElement | null>, offset = 110) => {
     if (ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const elementTop = ref.current.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementTop - offset,
+        behavior: 'smooth',
+      });
     }
   };
+
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const scrollThreshold = 100;
+      const scrollingDown = currentScrollY > prevScrollY.current;
+      const scrollingUp = currentScrollY < prevScrollY.current;
 
       if (currentScrollY > scrollThreshold) {
-        setIsFixed(true);
+        if (scrollingDown && !isFixed) {
+          setIsFixed(true);
+        } else if (scrollingUp && isFixed) {
+          setIsFixed(false);
+        }
       } else {
         setIsFixed(false);
       }
