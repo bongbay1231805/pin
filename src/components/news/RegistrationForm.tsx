@@ -97,14 +97,14 @@ export function RegistrationForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[30px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[15px] sm:gap-[30px]">
         <FormField
           control={form.control}
           name="companyName"
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input className="border-gray-9 rounded-none shadow-none" placeholder="Tên Công ty (*)" {...field} />
+                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder="Tên Công ty (*)" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -116,21 +116,21 @@ export function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input className="border-gray-9 rounded-none shadow-none" placeholder="Điện thoại (*)" {...field} />
+                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder="Điện thoại (*)" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[30px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[15px] sm:gap-[30px]">
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input type="email" className="border-gray-9 rounded-none shadow-none" placeholder="Email (*)" {...field} />
+                <Input type="email" className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder="Email (*)" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -142,7 +142,7 @@ export function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input className="border-gray-9 rounded-none shadow-none" placeholder="Nhập mã số thuế" {...field} />
+                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder="Nhập mã số thuế" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -162,9 +162,9 @@ export function RegistrationForm() {
                     onChange={(e) => field.onChange(e.target.files)}
                     accept=".pdf, .pptx, .ppt, .doc, .docx, .zip"
                     multiple={false}
-                    className="absolute inset-0 opacity-0 cursor-pointer z-10" // Ẩn input file mặc định
+                    className="text-[13px] placeholder:text-[13px] absolute inset-0 opacity-0 cursor-pointer z-10" // Ẩn input file mặc định
                   />
-                  <Button type="button" className="border rounded-none text-[#8a8a8a] border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
+                  <Button type="button" className="text-[13px] placeholder:text-[13px] border rounded-none text-[#8a8a8a] border-gray-9 shadow-none w-full justify-start gap-0 mr-0" onClick={handleButtonClick}>
                     {form.watch("companyProfile")?.[0]?.name ? (
                       <>{form.watch("companyProfile")?.[0]?.name}</>
                     ) : (

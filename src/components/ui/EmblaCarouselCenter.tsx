@@ -22,7 +22,7 @@ const EmblaCarouselCenter: React.FC<EmblaCarouselCenterProps> = ({slides}) => {
         opts={{
           align: 'center',
           loop: true,
-          duration: 50,
+          duration: 111150,
           slidesToScroll: 1,
         }}
       >

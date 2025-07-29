@@ -149,7 +149,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input className='border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Họ & tên" {...field} />
+                    <Input className='text-[13px] placeholder:text-[13px] border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Họ & tên" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -161,7 +161,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input className='border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Số điện thoại" {...field} />
+                    <Input className='text-[13px] placeholder:text-[13px] border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Số điện thoại" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -173,7 +173,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input type="email" className='border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Email" {...field} />
+                    <Input type="email" className='text-[13px] placeholder:text-[13px] border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -186,7 +186,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
                 <FormItem>
                   <FormControl>
                     <select
-                      className="custom-select-arrow mt-1 block w-full focus-visible:ring-0! px-3 py-2 border  rounded-md  focus:outline-none border-gray-9 focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none! sm:text-sm"
+                      className="custom-select-arrow mt-1 block w-full focus-visible:ring-0! px-3 py-2 border  rounded-md  focus:outline-none border-gray-9 focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none! text-[13px] placeholder:text-[13px] sm:text-sm"
                       {...field}
                       // disabled={!!selectedPosition} // Vô hiệu hóa nếu đã có selectedPosition
                     >
@@ -215,7 +215,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
                         ref={fileInputRef} // Gán ref vào input ẩn
                         onChange={(e) => field.onChange(e.target.files)} // React Hook Form handles files
                       />
-                      <div className="flex justify-between items-center pl-4 border border-gray-300 rounded-lg bg-gray-50 text-gray-500 text-sm cursor-pointer">
+                      <div className="text-[13px] placeholder:text-[13px] flex justify-between items-center pl-4 border border-gray-300 rounded-lg bg-gray-50 text-gray-500 text-sm cursor-pointer">
                         {cvFileName ? (
                           <span className="text-gray-700 truncate">{cvFileName}</span>
                         ) : (

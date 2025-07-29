@@ -376,7 +376,7 @@ figure.image > figcaption > span {
     @apply w-full px-0;
   }
   .center .sliderstaff h3 {
-    @apply bottom-[10px] 2xl:bottom-[50px] text-[16px];
+    @apply bottom-[10px] 2xl:bottom-[50px] text-[12px] sm:text-[16px];
   }
   .picitycenter {
     @apply origin-left translate-x-[30px];
