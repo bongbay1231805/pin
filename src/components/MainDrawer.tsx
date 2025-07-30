@@ -5,7 +5,7 @@ import { Search, Bell, Calendar, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { cn } from "@/app/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { routeLocales } from "@/routes";
 
@@ -15,7 +15,22 @@ export function MainDrawer() {
   const currentLocale = useLocale();
   const t = useTranslations();
   const [openSubmenus, setOpenSubmenus] = useState<Set<string>>(new Set());
+  const [subCatmenus, setSubCatmenus] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('https://admin.pigroup.vn/api/categories', {
+          cache: 'no-store',
+        });
+        const data = await res.json();
+        console.log('data >>>> ', data)
+        setSubCatmenus(data[currentLocale]);
+      } catch (error) {}
+    };
 
+    fetchData();
+  }, [currentLocale]);
+  console.log('subCatmenus lllll ', subCatmenus)
   const navItems = [
     {
       icon: Search,
@@ -54,19 +69,10 @@ export function MainDrawer() {
       label: t('News.title'),
       description: "Manage your schedule",
       href: routeLocales[currentLocale]['news'],
-      childs: [
-        {
-          label: "Tin thị trường",
-          href: "/the-loai/tin-thi-truong",
-        },
-        {
-          label: "Tin Pi Group",
-          href: "/the-loai/tin-pi-group",
-        },{
-          label: "Tin đấu thầu",
-          href: "/the-loai/tin-dau-thau",
-        }
-      ]
+      childs: subCatmenus.map((item) => ({
+        label: item['name'],
+        href: routeLocales[currentLocale]['categories'] + '/' + item['slug'],
+      }))
     },
     {
       icon: Calendar,

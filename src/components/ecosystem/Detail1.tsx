@@ -96,7 +96,6 @@ export default function Detail1({custom_fields, image}: any) {
   if (!customfields) {
     return <div>Loading...</div>; // Hoặc một fallback UI khác
   }
-  // console.log(customfields);
   return (
     <>
       <div className="relative mx-auto h-[390px] sm:h-[500px] md:h-[100vh] w-[100vw]  text-center pt-[70px] md:pt-[150px]">
@@ -258,7 +257,7 @@ export default function Detail1({custom_fields, image}: any) {
         <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
           <div className="relative h-[265px] sm:h-[388px]">
             <Image
-              src={`https://admin.pigroup.vn/storage/${customfields[1][6].value}`}
+              src={`https://admin.pigroup.vn/storage/${customfields[3][6].value}`}
               alt="Modern city skyline"
               fill
               className="rounded-[10px] object-cover overflow-hidden"
@@ -525,6 +524,144 @@ export default function Detail1({custom_fields, image}: any) {
               fill
               className="rounded-[10px] object-cover overflow-hidden"
             />
+          </div>
+        </div>
+        <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
+          <div className="relative h-[265px] sm:h-[388px]">
+            <Image
+              src={`https://admin.pigroup.vn/storage/${customfields[3][6].value}`}
+              alt="Modern city skyline"
+              fill
+              className="rounded-[10px] object-cover overflow-hidden"
+            />
+          </div>
+          <div className="border-t-1 border-gray-8 sm:mt-[15px] order-1  md:order-0 text-[13px] 2xl:text-[17px]">
+            <h3 className="text-yellow-1 text-[20px] xl:text-[26px] font-bold sm:px-[50px] py-[15px] sm:py-[12px] border-b-1 border-gray-8">
+              {customfields[3][0].value}
+            </h3>
+            <p className="text-gray-6 text-justify sm:px-[50px] py-[20px] sm:py-[16px] border-b-1 border-gray-8">
+              {customfields[3][1].value}
+            </p>
+            <div
+              className={`relative text-gray-6 leading-[24px]  sm:px-[50px] border-gray-8 border-b-1 overflow-hidden transition-all duration-500 ease-in-out`}
+            >
+              <div
+                ref={(el: HTMLDivElement | null) => {
+                  contentRefs.current[PROJECT_KEYS.PICITY_SKY_PARK] = el;
+                }}
+                className="py-[12px] sm:py-[18px] gap-[11px] grid"
+              >
+                <div className="grid gap-[11px]">
+                  {customfields[3][2].value.map((item: any, index: number) => (
+                    <p key={index} className="flex items-center gap-[8px]">
+                      {(() => {
+                        switch (index) {
+                          case 0:
+                            return (
+                              <img
+                                className="min-w-[11px]"
+                                width={11}
+                                height={11}
+                                src="/fecosystem/detail/map.svg"
+                                alt="map"
+                              />
+                            );
+                          case 1:
+                            return (
+                              <img
+                                className="min-w-[11px]"
+                                width={11}
+                                height={11}
+                                src="/fecosystem/detail/area.svg"
+                                alt="area"
+                              />
+                            );
+                          case 2:
+                            return (
+                              <img
+                                className="min-w-[11px]"
+                                width={11}
+                                height={11}
+                                src="/fecosystem/detail/roun-down.svg"
+                                alt="roun-down"
+                              />
+                            );
+                          default:
+                            return (
+                              <img
+                                className="min-w-[11px]"
+                                width={11}
+                                height={11}
+                                src="/fecosystem/detail/map.svg"
+                                alt="map"
+                              />
+                            );
+                        }
+                      })()}
+                      <span className="text-black">{item[0].value}</span>{' '}
+                      {item[1].value}
+                    </p>
+                  ))}
+                </div>
+                <div
+                  className={`hide-info transition-opacity grid gap-[11px] duration-500 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'opacity-100 delay-200' : 'opacity-0'}`}
+                >
+                  {customfields[3][3]?.value?.map(
+                    (item: any, index: number) => (
+                      <p key={index} className="flex items-start gap-x-[11px]">
+                        <img
+                          className="ml-[2px] mt-[8px]"
+                          width={8}
+                          height={8}
+                          src="/fecosystem/detail/circle.svg"
+                        />
+                        <span>
+                          <span className="text-black">{item[0].value}</span>{' '}
+                          {item[1].value}
+                        </span>
+                      </p>
+                    )
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="relative px-0 sm:px-[50px] h-[20px] sm:h-[24px]">
+              <svg
+                onClick={() => toggleVisibility(PROJECT_KEYS.PICITY_SKY_PARK)}
+                className={`absolute rounded-full left-[-2px] sm:left-[48px] top-[-8px] cursor-pointer transition-all duration-300 ease-in-out ${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? 'rotate-180 bg-blue-5' : 'bg-white'}`}
+                width="16"
+                height="16"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="9.5" stroke="#4C73A8" />
+                <path
+                  d="M6 9L9.93461 13.0643L13.9989 9.12974"
+                  stroke={`${openStates[PROJECT_KEYS.PICITY_SKY_PARK] ? '#fff' : '#4C73A8'}`}
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="flex justify-end sm:pr-[36px] sm:pt-[20px]">
+              {customfields?.[1]?.[5]?.value ? (
+                <Link
+                  onClick={handleLinkClick}
+                  href={customfields[3][5].value}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white"
+                >
+                  {customfields[3][4].value}
+                </Link>
+              ) : (
+                <div className="hvr-bounce-to-right flex text-[13px] 2xl:text-[17px] uppercase items-center justify-center text-yellow-1 font-semibold w-[160px] h-[30px] 2xl:w-[210px] border border-yellow-1 hover:text-white">
+                  {customfields?.[1]?.[4]?.value}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
