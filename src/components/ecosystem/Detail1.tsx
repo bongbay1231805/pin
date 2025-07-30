@@ -257,7 +257,7 @@ export default function Detail1({custom_fields, image}: any) {
         <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
           <div className="relative h-[265px] sm:h-[388px]">
             <Image
-              src={`https://admin.pigroup.vn/storage/${customfields[3][6].value}`}
+              src={`https://admin.pigroup.vn/storage/${customfields[1][6].value}`}
               alt="Modern city skyline"
               fill
               className="rounded-[10px] object-cover overflow-hidden"
@@ -526,6 +526,8 @@ export default function Detail1({custom_fields, image}: any) {
             />
           </div>
         </div>
+        
+        {customfields?.[3]?.[6]?.value && (
         <div className="boxanimation fade-in-up-medium grid grid-cols-1 sm:grid-cols-[1fr_46%] gap-[25px] sm:gap-[50px] mb-[50px] mt-[98px] sm:mt-[100px]">
           <div className="relative h-[265px] sm:h-[388px]">
             <Image
@@ -664,6 +666,7 @@ export default function Detail1({custom_fields, image}: any) {
             </div>
           </div>
         </div>
+        )}
       </div>
       <div className="pb-[120px] hidden">{/* <PaginationExample /> */}</div>
     </>
