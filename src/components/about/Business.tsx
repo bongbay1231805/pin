@@ -2,6 +2,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {useEffect, useState, useRef} from 'react';
+import { useSearchParams } from 'next/navigation';
+
+
 type ChildClass = 'child1' | 'child2' | 'child3';
 import {useScrollRefs} from '@/context/ScrollRefsContext';
 export function Business({custom_fields}: any) {
@@ -91,6 +94,23 @@ export function Business({custom_fields}: any) {
     }
     return targetAngle;
   };
+
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    const sParam = searchParams.get('s');
+    if (sParam === '1') {
+      const element = document.getElementById('business-section');
+      if (element) {
+        // Sử dụng setTimeout để đảm bảo component đã mount và render hoàn chỉnh
+        // trước khi cố gắng cuộn. Điều này có thể hữu ích cho các component lớn
+        // hoặc khi có hoạt ảnh/tải dữ liệu sau.
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100); // Có thể điều chỉnh thời gian trễ nếu cần
+      }
+    }
+  }, [searchParams]);
+  
   useEffect(() => {
     // Nếu đang tạm dừng, ta sẽ dọn dẹp interval và không làm gì cả
     if (isPaused) {
@@ -127,7 +147,7 @@ export function Business({custom_fields}: any) {
     };
   }, [isPaused]);
   return (
-    <div
+    <div id="business-section"
       ref={sixRef}
       className="boxanimation fade-in-up-medium mx-auto px-[30px] w-full sm:px-[15px] 2xl:max-w-[85%] sm:max-w-[80%] border-b-1 border-gray-2 items-center pt-[20px] sm:pt-[16px] pb-[88px]"
     >

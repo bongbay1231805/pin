@@ -43,15 +43,15 @@ export function MainDrawer() {
       href: routeLocales[currentLocale]['ecosystem'],
       childs: [
         {
-          label: "Đầu tư & Phát triển dự án",
-          href: "/he-sinh-thai/dau-tu-phat-trien-du-an",
+          label:  t('Submenu.investmentProjectDevelopment'),
+          href: routeLocales[currentLocale]['investmentDevelopment'],
         },
         {
-          label: "Dịch vụ Bất động sản",
-          href: "/he-sinh-thai/dich-vu-bat-dong-san",
+          label: t('Submenu.realEstateServices'),
+          href: routeLocales[currentLocale]['realEstateServices'],
         },{
-          label: "Quản lý & Vận hành",
-          href: "/he-sinh-thai/quan-ly-van-hanh",
+          label: t('Submenu.managementOperations'),
+          href: routeLocales[currentLocale]['managementOperation'],
         }
       ]
     },
