@@ -23,14 +23,12 @@ export function MainDrawer() {
           cache: 'no-store',
         });
         const data = await res.json();
-        console.log('data >>>> ', data)
         setSubCatmenus(data[currentLocale]);
       } catch (error) {}
     };
 
     fetchData();
   }, [currentLocale]);
-  console.log('subCatmenus lllll ', subCatmenus)
   const navItems = [
     {
       icon: Search,

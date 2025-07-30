@@ -433,7 +433,7 @@ export default function SubNavbar(props: PropSub) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollThreshold = 100;
+      const scrollThreshold = 67;
       const scrollingDown = currentScrollY > prevScrollY.current;
       const scrollingUp = currentScrollY < prevScrollY.current;
 
