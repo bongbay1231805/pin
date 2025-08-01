@@ -71,12 +71,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               </Link> } */}
 
               <Link
-                href={slide[3].value}
+                href={slide[3].value || "javascript:void(0);"}
+                target={slide[3].value ? "_blank" : ""}
                 className={`reveal-text flex items-center justify-center transition-all duration-300 ease-in-out    absolute bottom-2 -right-1 w-12 h-12        
                   md:absolute
                   md: text-[13px] md:right-[60px] md:top-1/2 md:-translate-y-1/2 md:flex md:items-center md:border-text-white md:border-[1px] md:justify-center md:text-white md:font-semibold md:w-[138px] md:h-[30px] md:hover:border-yellow-1 md:hover:text-yellow-1
                 `}
-                target="_blank" // Add this attribute
+                // target="_blank" // Add this attribute
                 rel="noopener noreferrer" // Add this attribute for security
               >
                 {/* Chữ này sẽ ẨN trên mobile và HIỆN trên desktop */}
