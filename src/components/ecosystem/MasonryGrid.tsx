@@ -28,9 +28,9 @@ const MasonryGrid = ({custom_fields}: any) => {
   const currentLocale = useLocale();
   const t = useTranslations();
   const ecosystemUrl: any = {
-    ['đau-tu---phat-trien-du-an']: routeLocales[currentLocale]['investmentDevelopment'],
-    ['dich-vu-bat-đong-san']: routeLocales[currentLocale]['realEstateServices'],
-    ['quan-ly---van-hanh']: routeLocales[currentLocale]['managementOperation'],
+    ['dautu']: routeLocales[currentLocale]['investmentDevelopment'],
+    ['dichvu']: routeLocales[currentLocale]['realEstateServices'],
+    ['quanly']: routeLocales[currentLocale]['managementOperation'],
   };
   const customfields = convertJsonStringToArrayOrObject(custom_fields);
   // Sử dụng hook để xác định kích thước màn hình
@@ -241,9 +241,9 @@ const MasonryGrid = ({custom_fields}: any) => {
                     {item[0].value}
                   </h3>
                 )}
-                {item[0].value && item[1].value !== '' && (
+                {item[3].value && item[1].value !== '' && (
                    // <Link href={ecosystemUrl[item[1].value]}> 
-                  <Link href={ecosystemUrl[removeVietnameseSignsAndConcat(item[0].value)]}>
+                  <Link href={ecosystemUrl[item[3].value]}>
                     <div
                       className={`absolute inset-0 bg-white flex items-center  ${index === 3 ? 'justify-end xl:pl-[100px]' : 'justify-center xl:pr-[100px]'} duration-300`}
                     >

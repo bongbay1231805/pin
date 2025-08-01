@@ -30,9 +30,9 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
   });
   const currentLocale = useLocale();
   const ecosystemUrl: any = {
-    ['đau-tu---phat-trien-du-an']: routeLocales[currentLocale]['investmentDevelopment'],
-    ['dich-vu-bat-đong-san']: routeLocales[currentLocale]['realEstateServices'],
-    ['quan-ly---van-hanh']: routeLocales[currentLocale]['managementOperation'],
+    ['dautu']: routeLocales[currentLocale]['investmentDevelopment'],
+    ['dichvu']: routeLocales[currentLocale]['realEstateServices'],
+    ['quanly']: routeLocales[currentLocale]['managementOperation'],
   };
 
   // --- THAY ĐỔI 2: Thêm state để biết slide nào đang active ---
@@ -59,7 +59,7 @@ export const MobileProjectCarousel: React.FC<MobileProjectCarouselProps> = ({
     <div className="mb-10">
       {/* Phần Header: Giữ nguyên */}
       {headerItem && (
-        <Link href={ecosystemUrl[removeVietnameseSignsAndConcat(headerItem[0]?.value)]}>  
+        <Link href={ecosystemUrl[headerItem[3]?.value]}>  
           <div className="ml-4 mb-4 px-4 text-justify">
             <h3 className="text-[19px] font-semibold text-blue-1 uppercase">
               {headerItem[0]?.value}
