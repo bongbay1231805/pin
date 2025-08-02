@@ -10,7 +10,7 @@ export const routeLocales = {
     'realEstateServices': '/he-sinh-thai/dich-vu-bat-dong-san',
     'managementOperation': '/he-sinh-thai/quan-ly-van-hanh',
     'search': '/tim-kiem',
-    'categories': '/the-loai'
+    'categories': '/tin-tuc'
   },
   'en': {
     'about': '/about',
@@ -23,6 +23,6 @@ export const routeLocales = {
     'realEstateServices': '/ecosystem/real-estate-services',
     'managementOperation': '/ecosystem/management-operation',
     'search': '/search',
-    'categories': '/categories'
+    'categories': '/news'
   }
 }
