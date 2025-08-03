@@ -42,7 +42,9 @@
     "Quantity": "Quantity"
   },
   "Contact": {
-    "title": "Contact"
+    "title": "Contact",
+    "headOffice": "Head Office",
+    "office": "Office"
   },
   "Submenu": {
     "brandPositioning": "Brand positioning",

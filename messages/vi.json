@@ -42,7 +42,9 @@
     "Quantity": "Số lượng"
   },
   "Contact": {
-    "title": "Liên Hệ"
+    "title": "Liên Hệ",
+    "headOffice": "Trụ sở chính",
+    "office": "Văn phòng"
   },
   "Submenu": {
     "brandPositioning": "Định vị thương hiệu",

@@ -5,6 +5,7 @@ import styles from './footer.module.css';
 import { routeLocales } from '@/routes';
 import { useLocale, useTranslations } from 'next-intl';
 import {useEffect, useState} from 'react';
+import { LANGUAGE } from '@/config';
 export function Footer() {
   const handleClick = () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
@@ -20,6 +21,7 @@ export function Footer() {
         const res = await fetch('https://admin.pigroup.vn/api/settings'); // Replace with your API endpoint
         const data = await res.json();
         setContactConfig(data?.contact);
+        console.log('data ', data)
         const social = JSON.parse(data?.social?.[0]?.value);
         const facebook = social[0].find((item:any) => item.key === 'url').value;
         const youtube = social[1].find((item:any) => item.key === 'url').value;
@@ -84,7 +86,7 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p dangerouslySetInnerHTML={{ __html: contactConfig?.[contactConfig?.length - 4]?.value }}>
+                  <p dangerouslySetInnerHTML={{ __html: currentLocale === LANGUAGE.en ? contactConfig?.[contactConfig?.length - 4]?.value : contactConfig?.[0]?.value }}>
                   </p>
                 </li>
                 <li className="flex items-start">
@@ -115,7 +117,7 @@ export function Footer() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p dangerouslySetInnerHTML={{ __html: contactConfig?.[contactConfig?.length - 3]?.value }}>
+                  <p dangerouslySetInnerHTML={{ __html: currentLocale === LANGUAGE.en ? contactConfig?.[contactConfig?.length - 3]?.value : contactConfig?.[1]?.value }}>
                   </p>
                 </li>
                 <li className="flex items-center">

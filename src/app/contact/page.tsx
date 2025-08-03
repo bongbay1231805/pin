@@ -3,7 +3,7 @@ import { MessageForm } from "@/components/contact/MessageForm";
 import Image from "next/image";
 import { Metadata } from 'next';
 import {getUserLocale} from '@/db';
-import {useLocale} from 'next-intl';
+import { getTranslations } from "next-intl/server";
 
 // export const metadata: Metadata = {
 //   title: 'Liên hệ',
@@ -54,7 +54,7 @@ export default async function Contact() {
   const currentLocale = await getUserLocale();
   const { custom_fields } = data[currentLocale];
   const { field_contact_1, field_contact_3, field_contact_5, field_contact_7, field_contact_13 } = custom_fields;
-
+  const t = await getTranslations();
   return (
     // Điều chỉnh lớp after: để nó chỉ áp dụng cho phần nội dung hoặc chỉ trên desktop
     // Loại bỏ after:opacity-60 khỏi div cha nếu bạn muốn hình ảnh không bị mờ
@@ -114,7 +114,7 @@ export default async function Contact() {
                   />
 
                   <div>
-                    <p className="font-normal max-w-[350px] md:max-w-none"><span className="font-semibold">Trụ sở chính:</span>&nbsp;{field_contact_13}</p>
+                    <p className="font-normal max-w-[350px] md:max-w-none"><span className="font-semibold">{t('Contact.headOffice')}:</span>&nbsp;{field_contact_13}</p>
                   </div>
                 </div>
                 <div className="flex text-blue-1 text-[15px] 2xl:text-[17px] items-start md:items-center">
@@ -130,7 +130,7 @@ export default async function Contact() {
                   />
 
                   <div>
-                    <p className="font-normal max-w-[350px] md:max-w-none"><span className="font-semibold">Văn phòng:</span>&nbsp;{field_contact_3}</p>
+                    <p className="font-normal max-w-[350px] md:max-w-none"><span className="font-semibold">{t('Contact.office')}:</span>&nbsp;{field_contact_3}</p>
                   </div>
                 </div>
                 <div className="flex text-blue-1 text-[15px] 2xl:text-[17px]">
