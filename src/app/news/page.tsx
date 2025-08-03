@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function NewsPage() {
   const currentPage = 1;
-  const res = await fetch(`https://admin.pigroup.vn/api/posts?page=${currentPage}`, {
+  const res = await fetch(`https://admin.pigroup.vn/api/posts?page=${currentPage}&filter=1`, {
     cache: 'no-store',
   });
   const json = await res.json();
