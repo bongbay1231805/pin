@@ -1,4 +1,4 @@
-import Ecosystem, {metadata} from '../ecosystem/page';
+import Ecosystem, {generateMetadata} from '../ecosystem/page';
 
-export {metadata};
+export {generateMetadata};
 export default Ecosystem;

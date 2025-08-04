@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
     };
   }
   const {category} = await res.json();
-  
+  console.log('category >>> ', category)
   return {
     title: category.name,
     description: category.description || `Các bài viết thuộc chuyên mục ${category.name}`,

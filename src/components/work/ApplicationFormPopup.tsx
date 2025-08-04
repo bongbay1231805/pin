@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input"; // Đảm bảo bạn có component Input
 import { Button } from "@/components/ui/button"; // Đảm bảo bạn có component Button
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 // import { cn } from "@/lib/utils"; // Nếu bạn cần utility class cho styling
 interface ApplicationFormPopupProps {
   isOpen: boolean; // Trạng thái đóng/mở popup
@@ -28,40 +29,43 @@ const ALLOWED_FILE_TYPES_MIME = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .docx
   'application/zip',
 ];
-const registerFormSchema = z.object({
+
+
+const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onClose, selectedPosition, allJobData }) => {
+  const t = useTranslations();
+  const registerFormSchema = z.object({
   fullName: z.string().min(2, {
-    message: "Họ và tên phải có ít nhất 2 ký tự.",
+    message: t('ERROR.fullName'),
   }),
   phone: z
     .string()
     .min(10, { message: "Số điện thoại phải có ít nhất 10 số." })
     .regex(/^(\+?84|0)(3|5|7|8|9)\d{8}$/, {
-      message: "Số điện thoại không hợp lệ.",
+      message: t('ERROR.phone'),
     }),
   email: z.string().email({
-    message: "Địa chỉ email không hợp lệ.",
+    message: t('ERROR.email'),
   }),
-  position: z.string().min(1, { message: "Vui lòng chọn vị trí ứng tuyển." }), // Bắt buộc chọn vị trí
+  position: z.string().min(1, { message: t('ERROR.jobPosition'), }), // Bắt buộc chọn vị trí
   cvFile: z
     .any()
-    .refine((files) => files?.length > 0, "Vui lòng đính kèm CV.")
+    .refine((files) => files?.length > 0, t('ERROR.attach'))
     .refine(
       (files) => {
         if (!files?.length) return true; // Cho phép bỏ qua nếu không có file
         return Array.from(files).every((file) => (file as File).size <= MAX_FILE_SIZE_MB * 1024 * 1024);
       },
-      `Kích thước file không được vượt quá ${MAX_FILE_SIZE_MB}MB.`
+      t('ERROR.filesize') + `${MAX_FILE_SIZE_MB}MB.`
     )
     .refine(
       (files) => {
         if (!files?.length) return true; // Cho phép bỏ qua nếu không có file
         return Array.from(files).every((file) => ALLOWED_FILE_TYPES_MIME.includes((file as File).type));
       },
-      'Chỉ cho phép file PDF, DOCX, hoặc ZIP.'
+      t('ERROR.fileType')
     ),
 });
 type RegisterFormValues = z.infer<typeof registerFormSchema>;
-const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onClose, selectedPosition, allJobData }) => {
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
@@ -138,8 +142,8 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
           </button>
         </div>
         <div className="mb-4">
-          <h3 className="text-[20px] md:text-[25px] uppercase text-blue-1">Nộp Hồ Sơ</h3>
-          <h2 className='uppercase md:text-[40px] text-[35px] text-yellow-1 font-bold'>ứng tuyển</h2>
+          <h3 className="text-[20px] md:text-[25px] uppercase text-blue-1">{t('HumanResource.submitJob')}</h3>
+          <h2 className='uppercase md:text-[40px] text-[35px] text-yellow-1 font-bold'>{t('HumanResource.application')}</h2>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -149,7 +153,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input className='text-[13px] placeholder:text-[13px] border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Họ & tên" {...field} />
+                    <Input className='text-[13px] placeholder:text-[13px] border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder={t('HumanResource.fullName')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -161,7 +165,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input className='text-[13px] placeholder:text-[13px] border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder="Số điện thoại" {...field} />
+                    <Input className='text-[13px] placeholder:text-[13px] border-gray-9 focus-visible:ring-0! focus:border-gray-9! active:border-gray-9! focus-visible:border-gray-9! focus-visible:shadow-none! shadow-none!' placeholder={t('HumanResource.phoneNumber')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -190,7 +194,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
                       {...field}
                       // disabled={!!selectedPosition} // Vô hiệu hóa nếu đã có selectedPosition
                     >
-                      <option value="" disabled>-- Chọn vị trí --</option>
+                      <option value="" disabled>-- {t('HumanResource.selectPosition')} --</option>
                       {availablePositions.map((pos, index) => (
                         <option key={index} value={pos as string}>{pos as string}</option>
                       ))}
@@ -231,7 +235,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
                   </FormControl>
                   {watchedCvFile?.[0]?.size && (
                     <p className="mt-1 text-sm text-gray-500">
-                      Kích thước: {(watchedCvFile[0].size / 1024 / 1024).toFixed(2)} MB
+                      {t('HumanResource.fileSize')}: {(watchedCvFile[0].size / 1024 / 1024).toFixed(2)} MB
                     </p>
                   )}
                   <FormMessage />
@@ -249,7 +253,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
                 className="hover:cursor-pointer hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white focus:text-white"
                 disabled={form.formState.isSubmitting} // Vô hiệu hóa nút khi đang gửi
               >
-                {form.formState.isSubmitting ? 'Đang gửi...' : 'Nộp hồ sơ'}
+                {form.formState.isSubmitting ? t('HumanResource.submitting')+'...' : t('HumanResource.submitApplication')}
               </button>
             </div>
           </form>

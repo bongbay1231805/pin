@@ -5,6 +5,7 @@ const heavyImage = "https://admin.pigroup.vn/storage/pi-group-corp-video.mp4";
 // import lightImage from "../../../public/fhome/herocity.jpg";
 // const heavyImage = "https://admin.pigroup.vn/storage/home.gif";
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 type HeroProps = {
   onScrollToDigitalCity: () => void;
 };
@@ -16,6 +17,7 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
     }, 2500);
   }, []);
   const videoId = "0EJIjmIt7Bc";
+  const t = useTranslations();
   return (
     <>
       <div
@@ -78,7 +80,7 @@ export default function HomeHero({ onScrollToDigitalCity }: HeroProps) {
           width={16}
           height={30}
         />
-        <span>cuộn xuống</span>
+        <span>{t('Global.scrollDown')}</span>
       </div>
     </>
   )

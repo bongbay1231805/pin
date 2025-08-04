@@ -39,7 +39,18 @@
   "HumanResource": {
     "title": "Phát Triển Nhân Lực",
     "apply": "Ứng tuyển",
-    "Quantity": "Số lượng"
+    "Quantity": "Số lượng",
+    "submitJob": "Nộp hồ sơ",
+    "application": "ỨNG TUYỂN",
+    "fullName": "Họ & tên",
+    "phoneNumber": "Số điện thoại ",
+    "selectPosition": "Chọn vị trí",
+    "submitApplication": "Nộp hồ sơ",
+    "submitting": "Đang gửi",
+    "applicationBeingSubmitted": "Hồ sơ đang được gửi",
+    "submitted successfully": "Gửi thông tin thành công!",
+    "applicationSubmittedSuccessfully.": "Ứng tuyển thành công. Cám ơn bạn!",
+    "fileSize": "Kích thước"
   },
   "Contact": {
     "title": "Liên Hệ",
@@ -76,6 +87,16 @@
     "piGroupCorporation": "TẬP ĐOÀN PI GROUP"
   },
   "Global": {
-    "seeMore": "XEM THÊM"
+    "seeMore": "XEM THÊM",
+    "scrollDown": "cuộn xuống"
+  },
+  "ERROR": {
+    "fullName": "Họ và tên phải có ít nhất 2 ký tự.",
+    "phone": "Số điện thoại không hợp lệ.",
+    "email": "Địa chỉ email không hợp lệ.",
+    "jobPosition": "Vui lòng chọn vị trí ứng tuyển.",
+    "attach": "Vui lòng đính kèm CV.",
+    "filesize": "Kích thước file không được vượt quá ",
+    "fileType": "Chỉ cho phép file PDF, DOCX, hoặc ZIP."
   }
 }

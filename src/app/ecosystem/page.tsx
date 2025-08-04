@@ -1,10 +1,17 @@
 import MasonryGrid from "@/components/ecosystem/MasonryGrid";
 import { Metadata } from 'next';
 import {getUserLocale} from '@/db';
-export const metadata: Metadata = {
-  title: 'Hệ sinh thái',
-  description: 'Hệ sinh thái',
-};
+import {getTranslations} from 'next-intl/server';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations();
+
+  return {
+    title: t('Ecosystem.title'),
+    description: t('Ecosystem.title')
+  };
+}
+
 export default async function Ecosystem() {
   const res = await fetch('https://admin.pigroup.vn/api/pages/he-sinh-thai/lang', {
     cache: 'no-store',

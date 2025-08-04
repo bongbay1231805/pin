@@ -39,7 +39,18 @@
   "HumanResource": {
     "title": "Human Resource",
     "apply": "Apply",
-    "Quantity": "Quantity"
+    "Quantity": "Quantity",
+    "submitJob": "Submit Job",
+    "application": "Application",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "selectPosition": "Select Position",
+    "submitApplication": "Submit",
+    "submitting": "Submitting",
+    "applicationBeingSubmitted": "Application is being submitted",
+    "submitted successfully": "Information submitted successfully!",
+    "applicationSubmittedSuccessfully.": "Application submitted successfully. Thank you!",
+    "fileSize": "File Size"
   },
   "Contact": {
     "title": "Contact",
@@ -47,13 +58,13 @@
     "office": "Office"
   },
   "Submenu": {
-    "brandPositioning": "Brand positioning",
-    "impressiveFigures": "Impressive figures",
-    "historyOfEstablishment": "History of establishment",
-    "businessPhilosophy": "Business philosophy",
-    "visionMission": "Vision - Mission",
-    "corporateCulture": "Corporate culture",
-    "capabilityProfile": "Capability profile",
+    "brandPositioning": "Brand Positioning",
+    "impressiveFigures": "Remarkable Numbers",
+    "historyOfEstablishment": "Development History",
+    "businessPhilosophy": "Business Philosophy",
+    "visionMission": "Vision & Mission",
+    "corporateCulture": "Corporate Culture",
+    "capabilityProfile": "Company Profile",
     "marketNews": "Market news",
     "piGroupNews": "Pi Group news",
     "biddingNews": "Bidding news",
@@ -64,18 +75,28 @@
     "benefitsTraining": "Benefits & Training",
     "recruitmentForm": "Recruitment form",
     "jobOpenings": "Job openings",
-    "picityDigitalCity": "Picity - Digital city",
-    "technology4_0": "4.0 technology",
-    "exclusivePicityApp": "Exclusive Pi Care App",
-    "fiveStarAmenities": "5★ amenities",
-    "managementServices": "Management services",
-    "superiorValue": "Superior value",
-    "successfulProjects": "Successful projects"
+    "picityDigitalCity": "Picity - lot City",
+    "technology4_0": "Industry 4.0",
+    "exclusivePicityApp": "The Exclusive Pi Care App",
+    "fiveStarAmenities": "A 5-Star Amenities",
+    "managementServices": "Management service",
+    "superiorValue": "Exceptional Value",
+    "successfulProjects": "Successful Project"
   },
   "Footer": {
     "piGroupCorporation": "PI GROUP CORPORATION"
   },
   "Global": {
-    "seeMore": "SEE MORE"
+    "seeMore": "SEE MORE",
+    "scrollDown": "scroll down"
+  },
+  "ERROR": {
+    "fullName": "Full name must have at least 2 characters.",
+    "phone": "Invalid phone number.",
+    "email": "Invalid email address.",
+    "jobPosition": "Please select a position to apply for.",
+    "attach": "Please attach your CV.",
+    "filesize": "File size must not exceed",
+    "fileType": "Only PDF, DOCX, or ZIP files are allowed."
   }
 }
