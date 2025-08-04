@@ -93,10 +93,14 @@
   "ERROR": {
     "fullName": "Full name must have at least 2 characters.",
     "phone": "Invalid phone number.",
+    "phone10": "Invalid phone number is 10",
     "email": "Invalid email address.",
     "jobPosition": "Please select a position to apply for.",
     "attach": "Please attach your CV.",
     "filesize": "File size must not exceed",
-    "fileType": "Only PDF, DOCX, or ZIP files are allowed."
+    "fileType": "Only PDF, DOCX, or ZIP files are allowed.",
+    "sending": "Application Form is sending...",
+    "applySuccess": "Apply successfully. Thank you!",
+    "applyFailure": "Apply failure. Try again!"
   }
 }

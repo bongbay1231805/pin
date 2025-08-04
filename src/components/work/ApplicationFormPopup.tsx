@@ -39,7 +39,7 @@ const ApplicationFormPopup: React.FC<ApplicationFormPopupProps> = ({ isOpen, onC
   }),
   phone: z
     .string()
-    .min(10, { message: "Số điện thoại phải có ít nhất 10 số." })
+    .min(10, { message: t('ERROR.phone10') })
     .regex(/^(\+?84|0)(3|5|7|8|9)\d{8}$/, {
       message: t('ERROR.phone'),
     }),
@@ -86,7 +86,7 @@ type RegisterFormValues = z.infer<typeof registerFormSchema>;
     fileInputRef.current?.click();
   };
   const onSubmit = async (values: RegisterFormValues) => {
-    setSubmissionStatus('Hồ sơ đang được gửi...');
+    setSubmissionStatus(t('ERROR.sending'));
     try {
       const formData = new FormData();
       formData.append("yourName", values.fullName);
@@ -106,17 +106,17 @@ type RegisterFormValues = z.infer<typeof registerFormSchema>;
       const data = await response.json();
       if (response.ok) {
         console.log("API response:", data);
-        setSubmissionStatus("Gửi thông tin thành công!");
+        setSubmissionStatus(t('ERROR.applySuccess'));
         form.reset(); // Reset form sau khi gửi thành công
         onClose(); // Đóng popup
-        alert("Ứng tuyển thành công. Cám ơn bạn!")
+        alert(t('ERROR.applySuccess'))
       } else {
         console.error("API error:", response.status, response.statusText, data);
-        setSubmissionStatus(`Lỗi: ${data.message || 'Không thể gửi dữ liệu.'}`);
+        setSubmissionStatus(`${data.message || 'API error'}`);
       }
     } catch (error) {
       console.error("Lỗi khi gửi form:", error);
-      setSubmissionStatus("Đã xảy ra lỗi khi gửi form. Vui lòng thử lại.");
+      setSubmissionStatus(t('ERROR.applyFailure'));
     }
   };
   if (!isOpen) return null; // Không render gì nếu popup đóng

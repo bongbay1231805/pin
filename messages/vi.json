@@ -93,10 +93,15 @@
   "ERROR": {
     "fullName": "Họ và tên phải có ít nhất 2 ký tự.",
     "phone": "Số điện thoại không hợp lệ.",
+    "phone10": "Số điện thoại phải có ít nhất 10 số.",
     "email": "Địa chỉ email không hợp lệ.",
     "jobPosition": "Vui lòng chọn vị trí ứng tuyển.",
     "attach": "Vui lòng đính kèm CV.",
     "filesize": "Kích thước file không được vượt quá ",
-    "fileType": "Chỉ cho phép file PDF, DOCX, hoặc ZIP."
+    "fileType": "Chỉ cho phép file PDF, DOCX, hoặc ZIP.",
+    "sending": "Hồ sơ đang được gửi...",
+    "applySuccess": "Ứng tuyển thành công. Cám ơn bạn!",
+    "applyFailure": "Đã xảy ra lỗi khi gửi form. Vui lòng thử lại."
+
   }
 }
