@@ -92,6 +92,7 @@
   },
   "ERROR": {
     "fullName": "Full name must have at least 2 characters.",
+    "cfullName": "Company name must have at least 2 characters.",
     "phone": "Invalid phone number.",
     "phone10": "Invalid phone number is 10",
     "email": "Invalid email address.",
@@ -101,8 +102,17 @@
     "fileType": "Only PDF, DOCX, or ZIP files are allowed.",
     "sending": "Application Form is sending...",
     "applySuccess": "Apply successfully. Thank you!",
-    "applyFailure": "Apply failure. Try again!",
-    "contactSuccess": "Send contact successfully!",
-    "contactFailure": "Send contact failure. Try again."
+    "applyFailure": "Apply failure. Try again",
+    "contactSuccess": "Send contact successfully. Thank you!",
+    "contactFailure": "Send contact failure. Try again.",
+    "bidSuccess": "The bid registration form has been sent successfully. Thank you!",
+    "bidFailure": "The bid registration form has been sent failure. Try again."
+  },
+  "BID": {
+    "companyName": "Company Name (*)",
+    "phone": "Phone (*)",
+    "tax": "Tax number",
+    "profile": "Profile",
+    "sending": "Register"
   }
 }

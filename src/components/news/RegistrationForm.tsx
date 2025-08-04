@@ -15,39 +15,44 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/components/lib/utils"; 
+import { useTranslations } from 'next-intl';
 // Định nghĩa schema validation với Zod
-const registerFormSchema = z.object({
-  companyName: z.string().min(2, {
-    message: "Tên công ty phải có ít nhất 2 ký tự.",
-  }),
-  phone: z
-    .string()
-    .min(10, { message: "Số điện thoại phải có ít nhất 10 số." })
-    .regex(/^(\+?84|0)(3|5|7|8|9)\d{8}$/, {
-      message: "Số điện thoại không hợp lệ.",
-    }),
-  email: z.string().email({
-    message: "Địa chỉ email không hợp lệ.",
-  }),
-  taxCode: z.string().optional(),
-  companyProfile: z
-    .any()
-    .refine((files) => files?.length > 0, "Vui lòng tải lên profile công ty.")
-    .refine(
-      (files) => {
-        if (!files?.length) return true;
-        const allowedTypes = ["application/pdf", "application/vnd.ms-powerpoint", "application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/msword", "application/zip", "application/x-zip-compressed"];
-        return Array.from(files).every((file) => allowedTypes.includes((file as File).type));
-      },
-      "Chỉ chấp nhận file PDF, PPTX, DOC, ZIP."
-    )
-    .refine((files) => {
-      if (!files?.length) return true;
-      return Array.from(files).every((file) => (file as File).size <= 5 * 1024 * 1024); // Giới hạn 5MB
-    }, "Kích thước file tối đa là 5MB."),
-});
+
 type RegisterFormValues = z.infer<typeof registerFormSchema>;
 export function RegistrationForm() {
+  const t = useTranslations();
+
+  const registerFormSchema = z.object({
+    companyName: z.string().min(2, {
+      message: t('ERROR.cfullName'),
+    }),
+    phone: z
+      .string()
+      .min(10, { message: t('ERROR.phone10') })
+      .regex(/^(\+?84|0)(3|5|7|8|9)\d{8}$/, {
+        message: t('ERROR.phone'),
+      }),
+    email: z.string().email({
+      message: t('ERROR.email'),
+    }),
+    taxCode: z.string().optional(),
+    companyProfile: z
+      .any()
+      .refine((files) => files?.length > 0, t('ERROR.attach'))
+      .refine(
+        (files) => {
+          if (!files?.length) return true;
+          const allowedTypes = ["application/pdf", "application/vnd.ms-powerpoint", "application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/msword", "application/zip", "application/x-zip-compressed"];
+          return Array.from(files).every((file) => allowedTypes.includes((file as File).type));
+        },
+        t('ERROR.fileType')
+      )
+      .refine((files) => {
+        if (!files?.length) return true;
+        return Array.from(files).every((file) => (file as File).size <= 5 * 1024 * 1024); // Giới hạn 5MB
+      }, t('ERROR.filesize') + `5MB.`),
+  });
+
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
@@ -84,14 +89,14 @@ export function RegistrationForm() {
       });
       const result = await response.json();
       if (response.ok) {
-        alert("Hồ sơ đăng ký dự thầu được gởi thành công. Cám ơn Quý công ty!");
+        alert(t('ERROR.bidSuccess'));
         form.reset(); // Reset form sau khi gửi thành công
       } else {
-        alert(`Lỗi: ${result.message || 'Không thể gửi dữ liệu.'}`);
+        alert(`Error: ${result.message}`);
       }
     } catch (error) {
       console.error("Lỗi khi gửi form:", error);
-      alert("Đã xảy ra lỗi khi gửi form. Vui lòng thử lại.");
+      alert(t('ERROR.bidFailure'));
     }
   }
   return (
@@ -104,7 +109,7 @@ export function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder="Tên Công ty (*)" {...field} />
+                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder={t('BID.companyName')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -116,7 +121,7 @@ export function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder="Điện thoại (*)" {...field} />
+                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder={t('BID.phone')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -142,7 +147,7 @@ export function RegistrationForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder="Nhập mã số thuế" {...field} />
+                <Input className="text-[13px] placeholder:text-[13px] border-gray-9 rounded-none shadow-none" placeholder={t('BID.tax')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -168,12 +173,12 @@ export function RegistrationForm() {
                     {form.watch("companyProfile")?.[0]?.name ? (
                       <>{form.watch("companyProfile")?.[0]?.name}</>
                     ) : (
-                      <>Profile công ty (file pdf, .pptx, .doc, .docx .zip)</>
+                      <>{t('BID.profile')} (file pdf, .pptx, .doc, .docx .zip)</>
                     )}
                   </Button>
                   {form.watch("companyProfile")?.[0]?.size && (
                     <div className="text-sm text-muted-foreground absolute right-[0px] bottom-[-25px]">
-                      Kích thước: {(form.watch("companyProfile")[0].size/ 1024 / 1024).toFixed(2)} MB
+                      Size: {(form.watch("companyProfile")[0].size/ 1024 / 1024).toFixed(2)} MB
                     </div>
                   )}
                 </div>
@@ -184,7 +189,7 @@ export function RegistrationForm() {
           )}
         />
         <div className="flex justify-center">
-          <Button type="submit" className="mt-[5px] cursor-pointer border hvr-bounce-to-right rounded-none w-[132] h-[38] justify-center items-center text-[15px] font-semibold uppercase text-yellow-1 hover:text-white hover:border-yellow-1 hover:bg-yellow-1  focus:text-white">Đăng ký</Button>
+          <Button type="submit" className="mt-[5px] cursor-pointer border hvr-bounce-to-right rounded-none w-[132] h-[38] justify-center items-center text-[15px] font-semibold uppercase text-yellow-1 hover:text-white hover:border-yellow-1 hover:bg-yellow-1  focus:text-white">{t('BID.sending')}</Button>
         </div>
       </form>
     </Form>

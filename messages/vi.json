@@ -92,6 +92,7 @@
   },
   "ERROR": {
     "fullName": "Họ và tên phải có ít nhất 2 ký tự.",
+    "cfullName": "Tên công ty phải có ít nhất 2 ký tự.",
     "phone": "Số điện thoại không hợp lệ.",
     "phone10": "Số điện thoại phải có ít nhất 10 số.",
     "email": "Địa chỉ email không hợp lệ.",
@@ -103,7 +104,15 @@
     "applySuccess": "Ứng tuyển thành công. Cám ơn bạn!",
     "applyFailure": "Đã xảy ra lỗi khi gửi form. Vui lòng thử lại.",
     "contactSuccess": "Gửi thông tin thành công!",
-    "contactFailure": "Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại."
-
+    "contactFailure": "Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại.",
+    "bidSuccess": "Hồ sơ đăng ký dự thầu được gởi thành công. Cám ơn Quý công ty!",
+    "bidFailure": "Đã xảy ra lỗi khi gửi form. Vui lòng thử lại."
+  },
+  "BID": {
+    "companyName": "Tên Công ty (*)",
+    "phone": "Điện thoại (*)",
+    "tax": "Mã số thuế",
+    "profile": "Hồ sơ",
+    "sending": "Đăng ký"
   }
 }
