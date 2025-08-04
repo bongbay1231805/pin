@@ -18,7 +18,7 @@ import { cn } from "@/components/lib/utils";
 import { useTranslations } from 'next-intl';
 // Định nghĩa schema validation với Zod
 
-type RegisterFormValues = z.infer<typeof registerFormSchema>;
+
 export function RegistrationForm() {
   const t = useTranslations();
 
@@ -52,6 +52,8 @@ export function RegistrationForm() {
         return Array.from(files).every((file) => (file as File).size <= 5 * 1024 * 1024); // Giới hạn 5MB
       }, t('ERROR.filesize') + `5MB.`),
   });
+
+  type RegisterFormValues = z.infer<typeof registerFormSchema>;
 
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerFormSchema),

@@ -20,7 +20,7 @@ import { useTranslations } from 'next-intl';
 // Định nghĩa schema validation với Zod
 
 
-type RegisterFormValues = z.infer<typeof registerFormSchema>;
+
 export function MessageForm({custom_fields}:any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
 
@@ -40,6 +40,8 @@ export function MessageForm({custom_fields}:any) {
     }),
     content: z.string().optional()
   });
+
+  type RegisterFormValues = z.infer<typeof registerFormSchema>;
 
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
