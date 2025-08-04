@@ -16,25 +16,31 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useTranslations } from 'next-intl';
 // Định nghĩa schema validation với Zod
-const registerFormSchema = z.object({
-  yourName: z.string().min(2, {
-    message: "Tên công ty phải có ít nhất 2 ký tự.",
-  }),
-  phone: z
-    .string()
-    .min(10, { message: "Số điện thoại phải có ít nhất 10 số." })
-    .regex(/^(\+?84|0)(3|5|7|8|9)\d{8}$/, {
-      message: "Số điện thoại không hợp lệ.",
-    }),
-  email: z.string().email({
-    message: "Địa chỉ email không hợp lệ.",
-  }),
-  content: z.string().optional()
-});
+
+
 type RegisterFormValues = z.infer<typeof registerFormSchema>;
 export function MessageForm({custom_fields}:any) {
   useScrollReveal(); // dùng mặc định `.boxanimation`
+
+  const t = useTranslations();
+  const registerFormSchema = z.object({
+    yourName: z.string().min(2, {
+      message: t('ERROR.fullName'),
+    }),
+    phone: z
+      .string()
+      .min(10, { message: t('ERROR.phone10') })
+      .regex(/^(\+?84|0)(3|5|7|8|9)\d{8}$/, {
+        message: t('ERROR.phone'),
+      }),
+    email: z.string().email({
+      message: t('ERROR.email'),
+    }),
+    content: z.string().optional()
+  });
+
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
@@ -61,15 +67,15 @@ export function MessageForm({custom_fields}:any) {
       if (response.ok) {
         const data = await response.json();
         console.log("API response:", data);
-        alert("Gửi thông tin thành công!"); // Hiển thị thông báo thành công
+        alert(t('ERROR.contactSuccess')); // Hiển thị thông báo thành công
         form.reset(); // Reset form sau khi gửi thành công
       } else {
         console.error("API error:", response.status, response.statusText);
-        alert("Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại.");
+        alert(t('ERROR.contactFailure'));
       }
     } catch (error) {
       console.error("Fetch error:", error);
-      alert("Không thể kết nối đến server. Vui lòng kiểm tra kết nối mạng.");
+      alert(t('ERROR.contactFailure'));
     }
   }
   return (

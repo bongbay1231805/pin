@@ -101,7 +101,9 @@
     "fileType": "Chỉ cho phép file PDF, DOCX, hoặc ZIP.",
     "sending": "Hồ sơ đang được gửi...",
     "applySuccess": "Ứng tuyển thành công. Cám ơn bạn!",
-    "applyFailure": "Đã xảy ra lỗi khi gửi form. Vui lòng thử lại."
+    "applyFailure": "Đã xảy ra lỗi khi gửi form. Vui lòng thử lại.",
+    "contactSuccess": "Gửi thông tin thành công!",
+    "contactFailure": "Có lỗi xảy ra khi gửi thông tin. Vui lòng thử lại."
 
   }
 }

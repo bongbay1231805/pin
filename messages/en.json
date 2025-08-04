@@ -101,6 +101,8 @@
     "fileType": "Only PDF, DOCX, or ZIP files are allowed.",
     "sending": "Application Form is sending...",
     "applySuccess": "Apply successfully. Thank you!",
-    "applyFailure": "Apply failure. Try again!"
+    "applyFailure": "Apply failure. Try again!",
+    "contactSuccess": "Send contact successfully!",
+    "contactFailure": "Send contact failure. Try again."
   }
 }
