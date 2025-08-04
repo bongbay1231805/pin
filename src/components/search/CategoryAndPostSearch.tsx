@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import {useLocale, useTranslations} from 'next-intl';
 
 const CategoryAndPostSearch: React.FC = () => {
   const [searchKeyword, setSearchKeyword] = useState<string>('');
@@ -9,6 +10,8 @@ const CategoryAndPostSearch: React.FC = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const popupRef = useRef<HTMLDivElement>(null);
+
+  const t = useTranslations();
 
   useEffect(() => {
     const keywordFromUrl = searchParams.get('keyword');
@@ -86,7 +89,7 @@ const CategoryAndPostSearch: React.FC = () => {
           value={searchKeyword}
           onChange={handleKeywordChange}
           onKeyDown={handleKeyDown}
-          placeholder="Tìm kiếm bài viết..."
+          placeholder={t('NEWS.search')}
           className="h-[25px] w-full p-2 border border-[#ccc] rounded-[4px] focus:outline-none focus:border-[#cfa176] text-[10px] 2xl:text-[15px] text-gray-700 mr-[10px]"
         />
         <button
@@ -118,7 +121,7 @@ const CategoryAndPostSearch: React.FC = () => {
               value={searchKeyword}
               onChange={handleKeywordChange}
               onKeyDown={handleKeyDown}
-              placeholder="Tìm kiếm bài viết..."
+              placeholder={t('NEWS.search')}
               className="h-[25px] w-full p-2 border border-[#ccc] rounded-[4px] focus:outline-none focus:border-[#cfa176] text-[10px] 2xl:text-[15px] text-gray-700 mr-[10px]"
             />
             <button

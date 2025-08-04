@@ -40,6 +40,10 @@ export default function NewsClient({ initialPage, initialData }: Props) {
         apiUrl += `&q=${encodeURIComponent(searchKeyword.trim())}`; // Sử dụng 'q' cho API tìm kiếm
       }
 
+      if (!searchKeyword) {
+        apiUrl += `&filter=1`; // Sử dụng 'q' cho API tìm kiếm
+      }
+
       console.log('Fetching URL in NewsClient:', apiUrl); // Debugging
 
       try {

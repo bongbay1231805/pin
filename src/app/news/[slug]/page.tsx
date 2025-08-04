@@ -1,8 +1,11 @@
 import CategoryClient from "@/components/categories/CategoryClient";
+import {getUserLocale} from '@/db';
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
 export async function generateMetadata({ params }: Props) {
+  const currentLocale = await getUserLocale();
   const currentPage = 1;
   const { slug } = await params;
   const res = await fetch(`https://admin.pigroup.vn/api/categories/${slug}/posts?page=${currentPage}`, {
@@ -14,18 +17,18 @@ export async function generateMetadata({ params }: Props) {
       description: 'Không tìm thấy chuyên mục bạn đang tìm.',
     };
   }
-  const {category} = await res.json();
-  console.log('category >>> ', category)
+  const {category, categories} = await res.json();
+  
   return {
-    title: category.name,
-    description: category.description || `Các bài viết thuộc chuyên mục ${category.name}`,
+    title: categories[currentLocale + "_name"] || category.name,
+    description: category.description || `${category.name}`,
     openGraph: {
-      title: category.name,
+      title: categories[currentLocale + "_name"],
       description: category.description || '',
       images: [
         {
-          url: category.image || '/logo.png',
-          alt: category.name,
+          url: categories[currentLocale + "_name"] || '/logo.png',
+          alt: categories[currentLocale + "_name"],
         },
       ],
     },

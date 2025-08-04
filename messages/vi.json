@@ -49,7 +49,7 @@
     "submitting": "Đang gửi",
     "applicationBeingSubmitted": "Hồ sơ đang được gửi",
     "submitted successfully": "Gửi thông tin thành công!",
-    "applicationSubmittedSuccessfully.": "Ứng tuyển thành công. Cám ơn bạn!",
+    "applicationSubmittedSuccessfully": "Ứng tuyển thành công. Cám ơn bạn!",
     "fileSize": "Kích thước"
   },
   "Contact": {
@@ -114,5 +114,9 @@
     "tax": "Mã số thuế",
     "profile": "Hồ sơ",
     "sending": "Đăng ký"
+  },
+  "NEWS": {
+    "noContent": "Không tìm thấy bài viết nào.",
+    "search": "Tìm kiếm bài viết..."
   }
 }

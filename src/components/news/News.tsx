@@ -3,17 +3,18 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import Link from "next/link";
 import '@/components/news.css'; // Ensure this file contains the necessary styles
 import Image from "next/image";
-import {useLocale} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import {LANGUAGE} from '@/config';
 const mainImage = "/fnews/news-1.png";
 export default function News({ posts }: any) {
   useScrollReveal();
   const currentLocale = useLocale();
+  const t = useTranslations();
 
   if (!posts || posts.length === 0) {
     return (
       <div className="flex justify-center items-center h-40 mt-[70px]">
-        <p>Không tìm thấy bài viết nào.</p>
+        <p>{t('NEWS.noContent')}</p>
       </div>
     ); // Hoặc trả về null, hoặc một thông báo khác
   }
