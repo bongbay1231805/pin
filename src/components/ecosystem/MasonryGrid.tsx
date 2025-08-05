@@ -282,7 +282,7 @@ const MasonryGrid = ({custom_fields}: any) => {
           const rowItems = customfields.slice(i, i + 4);
 
           const headerItem = rowItems.find(
-            (item: {value: any}[]) => item[0]?.value && !item[2]?.value
+            (item: {value: any}[]) => item[0]?.value
           );
           const galleryItems = rowItems.filter(
             (item: {value: any}[]) => item[2]?.value
