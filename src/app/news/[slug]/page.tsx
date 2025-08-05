@@ -1,6 +1,5 @@
 import CategoryClient from "@/components/categories/CategoryClient";
 import {getUserLocale} from '@/db';
-import { useLocale } from "next-intl";
 
 type Props = {
   params: Promise<{ slug: string }>;
