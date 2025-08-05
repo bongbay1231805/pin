@@ -1,5 +1,6 @@
 import CategoryClient from "@/components/categories/CategoryClient";
 import {getUserLocale} from '@/db';
+import { useLocale } from "next-intl";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -8,7 +9,13 @@ export async function generateMetadata({ params }: Props) {
   const currentLocale = await getUserLocale();
   const currentPage = 1;
   const { slug } = await params;
-  const res = await fetch(`https://admin.pigroup.vn/api/categories/${slug}/posts?page=${currentPage}`, {
+  const subMenus = await fetch('https://admin.pigroup.vn/api/categories', {
+    cache: 'no-store',
+  });
+  const subMenusData = await subMenus.json();
+  const submenu = subMenusData[currentLocale].find((item:any) => item.slug === slug);
+  const slugForQuery = submenu?.slugQuery ?? slug;
+  const res = await fetch(`https://admin.pigroup.vn/api/categories/${slugForQuery}/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
   if (!res.ok) {
@@ -37,7 +44,14 @@ export async function generateMetadata({ params }: Props) {
 async function NewsCategoryPage({ params }: Props) {
   const currentPage = 1;
   const { slug } = await params;
-  const res = await fetch(`https://admin.pigroup.vn/api/categories/${slug}/posts?page=${currentPage}`, {
+  const currentLocale = await getUserLocale();
+  const subMenus = await fetch('https://admin.pigroup.vn/api/categories', {
+    cache: 'no-store',
+  });
+  const subMenusData = await subMenus.json();
+  const submenu = subMenusData[currentLocale].find((item:any) => item.slug === slug);
+  const slugForQuery = submenu?.slugQuery ?? slug;
+  const res = await fetch(`https://admin.pigroup.vn/api/categories/${slugForQuery}/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
   if (!res.ok) {
@@ -50,7 +64,7 @@ async function NewsCategoryPage({ params }: Props) {
     <CategoryClient
       initialPage={currentPage}
       initialData={data}
-      apiPath={`https://admin.pigroup.vn/api/categories/${slug}/posts`}
+      apiPath={`https://admin.pigroup.vn/api/categories/${slugForQuery}/posts`}
     />
   );
 }
