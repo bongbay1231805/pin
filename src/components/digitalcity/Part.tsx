@@ -1439,8 +1439,18 @@ export default function Part({custom_fields}: any) {
       <h3
         ref={fourRef}
         className="boxanimation fade-in-up-medium text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] font-bold mt-[-8rem] md:mt-[-60px] mb-[30px] uppercase text-center"
-        dangerouslySetInnerHTML={{__html: digitalcity_8}}
-      ></h3>
+      >
+        
+        {digitalcity_8.endsWith('★') ? (
+                          <>
+                            {digitalcity_8.slice(0, -1)}
+                            <span className="star-icon relative inline-block text-[15px] top-[-5px] md:text-[18px] 2xl:text-[25px] md:top-[-7px] 2xl:top-[-14px]">★</span>
+                          </>
+                        ) : (
+                          digitalcity_8
+                  )}
+        
+        </h3>
       <div className="boxanimation fade-in-up-medium mx-auto mb-[50px] sm:mb-[30px] sliderreal">
           <div className="hidden sm:block">
             <SliderComponent slides={digitalcityslideruni}/>

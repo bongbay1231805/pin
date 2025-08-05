@@ -258,7 +258,14 @@ export default function ClientUseRef({custom_fields}: any) {
                   {field_1}
                 </p>
                 <h2 className="text-[22px] lg:text-[28px] 2xl:text-[45px] font-bold text-yellow-1 mt-[5px] mb-[5px] fade-in-left-short">
-                  {field_2}
+                  {field_2.endsWith('★') ? (
+                          <>
+                            {field_2.slice(0, -1)}
+                            <span className="star-icon relative inline-block text-[15px] top-[-5px] md:text-[18px] 2xl:text-[25px] md:top-[-7px] 2xl:top-[-14px]">★</span>
+                          </>
+                        ) : (
+                          field_2
+                  )}
                 </h2>
                 <p className="text-[16px] sm:text-[20px] 2xl:text-[28px] mb-[20px] 2xl:mb-[50px] text-gray-1 fade-in-left-short">
                   {field_3}
