@@ -261,7 +261,7 @@ export default function ClientUseRef({custom_fields}: any) {
                   {field_2.endsWith('★') ? (
                           <>
                             {field_2.slice(0, -1)}
-                            <span className="star-icon relative inline-block text-[15px] top-[-5px] md:text-[18px] 2xl:text-[25px] md:top-[-7px] 2xl:top-[-14px]">★</span>
+                            <span className="star-icon relative inline-block text-[18px] top-[-2px] md:text-[25px] md:top-[-1px] 2xl:text-[35px] 2xl:top-[-5px]">★</span>
                           </>
                         ) : (
                           field_2
