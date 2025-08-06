@@ -64,7 +64,9 @@ export default function Detail2({custom_fields, image}: any) {
     real_estate_services_20,
     real_estate_services_21,
     real_estate_services_22,
-    real_estate_services_slider
+    real_estate_services_slider,
+    real_estate_services_1_photo,
+    real_estate_services_3_photo
   } = custom_fields;
 
   const isDesktop = useMediaQuery('(min-width: 768px)');
@@ -542,7 +544,7 @@ export default function Detail2({custom_fields, image}: any) {
           </div>
           <div className="relative pt-[85%] sm:pt-[100%] 2xl:pt-[677px] 2xl:w-[85%] 2xl:ml-[110px]">
             <Image
-              src="/fecosystem/detail/operation-1.png"
+              src={`https://admin.pigroup.vn/storage/${real_estate_services_1_photo}`}
               alt="Modern city skyline"
               fill
               className="rounded-[10px] overflow-hidden absolute"
@@ -570,7 +572,7 @@ export default function Detail2({custom_fields, image}: any) {
       </div>
       <div className="boxanimation fade-in-up-medium 2xl:mb-[120px] relative">
         <img
-          src="/fecosystem/detail/operation-6.png"
+          src={`https://admin.pigroup.vn/storage/${real_estate_services_3_photo}`}
           alt="fecosystem"
           className="max-w-[100%] h-auto "
         />

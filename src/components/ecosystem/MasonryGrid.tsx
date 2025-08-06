@@ -236,11 +236,11 @@ const MasonryGrid = ({custom_fields}: any) => {
                     className="object-cover justify-end"
                   />
                 ) : null}
-                {/* {item[0].value && item[2].value !== '' && (
+                {item[0].value && item[2].value !== '' && (
                   <h3 className="z-10 left-[25px] bottom-[8px] text-white absolute text-[16px] 2xl:text-[24px] font-semibold uppercase opacity-0 group-hover:opacity-100 duration-1000 delay-100">
                     {item[0].value}
                   </h3>
-                )} */}
+                )}
                 {item[3].value && item[1].value !== '' && (
                    // <Link href={ecosystemUrl[item[1].value]}> 
                   <Link href={ecosystemUrl[item[3].value]}>

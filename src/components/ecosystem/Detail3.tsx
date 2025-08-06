@@ -44,7 +44,8 @@ export default function Detail3({custom_fields, image}: any) {
     management_operation_20,
     management_operation_21,
     management_operation_22,
-    management_operation_14_add
+    management_operation_14_add,
+    management_photo
   } = custom_fields;
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -89,7 +90,7 @@ export default function Detail3({custom_fields, image}: any) {
         <div className="grid grid-cols-1 px-[30px] sm:px-0 lg:grid-cols-[1fr_1fr]">
           <div className="">
             <Image
-              src="/toi-uu-quy-trinh.webp"
+              src={`https://admin.pigroup.vn/storage/${management_photo}`}
               alt="Smart City Features"
               width={750}
               height={618}
