@@ -5,6 +5,11 @@ const config: Config = {
       fontFamily: {
         inter: ['Montserrat', 'sans-serif'],
       },
+      screens: {
+        'tall': { 'raw': '(min-height: 800px)' },
+        'short': { 'raw': '(max-height: 500px)' },
+      },
+
     },
   }
 }
