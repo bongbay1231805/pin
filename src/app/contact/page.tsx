@@ -90,7 +90,7 @@ export default async function Contact() {
 
       {/* Main Content Container - Relative Z-index for its content to be above image */}
       {/* On desktop, this div will contain the gradient background */}
-      <div className="mx-auto max-w-[85%] px-[10px] relative z-10 md:h-[calc(100vh-96px)]"> {/* Giữ z-index 10 cho nội dung */}
+      <div className="contact-wrapper mx-auto max-w-[85%] px-[10px] relative z-10 md:h-[calc(100vh-96px)]"> {/* Giữ z-index 10 cho nội dung */}
         {/* The gradient overlay if you want it only for the content on mobile
             You can add it here if you want it to cover the content area, not the banner.
             For now, I've moved the main gradient overlay outside and made it desktop-only.
@@ -161,7 +161,7 @@ export default async function Contact() {
               </div>
             </div>
           </div>
-          <div className="sm:absolute relative bottom-0 mt-[50px] grid sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] max-w-[100%]">
+          <div className="sm:absolute contact-form relative bottom-0 mt-[50px] grid sm:grid-cols-[506px_1fr] 2xl:grid-cols-[606px_1fr] max-w-[100%]">
             <div className="max-w-[100%]">
               <div className="bg-[#F0F7FF]/70 rounded-tl-[10px] rounded-tr-[60px] p-[25px] sm:p-[50px]">
                 <MessageForm custom_fields={custom_fields} />

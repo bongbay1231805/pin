@@ -778,3 +778,12 @@ figure.image > figcaption > span {
     top: 20px;
   } */
 }
+
+@media (max-height: 800px) {
+  .contact-wrapper {
+    height: auto !important;
+  }
+  .contact-form {
+    position: relative !important;
+  }
+}

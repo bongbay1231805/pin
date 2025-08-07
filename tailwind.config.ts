@@ -6,8 +6,7 @@ const config: Config = {
         inter: ['Montserrat', 'sans-serif'],
       },
       screens: {
-        'tall': { 'raw': '(min-height: 800px)' },
-        'short': { 'raw': '(max-height: 500px)' },
+        'short': { 'raw': '(max-height: 800px)' },
       },
 
     },
