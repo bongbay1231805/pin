@@ -62,7 +62,11 @@ export default async function About() {
   const {image} = data[currentLocale];
   const {bannermobile} = custom_fields;
 
-  console.log(bannermobile);
+  const reshome = await fetch('https://admin.pigroup.vn/api/pages/home/lang', {
+    cache: 'no-store'
+  });
+  const {data: dataHome} = await reshome.json();
+  const {custom_fields: customFieldsHome} = dataHome[currentLocale];
   return (
     <>
       <Hero image={image} bannermobile={bannermobile} />
@@ -75,7 +79,7 @@ export default async function About() {
       <div className="boxanimation fade-in-up-medium mb-[5%] 2xl:mb-[96px]">
         <Partners
           title={custom_fields.field_19 || custom_fields.field_19_add}
-          logoDataRaw={custom_fields.about_logo_partner}
+          logoDataRaw={customFieldsHome.home_logo_partner}
         />
       </div>
     </>
