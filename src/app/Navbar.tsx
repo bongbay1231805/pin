@@ -266,7 +266,7 @@ const Navbar = () => {
             </Link>
             <Link
               href={routeLocales[currentLocale]['digitalcity']}
-              className={`group relative grow-1 text-center hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['digitalcity'])  ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
+              className={`normal-case group relative grow-1 text-center hover:text-yellow-2 ${isActive(routeLocales[currentLocale]['digitalcity'])  ? ' text-yellow-2!' : 'text-white-1'} ${hasShadow || pageCurent || !isHomePage ? 'text-gray-6!' : ''}`}
             >
               <span className="block transition-all duration-300 ease-in-out group-hover:-translate-y-full group-hover:opacity-0">
                 {t('Digitalcity.title')}
