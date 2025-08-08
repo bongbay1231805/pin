@@ -253,7 +253,8 @@ export default function Hero({ data, dataPage }: any) {
           ))}
         </div>
         <h3 ref={fourRef} className="boxanimation fade-in-up-medium uppercase font-bold text-yellow-1 text-[22px] sm:text-[28px] 2xl:text-[45px] text-center py-[25px_10px] sm:py-[120px_25px]">{human_resource_22}</h3>
-        <div className="boxanimation fade-in-up-medium overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto">
+        {/* <div className="boxanimation fade-in-up-medium overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto"> */}
+        <div className="overflow-x-auto w-full px-[30px] sm:max-w-[85%] m-auto">
           {/* --- PHẦN BẢNG (CHỈ HIỂN THỊ TRÊN MÀN HÌNH LỚN HƠN HOẶC BẰNG MD) --- */}
           <table id="job-table" className="min-w-full hidden md:table">
             <thead className="bg-gray-100 border-b border-gray-200">
@@ -313,17 +314,25 @@ export default function Hero({ data, dataPage }: any) {
                     </td>
                   </tr>
                   {/* Hàng chứa nội dung dropdown */}
-                  <tr className={job.isOpen ? '' : 'hidden'}>
+                  <tr>
                     <td></td>
-                    <td colSpan={4} className="px-6 text-sm text-gray-700 py-[50px]">
-                      <div className="text-[13px] [&>h5]:!text-[13px] [&>ul]:!text-[13px] content-container" dangerouslySetInnerHTML={{ __html: job.details.rawHtml || "" }}></div>
-                      <div className='flex justify-center pt-[50px]'>
-                        <button
-                          onClick={() => handleOpenPopup(job.position)}
-                          className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white uppercase"
-                        >
-                          {t('HumanResource.apply')}
-                        </button>
+                    <td colSpan={4}>
+                      <div 
+                        className={`transition-[max-height,opacity] duration-500 ease-in-out overflow-hidden ${
+                                job.isOpen ? 'max-h-auto opacity-100' : 'max-h-0 opacity-0'
+                              }`}
+                      >
+                        <div className="px-6 text-sm text-gray-700 py-[50px]">
+                          <div className="text-[13px] [&>h5]:!text-[13px] [&>ul]:!text-[13px] content-container" dangerouslySetInnerHTML={{ __html: job.details.rawHtml || "" }}></div>
+                          <div className='flex justify-center pt-[50px]'>
+                            <button
+                              onClick={() => handleOpenPopup(job.position)}
+                              className="uppercase hvr-bounce-to-right sm:flex items-center justify-center text-yellow-1 text-[16px] font-semibold w-[150px] h-[35px] border border-yellow-1 hover:text-white  focus:text-white uppercase"
+                            >
+                              {t('HumanResource.apply')}
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </td>
                   </tr>
