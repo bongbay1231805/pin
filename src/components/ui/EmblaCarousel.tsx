@@ -59,7 +59,27 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 {slide[0].value}
               </h3>
               <p className="sm:text-[16px] text-[14px]  2xl:text-[28px] text-gray-2 font-medium uppercase reveal-text">
-                {slide[1].value}
+                {/* {slide[1].value} */}
+
+                {
+                  slide[1].value.includes('★') ? (
+                    <>
+                      {slide[1].value.split('★').map((text: string, index: number, array: []) => (
+                        <span key={index}>
+                          {text}
+                          {index < array.length - 1 && (
+                            <span className="star-icon relative inline-block text-[11px] top-[-1px] md:text-[13px] md:top-[-1px]  2xl:text-[19px] 2xl:top-[-3px]">
+                              ★
+                            </span>
+                          )}
+                        </span>
+                      ))}
+                    </>
+                  ) : (
+                    slide[1].value
+                  )
+                }
+
               </p>
 
 
