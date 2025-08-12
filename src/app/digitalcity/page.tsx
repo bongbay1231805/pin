@@ -101,7 +101,7 @@ export default async function Digitalcity() {
             <path d="M279.541 58.6852C279.541 66.7889 286.139 73.3565 294.279 73.3565V0H279.541V58.6852Z" fill="white" />
             <path d="M331.147 14.6824H358.656V73.3565H373.406V14.6824H400.892C409.033 14.6824 415.642 8.11485 415.642 0H316.42C316.42 8.10372 323.018 14.6824 331.17 14.6824H331.147Z" fill="white" />
           </svg>
-          <h2 className='absolute z-10 left-0 text-left  uppercase font-bold text-white text-[12px] sm:text-[14px] md:text-[30px] flex items-center gap-[5px] sm:gap-[12px]'>
+          <h2 className='absolute z-10 left-0 text-left  font-bold text-white text-[12px] sm:text-[14px] md:text-[30px] flex items-center gap-[5px] sm:gap-[12px]'>
             <div className='leading-[25px] sm:leading-[48px] mt-[-30px] sm:mt-[0px]'>{digitalcity_1} <br /> {digitalcity_2}</div>
             <svg width="166" height="85" viewBox="0 0 166 85" fill="none" xmlns="http://www.w3.org/2000/svg" className='w-[25%] md:w-[auto] mt-[-30px] sm:mt-[0px]'>
               <path d="M165.104 32.9294C139.871 32.6853 113.694 42.6735 86.6809 61.7188L90.7179 49.1952L76.6878 39.094H93.8473L99.2977 22.7288L104.649 39.094H115.044C120.323 36.649 126.342 34.2265 133.413 32.1249H109.593L99.1983 0L88.9026 32.1249H55.3965L82.3459 51.8211L72.2534 83.6432C104.852 53.4752 135.838 36.3055 165.109 32.9339L165.104 32.9294Z" fill="white" />

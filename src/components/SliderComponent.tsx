@@ -86,7 +86,7 @@ export default function SliderComponent({ slides }: Props) {
                   {/*  {data.caption}*/}
                   {/*</h3>*/}
                   <h4
-                    className="text-[16px] font-semibold text-center text-white uppercase">{data.caption}</h4>
+                    className="text-[16px] font-semibold text-center text-white uppercase" dangerouslySetInnerHTML={{ __html: data.caption }}></h4>
                 </div>
               </div>
             </div>
