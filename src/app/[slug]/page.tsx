@@ -5,6 +5,7 @@ import {RegistrationForm} from '@/components/news/RegistrationForm';
 import {Metadata} from 'next';
 import CategorySetter from './CategorySetter';
 import {getTranslations} from 'next-intl/server';
+import {getUserLocale} from '@/db';
 
 // ✅ BƯỚC 1: ĐỊNH NGHĨA TYPE CHO PROPS MỘT CÁCH RÕ RÀNG
 // Type này bao gồm cả `params` và `searchParams` (một best practice)
@@ -15,10 +16,19 @@ type Props = {
 // Hàm generateMetadata vẫn là Server Component
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const res = await fetch(`https://admin.pigroup.vn/api/posts/${slug}`, {
+  const currentLocale = await getUserLocale();
+  const url = `https://admin.pigroup.vn/api/posts/${slug}/${ currentLocale == "en" ? "?lang=en":"" }`
+  
+  const res = await fetch(url, {
     cache: 'no-store',
   });
-  const { data: post } = await res.json();
+  
+  const json = await res.json();
+  let post = json.data;
+  if(currentLocale == "en") {
+    post = json.translation;
+  }
+
   if (!post) {
     return {
       title: 'Bài viết không tồn tại',
@@ -46,8 +56,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 async function getPostBySlug(slug: string) {
+  const currentLocale = await getUserLocale();
+  const url = `https://admin.pigroup.vn/api/posts/${slug}/${ currentLocale == "en" ? "?lang=en":"" }`
+  
   const res = await fetch(
-    `https://admin.pigroup.vn/api/posts/${slug}`,
+    url,
     {
       cache: 'no-store'
     }
@@ -56,12 +69,16 @@ async function getPostBySlug(slug: string) {
   if (!res.ok) return null;
 
   const json = await res.json();
+  if(currentLocale == "en") {
+    return json.translation;
+  }
   return json.data;
 }
 
 // Component Page của bạn (Server Component)
 export default async function DetailPost({ params }: Props) {
   const { slug } = await params;
+  const currentLocale = await getUserLocale();
   const post = await getPostBySlug(slug);
   const t = await getTranslations();
   if (!post) {
@@ -69,7 +86,7 @@ export default async function DetailPost({ params }: Props) {
   }
 
   const related = await fetch(
-    `https://admin.pigroup.vn/api/posts/${slug}/related`,
+    `https://admin.pigroup.vn/api/posts/${slug}/related/${ currentLocale == "en" ? "?lang=en":"" }`,
     {cache: 'no-store'}
   );
   // Thêm kiểm tra fetch cho related posts

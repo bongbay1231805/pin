@@ -18,6 +18,7 @@ interface PostItem {
   translation: {
   "lang_code": string;
   "name": string;
+  "slug": string;
   "description": string;
   "content": string;
 }
@@ -52,7 +53,7 @@ console.log('currentPosts ', currentPosts)
     <>
       <div className="grid md:grid-cols-2 gap-x-[168px] 2xl:gap-x-[268px] gap-y-[33px]">
         {currentPosts.map((item: PostItem, index: number) => (
-          <Link key={item.slug || index} href={`/${item.slug}`}>
+          <Link key={item.slug || index} href={`/${ currentLocale !== LANGUAGE.en ? item.slug : item.translation.slug }`}>
             <div
               className="grid grid-cols-[34%_1fr] sm:grid-cols-[45%_1fr] overflow-hidden pb-[33px] gap-y-[33px] gap-x-[20px] sm:gap-x-[40px] 2xl:gap-x-[46px] sm:flex items-center border-b-1 border-b-gray-8"
             >

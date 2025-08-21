@@ -17,7 +17,7 @@ export default function BreadcrumbExample({ post }: any) {
         <BreadcrumbSeparator />
         {post.hasOwnProperty('categories') && Array.isArray(post.categories) && post.categories.length ? (
           <BreadcrumbItem>
-            <BreadcrumbLink href={`/categories/${post.categories[0].slug}`}>{post.categories[0].name}</BreadcrumbLink>
+            <BreadcrumbLink href={`/news/${post.categories[0].slug}`}>{post.categories[0].name}</BreadcrumbLink>
           </BreadcrumbItem>
         ) : null}
         <BreadcrumbSeparator />
