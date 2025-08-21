@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import PaginationExample from './PaginationExample';
 import News from './News';
 import { useSearchParams } from 'next/navigation';
-
+import {useLocale} from 'next-intl';
+import {LANGUAGE} from '@/config';
 
 type PaginationLink = {
   url: string | null;
@@ -22,7 +23,7 @@ export default function NewsClient({ initialPage, initialData }: Props) {
   const [currentPage, setCurrentPage] = useState(initialPage);
   const [paginationLinks, setPaginationLinks] = useState<PaginationLink[]>(initialData.links);
   const [posts, setPosts] = useState(initialData.data);
-
+  const currentLocale = useLocale();
   useEffect(() => {
     // Mỗi khi searchKeyword thay đổi, reset về trang 1
     // Điều này đảm bảo rằng khi bạn tìm kiếm một từ khóa mới, kết quả sẽ bắt đầu từ trang đầu tiên.
@@ -32,6 +33,8 @@ export default function NewsClient({ initialPage, initialData }: Props) {
   }, [searchKeyword]); // Chạy lại khi searchKeyword thay đổi
 
   useEffect(() => {
+    
+
     const fetchData = async () => {
       let apiUrl = `https://admin.pigroup.vn/api/posts?page=${currentPage}`;
 
@@ -42,6 +45,10 @@ export default function NewsClient({ initialPage, initialData }: Props) {
 
       if (!searchKeyword) {
         apiUrl += `&filter=1`; // Sử dụng 'q' cho API tìm kiếm
+      }
+
+      if(currentLocale == LANGUAGE.en) {
+        apiUrl += `&lang=en`;
       }
 
       console.log('Fetching URL in NewsClient:', apiUrl); // Debugging
