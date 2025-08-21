@@ -2,7 +2,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import {useLocale, useTranslations} from 'next-intl';
+import { useTranslations} from 'next-intl';
 
 const CategoryAndPostSearch: React.FC = () => {
   const [searchKeyword, setSearchKeyword] = useState<string>('');

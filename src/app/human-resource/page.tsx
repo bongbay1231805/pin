@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "@/components/work/Hero";
 import { Metadata } from 'next';
 import {getUserLocale} from '@/db';
+import { getTranslations } from "next-intl/server";
 // export const metadata: Metadata = {
 //   title: 'Phát triển nhân lực',
 //   description: 'Phát triển nhân lực',
@@ -18,10 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
   const currentLocale = await getUserLocale();
   const { data: post } = await res.json();
+  const t = await getTranslations();
   if (!post) {
     return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
 

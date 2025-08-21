@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useMemo } from 'react';
-import {useLocale} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import {LANGUAGE} from '@/config';
 
 const mainImage = "/fnews/news-1.png";
@@ -29,8 +29,9 @@ export default function Related({ post }: { post: PostItem[] }) {
   
   const [currentPage, setCurrentPage] = useState(1);
   const currentLocale = useLocale();
+  const t = useTranslations();
   if (!Array.isArray(post) || post.length === 0) {
-    return <div className="text-center mt-20">Không tìm thấy bài viết liên quan</div>;
+    return <div className="text-center mt-20">{t('NEWS.noContent')}</div>;
   }
 
   const totalPages = Math.ceil(post.length / ITEMS_PER_PAGE);

@@ -1,6 +1,7 @@
 import Detail2 from '@/components/ecosystem/Detail2';
 import {Metadata} from 'next';
 import {getUserLocale} from '@/db';
+import { getTranslations } from 'next-intl/server';
 // export const metadata: Metadata = {
 //   title: 'Dịch vụ Bất động sản',
 //   description: 'Dịch vụ Bất động sản'
@@ -17,10 +18,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
   const currentLocale = await getUserLocale();
   const { data: post } = await res.json();
+  const t = await getTranslations();
   if (!post) {
     return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
 

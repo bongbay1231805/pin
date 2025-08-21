@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const currentLocale = await getUserLocale();
   const url = `https://admin.pigroup.vn/api/posts/${slug}/${ currentLocale == "en" ? "?lang=en":"" }`
-  
+  const t = await getTranslations();
   const res = await fetch(url, {
     cache: 'no-store',
   });
@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!post) {
     return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
 
@@ -82,7 +82,7 @@ export default async function DetailPost({ params }: Props) {
   const post = await getPostBySlug(slug);
   const t = await getTranslations();
   if (!post) {
-    return <div className="text-center mt-20">Không tìm thấy bài viết</div>;
+    return <div className="text-center mt-20">{t('NEWS.noContent')}</div>;
   }
 
   const related = await fetch(

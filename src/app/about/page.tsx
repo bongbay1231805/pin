@@ -9,6 +9,7 @@ import {Business} from '@/components/about/Business';
 import {Metadata} from 'next';
 import { TimelineSection } from '@/components/about/TimelineSection';
 import {getUserLocale} from '@/db';
+import { getTranslations } from 'next-intl/server';
 
 // import PageTitle from '@/components/PageTitle';
 // type Props = {
@@ -25,11 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     cache: 'no-store'
   });
   const currentLocale = await getUserLocale();
+  const t = await getTranslations();
   const { data: post } = await res.json();
   if (!post) {
     return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
 

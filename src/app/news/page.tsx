@@ -2,6 +2,7 @@ import NewsClient from '@/components/news/NewsClient';
 import { Suspense } from 'react';
 import { Metadata } from 'next';
 import {getUserLocale} from '@/db';
+import { getTranslations } from 'next-intl/server';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -15,10 +16,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { data: post } = await res.json();
   console.log('post ', post)
   const currentLocale = await getUserLocale();
+  const t = await getTranslations();
   if (!post) {
     return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
 

@@ -88,7 +88,8 @@
   },
   "Global": {
     "seeMore": "XEM THÊM",
-    "scrollDown": "cuộn xuống"
+    "scrollDown": "cuộn xuống",
+    "share": "Chia sẻ"
   },
   "ERROR": {
     "fullName": "Họ và tên phải có ít nhất 2 ký tự.",
@@ -117,6 +118,7 @@
   },
   "NEWS": {
     "noContent": "Không tìm thấy bài viết nào.",
-    "search": "Tìm kiếm bài viết..."
+    "search": "Tìm kiếm bài viết...",
+    "articleNotExist": "Bài viết không tồn tại"
   }
 }

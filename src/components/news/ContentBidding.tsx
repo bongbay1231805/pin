@@ -1,8 +1,9 @@
 'use client';
+import { useTranslations } from "next-intl";
 import Image from "next/image"
 export function ContentBidding({post}:any) {
   const specificDateString = new Date(post.created_at);
-  
+  const t = useTranslations();
   return (
     <>
       <div className="flex items-center gap-[20px] gap-y-[0px] sm:gap-[40px] border-b-[2px] border-[#D9D9D9] pt-[30px] sm:pt-[70px]">
@@ -16,7 +17,7 @@ export function ContentBidding({post}:any) {
       <div>
         {/* <strong className="block mt-[40px] mb-[45px] w-full text-right">Ngọc Diễm</strong> */}
         <ul className="flex gap-[10px] mt-[86px] mb-[45px] items-center justify-end">
-          <p className="text-[13px] 2xl:text-[17px] font-semibold text-gray-6 mr-0.5 ">Chia sẻ</p>
+          <p className="text-[13px] 2xl:text-[17px] font-semibold text-gray-6 mr-0.5 ">{t('Global.share')}</p>
           <li>
             <a href={`https://www.facebook.com/sharer/sharer.php/?u=https://pigroup.vn/${post.slug}`}>
               <Image

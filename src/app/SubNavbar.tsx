@@ -384,7 +384,7 @@ const ECOSYSTEM_SLUGS = [
   'quan-ly-van-hanh',
 ];
 
-const NEWS_SLUGS = ['news', 'tin-tuc', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'search', 'tim-kiem'];
+const NEWS_SLUGS = ['news', 'tin-tuc', 'tin-thi-truong', 'tin-pi-group', 'tin-dau-thau', 'search', 'tim-kiem', 'market-news', 'pi-group-news', 'bid-news'];
 const HUMAN_RESOURCE_SLUGS = ['human-resource', 'phat-trien-nhan-luc'];
 const ABOUT_SLUGS = ['about', 'gioi-thieu'];
 const DIGITAL_CITY_SLUGS = ['digitalcity', 'do-thi-so-picity'];

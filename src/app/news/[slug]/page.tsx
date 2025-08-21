@@ -1,5 +1,6 @@
 import CategoryClient from "@/components/categories/CategoryClient";
 import {getUserLocale} from '@/db';
+import { getTranslations } from "next-intl/server";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,10 +18,11 @@ export async function generateMetadata({ params }: Props) {
   const res = await fetch(`https://admin.pigroup.vn/api/categories/${slugForQuery}/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
+  const t = await getTranslations();
   if (!res.ok) {
     return {
-      title: 'Chuyên mục không tồn tại',
-      description: 'Không tìm thấy chuyên mục bạn đang tìm.',
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
   const {category, categories} = await res.json();
@@ -53,8 +55,9 @@ async function NewsCategoryPage({ params }: Props) {
   const res = await fetch(`https://admin.pigroup.vn/api/categories/${slugForQuery}/posts?page=${currentPage}`, {
     cache: 'no-store',
   });
+  const t = await getTranslations();
   if (!res.ok) {
-    return <div className="text-center py-10">Không tìm thấy bài viết chuyên mục.</div>;
+    return <div className="text-center py-10">{t('NEWS.noContent')}</div>;
   }
   const json = await res.json();
   const { data } = json;

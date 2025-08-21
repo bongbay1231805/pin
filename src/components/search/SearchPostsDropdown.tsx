@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 // Cập nhật interface props
 interface SearchPostsDropdownProps {
@@ -20,7 +21,7 @@ const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ searchKeyword
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-
+  const t = useTranslations();
   useEffect(() => {
     // Kiểm tra an toàn: đảm bảo searchKeyword là một chuỗi và không null/undefined
     if (typeof searchKeyword !== 'string' || searchKeyword === null) {
@@ -69,10 +70,10 @@ const SearchPostsDropdown: React.FC<SearchPostsDropdownProps> = ({ searchKeyword
 
   return (
     <div className='bg-white rounded-[4px] shadow-md max-h-[300px] overflow-y-auto'>
-      {loading && <p className="p-2 text-center text-gray-600">Đang tìm kiếm...</p>}
+      {loading && <p className="p-2 text-center text-gray-600">{t('NEWS.search')}...</p>}
       {error && <p className="p-2 text-center text-red-500">Lỗi: {error}</p>}
       {!loading && !error && posts.length === 0 && searchKeyword.trim() !== '' && (
-        <p className="p-2 text-center text-gray-600">Không tìm thấy bài viết nào.</p>
+        <p className="p-2 text-center text-gray-600">{t('NEWS.noContent')}</p>
       )}
       {!loading && !error && posts.length > 0 && (
         <ul className="list-none p-0 m-0">

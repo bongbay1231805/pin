@@ -4,6 +4,7 @@ import Success from '@/components/digitalcity/Success';
 import Part from '@/components/digitalcity/Part';
 import { Metadata } from 'next';
 import {getUserLocale} from '@/db';
+import { getTranslations } from 'next-intl/server';
 // export const metadata: Metadata = {
 //   title: 'Đô thị số Picity',
 //   description: 'Đô thị số Picity',
@@ -26,10 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
   const { data: post } = await res.json();
   const currentLocale = await getUserLocale();
+  const t = await getTranslations();
   if (!post) {
     return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
 

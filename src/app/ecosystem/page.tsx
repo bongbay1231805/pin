@@ -1,6 +1,7 @@
 import MasonryGrid from "@/components/ecosystem/MasonryGrid";
 import { Metadata } from 'next';
 import {getUserLocale} from '@/db';
+import { getTranslations } from "next-intl/server";
 // import {getTranslations} from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -11,10 +12,11 @@ export async function generateMetadata(): Promise<Metadata> {
   });
   const currentLocale = await getUserLocale();
   const { data: post } = await res.json();
+  const t = await getTranslations();
   if (!post) {
-    return {
-      title: 'Bài viết không tồn tại',
-      description: 'Không tìm thấy bài viết này.'
+     return {
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
     };
   }
 

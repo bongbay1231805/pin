@@ -88,7 +88,8 @@
   },
   "Global": {
     "seeMore": "SEE MORE",
-    "scrollDown": "scroll down"
+    "scrollDown": "scroll down",
+    "share": "Share"
   },
   "ERROR": {
     "fullName": "Full name must have at least 2 characters.",
@@ -117,6 +118,7 @@
   },
   "NEWS": {
     "noContent": "No post.",
-    "search": "Search..."
+    "search": "Search...",
+    "articleNotExist": "The article does not exist"
   }
 }
