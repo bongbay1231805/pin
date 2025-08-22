@@ -18,12 +18,12 @@ export default function BreadcrumbExample({ post }: any) {
     <Breadcrumb className="text-white">
       <BreadcrumbList className="text-[13px] 2xl:text-[22px] font-bold">
         <BreadcrumbItem>
-          <BreadcrumbLink href={`/${routeLocales[currentLocale]['news']}`}>{t('News.title')}</BreadcrumbLink>
+          <BreadcrumbLink href={`${routeLocales[currentLocale]['news']}`}>{t('News.title')}</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         {post.hasOwnProperty('categories') && Array.isArray(post.categories) && post.categories.length ? (
           <BreadcrumbItem>
-            <BreadcrumbLink ><Link href={`/${routeLocales[currentLocale]['news']}/${post.categories[0].slug}`}>{post.categories[0].name}</Link></BreadcrumbLink>
+            <BreadcrumbLink ><Link href={`${routeLocales[currentLocale]['news']}/${post.categories[0].slug}`}>{post.categories[0].name}</Link></BreadcrumbLink>
           </BreadcrumbItem>
         ) : null}
         <BreadcrumbSeparator />
