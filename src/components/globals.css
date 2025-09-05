@@ -39,6 +39,14 @@ figure.image > figcaption > span {
     font-size: 17px!important;
   }
 }
+.post-content h1,
+.post-content h2 {
+  font-size: 15px;
+  font-weight: 700;
+  @media (width >= 1660px) {
+    font-size: 19px;
+  }
+}
 @theme {
   --background: #fff;
   --font-montserrat: Montserrat, 'Montserrat', sans-serif;
