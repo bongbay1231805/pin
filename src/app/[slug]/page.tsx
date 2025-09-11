@@ -19,40 +19,50 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const currentLocale = await getUserLocale();
   const url = `https://admin.pigroup.vn/api/posts/${slug}/${ currentLocale == "en" ? "?lang=en":"" }`
   const t = await getTranslations();
-  const res = await fetch(url, {
-    cache: 'no-store',
-  });
-  
-  const json = await res.json();
-  let post = json.data;
-  if(currentLocale == "en") {
-    post = json.translation;
-  }
+  try {
+    const res = await fetch(url, {
+      cache: 'no-store',
+    });
 
-  if (!post) {
+    const json = await res.json();
+
+    let post = json.data;
+    if(currentLocale == "en") {
+      post = json.translation;
+    }
+
+    if (!post) {
+      return {
+        title: t('NEWS.articleNotExist'),
+        description: t('NEWS.noContent')
+      };
+    }
+
+    return {
+      title: post.seo_meta[0].seo_title || post.name,
+      description: post.seo_meta[0].seo_description || post.seo_description,
+      openGraph: {
+        title: post.seo_meta[0].seo_title || post.name,
+        description: post.seo_meta[0].seo_description || post.seo_description,
+        images: [
+          {
+            //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
+            // Giả sử domain admin là nơi chứa ảnh
+            url:
+              `https://admin.pigroup.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
+              '/logo.png'
+          }
+        ]
+      }
+    };
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch(e) {
     return {
       title: t('NEWS.articleNotExist'),
       description: t('NEWS.noContent')
     };
   }
-
-  return {
-    title: post.seo_meta[0].seo_title || post.name,
-    description: post.seo_meta[0].seo_description || post.seo_description,
-    openGraph: {
-      title: post.seo_meta[0].seo_title || post.name,
-      description: post.seo_meta[0].seo_description || post.seo_description,
-      images: [
-        {
-          //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
-          // Giả sử domain admin là nơi chứa ảnh
-          url:
-            `https://admin.pigroup.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
-            '/logo.png'
-        }
-      ]
-    }
-  };
+  
 }
 
 async function getPostBySlug(slug: string) {
