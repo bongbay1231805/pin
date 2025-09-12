@@ -6,6 +6,7 @@ import {Metadata} from 'next';
 import CategorySetter from './CategorySetter';
 import {getTranslations} from 'next-intl/server';
 import {getUserLocale} from '@/db';
+import NotFound from '../not-found';
 
 // ✅ BƯỚC 1: ĐỊNH NGHĨA TYPE CHO PROPS MỘT CÁCH RÕ RÀNG
 // Type này bao gồm cả `params` và `searchParams` (một best practice)
@@ -19,50 +20,47 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const currentLocale = await getUserLocale();
   const url = `https://admin.pigroup.vn/api/posts/${slug}/${ currentLocale == "en" ? "?lang=en":"" }`
   const t = await getTranslations();
-  try {
-    const res = await fetch(url, {
-      cache: 'no-store',
-    });
-
-    const json = await res.json();
-
-    let post = json.data;
-    if(currentLocale == "en") {
-      post = json.translation;
-    }
-
-    if (!post) {
-      return {
-        title: t('NEWS.articleNotExist'),
-        description: t('NEWS.noContent')
-      };
-    }
-
-    return {
-      title: post.seo_meta[0].seo_title || post.name,
-      description: post.seo_meta[0].seo_description || post.seo_description,
-      openGraph: {
-        title: post.seo_meta[0].seo_title || post.name,
-        description: post.seo_meta[0].seo_description || post.seo_description,
-        images: [
-          {
-            //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
-            // Giả sử domain admin là nơi chứa ảnh
-            url:
-              `https://admin.pigroup.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
-              '/logo.png'
-          }
-        ]
-      }
-    };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch(e) {
+  const res = await fetch(url, {
+    cache: 'no-store',
+  });
+  if (!res.ok) {
     return {
       title: t('NEWS.articleNotExist'),
       description: t('NEWS.noContent')
     };
   }
-  
+
+  const json = await res.json();
+
+  let post = json.data;
+  if(currentLocale == "en") {
+    post = json.translation;
+  }
+
+  if (!post) {
+    return {
+      title: t('NEWS.articleNotExist'),
+      description: t('NEWS.noContent')
+    };
+  }
+
+  return {
+    title: post.seo_meta[0].seo_title || post.name,
+    description: post.seo_meta[0].seo_description || post.seo_description,
+    openGraph: {
+      title: post.seo_meta[0].seo_title || post.name,
+      description: post.seo_meta[0].seo_description || post.seo_description,
+      images: [
+        {
+          //seo_image Sửa lỗi logic URL: '/storage/' không phải là URL hợp lệ.
+          // Giả sử domain admin là nơi chứa ảnh
+          url:
+            `https://admin.pigroup.vn/storage/${post.seo_meta[0].seo_image || post.image}` ||
+            '/logo.png'
+        }
+      ]
+    }
+  };
 }
 
 async function getPostBySlug(slug: string) {
@@ -92,7 +90,8 @@ export default async function DetailPost({ params }: Props) {
   const post = await getPostBySlug(slug);
   const t = await getTranslations();
   if (!post) {
-    return <div className="text-center mt-20">{t('NEWS.noContent')}</div>;
+    // return <div className="text-center mt-20">{t('NEWS.noContent')}</div>;
+    return <NotFound />;
   }
 
   const related = await fetch(
