@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname().split("/").pop();
   const isContactPage = pathname === 'contact' || pathname === 'lien-he';
+  const isNotFoundPage = pathname === 'not-found' || pathname === '404';
   // const shouldHideOverflow = pathname === '' || pathname === 'do-thi-so-picity' || pathname === 'digitalcity';
   const shouldHideOverflow = pathname === '';
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+  console.log('isNotFoundPage ', isNotFoundPage);
   return (
     <>
       <div>
@@ -40,7 +42,8 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
           </NewsCategoryProvider>
         </ScrollRefsProvider>
       </div>
-      {isContactPage ? <FooterContact /> : <Footer />} 
+      
+      {isNotFoundPage ?  null : (isContactPage ? <FooterContact /> : <Footer />)} 
     </>
   );
 }
