@@ -220,7 +220,7 @@ export function Footer404() {
         <div className="bg-gray-4 text-center mt-[50px] 2xl:mt-[65px]">
           <div className="relative pb-[22px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]">
             <div className="text-center md:text-left order-1 sm:order-0 ">
-              <p className="text-yellow-2/70 pt-[22px] sm:pt-[30px] text-[13px] 2xl:text-[16px] reveal-text">
+              <p className="text-yellow-2/70 pt-[22px] sm:pt-[30px] text-[13px] 2xl:text-[16px]">
                 © 2025 Pi Group. All Rights Reserved.
               </p>
             </div>
