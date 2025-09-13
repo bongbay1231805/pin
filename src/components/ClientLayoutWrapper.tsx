@@ -29,13 +29,12 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-  console.log('isNotFoundPage ', isNotFoundPage);
   return (
     <>
       <div>
         <ScrollRefsProvider><></>
-          <NewsCategoryProvider>  
-            <PublicNavigation />
+          <NewsCategoryProvider>
+            {!isNotFoundPage && <PublicNavigation />}
             <div className={shouldHideOverflow ? 'overflow-x-hidden' : ''}>
               {children}
             </div>
