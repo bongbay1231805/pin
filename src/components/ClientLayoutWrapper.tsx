@@ -7,6 +7,7 @@ import { ScrollRefsProvider } from '@/context/ScrollRefsContext';
 import { NewsCategoryProvider } from '@/context/NewsCategoryContext';
 
 import { useEffect } from 'react';
+import {Footer404} from '@/components/footer/Footer404';
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname().split("/").pop();
   const isContactPage = pathname === 'contact' || pathname === 'lien-he';
@@ -34,7 +35,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
       <div>
         <ScrollRefsProvider><></>
           <NewsCategoryProvider>
-            {!isNotFoundPage && <PublicNavigation />}
+            <PublicNavigation />
             <div className={shouldHideOverflow ? 'overflow-x-hidden' : ''}>
               {children}
             </div>
@@ -42,7 +43,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
         </ScrollRefsProvider>
       </div>
       
-      {isNotFoundPage ?  null : (isContactPage ? <FooterContact /> : <Footer />)} 
+      {isNotFoundPage ? <Footer404 /> : (isContactPage ? <FooterContact /> : <Footer />)} 
     </>
   );
 }
