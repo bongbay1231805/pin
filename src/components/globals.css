@@ -692,10 +692,6 @@ figure.image > figcaption > span {
   .timeline-carousel .arrow:hover {
     border: none;
   }
-
-  .post-content h2, .post-content h2 span{
-    font-size: 15px!important;
-  }
 }
 
 .eco-item.expandable-item {
