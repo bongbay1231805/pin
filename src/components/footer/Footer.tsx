@@ -19,9 +19,9 @@ export function Footer() {
     async function fetchData() {
       try {
         const res = await fetch('https://admin.pigroup.vn/api/settings'); // Replace with your API endpoint
+
         const data = await res.json();
         setContactConfig(data?.contact);
-        console.log('data ', data)
         const social = JSON.parse(data?.social?.[0]?.value);
         const facebook = social[0].find((item:any) => item.key === 'url').value;
         const youtube = social[1].find((item:any) => item.key === 'url').value;
@@ -31,15 +31,14 @@ export function Footer() {
         console.error(error);
       }
     }
-
     fetchData();
   }, []);
 
   return (
-    <footer className={`bg-gray-3 text-white text-left`}>
+    <footer className={`bg-gray-3 text-left`}>
       <div className={`pt-[60px] 2xl:pt-[82px] ${styles.bgfooter}`}>
         <div className={`mx-auto w-full px-[30px] md:px-0 md:max-w-[85%]`}>
-          <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_24%] 2xl:grid-cols-[290px_1fr_280px] gap-8 boxanimation">
+          <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_24%] 2xl:grid-cols-[290px_1fr_280px] gap-8">
             {/* logo */}
             <div className="flex justify-center sm:justify-normal reveal-tex fade-in-left-short mb-6 md:mb-0">
               <Link href="/" className="flex-shrink-0 flex">
@@ -214,7 +213,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="bg-gray-4 text-center mt-[50px] 2xl:mt-[65px] boxanimation">
+        <div className="bg-gray-4 text-center mt-[50px] 2xl:mt-[65px]">
           <div className="relative pb-[22px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]">
             <div className="text-center md:text-left order-1 sm:order-0 ">
               <p className="text-yellow-2/70 pt-[22px] sm:pt-[30px] text-[13px] 2xl:text-[16px] reveal-text fade-in-up-medium">
@@ -235,6 +234,7 @@ export function Footer() {
               />
             </div>
             <div className="flex justify-center items-center gap-[15px] mt-[23px] fade-in-up-medium">
+              jhjhjhh
               <Link target={socialConfig?.['facebook'] ? '_blank' : ''}
                     href={socialConfig?.['facebook'] || 'javascript:void(0);'}
                     className="flex-shrink-0 flex items-center">

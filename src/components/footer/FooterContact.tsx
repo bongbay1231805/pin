@@ -13,6 +13,7 @@ export function FooterContact() {
     async function fetchData() {
       try {
         const res = await fetch('https://admin.pigroup.vn/api/settings'); // Replace with your API endpoint
+        console.log('res ', res)
         const data = await res.json();
         setContactConfig(data?.contact);
         const social = JSON.parse(data?.social?.[0]?.value);

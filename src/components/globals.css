@@ -39,12 +39,62 @@ figure.image > figcaption > span {
     font-size: 17px!important;
   }
 }
-.post-content h1,
+.post-content h1 {
+  font-size: 25px;
+}
 .post-content h2 {
-  font-size: 15px;
-  font-weight: 700;
-  @media (width >= 1660px) {
-    font-size: 19px;
+  font-size: 18px;
+}
+.post-content h3 {
+  font-size: 16px;
+}
+.post-content h4 {
+  font-size: 13px;
+}
+.post-content h5 {
+  font-size: 10px;
+}
+.post-content h6 {
+  font-size: 8px;
+}
+@media (min-width: 1024px) {
+  .post-content h1 {
+    font-size: 30px!important;
+  }
+  .post-content h2 {
+    font-size: 20px!important;
+  }
+  .post-content h3 {
+    font-size: 15px!important;
+  }
+  .post-content h4 {
+    font-size: 13px!important;
+  }
+  .post-content h5 {
+    font-size: 11px!important;
+  }
+  .post-content h6 {
+    font-size: 9px!important;
+  }
+}
+@media (min-width: 1280px) {
+  .post-content h1 {
+    font-size: 32px!important;
+  }
+  .post-content h2 {
+    font-size: 22px!important;
+  }
+  .post-content h3 {
+    font-size: 17px!important;
+  }
+  .post-content h4 {
+    font-size: 15px!important;
+  }
+  .post-content h5 {
+    font-size: 13px!important;
+  }
+  .post-content h6 {
+    font-size: 11px!important;
   }
 }
 @theme {
