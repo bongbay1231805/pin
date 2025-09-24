@@ -7,9 +7,11 @@ import { ScrollRefsProvider } from '@/context/ScrollRefsContext';
 import { NewsCategoryProvider } from '@/context/NewsCategoryContext';
 
 import { useEffect } from 'react';
+import {Footer404} from '@/components/footer/Footer404';
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname().split("/").pop();
   const isContactPage = pathname === 'contact' || pathname === 'lien-he';
+  const isNotFoundPage = pathname === 'not-found' || pathname === '404';
   // const shouldHideOverflow = pathname === '' || pathname === 'do-thi-so-picity' || pathname === 'digitalcity';
   const shouldHideOverflow = pathname === '';
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
     <>
       <div>
         <ScrollRefsProvider><></>
-          <NewsCategoryProvider>  
+          <NewsCategoryProvider>
             <PublicNavigation />
             <div className={shouldHideOverflow ? 'overflow-x-hidden' : ''}>
               {children}
@@ -40,7 +42,8 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
           </NewsCategoryProvider>
         </ScrollRefsProvider>
       </div>
-      {isContactPage ? <FooterContact /> : <Footer />} 
+      
+      {isNotFoundPage ? <Footer404 /> : (isContactPage ? <FooterContact /> : <Footer />)} 
     </>
   );
 }

@@ -7,6 +7,7 @@ import CategorySetter from './CategorySetter';
 import {getTranslations} from 'next-intl/server';
 import {getUserLocale} from '@/db';
 import NotFound from '../not-found';
+import {redirect} from 'next/navigation';
 
 // ✅ BƯỚC 1: ĐỊNH NGHĨA TYPE CHO PROPS MỘT CÁCH RÕ RÀNG
 // Type này bao gồm cả `params` và `searchParams` (một best practice)
@@ -24,10 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     cache: 'no-store',
   });
   if (!res.ok) {
-    return {
-      title: t('NEWS.articleNotExist'),
-      description: t('NEWS.noContent')
-    };
+    redirect('/404');
   }
 
   const json = await res.json();
@@ -90,8 +88,7 @@ export default async function DetailPost({ params }: Props) {
   const post = await getPostBySlug(slug);
   const t = await getTranslations();
   if (!post) {
-    // return <div className="text-center mt-20">{t('NEWS.noContent')}</div>;
-    return <NotFound />;
+    return <div className="text-center mt-20">{t('NEWS.noContent')}</div>;
   }
 
   const related = await fetch(
