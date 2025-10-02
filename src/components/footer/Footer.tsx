@@ -40,7 +40,7 @@ export function Footer() {
         <div className={`mx-auto w-full px-[30px] md:px-0 md:max-w-[85%]`}>
           <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_24%] 2xl:grid-cols-[290px_1fr_280px] gap-8">
             {/* logo */}
-            <div className="flex justify-center sm:justify-normal reveal-tex fade-in-left-short mb-6 md:mb-0">
+            <div className="flex justify-center sm:justify-normal reveal-tex boxanimation fade-in-up-medium mb-6 md:mb-0">
               <Link href="/" className="flex-shrink-0 flex">
                 <Image
                   src="/logo-c.svg"
@@ -52,7 +52,7 @@ export function Footer() {
               </Link>
             </div>
             {/* contact */}
-            <div className="mt-0 fade-in-left-short mb-4 md:mb-0">
+            <div className="mt-0 boxanimation fade-in-up-medium mb-4 md:mb-0">
               <h3 className="text-[16px] 2xl:text-[20px] font-bold mb-[10px] 2xl:mb-[20px] text-gray-4">
                 {t('Footer.piGroupCorporation')}
               </h3>
@@ -160,7 +160,7 @@ export function Footer() {
             </div>
             {/* menu */}
             <div className="2xl:leading-[30px] sm:pl-[30px]">
-              <ul className="space-y-3 text-gray-6 fade-in-left-short uppercase font-[600] text-[13px] 2xl:text-[17px]">
+              <ul className="space-y-3 text-gray-6 boxanimation fade-in-up-medium uppercase font-[600] text-[13px] 2xl:text-[17px]">
                 <li>
                   <Link
                     href={routeLocales[currentLocale]['about']}
@@ -216,10 +216,10 @@ export function Footer() {
         <div className="bg-gray-4 text-center mt-[50px] 2xl:mt-[65px]">
           <div className="relative pb-[22px] grid grid-cols-1 md:grid-cols-3 m-auto text-left max-w-[85%]">
             <div className="text-center md:text-left order-1 sm:order-0 ">
-              <p className="text-yellow-2/70 pt-[22px] sm:pt-[30px] text-[13px] 2xl:text-[16px] reveal-text fade-in-up-medium">
+              <p className="text-yellow-2/70 pt-[22px] sm:pt-[30px] text-[13px] 2xl:text-[16px] reveal-text boxanimation fade-in-up-medium">
                 © 2025 Pi Group. All Rights Reserved.
               </p>
-              {/* <p className="text-gray-7/60 text-[13px] 2xl:text-[16px] reveal-text fade-in-up-medium">
+              {/* <p className="text-gray-7/60 text-[13px] 2xl:text-[16px] reveal-text boxanimation fade-in-up-medium">
                 Design with heart by TQ DESIGN
               </p> */}
             </div>
@@ -230,11 +230,10 @@ export function Footer() {
                 alt="Modern city skyline"
                 width={35}
                 height={35}
-                className="absolute right-0 top-[-30px] -translate-y-1/2 z-20 hover:cursor-pointer fade-in-up-medium"
+                className="absolute right-0 top-[-30px] -translate-y-1/2 z-20 hover:cursor-pointer boxanimation fade-in-up-medium"
               />
             </div>
-            <div className="flex justify-center items-center gap-[15px] mt-[23px] fade-in-up-medium">
-              jhjhjhh
+            <div className="flex justify-center items-center gap-[15px] mt-[23px] boxanimation fade-in-up-medium">
               <Link target={socialConfig?.['facebook'] ? '_blank' : ''}
                     href={socialConfig?.['facebook'] || 'javascript:void(0);'}
                     className="flex-shrink-0 flex items-center">
